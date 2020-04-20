@@ -5,6 +5,6 @@ Add Materials from other mods To Tinkers' Construct
 
 Supported mods : 
 
-Thermal Foundation
-Naturesaura infused iron
-Applied energistic 2
+-Thermal Foundation
+-Naturesaura infused iron
+-Applied energistic 2
