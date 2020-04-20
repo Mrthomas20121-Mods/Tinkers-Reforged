@@ -1,0 +1,15 @@
+[
+{
+  "modid": "tinkers_reforged",
+  "name": "Tinkers' Reforged",
+  "description": "Tinker construct support for various mods",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Mrthomas20121"],
+  "credits": "Mrthomas20121",
+  "logoFile": "",
+  "screenshots": []
+}
+]

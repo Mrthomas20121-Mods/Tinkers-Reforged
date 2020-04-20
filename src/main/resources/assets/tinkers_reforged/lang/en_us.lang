@@ -1,0 +1,32 @@
+# materials
+
+# thermalfoundation materials
+material.reforged_enderium.name=Enderium
+material.reforged_signalum.name=Signalum
+material.reforged_lumium.name=Lumium
+
+# naturesaura materials
+material.reforged_infused_iron.name=Infused Iron
+
+# Appliedenergistic2 materials
+material.reforged_certus_quartz.name=Certus Quartz
+material.reforged_fluix_crystal.name=Fluix Crystal
+
+# Astralsorcery materials
+material.reforged_starmetal.name=Starmetal
+
+# Traits and Modifiers
+modifier.signal.name=Signal
+modifier.signal.desc=§oDude, stop hitting those Creepers!§r
+
+modifier.ender.name=Ender
+modifier.ender.desc=Deal double damage to Ender Mobs.
+
+modifier.enderfestation.name=Enderfestation
+modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r
+
+modifier.light.name=Light
+modifier.light.desc=§oYou are the light!
+
+modifier.astral.name=Astral
+modifier.astral.desc=§oI can see in the dark!§r
