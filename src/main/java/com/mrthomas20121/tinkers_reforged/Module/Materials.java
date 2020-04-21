@@ -14,6 +14,7 @@ public class Materials {
 
     // naturesaura Materials
     public static final Material infused_iron = new Material("reforged_infused_iron", 0x34BA3D);
+    public static final Material ancient_wood = new Material("reforged_ancient_wood", 0xA06686);
 
     // Applied Energistic 2
     public static final Material certus_quartz = new Material("reforged_certus_quartz", 0xBADBFF);
