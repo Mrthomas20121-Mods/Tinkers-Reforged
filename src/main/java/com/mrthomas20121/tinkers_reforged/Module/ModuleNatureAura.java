@@ -29,7 +29,7 @@ public class ModuleNatureAura extends ModuleBase {
         return new ItemStack(item, 1);
     }
     public static ItemStack stack(Block block) {
-        return new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE);
+        return new ItemStack(block, 1);
     }
 
     @Override
