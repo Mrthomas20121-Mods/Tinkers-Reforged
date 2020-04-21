@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -21,8 +20,6 @@ import de.ellpeck.naturesaura.items.ModItems;
 import de.ellpeck.naturesaura.blocks.ModBlocks;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Optional.Interface(iface = "de.ellpeck.naturesaura.items.ModItems", modid = "naturesaura")
-@Optional.Interface(iface = "de.ellpeck.naturesaura.blocks.ModBlocks", modid = "naturesaura")
 public class ModuleNatureAura extends ModuleBase {
 
     public ModuleNatureAura() {
