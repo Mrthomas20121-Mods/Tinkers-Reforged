@@ -23,7 +23,7 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.0.2";
+    public static final String VERSION = "1.0.3";
 
     public static Logger logger;
 
@@ -48,6 +48,9 @@ public class TinkersReforged
         }
         if(Loader.isModLoaded("astralsorcery") && Config.astral) {
             Modules.astral.preInit(event);
+        }
+        if(Loader.isModLoaded("natura") && Config.astral) {
+            Modules.natura.preInit(event);
         }
    }
 
