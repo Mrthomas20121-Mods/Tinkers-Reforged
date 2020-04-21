@@ -18,6 +18,7 @@ public class Config {
 
     // naturesaura
     public static boolean infused_iron = true;
+    public static boolean ancient_wood = true;
 
     // appliedenergistic2
     public static boolean certus_quartz = true;
@@ -61,6 +62,8 @@ public class Config {
 
         // naturesaura
         infused_iron = cfg.getBoolean("infused_iron", CATEGORY_METERIALS, infused_iron, "Set to false to disable infused iron material");
+        ancient_wood = cfg.getBoolean("ancient_wood", CATEGORY_METERIALS, ancient_wood, "Set to false to disable ancient wood material");
+
 
         // astral sorcery
         starmetal = cfg.getBoolean("astral_starmetal", CATEGORY_METERIALS, starmetal, "Set to false to disable astral star metal material");
