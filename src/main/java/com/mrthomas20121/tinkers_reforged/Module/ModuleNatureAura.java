@@ -55,7 +55,7 @@ public class ModuleNatureAura extends ModuleBase {
 
         if(Config.ancient_wood) {
             TinkerRegistry.addMaterialStats(Materials.ancient_wood,
-                    new HeadMaterialStats(90, 2.3f, 1.2f, HarvestLevels.IRON),
+                    new HeadMaterialStats(90, 2.3f, 1.2f, HarvestLevels.STONE),
                     new HandleMaterialStats(1.9f, 50),
                     new ExtraMaterialStats(-5),
                     new FletchingMaterialStats(0.1f, 0.5f));
@@ -67,8 +67,8 @@ public class ModuleNatureAura extends ModuleBase {
             Materials.ancient_wood.setCraftable(true).setCastable(false);
             Materials.ancient_wood.addTrait(TinkerTraits.ecological);
             Materials.ancient_wood.addTrait(Traits.infusing,  MaterialTypes.HEAD);
-            MaterialIntegration infused_iron_mi = new MaterialIntegration(Materials.ancient_wood);
-            TinkerRegistry.integrate(infused_iron_mi).preInit();
+            MaterialIntegration ancient_wood_mi = new MaterialIntegration(Materials.ancient_wood);
+            TinkerRegistry.integrate(ancient_wood_mi).preInit();
         }
     }
     @Override
