@@ -7,4 +7,5 @@ public class Traits {
     public static final TraitSignal signal = new TraitSignal();
     public static final TraitLight light = new TraitLight();
     public static final TraitAstral astral = new TraitAstral();
+    public static final TraitInfusing infusing = new TraitInfusing();
 }
