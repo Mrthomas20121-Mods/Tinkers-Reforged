@@ -1,6 +1,7 @@
 package com.mrthomas20121.tinkers_reforged;
 
 import com.mrthomas20121.tinkers_reforged.Config.Config;
+import com.mrthomas20121.tinkers_reforged.proxy.ClientProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -23,7 +24,7 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.0.3";
+    public static final String VERSION = "1.0.4";
 
     public static Logger logger;
 
@@ -67,14 +68,12 @@ public class TinkersReforged
         if(Loader.isModLoaded("thermalfoundation") && Config.thermal) {
             Modules.thermal.init(event);
         }
+        Modules.tools.init(event);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         proxy.postInit(event);
     }
-    @Mod.EventHandler
-    public void clientPostInit() {
-        Modules.module.clientPostInit();
-    }
+
 }
