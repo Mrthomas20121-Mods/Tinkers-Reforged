@@ -10,4 +10,5 @@ public class Modules {
     public static final ModuleAe ae = new ModuleAe();
     public static final ModuleAstralSorcery astral = new ModuleAstralSorcery();
     public static final ModuleNatura natura = new ModuleNatura();
+    public static final ModuleTools tools = new ModuleTools();
 }
