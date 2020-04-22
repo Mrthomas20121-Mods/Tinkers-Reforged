@@ -9,6 +9,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import slimeknights.tconstruct.common.ModelRegisterUtil;
+import slimeknights.tconstruct.library.tools.IToolPart;
+import slimeknights.tconstruct.library.tools.ToolCore;
 
 import java.io.File;
 
@@ -29,5 +32,13 @@ public class CommonProxy {
     }
 
     public void postInit(FMLPostInitializationEvent e) {
+    }
+
+    public <T extends Item & IToolPart> void registerToolPartModel(T part) {
+        ModelRegisterUtil.registerPartModel(part);
+    }
+
+    public void registerToolModel(ToolCore tc) {
+        ModelRegisterUtil.registerToolModel(tc);
     }
 }

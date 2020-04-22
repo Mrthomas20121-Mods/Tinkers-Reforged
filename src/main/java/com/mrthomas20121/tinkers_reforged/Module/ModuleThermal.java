@@ -101,10 +101,4 @@ public class ModuleThermal extends ModuleBase {
     public void postInit(FMLPostInitializationEvent e) {
 
     }
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void clientPostInit()
-    {
-
-    }
 }

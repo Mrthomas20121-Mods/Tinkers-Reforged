@@ -55,9 +55,9 @@ public class ModuleNatureAura extends ModuleBase {
 
         if(Config.ancient_wood) {
             TinkerRegistry.addMaterialStats(Materials.ancient_wood,
-                    new HeadMaterialStats(90, 2.3f, 1.2f, HarvestLevels.STONE),
+                    new HeadMaterialStats(50, 2.3f, 1.2f, HarvestLevels.STONE),
                     new HandleMaterialStats(1.9f, 50),
-                    new ExtraMaterialStats(-5),
+                    new ExtraMaterialStats(-10),
                     new FletchingMaterialStats(0.1f, 0.5f));
 
             Materials.ancient_wood.setRepresentativeItem(stack(ModBlocks.ANCIENT_PLANKS));
@@ -76,6 +76,4 @@ public class ModuleNatureAura extends ModuleBase {
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) { }
-    @Override
-    public void clientPostInit() { }
 }

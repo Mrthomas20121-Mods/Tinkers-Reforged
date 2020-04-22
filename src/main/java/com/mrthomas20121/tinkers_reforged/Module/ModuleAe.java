@@ -59,5 +59,4 @@ public class ModuleAe extends ModuleBase {
     public void postInit(FMLPostInitializationEvent e) {
 
     }
-    public void clientPostInit() { }
 }

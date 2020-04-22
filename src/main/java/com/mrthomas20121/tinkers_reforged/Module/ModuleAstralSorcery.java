@@ -41,6 +41,4 @@ public class ModuleAstralSorcery extends ModuleBase {
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) { }
-    @Override
-    public void clientPostInit() { }
 }
