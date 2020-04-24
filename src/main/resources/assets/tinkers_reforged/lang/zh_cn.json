@@ -1,0 +1,42 @@
+# items 
+item.tinkers_reforged.gladius.name=斗士短剑
+item.tinkers_reforged.gladius.desc=比一般的剑拥有更高的伤害与更慢的攻击速度，并且会对敌人进行减速。
+item.tinkers_reforged.gladius_bindings.name=短剑绑定结
+
+
+# materials
+
+# thermalfoundation materials
+material.reforged_enderium.name=末影
+material.reforged_signalum.name=信素
+material.reforged_lumium.name=流明
+
+# naturesaura materials
+material.reforged_infused_iron.name=蕴魔铁
+material.reforged_ancient_wood.name=荒古木
+
+# Appliedenergistic2 materials
+material.reforged_certus_quartz.name=赛特斯石英
+material.reforged_fluix_crystal.name=福鲁伊克斯水晶
+
+# Astralsorcery materials
+material.reforged_starmetal.name=星辉
+
+# Traits and Modifiers
+modifier.signal.name=引爆
+modifier.signal.desc=§o伙计，少打点爬行者吧！§r
+
+modifier.ender.name=末影
+modifier.ender.desc=对末影生物造成双倍伤害。
+
+modifier.enderfestation.name=末影寄生
+modifier.enderfestation.desc=§o该死的小虫子，哪里都有！§r
+
+modifier.light.name=光明
+modifier.light.desc=§o光芒万丈！
+
+modifier.astral.name=星辉
+modifier.astral.desc=§o身处黑夜的我仍然能看清一切!§r
+
+modifier.infusing.name=蕴魔
+modifier.infusing.desc=魔法越大，能力越大！
