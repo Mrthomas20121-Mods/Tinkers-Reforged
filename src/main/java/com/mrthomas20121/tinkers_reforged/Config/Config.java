@@ -5,11 +5,14 @@ import com.mrthomas20121.tinkers_reforged.proxy.CommonProxy;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 
+import java.util.HashMap;
+
 public class Config {
 
     private static final String CATEGORY_METERIALS = "materials";
     private static final String CATEGORY_GENERAL = "general";
     private static final String CATEGORY_MODULES = "modules";
+    private static final String CATEGORY_TOOLS = "tools";
 
     // thermalfoundation
     public static boolean enderium = true;
@@ -27,13 +30,26 @@ public class Config {
     // astral
     public static boolean starmetal = true;
 
+    // atum
+    public static boolean limestone = true;
+    public static boolean khnumite = true;
+
     // modules
     public static boolean thermal = true;
     public static boolean naturesaura = true;
     public static boolean ae2 = true;
     public static boolean astral = true;
+    public static boolean natura = true;
+    public static boolean atum = true;
+    public static boolean extreme = true;
 
-
+    // tools
+    public static boolean tools = true;
+    public static boolean toolGladius = true;
+    public static boolean toolClub = true;
+    public static boolean toolGreatsword = true;
+    public static boolean toolKhopesh = true;
+    public static boolean atum_requirement_for_tools = true;
     /**
      * Read the Config
      */
@@ -41,8 +57,9 @@ public class Config {
         Configuration cfg = CommonProxy.config;
         try {
             cfg.load();
-            initMaterialConfig(cfg);
-            initModuleConfig(cfg);
+            initMaterialConfig(cfg, CATEGORY_METERIALS);
+            initModuleConfig(cfg, CATEGORY_MODULES);
+            initToolsConfig(cfg, CATEGORY_TOOLS);
         } catch (Exception e1) {
             TinkersReforged.logger.log(Level.ERROR, "Problem loading config file!", e1);
         } finally {
@@ -52,32 +69,39 @@ public class Config {
         }
     }
 
-    private static void initMaterialConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CATEGORY_METERIALS, "Tinkers' Construct Materials");
-
+    private static void initMaterialConfig(Configuration cfg, String category) {
+        cfg.addCustomCategoryComment(category, "Tinkers' Construct Materials");
         // thermal
-        enderium = cfg.getBoolean("enderium", CATEGORY_METERIALS, enderium, "Set to false to disable enderium material");
-        signalum = cfg.getBoolean("signalum", CATEGORY_METERIALS, signalum, "Set to false to disable signalum material");
-        lumium = cfg.getBoolean("lumium", CATEGORY_METERIALS, lumium, "Set to false to disable lumium material");
+        enderium = cfg.getBoolean("enderium", category, enderium, "Set to false to disable enderium material");
+        signalum = cfg.getBoolean("signalum", category, signalum, "Set to false to disable signalum material");
+        lumium = cfg.getBoolean("lumium", category, lumium, "Set to false to disable lumium material");
 
         // naturesaura
-        infused_iron = cfg.getBoolean("infused_iron", CATEGORY_METERIALS, infused_iron, "Set to false to disable infused iron material");
-        ancient_wood = cfg.getBoolean("ancient_wood", CATEGORY_METERIALS, ancient_wood, "Set to false to disable ancient wood material");
-
+        infused_iron = cfg.getBoolean("infused_iron", category, infused_iron, "Set to false to disable infused iron material");
+        ancient_wood = cfg.getBoolean("ancient_wood", category, ancient_wood, "Set to false to disable ancient wood material");
 
         // astral sorcery
-        starmetal = cfg.getBoolean("astral_starmetal", CATEGORY_METERIALS, starmetal, "Set to false to disable astral star metal material");
+        starmetal = cfg.getBoolean("astral_starmetal", category, starmetal, "Set to false to disable astral star metal material");
 
         // ae2
-        certus_quartz = cfg.getBoolean("certus_quartz", CATEGORY_METERIALS, certus_quartz, "Set to false to disable certus quartz material");
-        fluix_crystal = cfg.getBoolean("fluix_crystal", CATEGORY_METERIALS, fluix_crystal, "Set to false to disable fluix crystal material");
+        certus_quartz = cfg.getBoolean("certus_quartz", category, certus_quartz, "Set to false to disable certus quartz material");
+        fluix_crystal = cfg.getBoolean("fluix_crystal", category, fluix_crystal, "Set to false to disable fluix crystal material");
     }
 
-    private static void initModuleConfig(Configuration cfg) {
-        cfg.addCustomCategoryComment(CATEGORY_MODULES, "Modules");
-        thermal = cfg.getBoolean("thermalfoundation", CATEGORY_MODULES, thermal, "Set to false to disable Thermal Foundation Module");
-        naturesaura = cfg.getBoolean("naturesaura", CATEGORY_MODULES, naturesaura, "Set to false to disable Natures Aura Module");
-        ae2 = cfg.getBoolean("appliedenergistics2", CATEGORY_MODULES, ae2, "Set to false to disable Applied Energistic 2 Module");
-        astral = cfg.getBoolean("astralsorcery", CATEGORY_MODULES, astral, "Set to false to disable Astral Sorcery Module");
+    private static void initModuleConfig(Configuration cfg, String category) {
+        cfg.addCustomCategoryComment(category, "Modules");
+        thermal = cfg.getBoolean("thermalfoundation", category, thermal, "Set to false to disable Thermal Foundation Module");
+        naturesaura = cfg.getBoolean("naturesaura", category, naturesaura, "Set to false to disable Natures Aura Module");
+        ae2 = cfg.getBoolean("appliedenergistics2", category, ae2, "Set to false to disable Applied Energistic 2 Module");
+        astral = cfg.getBoolean("astralsorcery", category, astral, "Set to false to disable Astral Sorcery Module");
+    }
+    private static void initToolsConfig(Configuration cfg, String category) {
+        cfg.addCustomCategoryComment(category, "Tools");
+        tools = cfg.getBoolean("tools", category, tools, "Set to false to disable Tinkers' Tools Added by this mod");
+        toolGladius = cfg.getBoolean("toolGladius", category, toolGladius, "Set to false to disable the weapon Gladius");
+        toolClub = cfg.getBoolean("toolClub", category, toolClub, "Set to false to disable the weapon Club");
+        toolGreatsword = cfg.getBoolean("toolGreatsword", category, toolGreatsword, "Set to false to disable the weapon Greatsword");
+        toolKhopesh = cfg.getBoolean("toolKhopesh", category, toolKhopesh, "Set to false to disable the weapon Khopesh");
+        atum_requirement_for_tools = cfg.getBoolean("atum_requirement_for_tools", category, atum_requirement_for_tools, "Set to false to Remove the Atum Requirement for the tools");
     }
 }
