@@ -1,5 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Tools;
 
+import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -8,38 +9,40 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.MathHelper;
-import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
 import slimeknights.tconstruct.library.tools.SwordCore;
 import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.library.utils.ToolHelper;
 import slimeknights.tconstruct.tools.TinkerTools;
+
 import java.util.List;
 
-public class SwordGladius extends SwordCore {
-    public SwordGladius() {
-        super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(TinkerTools.swordBlade),
-                PartMaterialType.extra(TinkerTools.binding));
+public class ToolClub extends SwordCore {
+
+    public ToolClub() {
+        super(PartMaterialType.handle(TinkerTools.toughToolRod),
+                PartMaterialType.head(ModuleTools.clubHead));
         this.addCategory(Category.WEAPON);
     }
+
     @Override
     public ToolNBT buildTagData(List<Material> materials) {
         ToolNBT data = buildDefaultTag(materials);
 
         data.attack += 1f;
-        data.durability *= 1.1f;
+        data.durability *= 0.7f;
+        data.attackSpeedMultiplier = 1f;
 
         return data;
     }
     @Override
-    public float damagePotential() {
-        return 1.1f;
-    }
+    public float damagePotential() { return 2.6f; }
 
+    @Override
     public double attackSpeed() {
-        return 1.7d;
+        return 0.5d;
     }
 
     @Override
@@ -54,7 +57,12 @@ public class SwordGladius extends SwordCore {
             boolean flag = true;
             if(player instanceof EntityPlayer) {
                 flag = ((EntityPlayer) player).getCooledAttackStrength(0.5F) > 0.9f;
-                ((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 110, 2));
+
+                float knockback = 0.0F;
+                if (((EntityPlayer) player).getCooldownPeriod() == 1.0F) {
+                    knockback = 1.8F;
+                }
+                entity.addVelocity((double) (-MathHelper.sin(player.rotationYaw * 3.1415927F / 180.0F) * knockback * 0.5F), 0.1D, (double) (MathHelper.cos(player.rotationYaw * 3.1415927F / 180.0F) * knockback * 0.5F));
             }
             boolean flag2 = player.fallDistance > 0.0F && !player.onGround && !player.isOnLadder() && !player.isInWater() && !player.isPotionActive(MobEffects.BLINDNESS) && !player.isRiding();
             if(flag && !player.isSprinting() && !flag2 && player.onGround && d0 < (double) player.getAIMoveSpeed()) {

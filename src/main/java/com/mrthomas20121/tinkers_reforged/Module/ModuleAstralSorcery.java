@@ -1,7 +1,5 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
-import com.mrthomas20121.tinkers_reforged.Modifiers.ModAstral;
-
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

@@ -5,6 +5,7 @@ import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 import com.mrthomas20121.tinkers_reforged.Module.Modules;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -21,6 +22,12 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
+    }
+
+    @Override
+    public void init(FMLInitializationEvent e) {
+
+        Modules.tools.init(e);
     }
 
     @SideOnly(Side.CLIENT)

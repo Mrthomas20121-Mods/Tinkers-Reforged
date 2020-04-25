@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Materials {
 
-    public static ArrayList<Material> mats = new ArrayList<Material>();
+    public static ArrayList<Material> mats = new ArrayList<>();
     // thermalfoundation Materials
     public static final Material enderium = new Material("reforged_enderium", 0x006C5F);
     public static final Material signalum = new Material("reforged_signalum", 0xA32500);
@@ -22,4 +22,8 @@ public class Materials {
 
     // astralsorcery
     public static final Material starmetal = new Material("reforged_starmetal", 0x001169);
+
+    // atum 2
+    public static final Material khnumite = new Material("reforged_khnumite", 0x998B59);
+    public static final Material limestone = new Material("reforged_limestone", 0x9F8D7A);
 }

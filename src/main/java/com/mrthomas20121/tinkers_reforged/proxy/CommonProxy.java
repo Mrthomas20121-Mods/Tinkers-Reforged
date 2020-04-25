@@ -1,6 +1,7 @@
 package com.mrthomas20121.tinkers_reforged.proxy;
 
 import com.mrthomas20121.tinkers_reforged.Config.Config;
+import com.mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
@@ -28,11 +29,10 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
-
+        Modifiers.init(e);
     }
 
-    public void postInit(FMLPostInitializationEvent e) {
-    }
+    public void postInit(FMLPostInitializationEvent e) { }
 
     public <T extends Item & IToolPart> void registerToolPartModel(T part) {
         ModelRegisterUtil.registerPartModel(part);

@@ -1,51 +1,59 @@
 package com.mrthomas20121.tinkers_reforged.Tools;
 
+import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.MathHelper;
-import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
 import slimeknights.tconstruct.library.tools.SwordCore;
 import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.library.utils.ToolHelper;
 import slimeknights.tconstruct.tools.TinkerTools;
+
 import java.util.List;
 
-public class SwordGladius extends SwordCore {
-    public SwordGladius() {
+public class SwordGreatSword extends SwordCore {
+    public SwordGreatSword() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(TinkerTools.swordBlade),
-                PartMaterialType.extra(TinkerTools.binding));
+                PartMaterialType.head(ModuleTools.greatBlade),
+                PartMaterialType.extra(TinkerTools.wideGuard));
         this.addCategory(Category.WEAPON);
     }
+
     @Override
     public ToolNBT buildTagData(List<Material> materials) {
         ToolNBT data = buildDefaultTag(materials);
 
         data.attack += 1f;
-        data.durability *= 1.1f;
+        data.durability *= 1f;
+        data.attackSpeedMultiplier = 1f;
 
         return data;
     }
     @Override
-    public float damagePotential() {
-        return 1.1f;
-    }
+    public float damagePotential() { return 2f; }
 
+    @Override
     public double attackSpeed() {
-        return 1.7d;
+        return 0.8d;
     }
 
     @Override
     public boolean dealDamage(ItemStack stack, EntityLivingBase player, Entity entity, float damage) {
         // deal damage first
         boolean hit = super.dealDamage(stack, player, entity, damage);
+        if(player instanceof EntityPlayer) {
+            player.addPotionEffect((new PotionEffect(MobEffects.WEAKNESS, 100, 2)));
+        }
         // and then sweep
         if(hit && !ToolHelper.isBroken(stack)) {
             // sweep code from EntityPlayer#attackTargetEntityWithCurrentItem()
@@ -54,7 +62,6 @@ public class SwordGladius extends SwordCore {
             boolean flag = true;
             if(player instanceof EntityPlayer) {
                 flag = ((EntityPlayer) player).getCooledAttackStrength(0.5F) > 0.9f;
-                ((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 110, 2));
             }
             boolean flag2 = player.fallDistance > 0.0F && !player.onGround && !player.isOnLadder() && !player.isInWater() && !player.isPotionActive(MobEffects.BLINDNESS) && !player.isRiding();
             if(flag && !player.isSprinting() && !flag2 && player.onGround && d0 < (double) player.getAIMoveSpeed()) {

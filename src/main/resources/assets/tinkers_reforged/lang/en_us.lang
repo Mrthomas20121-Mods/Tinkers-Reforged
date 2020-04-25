@@ -1,8 +1,24 @@
 # items 
+
+# Gladius
 item.tinkers_reforged.gladius.name=Gladius
 item.tinkers_reforged.gladius.desc=A broadsword with a bit more damage and less attack speed but slow enemies.
 item.tinkers_reforged.gladius_bindings.name=Gladius Bindings
 
+# Club
+item.tinkers_reforged.club.name=Spiked Club
+item.tinkers_reforged.club.desc=A powerful weapon that knock your enemies on impact
+item.tinkers_reforged.club_head.name=Club Head
+
+# Khopesh
+item.tinkers_reforged.curved_blade.name=Curved Blade
+item.tinkers_reforged.khopesh.name=Khopesh
+item.tinkers_reforged.khopesh.desc=A egyptian broadsword.
+
+# Greatsword
+item.tinkers_reforged.great_blade.name=Great Blade
+item.tinkers_reforged.greatsword.name=Greatsword
+item.tinkers_reforged.greatsword.desc=A great and powerful sword.
 
 # materials
 
@@ -21,6 +37,10 @@ material.reforged_fluix_crystal.name=Fluix Crystal
 
 # Astralsorcery materials
 material.reforged_starmetal.name=Starmetal
+
+# Atum 2
+material.reforged_limestone.name=Limestone
+material.reforged_khnumite.name=Khnumite
 
 # Traits and Modifiers
 modifier.signal.name=Signal

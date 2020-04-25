@@ -20,6 +20,15 @@ public class TraitLight extends AbstractTrait {
                 if(this.isToolWithTrait(((EntityPlayer) entity).getHeldItemMainhand())) {
                     ((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 100));
                 }
+                else {
+                    if(((EntityPlayer) entity).getTotalArmorValue()>0) {
+                        for(ItemStack stack : ((EntityPlayer) entity).getArmorInventoryList()) {
+                            if(this.isToolWithTrait(stack)) {
+                                ((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 100));
+                            }
+                        }
+                    }
+                }
             }
         }
     }
