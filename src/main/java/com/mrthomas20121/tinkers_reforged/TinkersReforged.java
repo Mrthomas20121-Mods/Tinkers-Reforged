@@ -1,6 +1,7 @@
 package com.mrthomas20121.tinkers_reforged;
 
 import com.mrthomas20121.tinkers_reforged.Config.Config;
+import com.mrthomas20121.tinkers_reforged.proxy.ClientEvent;
 import com.mrthomas20121.tinkers_reforged.proxy.ClientProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -24,7 +25,7 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.0.4";
+    public static final String VERSION = "1.0.6";
 
     public static Logger logger;
 
@@ -35,45 +36,26 @@ public class TinkersReforged
     public void preInit(FMLPreInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(this);
+        if (Loader.isModLoaded("atum")) {
+            MinecraftForge.EVENT_BUS.register(ClientEvent.class);
+        }
         logger = event.getModLog();
         proxy.preInit(event);
 
-        if(Loader.isModLoaded("thermalfoundation") && Config.thermal) {
-            Modules.thermal.preInit(event);
-        }
-        if(Loader.isModLoaded("naturesaura") && Config.naturesaura) {
-            Modules.natureAura.preInit(event);
-        }
-        if(Loader.isModLoaded("appliedenergistics2") && Config.ae2) {
-            Modules.ae.preInit(event);
-        }
-        if(Loader.isModLoaded("astralsorcery") && Config.astral) {
-            Modules.astral.preInit(event);
-        }
-        if(Loader.isModLoaded("natura") && Config.astral) {
-            Modules.natura.preInit(event);
-        }
+        Modules.preInit(event);
    }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         proxy.init(event);
-        if(Loader.isModLoaded("naturesaura") && Config.naturesaura) {
-            Modules.natureAura.init(event);
-        }
-        if(Loader.isModLoaded("astralsorcery") && Config.astral) {
-            Modules.astral.init(event);
-        }
-        if(Loader.isModLoaded("thermalfoundation") && Config.thermal) {
-            Modules.thermal.init(event);
-        }
-        Modules.tools.init(event);
+        Modules.init(event);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         proxy.postInit(event);
+        Modules.postInit(event);
     }
 
 }
