@@ -1,0 +1,8 @@
+{
+	"textures": {
+		"khopesh": "tinkers_reforged:items/khopesh/mod_sharpness",
+		"gladius": "tinkers_reforged:items/gladius/mod_sharpness",
+		"greatsword": "tinkers_reforged:items/greatsword/mod_sharpness",
+		"club": "tinkers_reforged:items/club/mod_sharpness"
+	}
+}

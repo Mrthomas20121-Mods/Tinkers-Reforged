@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "atum:limestone",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "minecraft:stone_pressure_plate"
+  }
+}

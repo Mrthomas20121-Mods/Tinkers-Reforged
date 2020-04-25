@@ -1,0 +1,9 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "tinkers_reforged:items/greatsword/tool_rod",
+	"layer1": "tinkers_reforged:items/greatsword/great_blade",
+	"layer2": "tinkers_reforged:items/greatsword/wide_guard",
+    "broken1": "tinkers_reforged:items/greatsword/broken_blade"
+  }
+}

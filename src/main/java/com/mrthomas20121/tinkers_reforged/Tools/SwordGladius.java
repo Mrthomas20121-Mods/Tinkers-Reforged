@@ -15,20 +15,17 @@ import slimeknights.tconstruct.library.tools.SwordCore;
 import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.library.utils.ToolHelper;
 import slimeknights.tconstruct.tools.TinkerTools;
-
 import java.util.List;
-
-import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 
 public class ToolGladius extends SwordCore {
     public ToolGladius() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
                 PartMaterialType.head(TinkerTools.swordBlade),
-                PartMaterialType.extra(ModuleTools.gladiusBindings));
+                PartMaterialType.extra(TinkerTools.binding));
         this.addCategory(Category.WEAPON);
     }
     @Override
-    protected ToolNBT buildTagData(List<Material> materials) {
+    public ToolNBT buildTagData(List<Material> materials) {
         ToolNBT data = buildDefaultTag(materials);
 
         data.attack += 1f;
@@ -42,7 +39,7 @@ public class ToolGladius extends SwordCore {
     }
 
     public double attackSpeed() {
-        return 2d;
+        return 1.7d;
     }
 
     @Override

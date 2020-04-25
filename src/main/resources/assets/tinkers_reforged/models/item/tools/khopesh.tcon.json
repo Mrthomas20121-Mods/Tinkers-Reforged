@@ -1,0 +1,8 @@
+{
+  "textures": {
+    "layer0": "tinkers_reforged:items/khopesh/tool_rod",
+	"layer1": "tinkers_reforged:items/khopesh/curved_blade",
+	"layer2": "tinkers_reforged:items/khopesh/cross_guard",
+    "broken1": "tinkers_reforged:items/khopesh/broken_blade"
+  }
+}

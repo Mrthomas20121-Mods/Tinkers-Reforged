@@ -15,7 +15,7 @@ import slimeknights.tconstruct.tools.modifiers.ToolModifier;
 public class ModAstral extends ToolModifier {
 
     public ModAstral() {
-        super("astral", 0xFFFFFF);
+        super("sandstorm", 0xFFFFFF);
 
         addAspects(ModifierAspect.freeModifier, ModifierAspect.weaponOnly);
     }
