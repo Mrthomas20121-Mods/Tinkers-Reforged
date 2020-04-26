@@ -68,11 +68,13 @@ dependencies {
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
     compile files("./libs/natura-1.12.2-4.3.2.69.jar")
     compile files("./libs/new/Atum-1.12.2-2.0.17.jar")
-    compile files("./libs/astralsorcery-1.12.2-1.10.23.jar")
     compile files("./libs/NaturesAura-18.1.jar")
     compile files("./libs/RedstoneFlux-1.12-2.1.1.1-universal.jar")
     compile files("./libs/new/ExtremeReactors-1.12.2-0.4.5.67.jar")
     compile files("./libs/conarm-1.12.2-1.2.5.4.jar")
+    compile files("./libs/mysticallib-1.12.2-1.7.0.jar")
+    compile files("./libs/Roots-1.12.2-3.0.26.jar")
+    compile files("./libs/mysticalworld-1.12.2-1.8.4.jar")
 }
 
 processResources

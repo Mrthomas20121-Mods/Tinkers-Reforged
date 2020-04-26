@@ -20,6 +20,10 @@ item.tinkers_reforged.great_blade.name=Great Blade
 item.tinkers_reforged.greatsword.name=Greatsword
 item.tinkers_reforged.greatsword.desc=A great and powerful sword.
 
+# runed_knife
+item.tinkers_reforged.runic_knife.name=Runed Knife
+item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy blocks.
+
 # materials
 
 # thermalfoundation materials
@@ -41,6 +45,12 @@ material.reforged_starmetal.name=Starmetal
 # Atum 2
 material.reforged_limestone.name=Limestone
 material.reforged_khnumite.name=Khnumite
+
+# Mystical world
+material.reforged_amethyst.name=Amethyst
+
+# Roots
+material.reforged_runestone.name=Runestone
 
 # Traits and Modifiers
 modifier.signal.name=Signal

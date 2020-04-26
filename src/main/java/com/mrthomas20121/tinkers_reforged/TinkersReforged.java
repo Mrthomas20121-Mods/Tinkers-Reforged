@@ -17,8 +17,8 @@ import com.mrthomas20121.tinkers_reforged.Module.Modules;
 
 @Mod(modid = TinkersReforged.MODID, name = TinkersReforged.NAME, version = TinkersReforged.VERSION,
         dependencies = "required-after:forge@[14.23.5.2847,);"
-        + "required-after:mantle@[1.12-1.3.3.49,);"
-        + "required-after:tconstruct@[1.12.2-2.12.0.157,);")
+        + "required-after:mantle@[1.12-1.3.3.55,);"
+        + "required-after:tconstruct@[1.12.2-2.13.0.183,);")
 public class TinkersReforged
 {
     @Mod.Instance
