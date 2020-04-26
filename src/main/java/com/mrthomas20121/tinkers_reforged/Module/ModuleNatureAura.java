@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -27,9 +28,7 @@ public class ModuleNatureAura extends ModuleBase {
     public ModuleNatureAura() {
         Materials.mats.add(Materials.infused_iron);
     }
-    public static ItemStack stack(Item item) {
-        return new ItemStack(item, 1);
-    }
+
     public static ItemStack stack(Block block) {
         return new ItemStack(block, 1);
     }

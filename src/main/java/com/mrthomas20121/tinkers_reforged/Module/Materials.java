@@ -26,4 +26,9 @@ public class Materials {
     // atum 2
     public static final Material khnumite = new Material("reforged_khnumite", 0x998B59);
     public static final Material limestone = new Material("reforged_limestone", 0x9F8D7A);
+
+    // mystical world
+    public static final Material amethyst = new Material("reforged_amethyst", 0x832CAD);
+
+    public static final Material runestone = new Material("reforged_runestone", 0x575761);
 }

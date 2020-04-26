@@ -2,12 +2,7 @@ package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
-import com.mrthomas20121.tinkers_reforged.Tools.SwordKhopesh;
-import com.mrthomas20121.tinkers_reforged.Tools.ToolClub;
-import com.mrthomas20121.tinkers_reforged.Tools.SwordGladius;
-import com.mrthomas20121.tinkers_reforged.Tools.SwordGreatSword;
-import com.mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
-import com.teammetallurgy.atum.init.AtumItems;
+import com.mrthomas20121.tinkers_reforged.Tools.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -18,8 +13,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.mantle.typesafe.config.Optional;
 import slimeknights.tconstruct.library.TinkerRegistry;
@@ -44,6 +37,7 @@ public class ModuleTools {
     public static ToolClub club;
     public static SwordGreatSword greatsword;
     public static SwordKhopesh khopesh;
+    public static ToolRunicKnife knife;
 
     public void preInit(FMLPreInitializationEvent e) {
 
@@ -54,20 +48,25 @@ public class ModuleTools {
             TinkerRegistry.registerToolForgeCrafting(gladius);
             registerDefaultForgeRecipe(gladius, 3);
         }
+        // knife
+        if(Config.toolRunedKnife && Loader.isModLoaded("roots")) {
+            TinkerRegistry.registerToolForgeCrafting(knife);
+            registerDefaultForgeRecipe(knife, 3);
+        }
         // club
-        if(((Config.toolClub && Loader.isModLoaded("atum")) || (Config.atum_requirement_for_tools == false))) {
+        if((Config.toolClub && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
             TinkerRegistry.registerToolForgeCrafting(club);
             registerStencil(clubHead);
             registerDefaultForgeRecipe(club, 2);
         }
         // greatsword
-        if(((Config.toolGreatsword && Loader.isModLoaded("atum")) || (Config.atum_requirement_for_tools == false))) {
+        if((Config.toolGreatsword && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
             TinkerRegistry.registerToolForgeCrafting(greatsword);
             registerStencil(greatBlade);
             registerDefaultForgeRecipe(greatsword, 3);
         }
         // khopesh
-        if((Config.toolKhopesh && Loader.isModLoaded("atum")) || (Config.atum_requirement_for_tools == false)) {
+        if((Config.toolKhopesh && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
             TinkerRegistry.registerToolForgeCrafting(khopesh);
             registerStencil(CurvedBlade);
             registerDefaultForgeRecipe(khopesh, 3);
@@ -100,30 +99,38 @@ public class ModuleTools {
             gladius = new SwordGladius();
             gladius.setRegistryName(TinkersReforged.MODID, "gladius");
             gladius.setTranslationKey(TinkersReforged.MODID + ".gladius");
-            TinkersReforged.proxy.registerToolModel(gladius);
             r.register(gladius);
+            TinkersReforged.proxy.registerToolModel(gladius);
         }
 
-        if((Config.toolClub && Loader.isModLoaded("atum")) || (Config.atum_requirement_for_tools == false)) {
+        if(Config.toolRunedKnife && Loader.isModLoaded("roots")) {
+            knife = new ToolRunicKnife();
+            knife.setRegistryName(TinkersReforged.MODID, "runic_knife");
+            knife.setTranslationKey(TinkersReforged.MODID + ".runic_knife");
+            r.register(knife);
+            TinkersReforged.proxy.registerToolModel(knife);
+        }
+
+        if((Config.toolClub && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
             clubHead = new ToolPart(Material.VALUE_Ingot*3);
             clubHead.setRegistryName(TinkersReforged.MODID,"club_head");
             clubHead.setTranslationKey(TinkersReforged.MODID + ".club_head");
-            TinkersReforged.proxy.registerToolPartModel(clubHead);
             r.register(clubHead);
+            TinkersReforged.proxy.registerToolPartModel(clubHead);
 
             club = new ToolClub();
             club.setRegistryName(TinkersReforged.MODID, "club");
             club.setTranslationKey(TinkersReforged.MODID + ".club");
-            TinkersReforged.proxy.registerToolModel(club);
             r.register(club);
+            TinkersReforged.proxy.registerToolModel(club);
         }
 
-        if((Config.toolGreatsword && Loader.isModLoaded("atum")) || (Config.atum_requirement_for_tools == false)) {
+        if((Config.toolGreatsword && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
             greatBlade = new ToolPart(Material.VALUE_Ingot*4);
             greatBlade.setRegistryName(TinkersReforged.MODID,"great_blade");
             greatBlade.setTranslationKey(TinkersReforged.MODID + ".great_blade");
-            TinkersReforged.proxy.registerToolPartModel(greatBlade);
             r.register(greatBlade);
+            TinkersReforged.proxy.registerToolPartModel(greatBlade);
 
             greatsword = new SwordGreatSword();
             greatsword.setRegistryName(TinkersReforged.MODID, "greatsword");
@@ -132,7 +139,7 @@ public class ModuleTools {
             r.register(greatsword);
         }
 
-        if((Config.toolKhopesh && Loader.isModLoaded("atum")) || (Config.atum_requirement_for_tools == false)) {
+        if((Config.toolKhopesh && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
             CurvedBlade = new ToolPart(Material.VALUE_Ingot*3);
             CurvedBlade.setRegistryName(TinkersReforged.MODID,"curved_blade");
             CurvedBlade.setTranslationKey(TinkersReforged.MODID + ".curved_blade");
