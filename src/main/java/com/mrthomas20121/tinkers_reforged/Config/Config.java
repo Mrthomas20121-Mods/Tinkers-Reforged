@@ -34,13 +34,20 @@ public class Config {
     public static boolean limestone = true;
     public static boolean khnumite = true;
 
+    // mystical world
+    public static boolean amethyst = true;
+
+    // roots
+    public static boolean runestone = true;
+
     // modules
     public static boolean thermal = true;
     public static boolean naturesaura = true;
     public static boolean ae2 = true;
     public static boolean astral = true;
-    public static boolean natura = true;
     public static boolean atum = true;
+    public static boolean mysticalworld = true;
+    public static boolean roots = true;
     public static boolean extreme = true;
 
     // tools
@@ -49,6 +56,7 @@ public class Config {
     public static boolean toolClub = true;
     public static boolean toolGreatsword = true;
     public static boolean toolKhopesh = true;
+    public static boolean toolRunedKnife = true;
     public static boolean atum_requirement_for_tools = true;
     /**
      * Read the Config
@@ -86,6 +94,17 @@ public class Config {
         // ae2
         certus_quartz = cfg.getBoolean("certus_quartz", category, certus_quartz, "Set to false to disable certus quartz material");
         fluix_crystal = cfg.getBoolean("fluix_crystal", category, fluix_crystal, "Set to false to disable fluix crystal material");
+
+        // atum 2
+        limestone = cfg.getBoolean("limestone", category, limestone, "Set to false to disable limestone material");
+        khnumite = cfg.getBoolean("khnumite", category, fluix_crystal, "Set to false to disable khnumite material");
+
+        // mystical world
+        amethyst = cfg.getBoolean("amethyst", category, amethyst, "Set to false to disable amethyst material");
+
+        // roots
+        runestone = cfg.getBoolean("runestone", category, runestone, "Set to false to disable runestone material");
+
     }
 
     private static void initModuleConfig(Configuration cfg, String category) {
@@ -94,6 +113,9 @@ public class Config {
         naturesaura = cfg.getBoolean("naturesaura", category, naturesaura, "Set to false to disable Natures Aura Module");
         ae2 = cfg.getBoolean("appliedenergistics2", category, ae2, "Set to false to disable Applied Energistic 2 Module");
         astral = cfg.getBoolean("astralsorcery", category, astral, "Set to false to disable Astral Sorcery Module");
+        atum = cfg.getBoolean("atum", category, atum, "Set to false to disable Atum Module");
+        mysticalworld = cfg.getBoolean("mysticalworld", category, mysticalworld, "Set to false to disable Mystical World Module");
+        roots = cfg.getBoolean("roots", category, roots, "Set to false to disable Astral Sorcery Module");
     }
     private static void initToolsConfig(Configuration cfg, String category) {
         cfg.addCustomCategoryComment(category, "Tools");
@@ -102,6 +124,7 @@ public class Config {
         toolClub = cfg.getBoolean("toolClub", category, toolClub, "Set to false to disable the weapon Club");
         toolGreatsword = cfg.getBoolean("toolGreatsword", category, toolGreatsword, "Set to false to disable the weapon Greatsword");
         toolKhopesh = cfg.getBoolean("toolKhopesh", category, toolKhopesh, "Set to false to disable the weapon Khopesh");
+        toolRunedKnife = cfg.getBoolean("toolRunedKnife", category, toolRunedKnife, "Set to false to disable the weapon Runed Knife");
         atum_requirement_for_tools = cfg.getBoolean("atum_requirement_for_tools", category, atum_requirement_for_tools, "Set to false to Remove the Atum Requirement for the tools");
     }
 }
