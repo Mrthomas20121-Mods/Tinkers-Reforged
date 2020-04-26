@@ -1,5 +1,4 @@
 {
-  "parent": "item/handheld",
   "textures": {
     "layer0": "tinkers_reforged:items/club/tough_tool_rod",
 	"layer1": "tinkers_reforged:items/club/club_head",

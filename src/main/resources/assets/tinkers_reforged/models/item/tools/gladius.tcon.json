@@ -1,5 +1,4 @@
 {
-  "parent": "item/handheld",
   "textures": {
     "layer0": "tinkers_reforged:items/gladius/tool_rod",
 	"layer1": "tinkers_reforged:items/gladius/blade",
