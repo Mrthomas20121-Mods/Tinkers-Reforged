@@ -18,27 +18,26 @@ public class Config {
     public static boolean enderium = true;
     public static boolean signalum = true;
     public static boolean lumium = true;
-
     // naturesaura
     public static boolean infused_iron = true;
     public static boolean ancient_wood = true;
-
     // appliedenergistic2
     public static boolean certus_quartz = true;
     public static boolean fluix_crystal = true;
-
     // astral
     public static boolean starmetal = true;
-
     // atum
     public static boolean limestone = true;
     public static boolean khnumite = true;
-
     // mystical world
     public static boolean amethyst = true;
-
     // roots
     public static boolean runestone = true;
+    // extreme reactor
+    public static boolean yellorium = true;
+    public static boolean cyanite = true;
+    public static boolean ludicrite = true;
+    public static boolean blutonium = true;
 
     // modules
     public static boolean thermal = true;
@@ -104,6 +103,11 @@ public class Config {
 
         // roots
         runestone = cfg.getBoolean("runestone", category, runestone, "Set to false to disable runestone material");
+
+        // extreme reactor
+        yellorium = cfg.getBoolean("yellorium", category, yellorium, "Set to false to disable yellorium material");
+        cyanite = cfg.getBoolean("cyanite", category, cyanite, "Set to false to disable cyanite material");
+        ludicrite = cfg.getBoolean("ludicrite", category, ludicrite, "Set to false to disable ludicrite material");
 
     }
 
