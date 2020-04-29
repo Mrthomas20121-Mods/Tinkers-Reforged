@@ -17,10 +17,14 @@ public class Modules {
     public static final ModuleMysticalWorld mysticalWorld = new ModuleMysticalWorld();
     public static final ModuleRoots roots = new ModuleRoots();
     public static final ModuleConArm conarm = new ModuleConArm();
+    public static final ModuleExtremeReactor extreme = new ModuleExtremeReactor();
+    public static final ModuleItems moduleItems = new ModuleItems();
     // tool module
     public static final ModuleTools tools = new ModuleTools();
 
     public static void preInit(FMLPreInitializationEvent event) {
+
+        moduleItems.preInit(event);
 
         if(Loader.isModLoaded("thermalfoundation") && Config.thermal) {
             thermal.preInit(event);
@@ -47,6 +51,10 @@ public class Modules {
         if(Loader.isModLoaded("roots") && Config.mysticalworld) {
             roots.preInit(event);
         }
+        if(Loader.isModLoaded("bigreactors") && Config.extreme) {
+            extreme.preInit(event);
+        }
+
 
         if(ModuleConArm.conarm) {
             conarm.preInit(event);
@@ -54,6 +62,8 @@ public class Modules {
     }
 
     public static void init(FMLInitializationEvent event) {
+        moduleItems.init(event);
+
         if(Loader.isModLoaded("thermalfoundation") && Config.thermal) {
             thermal.init(event);
         }
@@ -66,7 +76,7 @@ public class Modules {
         if(Loader.isModLoaded("astralsorcery") && Config.astral) {
             astral.init(event);
         }
-        if(Loader.isModLoaded("natura") && Config.astral) {
+        if(Loader.isModLoaded("natura")) {
             //Modules.natura.preInit(event);
         }
         if(Loader.isModLoaded("atum") && Config.atum) {
@@ -74,6 +84,9 @@ public class Modules {
         }
         if(Loader.isModLoaded("mysticalworld") && Config.mysticalworld) {
             mysticalWorld.init(event);
+        }
+        if(Loader.isModLoaded("bigreactors") && Config.extreme) {
+            extreme.init(event);
         }
 
         if(ModuleConArm.conarm) {
