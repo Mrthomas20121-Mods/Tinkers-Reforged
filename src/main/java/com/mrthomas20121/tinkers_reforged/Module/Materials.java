@@ -30,5 +30,16 @@ public class Materials {
     // mystical world
     public static final Material amethyst = new Material("reforged_amethyst", 0x832CAD);
 
+    // roots
     public static final Material runestone = new Material("reforged_runestone", 0x575761);
+
+    // extreme reactor
+    public static final Material yellorium = new Material("reforged_yellorium", 0xD9DB5C);
+    public static final Material cyanite = new Material("reforged_cyanite", 0x5CAFDB);
+    public static final Material ludicrite = new Material("reforged_ludicrite", 0xDD5EDD);
+    public static final Material blutonium = new Material("reforged_blutonium", 0x4642D6);
+
+    // tinkers'reforged
+    public static final Material lavium = new Material("reforged_lavium", 0x50A19F);
+    public static final Material qivium = new Material("reforged_qivium", 0xA1507B);
 }
