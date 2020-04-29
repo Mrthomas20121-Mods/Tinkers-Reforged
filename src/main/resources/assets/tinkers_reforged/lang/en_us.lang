@@ -1,5 +1,14 @@
 # items 
 
+item.tinkers_reforged.lavium_ingot.name=Lavium Ingot
+item.tinkers_reforged.lavium_dust.name=Lavium Dust
+item.tinkers_reforged.lavium_plate.name=Lavium Plate
+item.tinkers_reforged.lavium_gear.name=Lavium Gear
+item.tinkers_reforged.qivium_ingot.name=Qivium Ingot
+item.tinkers_reforged.qivium_dust.name=Qivium Dust
+item.tinkers_reforged.qivium_plate.name=Qivium Plate
+item.tinkers_reforged.qivium_gear.name=Qivium Gear
+
 # Gladius
 item.tinkers_reforged.gladius.name=Gladius
 item.tinkers_reforged.gladius.desc=A broadsword with a bit more damage and less attack speed but slow enemies.
@@ -21,8 +30,16 @@ item.tinkers_reforged.greatsword.name=Greatsword
 item.tinkers_reforged.greatsword.desc=A great and powerful sword.
 
 # runed_knife
-item.tinkers_reforged.runic_knife.name=Runed Knife
+item.tinkers_reforged.runic_knife.name=Runic Knife
 item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy blocks.
+
+# Fluids
+fluid.infused_iron.name=Molten Infused Iron
+fluid.blutonium.name=Molten Blutonium
+fluid.ludicrite.name=Molten Ludicrite
+fluid.qivium.name=Qivium
+fluid.lavium.name=Lavium
+
 
 # materials
 
@@ -52,6 +69,16 @@ material.reforged_amethyst.name=Amethyst
 # Roots
 material.reforged_runestone.name=Runestone
 
+# Extreme reactor
+material.reforged_yellorium.name=Yellorium
+material.reforged_blutonium.name=Blutonium
+material.reforged_ludicrite.name=Ludicrite
+material.reforged_cyanite.name=Ludicrite
+
+# custom mats
+material.reforged_lavium.name=Lavium
+material.reforged_qivium.name=Qivium
+
 # Traits and Modifiers
 modifier.signal.name=Signal
 modifier.signal.desc=§oDude, stop hitting those Creepers!§r
@@ -68,5 +95,14 @@ modifier.light.desc=§oYou are the light!
 modifier.astral.name=Astral
 modifier.astral.desc=§oI can see in the dark!§r
 
-modifier.infusing.name=Infusing
-modifier.infusing.desc=Deal bonus damage based on the aura in the chunk
+modifier.aura_infusion.name=Aura Infusion
+modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?
+
+modifier.radioactive.name=Radioactive
+modifier.radioactive.desc=§oBright and Dangerous!
+
+modifier.nuclear_waste.name=Nuclear Waste
+modifier.nuclear_waste.desc=§oLosing Durability give bad effects.
+
+modifier.powerless.name=Powerless
+modifier.powerless.desc=§oSlowly Lose Effectiveness against mob.
