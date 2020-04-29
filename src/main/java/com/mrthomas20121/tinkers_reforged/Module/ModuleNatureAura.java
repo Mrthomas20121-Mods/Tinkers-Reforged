@@ -1,32 +1,36 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
+import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
-import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.tconstruct.library.MaterialIntegration;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 import de.ellpeck.naturesaura.items.ModItems;
-import de.ellpeck.naturesaura.items.OreDict;
 import de.ellpeck.naturesaura.blocks.ModBlocks;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModuleNatureAura extends ModuleBase {
 
+    public RegistryLib infused_iron = new RegistryLib(Materials.infused_iron);
     public ModuleNatureAura() {
         Materials.mats.add(Materials.infused_iron);
+        infused_iron.setCastable(false);
+        infused_iron.setCastable(true);
+        infused_iron.registerMaterialTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
+        infused_iron.registerMaterialTrait(TinkerTraits.magnetic2);
+        infused_iron.registerHeadStats(200, 6.3f, 4f, HarvestLevels.IRON);
+        infused_iron.registerHandleStats(0.9f, 90);
+        infused_iron.registerExtraStats(70);
+        infused_iron.registerBowStats(1.0f, 1.5f, 3);
     }
 
     public static ItemStack stack(Block block) {
@@ -41,22 +45,11 @@ public class ModuleNatureAura extends ModuleBase {
             // compat to make it work
             OreDictionary.registerOre("ingotInfusedIron", ModItems.INFUSED_IRON);
             OreDictionary.registerOre("blockInfusedIron", ModBlocks.INFUSED_IRON);
-
-            TinkerRegistry.addMaterialStats(Materials.infused_iron,
-                    new HeadMaterialStats(220, 6.3f, 3.8f, HarvestLevels.IRON),
-                    new HandleMaterialStats(0.9f, 90),
-                    new ExtraMaterialStats(70),
-                    new BowMaterialStats(1.0f, 1.5f, 3.0f));
-
-            //Materials.infused_iron.setRepresentativeItem("ingotInfusedIron");
-            Materials.infused_iron.addItem(ModItems.INFUSED_IRON, 1, Material.VALUE_Ingot);
-            Materials.infused_iron.addItem(ModBlocks.INFUSED_IRON, Material.VALUE_Block);
-            Materials.infused_iron.setCraftable(true).setCastable(false);
-            Materials.infused_iron.addTrait(Traits.infusing, MaterialTypes.HEAD);
-            Materials.infused_iron.addTrait(TinkerTraits.magnetic2, MaterialTypes.HEAD);
-            Materials.infused_iron.addTrait(TinkerTraits.magnetic);
-            MaterialIntegration infused_iron_mi = new MaterialIntegration(Materials.infused_iron).setRepresentativeItem("ingotInfusedIron");
-            TinkerRegistry.integrate(infused_iron_mi).preInit();
+            FluidRegistry.registerFluid(ModuleFluids.infused_iron);
+            FluidRegistry.addBucketForFluid(ModuleFluids.infused_iron);
+            infused_iron.setFluid(ModuleFluids.infused_iron);
+            infused_iron.addCommonItems("InfusedIron");
+           infused_iron.registerPreInit("InfusedIron", ModuleFluids.infused_iron);
         }
 
         if(Config.ancient_wood) {
@@ -75,14 +68,13 @@ public class ModuleNatureAura extends ModuleBase {
             Materials.ancient_wood.addItem(ModBlocks.ANCIENT_SLAB, Material.VALUE_Ingot/2);
             Materials.ancient_wood.setCraftable(true).setCastable(false);
             Materials.ancient_wood.addTrait(TinkerTraits.ecological);
-            Materials.ancient_wood.addTrait(Traits.infusing,  MaterialTypes.HEAD);
             MaterialIntegration ancient_wood_mi = new MaterialIntegration(Materials.ancient_wood).setRepresentativeItem("plankAncient");
             TinkerRegistry.integrate(ancient_wood_mi).preInit();
         }
     }
     @Override
     public void init(FMLInitializationEvent e) {
-
+        this.registerDefaultMelting("InfusedIron", ModuleFluids.infused_iron);
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) { }

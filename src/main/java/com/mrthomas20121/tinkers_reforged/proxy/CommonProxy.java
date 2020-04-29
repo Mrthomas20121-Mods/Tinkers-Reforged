@@ -2,7 +2,9 @@ package com.mrthomas20121.tinkers_reforged.proxy;
 
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
+import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
