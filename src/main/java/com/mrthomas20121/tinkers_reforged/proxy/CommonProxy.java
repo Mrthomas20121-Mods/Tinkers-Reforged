@@ -4,6 +4,8 @@ import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
 import com.mrthomas20121.tinkers_reforged.Module.ModuleConArm;
 import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
+import com.mrthomas20121.tinkers_reforged.Module.Modules;
+
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.config.Configuration;
@@ -32,7 +34,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
-        if(ModuleConArm.conarm) {
+        if(Modules.conarm != null) {
             Modifiers.init(e);
         }
     }

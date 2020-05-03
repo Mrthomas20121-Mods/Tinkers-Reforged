@@ -15,7 +15,7 @@ public class Modules {
     public static final ModuleAtum atum = new ModuleAtum();
     public static final ModuleMysticalWorld mysticalWorld = new ModuleMysticalWorld();
     public static final ModuleRoots roots = new ModuleRoots();
-    public static final ModuleConArm conarm = new ModuleConArm();
+    public static ModuleConArm conarm = null;
     public static final ModuleExtremeReactor extreme = new ModuleExtremeReactor();
     public static final ModuleItems moduleItems = new ModuleItems();
     // tool module
@@ -51,8 +51,9 @@ public class Modules {
             extreme.preInit(event);
         }
 
-
-        if(ModuleConArm.conarm) {
+        
+        if (Loader.isModLoaded("conarm")) {
+            conarm = new ModuleConArm();
             conarm.preInit(event);
         }
     }
@@ -82,7 +83,7 @@ public class Modules {
             extreme.init(event);
         }
 
-        if(ModuleConArm.conarm) {
+        if (Loader.isModLoaded("conarm")) {
             conarm.init(event);
         }
     }
