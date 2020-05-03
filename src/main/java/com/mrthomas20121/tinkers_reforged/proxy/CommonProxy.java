@@ -36,11 +36,7 @@ public class CommonProxy {
 
     public void postInit(FMLPostInitializationEvent e) { }
 
-    public <T extends Item & IToolPart> void registerToolPartModel(T part) {
-        ModelRegisterUtil.registerPartModel(part);
-    }
+    public <T extends Item & IToolPart> void registerToolPartModel(T part) { }
 
-    public void registerToolModel(ToolCore tc) {
-        ModelRegisterUtil.registerToolModel(tc);
-    }
+    public void registerToolModel(ToolCore tc) { }
 }
