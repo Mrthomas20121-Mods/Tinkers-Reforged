@@ -9,7 +9,6 @@ import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod;
@@ -20,7 +19,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
+import slimeknights.tconstruct.tools.TinkerTraits;
 
 import java.util.ArrayList;
 
@@ -36,17 +37,29 @@ public class ModuleItems extends ModuleBase {
     public static ItemGear qiviumGear = new ItemGear(TinkersReforged.MODID, "qivium");
 
     public RegistryLib lavium_mat = new RegistryLib(Materials.lavium);
+    public RegistryLib qivium_mat = new RegistryLib(Materials.qivium);
 
     public ModuleItems() {
-        lavium_mat.addCommonItems("ingotLavium");
+        lavium_mat.addCommonItems("Lavium");
         lavium_mat.setCastable(true);
         lavium_mat.setCraftable(false);
-        lavium_mat.registerMaterialTrait(Traits.fortune);
-        lavium_mat.registerHeadStats(1000, 13, 5.1f, HarvestLevels.COBALT);
+        lavium_mat.registerMaterialTrait(Traits.MOB_DRAIN);
+        lavium_mat.registerMaterialTrait(TinkerTraits.momentum, MaterialTypes.HEAD);
+        lavium_mat.registerHeadStats(1000, 14, 5.1f, HarvestLevels.COBALT);
         lavium_mat.registerHandleStats(0.9f, 120);
         lavium_mat.registerExtraStats(400);
         lavium_mat.addIngotItem(laviumIngot);
         Materials.mats.add(lavium_mat.getMat());
+
+        qivium_mat.addCommonItems("Qivium");
+        qivium_mat.setCraftable(false).setCastable(true);
+        qivium_mat.registerMaterialTrait(Traits.fireman);
+        qivium_mat.registerMaterialTrait(TinkerTraits.momentum, MaterialTypes.HEAD);
+        qivium_mat.registerHeadStats(1000, 11, 7f, HarvestLevels.COBALT);
+        qivium_mat.registerHandleStats(0.9f, 120);
+        qivium_mat.registerExtraStats(350);
+        qivium_mat.addIngotItem(qiviumIngot);
+        Materials.mats.add(qivium_mat.getMat());
     }
 
     public void preInit(FMLPreInitializationEvent e) {
@@ -56,6 +69,8 @@ public class ModuleItems extends ModuleBase {
         FluidRegistry.addBucketForFluid(ModuleFluids.lavium);
         lavium_mat.setFluid(ModuleFluids.lavium);
         lavium_mat.registerPreInit("Lavium", ModuleFluids.lavium);
+        qivium_mat.setFluid(ModuleFluids.qivium);
+        qivium_mat.registerPreInit("Qivium", ModuleFluids.qivium);
     }
     public void init(FMLInitializationEvent e) {
 
@@ -66,7 +81,6 @@ public class ModuleItems extends ModuleBase {
         FluidStack laviumStack = new FluidStack(ModuleFluids.lavium, 144);
         FluidStack dirtStack = new FluidStack(FluidRegistry.getFluid("dirt"), 288);
         FluidStack qiviumStack = new FluidStack(ModuleFluids.qivium, 144);
-
         TinkerRegistry.registerAlloy(laviumStack, cobalt, dirtStack, blueslime);
         TinkerRegistry.registerAlloy(qiviumStack, ardite, dirtStack, purpleslime);
         this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
