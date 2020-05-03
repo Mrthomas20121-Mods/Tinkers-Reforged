@@ -100,6 +100,12 @@
 		"ludicrite": [{
             "custom": { "fluid": "ludicrite" }
         }],
+		"yellorium": [{
+            "custom": { "fluid": "yellorium" }
+        }],
+		"cyanite": [{
+            "custom": { "fluid": "cyanite" }
+        }],
 		"lavium": [{
             "custom": { "fluid": "lavium" }
         }],

@@ -12,7 +12,6 @@ public class Modules {
     public static final ModuleNatureAura natureAura = new ModuleNatureAura();
     public static final ModuleAe ae = new ModuleAe();
     public static final ModuleAstralSorcery astral = new ModuleAstralSorcery();
-    public static final ModuleNatura natura = new ModuleNatura();
     public static final ModuleAtum atum = new ModuleAtum();
     public static final ModuleMysticalWorld mysticalWorld = new ModuleMysticalWorld();
     public static final ModuleRoots roots = new ModuleRoots();
@@ -37,9 +36,6 @@ public class Modules {
         }
         if(Loader.isModLoaded("astralsorcery") && Config.astral) {
             astral.preInit(event);
-        }
-        if(Loader.isModLoaded("natura") && Config.astral) {
-            //natura.preInit(event);
         }
         if(Loader.isModLoaded("atum") && Config.atum) {
             atum.preInit(event);
@@ -75,9 +71,6 @@ public class Modules {
         }
         if(Loader.isModLoaded("astralsorcery") && Config.astral) {
             astral.init(event);
-        }
-        if(Loader.isModLoaded("natura")) {
-            //Modules.natura.preInit(event);
         }
         if(Loader.isModLoaded("atum") && Config.atum) {
             atum.init(event);

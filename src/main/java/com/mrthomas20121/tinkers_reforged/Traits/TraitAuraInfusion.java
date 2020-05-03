@@ -38,6 +38,21 @@ public class TraitAuraInfusion extends AbstractTrait {
     }
 
     @Override
+    public void onArmorTick(ItemStack tool, World world, EntityPlayer player) {
+        if(!world.isRemote && ToolHelper.getCurrentDurability(tool) < ToolHelper.getMaxDurability(tool)) {
+            for(ItemStack item : player.getEquipmentAndArmor()) {
+                if(item != tool) {
+                    IAuraChunk chunk = IAuraChunk.getAuraChunk(world, player.getPosition());
+                    if(NaturesAuraAPI.instance().getAuraInArea(world, player.getPosition(), 1) !=0) {
+                        chunk.drainAura(player.getPosition(), 1000);
+                        ToolHelper.healTool(tool, 1, (EntityPlayer) player);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
     public int onToolDamage(ItemStack tool, int damage, int newDamage, EntityLivingBase entity) {
         if (TagUtil.getTagSafe(tool).getBoolean(ModReinforced.TAG_UNBREAKABLE)) {
             return 0;

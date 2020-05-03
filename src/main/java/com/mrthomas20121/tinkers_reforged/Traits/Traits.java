@@ -10,5 +10,6 @@ public class Traits {
     public static final TraitAuraInfusion AURA_INFUSION = new TraitAuraInfusion();
     public static final TraitRadioactive radioactive = new TraitRadioactive();
     public static final TraitNuclearWaste nuclearwaste = new TraitNuclearWaste();
-    public static final TraitPowerless fortune = new TraitPowerless();
+    public static final TraitLifeSteal MOB_DRAIN = new TraitLifeSteal();
+    public static final TraitFireman fireman = new TraitFireman();
 }

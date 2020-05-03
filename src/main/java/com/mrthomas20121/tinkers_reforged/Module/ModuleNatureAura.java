@@ -2,6 +2,7 @@ package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
+import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -49,7 +50,7 @@ public class ModuleNatureAura extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.infused_iron);
             infused_iron.setFluid(ModuleFluids.infused_iron);
             infused_iron.addCommonItems("InfusedIron");
-           infused_iron.registerPreInit("InfusedIron", ModuleFluids.infused_iron);
+            infused_iron.registerPreInit("InfusedIron", ModuleFluids.infused_iron);
         }
 
         if(Config.ancient_wood) {

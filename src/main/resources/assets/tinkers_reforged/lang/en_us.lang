@@ -98,11 +98,14 @@ modifier.astral.desc=§oI can see in the dark!§r
 modifier.aura_infusion.name=Aura Infusion
 modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?
 
+modifier.fire_man.name=Fire Man!
+modifier.fire_man.desc=§oCrits set the target on fire.
+
 modifier.radioactive.name=Radioactive
 modifier.radioactive.desc=§oBright and Dangerous!
 
 modifier.nuclear_waste.name=Nuclear Waste
 modifier.nuclear_waste.desc=§oLosing Durability give bad effects.
 
-modifier.powerless.name=Powerless
-modifier.powerless.desc=§oSlowly Lose Effectiveness against mob.
+modifier.life_steal.name=Life Steal
+modifier.life_steal.desc=§oSteal Heart from mobs.
