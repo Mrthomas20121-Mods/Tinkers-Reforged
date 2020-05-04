@@ -1,5 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
+import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fluids.Fluid;
@@ -23,11 +24,48 @@ public class ModuleThermal extends ModuleBase {
     private String lumium = "Lumium";
     private String enderium = "Enderium";
     private String signalum = "Signalum";
+    private String plat = "Platinum";
+    private String iri = "Iridium";
+    private String invarStr = "Invar";
+    private String alu = "Aluminum";
+    public RegistryLib platinum = new RegistryLib(Materials.platinum);
+    public RegistryLib iridium = new RegistryLib(Materials.iridium);
+    public RegistryLib invar = new RegistryLib(Materials.invar);
+    public RegistryLib aluminum = new RegistryLib(Materials.aluminum);
 
     public ModuleThermal() {
         Materials.mats.add(Materials.lumium);
         Materials.mats.add(Materials.enderium);
         Materials.mats.add(Materials.signalum);
+
+        platinum.setCraftable(false).setCastable(true);
+        platinum.registerMaterialTrait(TinkerTraits.dense);
+        platinum.registerHeadStats(500, 7.0f, 6.5f, HarvestLevels.OBSIDIAN);
+        platinum.registerHandleStats(0.9f, 90);
+        platinum.registerExtraStats(10);
+
+        iridium.setCastable(true).setCraftable(false);
+        iridium.registerHeadStats(500, 7.1f, 6.4f, HarvestLevels.OBSIDIAN);
+        iridium.registerHandleStats(1f, 90);
+        iridium.registerExtraStats(15);
+        iridium.registerMaterialTrait(TinkerTraits.dense);
+
+        invar.setCastable(true).setCraftable(false);
+        invar.registerHeadStats(500, 5.7f, 6.3f, HarvestLevels.OBSIDIAN);
+        invar.registerHandleStats(1f, 90);
+        invar.registerExtraStats(15);
+        invar.registerMaterialTrait(TinkerTraits.hellish);
+
+        aluminum.setCastable(true).setCraftable(false);
+        aluminum.registerHeadStats(450, 6.1f, 6f, HarvestLevels.OBSIDIAN);
+        aluminum.registerHandleStats(1f, 70);
+        aluminum.registerExtraStats(30);
+        aluminum.registerMaterialTrait(TinkerTraits.dense);
+
+        Materials.mats.add(platinum.getMat());
+        Materials.mats.add(iridium.getMat());
+        Materials.mats.add(invar.getMat());
+        Materials.mats.add(aluminum.getMat());
     }
     @Override
     public void preInit(FMLPreInitializationEvent e) {
@@ -80,6 +118,22 @@ public class ModuleThermal extends ModuleBase {
             MaterialIntegration lumiummi = new MaterialIntegration(Materials.lumium, lumiumF).setRepresentativeItem("ingot" + lumium);
             TinkerRegistry.integrate(lumiummi).toolforge().preInit();
         }
+        if(Config.platinum) {
+            platinum.addCommonItems(plat);
+            platinum.registerPreInit("Platinum", FluidRegistry.getFluid("platinum"));
+        }
+        if(Config.iridium) {
+            iridium.addCommonItems(iri);
+            iridium.registerPreInit(iri, FluidRegistry.getFluid(iri.toLowerCase()));
+        }
+        if(Config.invar) {
+            invar.addCommonItems(invarStr);
+            invar.registerPreInit(invarStr, FluidRegistry.getFluid(invarStr.toLowerCase()));
+        }
+        if(Config.aluminum) {
+            aluminum.addCommonItems(alu);
+            aluminum.registerPreInit(alu, FluidRegistry.getFluid(alu.toLowerCase()));
+        }
     }
     @Override
     public void init(FMLInitializationEvent e) {
@@ -96,6 +150,10 @@ public class ModuleThermal extends ModuleBase {
         if(Config.lumium) {
             Materials.lumium.setFluid(FluidRegistry.getFluid((lumium.toLowerCase())));
             Materials.lumium.setCastable(true).setCraftable(false);
+        }
+        if(Config.iridium) {
+            iridium.registerInitFluid(FluidRegistry.getFluid((iri.toLowerCase())), iri);
+            iridium.setCraftable(false).setCastable(true);
         }
     }
     @Override

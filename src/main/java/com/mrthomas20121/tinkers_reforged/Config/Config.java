@@ -18,6 +18,10 @@ public class Config {
     public static boolean enderium = true;
     public static boolean signalum = true;
     public static boolean lumium = true;
+    public static boolean platinum = true;
+    public static boolean invar = true;
+    public static boolean iridium = true;
+    public static boolean aluminum = true;
     // naturesaura
     public static boolean infused_iron = true;
     public static boolean ancient_wood = true;
@@ -82,6 +86,10 @@ public class Config {
         enderium = cfg.getBoolean("enderium", category, enderium, "Set to false to disable enderium material");
         signalum = cfg.getBoolean("signalum", category, signalum, "Set to false to disable signalum material");
         lumium = cfg.getBoolean("lumium", category, lumium, "Set to false to disable lumium material");
+        platinum = cfg.getBoolean("platinum", category, platinum, "Set to false to disable platinum material");
+        iridium = cfg.getBoolean("iridium", category, iridium, "Set to false to disable iridium material");
+        invar = cfg.getBoolean("invar", category, invar, "Set to false to disable invar material");
+        aluminum = cfg.getBoolean("aluminum", category, aluminum, "Set to false to disable aluminum material");
 
         // naturesaura
         infused_iron = cfg.getBoolean("infused_iron", category, infused_iron, "Set to false to disable infused iron material");

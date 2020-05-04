@@ -11,6 +11,10 @@ public class Materials {
     public static final Material enderium = new Material("reforged_enderium", 0x006C5F);
     public static final Material signalum = new Material("reforged_signalum", 0xA32500);
     public static final Material lumium = new Material("reforged_lumium", 0xEAD981);
+    public static final Material platinum = new Material("reforged_platinum", 0x85D1F2);
+    public static final Material invar = new Material("reforged_invar", 0xA8AFAB);
+    public static final Material iridium = new Material("reforged_iridium", 0xDBDAEF);
+    public static final Material aluminum = new Material("reforged_aluminum", 0xC4C6D3);
 
     // naturesaura Materials
     public static final Material infused_iron = new Material("reforged_infused_iron", 0x34BA3D);
