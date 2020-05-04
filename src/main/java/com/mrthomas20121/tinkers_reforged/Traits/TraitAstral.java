@@ -15,7 +15,7 @@ public class TraitAstral extends AbstractTrait {
 
     @Override
     public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
-        if(entity.isEntityAlive()) {
+        if(entity.isEntityAlive() && isSelected) {
             if(entity instanceof EntityPlayer) {
                 if(((EntityPlayer) entity).world.getWorldTime() >= 13000 && this.isToolWithTrait(((EntityPlayer) entity).getHeldItemMainhand())) {
                     ((EntityPlayer) entity).addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 500));

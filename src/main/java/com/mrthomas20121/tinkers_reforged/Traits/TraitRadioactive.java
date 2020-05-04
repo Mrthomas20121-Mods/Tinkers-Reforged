@@ -22,13 +22,12 @@ public class TraitRadioactive extends AbstractTrait {
     public void onUpdate(ItemStack tool, World world, Entity entity, int itemSlot, boolean isSelected) {
         if(entity.isEntityAlive()) {
             if(entity instanceof EntityPlayer) {
-                if(this.isToolWithTrait(tool) && !((EntityPlayer) entity).getHeldItemMainhand().isEmpty()) {
+                if(this.isToolWithTrait(tool) && isSelected) {
                     List<Entity> entities = world.getLoadedEntityList();
                     for(Entity ent : entities) {
-                        if(ent instanceof EntityLivingBase) {
+                        if(ent instanceof EntityLivingBase && !(ent instanceof EntityPlayer)) {
                             ((EntityLivingBase) ent).addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 100, 1));
-                            ((EntityLivingBase) ent).addPotionEffect(new PotionEffect(MobEffects.POISON, 100, 1));
-                            ((EntityLivingBase) ent).addPotionEffect(new PotionEffect(MobEffects.WITHER, 10, 1));
+                            ((EntityLivingBase) ent).addPotionEffect(new PotionEffect(MobEffects.POISON, 200, 1));
                         }
                     }
                 }
