@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -32,7 +33,7 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
-        if(ModuleConArm.conarm) {
+        if(Loader.isModLoaded("conarm")) {
             Modifiers.init(e);
         }
     }

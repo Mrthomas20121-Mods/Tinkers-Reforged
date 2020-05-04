@@ -13,9 +13,9 @@ public class Modifiers {
     public static void init(FMLInitializationEvent e) {
         if(Loader.isModLoaded("atum")) {
             RecipeMatchHolder.addItem(Modifiers.cloth, AtumItems.WANDERER_HELMET);
-            cloth.addItem("clothLinen", 5, 5);
-            cloth.addItem(AtumItems.LINEN_CLOTH, 5, 5);
-            TinkerRegistry.registerModifier(Modifiers.cloth);
+            //cloth.addItem("clothLinen", 5, 5);
+            //cloth.addItem(AtumItems.LINEN_CLOTH, 5, 5);
+            //TinkerRegistry.registerModifier(Modifiers.cloth);
         }
     }
 }

@@ -15,9 +15,9 @@ public class Modules {
     public static final ModuleAtum atum = new ModuleAtum();
     public static final ModuleMysticalWorld mysticalWorld = new ModuleMysticalWorld();
     public static final ModuleRoots roots = new ModuleRoots();
-    public static final ModuleConArm conarm = new ModuleConArm();
     public static final ModuleExtremeReactor extreme = new ModuleExtremeReactor();
     public static final ModuleItems moduleItems = new ModuleItems();
+    public static ModuleConArm conarm = null;
     // tool module
     public static final ModuleTools tools = new ModuleTools();
 
@@ -51,8 +51,8 @@ public class Modules {
             extreme.preInit(event);
         }
 
-
-        if(ModuleConArm.conarm) {
+        if(Loader.isModLoaded("conarm")) {
+            conarm = new ModuleConArm();
             conarm.preInit(event);
         }
     }
@@ -81,15 +81,11 @@ public class Modules {
         if(Loader.isModLoaded("bigreactors") && Config.extreme) {
             extreme.init(event);
         }
-
-        if(ModuleConArm.conarm) {
-            conarm.init(event);
-        }
     }
 
     public static void postInit(FMLPostInitializationEvent event) {
         if(Loader.isModLoaded("atum") && Config.atum) {
-            Modules.atum.postInit(event);
+            atum.postInit(event);
         }
     }
 }
