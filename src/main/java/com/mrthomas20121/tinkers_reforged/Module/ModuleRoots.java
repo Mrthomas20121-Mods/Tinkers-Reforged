@@ -18,7 +18,7 @@ public class ModuleRoots extends ModuleBase {
     public ModuleRoots() {
         runestone.setCraftable(true);
         runestone.setCastable(false);
-        runestone.addCommonItems("Blutonium");
+        runestone.addCommonItems("runestone");
         runestone.registerHeadStats(200, 4f, 4f, HarvestLevels.STONE);
         runestone.registerHandleStats(1f, 100);
         runestone.registerExtraStats(-10);
