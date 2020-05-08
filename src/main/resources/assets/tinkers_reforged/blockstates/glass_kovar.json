@@ -1,0 +1,14 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"kovar": {
+			"textures": {
+					"all": "tinkers_reforged:blocks/glass_kovar"
+			}
+		}
+	}
+}

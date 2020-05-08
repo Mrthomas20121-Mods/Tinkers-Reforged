@@ -111,6 +111,12 @@
         }],
 		"qivium": [{
             "custom": { "fluid": "qivium" }
+        }],
+		"starmetal": [{
+            "custom": { "fluid": "starmetal" }
+        }],
+		"molten_of_the_sky": [{
+            "custom": { "fluid": "molten_of_the_sky" }
         }]
     }
 }
