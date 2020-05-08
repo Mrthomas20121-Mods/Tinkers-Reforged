@@ -15,7 +15,7 @@ import java.util.List;
 
 public class TraitRadioactive extends AbstractTrait {
     public TraitRadioactive() {
-        super("radioactive", 0x8CFFAC);
+        super("reforged_radioactive", 0x8CFFAC);
     }
 
     @Override

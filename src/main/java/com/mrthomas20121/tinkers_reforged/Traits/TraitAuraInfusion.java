@@ -13,7 +13,6 @@ import slimeknights.tconstruct.library.utils.ToolHelper;
 import slimeknights.tconstruct.tools.modifiers.ModReinforced;
 
 public class TraitAuraInfusion extends AbstractTrait {
-    private int chance = 50;
 
     public TraitAuraInfusion() {
         super("aura_infusion", 0xFFFFFFF);
@@ -43,7 +42,7 @@ public class TraitAuraInfusion extends AbstractTrait {
                     IAuraChunk chunk = IAuraChunk.getAuraChunk(world, player.getPosition());
                     if(NaturesAuraAPI.instance().getAuraInArea(world, player.getPosition(), 1) !=0) {
                         chunk.drainAura(player.getPosition(), 1000);
-                        ToolHelper.healTool(tool, 1, (EntityPlayer) player);
+                        ToolHelper.healTool(tool, 1, player);
                     }
                 }
             }
