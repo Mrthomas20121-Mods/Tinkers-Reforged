@@ -79,7 +79,7 @@ public class ModuleExtremeReactor extends ModuleBase {
         }
         if(Config.cyanite) {
             cyanite.setFluid(BrFluids.fluidCyanite);
-            cyanite.registerPreInit("Cyanite", BrFluids.fluidCyanite);
+            cyanite.registerPreInit("ingotCyanite", BrFluids.fluidCyanite);
         }
     }
     @Override

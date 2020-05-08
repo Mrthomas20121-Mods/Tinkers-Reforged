@@ -1,6 +1,7 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.tinkers_reforged.Config.Config;
+import com.mrthomas20121.tinkers_reforged.Config.ConfigModules;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Tools.*;
 import net.minecraft.item.Item;
@@ -43,33 +44,38 @@ public class ModuleTools {
 
     }
     public void init(FMLInitializationEvent e) {
-        // gladius
-        if(Config.toolGladius) {
-            TinkerRegistry.registerToolForgeCrafting(gladius);
-            registerDefaultForgeRecipe(gladius, 3);
+        if(Config.tools) {
+            // gladius
+            if(Config.toolGladius) {
+                TinkerRegistry.registerToolForgeCrafting(gladius);
+                registerDefaultForgeRecipe(gladius, 3);
+            }
+            // knife
+            if(Config.toolRunedKnife && Loader.isModLoaded("roots")) {
+                TinkerRegistry.registerToolForgeCrafting(knife);
+                registerDefaultForgeRecipe(knife, 3);
+            }
+            // club
+            if((Config.toolClub && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
+                TinkerRegistry.registerToolForgeCrafting(club);
+                registerStencil(clubHead);
+                registerDefaultForgeRecipe(club, 2);
+            }
+            // greatsword
+            if((Config.toolGreatsword && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
+                TinkerRegistry.registerToolForgeCrafting(greatsword);
+                registerStencil(greatBlade);
+                registerDefaultForgeRecipe(greatsword, 3);
+            }
+            // khopesh
+            if((Config.toolKhopesh && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
+                TinkerRegistry.registerToolForgeCrafting(khopesh);
+                registerStencil(CurvedBlade);
+                registerDefaultForgeRecipe(khopesh, 3);
+            }
         }
-        // knife
-        if(Config.toolRunedKnife && Loader.isModLoaded("roots")) {
-            TinkerRegistry.registerToolForgeCrafting(knife);
-            registerDefaultForgeRecipe(knife, 3);
-        }
-        // club
-        if((Config.toolClub && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
-            TinkerRegistry.registerToolForgeCrafting(club);
-            registerStencil(clubHead);
-            registerDefaultForgeRecipe(club, 2);
-        }
-        // greatsword
-        if((Config.toolGreatsword && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
-            TinkerRegistry.registerToolForgeCrafting(greatsword);
-            registerStencil(greatBlade);
-            registerDefaultForgeRecipe(greatsword, 3);
-        }
-        // khopesh
-        if((Config.toolKhopesh && Loader.isModLoaded("atum")) || !(Config.atum_requirement_for_tools)) {
-            TinkerRegistry.registerToolForgeCrafting(khopesh);
-            registerStencil(CurvedBlade);
-            registerDefaultForgeRecipe(khopesh, 3);
+        else {
+            TinkersReforged.logger.info("Tool module is disabled");
         }
     }
 
@@ -78,11 +84,11 @@ public class ModuleTools {
     @SubscribeEvent
     public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         IForgeRegistry<IRecipe> registry = event.getRegistry();
-        if(Config.naturesaura && Loader.isModLoaded("naturesaura")) {
+        if(ConfigModules.naturesaura && Loader.isModLoaded("naturesaura")) {
             TinkerTools.registerToolForgeBlock(registry, "blockInfusedIron");
         }
 
-        if(Config.thermal && Loader.isModLoaded("thermalfoundation")) {
+        if(ConfigModules.thermal && Loader.isModLoaded("thermalfoundation")) {
             TinkerTools.registerToolForgeBlock(registry, "blockConstantan");
             TinkerTools.registerToolForgeBlock(registry, "blockLumium");
             TinkerTools.registerToolForgeBlock(registry, "blockSignalum");
