@@ -28,7 +28,7 @@ public class CommonProxy {
     public static Configuration config;
     public void preInit(FMLPreInitializationEvent e) {
         File directory = e.getModConfigurationDirectory();
-        config = new Configuration(new File(directory.getPath(), "tinkers_reforged.cfg"));
+        config = new Configuration(new File(directory.getPath(), "TinkersReforged.cfg"));
         Config.readConfig();
     }
 
