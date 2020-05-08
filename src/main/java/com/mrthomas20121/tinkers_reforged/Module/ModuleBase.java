@@ -21,19 +21,18 @@ public abstract class ModuleBase {
     protected void registerDefaultMelting(String ore, Fluid fluid) {
         TinkerRegistry.registerMelting("ingot"+ore, fluid,  Material.VALUE_Ingot);
         TinkerRegistry.registerMelting("dust"+ore, fluid,  Material.VALUE_Ingot);
-        TinkerRegistry.registerMelting("plate"+ore, fluid,  Material.VALUE_Ingot);
-        TinkerRegistry.registerMelting("gear"+ore, fluid,  Material.VALUE_Ingot*4);
         TinkerRegistry.registerMelting("block"+ore, fluid,  Material.VALUE_Block);
+        TinkerRegistry.registerMelting("ore"+ore, fluid,  Material.VALUE_Ore());
         TinkerRegistry.registerTableCasting(OreDictionary.getOres("ingot"+ore).get(0), castIngot, fluid, Material.VALUE_Ingot);
     }
 
-    protected void registerDefaultMelting(String ore, Fluid fluid, boolean yes) {
+    protected void registerDefaultMelting(String ore, Fluid fluid, boolean cast) {
         TinkerRegistry.registerMelting("ingot"+ore, fluid,  Material.VALUE_Ingot);
         TinkerRegistry.registerMelting("dust"+ore, fluid,  Material.VALUE_Ingot);
         TinkerRegistry.registerMelting("plate"+ore, fluid,  Material.VALUE_Ingot);
         TinkerRegistry.registerMelting("gear"+ore, fluid,  Material.VALUE_Ingot*4);
         TinkerRegistry.registerMelting("block"+ore, fluid,  Material.VALUE_Block);
-        if(yes) {
+        if(cast) {
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("ingot"+ore).get(0), castIngot, fluid, Material.VALUE_Ingot);
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("plate"+ore).get(0), castPlate, fluid, Material.VALUE_Ingot);
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("gear"+ore).get(0), castGear, fluid, Material.VALUE_Ingot*4);

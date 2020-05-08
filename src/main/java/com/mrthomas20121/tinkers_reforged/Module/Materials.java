@@ -19,6 +19,7 @@ public class Materials {
     // naturesaura Materials
     public static final Material infused_iron = new Material("reforged_infused_iron", 0x34BA3D);
     public static final Material ancient_wood = new Material("reforged_ancient_wood", 0xA06686);
+    public static  final Material ingot_of_the_sky = new Material("reforged_sky", 0x9BDFFF);
 
     // Applied Energistic 2
     public static final Material certus_quartz = new Material("reforged_certus_quartz", 0xBADBFF);
@@ -43,7 +44,22 @@ public class Materials {
     public static final Material ludicrite = new Material("reforged_ludicrite", 0xDD5EDD);
     public static final Material blutonium = new Material("reforged_blutonium", 0x4642D6);
 
+    // mekanism
+    public static final Material osmium = new Material("reforged_osmium", 0x7F8EB2);
+    public static final Material refined_obsidian = new Material("reforged_obsidian", 0x463763);
+    public static final Material refined_glowstone = new Material("reforged_glowstone", 0xEAC829);
+    public static final Material hdpe_sheet = new Material("reforged_hdpesheet", 0xF9F9F4);
+
+    // blueskies
+    public static final Material ventium = new Material("reforged_ventium", 0xC31A1F);
+    public static final Material horizonite = new Material("reforged_horizonite", 0xF27B2B);
+    public static final Material pyrope = new Material("reforged_pyrope", 0xDA283E);
+    public static final Material turquoise = new Material("reforged_turquoise", 0x5AE7D1);
+    public static final Material charoite = new Material("reforged_charoite", 0xB78CDF);
+    public static final Material diopside = new Material("reforged_diopside", 0x4CE849);
+
     // tinkers'reforged
     public static final Material lavium = new Material("reforged_lavium", 0x50A19F);
     public static final Material qivium = new Material("reforged_qivium", 0xA1507B);
+    public static final Material kovar = new Material("reforged_kovar", 0xA1507B);
 }

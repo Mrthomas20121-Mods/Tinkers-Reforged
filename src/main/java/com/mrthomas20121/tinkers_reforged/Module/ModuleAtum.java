@@ -1,5 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
+import com.mrthomas20121.libs.OredictHelper;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
@@ -65,19 +66,6 @@ public class ModuleAtum extends ModuleBase {
 
     public void postInit(FMLPostInitializationEvent e) {
         // compat to make limestone work
-        removeOredict(new ItemStack(AtumBlocks.LIMESTONE), "stone");
-    }
-    private ItemStack removeOredict(ItemStack item, String oredict) {
-        ItemStack result = ItemStack.EMPTY;
-        for (ItemStack itemstack : OreDictionary.getOres(oredict)) {
-
-            if(itemstack.getItem().getRegistryName().equals(item.getItem().getRegistryName())) {
-                result = itemstack;
-            }
-        }
-        if(!result.isEmpty()) {
-            OreDictionary.getOres(oredict, false).remove(result);
-        }
-        return result;
+        OredictHelper.removeOredict(new ItemStack(AtumBlocks.LIMESTONE), "stone");
     }
 }
