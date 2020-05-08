@@ -35,11 +35,21 @@ item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy block
 
 # Fluids
 fluid.infused_iron.name=Molten Infused Iron
+fluid.molten_of_the_sky.name=Molten of the sky
+fluid.starmetal.name=Starmetal
 fluid.blutonium.name=Molten Blutonium
 fluid.ludicrite.name=Molten Ludicrite
-fluid.qivium.name=Qivium
-fluid.lavium.name=Lavium
+fluid.qivium.name=Molten Qivium
+fluid.lavium.name=Molten Lavium
+fluid.osmium.name=Molten Osmium
+fluid.refined_obsidian.name=Molten Refined Obsidian
+fluid.refined_glowstone.name=Molten Refined Glowstone
+fluid.ventium.name=Molten Ventium
+fluid.horizonite.name=Molten Horizonite
+fluid.pyrope.name=Molten Pyrope
 
+# mining levels
+ui.mininglevel.lavium=Lavium
 
 # materials
 
@@ -47,10 +57,15 @@ fluid.lavium.name=Lavium
 material.reforged_enderium.name=Enderium
 material.reforged_signalum.name=Signalum
 material.reforged_lumium.name=Lumium
+material.reforged_platinum.name=Platinum
+material.reforged_iridium.name=Iridium
+material.reforged_invar.name=Invar
+material.reforged_aluminum.name=Aluminum
 
 # naturesaura materials
 material.reforged_infused_iron.name=Infused Iron
 material.reforged_ancient_wood.name=Ancient Wood
+material.reforged_sky.name=Material Of The Sky
 
 # Appliedenergistic2 materials
 material.reforged_certus_quartz.name=Certus Quartz
@@ -63,8 +78,22 @@ material.reforged_starmetal.name=Starmetal
 material.reforged_limestone.name=Limestone
 material.reforged_khnumite.name=Khnumite
 
+# blueskies
+material.reforged_ventium.name=Ventium
+material.reforged_horizonite.name=Horizonite
+material.reforged_pyrope.name=Pyrope
+material.reforged_turquoise.name=Turquoise
+material.reforged_charoite.name=Charoite
+material.reforged_dioside.name=Diopside
+
 # Mystical world
 material.reforged_amethyst.name=Amethyst
+
+# Mekanism
+material.reforged_osmium.name=Osmium
+material.reforged_obsidian.name=Refined Obsidian
+material.reforged_glowstone.name=Refined Glowstone
+material.reforged_hdpesheet.name=HDPE Sheet
 
 # Roots
 material.reforged_runestone.name=Runestone
@@ -73,7 +102,7 @@ material.reforged_runestone.name=Runestone
 material.reforged_yellorium.name=Yellorium
 material.reforged_blutonium.name=Blutonium
 material.reforged_ludicrite.name=Ludicrite
-material.reforged_cyanite.name=Ludicrite
+material.reforged_cyanite.name=Cyanite
 
 # custom mats
 material.reforged_lavium.name=Lavium
@@ -84,16 +113,16 @@ modifier.signal.name=Signal
 modifier.signal.desc=§oDude, stop hitting those Creepers!§r
 
 modifier.ender.name=Ender
-modifier.ender.desc=Deal double damage to Ender Mobs.
+modifier.ender.desc=§oDon't look in their eyes!§rDeal double damage to Ender Mobs.
 
 modifier.enderfestation.name=Enderfestation
-modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r
+modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning a endermite
 
-modifier.light.name=Light
-modifier.light.desc=§oYou are the light!
+modifier.reforged_bright.name=Bright
+modifier.reforged_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
 
-modifier.astral.name=Astral
-modifier.astral.desc=§oI can see in the dark!§r
+modifier.reforged_astral.name=Astral
+modifier.reforged_astral.desc=§oI can see in the dark!§r
 
 modifier.aura_infusion.name=Aura Infusion
 modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?
@@ -101,11 +130,14 @@ modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?
 modifier.fire_man.name=Fire Man!
 modifier.fire_man.desc=§oCrits set the target on fire.
 
-modifier.radioactive.name=Radioactive
-modifier.radioactive.desc=§oBright and Dangerous!
+modifier.reforged_radioactive.name=Radioactive
+modifier.reforged_radioactive.desc=§oBright and Dangerous!
 
 modifier.nuclear_waste.name=Nuclear Waste
 modifier.nuclear_waste.desc=§oLosing Durability give bad effects.
 
 modifier.life_steal.name=Life Steal
 modifier.life_steal.desc=§oSteal Heart from mobs.
+
+modifier.reforged_refined.name=Refined
+modifier.reforged_refined.desc=§oNot so fast!§r\nMine Obsidian faster
