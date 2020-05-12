@@ -59,7 +59,7 @@ public class Materials {
     public static final Material diopside = new Material("reforged_diopside", 0x4CE849);
 
     // tinkers'reforged
-    public static final Material lavium = new Material("reforged_lavium", 0x50A19F);
-    public static final Material qivium = new Material("reforged_qivium", 0xA1507B);
-    public static final Material kovar = new Material("reforged_kovar", 0xA1507B);
+    public static final Material lavium = new Material("reforged_lavium", 0x9FAF59);
+    public static final Material qivium = new Material("reforged_qivium", 0xAF7259);
+    public static final Material kovar = new Material("reforged_kovar", 0xC7CFD8);
 }
