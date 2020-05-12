@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "tinkers_reforged:items/qivium_plate"
+        "layer0": "tinkers_reforged:items/material/qivium/plate"
     }
 }
