@@ -5,8 +5,6 @@ import com.mrthomas20121.tinkers_reforged.proxy.CommonProxy;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 
-import java.util.HashMap;
-
 public class Config {
     // thermalfoundation
     public static boolean enderium = true;

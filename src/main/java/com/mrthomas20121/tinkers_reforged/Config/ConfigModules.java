@@ -1,7 +1,7 @@
 package com.mrthomas20121.tinkers_reforged.Config;
 
 import net.minecraftforge.common.config.Configuration;
-import com.mrthomas20121.tinkers_reforged.Config.Config;
+//import com.mrthomas20121.tinkers_reforged.Config.Config;
 
 public class ConfigModules {
 
