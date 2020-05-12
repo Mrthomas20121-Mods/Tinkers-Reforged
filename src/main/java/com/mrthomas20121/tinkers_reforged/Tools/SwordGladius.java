@@ -54,7 +54,6 @@ public class SwordGladius extends SwordCore {
             boolean flag = true;
             if(player instanceof EntityPlayer) {
                 flag = ((EntityPlayer) player).getCooledAttackStrength(0.5F) > 0.9f;
-                ((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 110, 2));
             }
             boolean flag2 = player.fallDistance > 0.0F && !player.onGround && !player.isOnLadder() && !player.isInWater() && !player.isPotionActive(MobEffects.BLINDNESS) && !player.isRiding();
             if(flag && !player.isSprinting() && !flag2 && player.onGround && d0 < (double) player.getAIMoveSpeed()) {

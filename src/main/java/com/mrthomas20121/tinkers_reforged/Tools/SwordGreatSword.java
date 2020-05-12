@@ -51,9 +51,6 @@ public class SwordGreatSword extends SwordCore {
     public boolean dealDamage(ItemStack stack, EntityLivingBase player, Entity entity, float damage) {
         // deal damage first
         boolean hit = super.dealDamage(stack, player, entity, damage);
-        if(player instanceof EntityPlayer) {
-            player.addPotionEffect((new PotionEffect(MobEffects.WEAKNESS, 100, 2)));
-        }
         // and then sweep
         if(hit && !ToolHelper.isBroken(stack)) {
             // sweep code from EntityPlayer#attackTargetEntityWithCurrentItem()
