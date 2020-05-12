@@ -62,5 +62,6 @@ public class ClientProxy extends CommonProxy {
         for(Item item : items) {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
+        ModuleItems.InitModels();
     }
 }
