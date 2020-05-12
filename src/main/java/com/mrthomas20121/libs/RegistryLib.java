@@ -9,8 +9,6 @@ import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 import slimeknights.tconstruct.library.traits.ITrait;
 
-import javax.annotation.Nullable;
-
 public class RegistryLib {
     private Material mat = null;
     private HeadMaterialStats headStats = null;
@@ -51,61 +49,41 @@ public class RegistryLib {
         this.fletchingStats = new FletchingMaterialStats(accuracy, modifier);
     }
     public void registerMaterialTrait(AbstractTrait trait) {
-        if(this.isMatNull()) throw new Error("Material is null");
         this.mat.addTrait(trait);
     }
     public void registerMaterialTrait(AbstractTrait trait, String dependency) {
-        if(this.isMatNull()) throw new Error("Material is null");
         this.mat.addTrait(trait, dependency);
     }
     public void setFluid(Fluid fluid) {
-        if(this.isMatNull()) throw new Error("Material is null");
         this.mat.setFluid(fluid);
     }
 
     public void addCommonItems(String ore) {
-        if(this.isMatNull()) throw new Error("Material is null");
         this.mat.addCommonItems(ore);
     }
-    public RegistryLib addGemItem(String ore) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addGemItem(String ore) {
         this.mat.addItem("gem"+ore, 1, Material.VALUE_Gem);
-        return this;
     }
-    public RegistryLib addIngotItem(String ore) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addIngotItem(String ore) {
         this.mat.addItem(ore, 1, Material.VALUE_Ingot);
-        return this;
     }
-    public RegistryLib addIngotItem(Item item) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addIngotItem(Item item) {
         this.mat.addItem(item, 1, Material.VALUE_Ingot);
-        return this;
     }
-    public RegistryLib addPlankItem(Block block) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addPlankItem(Block block) {
         this.mat.addItem(block, Material.VALUE_Ingot);
-        return this;
     }
-    public RegistryLib addBlockItem(String ore) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addBlockItem(String ore) {
         this.mat.addItem("block"+ore, 9, Material.VALUE_Block);
-        return this;
     }
-    public RegistryLib addBlockItem(Block block) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addBlockItem(Block block) {
         this.mat.addItem(block, 9);
-        return this;
     }
-    public RegistryLib addGearItem(String ore) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addGearItem(String ore) {
         this.mat.addItem("gear"+ore, 4, Material.VALUE_BrickBlock);
-        return this;
     }
-    public RegistryLib addPlateItem(String ore) {
-        if(this.isMatNull()) throw new Error("Material is null");
+    public void addPlateItem(String ore) {
         this.mat.addItem("plate"+ore, 1, Material.VALUE_Ingot);
-        return this;
     }
 
     public void setRepresentativeItem(String ore) {
@@ -172,9 +150,5 @@ public class RegistryLib {
 
     private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid) {
         return new MaterialIntegration(this.mat, fluid).setRepresentativeItem(ore);
-    }
-
-    private boolean isMatNull() {
-        return mat == null;
     }
 }
