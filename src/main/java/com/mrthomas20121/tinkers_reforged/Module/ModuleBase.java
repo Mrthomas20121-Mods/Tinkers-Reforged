@@ -1,6 +1,8 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
+
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,6 +12,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.mantle.typesafe.config.Optional;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.library.smeltery.ICastingRecipe;
 
 import static slimeknights.tconstruct.smeltery.TinkerSmeltery.*;
 
@@ -37,5 +40,11 @@ public abstract class ModuleBase {
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("plate"+ore).get(0), castPlate, fluid, Material.VALUE_Ingot);
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("gear"+ore).get(0), castGear, fluid, Material.VALUE_Ingot*4);
         }
+    }
+    protected void registerDefaultCasting(String ore, Fluid fluid) {
+        TinkerRegistry.registerTableCasting(OreDictionary.getOres("ingot"+ore).get(0), castIngot, fluid, Material.VALUE_Ingot);
+        TinkerRegistry.registerTableCasting(OreDictionary.getOres("plate"+ore).get(0), castPlate, fluid, Material.VALUE_Ingot);
+        TinkerRegistry.registerTableCasting(OreDictionary.getOres("gear"+ore).get(0), castGear, fluid, Material.VALUE_Ingot*4);
+        
     }
 }

@@ -5,17 +5,11 @@ import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import slimeknights.tconstruct.library.MaterialIntegration;
 import slimeknights.tconstruct.library.TinkerRegistry;
-import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
-import slimeknights.tconstruct.library.materials.HandleMaterialStats;
-import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -98,36 +92,36 @@ public class ModuleThermal extends ModuleBase {
         }
         if(Config.signalum) {
             Fluid fluid = FluidRegistry.getFluid((signalumOre.toLowerCase()));
-            signalum.registerPreInit(signalumOre, fluid);
+            signalum.registerPreInit("ingot"+signalumOre, fluid);
             Materials.mats.add(signalum.getMat());
         }
         if(Config.lumium) {
             Fluid fluid = FluidRegistry.getFluid((lumiumOre.toLowerCase()));
-            lumium.registerPreInit(lumiumOre, fluid);
+            lumium.registerPreInit("ingot"+lumiumOre, fluid);
             Materials.mats.add(lumium.getMat());
         }
         if(Config.platinum) {
             platinum.addCommonItems(platinumOre);
             Fluid fluid = FluidRegistry.getFluid((platinumOre.toLowerCase()));
-            platinum.registerPreInit(platinumOre, fluid);
+            platinum.registerPreInit("ingot"+platinumOre, fluid);
             Materials.mats.add(platinum.getMat());
         }
         if(Config.iridium) {
             iridium.addCommonItems(iridiumOre);
             Fluid fluid = FluidRegistry.getFluid((iridiumOre.toLowerCase()));
-            iridium.registerPreInit(iridiumOre, fluid);
+            iridium.registerPreInit("ingot"+iridiumOre, fluid);
             Materials.mats.add(iridium.getMat());
         }
         if(Config.invar) {
             invar.addCommonItems(invarOre);
             Fluid fluid = FluidRegistry.getFluid((invarOre.toLowerCase()));
-            invar.registerPreInit(invarOre, fluid);
+            invar.registerPreInit("ingot"+invarOre, fluid);
             Materials.mats.add(invar.getMat());
         }
         if(Config.aluminum) {
             aluminum.addCommonItems(aluminumOre);
             Fluid fluid = FluidRegistry.getFluid((aluminumOre.toLowerCase()));
-            aluminum.registerPreInit(aluminumOre, fluid);
+            aluminum.registerPreInit("ingot"+aluminumOre, fluid);
             Materials.mats.add(aluminum.getMat());
         }
     }
@@ -136,22 +130,29 @@ public class ModuleThermal extends ModuleBase {
         if(Config.enderium) {
             enderium.registerInitFluid(FluidRegistry.getFluid((enderiumOre.toLowerCase())), enderiumOre);
             enderium.setCastable(true).setCraftable(false);
+            this.registerDefaultCasting(enderiumOre, FluidRegistry.getFluid((enderiumOre.toLowerCase())));
         }
         if(Config.signalum) {
             signalum.registerInitFluid(FluidRegistry.getFluid((signalumOre.toLowerCase())), signalumOre);
             signalum.setCastable(true).setCraftable(false);
+            this.registerDefaultCasting(signalumOre, FluidRegistry.getFluid((signalumOre.toLowerCase())));
         }
         if(Config.lumium) {
             lumium.registerInitFluid(FluidRegistry.getFluid((lumiumOre.toLowerCase())), lumiumOre);
             lumium.setCastable(true).setCraftable(false);
+            this.registerDefaultCasting(lumiumOre, FluidRegistry.getFluid((lumiumOre.toLowerCase())));
         }
         if(Config.iridium) {
             iridium.registerInitFluid(FluidRegistry.getFluid((iridiumOre.toLowerCase())), iridiumOre);
             iridium.setCraftable(false).setCastable(true);
+            this.registerDefaultCasting(iridiumOre, FluidRegistry.getFluid((iridiumOre.toLowerCase())));
         }
         if(Config.platinum) {
             platinum.registerInitFluid(FluidRegistry.getFluid((platinumOre.toLowerCase())), platinumOre);
             platinum.setCraftable(false).setCastable(true);
+        }
+        if(Config.pyrotheum) {
+            TinkerRegistry.registerSmelteryFuel(new FluidStack(FluidRegistry.getFluid("pyrotheum").setTemperature(2000), 1000), 1000);
         }
     }
     @Override
