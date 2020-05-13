@@ -2,6 +2,7 @@ package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -36,6 +37,9 @@ public abstract class ModuleBase {
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("ingot"+ore).get(0), castIngot, fluid, Material.VALUE_Ingot);
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("plate"+ore).get(0), castPlate, fluid, Material.VALUE_Ingot);
             TinkerRegistry.registerTableCasting(OreDictionary.getOres("gear"+ore).get(0), castGear, fluid, Material.VALUE_Ingot*4);
+            NonNullList<ItemStack> list = OreDictionary.getOres("block"+ore);
+            if (list.size()>0)
+                TinkerRegistry.registerBasinCasting(OreDictionary.getOres("block"+ore).get(0), ItemStack.EMPTY, fluid, Material.VALUE_Block);
         }
     }
 }
