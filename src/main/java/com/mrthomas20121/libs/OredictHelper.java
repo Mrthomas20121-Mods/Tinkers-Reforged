@@ -25,6 +25,12 @@ public class OredictHelper {
     public static boolean isOredictEmpty(String oredict) {
         return OreDictionary.getOres(oredict).isEmpty();
     }
+    public static ItemStack getOre(String ore) {
+        if(isOredictEmpty(ore)) {
+            return ItemStack.EMPTY;
+        }
+        return OreDictionary.getOres(ore).get(0);
+    }
     public static ItemStack removeOredict(ItemStack item, String oredict) {
         ItemStack result = ItemStack.EMPTY;
         for (ItemStack itemstack : OreDictionary.getOres(oredict)) {
