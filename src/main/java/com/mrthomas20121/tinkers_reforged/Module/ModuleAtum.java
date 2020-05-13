@@ -1,68 +1,55 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.libs.OredictHelper;
+import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
-import com.teammetallurgy.atum.Atum;
 import com.teammetallurgy.atum.init.AtumBlocks;
 import com.teammetallurgy.atum.init.AtumItems;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.registries.IForgeRegistry;
-import slimeknights.tconstruct.library.MaterialIntegration;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleAtum extends ModuleBase {
-
+    public RegistryLib limestone = new RegistryLib(Materials.limestone);
+    public RegistryLib khnumite = new RegistryLib(Materials.khnumite);
+    
     public ModuleAtum() {
-        Materials.mats.add(Materials.limestone);
-        Materials.mats.add(Materials.khnumite);
+        limestone.setCraftable(true).setCastable(false);
+        limestone.registerMaterialTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
+        limestone.registerMaterialTrait(TinkerTraits.cheap);
+        limestone.registerHeadStats(180, 3.1f, 2.2f, HarvestLevels.STONE);
+        limestone.registerHandleStats(0.9f, 50);
+        limestone.registerExtraStats(30);
+
+        khnumite.setCraftable(true).setCastable(false);
+        khnumite.registerMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
+        khnumite.registerMaterialTrait(TinkerTraits.poisonous);
+        khnumite.registerHeadStats(200, 3.4f, 3.1f, HarvestLevels.IRON);
+        khnumite.registerHandleStats(0.9f, 70);
+        khnumite.registerExtraStats(50);
     }
     public void preInit(FMLPreInitializationEvent e) {
-
-        OreDictionary.registerOre("clothLinen", AtumItems.LINEN_CLOTH);
-
         if(Config.limestone) {
-
-            TinkerRegistry.addMaterialStats(Materials.limestone,
-                    new HeadMaterialStats(180, 3.1f, 2.2f, HarvestLevels.STONE),
-                    new HandleMaterialStats(0.9f, 50),
-                    new ExtraMaterialStats(30));
-            Materials.limestone.addItem("stoneLimestone", 1, Material.VALUE_Ingot);
-            Materials.limestone.setCraftable(true).setCastable(false);
-            Materials.limestone.addTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
-            Materials.limestone.addTrait(TinkerTraits.cheap);
-            MaterialIntegration limestonemi = new MaterialIntegration(Materials.limestone).setRepresentativeItem("stoneLimestone");
-            TinkerRegistry.integrate(limestonemi).preInit();
+            limestone.addIngotItem("stoneLimestone");
+            limestone.registerPreInit("stoneLimestone");
+            Materials.mats.add(limestone.getMat());
         }
-
         if(Config.khnumite) {
-            TinkerRegistry.addMaterialStats(Materials.khnumite,
-                    new HeadMaterialStats(200, 3.4f, 3.1f, HarvestLevels.IRON),
-                    new HandleMaterialStats(0.9f, 70),
-                    new ExtraMaterialStats(50));
-            Materials.khnumite.addItem("ingotKhnumite", 1, Material.VALUE_Ingot);
-            Materials.khnumite.setCraftable(true).setCastable(false);
-            Materials.khnumite.addTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
-            Materials.khnumite.addTrait(TinkerTraits.stonebound);
-            MaterialIntegration khnumitemi = new MaterialIntegration(Materials.khnumite).setRepresentativeItem("ingotKhnumite");
-            TinkerRegistry.integrate(khnumitemi).preInit();
+            khnumite.addIngotItem("ingotKhnumite");
+            khnumite.registerPreInit("ingotKhnumite");
+            Materials.mats.add(khnumite.getMat());
         }
     }
-    public void init(FMLInitializationEvent e) { }
+    public void init(FMLInitializationEvent e) { 
+        OreDictionary.registerOre("clothLinen", AtumItems.LINEN_CLOTH);
+    }
 
     public void postInit(FMLPostInitializationEvent e) {
         // compat to make limestone work
