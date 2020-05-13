@@ -15,6 +15,7 @@ public class Traits {
     public static final TraitLifeSteal life_steal = new TraitLifeSteal();
     public static final TraitFireman fireman = new TraitFireman();
     public static final TraitRefined refined = new TraitRefined();
+    public static final TraitFlux flux = new TraitFlux();
 
     public static void preInit() {
         RegistryLib.registerTrait(ender);
@@ -28,5 +29,6 @@ public class Traits {
         RegistryLib.registerTrait(life_steal);
         RegistryLib.registerTrait(fireman);
         RegistryLib.registerTrait(refined);
+        RegistryLib.registerTrait(flux);
     }
 }

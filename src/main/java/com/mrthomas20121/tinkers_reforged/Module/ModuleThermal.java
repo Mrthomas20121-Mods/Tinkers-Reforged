@@ -42,6 +42,7 @@ public class ModuleThermal extends ModuleBase {
 
         signalum.setCraftable(false).setCastable(true);
         signalum.registerMaterialTrait(Traits.signal);
+        signalum.registerMaterialTrait(Traits.flux);
         signalum.registerHeadStats(540, 7.3f, 6.9f, HarvestLevels.OBSIDIAN);
         signalum.registerHandleStats(1.3f, 90);
         signalum.registerExtraStats(80);

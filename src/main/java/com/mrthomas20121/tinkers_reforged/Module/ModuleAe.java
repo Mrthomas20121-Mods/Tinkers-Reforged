@@ -24,7 +24,7 @@ public class ModuleAe extends ModuleBase {
         certus_quartz.registerExtraStats(70);
 
         fluix_crystal.setCraftable(true).setCastable(false);
-        fluix_crystal.registerMaterialTrait(TinkerTraits.unnatural, MaterialTypes.HEAD);
+        fluix_crystal.registerMaterialTrait(Traits.flux, MaterialTypes.HEAD);
         fluix_crystal.registerMaterialTrait(Traits.signal);
         fluix_crystal.registerHeadStats(230, 4.2f, 3f, HarvestLevels.IRON);
         fluix_crystal.registerHandleStats(0.8f, 90);
