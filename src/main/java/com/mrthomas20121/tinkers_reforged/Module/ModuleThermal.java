@@ -133,24 +133,46 @@ public class ModuleThermal extends ModuleBase {
     }
     @Override
     public void init(FMLInitializationEvent e) {
+        if(Config.invar) {
+            Fluid fluid = FluidRegistry.getFluid((invarOre.toLowerCase()));
+            invar.registerInitFluid(fluid, invarOre);
+            this.registerDefaultMelting(invarOre, fluid, true);
+            invar.setCastable(true).setCraftable(false);
+        }
+        if(Config.aluminum) {
+            Fluid fluid = FluidRegistry.getFluid((aluminumOre.toLowerCase()));
+            aluminum.registerInitFluid(fluid, aluminumOre);
+            this.registerDefaultMelting(aluminumOre, fluid, true);
+            aluminum.setCastable(true).setCraftable(false);
+        }
         if(Config.enderium) {
-            enderium.registerInitFluid(FluidRegistry.getFluid((enderiumOre.toLowerCase())), enderiumOre);
+            Fluid fluid = FluidRegistry.getFluid((enderiumOre.toLowerCase()));
+            enderium.registerInitFluid(fluid, enderiumOre);
+            this.registerDefaultMelting(enderiumOre, fluid, true);
             enderium.setCastable(true).setCraftable(false);
         }
         if(Config.signalum) {
-            signalum.registerInitFluid(FluidRegistry.getFluid((signalumOre.toLowerCase())), signalumOre);
+            Fluid fluid = FluidRegistry.getFluid((signalumOre.toLowerCase()));
+            signalum.registerInitFluid(fluid, signalumOre);
+            this.registerDefaultMelting(signalumOre, fluid, true);
             signalum.setCastable(true).setCraftable(false);
         }
         if(Config.lumium) {
-            lumium.registerInitFluid(FluidRegistry.getFluid((lumiumOre.toLowerCase())), lumiumOre);
+            Fluid fluid = FluidRegistry.getFluid((lumiumOre.toLowerCase()));
+            lumium.registerInitFluid(fluid, lumiumOre);
+            this.registerDefaultMelting(lumiumOre, fluid, true);
             lumium.setCastable(true).setCraftable(false);
         }
         if(Config.iridium) {
-            iridium.registerInitFluid(FluidRegistry.getFluid((iridiumOre.toLowerCase())), iridiumOre);
+            Fluid fluid = FluidRegistry.getFluid((iridiumOre.toLowerCase()));
+            iridium.registerInitFluid(fluid, iridiumOre);
+            this.registerDefaultMelting(iridiumOre, fluid, true);
             iridium.setCraftable(false).setCastable(true);
         }
         if(Config.platinum) {
-            platinum.registerInitFluid(FluidRegistry.getFluid((platinumOre.toLowerCase())), platinumOre);
+            Fluid fluid = FluidRegistry.getFluid((platinumOre.toLowerCase()));
+            platinum.registerInitFluid(fluid, platinumOre);
+            this.registerDefaultMelting(platinumOre, fluid, true);
             platinum.setCraftable(false).setCastable(true);
         }
     }
