@@ -120,6 +120,7 @@ public class ModuleItems extends ModuleBase {
         TinkerRegistry.registerAlloy(kovarStack, laviumStack, qiviumStack);
         this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
         this.registerDefaultMelting("Qivium", ModuleFluids.qivium, true);
+        this.registerDefaultMelting("Kovar", ModuleFluids.kovar, true);
     }
     public void postInit(FMLPostInitializationEvent e) {
         ItemStack glass_ = new ItemStack(kovar_glass);
