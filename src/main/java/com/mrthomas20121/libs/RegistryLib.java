@@ -2,6 +2,7 @@ package com.mrthomas20121.libs;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import slimeknights.tconstruct.library.MaterialIntegration;
 import slimeknights.tconstruct.library.TinkerRegistry;
@@ -70,6 +71,9 @@ public class RegistryLib {
     public void addIngotItem(Item item) {
         this.mat.addItem(item, 1, Material.VALUE_Ingot);
     }
+    public void addIngotItem(ItemStack item) {
+        this.mat.addItem(item, 1, Material.VALUE_Ingot);
+    }
     public void addPlankItem(Block block) {
         this.mat.addItem(block, Material.VALUE_Ingot);
     }
@@ -89,6 +93,12 @@ public class RegistryLib {
     public void setRepresentativeItem(String ore) {
         this.mat.setRepresentativeItem(ore);
     }
+    public void setRepresentativeItem(ItemStack itemstack) {
+        this.mat.setRepresentativeItem(itemstack);
+    }
+    public void setRepresentativeItem(Item item) {
+        this.mat.setRepresentativeItem(item);
+    }
 
     /**
      * Register your material
@@ -100,6 +110,18 @@ public class RegistryLib {
         if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
         TinkerRegistry.integrate(this.registerMaterialIntegration(ore)).preInit();
     }
+    /**
+     * Register your material
+     * @param ore oredict name(e.g ingotCopper, ingotSilver, ingotGold, gemAmethyst)
+     * @param fluid a fluid
+     */
+    public void registerPreInit(String ore, Fluid fluid) {
+        TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
+        if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
+        if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
+        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
+    }
+
     public void registerFletchingPreInit(String ore) {
         TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
         TinkerRegistry.integrate(this.registerMaterialIntegration(ore)).preInit();
@@ -115,17 +137,6 @@ public class RegistryLib {
     }
     public void registerBowPreInit(String ore, Fluid fluid) {
         TinkerRegistry.addMaterialStats(this.mat, bowStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
-    }
-    /**
-     * Register your material
-     * @param ore oredict name(e.g ingotCopper, ingotSilver, ingotGold, gemAmethyst)
-     * @param fluid a fluid
-     */
-    public void registerPreInit(String ore, Fluid fluid) {
-        TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
-        if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
-        if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
         TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
     }
 
