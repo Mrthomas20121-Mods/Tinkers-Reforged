@@ -16,7 +16,7 @@ public class BlockGlassTic extends BlockGlass {
         this.setTranslationKey(modid + "." + name+"_glass");
         this.setCreativeTab(ModuleItems.creativetab);
         this.setHardness(3);
-        this.setResistance(20);
+        this.setResistance(50);
         this.setHarvestLevel("pickaxe", 3);
     }
     @SideOnly(Side.CLIENT)
