@@ -3,14 +3,12 @@ package com.mrthomas20121.tinkers_reforged;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.proxy.ClientEvent;
 import com.mrthomas20121.tinkers_reforged.proxy.ClientProxy;
-import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.Logger;
 import net.minecraftforge.fml.common.SidedProxy;
 import com.mrthomas20121.tinkers_reforged.proxy.CommonProxy;
@@ -27,7 +25,7 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.1.6";
+    public static final String VERSION = "1.2.0";
 
     public static Logger logger;
 
@@ -43,7 +41,6 @@ public class TinkersReforged
         }
         logger = event.getModLog();
         proxy.preInit(event);
-
         Modules.preInit(event);
    }
 

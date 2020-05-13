@@ -21,6 +21,9 @@ Thumbs.db
 *.launch
 gradle-app.setting
 
+# vscode stuff
+.vscode
+
 #IDEA files from Gradle
 .idea/
 /*.iml
