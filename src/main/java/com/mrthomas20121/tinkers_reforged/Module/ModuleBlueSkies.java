@@ -89,7 +89,7 @@ public class ModuleBlueSkies extends ModuleBase {
         OredictHelper.RegisterBlock("Horizonnite", BlocksSkies.horizonite_block);
         OredictHelper.RegisterIngotItem("Falsite", ItemsSkies.falsite_ingot);
         OredictHelper.RegisterOreBlock("Falsite", BlocksSkies.falsite_ore);
-        OredictHelper.RegisterGemItem("¨Pyrope", ItemsSkies.pyrope_gem);
+        OredictHelper.RegisterGemItem("Pyrope", ItemsSkies.pyrope_gem);
         OredictHelper.RegisterOreBlock("Pyrope", BlocksSkies.everbright_pyrope_ore);
         OredictHelper.RegisterOreBlock("Pyrope", BlocksSkies.everdawn_pyrope_ore);
         OredictHelper.RegisterBlock("Pyrope", BlocksSkies.pyrope_block);
