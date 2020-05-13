@@ -43,7 +43,7 @@ repositories {
     }
 }
 
-version = "1.2.0"
+version = "1.2.1"
 group= "mrthomas20121.tinkers_reforged"
 archivesBaseName = "tinkers_reforged"
 
