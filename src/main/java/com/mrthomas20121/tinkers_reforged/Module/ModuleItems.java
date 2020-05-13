@@ -97,6 +97,7 @@ public class ModuleItems extends ModuleBase {
         FluidRegistry.addBucketForFluid(ModuleFluids.lavium);
         lavium_mat.setFluid(ModuleFluids.lavium);
         lavium_mat.addCommonItems("Lavium");
+        lavium_mat.setRepresentativeItem("ingotLavium");
         lavium_mat.registerPreInit("ingotLavium", ModuleFluids.lavium);
 
         ModuleFluids.kovar.setDensity(8);
@@ -117,13 +118,6 @@ public class ModuleItems extends ModuleBase {
         TinkerRegistry.registerAlloy(laviumStack, glass, new FluidStack(FluidRegistry.getFluid("cobalt"), 288), purpleslime);
         TinkerRegistry.registerAlloy(qiviumStack, glass, ardite, purpleslime);
         TinkerRegistry.registerAlloy(kovarStack, laviumStack, qiviumStack);
-
-        if(!OredictHelper.isOredictEmpty("ingotNickel")) {
-            FluidStack cobalt = new FluidStack(FluidRegistry.getFluid("cobalt"), Material.VALUE_Block);
-            FluidStack nickel = new FluidStack(FluidRegistry.getFluid("nickel"), 288);
-            FluidStack iron = new FluidStack(FluidRegistry.getFluid("iron"), 144);
-            TinkerRegistry.registerAlloy(kovarStack, cobalt, nickel, iron);
-        }
         this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
         this.registerDefaultMelting("Qivium", ModuleFluids.qivium, true);
     }
