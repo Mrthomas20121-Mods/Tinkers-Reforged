@@ -87,7 +87,7 @@ public class ModuleThermal extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.enderium) {
             Fluid fluid = FluidRegistry.getFluid((enderiumOre.toLowerCase()));
-            enderium.registerPreInit(enderiumOre, fluid);
+            enderium.registerPreInit("ingot"+enderiumOre, fluid);
             Materials.mats.add(enderium.getMat());
         }
         if(Config.signalum) {
@@ -146,6 +146,11 @@ public class ModuleThermal extends ModuleBase {
             iridium.registerInitFluid(FluidRegistry.getFluid((iridiumOre.toLowerCase())), iridiumOre);
             iridium.setCraftable(false).setCastable(true);
             this.registerDefaultCasting(iridiumOre, FluidRegistry.getFluid((iridiumOre.toLowerCase())));
+        }
+        if(Config.invar) {
+            invar.registerInitFluid(FluidRegistry.getFluid((invarOre.toLowerCase())), iridiumOre);
+            invar.setCraftable(false).setCastable(true);
+            this.registerDefaultCasting(invarOre, FluidRegistry.getFluid((iridiumOre.toLowerCase())));
         }
         if(Config.platinum) {
             platinum.registerInitFluid(FluidRegistry.getFluid((platinumOre.toLowerCase())), platinumOre);
