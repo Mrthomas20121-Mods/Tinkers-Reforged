@@ -131,27 +131,27 @@ public class ModuleThermal extends ModuleBase {
         if(Config.enderium) {
             enderium.registerInitFluid(FluidRegistry.getFluid((enderiumOre.toLowerCase())), enderiumOre);
             enderium.setCastable(true).setCraftable(false);
-            this.registerDefaultCasting(enderiumOre, FluidRegistry.getFluid((enderiumOre.toLowerCase())));
+            this.registerDefaultCasting(enderiumOre, FluidRegistry.getFluid((enderiumOre.toLowerCase())), false);
         }
         if(Config.signalum) {
             signalum.registerInitFluid(FluidRegistry.getFluid((signalumOre.toLowerCase())), signalumOre);
             signalum.setCastable(true).setCraftable(false);
-            this.registerDefaultCasting(signalumOre, FluidRegistry.getFluid((signalumOre.toLowerCase())));
+            this.registerDefaultCasting(signalumOre, FluidRegistry.getFluid((signalumOre.toLowerCase())), false);
         }
         if(Config.lumium) {
             lumium.registerInitFluid(FluidRegistry.getFluid((lumiumOre.toLowerCase())), lumiumOre);
             lumium.setCastable(true).setCraftable(false);
-            this.registerDefaultCasting(lumiumOre, FluidRegistry.getFluid((lumiumOre.toLowerCase())));
+            this.registerDefaultCasting(lumiumOre, FluidRegistry.getFluid((lumiumOre.toLowerCase())), false);
         }
         if(Config.iridium) {
             iridium.registerInitFluid(FluidRegistry.getFluid((iridiumOre.toLowerCase())), iridiumOre);
             iridium.setCraftable(false).setCastable(true);
-            this.registerDefaultCasting(iridiumOre, FluidRegistry.getFluid((iridiumOre.toLowerCase())));
+            this.registerDefaultCasting(iridiumOre, FluidRegistry.getFluid((iridiumOre.toLowerCase())), false);
         }
         if(Config.invar) {
             invar.registerInitFluid(FluidRegistry.getFluid((invarOre.toLowerCase())), iridiumOre);
             invar.setCraftable(false).setCastable(true);
-            this.registerDefaultCasting(invarOre, FluidRegistry.getFluid((invarOre.toLowerCase())));
+            this.registerDefaultCasting(invarOre, FluidRegistry.getFluid((invarOre.toLowerCase())), false);
         }
         if(Config.platinum) {
             platinum.registerInitFluid(FluidRegistry.getFluid((platinumOre.toLowerCase())), platinumOre);
