@@ -23,10 +23,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.mantle.client.CreativeTab;
+import slimeknights.mantle.util.RecipeMatch;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.Util;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
+import slimeknights.tconstruct.library.smeltery.CastingRecipe;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
@@ -106,9 +108,6 @@ public class ModuleItems extends ModuleBase {
         FluidRegistry.addBucketForFluid(ModuleFluids.kovar);
     }
     public void init(FMLInitializationEvent e) {
-
-        //lavium_mat.addCommonItems("Lavium");
-        //qivium_mat.addCommonItems("Qivium");
         FluidStack ardite = new FluidStack(FluidRegistry.getFluid("ardite"), 288);
         FluidStack purpleslime = new FluidStack(FluidRegistry.getFluid("purpleslime"), 144);
         FluidStack laviumStack = new FluidStack(ModuleFluids.lavium, 144);
@@ -123,9 +122,11 @@ public class ModuleItems extends ModuleBase {
         this.registerDefaultMelting("Kovar", ModuleFluids.kovar, true);
     }
     public void postInit(FMLPostInitializationEvent e) {
-        ItemStack glass_ = new ItemStack(kovar_glass);
-        ItemStack glass = new ItemStack(Blocks.GLASS);
-        TinkerRegistry.registerBasinCasting(glass_, glass, ModuleFluids.kovar, Material.VALUE_Block);
+        ItemStack glass_kovar = new ItemStack(kovar_glass);
+        TinkerRegistry.registerBasinCasting(new CastingRecipe(glass_kovar,
+        RecipeMatch.of(Blocks.GLASS),
+        new FluidStack(ModuleFluids.kovar, Material.VALUE_Block),
+        true, true));
     }
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
