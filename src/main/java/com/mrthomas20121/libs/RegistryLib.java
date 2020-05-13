@@ -160,6 +160,6 @@ public class RegistryLib {
     }
 
     private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid) {
-        return new MaterialIntegration(this.mat, fluid).setRepresentativeItem(ore);
+        return new MaterialIntegration(this.mat, fluid, ore).setRepresentativeItem(ore);
     }
 }
