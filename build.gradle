@@ -66,15 +66,17 @@ minecraft {
 dependencies {
     deobfCompile "slimeknights.mantle:Mantle:1.12-1.3.3.55"
     deobfCompile "slimeknights:TConstruct:1.12.2-2.13.0.183"
-    compile files("./libs/new/Atum-1.12.2-2.0.17.jar")
+    compile files("./libs/Mekanism-1.12.2-9.8.3.390.jar")
+    compile files("./libs/ActuallyAdditions-1.12.2-r151-2.jar")
+    compile files("./libs/Atum-1.12.2-2.0.17.jar")
     compile files("./libs/NaturesAura-18.1.jar")
     compile files("./libs/RedstoneFlux-1.12-2.1.1.1-universal.jar")
-    compile files("./libs/new/ExtremeReactors-1.12.2-0.4.5.67.jar")
+    compile files("./libs/ExtremeReactors-1.12.2-0.4.5.67.jar")
     compile files("./libs/conarm-1.12.2-1.2.5.4.jar")
     compile files("./libs/mysticallib-1.12.2-1.7.0.jar")
     compile files("./libs/Roots-1.12.2-3.0.26.jar")
     compile files("./libs/mysticalworld-1.12.2-1.8.4.jar")
-    compile files("./libs/new/blue_skies-1.12.2-v1.1.3.jar")
+    compile files("./libs/blue_skies-1.12.2-v1.1.3.jar")
 }
 
 processResources
