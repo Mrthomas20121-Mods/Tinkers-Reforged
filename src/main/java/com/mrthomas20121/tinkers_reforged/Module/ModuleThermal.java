@@ -150,7 +150,7 @@ public class ModuleThermal extends ModuleBase {
         if(Config.invar) {
             invar.registerInitFluid(FluidRegistry.getFluid((invarOre.toLowerCase())), iridiumOre);
             invar.setCraftable(false).setCastable(true);
-            this.registerDefaultCasting(invarOre, FluidRegistry.getFluid((iridiumOre.toLowerCase())));
+            this.registerDefaultCasting(invarOre, FluidRegistry.getFluid((invarOre.toLowerCase())));
         }
         if(Config.platinum) {
             platinum.registerInitFluid(FluidRegistry.getFluid((platinumOre.toLowerCase())), platinumOre);
