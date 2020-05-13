@@ -91,6 +91,7 @@ public class ConfigModules {
     public static void moduleThermal(Configuration cfg) {
         String category = "thermalfoundation";
         thermal = cfg.getBoolean(name, category, thermal, "Set to false to disable Thermal Foundation module");
+        Config.pyrotheum = cfg.getBoolean("pyrotheum", category, Config.pyrotheum, "Set to false to disable Pyrotheum as a smeltery fluid");
 
         Config.enderium = cfg.getBoolean("enderium", category, Config.enderium, "Set to false to disable enderium material");
         Config.signalum = cfg.getBoolean("signalum", category, Config.signalum, "Set to false to disable signalum material");
@@ -103,7 +104,10 @@ public class ConfigModules {
     public static void moduleTinkersReforged(Configuration cfg) {
         String category = "general";
 
-        Config.tools = cfg.getBoolean("tools", category, Config.tools, "Set to false to disable Tinkers' Tools Added by this mod");
+        Config.lavium = cfg.getBoolean("lavium", category, Config.lavium, "Set to false to disable lavium material");
+        Config.qivium = cfg.getBoolean("qivium", category, Config.qivium, "Set to false to disable qivium material");
+
+        Config.tools = cfg.getBoolean("tools", category, Config.tools, "Set to false to disable Tinkers Tools/Weapons Added by this mod");
         Config.toolGladius = cfg.getBoolean("swordGladius", category, Config.toolGladius, "Set to false to disable the weapon Gladius");
 
     }

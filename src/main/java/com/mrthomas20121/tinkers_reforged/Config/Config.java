@@ -50,6 +50,10 @@ public class Config {
     public static boolean cyanite = true;
     public static boolean ludicrite = true;
     public static boolean blutonium = true;
+    // tinkers' reforged
+    public static boolean lavium = true;
+    public static boolean qivium = true;
+    public static boolean kovar = true;
 
     // tools
     public static boolean tools = true;
@@ -59,6 +63,9 @@ public class Config {
     public static boolean toolKhopesh = true;
     public static boolean toolRunedKnife = true;
     public static boolean atum_requirement_for_tools = true;
+
+    // fuels
+    public static boolean pyrotheum = true;
 
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;
