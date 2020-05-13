@@ -3,13 +3,14 @@ package com.mrthomas20121.tinkers_reforged.Module;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
-import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
+
+import mekanism.common.item.ItemHDPE;
+
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -86,6 +87,8 @@ public class ModuleMekanism extends ModuleBase {
             Materials.mats.add(hdpe_sheet.getMat());
         }
     }
-    public void init(FMLInitializationEvent e) { }
+    public void init(FMLInitializationEvent e) {
+        //hdpe_sheet.setRepresentativeItem();
+     }
     public void postInit(FMLPostInitializationEvent e) { }
 }
