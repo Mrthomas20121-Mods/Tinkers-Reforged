@@ -62,7 +62,7 @@ public class ModuleNatureAura extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.molten_of_the_sky);
             OreDictionary.registerOre("ingotSky", ModItems.SKY_INGOT);
             ingot_of_the_sky.setFluid(ModuleFluids.molten_of_the_sky);
-            ingot_of_the_sky.addCommonItems("Sky");
+            //ingot_of_the_sky.addCommonItems("Sky");
             ingot_of_the_sky.addIngotItem(ModItems.SKY_INGOT);
             ingot_of_the_sky.registerPreInit("ingotSky",ModuleFluids.molten_of_the_sky);
             Materials.mats.add(ingot_of_the_sky.getMat());
@@ -85,7 +85,7 @@ public class ModuleNatureAura extends ModuleBase {
             OreDictionary.registerOre("plankAncient", ModBlocks.ANCIENT_PLANKS);
             OreDictionary.registerOre("logAncient", ModBlocks.ANCIENT_LOG);
 
-            ancient_wood.addCommonItems("plankAncient");
+            //ancient_wood.addCommonItems("plankAncient");
             ancient_wood.addPlankItem(ModBlocks.ANCIENT_PLANKS);
             ancient_wood.registerPreInit("plankAncient");
             Materials.mats.add(ancient_wood.getMat());
