@@ -121,6 +121,12 @@ public class RegistryLib {
         if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
         TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
     }
+    public void registerPreInit(String ore, String oreRequirement, Fluid fluid) {
+        TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
+        if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
+        if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
+        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid, oreRequirement)).preInit();
+    }
 
     public void registerFletchingPreInit(String ore) {
         TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
@@ -163,6 +169,6 @@ public class RegistryLib {
         return new MaterialIntegration(this.mat, fluid, ore).setRepresentativeItem("ingot"+ore);
     }
     private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid, String orerequirement) {
-        return new MaterialIntegration(orerequirement, this.mat, fluid, ore).setRepresentativeItem(orerequirement+ ore);
+        return new MaterialIntegration(this.mat, fluid, ore, orerequirement).setRepresentativeItem(orerequirement+ore);
     }
 }
