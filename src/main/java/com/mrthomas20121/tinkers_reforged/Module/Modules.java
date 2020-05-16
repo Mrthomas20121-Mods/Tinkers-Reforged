@@ -1,6 +1,5 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
-import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Config.ConfigModules;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fml.common.Loader;
@@ -13,6 +12,7 @@ public class Modules {
     public static final ModuleThermal thermal = new ModuleThermal();
     public static final ModuleNatureAura natureAura = new ModuleNatureAura();;
     public static final ModuleAe ae = new ModuleAe();
+    public static final ModuleAA aa = new ModuleAA();
     public static final ModuleAstralSorcery astral = new ModuleAstralSorcery();
     public static final ModuleAtum atum = new ModuleAtum();
     public static final ModuleMysticalWorld mysticalWorld = new ModuleMysticalWorld();
