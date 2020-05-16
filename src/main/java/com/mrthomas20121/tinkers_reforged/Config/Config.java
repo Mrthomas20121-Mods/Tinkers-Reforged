@@ -18,7 +18,14 @@ public class Config {
     public static boolean infused_iron = true;
     public static boolean ancient_wood = true;
     public static boolean ingot_of_the_sky = true;
-
+    // actually additions
+    public static boolean blackquartz = true;
+    public static boolean enori = true;
+    public static boolean diamantine = true;
+    public static boolean voidcrystal = true;
+    public static boolean redstonia = true;
+    public static boolean palis = true;
+    public static boolean emeratic = true;
     // appliedenergistic2
     public static boolean certus_quartz = true;
     public static boolean fluix_crystal = true;

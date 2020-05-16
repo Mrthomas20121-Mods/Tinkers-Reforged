@@ -48,19 +48,19 @@ item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy block
 
 # Fluids
 fluid.infused_iron.name=Molten Infused Iron
-fluid.molten_of_the_sky.name=Molten of the sky
-fluid.starmetal.name=Starmetal
-fluid.blutonium.name=Molten Blutonium
-fluid.ludicrite.name=Molten Ludicrite
-fluid.qivium.name=Molten Qivium
-fluid.lavium.name=Molten Lavium
-fluid.kovar.name=Molten Kovar
-fluid.osmium.name=Molten Osmium
-fluid.refined_obsidian.name=Molten Refined Obsidian
-fluid.refined_glowstone.name=Molten Refined Glowstone
-fluid.ventium.name=Molten Ventium
-fluid.horizonite.name=Molten Horizonite
-fluid.pyrope.name=Molten Pyrope
+fluid.molten_of_the_sky=Molten of the sky
+fluid.starmetal=Starmetal
+fluid.blutonium=Molten Blutonium
+fluid.ludicrite=Molten Ludicrite
+fluid.qivium=Molten Qivium
+fluid.lavium=Molten Lavium
+fluid.kovar=Molten Kovar
+fluid.osmium=Molten Osmium
+fluid.refined_obsidian=Molten Refined Obsidian
+fluid.refined_glowstone=Molten Refined Glowstone
+fluid.ventium=Molten Ventium
+fluid.horizonite=Molten Horizonite
+fluid.pyrope=Molten Pyrope
 
 # mining levels
 ui.mininglevel.lavium=Lavium
@@ -124,13 +124,13 @@ material.reforged_qivium.name=Qivium
 
 # Traits and Modifiers
 modifier.signal.name=Signal
-modifier.signal.desc=§oDude, stop hitting those Creepers!§r
+modifier.signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode.
 
 modifier.ender.name=Ender
-modifier.ender.desc=§oDon't look in their eyes!§rDeal double damage to Ender Mobs.
+modifier.ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Ender Mobs.
 
 modifier.enderfestation.name=Enderfestation
-modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning a endermite
+modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning a endermite.
 
 modifier.reforged_bright.name=Bright
 modifier.reforged_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
@@ -139,10 +139,10 @@ modifier.reforged_astral.name=Astral
 modifier.reforged_astral.desc=§oI can see in the dark!§r
 
 modifier.aura_infusion.name=Aura Infusion
-modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?
+modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?§r\nRepair your tool using aura.
 
 modifier.fire_man.name=Fire Man!
-modifier.fire_man.desc=§oCrits set the target on fire.
+modifier.fire_man.desc=§oLet it burn§r\nCrits set the target on fire.
 
 modifier.reforged_radioactive.name=Radioactive
 modifier.reforged_radioactive.desc=§oBright and Dangerous!
@@ -151,7 +151,7 @@ modifier.nuclear_waste.name=Nuclear Waste
 modifier.nuclear_waste.desc=§oLosing Durability give bad effects.
 
 modifier.life_steal.name=Life Steal
-modifier.life_steal.desc=§oSteal Heart from mobs.
+modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
 
 modifier.reforged_refined.name=Refined
 modifier.reforged_refined.desc=§oNot so fast!§r\nMine Obsidian faster
