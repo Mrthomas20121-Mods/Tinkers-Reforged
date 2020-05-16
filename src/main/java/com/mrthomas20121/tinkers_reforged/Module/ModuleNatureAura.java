@@ -64,7 +64,7 @@ public class ModuleNatureAura extends ModuleBase {
             ingot_of_the_sky.setFluid(ModuleFluids.molten_of_the_sky);
             //ingot_of_the_sky.addCommonItems("Sky");
             ingot_of_the_sky.addIngotItem(ModItems.SKY_INGOT);
-            ingot_of_the_sky.registerPreInit("ingotSky",ModuleFluids.molten_of_the_sky);
+            ingot_of_the_sky.registerPreInit("Sky",ModuleFluids.molten_of_the_sky);
             Materials.mats.add(ingot_of_the_sky.getMat());
         }
 
@@ -77,7 +77,7 @@ public class ModuleNatureAura extends ModuleBase {
             infused_iron.addCommonItems("InfusedIron");
             infused_iron.addIngotItem(ModItems.INFUSED_IRON);
             infused_iron.addBlockItem(ModBlocks.INFUSED_IRON);
-            infused_iron.registerPreInit("ingotInfusedIron", ModuleFluids.infused_iron);
+            infused_iron.registerPreInit("InfusedIron", ModuleFluids.infused_iron);
             Materials.mats.add(infused_iron.getMat());
         }
 
@@ -93,8 +93,8 @@ public class ModuleNatureAura extends ModuleBase {
     }
     @Override
     public void init(FMLInitializationEvent e) {
-        this.registerDefaultMelting("InfusedIron", ModuleFluids.infused_iron);
-        this.registerDefaultMelting("Sky", ModuleFluids.molten_of_the_sky);
+        //this.registerDefaultMelting("InfusedIron", ModuleFluids.infused_iron);
+        //this.registerDefaultMelting("Sky", ModuleFluids.molten_of_the_sky);
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) { }

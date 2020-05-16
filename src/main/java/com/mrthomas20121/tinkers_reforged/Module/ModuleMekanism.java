@@ -58,7 +58,7 @@ public class ModuleMekanism extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.refined_obsidian);
             refined_obsidian.addCommonItems("RefinedObsidian");
             refined_obsidian.setFluid(ModuleFluids.refined_obsidian);
-            refined_obsidian.registerPreInit("ingotRefinedObsidian", ModuleFluids.refined_obsidian);
+            refined_obsidian.registerPreInit("RefinedObsidian", ModuleFluids.refined_obsidian);
             Materials.mats.add(refined_obsidian.getMat());
         }
 
@@ -68,7 +68,7 @@ public class ModuleMekanism extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.refined_glowstone);
             refined_glowstone.addCommonItems("RefinedGlowstone");
             refined_glowstone.setFluid(ModuleFluids.refined_glowstone);
-            refined_glowstone.registerPreInit("ingotRefinedGlowstone", ModuleFluids.refined_glowstone);
+            refined_glowstone.registerPreInit("RefinedGlowstone", ModuleFluids.refined_glowstone);
             Materials.mats.add(refined_glowstone.getMat());
         }
 
@@ -78,7 +78,7 @@ public class ModuleMekanism extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.osmium);
             osmium.addCommonItems("Osmium");
             osmium.setFluid(ModuleFluids.osmium);
-            osmium.registerPreInit("ingotOsmium", ModuleFluids.osmium);
+            osmium.registerPreInit("Osmium", ModuleFluids.osmium);
             Materials.mats.add(osmium.getMat());
         }
 
