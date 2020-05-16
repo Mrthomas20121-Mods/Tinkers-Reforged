@@ -25,7 +25,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.mantle.client.CreativeTab;
 import slimeknights.mantle.util.RecipeMatch;
 import slimeknights.tconstruct.library.TinkerRegistry;
-import slimeknights.tconstruct.library.Util;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.smeltery.CastingRecipe;
@@ -85,25 +84,16 @@ public class ModuleItems extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
 
         Materials.mats.add(qivium_mat.getMat());
-        FluidRegistry.registerFluid(ModuleFluids.qivium);
-        FluidRegistry.addBucketForFluid(ModuleFluids.qivium);
         qivium_mat.setFluid(ModuleFluids.qivium);
         qivium_mat.addCommonItems("Qivium");
         qivium_mat.setRepresentativeItem("ingotQivium");
         qivium_mat.registerPreInit("Qivium", ModuleFluids.qivium);
 
         Materials.mats.add(lavium_mat.getMat());
-        FluidRegistry.registerFluid(ModuleFluids.lavium);
-        FluidRegistry.addBucketForFluid(ModuleFluids.lavium);
         lavium_mat.setFluid(ModuleFluids.lavium);
         lavium_mat.addCommonItems("Lavium");
         lavium_mat.setRepresentativeItem("ingotLavium");
         lavium_mat.registerPreInit("Lavium", ModuleFluids.lavium);
-
-        ModuleFluids.kovar.setDensity(8);
-        ModuleFluids.kovar.setTemperature(750);
-        FluidRegistry.registerFluid(ModuleFluids.kovar);
-        FluidRegistry.addBucketForFluid(ModuleFluids.kovar);
     }
     public void init(FMLInitializationEvent e) {
         FluidStack ardite = new FluidStack(FluidRegistry.getFluid("ardite"), 288);
@@ -149,7 +139,7 @@ public class ModuleItems extends ModuleBase {
     private static void oredictRegistry(String ore, Item... items) {
         for(Item item : items) {
             if(item.getRegistryName().toString().contains("gear"))  OreDictionary.registerOre("gear"+ore, item);
-            else if(item.getRegistryName().toString().contains("ingot"))  OreDictionary.registerOre("ingot"+ore, item);
+            else if(item.getRegistryName().toString().contains("ingot"))  OredictHelper.RegisterIngotItem(ore, item);
             else if(item.getRegistryName().toString().contains("dust"))  OreDictionary.registerOre("dust"+ore, item);
             else if(item.getRegistryName().toString().contains("plate"))  OreDictionary.registerOre("plate"+ore, item);
             else if(item.getRegistryName().toString().contains("nugget"))  OreDictionary.registerOre("nugget"+ore, item);
