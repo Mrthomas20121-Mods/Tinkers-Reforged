@@ -1,9 +1,11 @@
 package com.mrthomas20121.tinkers_reforged.proxy;
 
 import com.mrthomas20121.tinkers_reforged.Module.Materials;
+import com.mrthomas20121.tinkers_reforged.Module.ModuleFluids;
 import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
 import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 import com.mrthomas20121.tinkers_reforged.Module.Modules;
+import com.mrthomas20121.libs.block.BlockFluid;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -61,6 +63,9 @@ public class ClientProxy extends CommonProxy {
         ArrayList<Item> items = ModuleItems.genArrayList();
         for(Item item : items) {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
+        }
+        for(BlockFluid block: ModuleFluids.blockFluids) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
         }
         ModuleItems.InitModels();
     }
