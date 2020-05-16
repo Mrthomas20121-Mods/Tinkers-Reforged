@@ -28,7 +28,11 @@ public class Modules {
     public static void preInit(FMLPreInitializationEvent event) {
 
         moduleItems.preInit(event);
+        ModuleFluids.preInit(event);
 
+        if(Loader.isModLoaded("actuallyadditions")) {
+            aa.preInit(event);
+        }
         if(Loader.isModLoaded("thermalfoundation") && ConfigModules.thermal) {
             thermal.preInit(event);
         }
@@ -70,6 +74,9 @@ public class Modules {
         moduleItems.init(event);
         Traits.preInit();
 
+        if(Loader.isModLoaded("actuallyadditions")) {
+            aa.init(event);
+        }
         if(Loader.isModLoaded("thermalfoundation") && ConfigModules.thermal) {
             thermal.init(event);
         }

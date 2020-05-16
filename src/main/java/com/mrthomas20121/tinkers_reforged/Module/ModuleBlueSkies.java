@@ -61,7 +61,7 @@ public class ModuleBlueSkies extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.ventium);
             ventium.setFluid(ModuleFluids.ventium);
             ventium.addCommonItems("Ventium");
-            ventium.registerPreInit("ingotVentium", ModuleFluids.ventium);
+            ventium.registerPreInit("Ventium", ModuleFluids.ventium);
         }
         if(Config.horizonite) {
             ModuleFluids.horizonite.setTemperature(700);
@@ -69,7 +69,7 @@ public class ModuleBlueSkies extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.horizonite);
             horizonite.setFluid(ModuleFluids.horizonite);
             horizonite.addCommonItems("Horizonite");
-            horizonite.registerPreInit("ingotHorizonite", ModuleFluids.horizonite);
+            horizonite.registerPreInit("Horizonite", ModuleFluids.horizonite);
         }
         if(Config.pyrope) {
             ModuleFluids.pyrope.setTemperature(500);
@@ -77,7 +77,7 @@ public class ModuleBlueSkies extends ModuleBase {
             FluidRegistry.addBucketForFluid(ModuleFluids.pyrope);
             pyrope.addCommonItems("Pyrope");
             pyrope.setFluid(ModuleFluids.pyrope);
-            pyrope.registerPreInit("gemPyrope", ModuleFluids.pyrope);
+            pyrope.registerPreInit("Pyrope", "gem", ModuleFluids.pyrope);
         }
     }
     public void init(FMLInitializationEvent e) {
@@ -103,6 +103,8 @@ public class ModuleBlueSkies extends ModuleBase {
         OredictHelper.RegisterGemItem("Diopside", ItemsSkies.diopside_gem);
         OredictHelper.RegisterOreBlock("Diopside", BlocksSkies.everbright_diopside_ore);
         OredictHelper.RegisterOreBlock("Diopside", BlocksSkies.everdawn_diopside_ore);
+
+        pyrope.setRepresentativeItem("gemPyrope");
     }
     public void postInit(FMLPostInitializationEvent e) {
 
