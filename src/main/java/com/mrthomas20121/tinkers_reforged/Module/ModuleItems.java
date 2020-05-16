@@ -57,7 +57,7 @@ public class ModuleItems extends ModuleBase {
     public static BlockGlassTic kovar_glass = new BlockGlassTic(TinkersReforged.MODID, "kovar");
     public static final CreativeTabs creativetab = new CreativeTab("TinkersReforged",new ItemStack(laviumIngot, 1));
 
-    private static int level = 5;
+    private static int level = HarvestLevels.COBALT;
 
     public RegistryLib lavium_mat = new RegistryLib(Materials.lavium);
     public RegistryLib qivium_mat = new RegistryLib(Materials.qivium);
@@ -84,15 +84,13 @@ public class ModuleItems extends ModuleBase {
 
     public void preInit(FMLPreInitializationEvent e) {
 
-        HarvestLevels.harvestLevelNames.put(level, lavium_mat.getMat().getTextColor() + Util.translate("ui.mininglevel.lavium"));
-
         Materials.mats.add(qivium_mat.getMat());
         FluidRegistry.registerFluid(ModuleFluids.qivium);
         FluidRegistry.addBucketForFluid(ModuleFluids.qivium);
         qivium_mat.setFluid(ModuleFluids.qivium);
         qivium_mat.addCommonItems("Qivium");
         qivium_mat.setRepresentativeItem("ingotQivium");
-        qivium_mat.registerPreInit("ingotQivium", ModuleFluids.qivium);
+        qivium_mat.registerPreInit("Qivium", ModuleFluids.qivium);
 
         Materials.mats.add(lavium_mat.getMat());
         FluidRegistry.registerFluid(ModuleFluids.lavium);
@@ -100,7 +98,7 @@ public class ModuleItems extends ModuleBase {
         lavium_mat.setFluid(ModuleFluids.lavium);
         lavium_mat.addCommonItems("Lavium");
         lavium_mat.setRepresentativeItem("ingotLavium");
-        lavium_mat.registerPreInit("ingotLavium", ModuleFluids.lavium);
+        lavium_mat.registerPreInit("Lavium", ModuleFluids.lavium);
 
         ModuleFluids.kovar.setDensity(8);
         ModuleFluids.kovar.setTemperature(750);
@@ -117,8 +115,8 @@ public class ModuleItems extends ModuleBase {
         TinkerRegistry.registerAlloy(laviumStack, glass, new FluidStack(FluidRegistry.getFluid("cobalt"), 288), purpleslime);
         TinkerRegistry.registerAlloy(qiviumStack, glass, ardite, purpleslime);
         TinkerRegistry.registerAlloy(kovarStack, laviumStack, qiviumStack);
-        this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
-        this.registerDefaultMelting("Qivium", ModuleFluids.qivium, true);
+        // this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
+        // this.registerDefaultMelting("Qivium", ModuleFluids.qivium, true);
         this.registerDefaultMelting("Kovar", ModuleFluids.kovar, true);
     }
     public void postInit(FMLPostInitializationEvent e) {
