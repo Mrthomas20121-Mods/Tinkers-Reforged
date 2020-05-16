@@ -11,6 +11,7 @@
     }
   },
   "result": {
-    "item": "tinkers_reforged:kovar_nugget"
+    "item": "tinkers_reforged:kovar_nugget",
+    "amount":9
   }
 }

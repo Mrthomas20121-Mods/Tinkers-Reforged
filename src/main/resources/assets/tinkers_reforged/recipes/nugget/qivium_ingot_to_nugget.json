@@ -11,6 +11,7 @@
     }
   },
   "result": {
-    "item": "tinkers_reforged:qivium_nugget"
+    "item": "tinkers_reforged:qivium_nugget",
+    "amount":9
   }
 }
