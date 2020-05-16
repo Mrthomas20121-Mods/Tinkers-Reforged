@@ -4,17 +4,12 @@ import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.MaterialIntegration;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
-
-import static com.mrthomas20121.tinkers_reforged.Module.Materials.mats;
 
 public class ModuleAstralSorcery extends ModuleBase {
 

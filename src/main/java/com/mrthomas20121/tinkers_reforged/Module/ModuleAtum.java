@@ -3,8 +3,6 @@ package com.mrthomas20121.tinkers_reforged.Module;
 import com.mrthomas20121.libs.OredictHelper;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
-import com.mrthomas20121.tinkers_reforged.TinkersReforged;
-import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import com.teammetallurgy.atum.init.AtumBlocks;
 import com.teammetallurgy.atum.init.AtumItems;
 import net.minecraft.item.ItemStack;

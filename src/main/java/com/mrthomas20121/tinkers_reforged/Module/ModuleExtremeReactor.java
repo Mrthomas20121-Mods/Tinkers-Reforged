@@ -6,11 +6,8 @@ import com.mrthomas20121.libs.RegistryLib;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.MaterialIntegration;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
-import erogenousbeef.bigreactors.init.BrFluids;
 import net.minecraftforge.fluids.FluidRegistry;
 
 public class ModuleExtremeReactor extends ModuleBase {
@@ -62,38 +59,36 @@ public class ModuleExtremeReactor extends ModuleBase {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.yellorium) {
-            yellorium.setFluid(BrFluids.fluidYellorium);
-            yellorium.registerPreInit("ingotYellorium", BrFluids.fluidYellorium);
+            yellorium.setFluid(FluidRegistry.getFluid("yellorium"));
+            yellorium.registerPreInit("Yellorium", FluidRegistry.getFluid("yellorium"));
         }
         if(Config.blutonium) {
             FluidRegistry.registerFluid(ModuleFluids.blutonium);
             FluidRegistry.addBucketForFluid(ModuleFluids.blutonium);
             blutonium.setFluid(ModuleFluids.blutonium);
-            blutonium.registerPreInit("ingotBlutonium", ModuleFluids.blutonium);
+            blutonium.registerPreInit("Blutonium", ModuleFluids.blutonium);
         }
         if(Config.ludicrite) {
             FluidRegistry.registerFluid(ModuleFluids.ludicrite);
             FluidRegistry.addBucketForFluid(ModuleFluids.ludicrite);
             ludicrite.setFluid(ModuleFluids.ludicrite);
-            ludicrite.registerPreInit("ingotLudicrite", ModuleFluids.ludicrite);
+            ludicrite.registerPreInit("Ludicrite", ModuleFluids.ludicrite);
         }
         if(Config.cyanite) {
-            cyanite.setFluid(BrFluids.fluidCyanite);
-            cyanite.registerPreInit("ingotCyanite", BrFluids.fluidCyanite);
+            cyanite.setFluid(FluidRegistry.getFluid("cyanite"));
+            cyanite.registerPreInit("Cyanite", FluidRegistry.getFluid("cyanite"));
         }
     }
     @Override
     public void init(FMLInitializationEvent e) {
         if(Config.yellorium) {
-            yellorium.registerInitFluid(BrFluids.fluidYellorium, "Yellorium");
-            this.registerDefaultMelting("Yellorium", BrFluids.fluidYellorium);
+            yellorium.registerInitFluid(FluidRegistry.getFluid("yellorium"), "Yellorium");
+            //this.registerDefaultMelting("Yellorium", BrFluids.fluidYellorium);
         }
         if(Config.cyanite) {
-            cyanite.registerInitFluid(BrFluids.fluidCyanite, "Cyanite");
-            this.registerDefaultMelting("Cyanite", BrFluids.fluidCyanite);
+            cyanite.registerInitFluid(FluidRegistry.getFluid("cyanite"), "Cyanite");
+           //this.registerDefaultMelting("Cyanite", BrFluids.fluidCyanite);
         }
-        if(Config.blutonium) this.registerDefaultMelting("Blutonium", ModuleFluids.blutonium);
-        if(Config.ludicrite) this.registerDefaultMelting("Ludicrite", ModuleFluids.ludicrite);
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {
