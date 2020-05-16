@@ -35,10 +35,10 @@ public class ModuleFluids {
     public static FluidMoltenBase ventium = new FluidMoltenBase("ventium", Materials.ventium.materialTextColor);
     public static FluidMoltenBase horizonite = new FluidMoltenBase("horizonite", Materials.horizonite.materialTextColor);
     public static FluidMoltenBase pyrope = new FluidMoltenBase("pyrope", Materials.pyrope.materialTextColor);
-    public static FluidMoltenBase blackquartz = new FluidMoltenBase("black_quartz", Materials.blackquartz.materialTextColor);
     public static FluidMoltenBase enori = new FluidMoltenBase("enori", Materials.enori.materialTextColor);
+    public static FluidMoltenBase blackquartz = new FluidMoltenBase("black_quartz", Materials.blackquartz.materialTextColor);
 
-    public static void preInit(FMLPreInitializationEvent e) {
+    public void preInit(FMLPreInitializationEvent e) {
         if(Config.qivium) {
             FluidRegistry.registerFluid(qivium);
             FluidRegistry.addBucketForFluid(qivium);
@@ -52,6 +52,75 @@ public class ModuleFluids {
             kovar.setTemperature(750);
             FluidRegistry.registerFluid(kovar);
             FluidRegistry.addBucketForFluid(kovar);
+        }
+        if(Loader.isModLoaded("actuallyaddition")) {
+            if(Config.blackquartz) {
+                FluidRegistry.registerFluid(blackquartz);
+                FluidRegistry.addBucketForFluid(blackquartz);
+            }
+            if(Config.enori) {
+                FluidRegistry.registerFluid(enori);
+                FluidRegistry.addBucketForFluid(enori);
+            }
+        }
+        if(Loader.isModLoaded("astralsorcery")) {
+            if(Config.starmetal) {
+                FluidRegistry.registerFluid(starmetal);
+                FluidRegistry.addBucketForFluid(starmetal);
+            }
+        }        
+        if(Loader.isModLoaded("blue_skies")) {
+            if(Config.pyrope) {
+                FluidRegistry.registerFluid(pyrope);
+                FluidRegistry.addBucketForFluid(pyrope);
+            }
+            if(Config.horizonite) {
+                horizonite.setTemperature(700);
+                FluidRegistry.registerFluid(horizonite);
+                FluidRegistry.addBucketForFluid(horizonite);
+            }
+            if(Config.ventium) {
+                ventium.setTemperature(500);
+                FluidRegistry.registerFluid(ventium);
+                FluidRegistry.addBucketForFluid(ventium);
+            }
+        }
+        if(Loader.isModLoaded("bigreactors")) {
+            if(Config.ludicrite) {
+                FluidRegistry.registerFluid(ludicrite);
+                FluidRegistry.addBucketForFluid(ludicrite);
+            }
+            if(Config.blutonium) {
+                FluidRegistry.registerFluid(blutonium);
+                FluidRegistry.addBucketForFluid(blutonium);
+            }
+        }
+        if(Loader.isModLoaded("naturesaura")) {
+            if(Config.infused_iron) {
+                FluidRegistry.registerFluid(infused_iron);
+                FluidRegistry.addBucketForFluid(infused_iron);
+            }
+            if(Config.ingot_of_the_sky) {
+                FluidRegistry.registerFluid(molten_of_the_sky);
+                FluidRegistry.addBucketForFluid(molten_of_the_sky);
+            }
+        }
+        if(Loader.isModLoaded("mekanism")) { 
+            if(Config.refined_obsidian) {
+                refined_obsidian.setTemperature(700);
+                FluidRegistry.registerFluid(refined_obsidian);
+                FluidRegistry.addBucketForFluid(refined_obsidian);
+            }
+            if(Config.refined_glowstone) {
+                refined_glowstone.setTemperature(700);
+                FluidRegistry.registerFluid(refined_glowstone);
+                FluidRegistry.addBucketForFluid(refined_glowstone);
+            }
+            if(Config.osmium) {
+                osmium.setTemperature(550);
+                FluidRegistry.registerFluid(osmium);
+                FluidRegistry.addBucketForFluid(osmium);
+            }
         }
     }
     @SubscribeEvent
