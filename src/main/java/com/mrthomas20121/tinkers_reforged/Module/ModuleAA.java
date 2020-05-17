@@ -1,5 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
+import com.mrthomas20121.libs.OredictHelper;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 
@@ -64,18 +65,23 @@ public class ModuleAA extends ModuleBase {
         }
 
         if(Config.enori) {
-            enori.preInit(FluidRegistry.getFluid("black_quartz"));
+            enori.preInit(FluidRegistry.getFluid("enori"));
         }
     }
     public void init(FMLInitializationEvent e) {
         blackquartz.setRepresentativeItem("gemQuartzBlack");
-        voidCrystal.setRepresentativeItem(new ItemStack(InitItems.itemCrystal, 1, 3));
-        enori.setRepresentativeItem(new ItemStack(InitItems.itemCrystal, 1, 5));
-        palis.setRepresentativeItem(new ItemStack(InitItems.itemCrystal, 1, 1));
-        emeradic.setRepresentativeItem(new ItemStack(InitItems.itemCrystal, 1, 4));
-        diamantine.setRepresentativeItem(new ItemStack(InitItems.itemCrystal, 1, 2));
-        redstonia.addIngotItem(new ItemStack(InitItems.itemCrystal, 1));
-        redstonia.setRepresentativeItem(new ItemStack(InitItems.itemCrystal, 1));
+        OredictHelper.RegisterCrystalItem("Redstonia",new ItemStack(InitItems.itemCrystal, 1, 0));
+        OredictHelper.RegisterCrystalItem("Palis",new ItemStack(InitItems.itemCrystal, 1, 1));
+        OredictHelper.RegisterCrystalItem("Diamantine",new ItemStack(InitItems.itemCrystal, 1, 2));
+        OredictHelper.RegisterCrystalItem("Void",new ItemStack(InitItems.itemCrystal, 1, 3));
+        OredictHelper.RegisterCrystalItem("Emeradic",new ItemStack(InitItems.itemCrystal, 1, 4));
+        OredictHelper.RegisterCrystalItem("Enori",new ItemStack(InitItems.itemCrystal, 1, 5));
+        enori.setRepresentativeItem("crystalEnori");
+        voidCrystal.setRepresentativeItem("crystalVoid");
+        emeradic.setRepresentativeItem("crystalEmeradic");
+        redstonia.setRepresentativeItem("crystalRedstonia");
+        diamantine.setRepresentativeItem("crystalDiamantine");
+        palis.setRepresentativeItem("crystalPalis");
     }
     public void postInit(FMLPostInitializationEvent e) {
 
