@@ -3,6 +3,7 @@ package com.mrthomas20121.tinkers_reforged.Module;
 import com.mrthomas20121.libs.block.BlockGlassTic;
 import com.mrthomas20121.libs.item.*;
 import com.mrthomas20121.libs.RegistryLib;
+import com.mrthomas20121.libs.SmelteryUtils;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import com.mrthomas20121.libs.OredictHelper;
@@ -107,7 +108,7 @@ public class ModuleItems extends ModuleBase {
         TinkerRegistry.registerAlloy(kovarStack, laviumStack, qiviumStack);
         // this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
         // this.registerDefaultMelting("Qivium", ModuleFluids.qivium, true);
-        this.registerDefaultMelting("Kovar", ModuleFluids.kovar, true);
+        SmelteryUtils.registerDefaultMelting("Kovar", ModuleFluids.kovar, true);
     }
     public void postInit(FMLPostInitializationEvent e) {
         ItemStack glass_kovar = new ItemStack(kovar_glass);
