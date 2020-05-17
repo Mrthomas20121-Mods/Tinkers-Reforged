@@ -47,7 +47,6 @@ public class Config {
     public static boolean refined_obsidian = true;
     public static boolean refined_glowstone = true;
     public static boolean osmium = true;
-    public static boolean hdpe_sheet = true;
     // mystical world
     public static boolean amethyst = true;
     // roots

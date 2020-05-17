@@ -20,14 +20,14 @@ public class ConfigModules {
 
     public static void moduleAe2(Configuration cfg) {
         String category = "appliedenergistics2";
-        ae2 = cfg.getBoolean(name, category, ae2, "Set to false to disable Applied Energistic 2 module");
+        ae2 = cfg.getBoolean(name+"_"+category, category, ae2, "Set to false to disable Applied Energistic 2 module");
 
         Config.certus_quartz = cfg.getBoolean("certus_quartz", category, Config.certus_quartz, "Set to false to disable certus quartz material");
         Config.fluix_crystal = cfg.getBoolean("fluix_crystal", category, Config.fluix_crystal, "Set to false to disable fluix crystal material");
     }
     public static void moduleAtum(Configuration cfg) {
         String category = "atum2";
-        atum = cfg.getBoolean(name, category, atum, "Set to false to disable Atum module");
+        atum = cfg.getBoolean(name+"_"+category, category, atum, "Set to false to disable Atum module");
 
         Config.limestone = cfg.getBoolean("limestone", category, Config.limestone, "Set to false to disable limestone material");
         Config.khnumite = cfg.getBoolean("khnumite", category, Config.fluix_crystal, "Set to false to disable khnumite material");
@@ -39,17 +39,17 @@ public class ConfigModules {
     }
     public static void moduleAstralSorcery(Configuration cfg) {
         String category = "astralsorcery";
-        astral = cfg.getBoolean(name, category, astral, "Set to false to disable Astral Sorcery module");
+        astral = cfg.getBoolean(name+"_"+category, category, astral, "Set to false to disable Astral Sorcery module");
 
         Config.starmetal = cfg.getBoolean("astral_starmetal", category, Config.starmetal, "Set to false to disable astral starmetal material");
     }
     public static void moduleBlueSkies(Configuration cfg) {
         String category = "blue_skies";
-        blue_skies = cfg.getBoolean(name, category, blue_skies, "Set to false to disable Blue Skies module");
+        blue_skies = cfg.getBoolean(name+"_"+category, category, blue_skies, "Set to false to disable Blue Skies module");
     }
     public static void moduleExtremReactor(Configuration cfg) {
         String category = "extremereactors";
-        extreme = cfg.getBoolean(name, category, extreme, "Set to false to disable Extreme Reactors module");
+        extreme = cfg.getBoolean(name+"_"+category, category, extreme, "Set to false to disable Extreme Reactors module");
 
         Config.yellorium = cfg.getBoolean("yellorium", category, Config.yellorium, "Set to false to disable yellorium material");
         Config.blutonium = cfg.getBoolean("blutonium", category, Config.blutonium, "Set to false to disable blutonium material");
@@ -58,23 +58,22 @@ public class ConfigModules {
     }
     public static void moduleMekanism(Configuration cfg) {
         String category = "mekanism";
-        mekanism = cfg.getBoolean(name, category, mekanism, "Set to false to disable Mekanism  module");
+        mekanism = cfg.getBoolean(name+"_"+category, category, mekanism, "Set to false to disable Mekanism  module");
 
         Config.refined_obsidian = cfg.getBoolean("refined_obsidian", category, Config.refined_obsidian, "Set to false to disable refined obsidian material");
         Config.refined_glowstone = cfg.getBoolean("refined_glowstone", category, Config.refined_glowstone, "Set to false to disable refined glowstone material");
         Config.osmium = cfg.getBoolean("osmium", category, Config.osmium, "Set to false to disable osmium material");
-        Config.hdpe_sheet = cfg.getBoolean("hdpe_sheet", category, Config.hdpe_sheet, "Set to false to disable hdpe sheet material");
     }
 
     public static void moduleMysticalWorld(Configuration cfg) {
         String category = "mysticalworld";
-        mysticalworld = cfg.getBoolean(name, category, mysticalworld, "Set to false to disable Mystical World module");
+        mysticalworld = cfg.getBoolean(name+"_"+category, category, mysticalworld, "Set to false to disable Mystical World module");
 
         Config.amethyst = cfg.getBoolean("amethyst", category, Config.amethyst, "Set to false to disable amethyst material");
     }
     public static void moduleNaturesAura(Configuration cfg) {
         String category = "natuesaura";
-        naturesaura = cfg.getBoolean(name, category, naturesaura, "Set to false to disable Natures Aura module");
+        naturesaura = cfg.getBoolean(name+"_"+category, category, naturesaura, "Set to false to disable Natures Aura module");
 
         Config.infused_iron = cfg.getBoolean("infused_iron", category, Config.infused_iron, "Set to false to disable infused iron material");
         Config.ingot_of_the_sky = cfg.getBoolean("material_of_the_sky", category, Config.ancient_wood, "Set to false to disable material_of_the_sky material");
@@ -82,7 +81,7 @@ public class ConfigModules {
     }
     public static void moduleRoots(Configuration cfg) {
         String category = "roots";
-        roots = cfg.getBoolean(name, category, roots, "Set to false to disable Roots module");
+        roots = cfg.getBoolean(name+"_"+category, category, roots, "Set to false to disable Roots module");
 
         Config.runestone = cfg.getBoolean("runestone", category, Config.runestone, "Set to false to disable runestone material");
 
@@ -90,7 +89,7 @@ public class ConfigModules {
     }
     public static void moduleThermal(Configuration cfg) {
         String category = "thermalfoundation";
-        thermal = cfg.getBoolean(name, category, thermal, "Set to false to disable Thermal Foundation module");
+        thermal = cfg.getBoolean(name+"_"+category, category, thermal, "Set to false to disable Thermal Foundation module");
         Config.pyrotheum = cfg.getBoolean("pyrotheum", category, Config.pyrotheum, "Set to false to disable Pyrotheum as a smeltery fluid");
 
         Config.enderium = cfg.getBoolean("enderium", category, Config.enderium, "Set to false to disable enderium material");

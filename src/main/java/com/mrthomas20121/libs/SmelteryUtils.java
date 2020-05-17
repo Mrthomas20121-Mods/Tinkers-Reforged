@@ -6,7 +6,6 @@ import net.minecraftforge.fluids.FluidStack;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.smeltery.AlloyRecipe;
-import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import static slimeknights.tconstruct.smeltery.TinkerSmeltery.*;
 
