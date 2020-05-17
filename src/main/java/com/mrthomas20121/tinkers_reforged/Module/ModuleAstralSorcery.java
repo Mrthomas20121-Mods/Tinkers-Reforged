@@ -30,7 +30,7 @@ public class ModuleAstralSorcery extends ModuleBase {
             starmetal.addCommonItems("AstralStarmetal");
             starmetal.addIngotItem("ingotAstralStarmetal");
             starmetal.addIngotItem("dustAstralStarmetal");
-            starmetal.registerPreInit("ingotAstralStarmetal", ModuleFluids.starmetal);
+            starmetal.preInit("ingotAstralStarmetal", FluidRegistry.getFluid("starmetal"));
             Materials.mats.add(starmetal.getMat());
         }
     }

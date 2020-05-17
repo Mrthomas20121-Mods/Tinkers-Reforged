@@ -29,7 +29,7 @@ public class ModuleRoots extends ModuleBase {
 
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.runestone) {
-            runestone.registerPreInit("runestone");
+            runestone.preInit("runestone");
         }
     }
     public void init(FMLInitializationEvent e) {

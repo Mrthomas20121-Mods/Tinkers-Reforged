@@ -17,6 +17,7 @@ public class RegistryLib {
     private ExtraMaterialStats extraStats = null;
     private BowMaterialStats bowStats = null;
     private FletchingMaterialStats fletchingStats = null;
+    private MaterialIntegration integration = null;
 
     public RegistryLib(Material material) {
         this.mat = material;
@@ -100,50 +101,51 @@ public class RegistryLib {
         this.mat.setRepresentativeItem(item);
     }
 
-    /**
-     * Register your material
-     * @param ore oredict name(e.g ingotCopper, ingotSilver, ingotGold, gemAmethyst)
-     */
-    public void registerPreInit(String ore) {
+    public void preInit(String ore) {
         TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
         if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
         if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore)).preInit();
+        if(this.integration == null) TinkerRegistry.integrate(addMaterialIntegration(ore)).preInit();
+        else TinkerRegistry.integrate(this.integration).preInit();
     }
-    /**
-     * Register your material
-     * @param ore oredict name(e.g ingotCopper, ingotSilver, ingotGold, gemAmethyst)
-     * @param fluid a fluid
-     */
-    public void registerPreInit(String ore, Fluid fluid) {
+    public void preInit(String ore, Fluid fluid) {
         TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
         if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
         if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
+        if(this.integration == null) TinkerRegistry.integrate(addMaterialIntegration(ore, fluid)).preInit();
+        else TinkerRegistry.integrate(this.integration).preInit();
     }
-    public void registerPreInit(String ore, String oreRequirement, Fluid fluid) {
+    public void preInit(Fluid fluid) {
         TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
         if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
         if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid, oreRequirement)).preInit();
+        if(this.integration == null) TinkerRegistry.integrate(addMaterialIntegration(fluid)).preInit();
+        else TinkerRegistry.integrate(this.integration).preInit();
+    }
+    public void preInit(String ore, String oreRequirement, Fluid fluid) {
+        TinkerRegistry.addMaterialStats(this.mat, headStats, handleStats, extraStats);
+        if(this.bowStats != null) TinkerRegistry.addMaterialStats(this.mat, bowStats);
+        if(this.fletchingStats != null) TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
+        if(this.integration == null) TinkerRegistry.integrate(addMaterialIntegration(ore, fluid, oreRequirement)).preInit();
+        else TinkerRegistry.integrate(this.integration).preInit();
     }
 
-    public void registerFletchingPreInit(String ore) {
+    public void fletchingPreInit(String ore) {
         TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore)).preInit();
+        TinkerRegistry.integrate(addMaterialIntegration(ore)).preInit();
     }
-    public void registerBowPreInit(String ore) {
+    public void bowPreInit(String ore) {
         TinkerRegistry.addMaterialStats(this.mat, bowStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore)).preInit();
+        TinkerRegistry.integrate(addMaterialIntegration(ore)).preInit();
     }
 
-    public void registerFletchingPreInit(String ore, Fluid fluid) {
+    public void fletchingPreInit(String ore, Fluid fluid) {
         TinkerRegistry.addMaterialStats(this.mat, fletchingStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
+        TinkerRegistry.integrate(addMaterialIntegration(ore, fluid)).preInit();
     }
-    public void registerBowPreInit(String ore, Fluid fluid) {
+    public void bowPreInit(String ore, Fluid fluid) {
         TinkerRegistry.addMaterialStats(this.mat, bowStats);
-        TinkerRegistry.integrate(this.registerMaterialIntegration(ore, fluid)).preInit();
+        TinkerRegistry.integrate(addMaterialIntegration(ore, fluid)).preInit();
     }
 
     /**
@@ -161,20 +163,40 @@ public class RegistryLib {
         TinkerRegistry.addTrait(trait);
     }
 
-    private MaterialIntegration registerMaterialIntegration() {
-        return new MaterialIntegration(this.mat);
+    /**
+     * add a material integration if no oredict exist for the mat items
+     */
+    private MaterialIntegration addMaterialIntegration() {
+        this.integration =  new MaterialIntegration(this.mat);
+        return this.integration;
     }
-    private MaterialIntegration registerMaterialIntegration(String ore) {
-        return new MaterialIntegration(this.mat).setRepresentativeItem(ore);
+    /**
+     * add a material integration with a oredict but no fluid.
+     */
+    private MaterialIntegration addMaterialIntegration(String ore) {
+        this.integration = new MaterialIntegration(this.mat).setRepresentativeItem(ore);
+        return this.integration;
     }
-    private MaterialIntegration registerMaterialIntegration(Fluid fluid) {
-        return new MaterialIntegration(this.mat, fluid);
+    /**
+     * add a material integration with a fluid if no oredict exist for the mat items
+     */
+    private MaterialIntegration addMaterialIntegration(Fluid fluid) {
+        this.integration = new MaterialIntegration(this.mat, fluid);
+        return this.integration;
     }
 
-    private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid) {
-        return new MaterialIntegration(this.mat, fluid, ore).setRepresentativeItem("ingot"+ore);
+    /**
+     * add a material integration with a oredict and a fluid.
+     */
+    private MaterialIntegration addMaterialIntegration(String ore, Fluid fluid) {
+        this.integration = new MaterialIntegration(this.mat, fluid, ore).setRepresentativeItem("ingot"+ore);
+        return this.integration;
     }
-    private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid, String orerequirement) {
-        return new MaterialIntegration(this.mat, fluid, ore, orerequirement+ore).setRepresentativeItem(orerequirement+ore);
+    /**
+     * add a material integration with a oredict, a oredict requirement and a fluid.
+     */
+    private MaterialIntegration addMaterialIntegration(String ore, Fluid fluid, String orerequirement) {
+        this.integration = new MaterialIntegration(this.mat, fluid, ore, orerequirement+ore).setRepresentativeItem(orerequirement+ore);
+        return this.integration;
     }
 }

@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
+import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -36,13 +37,11 @@ public class ModuleAtum extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.limestone) {
             limestone.addIngotItem("stoneLimestone");
-            limestone.registerPreInit("stoneLimestone");
-            Materials.mats.add(limestone.getMat());
+            limestone.preInit("stoneLimestone");
         }
         if(Config.khnumite) {
             khnumite.addIngotItem("ingotKhnumite");
-            khnumite.registerPreInit("ingotKhnumite");
-            Materials.mats.add(khnumite.getMat());
+            khnumite.preInit("Khnumite");
         }
     }
     public void init(FMLInitializationEvent e) { 

@@ -88,41 +88,41 @@ public class ModuleThermal extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.enderium) {
             Fluid fluid = FluidRegistry.getFluid((enderiumOre.toLowerCase()));
-            enderium.registerPreInit(enderiumOre, fluid);
+            enderium.preInit(enderiumOre, fluid);
             Materials.mats.add(enderium.getMat());
         }
         if(Config.signalum) {
             Fluid fluid = FluidRegistry.getFluid((signalumOre.toLowerCase()));
-            signalum.registerPreInit(signalumOre, fluid);
+            signalum.preInit(signalumOre, fluid);
             Materials.mats.add(signalum.getMat());
         }
         if(Config.lumium) {
             Fluid fluid = FluidRegistry.getFluid((lumiumOre.toLowerCase()));
-            lumium.registerPreInit(lumiumOre, fluid);
+            lumium.preInit(lumiumOre, fluid);
             Materials.mats.add(lumium.getMat());
         }
         if(Config.platinum) {
             platinum.addCommonItems(platinumOre);
             Fluid fluid = FluidRegistry.getFluid((platinumOre.toLowerCase()));
-            platinum.registerPreInit(platinumOre, fluid);
+            platinum.preInit(platinumOre, fluid);
             Materials.mats.add(platinum.getMat());
         }
         if(Config.iridium) {
             iridium.addCommonItems(iridiumOre);
             Fluid fluid = FluidRegistry.getFluid((iridiumOre.toLowerCase()));
-            iridium.registerPreInit(iridiumOre, fluid);
+            iridium.preInit(iridiumOre, fluid);
             Materials.mats.add(iridium.getMat());
         }
         if(Config.invar) {
             invar.addCommonItems(invarOre);
             Fluid fluid = FluidRegistry.getFluid((invarOre.toLowerCase()));
-            invar.registerPreInit(invarOre, fluid);
+            invar.preInit(invarOre, fluid);
             Materials.mats.add(invar.getMat());
         }
         if(Config.aluminum) {
             aluminum.addCommonItems(aluminumOre);
             Fluid fluid = FluidRegistry.getFluid((aluminumOre.toLowerCase()));
-            aluminum.registerPreInit(aluminumOre, fluid);
+            aluminum.preInit(aluminumOre, fluid);
             Materials.mats.add(aluminum.getMat());
         }
     }

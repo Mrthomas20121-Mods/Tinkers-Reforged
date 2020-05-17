@@ -6,6 +6,7 @@ import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -36,13 +37,13 @@ public class ModuleAe extends ModuleBase {
         if(Config.certus_quartz) {
             certus_quartz.addGemItem("crystalCertusQuartz");
             certus_quartz.addGemItem("crystalPureCertusQuartz");
-            certus_quartz.registerPreInit("crystalCertusQuartz");
+            certus_quartz.preInit("CrystalCertusQuartz");
             Materials.mats.add(certus_quartz.getMat());
         }
         if(Config.fluix_crystal) {
             fluix_crystal.addGemItem("crystalFluix");
             fluix_crystal.addGemItem("crystalPureFluix");
-            fluix_crystal.registerPreInit("crystalFluix");
+            fluix_crystal.bowPreInit("crystalFluix");
             Materials.mats.add(fluix_crystal.getMat());
         }
 

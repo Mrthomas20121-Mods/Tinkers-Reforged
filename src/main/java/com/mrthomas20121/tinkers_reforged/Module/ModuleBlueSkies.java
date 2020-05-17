@@ -58,17 +58,17 @@ public class ModuleBlueSkies extends ModuleBase {
         if(Config.ventium) {
             ventium.setFluid(ModuleFluids.ventium);
             ventium.addCommonItems("Ventium");
-            ventium.registerPreInit("Ventium", ModuleFluids.ventium);
+            ventium.preInit("Ventium", ModuleFluids.ventium);
         }
         if(Config.horizonite) {
             horizonite.setFluid(ModuleFluids.horizonite);
             horizonite.addCommonItems("Horizonite");
-            horizonite.registerPreInit("Horizonite", ModuleFluids.horizonite);
+            horizonite.preInit("Horizonite", ModuleFluids.horizonite);
         }
         if(Config.pyrope) {
             pyrope.addCommonItems("Pyrope");
             pyrope.setFluid(ModuleFluids.pyrope);
-            pyrope.registerPreInit("Pyrope", "gem", ModuleFluids.pyrope);
+            pyrope.preInit("Pyrope", "gem", ModuleFluids.pyrope);
         }
     }
     public void init(FMLInitializationEvent e) {

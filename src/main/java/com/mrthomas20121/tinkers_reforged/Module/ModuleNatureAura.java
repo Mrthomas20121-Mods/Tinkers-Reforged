@@ -3,10 +3,13 @@ package com.mrthomas20121.tinkers_reforged.Module;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
+
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -44,8 +47,6 @@ public class ModuleNatureAura extends ModuleBase {
         ancient_wood.registerExtraStats(-10);
         ancient_wood.registerBowStats(0.9f, 1.0f, 1);
         ancient_wood.registerFletchingStats(0.1f, 0.5f);
-
-
     }
 
     @Override
@@ -55,23 +56,21 @@ public class ModuleNatureAura extends ModuleBase {
             ingot_of_the_sky.setFluid(ModuleFluids.molten_of_the_sky);
             //ingot_of_the_sky.addCommonItems("Sky");
             ingot_of_the_sky.addIngotItem(ModItems.SKY_INGOT);
-            ingot_of_the_sky.registerPreInit("Sky",ModuleFluids.molten_of_the_sky);
+            ingot_of_the_sky.preInit("Sky",ModuleFluids.molten_of_the_sky);
             Materials.mats.add(ingot_of_the_sky.getMat());
         }
-
         if(Config.infused_iron) {
             infused_iron.setFluid(ModuleFluids.infused_iron);
             infused_iron.addCommonItems("InfusedIron");
             infused_iron.addIngotItem(ModItems.INFUSED_IRON);
             infused_iron.addBlockItem(ModBlocks.INFUSED_IRON);
-            infused_iron.registerPreInit("InfusedIron", ModuleFluids.infused_iron);
+            infused_iron.preInit("InfusedIron", ModuleFluids.infused_iron);
             Materials.mats.add(infused_iron.getMat());
         }
-
         if(Config.ancient_wood) {
             //ancient_wood.addCommonItems("plankAncient");
-            ancient_wood.addPlankItem(ModBlocks.ANCIENT_PLANKS);
-            ancient_wood.registerPreInit("plankAncient");
+            ancient_wood.addIngotItem(new ItemStack(ModBlocks.ANCIENT_PLANKS, 1));
+            ancient_wood.preInit("plankAncient");
             Materials.mats.add(ancient_wood.getMat());
         }
     }

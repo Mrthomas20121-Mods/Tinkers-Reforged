@@ -60,19 +60,19 @@ public class ModuleExtremeReactor extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.yellorium) {
             yellorium.setFluid(FluidRegistry.getFluid("yellorium"));
-            yellorium.registerPreInit("Yellorium", FluidRegistry.getFluid("yellorium"));
+            yellorium.preInit("Yellorium", FluidRegistry.getFluid("yellorium"));
         }
         if(Config.blutonium) {
             blutonium.setFluid(FluidRegistry.getFluid("blutonium"));
-            blutonium.registerPreInit("Blutonium", FluidRegistry.getFluid("blutonium"));
+            blutonium.preInit("Blutonium", FluidRegistry.getFluid("blutonium"));
         }
         if(Config.ludicrite) {
             ludicrite.setFluid(FluidRegistry.getFluid("ludicrite"));
-            ludicrite.registerPreInit("Ludicrite", FluidRegistry.getFluid("ludicrite"));
+            ludicrite.preInit("Ludicrite", FluidRegistry.getFluid("ludicrite"));
         }
         if(Config.cyanite) {
             cyanite.setFluid(FluidRegistry.getFluid("cyanite"));
-            cyanite.registerPreInit("Cyanite", FluidRegistry.getFluid("cyanite"));
+            cyanite.preInit("Cyanite", FluidRegistry.getFluid("cyanite"));
         }
     }
     @Override

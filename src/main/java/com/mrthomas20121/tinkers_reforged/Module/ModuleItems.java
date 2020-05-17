@@ -88,13 +88,13 @@ public class ModuleItems extends ModuleBase {
         qivium_mat.setFluid(ModuleFluids.qivium);
         qivium_mat.addCommonItems("Qivium");
         qivium_mat.setRepresentativeItem("ingotQivium");
-        qivium_mat.registerPreInit("Qivium", ModuleFluids.qivium);
+        qivium_mat.preInit("Qivium", ModuleFluids.qivium);
 
         Materials.mats.add(lavium_mat.getMat());
         lavium_mat.setFluid(ModuleFluids.lavium);
         lavium_mat.addCommonItems("Lavium");
         lavium_mat.setRepresentativeItem("ingotLavium");
-        lavium_mat.registerPreInit("Lavium", ModuleFluids.lavium);
+        lavium_mat.preInit("Lavium", ModuleFluids.lavium);
     }
     public void init(FMLInitializationEvent e) {
         FluidStack ardite = new FluidStack(FluidRegistry.getFluid("ardite"), 288);
@@ -103,11 +103,9 @@ public class ModuleItems extends ModuleBase {
         FluidStack glass = new FluidStack(FluidRegistry.getFluid("glass"), 1000);
         FluidStack qiviumStack = new FluidStack(ModuleFluids.qivium, 144);
         FluidStack kovarStack = new FluidStack(ModuleFluids.kovar, 144);
-        TinkerRegistry.registerAlloy(laviumStack, glass, new FluidStack(FluidRegistry.getFluid("cobalt"), 288), purpleslime);
-        TinkerRegistry.registerAlloy(qiviumStack, glass, ardite, purpleslime);
-        TinkerRegistry.registerAlloy(kovarStack, laviumStack, qiviumStack);
-        // this.registerDefaultMelting("Lavium", ModuleFluids.lavium, true);
-        // this.registerDefaultMelting("Qivium", ModuleFluids.qivium, true);
+        SmelteryUtils.registerAlloy(laviumStack, glass, new FluidStack(FluidRegistry.getFluid("cobalt"), 288), purpleslime);
+        SmelteryUtils.registerAlloy(qiviumStack, glass, ardite, purpleslime);
+        SmelteryUtils.registerAlloy(kovarStack, laviumStack, qiviumStack);
         SmelteryUtils.registerDefaultMelting("Kovar", ModuleFluids.kovar, true);
     }
     public void postInit(FMLPostInitializationEvent e) {

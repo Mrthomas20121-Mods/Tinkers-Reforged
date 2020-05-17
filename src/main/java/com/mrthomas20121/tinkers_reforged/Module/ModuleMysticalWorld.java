@@ -28,7 +28,7 @@ public class ModuleMysticalWorld extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.amethyst) {
             amethyst.addGemItem("Amethyst");
-            amethyst.registerPreInit("gemAmethyst");
+            amethyst.preInit("Amethyst");
             Materials.mats.add(amethyst.getMat());
         }
     }

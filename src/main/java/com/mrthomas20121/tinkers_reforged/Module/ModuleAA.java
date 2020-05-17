@@ -58,13 +58,13 @@ public class ModuleAA extends ModuleBase {
 
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.blackquartz) {
-            blackquartz.setFluid(ModuleFluids.blackquartz);
+            blackquartz.setFluid(FluidRegistry.getFluid("black_quartz"));
             blackquartz.addGemItem("QuartzBlack");
-            blackquartz.registerPreInit("QuartzBlack", "gem", ModuleFluids.blackquartz);
+            blackquartz.preInit("QuartzBlack", "gem", FluidRegistry.getFluid("black_quartz"));
         }
 
         if(Config.enori) {
-
+            enori.preInit(FluidRegistry.getFluid("black_quartz"));
         }
     }
     public void init(FMLInitializationEvent e) {

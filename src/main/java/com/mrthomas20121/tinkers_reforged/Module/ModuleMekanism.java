@@ -4,8 +4,6 @@ import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 
-import mekanism.common.item.ItemHDPE;
-
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -19,7 +17,6 @@ public class ModuleMekanism extends ModuleBase {
     public RegistryLib osmium = new RegistryLib(Materials.osmium);
     public RegistryLib refined_obsidian = new RegistryLib(Materials.refined_obsidian);
     public RegistryLib refined_glowstone = new RegistryLib(Materials.refined_glowstone);
-    public RegistryLib hdpe_sheet = new RegistryLib(Materials.hdpe_sheet);
 
     public ModuleMekanism() {
         osmium.setCraftable(false).setCastable(true);
@@ -45,41 +42,28 @@ public class ModuleMekanism extends ModuleBase {
         refined_glowstone.registerHandleStats(1, 100);
         refined_glowstone.registerExtraStats(50);
         refined_glowstone.registerBowStats(2.7f, 5, 2.1f);
-
-        hdpe_sheet.setCraftable(true).setCastable(false);
-        hdpe_sheet.registerFletchingStats(1f, 1.1f);
-        hdpe_sheet.registerMaterialTrait(TinkerTraits.writable2);
     }
 
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.refined_obsidian) {
             refined_obsidian.addCommonItems("RefinedObsidian");
             refined_obsidian.setFluid(FluidRegistry.getFluid("refined_obsidian"));
-            refined_obsidian.registerPreInit("RefinedObsidian", FluidRegistry.getFluid("refined_obsidian"));
+            refined_obsidian.preInit("RefinedObsidian", FluidRegistry.getFluid("refined_obsidian"));
             Materials.mats.add(refined_obsidian.getMat());
         }
-
         if(Config.refined_glowstone) {
             refined_glowstone.addCommonItems("RefinedGlowstone");
             refined_glowstone.setFluid(FluidRegistry.getFluid("refined_glowstone"));
-            refined_glowstone.registerPreInit("RefinedGlowstone", FluidRegistry.getFluid("refined_glowstone"));
+            refined_glowstone.preInit("RefinedGlowstone", FluidRegistry.getFluid("refined_glowstone"));
             Materials.mats.add(refined_glowstone.getMat());
         }
-
         if(Config.osmium) {
             osmium.addCommonItems("Osmium");
             osmium.setFluid(FluidRegistry.getFluid("osmium"));
-            osmium.registerPreInit("Osmium", FluidRegistry.getFluid("osmium"));
+            osmium.preInit("Osmium", FluidRegistry.getFluid("osmium"));
             Materials.mats.add(osmium.getMat());
         }
-
-        if(Config.hdpe_sheet) {
-            hdpe_sheet.registerFletchingPreInit("hdpe_sheet");
-            Materials.mats.add(hdpe_sheet.getMat());
-        }
     }
-    public void init(FMLInitializationEvent e) {
-        //hdpe_sheet.setRepresentativeItem();
-     }
+    public void init(FMLInitializationEvent e) {}
     public void postInit(FMLPostInitializationEvent e) { }
 }
