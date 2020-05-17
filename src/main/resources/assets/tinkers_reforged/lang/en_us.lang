@@ -61,6 +61,8 @@ fluid.refined_glowstone=Molten Refined Glowstone
 fluid.ventium=Molten Ventium
 fluid.horizonite=Molten Horizonite
 fluid.pyrope=Molten Pyrope
+fluid.black_quartz=Molten Black Quartz
+fluid.enori=Molten Enori Crystal
 
 # mining levels
 ui.mininglevel.lavium=Lavium
@@ -130,7 +132,7 @@ modifier.ender.name=Ender
 modifier.ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Ender Mobs.
 
 modifier.enderfestation.name=Enderfestation
-modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning a endermite.
+modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning an endermite.
 
 modifier.reforged_bright.name=Bright
 modifier.reforged_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
@@ -145,10 +147,10 @@ modifier.fire_man.name=Fire Man!
 modifier.fire_man.desc=§oLet it burn§r\nCrits set the target on fire.
 
 modifier.reforged_radioactive.name=Radioactive
-modifier.reforged_radioactive.desc=§oBright and Dangerous!
+modifier.reforged_radioactive.desc=§oOh no!§r\n50% chance to cure poison/wither on tick.
 
 modifier.nuclear_waste.name=Nuclear Waste
-modifier.nuclear_waste.desc=§oLosing Durability give bad effects.
+modifier.nuclear_waste.desc=§oNuclear Infusion anyone?§r\nGet a random vanilla potion effect after mining or attacking.
 
 modifier.life_steal.name=Life Steal
 modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
