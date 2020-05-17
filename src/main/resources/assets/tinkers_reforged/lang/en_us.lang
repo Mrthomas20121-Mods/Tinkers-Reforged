@@ -83,6 +83,10 @@ material.reforged_infused_iron.name=Infused Iron
 material.reforged_ancient_wood.name=Ancient Wood
 material.reforged_sky.name=Material Of The Sky
 
+## aa materials
+material.reforged_black_quartz.name=Black Quartz
+material.reforged_enori.name=Enori Crystal
+
 # Appliedenergistic2 materials
 material.reforged_certus_quartz.name=Certus Quartz
 material.reforged_fluix_crystal.name=Fluix Crystal
