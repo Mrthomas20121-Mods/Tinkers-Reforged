@@ -21,14 +21,15 @@ public class Modules {
     public static final ModuleMekanism mekanism = new ModuleMekanism();
     public static final ModuleBlueSkies blueskies = new ModuleBlueSkies();
     public static final ModuleItems moduleItems = new ModuleItems();
+    public static final ModuleFluids fluids = new ModuleFluids();
     public static ModuleConArm conarm = null;
     // tool module
     public static final ModuleTools tools = new ModuleTools();
 
     public static void preInit(FMLPreInitializationEvent event) {
-
+        
+        fluids.preInit(event);
         moduleItems.preInit(event);
-        ModuleFluids.preInit(event);
 
         if(Loader.isModLoaded("actuallyadditions")) {
             aa.preInit(event);

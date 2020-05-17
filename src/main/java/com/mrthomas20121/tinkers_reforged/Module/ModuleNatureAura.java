@@ -2,16 +2,11 @@ package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
-import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.MaterialIntegration;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -57,10 +52,6 @@ public class ModuleNatureAura extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
 
         if(Config.ingot_of_the_sky) {
-
-            FluidRegistry.registerFluid(ModuleFluids.molten_of_the_sky);
-            FluidRegistry.addBucketForFluid(ModuleFluids.molten_of_the_sky);
-            OreDictionary.registerOre("ingotSky", ModItems.SKY_INGOT);
             ingot_of_the_sky.setFluid(ModuleFluids.molten_of_the_sky);
             //ingot_of_the_sky.addCommonItems("Sky");
             ingot_of_the_sky.addIngotItem(ModItems.SKY_INGOT);
@@ -69,10 +60,6 @@ public class ModuleNatureAura extends ModuleBase {
         }
 
         if(Config.infused_iron) {
-            OreDictionary.registerOre("ingotInfusedIron", ModItems.INFUSED_IRON);
-            OreDictionary.registerOre("blockInfusedIron", ModBlocks.INFUSED_IRON);
-            FluidRegistry.registerFluid(ModuleFluids.infused_iron);
-            FluidRegistry.addBucketForFluid(ModuleFluids.infused_iron);
             infused_iron.setFluid(ModuleFluids.infused_iron);
             infused_iron.addCommonItems("InfusedIron");
             infused_iron.addIngotItem(ModItems.INFUSED_IRON);
@@ -82,9 +69,6 @@ public class ModuleNatureAura extends ModuleBase {
         }
 
         if(Config.ancient_wood) {
-            OreDictionary.registerOre("plankAncient", ModBlocks.ANCIENT_PLANKS);
-            OreDictionary.registerOre("logAncient", ModBlocks.ANCIENT_LOG);
-
             //ancient_wood.addCommonItems("plankAncient");
             ancient_wood.addPlankItem(ModBlocks.ANCIENT_PLANKS);
             ancient_wood.registerPreInit("plankAncient");
@@ -93,8 +77,14 @@ public class ModuleNatureAura extends ModuleBase {
     }
     @Override
     public void init(FMLInitializationEvent e) {
-        //this.registerDefaultMelting("InfusedIron", ModuleFluids.infused_iron);
-        //this.registerDefaultMelting("Sky", ModuleFluids.molten_of_the_sky);
+        OreDictionary.registerOre("ingotInfusedIron", ModItems.INFUSED_IRON);
+        OreDictionary.registerOre("blockInfusedIron", ModBlocks.INFUSED_IRON);
+
+        OreDictionary.registerOre("plankAncient", ModBlocks.ANCIENT_PLANKS);
+        OreDictionary.registerOre("logAncient", ModBlocks.ANCIENT_LOG);
+        
+        OreDictionary.registerOre("ingotSky", ModItems.SKY_INGOT);
+
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) { }

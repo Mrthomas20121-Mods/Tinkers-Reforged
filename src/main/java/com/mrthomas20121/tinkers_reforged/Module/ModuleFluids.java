@@ -53,7 +53,7 @@ public class ModuleFluids {
             FluidRegistry.registerFluid(kovar);
             FluidRegistry.addBucketForFluid(kovar);
         }
-        if(Loader.isModLoaded("actuallyaddition")) {
+        if(Loader.isModLoaded("actuallyadditions")) {
             if(Config.blackquartz) {
                 FluidRegistry.registerFluid(blackquartz);
                 FluidRegistry.addBucketForFluid(blackquartz);

@@ -51,30 +51,20 @@ public class ModuleBlueSkies extends ModuleBase {
         turquoise.registerHandleStats(0.9f, 90);
         turquoise.registerExtraStats(70);
         turquoise.registerBowStats(1.0f, 1.5f, 3);
-
     }
 
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.ventium) {
-            ModuleFluids.ventium.setTemperature(500);
-            FluidRegistry.registerFluid(ModuleFluids.ventium);
-            FluidRegistry.addBucketForFluid(ModuleFluids.ventium);
             ventium.setFluid(ModuleFluids.ventium);
             ventium.addCommonItems("Ventium");
             ventium.registerPreInit("Ventium", ModuleFluids.ventium);
         }
         if(Config.horizonite) {
-            ModuleFluids.horizonite.setTemperature(700);
-            FluidRegistry.registerFluid(ModuleFluids.horizonite);
-            FluidRegistry.addBucketForFluid(ModuleFluids.horizonite);
             horizonite.setFluid(ModuleFluids.horizonite);
             horizonite.addCommonItems("Horizonite");
             horizonite.registerPreInit("Horizonite", ModuleFluids.horizonite);
         }
         if(Config.pyrope) {
-            ModuleFluids.pyrope.setTemperature(500);
-            FluidRegistry.registerFluid(ModuleFluids.pyrope);
-            FluidRegistry.addBucketForFluid(ModuleFluids.pyrope);
             pyrope.addCommonItems("Pyrope");
             pyrope.setFluid(ModuleFluids.pyrope);
             pyrope.registerPreInit("Pyrope", "gem", ModuleFluids.pyrope);

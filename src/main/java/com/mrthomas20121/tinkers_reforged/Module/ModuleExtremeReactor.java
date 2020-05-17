@@ -63,16 +63,12 @@ public class ModuleExtremeReactor extends ModuleBase {
             yellorium.registerPreInit("Yellorium", FluidRegistry.getFluid("yellorium"));
         }
         if(Config.blutonium) {
-            FluidRegistry.registerFluid(ModuleFluids.blutonium);
-            FluidRegistry.addBucketForFluid(ModuleFluids.blutonium);
-            blutonium.setFluid(ModuleFluids.blutonium);
-            blutonium.registerPreInit("Blutonium", ModuleFluids.blutonium);
+            blutonium.setFluid(FluidRegistry.getFluid("blutonium"));
+            blutonium.registerPreInit("Blutonium", FluidRegistry.getFluid("blutonium"));
         }
         if(Config.ludicrite) {
-            FluidRegistry.registerFluid(ModuleFluids.ludicrite);
-            FluidRegistry.addBucketForFluid(ModuleFluids.ludicrite);
-            ludicrite.setFluid(ModuleFluids.ludicrite);
-            ludicrite.registerPreInit("Ludicrite", ModuleFluids.ludicrite);
+            ludicrite.setFluid(FluidRegistry.getFluid("ludicrite"));
+            ludicrite.registerPreInit("Ludicrite", FluidRegistry.getFluid("ludicrite"));
         }
         if(Config.cyanite) {
             cyanite.setFluid(FluidRegistry.getFluid("cyanite"));
@@ -83,11 +79,9 @@ public class ModuleExtremeReactor extends ModuleBase {
     public void init(FMLInitializationEvent e) {
         if(Config.yellorium) {
             yellorium.registerInitFluid(FluidRegistry.getFluid("yellorium"), "Yellorium");
-            //this.registerDefaultMelting("Yellorium", BrFluids.fluidYellorium);
         }
         if(Config.cyanite) {
             cyanite.registerInitFluid(FluidRegistry.getFluid("cyanite"), "Cyanite");
-           //this.registerDefaultMelting("Cyanite", BrFluids.fluidCyanite);
         }
     }
     @Override

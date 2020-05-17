@@ -27,8 +27,6 @@ public class ModuleAstralSorcery extends ModuleBase {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.starmetal) {
-            FluidRegistry.registerFluid(ModuleFluids.starmetal);
-            FluidRegistry.addBucketForFluid(ModuleFluids.starmetal);
             starmetal.addCommonItems("AstralStarmetal");
             starmetal.addIngotItem("ingotAstralStarmetal");
             starmetal.addIngotItem("dustAstralStarmetal");

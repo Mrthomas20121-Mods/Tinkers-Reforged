@@ -53,32 +53,23 @@ public class ModuleMekanism extends ModuleBase {
 
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.refined_obsidian) {
-            ModuleFluids.refined_obsidian.setTemperature(700);
-            FluidRegistry.registerFluid(ModuleFluids.refined_obsidian);
-            FluidRegistry.addBucketForFluid(ModuleFluids.refined_obsidian);
             refined_obsidian.addCommonItems("RefinedObsidian");
-            refined_obsidian.setFluid(ModuleFluids.refined_obsidian);
-            refined_obsidian.registerPreInit("RefinedObsidian", ModuleFluids.refined_obsidian);
+            refined_obsidian.setFluid(FluidRegistry.getFluid("refined_obsidian"));
+            refined_obsidian.registerPreInit("RefinedObsidian", FluidRegistry.getFluid("refined_obsidian"));
             Materials.mats.add(refined_obsidian.getMat());
         }
 
         if(Config.refined_glowstone) {
-            ModuleFluids.refined_glowstone.setTemperature(700);
-            FluidRegistry.registerFluid(ModuleFluids.refined_glowstone);
-            FluidRegistry.addBucketForFluid(ModuleFluids.refined_glowstone);
             refined_glowstone.addCommonItems("RefinedGlowstone");
-            refined_glowstone.setFluid(ModuleFluids.refined_glowstone);
-            refined_glowstone.registerPreInit("RefinedGlowstone", ModuleFluids.refined_glowstone);
+            refined_glowstone.setFluid(FluidRegistry.getFluid("refined_glowstone"));
+            refined_glowstone.registerPreInit("RefinedGlowstone", FluidRegistry.getFluid("refined_glowstone"));
             Materials.mats.add(refined_glowstone.getMat());
         }
 
         if(Config.osmium) {
-            ModuleFluids.osmium.setTemperature(550);
-            FluidRegistry.registerFluid(ModuleFluids.osmium);
-            FluidRegistry.addBucketForFluid(ModuleFluids.osmium);
             osmium.addCommonItems("Osmium");
-            osmium.setFluid(ModuleFluids.osmium);
-            osmium.registerPreInit("Osmium", ModuleFluids.osmium);
+            osmium.setFluid(FluidRegistry.getFluid("osmium"));
+            osmium.registerPreInit("Osmium", FluidRegistry.getFluid("osmium"));
             Materials.mats.add(osmium.getMat());
         }
 
