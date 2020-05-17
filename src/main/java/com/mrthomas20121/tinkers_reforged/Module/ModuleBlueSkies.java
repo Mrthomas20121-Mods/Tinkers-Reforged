@@ -1,5 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
+import com.mrthomas20121.libs.SmelteryUtils;
 import com.mrthomas20121.libs.OredictHelper;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
@@ -94,7 +95,10 @@ public class ModuleBlueSkies extends ModuleBase {
         OredictHelper.RegisterOreBlock("Diopside", BlocksSkies.everbright_diopside_ore);
         OredictHelper.RegisterOreBlock("Diopside", BlocksSkies.everdawn_diopside_ore);
 
-        pyrope.setRepresentativeItem("gemPyrope");
+        if(Config.pyrope) {
+            pyrope.setRepresentativeItem("gemPyrope");
+            SmelteryUtils.registerGemCasting("Pyrope", FluidRegistry.getFluid("pyrope"));
+        }
     }
     public void postInit(FMLPostInitializationEvent e) {
 
