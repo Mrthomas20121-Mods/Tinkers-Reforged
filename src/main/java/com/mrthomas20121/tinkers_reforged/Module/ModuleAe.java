@@ -6,7 +6,6 @@ import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -43,7 +42,7 @@ public class ModuleAe extends ModuleBase {
         if(Config.fluix_crystal) {
             fluix_crystal.addGemItem("crystalFluix");
             fluix_crystal.addGemItem("crystalPureFluix");
-            fluix_crystal.bowPreInit("crystalFluix");
+            fluix_crystal.preInit("crystalFluix");
             Materials.mats.add(fluix_crystal.getMat());
         }
 

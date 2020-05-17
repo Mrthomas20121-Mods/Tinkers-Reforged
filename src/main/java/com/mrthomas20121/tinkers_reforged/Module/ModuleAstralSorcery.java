@@ -1,6 +1,7 @@
 package com.mrthomas20121.tinkers_reforged.Module;
 
 import com.mrthomas20121.libs.RegistryLib;
+import com.mrthomas20121.libs.SmelteryUtils;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -37,7 +38,7 @@ public class ModuleAstralSorcery extends ModuleBase {
     @Override
     public void init(FMLInitializationEvent e) {
         starmetal.setCastable(true).setCraftable(false);
-        this.registerDefaultMelting("AstralStarmetal", ModuleFluids.starmetal);
+        //SmelteryUtils.registerDefaultMelting("AstralStarmetal", ModuleFluids.starmetal);
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) { }

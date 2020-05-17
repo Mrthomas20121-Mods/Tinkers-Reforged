@@ -4,13 +4,10 @@ import com.mrthomas20121.libs.OredictHelper;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 import com.teammetallurgy.atum.init.AtumBlocks;
-import com.teammetallurgy.atum.init.AtumItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.oredict.OreDictionary;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -45,7 +42,9 @@ public class ModuleAtum extends ModuleBase {
         }
     }
     public void init(FMLInitializationEvent e) { 
-        OreDictionary.registerOre("clothLinen", AtumItems.LINEN_CLOTH);
+        if(Config.khnumite) {
+            khnumite.setRepresentativeItem("ingotKhnumite");
+        }
     }
 
     public void postInit(FMLPostInitializationEvent e) {

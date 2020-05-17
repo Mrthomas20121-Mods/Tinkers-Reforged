@@ -9,7 +9,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -53,18 +52,17 @@ public class ModuleNatureAura extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
 
         if(Config.ingot_of_the_sky) {
-            ingot_of_the_sky.setFluid(ModuleFluids.molten_of_the_sky);
-            //ingot_of_the_sky.addCommonItems("Sky");
+            ingot_of_the_sky.setFluid(FluidRegistry.getFluid("molten_of_the_sky"));
             ingot_of_the_sky.addIngotItem(ModItems.SKY_INGOT);
-            ingot_of_the_sky.preInit("Sky",ModuleFluids.molten_of_the_sky);
+            ingot_of_the_sky.preInit("Sky",FluidRegistry.getFluid("molten_of_the_sky"));
             Materials.mats.add(ingot_of_the_sky.getMat());
         }
         if(Config.infused_iron) {
-            infused_iron.setFluid(ModuleFluids.infused_iron);
+            infused_iron.setFluid(FluidRegistry.getFluid("infused_iron"));
             infused_iron.addCommonItems("InfusedIron");
             infused_iron.addIngotItem(ModItems.INFUSED_IRON);
             infused_iron.addBlockItem(ModBlocks.INFUSED_IRON);
-            infused_iron.preInit("InfusedIron", ModuleFluids.infused_iron);
+            infused_iron.preInit("InfusedIron", FluidRegistry.getFluid("infused_iron"));
             Materials.mats.add(infused_iron.getMat());
         }
         if(Config.ancient_wood) {
