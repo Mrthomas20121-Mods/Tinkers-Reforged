@@ -1,10 +1,8 @@
 package com.mrthomas20121.tinkers_reforged;
 
-import com.mrthomas20121.tinkers_reforged.Config.Config;
-import com.mrthomas20121.tinkers_reforged.proxy.ClientEvent;
-import com.mrthomas20121.tinkers_reforged.proxy.ClientProxy;
+// import com.mrthomas20121.tinkers_reforged.Config.Config;
+// import com.mrthomas20121.tinkers_reforged.proxy.ClientProxy;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -36,9 +34,6 @@ public class TinkersReforged
     public void preInit(FMLPreInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(this);
-        if (Loader.isModLoaded("atum")) {
-            MinecraftForge.EVENT_BUS.register(ClientEvent.class);
-        }
         logger = event.getModLog();
         proxy.preInit(event);
         Modules.preInit(event);

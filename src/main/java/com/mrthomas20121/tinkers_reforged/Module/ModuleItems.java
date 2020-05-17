@@ -74,7 +74,7 @@ public class ModuleItems extends ModuleBase {
 
         qivium_mat.setCraftable(false).setCastable(true);
         qivium_mat.registerMaterialTrait(TinkerTraits.momentum);
-        qivium_mat.registerMaterialTrait(Traits.fireman, MaterialTypes.HEAD);
+        qivium_mat.registerMaterialTrait(Traits.pyromancy, MaterialTypes.HEAD);
         qivium_mat.registerHeadStats(1000, 11, 7f, level);
         qivium_mat.registerHandleStats(0.9f, 120);
         qivium_mat.registerExtraStats(350);

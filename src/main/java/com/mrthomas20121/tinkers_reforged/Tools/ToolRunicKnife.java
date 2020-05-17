@@ -2,10 +2,7 @@ package com.mrthomas20121.tinkers_reforged.Tools;
 
 import epicsquid.mysticallib.util.ItemUtil;
 import epicsquid.roots.config.MossConfig;
-import epicsquid.roots.init.ModBlocks;
 import epicsquid.roots.init.ModItems;
-import epicsquid.roots.util.RitualUtil;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -55,7 +52,6 @@ public class ToolRunicKnife extends SwordCore {
 
     @Override
     @Nonnull
-    @SuppressWarnings("deprecation")
     public EnumActionResult onItemUse(@Nonnull EntityPlayer player, @Nonnull World world, @Nonnull BlockPos pos, @Nonnull EnumHand hand, @Nonnull EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (hand == EnumHand.MAIN_HAND) {
             if (!MossConfig.getBlacklistDimensions().contains(world.provider.getDimension())) {

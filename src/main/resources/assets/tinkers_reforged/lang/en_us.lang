@@ -1,3 +1,6 @@
+# creative tab
+itemGroup.tinkers_reforged.TinkersReforged.name=Tinkers' Reforged
+
 # blocks
 tile.tinkers_reforged.kovar_glass.name=Kovar Glass
 
@@ -147,8 +150,8 @@ modifier.reforged_astral.desc=§oI can see in the dark!§r
 modifier.aura_infusion.name=Aura Infusion
 modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?§r\nRepair your tool using aura.
 
-modifier.fire_man.name=Fire Man!
-modifier.fire_man.desc=§oLet it burn§r\nCrits set the target on fire.
+modifier.pyromancy.name=Pyromancy
+modifier.pyromancy.desc=§oBy fire be purged!§r\nCrits set the target on fire.
 
 modifier.reforged_radioactive.name=Radioactive
 modifier.reforged_radioactive.desc=§oOh no!§r\n50% chance to cure poison/wither on tick.
@@ -161,3 +164,6 @@ modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
 
 modifier.reforged_refined.name=Refined
 modifier.reforged_refined.desc=§oNot so fast!§r\nMine Obsidian faster
+
+modifier.star_shaped.name=Star Shaped
+modifier.star_shaped.desc=§oShaped like a star!§r\nAlways Crits

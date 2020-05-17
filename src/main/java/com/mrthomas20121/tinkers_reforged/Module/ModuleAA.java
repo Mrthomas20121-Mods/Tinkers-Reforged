@@ -3,6 +3,7 @@ package com.mrthomas20121.tinkers_reforged.Module;
 import com.mrthomas20121.libs.OredictHelper;
 import com.mrthomas20121.libs.RegistryLib;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
+import com.mrthomas20121.tinkers_reforged.Traits.Traits;
 
 import de.ellpeck.actuallyadditions.mod.items.*;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,8 @@ public class ModuleAA extends ModuleBase {
         blackquartz.registerHandleStats(0.95f, 60);
         blackquartz.registerExtraStats(50);
 
+        enori.registerMaterialTrait(Traits.starshaped, MaterialTypes.HEAD);
+        enori.registerMaterialTrait(TinkerTraits.stiff);
         enori.setCraftable(false).setCastable(true);
         enori.registerHeadStats(304, 6.5f, 6, HarvestLevels.DIAMOND);
         enori.registerHandleStats(0.95f, 60);
@@ -48,7 +51,7 @@ public class ModuleAA extends ModuleBase {
         voidCrystal.registerExtraStats(50);
 
         diamantine.setCraftable(false).setCastable(true);
-        diamantine.registerHeadStats(304, 6.5f, 6, HarvestLevels.DIAMOND);
+        diamantine.registerHeadStats(604, 6.9f, 6.1f, HarvestLevels.OBSIDIAN);
         diamantine.registerHandleStats(0.95f, 60);
         diamantine.registerExtraStats(50);
 
@@ -63,19 +66,18 @@ public class ModuleAA extends ModuleBase {
             blackquartz.addGemItem("QuartzBlack");
             blackquartz.preInit("QuartzBlack", "gem", FluidRegistry.getFluid("black_quartz"));
         }
-
         if(Config.enori) {
             enori.preInit(FluidRegistry.getFluid("enori"));
         }
     }
     public void init(FMLInitializationEvent e) {
-        blackquartz.setRepresentativeItem("gemQuartzBlack");
         OredictHelper.RegisterCrystalItem("Redstonia",new ItemStack(InitItems.itemCrystal, 1, 0));
         OredictHelper.RegisterCrystalItem("Palis",new ItemStack(InitItems.itemCrystal, 1, 1));
         OredictHelper.RegisterCrystalItem("Diamantine",new ItemStack(InitItems.itemCrystal, 1, 2));
         OredictHelper.RegisterCrystalItem("Void",new ItemStack(InitItems.itemCrystal, 1, 3));
         OredictHelper.RegisterCrystalItem("Emeradic",new ItemStack(InitItems.itemCrystal, 1, 4));
         OredictHelper.RegisterCrystalItem("Enori",new ItemStack(InitItems.itemCrystal, 1, 5));
+        blackquartz.setRepresentativeItem("gemQuartzBlack");
         enori.setRepresentativeItem("crystalEnori");
         voidCrystal.setRepresentativeItem("crystalVoid");
         emeradic.setRepresentativeItem("crystalEmeradic");

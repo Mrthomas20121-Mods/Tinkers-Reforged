@@ -49,7 +49,8 @@ public class ModuleAe extends ModuleBase {
     }
     @Override
     public void init(FMLInitializationEvent e) {
-
+        certus_quartz.setRepresentativeItem("crystalCertusQuartz");
+        fluix_crystal.setRepresentativeItem("crystalFluix");
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {

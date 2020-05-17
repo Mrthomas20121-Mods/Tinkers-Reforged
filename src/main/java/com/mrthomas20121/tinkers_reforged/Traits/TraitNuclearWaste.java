@@ -25,7 +25,6 @@ public class TraitNuclearWaste extends AbstractTrait {
         MobEffects.JUMP_BOOST,
         MobEffects.LUCK,
         MobEffects.MINING_FATIGUE,
-        MobEffects.NAUSEA,
         MobEffects.NIGHT_VISION,
         MobEffects.POISON,
         MobEffects.REGENERATION,
@@ -47,9 +46,9 @@ public class TraitNuclearWaste extends AbstractTrait {
     public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase player, boolean wasEffective) {
         if(wasEffective) {
             if(!world.isRemote) {
-                int random_effect = world.rand.nextInt(22);
+                int random_effect = world.rand.nextInt(effects.length);
                 int effect_duration = world.rand.nextInt(50)*10;
-                int amplitude = world.rand.nextInt(4);
+                int amplitude = world.rand.nextInt(3);
                 player.addPotionEffect(new PotionEffect(effects[random_effect], effect_duration, amplitude));
             }
         }
@@ -57,7 +56,7 @@ public class TraitNuclearWaste extends AbstractTrait {
     @Override
     public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
         if(!player.world.isRemote) {
-            int random_effect = player.world.rand.nextInt(22);
+            int random_effect = player.world.rand.nextInt(effects.length);
             int effect_duration = player.world.rand.nextInt(50)*10;
             int amplitude = player.world.rand.nextInt(4);
             player.addPotionEffect(new PotionEffect(effects[random_effect], effect_duration, amplitude));

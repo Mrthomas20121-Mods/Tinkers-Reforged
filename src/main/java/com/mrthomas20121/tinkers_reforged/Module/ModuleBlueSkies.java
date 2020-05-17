@@ -11,7 +11,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import com.legacy.blue_skies.items.ItemsSkies;
 import com.legacy.blue_skies.blocks.BlocksSkies;
-import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -34,7 +33,7 @@ public class ModuleBlueSkies extends ModuleBase {
 
         horizonite.setCraftable(false).setCastable(true);
         horizonite.registerMaterialTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
-        horizonite.registerMaterialTrait(Traits.fireman);
+        horizonite.registerMaterialTrait(Traits.pyromancy);
         horizonite.registerHeadStats(200, 6.3f, 4f, HarvestLevels.DIAMOND);
         horizonite.registerHandleStats(0.9f, 90);
         horizonite.registerExtraStats(70);

@@ -4,9 +4,9 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
-public class TraitFireman extends AbstractTrait {
-    public TraitFireman() {
-        super("fire_man", 0x0f1000);
+public class TraitPyromancy extends AbstractTrait {
+    public TraitPyromancy() {
+        super("pyromancy", 0x0f1000);
     }
 
     @Override

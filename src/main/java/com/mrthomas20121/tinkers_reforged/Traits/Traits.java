@@ -13,9 +13,10 @@ public class Traits {
     public static final TraitRadioactive radioactive = new TraitRadioactive();
     public static final TraitNuclearWaste nuclearwaste = new TraitNuclearWaste();
     public static final TraitLifeSteal life_steal = new TraitLifeSteal();
-    public static final TraitFireman fireman = new TraitFireman();
+    public static final TraitPyromancy pyromancy = new TraitPyromancy();
     public static final TraitRefined refined = new TraitRefined();
     public static final TraitFlux flux = new TraitFlux();
+    public static final TraitStarShaped starshaped = new TraitStarShaped();
 
     public static void preInit() {
         RegistryLib.registerTrait(ender);
@@ -27,8 +28,9 @@ public class Traits {
         RegistryLib.registerTrait(radioactive);
         RegistryLib.registerTrait(nuclearwaste);
         RegistryLib.registerTrait(life_steal);
-        RegistryLib.registerTrait(fireman);
+        RegistryLib.registerTrait(pyromancy);
         RegistryLib.registerTrait(refined);
         RegistryLib.registerTrait(flux);
+        RegistryLib.registerTrait(starshaped);
     }
 }

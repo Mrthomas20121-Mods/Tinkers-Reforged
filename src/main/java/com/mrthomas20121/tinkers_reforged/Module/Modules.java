@@ -28,6 +28,7 @@ public class Modules {
 
     public static void preInit(FMLPreInitializationEvent event) {
         
+        Traits.preInit();
         fluids.preInit(event);
         moduleItems.preInit(event);
 
@@ -73,7 +74,6 @@ public class Modules {
 
     public static void init(FMLInitializationEvent event) {
         moduleItems.init(event);
-        Traits.preInit();
 
         if(Loader.isModLoaded("actuallyadditions")) {
             aa.init(event);
@@ -98,6 +98,9 @@ public class Modules {
         }
         if(Loader.isModLoaded("bigreactors") && ConfigModules.extreme) {
             extreme.init(event);
+        }
+        if(Loader.isModLoaded("roots") && ConfigModules.roots) {
+            roots.init(event);
         }
         if(Loader.isModLoaded("blue_skies")) {
             blueskies.init(event);

@@ -27,8 +27,8 @@ public class SwordGladius extends SwordCore {
     public ToolNBT buildTagData(List<Material> materials) {
         ToolNBT data = buildDefaultTag(materials);
 
-        data.attack += 1f;
-        data.durability *= 1.1f;
+        data.attack += 0.5f;
+        data.durability *= 1.2f;
 
         return data;
     }
@@ -47,8 +47,6 @@ public class SwordGladius extends SwordCore {
         boolean hit = super.dealDamage(stack, player, entity, damage);
         // and then sweep
         if(hit && !ToolHelper.isBroken(stack)) {
-            // sweep code from EntityPlayer#attackTargetEntityWithCurrentItem()
-            // basically: no crit, no sprinting and has to stand on the ground for sweep. Also has to move regularly slowly
             double d0 = (double) (player.distanceWalkedModified - player.prevDistanceWalkedModified);
             boolean flag = true;
             if(player instanceof EntityPlayer) {
@@ -58,8 +56,8 @@ public class SwordGladius extends SwordCore {
             if(flag && !player.isSprinting() && !flag2 && player.onGround && d0 < (double) player.getAIMoveSpeed()) {
                 for(EntityLivingBase entitylivingbase : player.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, entity.getEntityBoundingBox().expand(1.0D, 0.25D, 1.0D))) {
                     if(entitylivingbase != player && entitylivingbase != entity && !player.isOnSameTeam(entitylivingbase) && player.getDistanceSq(entitylivingbase) < 9.0D) {
-                        entitylivingbase.knockBack(player, 0.4F, (double) MathHelper.sin(player.rotationYaw * 0.017453292F), (double) (-MathHelper.cos(player.rotationYaw * 0.017453292F)));
-                        super.dealDamage(stack, player, entitylivingbase, 1f);
+                        entitylivingbase.knockBack(player, 0.8F, (double) MathHelper.sin(player.rotationYaw * 0.017453292F), (double) (-MathHelper.cos(player.rotationYaw * 0.017453292F)));
+                        super.dealDamage(stack, player, entitylivingbase, 0.5f);
                     }
                 }
 
