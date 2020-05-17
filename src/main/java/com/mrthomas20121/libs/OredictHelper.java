@@ -9,6 +9,9 @@ public class OredictHelper {
     public static void RegisterIngotItem(String ore, Item item) {
         OreDictionary.registerOre("ingot"+ore, item);
     }
+    public static void RegisterCrystalItem(String ore, ItemStack itemstack) {
+        OreDictionary.registerOre("crystal"+ore, itemstack);
+    }
     public static void RegisterGemItem(String ore, Item item) {
         OreDictionary.registerOre("gem"+ore, item);
     }

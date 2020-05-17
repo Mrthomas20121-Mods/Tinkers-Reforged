@@ -49,6 +49,13 @@ public class SmelteryUtils {
             TinkerRegistry.registerBasinCasting(result, ItemStack.EMPTY, fluid, Material.VALUE_Block);
         }
     }
+    public static void registerDefaultMelting(String ore, Fluid fluid) {
+        TinkerRegistry.registerMelting("ingot" + ore, fluid, Material.VALUE_Ingot);
+        TinkerRegistry.registerMelting("dust" + ore, fluid, Material.VALUE_Ingot);
+        TinkerRegistry.registerMelting("block" + ore, fluid, Material.VALUE_Block);
+        TinkerRegistry.registerMelting("ore" + ore, fluid, Material.VALUE_Ore());
+        TinkerRegistry.registerTableCasting(OredictHelper.getOre("block"+ore), castIngot, fluid, Material.VALUE_Ingot);
+    }
     public static void registerDefaultCasting(String oredict, Fluid fluid, boolean isgem) {
 
         String[] oredicts = { "block", "ingot", "plate", "gear", "nugget"};
