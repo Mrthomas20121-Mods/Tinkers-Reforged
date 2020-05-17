@@ -161,14 +161,20 @@ public class RegistryLib {
         TinkerRegistry.addTrait(trait);
     }
 
+    private MaterialIntegration registerMaterialIntegration() {
+        return new MaterialIntegration(this.mat);
+    }
     private MaterialIntegration registerMaterialIntegration(String ore) {
         return new MaterialIntegration(this.mat).setRepresentativeItem(ore);
+    }
+    private MaterialIntegration registerMaterialIntegration(Fluid fluid) {
+        return new MaterialIntegration(this.mat, fluid);
     }
 
     private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid) {
         return new MaterialIntegration(this.mat, fluid, ore).setRepresentativeItem("ingot"+ore);
     }
     private MaterialIntegration registerMaterialIntegration(String ore, Fluid fluid, String orerequirement) {
-        return new MaterialIntegration(this.mat, fluid, ore, orerequirement).setRepresentativeItem(orerequirement+ore);
+        return new MaterialIntegration(this.mat, fluid, ore, orerequirement+ore).setRepresentativeItem(orerequirement+ore);
     }
 }
