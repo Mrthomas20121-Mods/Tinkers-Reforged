@@ -17,6 +17,8 @@ public class Traits {
     public static final TraitRefined refined = new TraitRefined();
     public static final TraitFlux flux = new TraitFlux();
     public static final TraitStarShaped starshaped = new TraitStarShaped();
+    public static final TraitVoid void_trait = new TraitVoid();
+    public static final TraitStarryNight starry_night = new TraitStarryNight();
 
     public static void preInit() {
         RegistryLib.registerTrait(ender);
@@ -32,5 +34,7 @@ public class Traits {
         RegistryLib.registerTrait(refined);
         RegistryLib.registerTrait(flux);
         RegistryLib.registerTrait(starshaped);
+        RegistryLib.registerTrait(void_trait);
+        RegistryLib.registerTrait(starry_night);
     }
 }
