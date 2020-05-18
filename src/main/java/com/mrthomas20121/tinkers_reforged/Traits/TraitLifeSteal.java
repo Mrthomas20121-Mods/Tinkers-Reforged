@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import slimeknights.tconstruct.library.modifiers.ModifierAspect;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
@@ -18,6 +19,7 @@ public class TraitLifeSteal extends AbstractTrait {
 
     @Override
     public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
+        target.attackEntityFrom(DamageSource.causeIndirectMagicDamage(player, target), 2);
         return newDamage;
     }
 

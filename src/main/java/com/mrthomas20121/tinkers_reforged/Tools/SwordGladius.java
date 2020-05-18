@@ -14,6 +14,7 @@ import slimeknights.tconstruct.library.tools.SwordCore;
 import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.library.utils.ToolHelper;
 import slimeknights.tconstruct.tools.TinkerTools;
+import static slimeknights.tconstruct.tools.traits.TraitSharp.DOT;
 import java.util.List;
 
 public class SwordGladius extends SwordCore {
@@ -28,23 +29,26 @@ public class SwordGladius extends SwordCore {
         ToolNBT data = buildDefaultTag(materials);
 
         data.attack += 0.5f;
-        data.durability *= 1.2f;
+        data.durability *= 1.3f;
 
         return data;
     }
     @Override
     public float damagePotential() {
-        return 1.1f;
+        return 1f;
     }
 
     public double attackSpeed() {
-        return 1.7d;
+        return 1.6d;
     }
 
     @Override
     public boolean dealDamage(ItemStack stack, EntityLivingBase player, Entity entity, float damage) {
         // deal damage first
         boolean hit = super.dealDamage(stack, player, entity, damage);
+        if(entity instanceof EntityLivingBase) {
+            DOT.apply((EntityLivingBase)entity, 121);
+        }
         // and then sweep
         if(hit && !ToolHelper.isBroken(stack)) {
             double d0 = (double) (player.distanceWalkedModified - player.prevDistanceWalkedModified);
