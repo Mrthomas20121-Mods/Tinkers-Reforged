@@ -15,8 +15,8 @@ public class ModuleMysticalWorld extends ModuleBase {
 
     public ModuleMysticalWorld() {
         amethyst.setCraftable(true).setCastable(false);
-        amethyst.registerMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
-        amethyst.registerMaterialTrait(TinkerTraits.sharp);
+        amethyst.addMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
+        amethyst.addMaterialTrait(TinkerTraits.sharp);
         amethyst.registerHeadStats(300, 6f, 5f, HarvestLevels.DIAMOND);
         amethyst.registerHandleStats(1, 200);
         amethyst.registerExtraStats(30);

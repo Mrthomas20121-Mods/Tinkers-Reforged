@@ -20,24 +20,24 @@ public class ModuleMekanism extends ModuleBase {
 
     public ModuleMekanism() {
         osmium.setCraftable(false).setCastable(true);
-        osmium.registerMaterialTrait(TinkerTraits.established, MaterialTypes.HEAD);
-        osmium.registerMaterialTrait(TinkerTraits.dense);
+        osmium.addMaterialTrait(TinkerTraits.established, MaterialTypes.HEAD);
+        osmium.addMaterialTrait(TinkerTraits.dense);
         osmium.registerHeadStats(220, 5.5f, 5.5f, HarvestLevels.IRON);
         osmium.registerHandleStats(0.9f, 90);
         osmium.registerExtraStats(50);
         osmium.registerBowStats(2.5f, 3, 2.5f);
 
         refined_obsidian.setCraftable(false).setCastable(true);
-        refined_obsidian.registerMaterialTrait(Traits.refined, MaterialTypes.HEAD);
-        refined_obsidian.registerMaterialTrait(TinkerTraits.duritos);
+        refined_obsidian.addMaterialTrait(Traits.refined, MaterialTypes.HEAD);
+        refined_obsidian.addMaterialTrait(TinkerTraits.duritos);
         refined_obsidian.registerHeadStats(550, 6.5f, 6.5f, HarvestLevels.OBSIDIAN);
         refined_obsidian.registerHandleStats(1, 100);
         refined_obsidian.registerExtraStats(50);
         refined_obsidian.registerBowStats(2, 1.9f, 2.7f);
 
         refined_glowstone.setCraftable(false).setCastable(true);
-        refined_glowstone.registerMaterialTrait(Traits.refined, MaterialTypes.HEAD);
-        refined_glowstone.registerMaterialTrait(Traits.light);
+        refined_glowstone.addMaterialTrait(Traits.refined, MaterialTypes.HEAD);
+        refined_glowstone.addMaterialTrait(Traits.light);
         refined_glowstone.registerHeadStats(540, 5f, 6.9f, HarvestLevels.OBSIDIAN);
         refined_glowstone.registerHandleStats(1, 100);
         refined_glowstone.registerExtraStats(50);

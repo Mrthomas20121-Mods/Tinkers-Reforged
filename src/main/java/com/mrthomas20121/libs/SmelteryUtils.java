@@ -19,6 +19,12 @@ public class SmelteryUtils {
           TinkerRegistry.registerTableCasting(result, castIngot, fluid, Material.VALUE_Ingot);
         }
     }
+    public static void registerCasting(String ore, Fluid fluid, int mat) {
+        ItemStack result = OredictHelper.getOre(ore);
+        if(!result.equals(ItemStack.EMPTY)) {
+          TinkerRegistry.registerTableCasting(result, castIngot, fluid, mat);
+        }
+    }
     public static void registerPlateCasting(String ore, Fluid fluid) {
         ItemStack result = OredictHelper.getOre("plate"+ore);
         if(!result.equals(ItemStack.EMPTY)) {
@@ -49,12 +55,18 @@ public class SmelteryUtils {
             TinkerRegistry.registerBasinCasting(result, ItemStack.EMPTY, fluid, Material.VALUE_Block);
         }
     }
+    public static void registerMelting(String ore, Fluid fluid) {
+        registerIngotCasting(ore, fluid);
+    }
     public static void registerDefaultMelting(String ore, Fluid fluid) {
         TinkerRegistry.registerMelting("ingot" + ore, fluid, Material.VALUE_Ingot);
         TinkerRegistry.registerMelting("dust" + ore, fluid, Material.VALUE_Ingot);
         TinkerRegistry.registerMelting("block" + ore, fluid, Material.VALUE_Block);
         TinkerRegistry.registerMelting("ore" + ore, fluid, Material.VALUE_Ore());
-        TinkerRegistry.registerTableCasting(OredictHelper.getOre("block"+ore), castIngot, fluid, Material.VALUE_Ingot);
+        registerIngotCasting(ore, fluid);
+    }
+    public static void registerMelting(String ore, Fluid fluid, int mat) {
+        TinkerRegistry.registerMelting(ore, fluid, mat);
     }
     public static void registerDefaultCasting(String oredict, Fluid fluid, boolean isgem) {
 
@@ -63,22 +75,22 @@ public class SmelteryUtils {
 
         for(String ore: oredicts) {
             if(ore=="ingot") {
-                registerIngotCasting(ore, fluid);
+                registerIngotCasting(oredict, fluid);
             }
             else if(ore=="block") {
-                registerBlockCasting(ore, fluid);
+                registerBlockCasting(oredict, fluid);
             }
             else if(ore=="plate") {
-                registerPlateCasting(ore, fluid);
+                registerPlateCasting(oredict, fluid);
             }
             else if(ore=="nugget") {
-                registerNuggetCasting(ore, fluid);
+                registerNuggetCasting(oredict, fluid);
             }
             else if(ore=="gear") {
-                registerGearCasting(ore, fluid);
+                registerGearCasting(oredict, fluid);
             }
             else if(ore=="gem") {
-                registerGemCasting(ore, fluid);
+                registerGemCasting(oredict, fluid);
             }
         }
     }

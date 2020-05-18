@@ -25,28 +25,28 @@ public class ModuleBlueSkies extends ModuleBase {
 
     public ModuleBlueSkies() {
         ventium.setCraftable(false).setCastable(true);
-        ventium.registerMaterialTrait(TinkerTraits.cheap);
+        ventium.addMaterialTrait(TinkerTraits.cheap);
         ventium.registerHeadStats(150, 3, 3.2f, HarvestLevels.IRON);
         ventium.registerHandleStats(1f, 30);
         ventium.registerExtraStats(-1);
         ventium.registerBowStats(0.5f, 7, 10);
 
         horizonite.setCraftable(false).setCastable(true);
-        horizonite.registerMaterialTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
-        horizonite.registerMaterialTrait(Traits.pyromancy);
+        horizonite.addMaterialTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
+        horizonite.addMaterialTrait(Traits.pyromancy);
         horizonite.registerHeadStats(200, 6.3f, 4f, HarvestLevels.DIAMOND);
         horizonite.registerHandleStats(0.9f, 90);
         horizonite.registerExtraStats(70);
         horizonite.registerBowStats(2, 1.5f, 7);
 
         pyrope.setCraftable(false).setCastable(true);
-        pyrope.registerMaterialTrait(TinkerTraits.lightweight);
+        pyrope.addMaterialTrait(TinkerTraits.lightweight);
         pyrope.registerHeadStats(100, 8, 7, HarvestLevels.DIAMOND);
         pyrope.registerHandleStats(1, 5);
         pyrope.registerExtraStats(-5);
 
         turquoise.setCraftable(false).setCastable(true);
-        turquoise.registerMaterialTrait(TinkerTraits.magnetic2);
+        turquoise.addMaterialTrait(TinkerTraits.magnetic2);
         turquoise.registerHeadStats(200, 6.3f, 4f, HarvestLevels.DIAMOND);
         turquoise.registerHandleStats(0.9f, 90);
         turquoise.registerExtraStats(70);

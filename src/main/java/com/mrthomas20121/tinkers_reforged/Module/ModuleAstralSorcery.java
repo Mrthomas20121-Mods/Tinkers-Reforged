@@ -18,8 +18,8 @@ public class ModuleAstralSorcery extends ModuleBase {
 
     public ModuleAstralSorcery() {
         starmetal.setCraftable(false).setCastable(true);
-        starmetal.registerMaterialTrait(Traits.astral, MaterialTypes.HEAD);
-        starmetal.registerMaterialTrait(TinkerTraits.alien);
+        starmetal.addMaterialTrait(Traits.astral, MaterialTypes.HEAD);
+        starmetal.addMaterialTrait(TinkerTraits.alien);
         starmetal.registerHeadStats(200, 5.2f, 3.2f, HarvestLevels.IRON);
         starmetal.registerHandleStats(0.9f, 70);
         starmetal.registerExtraStats(50);

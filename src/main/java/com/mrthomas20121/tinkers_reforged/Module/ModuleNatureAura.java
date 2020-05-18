@@ -24,23 +24,23 @@ public class ModuleNatureAura extends ModuleBase {
 
     public ModuleNatureAura() {
         ingot_of_the_sky.setCraftable(false).setCastable(true);
-        ingot_of_the_sky.registerMaterialTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
-        ingot_of_the_sky.registerMaterialTrait(TinkerTraits.alien);
+        ingot_of_the_sky.addMaterialTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
+        ingot_of_the_sky.addMaterialTrait(TinkerTraits.alien);
         ingot_of_the_sky.registerHeadStats(230, 6.3f, 4f, HarvestLevels.OBSIDIAN);
         ingot_of_the_sky.registerHandleStats(1f, 90);
         ingot_of_the_sky.registerExtraStats(75);
         ingot_of_the_sky.registerBowStats(1.0f, 1.7f, 3.5f);
 
         infused_iron.setCraftable(false).setCastable(true);
-        infused_iron.registerMaterialTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
-        infused_iron.registerMaterialTrait(TinkerTraits.magnetic2);
+        infused_iron.addMaterialTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
+        infused_iron.addMaterialTrait(TinkerTraits.magnetic2);
         infused_iron.registerHeadStats(200, 6.3f, 4f, HarvestLevels.DIAMOND);
         infused_iron.registerHandleStats(0.9f, 90);
         infused_iron.registerExtraStats(70);
         infused_iron.registerBowStats(2, 1.5f, 7);
 
         ancient_wood.setCraftable(true).setCastable(false);
-        ancient_wood.registerMaterialTrait(TinkerTraits.ecological);
+        ancient_wood.addMaterialTrait(TinkerTraits.ecological);
         ancient_wood.registerHeadStats(100, 2.3f, 1.2f, HarvestLevels.STONE);
         ancient_wood.registerHandleStats(1.9f, 10);
         ancient_wood.registerExtraStats(-10);

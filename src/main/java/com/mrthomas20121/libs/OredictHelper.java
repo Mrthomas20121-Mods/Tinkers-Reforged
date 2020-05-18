@@ -15,6 +15,9 @@ public class OredictHelper {
     public static void RegisterGemItem(String ore, Item item) {
         OreDictionary.registerOre("gem"+ore, item);
     }
+    public static void RegisterGemItem(String ore, ItemStack item) {
+        OreDictionary.registerOre("gem"+ore, item);
+    }
     public static void RegisterBucketItem(String ore, Item item) {
         OreDictionary.registerOre("bucket", item);
         OreDictionary.registerOre("bucket"+ore, item);

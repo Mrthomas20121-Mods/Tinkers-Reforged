@@ -30,11 +30,11 @@ public class ArmorRegistryLib extends RegistryLib {
     }
 
     @Override
-    public void registerMaterialTrait(AbstractTrait trait, String dependency) {
+    public void addMaterialTrait(AbstractTrait trait, String dependency) {
         ArmorMaterials.addArmorTrait(this.getMat(), trait, dependency);
     }
     @Override
-    public void registerMaterialTrait(AbstractTrait trait) {
+    public void addMaterialTrait(AbstractTrait trait) {
         ArmorMaterials.addArmorTrait(this.getMat(), trait);
     }
     public void registerArmor() {

@@ -66,15 +66,15 @@ public class ModuleItems extends ModuleBase {
     public ModuleItems() {
         lavium_mat.setCastable(true);
         lavium_mat.setCraftable(false);
-        lavium_mat.registerMaterialTrait(TinkerTraits.momentum);
-        lavium_mat.registerMaterialTrait(Traits.life_steal, MaterialTypes.HEAD);
+        lavium_mat.addMaterialTrait(TinkerTraits.momentum);
+        lavium_mat.addMaterialTrait(Traits.life_steal, MaterialTypes.HEAD);
         lavium_mat.registerHeadStats(1000, 14, 5.1f, level);
         lavium_mat.registerHandleStats(0.9f, 120);
         lavium_mat.registerExtraStats(400);
 
         qivium_mat.setCraftable(false).setCastable(true);
-        qivium_mat.registerMaterialTrait(TinkerTraits.momentum);
-        qivium_mat.registerMaterialTrait(Traits.pyromancy, MaterialTypes.HEAD);
+        qivium_mat.addMaterialTrait(TinkerTraits.momentum);
+        qivium_mat.addMaterialTrait(Traits.pyromancy, MaterialTypes.HEAD);
         qivium_mat.registerHeadStats(1000, 11, 7f, level);
         qivium_mat.registerHandleStats(0.9f, 120);
         qivium_mat.registerExtraStats(350);

@@ -24,7 +24,7 @@ public class ModuleExtremeReactor extends ModuleBase {
         yellorium.registerHeadStats(200, 5f, 5f, HarvestLevels.OBSIDIAN);
         yellorium.registerHandleStats(1f, 100);
         yellorium.registerExtraStats(20);
-        yellorium.registerMaterialTrait(Traits.radioactive);
+        yellorium.addMaterialTrait(Traits.radioactive);
         Materials.mats.add(yellorium.getMat());
 
         blutonium.setCraftable(false);
@@ -33,7 +33,7 @@ public class ModuleExtremeReactor extends ModuleBase {
         blutonium.registerHeadStats(200, 6f, 6f, HarvestLevels.OBSIDIAN);
         blutonium.registerHandleStats(1f, 120);
         blutonium.registerExtraStats(20);
-        blutonium.registerMaterialTrait(Traits.nuclearwaste);
+        blutonium.addMaterialTrait(Traits.nuclearwaste);
         Materials.mats.add(blutonium.getMat());
 
         ludicrite.setCraftable(false);
@@ -42,8 +42,8 @@ public class ModuleExtremeReactor extends ModuleBase {
         ludicrite.registerHeadStats(200, 7f, 7f, HarvestLevels.COBALT);
         ludicrite.registerHandleStats(1f, 140);
         ludicrite.registerExtraStats(20);
-        ludicrite.registerMaterialTrait(Traits.nuclearwaste);
-        ludicrite.registerMaterialTrait(Traits.radioactive, MaterialTypes.HEAD);
+        ludicrite.addMaterialTrait(Traits.nuclearwaste);
+        ludicrite.addMaterialTrait(Traits.radioactive, MaterialTypes.HEAD);
         Materials.mats.add(ludicrite.getMat());
 
         cyanite.setCraftable(false);
@@ -52,7 +52,7 @@ public class ModuleExtremeReactor extends ModuleBase {
         cyanite.registerHeadStats(200, 5f, 5f, HarvestLevels.OBSIDIAN);
         cyanite.registerHandleStats(1f, 100);
         cyanite.registerExtraStats(20);
-        cyanite.registerMaterialTrait(Traits.nuclearwaste);
+        cyanite.addMaterialTrait(Traits.nuclearwaste);
         Materials.mats.add(cyanite.getMat());
     }
 

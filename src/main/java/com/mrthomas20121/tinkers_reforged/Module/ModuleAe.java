@@ -17,15 +17,15 @@ public class ModuleAe extends ModuleBase {
 
     public ModuleAe() {
         certus_quartz.setCraftable(true).setCastable(false);
-        certus_quartz.registerMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
-        certus_quartz.registerMaterialTrait(TinkerTraits.fractured);
+        certus_quartz.addMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
+        certus_quartz.addMaterialTrait(TinkerTraits.fractured);
         certus_quartz.registerHeadStats(230, 4.2f, 3f, HarvestLevels.IRON);
         certus_quartz.registerHandleStats(0.8f, 90);
         certus_quartz.registerExtraStats(70);
 
         fluix_crystal.setCraftable(true).setCastable(false);
-        fluix_crystal.registerMaterialTrait(Traits.flux, MaterialTypes.HEAD);
-        fluix_crystal.registerMaterialTrait(Traits.signal);
+        fluix_crystal.addMaterialTrait(Traits.flux, MaterialTypes.HEAD);
+        fluix_crystal.addMaterialTrait(Traits.signal);
         fluix_crystal.registerHeadStats(230, 4.2f, 3f, HarvestLevels.IRON);
         fluix_crystal.registerHandleStats(0.8f, 90);
         fluix_crystal.registerExtraStats(70);

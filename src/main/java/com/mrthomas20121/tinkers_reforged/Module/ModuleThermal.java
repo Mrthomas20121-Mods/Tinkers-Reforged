@@ -33,30 +33,30 @@ public class ModuleThermal extends ModuleBase {
     public ModuleThermal() {
 
         enderium.setCraftable(false).setCastable(true);
-        enderium.registerMaterialTrait(Traits.enderfestation);
-        enderium.registerMaterialTrait(Traits.ender, MaterialTypes.HEAD);
+        enderium.addMaterialTrait(Traits.enderfestation);
+        enderium.addMaterialTrait(Traits.ender, MaterialTypes.HEAD);
         enderium.registerHeadStats(750, 9.0f, 8.5f, HarvestLevels.COBALT);
         enderium.registerHandleStats(0.9f, 170);
         enderium.registerExtraStats(90);
         enderium.registerBowStats(2, 1.5f, 7);
 
         signalum.setCraftable(false).setCastable(true);
-        signalum.registerMaterialTrait(Traits.signal);
-        signalum.registerMaterialTrait(Traits.flux);
+        signalum.addMaterialTrait(Traits.signal);
+        signalum.addMaterialTrait(Traits.flux);
         signalum.registerHeadStats(540, 7.3f, 6.9f, HarvestLevels.OBSIDIAN);
         signalum.registerHandleStats(1.3f, 90);
         signalum.registerExtraStats(80);
         signalum.registerBowStats(4.5f, 1, 6);
 
         lumium.setCraftable(false).setCastable(true);
-        lumium.registerMaterialTrait(Traits.light);
+        lumium.addMaterialTrait(Traits.light);
         lumium.registerHeadStats(470, 7f, 5.1f, HarvestLevels.OBSIDIAN);
         lumium.registerHandleStats(1.2f, 90);
         lumium.registerExtraStats(80);
         lumium.registerBowStats(2, 1, 9);
 
         platinum.setCraftable(false).setCastable(true);
-        platinum.registerMaterialTrait(TinkerTraits.dense);
+        platinum.addMaterialTrait(TinkerTraits.dense);
         platinum.registerHeadStats(500, 7.0f, 6.5f, HarvestLevels.OBSIDIAN);
         platinum.registerHandleStats(0.9f, 90);
         platinum.registerExtraStats(10);
@@ -66,21 +66,21 @@ public class ModuleThermal extends ModuleBase {
         iridium.registerHeadStats(500, 7.1f, 6.4f, HarvestLevels.OBSIDIAN);
         iridium.registerHandleStats(1f, 90);
         iridium.registerExtraStats(15);
-        iridium.registerMaterialTrait(TinkerTraits.dense);
+        iridium.addMaterialTrait(TinkerTraits.dense);
         iridium.registerBowStats(2, 1.5f, 7);
 
         invar.setCastable(true).setCraftable(false);
         invar.registerHeadStats(500, 5.7f, 6.3f, HarvestLevels.OBSIDIAN);
         invar.registerHandleStats(1f, 90);
         invar.registerExtraStats(15);
-        invar.registerMaterialTrait(TinkerTraits.hellish);
+        invar.addMaterialTrait(TinkerTraits.hellish);
         invar.registerBowStats(2, 1.5f, 7);
 
         aluminum.setCastable(true).setCraftable(false);
         aluminum.registerHeadStats(450, 6.1f, 6f, HarvestLevels.OBSIDIAN);
         aluminum.registerHandleStats(1f, 70);
         aluminum.registerExtraStats(30);
-        aluminum.registerMaterialTrait(TinkerTraits.dense);
+        aluminum.addMaterialTrait(TinkerTraits.dense);
         aluminum.registerBowStats(2, 1.5f, 7);
 
     }

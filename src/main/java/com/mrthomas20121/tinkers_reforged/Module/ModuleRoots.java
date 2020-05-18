@@ -18,8 +18,8 @@ public class ModuleRoots extends ModuleBase {
         runestone.registerHeadStats(200, 4f, 4f, HarvestLevels.STONE);
         runestone.registerHandleStats(1f, 100);
         runestone.registerExtraStats(-10);
-        runestone.registerMaterialTrait(TinkerTraits.cheap, MaterialTypes.HEAD);
-        runestone.registerMaterialTrait(TinkerTraits.cheapskate);
+        runestone.addMaterialTrait(TinkerTraits.cheap, MaterialTypes.HEAD);
+        runestone.addMaterialTrait(TinkerTraits.cheapskate);
         Materials.mats.add(runestone.getMat());
     }
 

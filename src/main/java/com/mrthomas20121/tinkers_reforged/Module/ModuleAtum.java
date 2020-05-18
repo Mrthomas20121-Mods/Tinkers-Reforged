@@ -18,15 +18,15 @@ public class ModuleAtum extends ModuleBase {
     
     public ModuleAtum() {
         limestone.setCraftable(true).setCastable(false);
-        limestone.registerMaterialTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
-        limestone.registerMaterialTrait(TinkerTraits.cheap);
+        limestone.addMaterialTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
+        limestone.addMaterialTrait(TinkerTraits.cheap);
         limestone.registerHeadStats(180, 3.1f, 2.2f, HarvestLevels.STONE);
         limestone.registerHandleStats(0.9f, 50);
         limestone.registerExtraStats(30);
 
         khnumite.setCraftable(true).setCastable(false);
-        khnumite.registerMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
-        khnumite.registerMaterialTrait(TinkerTraits.poisonous);
+        khnumite.addMaterialTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
+        khnumite.addMaterialTrait(TinkerTraits.poisonous);
         khnumite.registerHeadStats(200, 3.4f, 3.1f, HarvestLevels.IRON);
         khnumite.registerHandleStats(0.9f, 70);
         khnumite.registerExtraStats(50);

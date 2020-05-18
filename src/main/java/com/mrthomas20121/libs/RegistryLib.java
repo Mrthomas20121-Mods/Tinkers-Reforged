@@ -50,10 +50,10 @@ public class RegistryLib {
     public void registerFletchingStats(float accuracy, float modifier) {
         this.fletchingStats = new FletchingMaterialStats(accuracy, modifier);
     }
-    public void registerMaterialTrait(AbstractTrait trait) {
+    public void addMaterialTrait(AbstractTrait trait) {
         this.mat.addTrait(trait);
     }
-    public void registerMaterialTrait(AbstractTrait trait, String dependency) {
+    public void addMaterialTrait(AbstractTrait trait, String dependency) {
         this.mat.addTrait(trait, dependency);
     }
     public void setFluid(Fluid fluid) {
@@ -68,6 +68,9 @@ public class RegistryLib {
     }
     public void addIngotItem(String ore) {
         this.mat.addItem(ore, 1, Material.VALUE_Ingot);
+    }
+    public void addItem(String ore, int mat) {
+        this.mat.addItem(ore, 1, mat);
     }
     public void addIngotItem(Item item) {
         this.mat.addItem(item, 1, Material.VALUE_Ingot);
