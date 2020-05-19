@@ -10,7 +10,7 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitAstral extends AbstractTrait {
     public TraitAstral() {
-        super("reforged_astral", 0xFFFFFF);
+        super("ref_astral", 0xFFFFFF);
     }
 
     @Override

@@ -12,7 +12,7 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitRadioactive extends AbstractTrait {
     public TraitRadioactive() {
-        super("reforged_radioactive", 0x8CFFAC);
+        super("ref_radioactive", 0x8CFFAC);
     }
 
     @Override

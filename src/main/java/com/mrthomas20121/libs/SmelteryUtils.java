@@ -55,6 +55,12 @@ public class SmelteryUtils {
             TinkerRegistry.registerBasinCasting(result, ItemStack.EMPTY, fluid, Material.VALUE_Block);
         }
     }
+    public static void registerSmallBlockCasting(String ore, Fluid fluid) {
+        ItemStack result = OredictHelper.getOre("block"+ore);
+        if(!result.equals(ItemStack.EMPTY)) {
+            TinkerRegistry.registerBasinCasting(result, ItemStack.EMPTY, fluid, Material.VALUE_Ingot*4);
+        }
+    }
     public static void registerMelting(String ore, Fluid fluid) {
         registerIngotCasting(ore, fluid);
     }

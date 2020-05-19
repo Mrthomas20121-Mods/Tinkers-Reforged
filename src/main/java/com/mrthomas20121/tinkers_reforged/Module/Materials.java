@@ -9,13 +9,13 @@ public class Materials {
     public static ArrayList<Material> mats = new ArrayList<>();
 
     // actually addition
-    public static final Material blackquartz = new Material("reforged_blackquartz", 0x161515);
-    public static final Material void_crystal = new Material("reforged_void", 0x171717);
-    public static final Material enori = new Material("reforged_enori", 0xEBE3FF);
-    public static final Material redstonia = new Material("reforged_redstonia", 0xF30000);
-    public static final Material emeradic = new Material("reforged_emeradic", 0x15EA0A);
-    public static final Material diamantine = new Material("reforged_diamantine", 0x9A9CFF);
-    public static final Material palis = new Material("reforged_palis", 0x9A9CFF);
+    public static final Material blackquartz = new Material("ref_black_quartz", 0x161515);
+    public static final Material void_crystal = new Material("ref_void", 0x171717);
+    public static final Material enori = new Material("ref_enori", 0xEBE3FF);
+    public static final Material redstonia = new Material("ref_redstonia", 0xF30000);
+    public static final Material emeradic = new Material("ref_emeradic", 0x15EA0A);
+    public static final Material diamantine = new Material("ref_diamantine", 0x9A9CFF);
+    public static final Material palis = new Material("ref_palis", 0x1E1B88);
 
     // Applied Energistic 2
     public static final Material certus_quartz = new Material("reforged_certus_quartz", 0xBADBFF);

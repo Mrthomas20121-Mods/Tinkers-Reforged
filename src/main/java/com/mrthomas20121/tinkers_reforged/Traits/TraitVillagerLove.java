@@ -12,9 +12,9 @@ import slimeknights.tconstruct.library.modifiers.ModifierNBT;
 import slimeknights.tconstruct.library.traits.AbstractTraitLeveled;
 import slimeknights.tconstruct.library.utils.TinkerUtil;
 
-public class TraitVillagerCurse extends AbstractTraitLeveled {
-    public TraitVillagerCurse(int levels) {
-      super("ref_villager_curse", 0xffffff, 3, levels);
+public class TraitVillagerLove extends AbstractTraitLeveled {
+    public TraitVillagerLove(int levels) {
+      super("ref_villager_love", 0xffffff, 3, levels);
     }
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {

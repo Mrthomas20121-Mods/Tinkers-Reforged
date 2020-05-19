@@ -6,7 +6,7 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitEnder extends AbstractTrait {
     public TraitEnder() {
-        super("ender", 0x376B64);
+        super("ref_ender", 0x376B64);
     }
     @Override
     public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {

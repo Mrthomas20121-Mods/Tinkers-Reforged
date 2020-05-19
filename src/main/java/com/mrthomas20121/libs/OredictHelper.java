@@ -25,6 +25,9 @@ public class OredictHelper {
     public static void RegisterBlock(String ore, Block block) {
         OreDictionary.registerOre("block"+ore, block);
     }
+    public static void RegisterBlock(String ore, ItemStack block) {
+        OreDictionary.registerOre("block"+ore, block);
+    }
     public static void RegisterOreBlock(String ore, Block block) {
         OreDictionary.registerOre("ore"+ore, block);
     }
@@ -50,4 +53,7 @@ public class OredictHelper {
         }
         return result;
     }
+	public static void RegisterNuggetItem(String ore, ItemStack itemStack) {
+        OreDictionary.registerOre("nugget"+ore, itemStack);
+	}
 }

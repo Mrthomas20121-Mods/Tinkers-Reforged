@@ -35,11 +35,13 @@ public class ModuleFluids {
     public static FluidMoltenBase ventium = new FluidMoltenBase("ventium", Materials.ventium.materialTextColor);
     public static FluidMoltenBase horizonite = new FluidMoltenBase("horizonite", Materials.horizonite.materialTextColor);
     public static FluidMoltenBase pyrope = new FluidMoltenBase("pyrope", Materials.pyrope.materialTextColor);
-    public static FluidMoltenBase enori = new FluidMoltenBase("enori_crystal", Materials.enori.materialTextColor);
     public static FluidMoltenBase blackquartz = new FluidMoltenBase("black_quartz", Materials.blackquartz.materialTextColor);
+    public static FluidMoltenBase enori = new FluidMoltenBase("enori", Materials.enori.materialTextColor);
     public static FluidMoltenBase voidCrystal = new FluidMoltenBase("void", Materials.void_crystal.materialTextColor);
     public static FluidMoltenBase emeradic = new FluidMoltenBase("emeradic", Materials.emeradic.materialTextColor);
     public static FluidMoltenBase palis = new FluidMoltenBase("palis", Materials.palis.materialTextColor);
+    public static FluidMoltenBase diamantine = new FluidMoltenBase("diamantine", Materials.diamantine.materialTextColor);
+    public static FluidMoltenBase redstonia = new FluidMoltenBase("redstonia", Materials.redstonia.materialTextColor);
 
     public void preInit(FMLPreInitializationEvent e) {
         if(Config.qivium) {
@@ -76,6 +78,14 @@ public class ModuleFluids {
             if(Config.palis) {
                 FluidRegistry.registerFluid(palis);
                 FluidRegistry.addBucketForFluid(palis);
+            }
+            if(Config.diamantine) {
+                FluidRegistry.registerFluid(diamantine);
+                FluidRegistry.addBucketForFluid(diamantine);
+            }
+            if(Config.redstonia) {
+                FluidRegistry.registerFluid(redstonia);
+                FluidRegistry.addBucketForFluid(redstonia);
             }
         }
         if(Loader.isModLoaded("astralsorcery")) {
@@ -202,8 +212,17 @@ public class ModuleFluids {
             if(Config.voidcrystal) {
                 RegisterFluidBlock(r, voidCrystal);
             }
+            if(Config.emeratic) {
+                RegisterFluidBlock(r, emeradic);
+            }
             if(Config.palis) {
                 RegisterFluidBlock(r, palis);
+            }
+            if(Config.diamantine) {
+                RegisterFluidBlock(r, diamantine);
+            }
+            if(Config.redstonia) {
+                RegisterFluidBlock(r, redstonia);
             }
         }
     }

@@ -11,7 +11,7 @@ public class TraitFlux extends AbstractTrait {
     private int energyCost = 150;
 
     public TraitFlux() {
-      super("reforged_flux", 0x0f1000);
+      super("ref_flux", 0x0f1000);
     }
     @Override
     public boolean canApplyCustom(ItemStack stack) {

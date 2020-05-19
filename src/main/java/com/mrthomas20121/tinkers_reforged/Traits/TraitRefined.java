@@ -8,7 +8,7 @@ public class TraitRefined extends AbstractTrait {
 
     private static int speed = 5;
     public TraitRefined() {
-        super("reforged_refined", 0x463763);
+        super("ref_refined", 0x463763);
     }
 
     @Override

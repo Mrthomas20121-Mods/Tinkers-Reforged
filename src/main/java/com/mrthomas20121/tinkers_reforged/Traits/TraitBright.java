@@ -10,7 +10,7 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitBright extends AbstractTrait {
     public TraitBright() {
-        super("reforged_bright", 0xEAD981);
+        super("ref_bright", 0xEAD981);
     }
 
     @Override
