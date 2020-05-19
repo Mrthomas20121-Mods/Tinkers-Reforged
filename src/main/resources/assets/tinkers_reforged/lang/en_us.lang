@@ -1,5 +1,5 @@
 # creative tab
-itemGroup.tinkers_reforged.TinkersReforged.name=Tinkers' Reforged
+itemGroup.tinkers_reforged=Tinkers' Reforged
 
 # blocks
 tile.tinkers_reforged.kovar_glass.name=Kovar Glass
@@ -65,7 +65,10 @@ fluid.ventium=Molten Ventium
 fluid.horizonite=Molten Horizonite
 fluid.pyrope=Molten Pyrope
 fluid.black_quartz=Molten Black Quartz
-fluid.enori=Molten Enori Crystal
+fluid.enori=Molten Enori
+fluid.ref_palis=Molten Palis
+fluid.void=Molten Void
+fluid.emeradic=Molten Emeradic
 
 # mining levels
 ui.mininglevel.lavium=Lavium
@@ -87,8 +90,13 @@ material.reforged_ancient_wood.name=Ancient Wood
 material.reforged_sky.name=Material Of The Sky
 
 ## aa materials
-material.reforged_black_quartz.name=Black Quartz
-material.reforged_enori.name=Enori Crystal
+material.ref_black_quartz.name=Black Quartz
+material.ref_enori.name=Enori Crystal
+material.ref_void.name=Void Crystal
+material.ref_redstonia.name=Redstonia Crystal
+material.ref_emeradic.name=Emeradic Crystal
+material.ref_diamantine.name=Diamantine Crystal
+material.ref_palis.name=Palis Crystal
 
 # Appliedenergistic2 materials
 material.reforged_certus_quartz.name=Certus Quartz
@@ -167,3 +175,12 @@ modifier.reforged_refined.desc=§oNot so fast!§r\nMine Obsidian faster
 
 modifier.star_shaped.name=Star Shaped
 modifier.star_shaped.desc=§oShaped like a star!§r\nAlways Crits
+
+modifier.ref_villager_curse.name=Villager Curse
+modifier.ref_villager_curse.desc=§oIllager did this§r\nKilling Mobs have a chance of spawning
+
+modifier.ref_rose.name=Rose
+modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nBreaking grass and dirt blocks will drop dyes instead of the block.
+
+modifier.ref_void.name=Void
+modifier.ref_void.desc=§oThis seems empty§r\nVoid items dropped from blocks.
