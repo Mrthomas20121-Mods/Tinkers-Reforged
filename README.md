@@ -6,9 +6,10 @@ As of 1.1.0 add new Materials Lavium and Qivium. They are a cobalt/ardite alloy.
 
 # Supported mods : 
 * Thermal Foundation
-* Naturesaura
-* Applied energistic 2
+* Natures Aura
+* Applied energistics 2
 * Extreme Reactor
 * Mystical World
 * Roots
 * Astral Sorcery
+* Actually Additions
