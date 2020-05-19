@@ -19,6 +19,8 @@ public class Traits {
     public static final TraitStarShaped starshaped = new TraitStarShaped();
     public static final TraitVoid void_trait = new TraitVoid();
     public static final TraitStarryNight starry_night = new TraitStarryNight();
+    public static final TraitVillagerCurse villager_curse = new TraitVillagerCurse(1);
+    public static final TraitRose rose = new TraitRose();
 
     public static void preInit() {
         RegistryLib.registerTrait(ender);
@@ -36,5 +38,7 @@ public class Traits {
         RegistryLib.registerTrait(starshaped);
         RegistryLib.registerTrait(void_trait);
         RegistryLib.registerTrait(starry_night);
+        RegistryLib.registerTrait(villager_curse);
+        RegistryLib.registerTrait(rose);
     }
 }
