@@ -66,7 +66,7 @@ fluid.horizonite=Molten Horizonite
 fluid.pyrope=Molten Pyrope
 fluid.black_quartz=Molten Black Quartz
 fluid.enori=Molten Enori
-fluid.ref_palis=Molten Palis
+fluid.palis=Molten Palis
 fluid.void=Molten Void
 fluid.emeradic=Molten Emeradic
 
@@ -140,20 +140,20 @@ material.reforged_lavium.name=Lavium
 material.reforged_qivium.name=Qivium
 
 # Traits and Modifiers
-modifier.signal.name=Signal
-modifier.signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode.
+modifier.ref_signal.name=Signal
+modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode.
 
-modifier.ender.name=Ender
-modifier.ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Ender Mobs.
+modifier.ref_ender.name=Ender
+modifier.ref_ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Ender Mobs.
 
 modifier.enderfestation.name=Enderfestation
 modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning an endermite.
 
-modifier.reforged_bright.name=Bright
-modifier.reforged_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
+modifier.ref_bright.name=Bright
+modifier.ref_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
 
-modifier.reforged_astral.name=Astral
-modifier.reforged_astral.desc=§oI can see in the dark!§r
+modifier.ref_astral.name=Astral
+modifier.ref_astral.desc=§oI can see in the dark!§r
 
 modifier.aura_infusion.name=Aura Infusion
 modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?§r\nRepair your tool using aura.
@@ -161,8 +161,8 @@ modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?§
 modifier.pyromancy.name=Pyromancy
 modifier.pyromancy.desc=§oBy fire be purged!§r\nCrits set the target on fire.
 
-modifier.reforged_radioactive.name=Radioactive
-modifier.reforged_radioactive.desc=§oOh no!§r\n50% chance to cure poison/wither on tick.
+modifier.ref_radioactive.name=Radioactive
+modifier.ref_radioactive.desc=§oOh no!§r\n50% chance to cure poison/wither on tick.
 
 modifier.nuclear_waste.name=Nuclear Waste
 modifier.nuclear_waste.desc=§oNuclear Infusion anyone?§r\nGet a random vanilla potion effect after mining or attacking.
@@ -170,17 +170,29 @@ modifier.nuclear_waste.desc=§oNuclear Infusion anyone?§r\nGet a random vanilla
 modifier.life_steal.name=Life Steal
 modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
 
-modifier.reforged_refined.name=Refined
-modifier.reforged_refined.desc=§oNot so fast!§r\nMine Obsidian faster
+modifier.ref_refined.name=Refined
+modifier.ref_refined.desc=§oNot so fast!§r\nMine Obsidian faster
 
-modifier.star_shaped.name=Star Shaped
-modifier.star_shaped.desc=§oShaped like a star!§r\nAlways Crits
+modifier.ref_flux.name=Flux(WIP)
+modifier.ref_flux.desc=§oWhat's Forge Energy?§r\nAdd a Forge Energy bar to your tool that is used instead of your tool durability.
 
-modifier.ref_villager_curse.name=Villager Curse
-modifier.ref_villager_curse.desc=§oIllager did this§r\nKilling Mobs have a chance of spawning
+modifier.ref_star_shaped.name=Star Shaped
+modifier.ref_star_shaped.desc=§oShaped like a star!§r\nAlways Crits
+
+modifier.ref_villager_love.name=Villager Love
+modifier.ref_villager_love.desc=§oEmerald for days!§r\nKilling Mobs have a chance of spawning
 
 modifier.ref_rose.name=Rose
-modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nBreaking grass and dirt blocks will drop dyes instead of the block.
+modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nGrass have a chance of dropping dye.
 
 modifier.ref_void.name=Void
 modifier.ref_void.desc=§oThis seems empty§r\nVoid items dropped from blocks.
+
+modifier.ref_starry_night.name=Starry Night
+modifier.ref_starry_night.desc=§oOh look a star!§r\nGive Haste at night
+
+modifier.ref_carbon.name=Carbon
+modifier.ref_starry_night.desc=§oHard as a rock§r\nBlocks mined increase the durability.
+
+modifier.ref_curse.name=Curse
+modifier.ref_curse.desc=§oWhat?!§r\nKilling a mob have a chance of reviving it.
