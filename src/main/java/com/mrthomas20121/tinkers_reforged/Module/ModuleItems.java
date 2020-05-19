@@ -55,7 +55,7 @@ public class ModuleItems extends ModuleBase {
     public static ItemBase KovarGear = new ItemBase(TinkersReforged.MODID, "kovar_gear");
 
     public static BlockGlassTic kovar_glass = new BlockGlassTic(TinkersReforged.MODID, "kovar");
-    public static final CreativeTabs creativetab = new CreativeTab("TinkersReforged",new ItemStack(laviumIngot, 1));
+    public static final CreativeTabs creativetab = new CreativeTab("tinkers_reforged",new ItemStack(laviumIngot, 1));
 
     private static int level = HarvestLevels.COBALT;
 
