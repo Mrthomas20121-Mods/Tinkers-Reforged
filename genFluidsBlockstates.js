@@ -2,6 +2,8 @@ const fs = require('fs');
 
 let fluids = [
 	"qivium", 
+	"kovar",
+	"lavium",
 	"ludicrite", 
 	"blutonium", 
 	"infused_iron", 
@@ -14,7 +16,12 @@ let fluids = [
 	"horizonite",
 	"pyrope",
 	"black_quartz",
-	"enori"
+	"enori",
+	"void",
+	"emeradic",
+	"diamantine",
+	"palis",
+	"redstonia"
 ];
 
 for(fluid of fluids) {
