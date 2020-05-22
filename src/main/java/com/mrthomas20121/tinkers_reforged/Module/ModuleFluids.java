@@ -8,6 +8,7 @@ import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 import com.mrthomas20121.tinkers_reforged.Config.Config;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -19,7 +20,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber(modid = TinkersReforged.MODID)
 public class ModuleFluids {
-    public static ArrayList<BlockFluid> blockFluids = new ArrayList<>(); 
+    public static ArrayList<ItemBlock> blockFluids = new ArrayList<>(); 
 
     public static FluidMoltenBase lavium = new FluidMoltenBase("lavium", Materials.lavium.materialTextColor);
     public static FluidMoltenBase qivium = new FluidMoltenBase("qivium", Materials.qivium.materialTextColor);
@@ -226,11 +227,13 @@ public class ModuleFluids {
             }
         }
     }
-    protected static void RegisterFluidBlock(IForgeRegistry<Block> r, Fluid f) {
+    public static void RegisterFluidBlock(IForgeRegistry<Block> r, Fluid f) {
         BlockFluid fluidBlock = new BlockFluid(f);
         fluidBlock.setRegistryName(TinkersReforged.MODID, "molten_"+f.getName());
         f.setUnlocalizedName(f.getName());
-        blockFluids.add(fluidBlock);
+        ItemBlock itemBlock = new ItemBlock(fluidBlock);
+        itemBlock.setRegistryName(fluidBlock.getRegistryName());
+        blockFluids.add(itemBlock);
         r.register(fluidBlock);
     }
 }

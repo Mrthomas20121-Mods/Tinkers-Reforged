@@ -34,14 +34,10 @@ public class ModuleAe extends ModuleBase {
     public void preInit(FMLPreInitializationEvent e) {
 
         if(Config.certus_quartz) {
-            certus_quartz.addGemItem("crystalCertusQuartz");
-            certus_quartz.addGemItem("crystalPureCertusQuartz");
             certus_quartz.preInit("CrystalCertusQuartz");
             Materials.mats.add(certus_quartz.getMat());
         }
         if(Config.fluix_crystal) {
-            fluix_crystal.addGemItem("crystalFluix");
-            fluix_crystal.addGemItem("crystalPureFluix");
             fluix_crystal.preInit("crystalFluix");
             Materials.mats.add(fluix_crystal.getMat());
         }
@@ -49,6 +45,10 @@ public class ModuleAe extends ModuleBase {
     }
     @Override
     public void init(FMLInitializationEvent e) {
+        certus_quartz.addItem("crystalCertusQuartz", Material.VALUE_Ingot);
+        certus_quartz.addItem("crystalPureCertusQuartz", Material.VALUE_Ingot);
+        fluix_crystal.addItem("crystalFluix", Material.VALUE_Ingot);
+        fluix_crystal.addItem("crystalPureFluix", Material.VALUE_Ingot);
         certus_quartz.setRepresentativeItem("crystalCertusQuartz");
         fluix_crystal.setRepresentativeItem("crystalFluix");
     }

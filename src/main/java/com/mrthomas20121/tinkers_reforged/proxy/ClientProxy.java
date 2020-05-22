@@ -68,13 +68,12 @@ public class ClientProxy extends CommonProxy {
         for(Item item : items) {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
-        for(BlockFluid block: ModuleFluids.blockFluids) {
-            ItemBlock itemBlock = (ItemBlock) Item.getItemFromBlock(block);
+        for(ItemBlock itemBlock: ModuleFluids.blockFluids) {
             ModelLoader.setCustomModelResourceLocation(itemBlock, 0, new ModelResourceLocation(itemBlock.getRegistryName(), "normal"));
             ModelLoader.setCustomStateMapper(itemBlock.getBlock(), new StateMapperBase() {
                 @Override
                 public ModelResourceLocation getModelResourceLocation(IBlockState state) {
-                    return new ModelResourceLocation(block.getRegistryName(), "normal");
+                    return new ModelResourceLocation(itemBlock.getRegistryName(), "normal");
                 }});
         }
         ModuleItems.InitModels();
