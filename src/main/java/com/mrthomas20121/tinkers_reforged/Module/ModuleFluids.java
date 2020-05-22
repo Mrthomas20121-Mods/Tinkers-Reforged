@@ -229,6 +229,7 @@ public class ModuleFluids {
     protected static void RegisterFluidBlock(IForgeRegistry<Block> r, Fluid f) {
         BlockFluid fluidBlock = new BlockFluid(f);
         fluidBlock.setRegistryName(TinkersReforged.MODID, "molten_"+f.getName());
+        f.setUnlocalizedName(f.getName());
         blockFluids.add(fluidBlock);
         r.register(fluidBlock);
     }

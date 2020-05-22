@@ -7,8 +7,12 @@ import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 import com.mrthomas20121.tinkers_reforged.Module.Modules;
 import com.mrthomas20121.libs.block.BlockFluid;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
+
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -65,7 +69,13 @@ public class ClientProxy extends CommonProxy {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
         for(BlockFluid block: ModuleFluids.blockFluids) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+            ItemBlock itemBlock = (ItemBlock) Item.getItemFromBlock(block);
+            ModelLoader.setCustomModelResourceLocation(itemBlock, 0, new ModelResourceLocation(itemBlock.getRegistryName(), "normal"));
+            ModelLoader.setCustomStateMapper(itemBlock.getBlock(), new StateMapperBase() {
+                @Override
+                public ModelResourceLocation getModelResourceLocation(IBlockState state) {
+                    return new ModelResourceLocation(block.getRegistryName(), "normal");
+                }});
         }
         ModuleItems.InitModels();
     }

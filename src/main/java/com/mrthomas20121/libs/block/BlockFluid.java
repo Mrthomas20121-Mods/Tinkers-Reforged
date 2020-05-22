@@ -2,7 +2,6 @@ package com.mrthomas20121.libs.block;
 
 import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -11,15 +10,15 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import slimeknights.tconstruct.smeltery.block.BlockMolten;
 
-public class BlockFluid extends BlockFluidClassic {
+public class BlockFluid extends BlockMolten {
 
   public BlockFluid(Fluid fluid) {
-    super(fluid, Material.LAVA);
+    super(fluid);
     setCreativeTab(ModuleItems.creativetab);
   }
   @Override
