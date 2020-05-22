@@ -192,7 +192,7 @@ modifier.ref_starry_night.name=Starry Night
 modifier.ref_starry_night.desc=§oOh look a star!§r\nGive Haste at night
 
 modifier.ref_carbon.name=Carbon
-modifier.ref_starry_night.desc=§oHard as a rock§r\nBlocks mined increase the durability.
+modifier.ref_carbon.desc=§oHard as a rock§r\nBlocks mined increase the durability.
 
 modifier.ref_curse.name=Curse
 modifier.ref_curse.desc=§oWhat?!§r\nKilling a mob have a chance of reviving it.
