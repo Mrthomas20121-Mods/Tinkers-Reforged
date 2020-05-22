@@ -1,7 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Traits;
 
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,8 +15,10 @@ public class TraitCarbon extends AbstractTrait {
 
     @Override
     public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase player, boolean wasEffective) {
-        NBTTagCompound nbt = tool.getTagCompound();
-        int durability = nbt.getInteger("Durability");
-        nbt.setInteger("Durability", durability+1);
+        if(this.isToolWithTrait(tool)) {
+            NBTTagCompound nbt = tool.getTagCompound();
+            int durability = nbt.getInteger("Durability");
+            nbt.setInteger("Durability", durability+1);
+        }
     }
 }

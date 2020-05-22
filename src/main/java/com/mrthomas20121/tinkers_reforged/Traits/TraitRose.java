@@ -17,7 +17,7 @@ public class TraitRose extends AbstractTrait {
     public void afterBlockBreak(ItemStack tool, World world, IBlockState state, BlockPos pos, EntityLivingBase player, boolean wasEffective) {
         String registryName = state.getBlock().getRegistryName().toString();
         if(contains(registryName, "grass")) {
-            if(!world.isRemote) {
+            if(!world.isRemote && wasEffective) {
                 int meta = world.rand.nextInt(15);
                 int chance = world.rand.nextInt(100);
                 if(chance > 49) {

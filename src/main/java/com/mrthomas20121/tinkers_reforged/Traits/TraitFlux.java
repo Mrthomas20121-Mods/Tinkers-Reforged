@@ -8,7 +8,7 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 import slimeknights.tconstruct.tools.modifiers.ModMendingMoss;
 
 public class TraitFlux extends AbstractTrait {
-    private int energyCost = 150;
+    private int energyCost = 5;
 
     public TraitFlux() {
       super("ref_flux", 0x0f1000);
