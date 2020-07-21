@@ -1,4 +1,4 @@
-package com.mrthomas20121.tinkers_reforged.Module;
+package mrthomas20121.tinkers_reforged.Module;
 
 import slimeknights.tconstruct.library.materials.Material;
 
