@@ -91,6 +91,7 @@ public class Config {
         try {
             cfg.load();
             ConfigModules.moduleTinkersReforged(cfg);
+			ConfigModules.moduleAa(cfg);
             ConfigModules.moduleAe2(cfg);
             ConfigModules.moduleAstralSorcery(cfg);
             ConfigModules.moduleAtum(cfg);
