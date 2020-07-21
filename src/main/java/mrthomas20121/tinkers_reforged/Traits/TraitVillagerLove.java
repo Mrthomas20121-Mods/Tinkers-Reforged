@@ -1,4 +1,4 @@
-package com.mrthomas20121.tinkers_reforged.Traits;
+package mrthomas20121.tinkers_reforged.Traits;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -19,7 +19,7 @@ public class TraitVillagerLove extends AbstractTraitLeveled {
     @Override
     public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
         if(wasHit && !target.isEntityAlive()) {
-            NBTTagCompound modifierTag = TinkerUtil.getModifierTag(tool, "ref_villager_curse");
+            NBTTagCompound modifierTag = TinkerUtil.getModifierTag(tool, "ref_villager_love");
             World world = player.getEntityWorld();
             int chance = world.rand.nextInt(100);
             if(chance > 49) {

@@ -1,6 +1,6 @@
-package com.mrthomas20121.tinkers_reforged.Traits;
+package mrthomas20121.tinkers_reforged.Traits;
 
-import com.mrthomas20121.biolib.RegistryLib;
+import mrthomas20121.biolib.common.MaterialBuilder;
 
 public class Traits {
 
@@ -20,29 +20,30 @@ public class Traits {
     public static final TraitVoid void_trait = new TraitVoid();
     public static final TraitStarryNight starry_night = new TraitStarryNight();
     public static final TraitVillagerLove villager_love = new TraitVillagerLove(1);
+    public static final TraitVillagerLove villager_love_2 = new TraitVillagerLove(2);
     public static final TraitRose rose = new TraitRose();
     public static final TraitCarbon carbon = new TraitCarbon();
     public static final TraitCurse curse = new TraitCurse();
 
     public static void preInit() {
-        RegistryLib.registerTrait(ender);
-        RegistryLib.registerTrait(enderfestation);
-        RegistryLib.registerTrait(signal);
-        RegistryLib.registerTrait(light);
-        RegistryLib.registerTrait(astral);
-        RegistryLib.registerTrait(AURA_INFUSION);
-        RegistryLib.registerTrait(radioactive);
-        RegistryLib.registerTrait(nuclearwaste);
-        RegistryLib.registerTrait(life_steal);
-        RegistryLib.registerTrait(pyromancy);
-        RegistryLib.registerTrait(refined);
-        RegistryLib.registerTrait(flux);
-        RegistryLib.registerTrait(starshaped);
-        RegistryLib.registerTrait(void_trait);
-        RegistryLib.registerTrait(starry_night);
-        RegistryLib.registerTrait(villager_love);
-        RegistryLib.registerTrait(rose);
-        RegistryLib.registerTrait(carbon);
-        RegistryLib.registerTrait(curse);
+        MaterialBuilder.registerTrait(ender);
+        MaterialBuilder.registerTrait(enderfestation);
+        MaterialBuilder.registerTrait(signal);
+        MaterialBuilder.registerTrait(light);
+        MaterialBuilder.registerTrait(astral);
+        MaterialBuilder.registerTrait(AURA_INFUSION);
+        MaterialBuilder.registerTrait(radioactive);
+        MaterialBuilder.registerTrait(nuclearwaste);
+        MaterialBuilder.registerTrait(life_steal);
+        MaterialBuilder.registerTrait(pyromancy);
+        MaterialBuilder.registerTrait(refined);
+        MaterialBuilder.registerTrait(flux);
+        MaterialBuilder.registerTrait(starshaped);
+        MaterialBuilder.registerTrait(void_trait);
+        MaterialBuilder.registerTrait(starry_night);
+        MaterialBuilder.registerTrait(villager_love);
+        MaterialBuilder.registerTrait(rose);
+        MaterialBuilder.registerTrait(carbon);
+        MaterialBuilder.registerTrait(curse);
     }
 }

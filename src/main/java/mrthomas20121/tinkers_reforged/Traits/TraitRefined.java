@@ -1,4 +1,4 @@
-package com.mrthomas20121.tinkers_reforged.Traits;
+package mrthomas20121.tinkers_reforged.Traits;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerEvent;
