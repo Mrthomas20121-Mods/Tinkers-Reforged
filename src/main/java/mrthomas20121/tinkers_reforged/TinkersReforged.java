@@ -25,7 +25,7 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.3.0";
+    public static final String VERSION = "1.3.1";
 
     public static Logger logger;
 
