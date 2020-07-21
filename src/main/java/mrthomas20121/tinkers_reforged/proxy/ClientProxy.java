@@ -1,11 +1,11 @@
-package com.mrthomas20121.tinkers_reforged.proxy;
+package mrthomas20121.tinkers_reforged.proxy;
 
-import com.mrthomas20121.tinkers_reforged.Module.Materials;
-import com.mrthomas20121.tinkers_reforged.Module.ModuleFluids;
-import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
-import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
-import com.mrthomas20121.tinkers_reforged.Module.Modules;
-import com.mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.Client.TinkerBookTransformer;
+import mrthomas20121.tinkers_reforged.Module.Materials;
+import mrthomas20121.tinkers_reforged.Module.ModuleFluids;
+import mrthomas20121.tinkers_reforged.Module.ModuleItems;
+import mrthomas20121.tinkers_reforged.Module.Modules;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -22,13 +22,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
+import slimeknights.tconstruct.library.book.TinkerBook;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
 import java.util.ArrayList;
-
-import static com.mrthomas20121.tinkers_reforged.TinkersReforged.logger;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
@@ -39,23 +38,27 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent e) {
-
+        this.registerBookData();
         Modules.tools.init(e);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-        logger.info("Client Stuff");
+        TinkersReforged.logger.info("Client Stuff");
         for (Material mat : Materials.mats) {
             mat.setRenderInfo(mat.materialTextColor);
         }
-        ModuleTools.postInit(event);
     }
     @Override
     public <T extends Item & IToolPart> void registerToolPartModel(T part) {
         ModelRegisterUtil.registerPartModel(part);
     }
+    @Override
+    public void registerBookData() {
+        TinkerBook.INSTANCE.addTransformer(new TinkerBookTransformer());
+    }
+
     @Override
     public void registerToolModel(ToolCore tc) {
         ModelRegisterUtil.registerToolModel(tc);

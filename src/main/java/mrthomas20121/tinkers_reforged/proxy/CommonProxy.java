@@ -1,6 +1,7 @@
-package com.mrthomas20121.tinkers_reforged.proxy;
+package mrthomas20121.tinkers_reforged.proxy;
 
-import com.mrthomas20121.tinkers_reforged.Config.Config;
+import mrthomas20121.tinkers_reforged.Config.Config;
+import mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +25,8 @@ public class CommonProxy {
         Config.readConfig();
     }
 
-    public void init(FMLInitializationEvent e) {}
+    public void init(FMLInitializationEvent e) {
+    }
 
     public void postInit(FMLPostInitializationEvent e) { }
 
@@ -34,4 +36,5 @@ public class CommonProxy {
     public void registerToolModel(ToolCore tc) {
 
     }
+    public void registerBookData() { }
 }
