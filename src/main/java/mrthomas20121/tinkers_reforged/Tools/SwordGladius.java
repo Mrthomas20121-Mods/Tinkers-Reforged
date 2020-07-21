@@ -1,4 +1,4 @@
-package com.mrthomas20121.tinkers_reforged.Tools;
+package mrthomas20121.tinkers_reforged.Tools;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

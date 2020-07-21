@@ -1,4 +1,4 @@
-package com.mrthomas20121.tinkers_reforged.Tools;
+package mrthomas20121.tinkers_reforged.Tools;
 
 import epicsquid.mysticallib.util.ItemUtil;
 import epicsquid.roots.config.MossConfig;
