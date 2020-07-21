@@ -1,4 +1,4 @@
-package com.mrthomas20121.libs;
+package mrthomas20121.biolib;
 
 import c4.conarm.lib.materials.ArmorMaterials;
 import c4.conarm.lib.materials.CoreMaterialStats;

@@ -1,4 +1,4 @@
-package com.mrthomas20121.libs.item;
+package com.mrthomas20121.biolib.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

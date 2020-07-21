@@ -1,6 +1,6 @@
-package com.mrthomas20121.libs.block;
+package com.mrthomas20121.biolib.block;
 
-import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
+import mrthomas20121.tinkers_reforged.Module.ModuleItems;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -9,8 +9,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockGlassTic extends BlockGlass {
-    public BlockGlassTic(String modid, String name) {
+public class BlockGlassCustom extends BlockGlass {
+    public BlockGlassCustom(String modid, String name) {
         super(Material.GLASS, false);
         this.setRegistryName(modid, name+"_glass");
         this.setTranslationKey(modid + "." + name+"_glass");

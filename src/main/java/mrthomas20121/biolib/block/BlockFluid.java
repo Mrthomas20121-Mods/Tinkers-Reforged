@@ -1,6 +1,6 @@
-package com.mrthomas20121.libs.block;
+package com.mrthomas20121.biolib.block;
 
-import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
+import mrthomas20121.tinkers_reforged.Module.ModuleItems;
 
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;

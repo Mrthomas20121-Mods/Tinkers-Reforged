@@ -1,4 +1,4 @@
-package com.mrthomas20121.libs;
+package mrthomas20121.biolib;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

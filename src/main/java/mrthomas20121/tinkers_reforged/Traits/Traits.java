@@ -1,6 +1,6 @@
 package com.mrthomas20121.tinkers_reforged.Traits;
 
-import com.mrthomas20121.libs.RegistryLib;
+import com.mrthomas20121.biolib.RegistryLib;
 
 public class Traits {
 

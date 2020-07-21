@@ -5,7 +5,6 @@ import com.mrthomas20121.tinkers_reforged.Module.ModuleFluids;
 import com.mrthomas20121.tinkers_reforged.Module.ModuleItems;
 import com.mrthomas20121.tinkers_reforged.Module.ModuleTools;
 import com.mrthomas20121.tinkers_reforged.Module.Modules;
-import com.mrthomas20121.libs.block.BlockFluid;
 import com.mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import net.minecraft.block.state.IBlockState;

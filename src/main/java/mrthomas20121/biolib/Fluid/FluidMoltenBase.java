@@ -1,6 +1,6 @@
-package com.mrthomas20121.libs.Fluid;
+package com.mrthomas20121.biolib.Fluid;
 
-import com.mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.fluid.FluidMolten;
