@@ -1,10 +1,15 @@
-package com.mrthomas20121.tinkers_reforged.Config;
+package mrthomas20121.tinkers_reforged.Config;
 
-import com.mrthomas20121.tinkers_reforged.TinkersReforged;
-import com.mrthomas20121.tinkers_reforged.proxy.CommonProxy;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.proxy.CommonProxy;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.Level;
 
+@Mod.EventBusSubscriber(modid = TinkersReforged.MODID)
 public class Config {
     // thermalfoundation
     public static boolean enderium = true;
@@ -68,10 +73,18 @@ public class Config {
     public static boolean toolGreatsword = true;
     public static boolean toolKhopesh = true;
     public static boolean toolRunedKnife = true;
-    public static boolean atum_requirement_for_tools = true;
 
     // fuels
     public static boolean pyrotheum = true;
+
+    @SubscribeEvent
+    public static void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
+    {
+        if (event.getModID().equals(TinkersReforged.MODID))
+        {
+            ConfigManager.sync(TinkersReforged.MODID, net.minecraftforge.common.config.Config.Type.INSTANCE);
+        }
+    }
 
     public static void readConfig() {
         Configuration cfg = CommonProxy.config;

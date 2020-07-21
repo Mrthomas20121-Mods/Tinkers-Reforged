@@ -1,4 +1,4 @@
-package com.mrthomas20121.tinkers_reforged.Config;
+package mrthomas20121.tinkers_reforged.Config;
 
 import net.minecraftforge.common.config.Configuration;
 //import com.mrthomas20121.tinkers_reforged.Config.Config;
@@ -10,6 +10,7 @@ public class ConfigModules {
     public static boolean ae2 = true;
     public static boolean astral = true;
     public static boolean atum = true;
+    public static boolean actuallyAdditions = true;
     public static boolean blue_skies = true;
     public static boolean extreme = true;
     public static boolean mekanism = true;
@@ -25,17 +26,29 @@ public class ConfigModules {
         Config.certus_quartz = cfg.getBoolean("certus_quartz", category, Config.certus_quartz, "Set to false to disable certus quartz material");
         Config.fluix_crystal = cfg.getBoolean("fluix_crystal", category, Config.fluix_crystal, "Set to false to disable fluix crystal material");
     }
+    public static void moduleAa(Configuration cfg) {
+        String category = "ActuallyAdditions";
+        actuallyAdditions = cfg.getBoolean(name+"_"+category, category, atum, "Set to false to disable ActuallyAdditions module");
+
+        Config.enori = cfg.getBoolean("enori", category, Config.enori, "Set to false to disable Enori Crystal material");
+        Config.blackquartz = cfg.getBoolean("black_quartz", category, Config.blackquartz, "Set to false to disable Black Quartz material");
+        Config.diamantine = cfg.getBoolean("diamantine", category, Config.diamantine, "Set to false to disable Diamantine Crystal material");
+        Config.voidcrystal = cfg.getBoolean("void", category, Config.voidcrystal, "Set to false to disable Void Crystal material");
+        Config.redstonia = cfg.getBoolean("redstonia", category, Config.redstonia, "Set to false to disable Redstonia Crystal material");
+        Config.palis = cfg.getBoolean("palis", category, Config.palis, "Set to false to disable Palis Crystal material");
+        Config.emeratic = cfg.getBoolean("emeradic", category, Config.emeratic, "Set to false to disable Emeradic Crystal material");
+    }
+
     public static void moduleAtum(Configuration cfg) {
         String category = "atum2";
         atum = cfg.getBoolean(name+"_"+category, category, atum, "Set to false to disable Atum module");
 
         Config.limestone = cfg.getBoolean("limestone", category, Config.limestone, "Set to false to disable limestone material");
-        Config.khnumite = cfg.getBoolean("khnumite", category, Config.fluix_crystal, "Set to false to disable khnumite material");
+        Config.khnumite = cfg.getBoolean("khnumite", category, Config.khnumite, "Set to false to disable khnumite material");
 
         Config.toolClub = cfg.getBoolean("weaponClub", category, Config.toolClub, "Set to false to disable the weapon Club");
         Config.toolGreatsword = cfg.getBoolean("weaponGreatsword", category, Config.toolGreatsword, "Set to false to disable the weapon Greatsword");
         Config.toolKhopesh = cfg.getBoolean("weaponKhopesh", category, Config.toolKhopesh, "Set to false to disable the weapon Khopesh");
-        Config.atum_requirement_for_tools = cfg.getBoolean("require_atum", category, Config.atum_requirement_for_tools, "Set to false to let atum tools to be used without atum 2 loaded");
     }
     public static void moduleAstralSorcery(Configuration cfg) {
         String category = "astralsorcery";
