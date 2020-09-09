@@ -1,11 +1,8 @@
 package mrthomas20121.tinkers_reforged;
 
-// import com.mrthomas20121.tinkers_reforged.Config.Config;
-// import com.mrthomas20121.tinkers_reforged.proxy.ClientProxy;
 import mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
-import mrthomas20121.tinkers_reforged.Module.Modules;
+import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -25,9 +22,13 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.3.1";
+    public static final String VERSION = "1.4.0";
 
-    public static Logger logger;
+    private static Logger logger;
+
+    public static Logger getLogger() {
+        return logger;
+    }
 
     @SidedProxy(serverSide = "mrthomas20121.tinkers_reforged.proxy.CommonProxy", clientSide = "mrthomas20121.tinkers_reforged.proxy.ClientProxy")
     public static CommonProxy proxy;
@@ -44,12 +45,14 @@ public class TinkersReforged
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
+        proxy.registerBookData();
         proxy.init(event);
         Modules.init(event);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        proxy.registerToolCrafting();
         Modifiers.init();
         proxy.postInit(event);
         Modules.postInit(event);
