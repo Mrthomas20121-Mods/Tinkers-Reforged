@@ -1,6 +1,6 @@
-package mrthomas20121.tinkers_reforged.Tools;
+package mrthomas20121.tinkers_reforged.tools;
 
-import mrthomas20121.tinkers_reforged.Module.ModuleTools;
+import mrthomas20121.tinkers_reforged.modules.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

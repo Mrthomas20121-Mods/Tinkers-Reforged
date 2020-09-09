@@ -1,17 +1,18 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.tinkers_reforged.Client.TinkerBookTransformer;
-import mrthomas20121.tinkers_reforged.Module.Materials;
-import mrthomas20121.tinkers_reforged.Module.ModuleFluids;
-import mrthomas20121.tinkers_reforged.Module.ModuleItems;
-import mrthomas20121.tinkers_reforged.Module.Modules;
+import mrthomas20121.tinkers_reforged.client.ModifiersTransformer;
+import mrthomas20121.tinkers_reforged.client.ToolsTransformer;
+import mrthomas20121.tinkers_reforged.modules.*;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
+import mrthomas20121.tinkers_reforged.resources.Resource;
+import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -22,8 +23,10 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
+import slimeknights.tconstruct.library.TinkerRegistryClient;
 import slimeknights.tconstruct.library.book.TinkerBook;
-import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
+import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
@@ -38,16 +41,13 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init(FMLInitializationEvent e) {
-        this.registerBookData();
-        Modules.tools.init(e);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-        TinkersReforged.logger.info("Client Stuff");
-        for (Material mat : Materials.mats) {
-            mat.setRenderInfo(mat.materialTextColor);
+        for (Resource resource : Resources.materials) {
+            if(!resource.getName().equals("kovar")) resource.builder().getMat().setRenderInfo(resource.getColor());
         }
     }
     @Override
@@ -55,8 +55,58 @@ public class ClientProxy extends CommonProxy {
         ModelRegisterUtil.registerPartModel(part);
     }
     @Override
+    public void registerModifierModel(IModifier mod, ResourceLocation rl) {
+        ModelRegisterUtil.registerModifierModel(mod, rl);
+    }
+
+    @Override
+    public void registerToolCrafting()
+    {
+        if(ModuleTools.gladius != null)
+        {
+            ToolBuildGuiInfo gladiusGui = new ToolBuildGuiInfo(ModuleTools.gladius);
+            gladiusGui.addSlotPosition(33 - 20 - 1, 42 + 20);
+            gladiusGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
+            gladiusGui.addSlotPosition(33 - 2 - 1, 42 + 2);
+            TinkerRegistryClient.addToolBuilding(gladiusGui);
+        }
+        if(ModuleTools.knife != null)
+        {
+            ToolBuildGuiInfo runedKnifeGui = new ToolBuildGuiInfo(ModuleTools.knife);
+            runedKnifeGui.addSlotPosition(33 - 20 - 1, 42 + 20);
+            runedKnifeGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
+            runedKnifeGui.addSlotPosition(33 - 2 - 1, 42 + 2);
+            TinkerRegistryClient.addToolBuilding(runedKnifeGui);
+        }
+        if(ModuleTools.club != null)
+        {
+            ToolBuildGuiInfo clubGui = new ToolBuildGuiInfo(ModuleTools.club);
+            clubGui.addSlotPosition(33 - 20 - 1, 42 + 20);
+            clubGui.addSlotPosition(33 - 2 - 1, 42 + 2);
+            TinkerRegistryClient.addToolBuilding(clubGui);
+        }
+        if(ModuleTools.greatsword != null)
+        {
+            ToolBuildGuiInfo greatSwordGui = new ToolBuildGuiInfo(ModuleTools.greatsword);
+            greatSwordGui.addSlotPosition(33 - 20 - 1, 42 + 20);
+            greatSwordGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
+            greatSwordGui.addSlotPosition(33 - 2 - 1, 42 + 2);
+            TinkerRegistryClient.addToolBuilding(greatSwordGui);
+        }
+        if(ModuleTools.khopesh != null)
+        {
+            ToolBuildGuiInfo khopeshGui = new ToolBuildGuiInfo(ModuleTools.khopesh);
+            khopeshGui.addSlotPosition(33 - 20 - 1, 42 + 20);
+            khopeshGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
+            khopeshGui.addSlotPosition(33 - 2 - 1, 42 + 2);
+            TinkerRegistryClient.addToolBuilding(khopeshGui);
+        }
+    }
+
+    @Override
     public void registerBookData() {
-        TinkerBook.INSTANCE.addTransformer(new TinkerBookTransformer());
+        TinkerBook.INSTANCE.addTransformer(new ToolsTransformer());
+        TinkerBook.INSTANCE.addTransformer(new ModifiersTransformer());
     }
 
     @Override
@@ -65,7 +115,7 @@ public class ClientProxy extends CommonProxy {
     }
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        TinkersReforged.logger.info("Loading Model");
+        TinkersReforged.getLogger().info("Loading Model");
         ArrayList<Item> items = ModuleItems.genArrayList();
         for(Item item : items) {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));

@@ -7,11 +7,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import slimeknights.tconstruct.library.modifiers.ModifierAspect;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitEnderfestation extends AbstractTrait {
     public TraitEnderfestation() {
         super("enderfestation", 0x1D3D37);
+        this.aspects.add(ModifierAspect.harvestOnly);
     }
 
     @Override

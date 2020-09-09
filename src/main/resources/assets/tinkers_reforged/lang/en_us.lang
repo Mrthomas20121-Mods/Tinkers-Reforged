@@ -51,7 +51,7 @@ item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy block
 
 # Fluids
 fluid.infused_iron=Molten Infused Iron
-fluid.molten_of_the_sky=Molten of the sky
+fluid.material_of_the_sky=Molten of the sky
 fluid.starmetal=Starmetal
 fluid.blutonium=Molten Blutonium
 fluid.ludicrite=Molten Ludicrite
@@ -64,13 +64,23 @@ fluid.refined_glowstone=Molten Refined Glowstone
 fluid.ventium=Molten Ventium
 fluid.horizonite=Molten Horizonite
 fluid.pyrope=Molten Pyrope
-fluid.black_quartz=Molten Black Quartz
+fluid.blackquartz=Molten Black Quartz
 fluid.enori=Molten Enori
 fluid.palis=Molten Palis
 fluid.void=Molten Void
 fluid.emeradic=Molten Emeradic
 fluid.redstonia=Molten Redstonia
 fluid.diamantine=Molten Diamantine
+fluid.ruby=Molten Ruby
+fluid.sapphire=Molten Sapphire
+fluid.titanium=Molten Titanium
+fluid.platinum=Molten Platinum
+fluid.aluminium=Molten aluminium
+fluid.iridium=Molten Iridium
+fluid.amethyst=Molten Amethyst
+fluid.aquamarine=Molten Aquamarine
+fluid.magnite=Molten Magnite
+fluid.hexcite=Molten Hexcite
 
 # mining levels
 ui.mininglevel.lavium=Lavium
@@ -78,18 +88,18 @@ ui.mininglevel.lavium=Lavium
 # materials
 
 # thermalfoundation materials
-material.reforged_enderium.name=Enderium
-material.reforged_signalum.name=Signalum
-material.reforged_lumium.name=Lumium
-material.reforged_platinum.name=Platinum
-material.reforged_iridium.name=Iridium
-material.reforged_invar.name=Invar
-material.reforged_aluminum.name=Aluminum
+material.ref_enderium.name=Enderium
+material.ref_signalum.name=Signalum
+material.ref_lumium.name=Lumium
+material.ref_platinum.name=Platinum
+material.ref_iridium.name=Iridium
+material.ref_invar.name=Invar
+material.ref_aluminum.name=Aluminum
 
 # naturesaura materials
-material.reforged_infused_iron.name=Infused Iron
-material.reforged_ancient_wood.name=Ancient Wood
-material.reforged_sky.name=Material Of The Sky
+material.ref_infused_iron.name=Infused Iron
+material.ref_ancient_wood.name=Ancient Wood
+material.ref_material_of_the_sky.name=Material Of The Sky
 
 ## aa materials
 material.ref_black_quartz.name=Black Quartz
@@ -101,45 +111,58 @@ material.ref_diamantine.name=Diamantine Crystal
 material.ref_palis.name=Palis Crystal
 
 # Appliedenergistic2 materials
-material.reforged_certus_quartz.name=Certus Quartz
-material.reforged_fluix_crystal.name=Fluix Crystal
+material.ref_certus_quartz.name=Certus Quartz
+material.ref_fluix_crystal.name=Fluix Crystal
 
 # Astralsorcery materials
-material.reforged_starmetal.name=Starmetal
+material.ref_starmetal.name=Starmetal
 
 # Atum 2
-material.reforged_limestone.name=Limestone
-material.reforged_khnumite.name=Khnumite
+material.ref_limestone.name=Limestone
+material.ref_khnumite.name=Khnumite
 
 # blueskies
-material.reforged_ventium.name=Ventium
-material.reforged_horizonite.name=Horizonite
-material.reforged_pyrope.name=Pyrope
-material.reforged_turquoise.name=Turquoise
-material.reforged_charoite.name=Charoite
-material.reforged_dioside.name=Diopside
+material.ref_ventium.name=Ventium
+material.ref_horizonite.name=Horizonite
+material.ref_pyrope.name=Pyrope
+material.ref_turquoise.name=Turquoise
+material.ref_charoite.name=Charoite
+material.ref_dioside.name=Diopside
+
+# botania
+material.ref_manasteel.name=Manasteel
+material.ref_mana_diamond.name=Mana diamond
+material.ref_elementium.name=Elementium
+material.ref_terrasteel.name=Terrasteel
+material.ref_dragonstone.name=Dragonstone
+material.ref_livingrock.name=Livingrock
+material.ref_livingwood.name=Livingwood
+material.ref_dreamwood.name=Dreamwood
+material.red_string.name=Red String
+material.ref_mana_string.name=Mana String
+material.ref_gaia_spirit.name=Gaia Spirit
 
 # Mystical world
 material.reforged_amethyst.name=Amethyst
 
 # Mekanism
-material.reforged_osmium.name=Osmium
-material.reforged_obsidian.name=Refined Obsidian
-material.reforged_glowstone.name=Refined Glowstone
-material.reforged_hdpesheet.name=HDPE Sheet
+material.ref_osmium.name=Osmium
+material.ref_obsidian.name=Refined Obsidian
+material.ref_glowstone.name=Refined Glowstone
+material.ref_hdpesheet.name=HDPE Sheet
 
 # Roots
-material.reforged_runestone.name=Runestone
+material.ref_runestone.name=Runestone
 
 # Extreme reactor
-material.reforged_yellorium.name=Yellorium
-material.reforged_blutonium.name=Blutonium
-material.reforged_ludicrite.name=Ludicrite
-material.reforged_cyanite.name=Cyanite
+material.ref_yellorium.name=Yellorium
+material.ref_blutonium.name=Blutonium
+material.ref_ludicrite.name=Ludicrite
+material.ref_cyanite.name=Cyanite
 
 # custom mats
-material.reforged_lavium.name=Lavium
-material.reforged_qivium.name=Qivium
+material.ref_lavium.name=Lavium
+material.ref_qivium.name=Qivium
 
 # Traits and Modifiers
 modifier.ref_signal.name=Signal
@@ -173,7 +196,7 @@ modifier.life_steal.name=Life Steal
 modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
 
 modifier.ref_refined.name=Refined
-modifier.ref_refined.desc=§oNot so fast!§r\nMine Obsidian faster
+modifier.ref_refined.desc=§oNot so fast!§r\nMine Obsidian faster.
 
 modifier.ref_flux.name=Flux
 modifier.ref_flux.desc=§oHow does that work?§r\nHave a chance to not use durability but will exaust you faster.
@@ -196,6 +219,26 @@ modifier.ref_starry_night.desc=§oOh look a star!§r\nGive Haste at night
 modifier.ref_carbon.name=Carbon
 modifier.ref_carbon.desc=§oHard as a rock§r\nBlocks mined increase the durability.
 
+modifier.ref_fey.name=Fey
+modifier.ref_fey.desc=§oBehold Nature!§r\nFey Spirits empowered your tools, giving it a overall boost.
+
+modifier.ref_mana_infusion.name=Mana Infusion
+modifier.ref_mana_infusion.desc=§oBotania is a magic mod!§r\nDrain mana from inventory/baubles inventory to repair your tools.
+
+modifier.ref_mana_boost.name=Mana Boost
+modifier.ref_mana_boost.desc=§oDamage go brr§r\nDrain mana from inventory/baubles inventory to boost your tools damage.
+
+modifier.ref_living.name=Living
+modifier.ref_living.desc=§oIt feels so good!§r\nBlocking an attack heal you.
+
 modifier.ender_star.name=Ender Star
 modifier.ender_star.desc=§oEnder Power!§r\nall Mobs can drop wither skeleton skulls.
 
+modifier.lens_killer.name=Lens of The Killer
+modifier.lens_killer.desc=§oMoar Power!§r\nCongratuation, you now deal more damage.
+
+modifier.token.name=Token
+modifier.token.desc=§oToken Power!§r\nGive one free modifier.
+
+modifier.ref_lens_miner.name=Lens of The Miner
+modifier.ref_lens_miner.desc=§oPhysics 101§r\nBlocks have a chance to drop a ore(any ore).

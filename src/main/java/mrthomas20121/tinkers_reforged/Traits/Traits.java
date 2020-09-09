@@ -24,26 +24,8 @@ public class Traits {
     public static final TraitRose rose = new TraitRose();
     public static final TraitCarbon carbon = new TraitCarbon();
     public static final TraitCurse curse = new TraitCurse();
-
-    public static void preInit() {
-        MaterialBuilder.registerTrait(ender);
-        MaterialBuilder.registerTrait(enderfestation);
-        MaterialBuilder.registerTrait(signal);
-        MaterialBuilder.registerTrait(light);
-        MaterialBuilder.registerTrait(astral);
-        MaterialBuilder.registerTrait(AURA_INFUSION);
-        MaterialBuilder.registerTrait(radioactive);
-        MaterialBuilder.registerTrait(nuclearwaste);
-        MaterialBuilder.registerTrait(life_steal);
-        MaterialBuilder.registerTrait(pyromancy);
-        MaterialBuilder.registerTrait(refined);
-        MaterialBuilder.registerTrait(flux);
-        MaterialBuilder.registerTrait(starshaped);
-        MaterialBuilder.registerTrait(void_trait);
-        MaterialBuilder.registerTrait(starry_night);
-        MaterialBuilder.registerTrait(villager_love);
-        MaterialBuilder.registerTrait(rose);
-        MaterialBuilder.registerTrait(carbon);
-        MaterialBuilder.registerTrait(curse);
-    }
+    public static final TraitFey fey = new TraitFey();
+    public static final TraitManaInfusion traitManaInfusion = new TraitManaInfusion();
+    public static final TraitManaBoost traitManaBoost = new TraitManaBoost();
+    public static final TraitLiving traitLiving = new TraitLiving();
 }

@@ -4,7 +4,6 @@
 		"model": "minecraft:cube_all",
 		"textures": {
 			"all": "tinkers_reforged:blocks/material/kovar_glass",
-			"connected_tex": "tinkers_reforged:blocks/material/kovar_glass_ct",
 			"particle": "#all"
 		},
 		"transform": "forge:default-block"

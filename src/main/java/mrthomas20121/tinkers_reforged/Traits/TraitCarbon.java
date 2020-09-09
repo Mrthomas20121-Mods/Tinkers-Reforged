@@ -18,7 +18,7 @@ public class TraitCarbon extends AbstractTrait {
         if(this.isToolWithTrait(tool)) {
             NBTTagCompound nbt = tool.getTagCompound();
             int durability = nbt.getInteger("Durability");
-            nbt.setInteger("Durability", durability+1);
+            nbt.setInteger("Durability", durability+10);
         }
     }
 }
