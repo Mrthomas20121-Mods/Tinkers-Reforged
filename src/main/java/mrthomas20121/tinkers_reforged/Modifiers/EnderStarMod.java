@@ -24,6 +24,7 @@ public class EnderStarMod extends ModifierTrait {
     {
         super("ender_star", 0xB84C67);
         this.aspects.add(ModifierAspect.weaponOnly);
+        addAspects(new ModifierAspect.SingleAspect(this), new ModifierAspect.DataAspect(this), ModifierAspect.freeModifier);
     }
     @Override
     public void apply(ItemStack stack) {
@@ -34,7 +35,7 @@ public class EnderStarMod extends ModifierTrait {
     public void blockHarvestDrops(ItemStack tool, BlockEvent.HarvestDropsEvent event) {
         if(this.isToolWithTrait(tool))
         {
-            event.setDropChance(100);
+            event.setDropChance(1f);
         }
     }
 
