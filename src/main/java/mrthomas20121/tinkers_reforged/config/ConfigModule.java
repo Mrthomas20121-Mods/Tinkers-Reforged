@@ -14,6 +14,7 @@ public class ConfigModule extends ConfigBase {
     public static boolean appliedenergistics = true;
     public static boolean astralsorcery = true;
     public static boolean atum = true;
+    public static boolean biomesoplenty = true;
     public static boolean blueskies = true;
     public static boolean botania = true;
     public static boolean cavernII = true;
@@ -56,6 +57,7 @@ public class ConfigModule extends ConfigBase {
         appliedenergistics = this.getConfig().getBoolean("appliedenergistics", this.getCategory(), appliedenergistics, "Set to false to disable appliedenergistics module.");
         astralsorcery = this.getConfig().getBoolean("astralsorcery", this.getCategory(), astralsorcery, "Set to false to disable astralsorcery module.");
         atum = this.getConfig().getBoolean("atum", this.getCategory(), atum, "Set to false to disable atum module.");
+        biomesoplenty = this.getConfig().getBoolean("biomesoplenty", this.getCategory(), biomesoplenty, "Set to false to disable biomesoplenty module.");
         blueskies = this.getConfig().getBoolean("blueskies", this.getCategory(), blueskies, "Set to false to disable blueskies module.");
         botania = this.getConfig().getBoolean("botania", this.getCategory(), botania, "Set to false to disable botania module.");
         cavernII = this.getConfig().getBoolean("cavernII", this.getCategory(), cavernII, "Set to false to disable cavernII module.");

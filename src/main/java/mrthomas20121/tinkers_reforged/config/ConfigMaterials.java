@@ -95,7 +95,7 @@ public class ConfigMaterials extends ConfigBase {
         lavium = this.config.getBoolean("lavium", this.getCategory(), lavium, "Set to false to disable the material lavium");
         qivium = this.config.getBoolean("qivium", this.getCategory(), qivium, "Set to false to disable the material qivium");
         invar = this.config.getBoolean("invar", this.getCategory(), invar, "Set to false to disable the material invar");
-        aluminium = this.config.getBoolean("aluminium", this.getCategory(), aluminium, "Set to false to disable the material aluminium");
+        aluminium = this.config.getBoolean("aluminum", this.getCategory(), aluminium, "Set to false to disable the material aluminum");
         iridium = this.config.getBoolean("iridium", this.getCategory(), iridium, "Set to false to disable the material iridium");
         platinum = this.config.getBoolean("platinum", this.getCategory(), platinum, "Set to false to disable the material platinum");
         titanium = this.config.getBoolean("titanium", this.getCategory(), titanium, "Set to false to disable the material titanium");
