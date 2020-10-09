@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.Modifiers;
+package mrthomas20121.tinkers_reforged.modifiers;
 
 import de.ellpeck.actuallyadditions.mod.items.InitItems;
 import mrthomas20121.biolib.common.ModifierModuleBase;
@@ -8,29 +8,29 @@ import net.minecraft.util.ResourceLocation;
 
 public class ModuleModAA implements ModifierModuleBase {
 
-    private EnderStarMod enderStarMod = new EnderStarMod();
-    private LensOfTheKillerMod lensOfTheKillerMod = new LensOfTheKillerMod();
-    private LensMinerMod lensMinerMod = new LensMinerMod();
+    private ModEnderStar modEnderStar = new ModEnderStar();
+    private ModLensKiller modLensKiller = new ModLensKiller();
+    private ModLensMiner modLensMiner = new ModLensMiner();
 
     @Override
     public void init() {
-        enderStarMod.addItem(new ItemStack(InitItems.itemMisc, 1, 19), 1, 1);
-        lensOfTheKillerMod.addItem(new ItemStack(InitItems.itemMoreDamageLens), 1, 1);
-        lensMinerMod.addItem(new ItemStack(InitItems.itemMiningLens), 1, 1);
+        modEnderStar.addItem(new ItemStack(InitItems.itemMisc, 1, 19), 1, 1);
+        modLensKiller.addItem(new ItemStack(InitItems.itemMoreDamageLens), 1, 1);
+        modLensMiner.addItem(new ItemStack(InitItems.itemMiningLens), 1, 1);
 
-        TinkersReforged.proxy.registerModifierModel(enderStarMod,
-                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + enderStarMod.getIdentifier()));
+        TinkersReforged.proxy.registerModifierModel(modEnderStar,
+                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modEnderStar.getIdentifier()));
     }
 
-    public EnderStarMod getEnderStarMod() {
-        return enderStarMod;
+    public ModEnderStar getModEnderStar() {
+        return modEnderStar;
     }
 
-    public LensOfTheKillerMod getLensOfTheKillerMod() {
-        return lensOfTheKillerMod;
+    public ModLensKiller getModLensKiller() {
+        return modLensKiller;
     }
 
-    public LensMinerMod getLensMinerMod() {
-        return lensMinerMod;
+    public ModLensMiner getModLensMiner() {
+        return modLensMiner;
     }
 }
