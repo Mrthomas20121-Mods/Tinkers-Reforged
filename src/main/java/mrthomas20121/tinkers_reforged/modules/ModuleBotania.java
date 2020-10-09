@@ -1,12 +1,14 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.biolib.util.FluidUtils;
-import mrthomas20121.tinkers_reforged.Traits.Traits;
+import mrthomas20121.biolib.objects.material.MaterialStats;
+import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.trait.Traits;
 import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.config.ConfigReforged;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -25,48 +27,48 @@ public class ModuleBotania implements ModuleBase {
 
     public ModuleBotania()
     {
-        Resources.manasteel.builder.setCastable(false);
-        Resources.manasteel.builder.setTrait(Traits.traitManaInfusion, MaterialTypes.HEAD);
-        Resources.manasteel.builder.setTrait(Traits.traitManaBoost);
-        Resources.manasteel.builder.setHeadStats(204, 6f, 4f, HarvestLevels.DIAMOND);
-        Resources.manasteel.builder.setHandleStats(1.20f, 0);
-        Resources.manasteel.builder.setExtraStats(50);
 
-        Resources.livingwood.builder.setCraftable(false);
-        Resources.livingwood.builder.setTrait(Traits.traitLiving, MaterialTypes.HEAD);
-        Resources.livingwood.builder.setTrait(TinkerTraits.ecological);
-        Resources.livingwood.builder.setHeadStats(200, 4f, 3f, HarvestLevels.STONE);
-        Resources.livingwood.builder.setHandleStats(1f, 0);
-        Resources.livingwood.builder.setExtraStats(50);
-
-        Resources.livingrock.builder.setCraftable(false);
-        Resources.livingrock.builder.setTrait(Traits.traitLiving, MaterialTypes.HEAD);
-        Resources.livingrock.builder.setTrait(TinkerTraits.cheap);
-        Resources.livingrock.builder.setHeadStats(199, 5f, 3f, HarvestLevels.IRON);
-        Resources.livingrock.builder.setHandleStats(1.4f, 0);
-        Resources.livingrock.builder.setExtraStats(0);
     }
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
+
+        MaterialStats living = new MaterialStats();
+        living.setHeadMaterialStats(200, 4f, 4f, HarvestLevels.IRON);
+        living.setHandleMaterialStats(1.4f, 0);
+        living.setExtraMaterialStats(0);
+        living.setBowMaterialStats(0.9f, 1.7f, 5f);
+
         if(ConfigMaterials.manasteel)
         {
-            Resources.manasteel.builder.setRepresentativeItem("ingotManaSteel");
-            Resources.manasteel.builder.addCommonItems("Manasteel");
-            Resources.manasteel.builder.addBlock("Manasteel");
-            Resources.manasteel.builder.preInit("Manasteel");
+            MaterialStats manasteelStats = new MaterialStats();
+            manasteelStats.setHeadMaterialStats(204, 6f, 4f, HarvestLevels.DIAMOND);
+            manasteelStats.setHandleMaterialStats(1.2f, 9);
+            manasteelStats.setExtraMaterialStats(50);
+            manasteelStats.setBowMaterialStats(0.5f, 1.4f, 7f);
+
+            Resources.manasteel.addTrait(Traits.traitManaInfusion, MaterialTypes.HEAD);
+            Resources.manasteel.addTrait(Traits.traitManaBoost);
+            Resources.manasteel.setOredict();
+            Resources.manasteel.createIngotMaterial(manasteelStats);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.manasteel, manasteelStats, 1f);
+            }
         }
         if(ConfigMaterials.livingwood)
         {
-            Resources.livingwood.builder.addItem("livingwood", 1);
-            Resources.livingwood.builder.setRepresentativeItem("livingwood");
-            Resources.livingwood.builder.preInit("livingwood");
+            Resources.livingwood.setOredict("");
+            Resources.livingwood.addTrait(Traits.traitLiving, MaterialTypes.HEAD);
+            Resources.livingwood.addTrait(TinkerTraits.cheapskate);
+            Resources.livingwood.createMaterial(living, "livingwood");
         }
         if(ConfigMaterials.livingrock)
         {
-            Resources.livingrock.builder.addItem("livingrock", 1);
-            Resources.livingrock.builder.setRepresentativeItem("livingrock");
-            Resources.livingrock.builder.preInit("livingrock");
+            Resources.livingrock.setOredict("");
+            Resources.livingrock.addTrait(Traits.traitLiving, MaterialTypes.HEAD);
+            Resources.livingrock.addTrait(TinkerTraits.cheapskate);
+            Resources.livingrock.createMaterial(living, "livingrock");
         }
     }
 
@@ -79,17 +81,17 @@ public class ModuleBotania implements ModuleBase {
 
         for(IToolPart part : TinkerRegistry.getToolParts())
         {
-            if(part.canUseMaterial(Resources.manasteel.builder.getMat()) && ConfigMaterials.manasteel)
+            if(part.canUseMaterial(Resources.manasteel.getMaterial()) && ConfigMaterials.manasteel)
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.builder.getMat()), part.getItemstackWithMaterial(TinkerMaterials.iron), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.getMaterial()), part.getItemstackWithMaterial(TinkerMaterials.iron), ConfigReforged.mana));
             }
-            if(part.canUseMaterial(Resources.livingrock.builder.getMat()) && ConfigMaterials.livingrock)
+            if(part.canUseMaterial(Resources.livingrock.getMaterial()) && ConfigMaterials.livingrock)
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.builder.getMat()), part.getItemstackWithMaterial(TinkerMaterials.stone), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.getMaterial()), part.getItemstackWithMaterial(TinkerMaterials.stone), ConfigReforged.mana));
             }
-            if(part.canUseMaterial(Resources.livingwood.builder.getMat()) && ConfigMaterials.livingwood)
+            if(part.canUseMaterial(Resources.livingwood.getMaterial()) && ConfigMaterials.livingwood)
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.builder.getMat()), part.getItemstackWithMaterial(TinkerMaterials.wood), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.getMaterial()), part.getItemstackWithMaterial(TinkerMaterials.wood), ConfigReforged.mana));
             }
         }
     }

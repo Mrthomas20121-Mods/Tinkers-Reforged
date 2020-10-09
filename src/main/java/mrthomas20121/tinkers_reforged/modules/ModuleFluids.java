@@ -2,9 +2,9 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import java.util.ArrayList;
 
-import mrthomas20121.biolib.block.BlockFluid;
+import mrthomas20121.biolib.objects.fluids.BlockFluidMolten;
+import mrthomas20121.biolib.objects.material.MaterialWrapper;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.resources.Resource;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
@@ -23,17 +23,17 @@ public class ModuleFluids {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> r = event.getRegistry();
 
-        for(Resource resource: Resources.materials)
+        for(MaterialWrapper resource: Resources.materials)
         {
-            if(FluidRegistry.isFluidRegistered(resource.getFluid()))
+            if(FluidRegistry.isFluidRegistered(resource.getFluidWrapper().getFluid()))
             {
-                registerFluidBlock(r, resource.getFluid());
+                registerFluidBlock(r, resource.getFluidWrapper().getFluid());
             }
         }
     }
 
     public static void registerFluidBlock(IForgeRegistry<Block> r, Fluid f) {
-        BlockFluid fluidBlock = new BlockFluid(f);
+        BlockFluidMolten fluidBlock = new BlockFluidMolten(f);
         fluidBlock.setRegistryName(TinkersReforged.MODID, "molten_"+f.getName());
         f.setUnlocalizedName(f.getName());
         ItemBlock itemBlock = new ItemBlock(fluidBlock);

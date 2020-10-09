@@ -73,6 +73,7 @@ fluid.redstonia=Molten Redstonia
 fluid.diamantine=Molten Diamantine
 fluid.ruby=Molten Ruby
 fluid.sapphire=Molten Sapphire
+fluid.peridot=Molten Peridot
 fluid.titanium=Molten Titanium
 fluid.platinum=Molten Platinum
 fluid.aluminium=Molten aluminium
@@ -87,14 +88,25 @@ ui.mininglevel.lavium=Lavium
 
 # materials
 
+# common materials
+material.ref_ruby.name=Ruby
+material.ref_sapphire.name=Sapphire
+material.ref_peridot.name=Peridot
+material.ref_titanium.name=Titanium
+material.ref_platinum.name=Platinum
+material.ref_iridium.name=Iridium
+material.ref_invar.name=Invar
+material.ref_aluminium.name=Aluminium
+
 # thermalfoundation materials
 material.ref_enderium.name=Enderium
 material.ref_signalum.name=Signalum
 material.ref_lumium.name=Lumium
-material.ref_platinum.name=Platinum
-material.ref_iridium.name=Iridium
-material.ref_invar.name=Invar
-material.ref_aluminum.name=Aluminum
+
+## caver II materials
+material.ref_aquamarine.name=Aquamarine
+material.ref_magnite.name=Magnite
+material.ref_hexcite.name=Hexcite
 
 # naturesaura materials
 material.ref_infused_iron.name=Infused Iron
@@ -102,7 +114,7 @@ material.ref_ancient_wood.name=Ancient Wood
 material.ref_material_of_the_sky.name=Material Of The Sky
 
 ## aa materials
-material.ref_black_quartz.name=Black Quartz
+material.ref_blackquartz.name=Black Quartz
 material.ref_enori.name=Enori Crystal
 material.ref_void.name=Void Crystal
 material.ref_redstonia.name=Redstonia Crystal
@@ -147,9 +159,8 @@ material.reforged_amethyst.name=Amethyst
 
 # Mekanism
 material.ref_osmium.name=Osmium
-material.ref_obsidian.name=Refined Obsidian
-material.ref_glowstone.name=Refined Glowstone
-material.ref_hdpesheet.name=HDPE Sheet
+material.ref_refined_obsidian.name=Refined Obsidian
+material.ref_refined_glowstone.name=Refined Glowstone
 
 # Roots
 material.ref_runestone.name=Runestone
@@ -171,8 +182,8 @@ modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creep
 modifier.ref_ender.name=Ender
 modifier.ref_ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Ender Mobs.
 
-modifier.enderfestation.name=Enderfestation
-modifier.enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning an endermite.
+modifier.ref_enderfestation.name=Enderfestation
+modifier.ref_enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning an endermite.
 
 modifier.ref_bright.name=Bright
 modifier.ref_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
@@ -217,7 +228,7 @@ modifier.ref_starry_night.name=Starry Night
 modifier.ref_starry_night.desc=§oOh look a star!§r\nGive Haste at night
 
 modifier.ref_carbon.name=Carbon
-modifier.ref_carbon.desc=§oHard as a rock§r\nBlocks mined increase the durability.
+modifier.ref_carbon.desc=§oHard as a rock§r\nIncrease the durability.
 
 modifier.ref_fey.name=Fey
 modifier.ref_fey.desc=§oBehold Nature!§r\nFey Spirits empowered your tools, giving it a overall boost.
@@ -231,14 +242,44 @@ modifier.ref_mana_boost.desc=§oDamage go brr§r\nDrain mana from inventory/baub
 modifier.ref_living.name=Living
 modifier.ref_living.desc=§oIt feels so good!§r\nBlocking an attack heal you.
 
+modifier.ref_rod.name=Lighting Rod
+modifier.ref_rod.desc=§oThunder and Lightning!§r\nHitting Mobs and Players summon a lighting at their position.
+
+modifier.ref_teleport.name=Teleport
+modifier.ref_teleport.desc=§oWhere are my items?§r\nBlocks mined get teleported to your inventory.
+
+modifier.ref_soft.name=Soft
+modifier.ref_soft.desc=§oVery Spongy§r\nYour tool mining level is set to 1.
+
+modifier.ref_fast.name=Fast
+modifier.ref_fast.desc=§oGotta go fast!§r\nYour tool speed is increased but have less durability.
+
 modifier.ender_star.name=Ender Star
 modifier.ender_star.desc=§oEnder Power!§r\nall Mobs can drop wither skeleton skulls.
 
 modifier.lens_killer.name=Lens of The Killer
-modifier.lens_killer.desc=§oMoar Power!§r\nCongratuation, you now deal more damage.
+modifier.lens_killer.desc=§oMoar Power!§r\nYour weapons deal more damage.
 
 modifier.token.name=Token
 modifier.token.desc=§oToken Power!§r\nGive one free modifier.
 
+modifier.ref_amber.name=Amber
+modifier.ref_amber.desc=§oShiny!§r\nIncreased durability!
+
+modifier.ref_malachite.name=Malachite
+modifier.ref_malachite.desc=§oShiny!§r\nIncreased durability!
+
+modifier.ref_tanzanite.name=Tanzanite
+modifier.tanzanite.desc=§oShiny!§r\nIncreased durability!
+
+modifier.ref_topaz.name=Topaz
+modifier.ref_topaz.desc=§oShiny!§r\nIncreased durability!
+
 modifier.ref_lens_miner.name=Lens of The Miner
 modifier.ref_lens_miner.desc=§oPhysics 101§r\nBlocks have a chance to drop a ore(any ore).
+
+modifier.ref_terrestrial_artifact.name=Terrestrial Artifact
+modifier.ref_terrestrial_artifact.desc=§oShiny!§r\nIncreased durability!
+
+modifier.ref_shulker_pearl.name=Shulker Pearl
+modifier.ref_shulker_pearl.desc=§oBetter than an eletra§r\nRemove Levitation effect.

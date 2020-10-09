@@ -1,0 +1,22 @@
+[
+  {
+    "type": "tool",
+    "data": "tools/gladius.json"
+  },
+  {
+    "type": "tool",
+    "data": "tools/club.json"
+  },
+  {
+    "type": "tool",
+    "data": "tools/greatsword.json"
+  },
+  {
+    "type": "tool",
+    "data": "tools/khopesh.json"
+  },
+  {
+    "type": "tool",
+    "data": "tools/runic_knife.json"
+  }
+]

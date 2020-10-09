@@ -1,11 +1,10 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.tinkers_reforged.client.ModifiersTransformer;
-import mrthomas20121.tinkers_reforged.client.ToolsTransformer;
+import mrthomas20121.biolib.objects.book.BookHelper;
+import mrthomas20121.biolib.objects.material.MaterialWrapper;
 import mrthomas20121.tinkers_reforged.modules.*;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
-import mrthomas20121.tinkers_reforged.resources.Resource;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -24,7 +23,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
-import slimeknights.tconstruct.library.book.TinkerBook;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
@@ -46,8 +44,8 @@ public class ClientProxy extends CommonProxy {
     @SideOnly(Side.CLIENT)
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-        for (Resource resource : Resources.materials) {
-            if(!resource.getName().equals("kovar")) resource.builder().getMat().setRenderInfo(resource.getColor());
+        for (MaterialWrapper resource : Resources.materials) {
+            resource.getMaterial().setRenderInfo(resource.getMaterial().materialTextColor);
         }
     }
     @Override
@@ -105,8 +103,10 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerBookData() {
-        TinkerBook.INSTANCE.addTransformer(new ToolsTransformer());
-        TinkerBook.INSTANCE.addTransformer(new ModifiersTransformer());
+        BookHelper book = new BookHelper(TinkersReforged.MODID);
+        book.addRepository();
+        book.addModifierTransformer("ref_");
+        book.addToolTransformer("ref_");
     }
 
     @Override

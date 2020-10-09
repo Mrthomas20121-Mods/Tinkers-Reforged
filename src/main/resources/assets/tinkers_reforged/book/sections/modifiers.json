@@ -1,0 +1,38 @@
+[
+  {
+    "type": "modifier",
+    "data": "modifiers/ender_star.json"
+  },
+  {
+    "type": "modifier",
+    "data": "modifiers/lens_killer.json"
+  },
+  {
+    "type": "modifier",
+    "data": "modifiers/ref_lens_miner.json"
+  },
+  {
+    "type": "modifier",
+    "data": "modifiers/ref_amber.json"
+  },
+  {
+    "type": "modifier",
+    "data": "modifiers/ref_malachite.json"
+  },
+  {
+    "type": "modifier",
+    "data": "modifiers/ref_tanzanite.json"
+  },
+  {
+    "type": "modifier",
+    "data": "modifiers/ref_topaz.json"
+  },
+   {
+    "type": "modifier",
+    "data": "modifiers/ref_terrestrial_artifact.json"
+  },
+    {
+    "type": "modifier",
+    "data": "modifiers/ref_shulker_pearl.json"
+  }
+]

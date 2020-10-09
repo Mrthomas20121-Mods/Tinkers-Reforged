@@ -3,8 +3,9 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.common.OredictHelper;
 import mrthomas20121.biolib.common.SmelteryUtils;
+import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.Traits.Traits;
+import mrthomas20121.tinkers_reforged.trait.Traits;
 
 import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
 import de.ellpeck.actuallyadditions.mod.items.*;
@@ -27,109 +28,109 @@ import static slimeknights.tconstruct.smeltery.TinkerSmeltery.castNugget;
 public class ModuleAA implements ModuleBase {
 
     public ModuleAA() {
-        Resources.blackquartz.builder.setTrait(TinkerTraits.crude2, MaterialTypes.HEAD);
-        Resources.blackquartz.builder.setTrait(TinkerTraits.sharp);
-        Resources.blackquartz.builder.setHeadStats(204, 6, 4, HarvestLevels.DIAMOND);
-        Resources.blackquartz.builder.setHandleStats(0.95f, 60);
-        Resources.blackquartz.builder.setExtraStats(50);
 
-        Resources.enori.builder.setTrait(Traits.starry_night, MaterialTypes.HEAD);
-        Resources.enori.builder.setTrait(Traits.starshaped);
-        Resources.enori.builder.setHeadStats(304, 6.5f, 6, HarvestLevels.DIAMOND);
-        Resources.enori.builder.setHandleStats(0.95f, 60);
-        Resources.enori.builder.setExtraStats(50);
-
-        Resources.redstonia.builder.setTrait(Traits.flux);
-        Resources.redstonia.builder.setHeadStats(304, 6.5f, 6, HarvestLevels.DIAMOND);
-        Resources.redstonia.builder.setHandleStats(0.95f, 60);
-        Resources.redstonia.builder.setExtraStats(50);
-
-        Resources.void_crystal.builder.setTrait(Traits.void_trait);
-        Resources.void_crystal.builder.setHeadStats(304, 9.5f, 6, HarvestLevels.DIAMOND);
-        Resources.void_crystal.builder.setHandleStats(0.95f, 60);
-        Resources.void_crystal.builder.setExtraStats(50);
-
-        Resources.diamantine.builder.setTrait(Traits.carbon);
-        Resources.diamantine.builder.setHeadStats(604, 6.9f, 6.1f, HarvestLevels.OBSIDIAN);
-        Resources.diamantine.builder.setHandleStats(0.95f, 60);
-        Resources.diamantine.builder.setExtraStats(50);
-
-        Resources.emeradic.builder.setTrait(Traits.villager_love, MaterialTypes.HEAD);
-        Resources.emeradic.builder.setTrait(Traits.curse);
-        Resources.emeradic.builder.setHeadStats(604, 6.9f, 6.1f, HarvestLevels.OBSIDIAN);
-        Resources.emeradic.builder.setHandleStats(0.95f, 60);
-        Resources.emeradic.builder.setExtraStats(50);
-
-        Resources.palis.builder.setTrait(Traits.rose);
-        Resources.palis.builder.setHeadStats(304, 9.5f, 6, HarvestLevels.DIAMOND);
-        Resources.palis.builder.setHandleStats(0.95f, 60);
-        Resources.palis.builder.setExtraStats(50);
     }
 
     @Override
     public void preInit(FMLPreInitializationEvent e) {
-        Resources.blackquartz.registerFluid();
-        Resources.enori.registerFluid();
-        Resources.void_crystal.registerFluid();
-        Resources.emeradic.registerFluid();
-        Resources.palis.registerFluid();
-        Resources.palis.registerFluid();
-        Resources.redstonia.registerFluid();
-        Resources.diamantine.registerFluid();
+        MaterialStats gemStats = new MaterialStats();
+        gemStats.setHeadMaterialStats(304, 6.5f, 6f, HarvestLevels.DIAMOND);
+        gemStats.setHandleMaterialStats(1.2f, 60);
+        gemStats.setExtraMaterialStats(100);
+        gemStats.setBowMaterialStats(2f, 1.4f, 7f);
 
         if(ConfigMaterials.blackquartz)
         {
-            Resources.blackquartz.builder.addGem("QuartzBlack");
-            Resources.blackquartz.builder.preInit("QuartzBlack", "gem", FluidRegistry.getFluid("black_quartz"));
+            Resources.blackquartz.addTrait(TinkerTraits.crude2, MaterialTypes.HEAD);
+            Resources.blackquartz.addTrait(TinkerTraits.sharp);
+            Resources.blackquartz.createGemMaterial(gemStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.blackquartz, gemStats, 0);
+            }
+
             Resources.materials.add(Resources.blackquartz);
         }
 
         if(ConfigMaterials.enori)
         {
-            Resources.enori.builder.addItem("gemEnori", Material.VALUE_Ingot);
-            Resources.enori.builder.preInit("Enori", "gem", FluidRegistry.getFluid("enori"));
+            Resources.enori.addTrait(Traits.starry_night, MaterialTypes.HEAD);
+            Resources.enori.addTrait(Traits.starshaped);
+            Resources.enori.createGemMaterial(gemStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.enori, gemStats, 0);
+            }
+
             Resources.materials.add(Resources.enori);
         }
 
         if(ConfigMaterials.void_crystal)
         {
-            Resources.void_crystal.builder.preInit("Void", "gem", FluidRegistry.getFluid("void"));
+            Resources.void_crystal.addTrait(Traits.void_trait);
+            Resources.void_crystal.createGemMaterial(gemStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.void_crystal, gemStats, 0);
+            }
+
             Resources.materials.add(Resources.void_crystal);
         }
 
         if(ConfigMaterials.emeradic)
         {
-            Resources.emeradic.builder.preInit("Emeradic", "gem", FluidRegistry.getFluid("emeradic"));
+            Resources.emeradic.addTrait(Traits.villager_love, MaterialTypes.HEAD);
+            Resources.emeradic.addTrait(Traits.curse);
+            Resources.emeradic.createGemMaterial(gemStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.emeradic, gemStats, 0);
+            }
+
             Resources.materials.add(Resources.emeradic);
         }
 
         if(ConfigMaterials.palis)
         {
-            Resources.palis.builder.preInit("Palis", "gem", FluidRegistry.getFluid("palis"));
+            Resources.palis.addTrait(Traits.rose);
+            Resources.palis.createGemMaterial(gemStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.palis, gemStats, 0);
+            }
+
             Resources.materials.add(Resources.palis);
         }
 
         if(ConfigMaterials.redstonia)
         {
-            Resources.redstonia.builder.preInit("Redstonia", "gem", FluidRegistry.getFluid("redstonia"));
+            Resources.redstonia.addTrait(Traits.flux);
+            Resources.redstonia.createGemMaterial(gemStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.redstonia, gemStats, 0);
+            }
+
             Resources.materials.add(Resources.redstonia);
         }
 
         if(ConfigMaterials.diamantine)
         {
-            Resources.diamantine.builder.preInit("Diamantine", "gem", FluidRegistry.getFluid("diamantine"));
-            Resources.materials.add(Resources.diamantine);
-        }
+            Resources.diamantine.addTrait(Traits.carbon);
+            Resources.diamantine.createGemMaterial(gemStats);
 
-        if(Loader.isModLoaded("conarm"))
-        {
-            if(ConfigMaterials.blackquartz) armorUtils.setArmorStats(Resources.blackquartz.builder, 0);
-            if(ConfigMaterials.enori) armorUtils.setArmorStats(Resources.enori.builder, 0);
-            if(ConfigMaterials.void_crystal) armorUtils.setArmorStats(Resources.void_crystal.builder, 0);
-            if(ConfigMaterials.emeradic) armorUtils.setArmorStats(Resources.emeradic.builder, 0);
-            if(ConfigMaterials.palis) armorUtils.setArmorStats(Resources.palis.builder, 0);
-            if(ConfigMaterials.redstonia) armorUtils.setArmorStats(Resources.redstonia.builder, 0);
-            if(ConfigMaterials.diamantine) armorUtils.setArmorStats(Resources.diamantine.builder, 0);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.diamantine, gemStats, 0);
+            }
+
+            Resources.materials.add(Resources.diamantine);
         }
     }
     @Override
@@ -154,20 +155,20 @@ public class ModuleAA implements ModuleBase {
         OredictHelper.RegisterBlock("Void", new ItemStack(InitBlocks.blockCrystal, 1, 3));
         OredictHelper.RegisterBlock("Emeradic", new ItemStack(InitBlocks.blockCrystal, 1, 4));
         OredictHelper.RegisterBlock("Enori", new ItemStack(InitBlocks.blockCrystal, 1, 5));
-        Resources.blackquartz.builder.setRepresentativeItem("gemQuartzBlack");
-        Resources.blackquartz.builder.addItem("gemQuartzBlack", Material.VALUE_Ingot);
-        Resources.enori.builder.setRepresentativeItem("gemEnori");
-        Resources.enori.builder.addItem("gemEnori", Material.VALUE_Ingot);
-        Resources.void_crystal.builder.setRepresentativeItem("gemVoid");
-        Resources.void_crystal.builder.addItem("gemVoid", Material.VALUE_Ingot);
-        Resources.emeradic.builder.setRepresentativeItem("gemEmeradic");
-        Resources.emeradic.builder.addItem("gemEmeradic", Material.VALUE_Ingot);
-        Resources.redstonia.builder.setRepresentativeItem("gemRedstonia");
-        Resources.redstonia.builder.addItem("gemRedstonia", Material.VALUE_Ingot);
-        Resources.diamantine.builder.setRepresentativeItem("gemDiamantine");
-        Resources.diamantine.builder.addItem("gemDiamantine", Material.VALUE_Ingot);
-        Resources.palis.builder.setRepresentativeItem("gemPalis");
-        Resources.palis.builder.addItem("gemPalis", Material.VALUE_Ingot);
+        Resources.blackquartz.getMaterial().setRepresentativeItem("gemQuartzBlack");
+        Resources.blackquartz.getMaterial().addItem("gemQuartzBlack", 1, Material.VALUE_Ingot);
+        Resources.enori.getMaterial().setRepresentativeItem("gemEnori");
+        Resources.enori.getMaterial().addItem("gemEnori", 1, Material.VALUE_Ingot);
+        Resources.void_crystal.getMaterial().setRepresentativeItem("gemVoid");
+        Resources.void_crystal.getMaterial().addItem("gemVoid", 1, Material.VALUE_Ingot);
+        Resources.emeradic.getMaterial().setRepresentativeItem("gemEmeradic");
+        Resources.emeradic.getMaterial().addItem("gemEmeradic", 1, Material.VALUE_Ingot);
+        Resources.redstonia.getMaterial().setRepresentativeItem("gemRedstonia");
+        Resources.redstonia.getMaterial().addItem("gemRedstonia", 1, Material.VALUE_Ingot);
+        Resources.diamantine.getMaterial().setRepresentativeItem("gemDiamantine");
+        Resources.diamantine.getMaterial().addItem("gemDiamantine", 1, Material.VALUE_Ingot);
+        Resources.palis.getMaterial().setRepresentativeItem("gemPalis");
+        Resources.palis.getMaterial().addItem("gemPalis", 1, Material.VALUE_Ingot);
 
         registerGems("QuartzBlack", "blackquartz", true);
         registerGems("Enori", "enori", false);

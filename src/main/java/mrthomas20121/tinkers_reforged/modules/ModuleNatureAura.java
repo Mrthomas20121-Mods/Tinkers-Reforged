@@ -1,10 +1,9 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.common.MaterialBuilder;
 import mrthomas20121.biolib.common.ModuleBase;
+import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.config.Config;
-import mrthomas20121.tinkers_reforged.Traits.Traits;
+import mrthomas20121.tinkers_reforged.trait.Traits;
 
 import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
@@ -25,61 +24,60 @@ public class ModuleNatureAura implements ModuleBase {
 
 
     public ModuleNatureAura() {
-        Resources.ingot_of_the_sky.builder.setTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
-        Resources.ingot_of_the_sky.builder.setTrait(TinkerTraits.alien);
-        Resources.ingot_of_the_sky.builder.setHeadStats(230, 6.3f, 4f, HarvestLevels.OBSIDIAN);
-        Resources.ingot_of_the_sky.builder.setHandleStats(1f, 90);
-        Resources.ingot_of_the_sky.builder.setExtraStats(75);
-        Resources.ingot_of_the_sky.builder.setBowStats(1.0f, 1.7f, 3.5f);
-
-        Resources.infused_iron.builder.setTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
-        Resources.infused_iron.builder.setTrait(TinkerTraits.magnetic2);
-        Resources.infused_iron.builder.setHeadStats(200, 6.3f, 4f, HarvestLevels.DIAMOND);
-        Resources.infused_iron.builder.setHandleStats(0.9f, 90);
-        Resources.infused_iron.builder.setExtraStats(70);
-        Resources.infused_iron.builder.setBowStats(2, 1.5f, 7);
-
-        Resources.ancient_wood.builder.setTrait(TinkerTraits.ecological);
-        Resources.ancient_wood.builder.setHeadStats(100, 2.3f, 1.2f, HarvestLevels.STONE);
-        Resources.ancient_wood.builder.setHandleStats(1.9f, 10);
-        Resources.ancient_wood.builder.setExtraStats(-10);
-        Resources.ancient_wood.builder.setBowStats(0.9f, 1.0f, 1);
-        Resources.ancient_wood.builder.addFletchingStats(0.1f, 0.5f);
     }
 
     @Override
     public void preInit(FMLPreInitializationEvent e) {
 
-        Resources.ingot_of_the_sky.registerFluid();
-        Resources.infused_iron.registerFluid();
-
         if(ConfigMaterials.material_of_the_sky) {
-            Resources.ingot_of_the_sky.builder.addIngot(ModItems.SKY_INGOT);
-            Resources.ingot_of_the_sky.builder.preInit("Sky", FluidRegistry.getFluid("molten_of_the_sky"));
+
+            MaterialStats sky = new MaterialStats();
+            sky.setHeadMaterialStats(204, 6.05f, 4.20f, HarvestLevels.DIAMOND);
+            sky.setHandleMaterialStats(1f, 60);
+            sky.setExtraMaterialStats(50);
+            sky.setBowMaterialStats(0.9f, 1.9f, 7.9f);
+
+            Resources.ingot_of_the_sky.setTemp(500);
+            Resources.ingot_of_the_sky.addTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
+            Resources.ingot_of_the_sky.addTrait(TinkerTraits.alien);
+            Resources.ingot_of_the_sky.createMaterial(sky);
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.ingot_of_the_sky.builder, 1f);
+                armorUtils.setArmorStats(Resources.ingot_of_the_sky,sky, 1f);
             }
             Resources.materials.add(Resources.ingot_of_the_sky);
         }
         if (ConfigMaterials.infused_iron) {
-            Resources.infused_iron.builder.addCommonItems("InfusedIron");
-            Resources.infused_iron.builder.addIngot(ModItems.INFUSED_IRON);
-            Resources.infused_iron.builder.addBlock(ModBlocks.INFUSED_IRON);
-            Resources.infused_iron.builder.preInit("InfusedIron", FluidRegistry.getFluid("infused_iron"));
+            MaterialStats iron = new MaterialStats();
+            iron.setHeadMaterialStats(204, 6.00f, 4.00f, HarvestLevels.DIAMOND);
+            iron.setHandleMaterialStats(0.85f, 60);
+            iron.setExtraMaterialStats(50);
+            iron.setBowMaterialStats(0.5f, 1.5f, 7f);
+
+            Resources.ingot_of_the_sky.setTemp(500);
+            Resources.infused_iron.addTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
+            Resources.infused_iron.addTrait(TinkerTraits.magnetic2);
+            Resources.infused_iron.createMaterial(iron);
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.infused_iron.builder, 0);
+                armorUtils.setArmorStats(Resources.infused_iron, iron, 0);
             }
             Resources.materials.add(Resources.infused_iron);
         }
         if (ConfigMaterials.ancient_wood) {
-            // ancient_wood.addCommonItems("plankAncient");
-            Resources.ancient_wood.builder.addIngot(new ItemStack(ModBlocks.ANCIENT_PLANKS, 1));
-            Resources.ancient_wood.builder.preInit("plankAncient");
+            MaterialStats ancient_wood_stats = new MaterialStats();
+            ancient_wood_stats.setHeadMaterialStats(100, 2.3f, 1.2f, HarvestLevels.STONE);
+            ancient_wood_stats.setBowStringMaterialStats(1.5f);
+            ancient_wood_stats.setArrowShaftMaterialStats(1.5f, 2);
+            ancient_wood_stats.setBowMaterialStats(1.2f, 0.5f, 19f);
+
+            Resources.ancient_wood.addTrait(TinkerTraits.ecological);
+            Resources.ancient_wood.getMaterial().addItem(new ItemStack(ModBlocks.ANCIENT_PLANKS, 1), 1, 144);
+            Resources.ancient_wood.addWood(new ItemStack(ModBlocks.ANCIENT_PLANKS), new ItemStack(ModBlocks.ANCIENT_LOG));
+            Resources.ancient_wood.createWoodMaterial(ancient_wood_stats);
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.ancient_wood.builder, 0);
+                armorUtils.setArmorStats(Resources.ancient_wood, ancient_wood_stats, 0);
             }
             Resources.materials.add(Resources.ancient_wood);
         }
@@ -88,9 +86,6 @@ public class ModuleNatureAura implements ModuleBase {
     public void init(FMLInitializationEvent e) {
         OreDictionary.registerOre("ingotInfusedIron", ModItems.INFUSED_IRON);
         OreDictionary.registerOre("blockInfusedIron", ModBlocks.INFUSED_IRON);
-
-        OreDictionary.registerOre("plankAncient", ModBlocks.ANCIENT_PLANKS);
-        OreDictionary.registerOre("logAncient", ModBlocks.ANCIENT_LOG);
         
         OreDictionary.registerOre("ingotSky", ModItems.SKY_INGOT);
 

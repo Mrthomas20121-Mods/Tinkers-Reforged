@@ -1,12 +1,11 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import epicsquid.roots.recipe.FeyCraftingRecipe;
-import mrthomas20121.biolib.common.MaterialBuilder;
 import mrthomas20121.biolib.common.ModuleBase;
+import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.config.Config;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.Traits.Traits;
+import mrthomas20121.tinkers_reforged.trait.Traits;
 import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.init.Blocks;
@@ -29,30 +28,37 @@ import epicsquid.roots.init.ModRecipes;
 public class ModuleRoots implements ModuleBase {
 
     public ModuleRoots() {
-        Resources.runestone.builder.setHeadStats(280, 5.5f, 3f, HarvestLevels.STONE);
-        Resources.runestone.builder.setHandleStats(1f, 100);
-        Resources.runestone.builder.setExtraStats(-10);
-        Resources.runestone.builder.setTrait(TinkerTraits.cheap, MaterialTypes.HEAD);
-        Resources.runestone.builder.setTrait(Traits.fey);
     }
 
     public void preInit(FMLPreInitializationEvent e) {
+
         if(ConfigMaterials.runestone) {
-            Resources.runestone.builder.preInit("runestone");
+            MaterialStats runestoneStats = new MaterialStats();
+            runestoneStats.setHeadMaterialStats(290, 5.5f, 3f, HarvestLevels.IRON);
+            runestoneStats.setHandleMaterialStats(1f, 100);
+            runestoneStats.setExtraMaterialStats(-2);
+            runestoneStats.setBowMaterialStats(2f, 7f, 2.9f);
+            runestoneStats.setArrowShaftMaterialStats(1f, 100);
+            runestoneStats.setBowStringMaterialStats(1.2f);
+
+            Resources.runestone.addTrait(Traits.fey);
+            Resources.runestone.setOredict("runestone");
+            Resources.runestone.createMaterial(runestoneStats, "");
+
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.runestone.builder, 0);
+                armorUtils.setArmorStats(Resources.runestone,runestoneStats, 0);
             }
             Resources.materials.add(Resources.runestone);
         }
     }
     public void init(FMLInitializationEvent e) {
-        Resources.runestone.builder.setRepresentativeItem("runestone");
+        Resources.runestone.getMaterial().setRepresentativeItem("runestone");
 
         for (IToolPart part : TinkerRegistry.getToolParts()) {
-            if(part.canUseMaterial(Resources.runestone.builder.getMat()))
+            if(part.canUseMaterial(Resources.runestone.getMaterial()))
             {
-                FeyCraftingRecipe recipe = new FeyCraftingRecipe(part.getItemstackWithMaterial(Resources.runestone.builder.getMat()));
+                FeyCraftingRecipe recipe = new FeyCraftingRecipe(part.getItemstackWithMaterial(Resources.runestone.getMaterial()));
                 recipe.addIngredients(
                         new ItemStack(Items.DYE, 1, 4),
                         part.getItemstackWithMaterial(TinkerMaterials.stone),

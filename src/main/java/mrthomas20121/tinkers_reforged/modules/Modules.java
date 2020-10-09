@@ -9,13 +9,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class Modules {
 
     public static final ModuleThermal thermal = new ModuleThermal();
-    public static final ModuleNatureAura natureAura = new ModuleNatureAura();;
+    public static final ModuleNatureAura natureAura = new ModuleNatureAura();
     public static final ModuleAe ae = new ModuleAe();
-    public static final ModuleAA aa = new ModuleAA();
+    public static ModuleAA aa = null;
     public static final ModuleAstralSorcery astral = new ModuleAstralSorcery();
-    public static final ModuleAtum atum = new ModuleAtum();
+    public static ModuleAtum atum = null;
     public static final ModuleBotania botania = new ModuleBotania();
-    public static final ModuleBlueSkies blueskies = new ModuleBlueSkies();
+    public static ModuleBlueSkies blueskies = null;
     public static final ModuleCavern cavernII = new ModuleCavern();
     public static final ModuleCommonMaterials common_materials_module = new ModuleCommonMaterials();
     public static final ModuleRoots roots = new ModuleRoots();
@@ -30,7 +30,25 @@ public class Modules {
         common_materials_module.preInit(event);
 
         if(Loader.isModLoaded("actuallyadditions") && ConfigModule.actuallyadditions) {
+            aa = new ModuleAA();
             aa.preInit(event);
+        }
+        if(Loader.isModLoaded("appliedenergistics2") && ConfigModule.appliedenergistics) {
+            ae.preInit(event);
+        }
+        if(Loader.isModLoaded("astralsorcery") && ConfigModule.astralsorcery) {
+            astral.preInit(event);
+        }
+        if(Loader.isModLoaded("atum") && ConfigModule.atum) {
+            atum = new ModuleAtum();
+            atum.preInit(event);
+        }
+        if(Loader.isModLoaded("bigreactors") && ConfigModule.bigreactors) {
+            extreme.preInit(event);
+        }
+        if(Loader.isModLoaded("blue_skies") && ConfigModule.blueskies) {
+            blueskies = new ModuleBlueSkies();
+            blueskies.preInit(event);
         }
         if(Loader.isModLoaded("botania") && ConfigModule.botania)
         {
@@ -40,32 +58,17 @@ public class Modules {
         {
             cavernII.preInit(event);
         }
-        if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
-            thermal.preInit(event);
+        if(Loader.isModLoaded("mekanism") && ConfigModule.mekanism) {
+            mekanism.preInit(event);
         }
         if(Loader.isModLoaded("naturesaura") && ConfigModule.naturesaura) {
             natureAura.preInit(event);
         }
-        if(Loader.isModLoaded("appliedenergistics2") && ConfigModule.appliedenergistics) {
-            ae.preInit(event);
-        }
-        if(Loader.isModLoaded("astralsorcery") && ConfigModule.astralsorcery) {
-            astral.preInit(event);
-        }
-        if(Loader.isModLoaded("atum") && ConfigModule.atum) {
-            atum.preInit(event);
-        }
         if(Loader.isModLoaded("roots") && ConfigModule.roots) {
             roots.preInit(event);
         }
-        if(Loader.isModLoaded("bigreactors") && ConfigModule.bigreactors) {
-            extreme.preInit(event);
-        }
-        if(Loader.isModLoaded("mekanism") && ConfigModule.mekanism) {
-            mekanism.preInit(event);
-        }
-        if(Loader.isModLoaded("blue_skies") && ConfigModule.blueskies) {
-            blueskies.preInit(event);
+        if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
+            thermal.preInit(event);
         }
     }
 

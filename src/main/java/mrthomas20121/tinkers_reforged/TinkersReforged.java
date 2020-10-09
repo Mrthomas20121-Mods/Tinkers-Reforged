@@ -1,6 +1,6 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.Modifiers.Modifiers;
+import mrthomas20121.tinkers_reforged.modifiers.Modifiers;
 import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +15,7 @@ import mrthomas20121.tinkers_reforged.proxy.CommonProxy;
         dependencies = "required-after:forge@[14.23.5.2847,);"
         + "required-after:mantle@[1.12-1.3.3.55,);"
         + "required-after:tconstruct@[1.12.2-2.13.0.183,);"
-        + "required-after:biolib@[1.0.7,);")
+        + "required-after:biolib@[1.0.9,);")
 public class TinkersReforged
 {
     @Mod.Instance

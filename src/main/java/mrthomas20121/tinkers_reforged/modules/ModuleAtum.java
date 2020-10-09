@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.common.OredictHelper;
+import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
 import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
@@ -18,41 +19,48 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 public class ModuleAtum implements ModuleBase {
 
     public ModuleAtum() {
-        Resources.limestone.builder.setTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
-        Resources.limestone.builder.setTrait(TinkerTraits.cheap);
-        Resources.limestone.builder.setHeadStats(180, 3.1f, 2.2f, HarvestLevels.STONE);
-        Resources.limestone.builder.setHandleStats(0.9f, 50);
-        Resources.limestone.builder.setExtraStats(30);
-
-        Resources.khnumite.builder.setTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
-        Resources.khnumite.builder.setTrait(TinkerTraits.poisonous);
-        Resources.khnumite.builder.setHeadStats(200, 3.4f, 3.1f, HarvestLevels.IRON);
-        Resources.khnumite.builder.setHandleStats(0.9f, 70);
-        Resources.khnumite.builder.setExtraStats(50);
     }
     public void preInit(FMLPreInitializationEvent e) {
+
         if(ConfigMaterials.limestone) {
-            Resources.limestone.builder.addIngot("stoneLimestone");
-            Resources.limestone.builder.preInit("stoneLimestone");
+            MaterialStats limestoneStats = new MaterialStats();
+            limestoneStats.setHeadMaterialStats(180, 3.1f, 2.2f, HarvestLevels.STONE);
+            limestoneStats.setHandleMaterialStats(0.9f, 50);
+            limestoneStats.setExtraMaterialStats(40);
+            limestoneStats.setArrowShaftMaterialStats(0.9f, 50);
+
+            Resources.limestone.addTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
+            Resources.limestone.addTrait(TinkerTraits.cheap);
+            Resources.limestone.addItems(new ItemStack(AtumBlocks.LIMESTONE));
+            Resources.limestone.createWoodMaterial(limestoneStats);
+
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.limestone.builder, 0);
+                armorUtils.setArmorStats(Resources.limestone, limestoneStats, 0);
             }
             Resources.materials.add(Resources.limestone);
         }
         if (ConfigMaterials.khnumite) {
-            Resources.khnumite.builder.addIngot("ingotKhnumite");
-            Resources.khnumite.builder.preInit("Khnumite");
+
+            MaterialStats khnumiteStats = new MaterialStats();
+            khnumiteStats.setHeadMaterialStats(230, 3.5f, 2.9f, HarvestLevels.STONE);
+            khnumiteStats.setHandleMaterialStats(0.9f, 80);
+            khnumiteStats.setExtraMaterialStats(40);
+            khnumiteStats.setArrowShaftMaterialStats(0.9f, 50);
+
+            Resources.khnumite.addTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
+            Resources.khnumite.addTrait(TinkerTraits.poisonous);
+            Resources.khnumite.createMaterial(khnumiteStats);
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.khnumite.builder, 0);
+                armorUtils.setArmorStats(Resources.khnumite, khnumiteStats, 0);
             }
             Resources.materials.add(Resources.khnumite);
         }
     }
     public void init(FMLInitializationEvent e) { 
         if(ConfigMaterials.khnumite) {
-            Resources.khnumite.builder.setRepresentativeItem("ingotKhnumite");
+            Resources.khnumite.getMaterial().setRepresentativeItem("ingotKhnumite");
         }
     }
 
