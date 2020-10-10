@@ -218,6 +218,9 @@ modifier.ref_star_shaped.desc=§oShaped like a star!§r\nAlways Crits
 modifier.ref_villager_love.name=Villager Love
 modifier.ref_villager_love.desc=§oEmerald for days!§r\nKilling Mobs have a chance of spawning a emerald
 
+modifier.ref_curse.name=Curse
+modifier.ref_curse.desc=§oCursed§r\nChance of resurecting the target.
+
 modifier.ref_rose.name=Rose
 modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nGrass have a chance of dropping dye.
 
@@ -253,6 +256,12 @@ modifier.ref_soft.desc=§oVery Spongy§r\nYour tool mining level is set to 1.
 
 modifier.ref_fast.name=Fast
 modifier.ref_fast.desc=§oGotta go fast!§r\nYour tool speed is increased but have less durability.
+
+modifier.ref_backfire.name=Backfire
+modifier.ref_backfire.desc=§oToo Hot to handle§r\nSet you on fire because it is too hot to handle.
+
+modifier.ref_leafblower.name=Leafblower
+modifier.ref_leafblower.desc=§oI am a whistleblower now§r\nStanding on grass blocks double your attack.
 
 modifier.ender_star.name=Ender Star
 modifier.ender_star.desc=§oEnder Power!§r\nall Mobs can drop wither skeleton skulls.
