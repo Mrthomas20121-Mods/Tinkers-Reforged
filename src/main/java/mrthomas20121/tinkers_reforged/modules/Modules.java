@@ -22,6 +22,7 @@ public class Modules {
     public static final ModuleExtremeReactor extreme = new ModuleExtremeReactor();
     public static final ModuleMekanism mekanism = new ModuleMekanism();
     public static ModulePixelmon pixelmon_reforged = null;
+    public static ModuleThaumcraft thaumcraft = null;
     public static final ModuleProjectRedCore project_red_core = new ModuleProjectRedCore();
     public static final ModuleItems moduleItems = new ModuleItems();
     // tool module
@@ -75,6 +76,10 @@ public class Modules {
         }
         if(Loader.isModLoaded("roots") && ConfigModule.roots) {
             roots.preInit(event);
+        }
+        if(Loader.isModLoaded("thaumcraft") && ConfigModule.thermalfoundation) {
+            thaumcraft = new ModuleThaumcraft();
+            thaumcraft.preInit(event);
         }
         if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
             thermal.preInit(event);

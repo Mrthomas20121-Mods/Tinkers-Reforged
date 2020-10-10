@@ -116,6 +116,9 @@ public class Resources {
     // roots MaterialWrappers
     public static MaterialWrapper runestone = new MaterialWrapper("ref_", "runestone", 0x71717F);
 
+    // thaumcraft
+    public static MaterialWrapper thaumium = new MaterialWrapper("ref_", "thaumium", 0x1E0066);
+
     // thermal foundation MaterialWrappers
     public static MaterialWrapper enderium = new MaterialWrapper("ref_", "enderium", 0x006C5F);
     public static MaterialWrapper lumium = new MaterialWrapper("ref_", "lumium", 0xEAD981);

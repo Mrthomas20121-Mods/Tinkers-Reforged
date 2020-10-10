@@ -96,6 +96,10 @@ public class ConfigMaterials extends ConfigBase {
     // refined storage
     public static boolean quartz_enriched_iron = true;
 
+    // thaumcraft
+
+    public static boolean thaumium = true;
+
     // thermal expansion
     public static boolean enderium = true;
     public static boolean signalum = true;

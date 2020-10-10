@@ -263,6 +263,9 @@ modifier.ref_backfire.desc=§oToo Hot to handle§r\nSet you on fire because it i
 modifier.ref_leafblower.name=Leafblower
 modifier.ref_leafblower.desc=§oI am a whistleblower now§r\nStanding on grass blocks double your attack.
 
+modifier.ref_crystal_surge.name=Crystal Surge
+modifier.ref_crystal_surge.desc=§oStonks§r\nDouble the drops from crystals.
+
 modifier.ender_star.name=Ender Star
 modifier.ender_star.desc=§oEnder Power!§r\nall Mobs can drop wither skeleton skulls.
 
