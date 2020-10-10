@@ -102,7 +102,7 @@ public class Resources {
     // projectred
     public static MaterialWrapper red_alloy = new MaterialWrapper("ref_", "red_alloy", 0xED4242);
     public static MaterialWrapper electrotine = new MaterialWrapper("ref_", "electrotine", 0x0E73AA);
-    public static MaterialWrapper electrotitne_alloy = new MaterialWrapper("ref_", "electrotine_alloy", 0x43C7ED);
+    public static MaterialWrapper electrotine_alloy = new MaterialWrapper("ref_", "electrotine_alloy", 0x43C7ED);
 
     // quark
     public static MaterialWrapper ender_biotite = new MaterialWrapper("ref_", "ender_biotite", 0x7F8EB2);

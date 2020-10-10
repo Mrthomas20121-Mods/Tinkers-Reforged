@@ -22,6 +22,7 @@ public class Modules {
     public static final ModuleExtremeReactor extreme = new ModuleExtremeReactor();
     public static final ModuleMekanism mekanism = new ModuleMekanism();
     public static ModulePixelmon pixelmon_reforged = null;
+    public static final ModuleProjectRedCore project_red_core = new ModuleProjectRedCore();
     public static final ModuleItems moduleItems = new ModuleItems();
     // tool module
     public static final ModuleTools tools = new ModuleTools();
@@ -68,6 +69,9 @@ public class Modules {
         if(Loader.isModLoaded("pixelmon") && ConfigModule.pixelmon_reforged) {
             pixelmon_reforged = new ModulePixelmon();
             pixelmon_reforged.preInit(event);
+        }
+        if(Loader.isModLoaded("projectred-core") && ConfigModule.projectred_core) {
+            project_red_core.preInit(event);
         }
         if(Loader.isModLoaded("roots") && ConfigModule.roots) {
             roots.preInit(event);
