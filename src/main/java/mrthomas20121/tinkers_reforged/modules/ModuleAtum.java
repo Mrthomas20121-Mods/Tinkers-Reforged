@@ -31,7 +31,7 @@ public class ModuleAtum implements ModuleBase {
 
             Resources.limestone.addTrait(TinkerTraits.cheapskate, MaterialTypes.HEAD);
             Resources.limestone.addTrait(TinkerTraits.cheap);
-            Resources.limestone.addItems(new ItemStack(AtumBlocks.LIMESTONE));
+            Resources.limestone.addItems("limestone");
             Resources.limestone.createWoodMaterial(limestoneStats);
 
             if(Loader.isModLoaded("conarm"))
@@ -61,6 +61,10 @@ public class ModuleAtum implements ModuleBase {
     public void init(FMLInitializationEvent e) { 
         if(ConfigMaterials.khnumite) {
             Resources.khnumite.getMaterial().setRepresentativeItem("ingotKhnumite");
+        }
+        if(ConfigMaterials.limestone)
+        {
+            Resources.limestone.addItems(new ItemStack(AtumBlocks.LIMESTONE));
         }
     }
 
