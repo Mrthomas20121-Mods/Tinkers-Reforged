@@ -13,3 +13,11 @@ As of 1.1.0 add new Materials Lavium and Qivium. They are a cobalt/ardite alloy.
 * Roots
 * Astral Sorcery
 * Actually Additions
+* Atum
+* Mekanism
+* Blue Skies
+* Botania(as of 1.4.0)
+* Biome o plenty(as of 1.4.0)
+* Cavern II(as of 1.4.0)
+* Pixelmon(as of 1.4.0)
+* Dark Utils(as of 1.4.0)
