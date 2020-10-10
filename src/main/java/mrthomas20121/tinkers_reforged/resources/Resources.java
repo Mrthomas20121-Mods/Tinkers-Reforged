@@ -89,14 +89,17 @@ public class Resources {
     public static MaterialWrapper infused_iron = new MaterialWrapper("ref_", "infused_iron", 0x34BA3D);
     public static MaterialWrapper ancient_wood = new MaterialWrapper("ref_", "ancient_wood", 0xA06686);
 
-    // pixelmon reforged MaterialWrappers
-    public static MaterialWrapper firestone = new MaterialWrapper("ref_", "firestone",0xCC9132);
-    public static MaterialWrapper waterstone = new MaterialWrapper("ref_", "waterstone",0x5D75A5);
-    public static MaterialWrapper leafstone = new MaterialWrapper("ref_", "leafstone",0x92B27A);
-    public static MaterialWrapper thunderstone = new MaterialWrapper("ref_", "thunderstone",0x92B27A);
-    public static MaterialWrapper crystal = new MaterialWrapper("ref_", "crystal",0x88BCC4);
+    // pixelmon reforged
+    public static MaterialWrapper fire = new MaterialWrapper("ref_", "firestone",0xE98E33);
+    public static MaterialWrapper water = new MaterialWrapper("ref_", "waterstone",0x5D75A5);
+    public static MaterialWrapper leaf = new MaterialWrapper("ref_", "leafstone",0x798957);
+    public static MaterialWrapper thunder = new MaterialWrapper("ref_", "thunderstone",0xB3DCAB);
+    public static MaterialWrapper sun = new MaterialWrapper("ref_", "sunstone",0xD75A2B);
+    public static MaterialWrapper dawn = new MaterialWrapper("ref_", "dawnstone",0x0EBCB1);
+    public static MaterialWrapper dusk = new MaterialWrapper("ref_", "duskstone",0x795291);
+    public static MaterialWrapper crystal = new MaterialWrapper("ref_", "crystal",0x94D3D3);
 
-    // projectred MaterialWrappers
+    // projectred
     public static MaterialWrapper red_alloy = new MaterialWrapper("ref_", "red_alloy", 0xED4242);
     public static MaterialWrapper electrotine = new MaterialWrapper("ref_", "electrotine", 0x0E73AA);
     public static MaterialWrapper electrotitne_alloy = new MaterialWrapper("ref_", "electrotine_alloy", 0x43C7ED);
@@ -115,7 +118,7 @@ public class Resources {
 
     // thermal foundation MaterialWrappers
     public static MaterialWrapper enderium = new MaterialWrapper("ref_", "enderium", 0x006C5F);
-    public static MaterialWrapper lumium = new MaterialWrapper("ref_", "lumium", 0xEAD9810);
+    public static MaterialWrapper lumium = new MaterialWrapper("ref_", "lumium", 0xEAD981);
     public static MaterialWrapper signalum = new MaterialWrapper("ref_", "signalum", 0xA32500);
 
 }

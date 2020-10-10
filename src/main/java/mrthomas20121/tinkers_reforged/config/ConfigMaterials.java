@@ -8,8 +8,11 @@ import java.io.File;
 
 public class ConfigMaterials extends ConfigBase {
 
+    // tinkers reforged materials
     public static boolean lavium = true;
     public static boolean qivium = true;
+
+    // common materials
     public static boolean invar = true;
     public static boolean aluminium = true;
     public static boolean iridium = true;
@@ -20,6 +23,8 @@ public class ConfigMaterials extends ConfigBase {
     public static boolean sapphire = true;
     public static boolean amethyst = true;
     public static boolean peridot = true;
+
+    // actually additions
     public static boolean blackquartz = true;
     public static boolean diamantine = true;
     public static boolean emeradic = true;
@@ -28,20 +33,31 @@ public class ConfigMaterials extends ConfigBase {
     public static boolean void_crystal = true;
     public static boolean redstonia = true;
     public static boolean silicon = true;
+
+    // ae2
     public static boolean certus_quartz = true;
     public static boolean fluix_crystal = true;
+
+    // astral sorcery
     public static boolean starmetal = true;
+
+    // atum2
     public static boolean khnumite = true;
     public static boolean limestone = true;
+
+    // biomes o plenty
     public static boolean tanzanite = true;
     public static boolean topaz = true;
     public static boolean malachite = true;
     public static boolean amber = true;
+
+    // blue skies
     public static boolean charoite = true;
     public static boolean diopside = true;
     public static boolean horizonite = true;
     public static boolean pyrope = true;
-    public static boolean ventium = true;
+
+    // botania
     public static boolean dragonstone = true;
     public static boolean dreamwood = true;
     public static boolean elementium = true;
@@ -52,28 +68,56 @@ public class ConfigMaterials extends ConfigBase {
     public static boolean mana_diamond = true;
     public static boolean livingwood = true;
     public static boolean livingrock = true;
+
+    // cavern II
     public static boolean aquamarine = true;
     public static boolean magnite = true;
     public static boolean hexcite = true;
+
+    // extreme/big reactors
     public static boolean yellorium = true;
     public static boolean cyanite = true;
     public static boolean blutonium = true;
     public static boolean ludicrite = true;
+
+    // mekanism
     public static boolean osmium = true;
     public static boolean refined_obsidian = true;
     public static boolean refined_glowstone = true;
+
+    // project red
     public static boolean red_alloy = true;
     public static boolean electrotine = true;
     public static boolean electrotine_alloy = true;
+
+    // quark
     public static boolean ender_biotite = true;
+
+    // refined storage
     public static boolean quartz_enriched_iron = true;
+
+    // thermal expansion
     public static boolean enderium = true;
     public static boolean signalum = true;
     public static boolean lumium = true;
+
+    // natures aura
     public static boolean material_of_the_sky = true;
     public static boolean infused_iron = true;
     public static boolean ancient_wood = true;
+
+    // roots
     public static boolean runestone = true;
+
+    // pixelmon
+    public static boolean firestone = true;
+    public static boolean waterstone = true;
+    public static boolean leafstone = true;
+    public static boolean thunderstone = true;
+    public static boolean sunstone = true;
+    public static boolean dawnstone = true;
+    public static boolean duskstone = true;
+    public static boolean crystal = true;
 
     public static ConfigBase getInstance() {
         return new ConfigMaterials();
@@ -125,7 +169,6 @@ public class ConfigMaterials extends ConfigBase {
         diopside = this.config.getBoolean("diopside", this.getCategory(), diopside, "Set to false to disable the material diopside");
         horizonite = this.config.getBoolean("horizonite", this.getCategory(), horizonite, "Set to false to disable the material horizonite");
         pyrope = this.config.getBoolean("pyrope", this.getCategory(), pyrope, "Set to false to disable the material pyrope");
-        ventium = this.config.getBoolean("ventium", this.getCategory(), ventium, "Set to false to disable the material ventium");
         dragonstone = this.config.getBoolean("dragonstone", this.getCategory(), dragonstone, "Set to false to disable the material dragonstone");
         dreamwood = this.config.getBoolean("dreamwood", this.getCategory(), dreamwood, "Set to false to disable the material dreamwood");
         elementium = this.config.getBoolean("elementium", this.getCategory(), elementium, "Set to false to disable the material elementium");

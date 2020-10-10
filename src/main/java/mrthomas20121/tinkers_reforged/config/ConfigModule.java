@@ -24,6 +24,7 @@ public class ConfigModule extends ConfigBase {
     public static boolean mekanism = true;
     public static boolean mysticalworld = true;
     public static boolean naturesaura = true;
+    public static boolean pixelmon_reforged = true;
     public static boolean projectred_core = true;
     public static boolean projectred_exploration = true;
     public static boolean quark = true;

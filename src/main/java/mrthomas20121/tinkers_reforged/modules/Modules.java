@@ -21,6 +21,7 @@ public class Modules {
     public static final ModuleRoots roots = new ModuleRoots();
     public static final ModuleExtremeReactor extreme = new ModuleExtremeReactor();
     public static final ModuleMekanism mekanism = new ModuleMekanism();
+    public static ModulePixelmon pixelmon_reforged = null;
     public static final ModuleItems moduleItems = new ModuleItems();
     // tool module
     public static final ModuleTools tools = new ModuleTools();
@@ -64,6 +65,10 @@ public class Modules {
         if(Loader.isModLoaded("naturesaura") && ConfigModule.naturesaura) {
             natureAura.preInit(event);
         }
+        if(Loader.isModLoaded("pixelmon") && ConfigModule.pixelmon_reforged) {
+            pixelmon_reforged = new ModulePixelmon();
+            pixelmon_reforged.preInit(event);
+        }
         if(Loader.isModLoaded("roots") && ConfigModule.roots) {
             roots.preInit(event);
         }
@@ -79,12 +84,6 @@ public class Modules {
         if(Loader.isModLoaded("actuallyadditions") && ConfigModule.actuallyadditions) {
             aa.init(event);
         }
-        if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
-            thermal.init(event);
-        }
-        if(Loader.isModLoaded("naturesaura") && ConfigModule.thermalfoundation) {
-            natureAura.init(event);
-        }
         if(Loader.isModLoaded("appliedenergistics2") && ConfigModule.appliedenergistics) {
             ae.init(event);
         }
@@ -97,14 +96,23 @@ public class Modules {
         if(Loader.isModLoaded("bigreactors") && ConfigModule.bigreactors) {
             extreme.init(event);
         }
-        if(Loader.isModLoaded("roots") && ConfigModule.roots) {
-            roots.init(event);
-        }
         if(Loader.isModLoaded("blue_skies") && ConfigModule.blueskies) {
             blueskies.init(event);
         }
         if(Loader.isModLoaded("botania") && ConfigModule.botania) {
             botania.init(event);
+        }
+        if(Loader.isModLoaded("naturesaura") && ConfigModule.thermalfoundation) {
+            natureAura.init(event);
+        }
+        if(Loader.isModLoaded("pixelmon") && ConfigModule.pixelmon_reforged) {
+            pixelmon_reforged.init(event);
+        }
+        if(Loader.isModLoaded("roots") && ConfigModule.roots) {
+            roots.init(event);
+        }
+        if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
+            thermal.init(event);
         }
     }
 

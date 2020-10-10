@@ -29,4 +29,6 @@ public class Traits {
     public static final TraitRod traitRod = new TraitRod();
     public static final TraitSoft traitSoft = new TraitSoft();
     public static final TraitFast traitFast = new TraitFast();
+    public static final TraitBackfire traitBackfire = new TraitBackfire();
+    public static final TraitLeafBlower traitLeafblower = new TraitLeafBlower();
 }
