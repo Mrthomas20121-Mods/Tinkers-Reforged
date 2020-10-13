@@ -54,7 +54,7 @@ public class ModuleNatureAura implements ModuleBase {
             iron.setExtraMaterialStats(50);
             iron.setBowMaterialStats(0.5f, 1.5f, 7f);
 
-            Resources.ingot_of_the_sky.setTemp(500);
+            Resources.infused_iron.setTemp(500);
             Resources.infused_iron.addTrait(Traits.AURA_INFUSION, MaterialTypes.HEAD);
             Resources.infused_iron.addTrait(TinkerTraits.magnetic2);
             Resources.infused_iron.createMaterial(iron);

@@ -54,7 +54,6 @@ public class ModuleProjectRedCore implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-
     }
 
     @Override

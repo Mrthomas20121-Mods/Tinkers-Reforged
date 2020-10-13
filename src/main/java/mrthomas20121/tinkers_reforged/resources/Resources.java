@@ -27,11 +27,11 @@ public class Resources {
 
     // actually addition MaterialWrappers
     public static MaterialWrapper blackquartz = new MaterialWrapper("ref_", "blackquartz", 0x161515);
-    public static MaterialWrapper diamantine = new MaterialWrapper("ref_", "diamantine", 0x9A9CFF);
+    public static MaterialWrapper diamatine = new MaterialWrapper("ref_", "diamatine", 0x9A9CFF);
     public static MaterialWrapper emeradic = new MaterialWrapper("ref_", "emeradic", 0x15EA0A);
     public static MaterialWrapper enori = new MaterialWrapper("ref_", "enori", 0xEBE2FF);
     public static MaterialWrapper palis = new MaterialWrapper("ref_", "palis", 0x1E1B88);
-    public static MaterialWrapper redstonia = new MaterialWrapper("ref_", "redstonia", 0xF30000);
+    public static MaterialWrapper restonia = new MaterialWrapper("ref_", "restonia", 0xF30000);
     public static MaterialWrapper void_crystal = new MaterialWrapper("ref_", "void", 0x171717);
 
     // advancedrocketry / libvulpes
@@ -44,18 +44,18 @@ public class Resources {
     // Astral sorcery MaterialWrappers
     public static MaterialWrapper starmetal = new MaterialWrapper("ref_", "starmetal", 0x001169);
 
-    // atum MaterialWrappers
+    // atum
     public static MaterialWrapper khnumite = new MaterialWrapper("ref_", "khnumite", 0x998B59);
     public static MaterialWrapper limestone = new MaterialWrapper("ref_", "limestone", 0x9F8D7A);
 
-    // blue skies MaterialWrappers
+    // blue skies
     public static MaterialWrapper charoite = new MaterialWrapper("ref_", "charoite", 0x9A7FBA);
     public static MaterialWrapper diopside = new MaterialWrapper("ref_", "diopside", 0x4CE849);
     public static MaterialWrapper horizonite = new MaterialWrapper("ref_", "horizonite", 0xF27B2B);
     public static MaterialWrapper pyrope = new MaterialWrapper("ref_", "pyrope", 0xDA283E);
     public static MaterialWrapper turquoise = new MaterialWrapper("ref_", "turquoise", 0x5AE7D1);
 
-    // botania MaterialWrappers
+    // botania
     public static MaterialWrapper dragonstone = new MaterialWrapper("ref_", "dragonstone", 0xF15CAE);
     public static MaterialWrapper dreamwood = new MaterialWrapper("ref_", "dreamwood", 0xA6BCB6);
     public static MaterialWrapper elementium = new MaterialWrapper("ref_", "elementium", 0xED339A);
@@ -78,6 +78,12 @@ public class Resources {
     public static MaterialWrapper ludicrite = new MaterialWrapper("ref_", "ludicrite", 0xDD5EDD);
     public static MaterialWrapper blutonium = new MaterialWrapper("ref_", "blutonium", 0x4642D6);
     public static MaterialWrapper cyanite = new MaterialWrapper("ref_", "cyanite", 0x5CAFDB);
+
+    // environmental tech
+    public static MaterialWrapper litherite = new MaterialWrapper("ref_", "litherite", 0xD9DB5C);
+    public static MaterialWrapper erodium = new MaterialWrapper("ref_", "erodium", 0xDD5EDD);
+    public static MaterialWrapper kyronite = new MaterialWrapper("ref_", "kyronite", 0x4642D6);
+    public static MaterialWrapper pladium = new MaterialWrapper("ref_", "pladium", 0x5CAFDB);
 
     // mekanism MaterialWrappers
     public static MaterialWrapper osmium = new MaterialWrapper("ref_", "osmium", 0x7F8EB2);

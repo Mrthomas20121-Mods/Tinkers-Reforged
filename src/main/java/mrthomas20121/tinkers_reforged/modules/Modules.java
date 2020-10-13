@@ -91,6 +91,7 @@ public class Modules {
         common_materials_module.init(event);
 
         if(Loader.isModLoaded("actuallyadditions") && ConfigModule.actuallyadditions) {
+            aa = new ModuleAA();
             aa.init(event);
         }
         if(Loader.isModLoaded("appliedenergistics2") && ConfigModule.appliedenergistics) {
@@ -108,17 +109,32 @@ public class Modules {
         if(Loader.isModLoaded("blue_skies") && ConfigModule.blueskies) {
             blueskies.init(event);
         }
-        if(Loader.isModLoaded("botania") && ConfigModule.botania) {
+        if(Loader.isModLoaded("botania") && ConfigModule.botania)
+        {
             botania.init(event);
         }
-        if(Loader.isModLoaded("naturesaura") && ConfigModule.thermalfoundation) {
+        if(Loader.isModLoaded("cavern") && ConfigModule.cavernII)
+        {
+            cavernII.init(event);
+        }
+        if(Loader.isModLoaded("mekanism") && ConfigModule.mekanism) {
+            mekanism.init(event);
+        }
+        if(Loader.isModLoaded("naturesaura") && ConfigModule.naturesaura) {
             natureAura.init(event);
         }
         if(Loader.isModLoaded("pixelmon") && ConfigModule.pixelmon_reforged) {
+            pixelmon_reforged = new ModulePixelmon();
             pixelmon_reforged.init(event);
+        }
+        if(Loader.isModLoaded("projectred-core") && ConfigModule.projectred_core) {
+            project_red_core.init(event);
         }
         if(Loader.isModLoaded("roots") && ConfigModule.roots) {
             roots.init(event);
+        }
+        if(Loader.isModLoaded("thaumcraft") && ConfigModule.thermalfoundation) {
+            thaumcraft.init(event);
         }
         if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
             thermal.init(event);

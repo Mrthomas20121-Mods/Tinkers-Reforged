@@ -56,7 +56,7 @@ public class ModuleCommonMaterials implements ModuleBase {
             Resources.invar.createMaterial(commonStats);
             Resources.materials.add(Resources.invar);
         }
-        if(ConfigMaterials.aluminium)
+        if(ConfigMaterials.aluminum)
         {
             Resources.aluminum.setTemp(1900);
             Resources.aluminum.addTrait(TinkerTraits.dense);
@@ -109,7 +109,7 @@ public class ModuleCommonMaterials implements ModuleBase {
             if(ConfigMaterials.invar) armorUtils.setArmorStats(Resources.invar,commonStats, 1);
             if(ConfigMaterials.platinum) armorUtils.setArmorStats(Resources.platinum, commonStats, 1);
             if(ConfigMaterials.iridium) armorUtils.setArmorStats(Resources.iridium, commonStats, 1);
-            if(ConfigMaterials.aluminium) armorUtils.setArmorStats(Resources.aluminum, commonStats, 1);
+            if(ConfigMaterials.aluminum) armorUtils.setArmorStats(Resources.aluminum, commonStats, 1);
             if(ConfigMaterials.amethyst) armorUtils.setArmorStats(Resources.amethyst, gemStats, 2);
             if(ConfigMaterials.ruby) armorUtils.setArmorStats(Resources.ruby, gemStats, 0);
             if(ConfigMaterials.sapphire) armorUtils.setArmorStats(Resources.sapphire, gemStats, 0);
@@ -118,7 +118,8 @@ public class ModuleCommonMaterials implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent e) {}
+    public void init(FMLInitializationEvent e) {
+    }
     @Override
     public void postInit(FMLPostInitializationEvent e) {}
 }

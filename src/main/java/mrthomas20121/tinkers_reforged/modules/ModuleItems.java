@@ -8,6 +8,7 @@ import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.FluidUtils;
 import mrthomas20121.biolib.util.armorUtils;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 import mrthomas20121.biolib.common.OredictHelper;
 import mrthomas20121.tinkers_reforged.config.ConfigReforged;
@@ -77,25 +78,31 @@ public class ModuleItems implements ModuleBase {
         baseStats.setExtraMaterialStats(300);
         baseStats.setBowMaterialStats(9.2f, 7.1f, 5.2f);
 
-        Resources.qivium.addTrait(TinkerTraits.momentum);
-        Resources.qivium.addTrait(Traits.pyromancy, MaterialTypes.HEAD);
-        Resources.qivium.createMaterial(baseStats);
-
-        if(Loader.isModLoaded("conarm"))
+        if(ConfigMaterials.qivium)
         {
-            armorUtils.setArmorStats(Resources.qivium, baseStats, 0);
+            Resources.qivium.addTrait(TinkerTraits.momentum);
+            Resources.qivium.addTrait(Traits.pyromancy, MaterialTypes.HEAD);
+            Resources.qivium.createMaterial(baseStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.qivium, baseStats, 0);
+            }
+            Resources.materials.add(Resources.qivium);
         }
-        Resources.materials.add(Resources.qivium);
 
-        Resources.lavium.addTrait(TinkerTraits.momentum);
-        Resources.lavium.addTrait(Traits.life_steal, MaterialTypes.HEAD);
-        Resources.lavium.createMaterial(baseStats);
-
-        if(Loader.isModLoaded("conarm"))
+        if(ConfigMaterials.lavium)
         {
-            armorUtils.setArmorStats(Resources.lavium, baseStats, 0);
+            Resources.lavium.addTrait(TinkerTraits.momentum);
+            Resources.lavium.addTrait(Traits.life_steal, MaterialTypes.HEAD);
+            Resources.lavium.createMaterial(baseStats);
+
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.lavium, baseStats, 0);
+            }
+            Resources.materials.add(Resources.lavium);
         }
-        Resources.materials.add(Resources.lavium);
     }
     public void init(FMLInitializationEvent e) {
         if(ConfigReforged.alloyrecipes)

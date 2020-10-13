@@ -29,7 +29,6 @@ public class ModuleThaumcraft implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-
     }
 
     @Override

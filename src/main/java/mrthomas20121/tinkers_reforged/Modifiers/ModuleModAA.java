@@ -20,6 +20,9 @@ public class ModuleModAA implements ModifierModuleBase {
 
         TinkersReforged.proxy.registerModifierModel(modEnderStar,
                 new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modEnderStar.getIdentifier()));
+
+        TinkersReforged.proxy.registerModifierModel(modLensKiller,
+                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modLensKiller.getIdentifier()));
     }
 
     public ModEnderStar getModEnderStar() {

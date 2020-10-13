@@ -14,7 +14,7 @@ public class ConfigMaterials extends ConfigBase {
 
     // common materials
     public static boolean invar = true;
-    public static boolean aluminium = true;
+    public static boolean aluminum = true;
     public static boolean iridium = true;
     public static boolean platinum = true;
     public static boolean titanium = true;
@@ -26,12 +26,12 @@ public class ConfigMaterials extends ConfigBase {
 
     // actually additions
     public static boolean blackquartz = true;
-    public static boolean diamantine = true;
+    public static boolean diamatine = true;
     public static boolean emeradic = true;
     public static boolean enori = true;
     public static boolean palis = true;
     public static boolean void_crystal = true;
-    public static boolean redstonia = true;
+    public static boolean restonia = true;
     public static boolean silicon = true;
 
     // ae2
@@ -44,12 +44,6 @@ public class ConfigMaterials extends ConfigBase {
     // atum2
     public static boolean khnumite = true;
     public static boolean limestone = true;
-
-    // biomes o plenty
-    public static boolean tanzanite = true;
-    public static boolean topaz = true;
-    public static boolean malachite = true;
-    public static boolean amber = true;
 
     // blue skies
     public static boolean charoite = true;
@@ -140,10 +134,13 @@ public class ConfigMaterials extends ConfigBase {
 
     @Override
     public void init() {
+        // tinkers reforged
         lavium = this.config.getBoolean("lavium", this.getCategory(), lavium, "Set to false to disable the material lavium");
         qivium = this.config.getBoolean("qivium", this.getCategory(), qivium, "Set to false to disable the material qivium");
+
+        // common materials
         invar = this.config.getBoolean("invar", this.getCategory(), invar, "Set to false to disable the material invar");
-        aluminium = this.config.getBoolean("aluminum", this.getCategory(), aluminium, "Set to false to disable the material aluminum");
+        aluminum = this.config.getBoolean("aluminum", this.getCategory(), aluminum, "Set to false to disable the material aluminum");
         iridium = this.config.getBoolean("iridium", this.getCategory(), iridium, "Set to false to disable the material iridium");
         platinum = this.config.getBoolean("platinum", this.getCategory(), platinum, "Set to false to disable the material platinum");
         titanium = this.config.getBoolean("titanium", this.getCategory(), titanium, "Set to false to disable the material titanium");
@@ -152,27 +149,37 @@ public class ConfigMaterials extends ConfigBase {
         sapphire = this.config.getBoolean("sapphire", this.getCategory(), sapphire, "Set to false to disable the material sapphire");
         amethyst = this.config.getBoolean("amethyst", this.getCategory(), amethyst, "Set to false to disable the material amethyst");
         peridot = this.config.getBoolean("peridot", this.getCategory(), peridot, "Set to false to disable the material peridot");
+
+        // actually addition
         blackquartz = this.config.getBoolean("blackquartz", this.getCategory(), blackquartz, "Set to false to disable the material blackquartz");
-        diamantine = this.config.getBoolean("diamantine", this.getCategory(), diamantine, "Set to false to disable the material diamantine");
+        diamatine = this.config.getBoolean("diamatine", this.getCategory(), diamatine, "Set to false to disable the material diamatine");
         emeradic = this.config.getBoolean("emeradic", this.getCategory(), emeradic, "Set to false to disable the material emeradic");
         enori = this.config.getBoolean("enori", this.getCategory(), enori, "Set to false to disable the material enori");
         palis = this.config.getBoolean("palis", this.getCategory(), palis, "Set to false to disable the material palis");
         void_crystal = this.config.getBoolean("void_crystal", this.getCategory(), void_crystal, "Set to false to disable the material void_crystal");
-        redstonia = this.config.getBoolean("redstonia", this.getCategory(), redstonia, "Set to false to disable the material redstonia");
+        restonia = this.config.getBoolean("restonia", this.getCategory(), restonia, "Set to false to disable the material restonia");
+
+        // advanced rocketry
         silicon = this.config.getBoolean("silicon", this.getCategory(), silicon, "Set to false to disable the material silicon");
+
+        // applied energistics
         certus_quartz = this.config.getBoolean("certus_quartz", this.getCategory(), certus_quartz, "Set to false to disable the material certus_quartz");
         fluix_crystal = this.config.getBoolean("fluix_crystal", this.getCategory(), fluix_crystal, "Set to false to disable the material fluix_crystal");
+
+        // astral sorcery
         starmetal = this.config.getBoolean("starmetal", this.getCategory(), starmetal, "Set to false to disable the material starmetal");
+
+        // atum 2
         khnumite = this.config.getBoolean("khnumite", this.getCategory(), khnumite, "Set to false to disable the material khnumite");
         limestone = this.config.getBoolean("limestone", this.getCategory(), limestone, "Set to false to disable the material limestone");
-        tanzanite = this.config.getBoolean("tanzanite", this.getCategory(), tanzanite, "Set to false to disable the material tanzanite");
-        topaz = this.config.getBoolean("topaz", this.getCategory(), topaz, "Set to false to disable the material topaz");
-        malachite = this.config.getBoolean("malachite", this.getCategory(), malachite, "Set to false to disable the material malachite");
-        amber = this.config.getBoolean("amber", this.getCategory(), amber, "Set to false to disable the material amber");
+
+        // blue skies
         charoite = this.config.getBoolean("charoite", this.getCategory(), charoite, "Set to false to disable the material charoite");
         diopside = this.config.getBoolean("diopside", this.getCategory(), diopside, "Set to false to disable the material diopside");
         horizonite = this.config.getBoolean("horizonite", this.getCategory(), horizonite, "Set to false to disable the material horizonite");
         pyrope = this.config.getBoolean("pyrope", this.getCategory(), pyrope, "Set to false to disable the material pyrope");
+
+        // botania
         dragonstone = this.config.getBoolean("dragonstone", this.getCategory(), dragonstone, "Set to false to disable the material dragonstone");
         dreamwood = this.config.getBoolean("dreamwood", this.getCategory(), dreamwood, "Set to false to disable the material dreamwood");
         elementium = this.config.getBoolean("elementium", this.getCategory(), elementium, "Set to false to disable the material elementium");
@@ -183,28 +190,55 @@ public class ConfigMaterials extends ConfigBase {
         mana_diamond = this.config.getBoolean("mana_diamond", this.getCategory(), mana_diamond, "Set to false to disable the material mana_diamond");
         livingwood = this.config.getBoolean("livingwood", this.getCategory(), livingwood, "Set to false to disable the material livingwood");
         livingrock = this.config.getBoolean("livingrock", this.getCategory(), livingrock, "Set to false to disable the material livingrock");
+
+        // cavern II
         aquamarine = this.config.getBoolean("aquamarine", this.getCategory(), aquamarine, "Set to false to disable the material aquamarine");
         magnite = this.config.getBoolean("magnite", this.getCategory(), magnite, "Set to false to disable the material magnite");
         hexcite = this.config.getBoolean("hexcite", this.getCategory(), hexcite, "Set to false to disable the material hexcite");
+
+        // extreme reactor
         yellorium = this.config.getBoolean("yellorium", this.getCategory(), yellorium, "Set to false to disable the material yellorium");
         cyanite = this.config.getBoolean("cyanite", this.getCategory(), cyanite, "Set to false to disable the material cyanite");
         blutonium = this.config.getBoolean("blutonium", this.getCategory(), blutonium, "Set to false to disable the material blutonium");
         ludicrite = this.config.getBoolean("ludicrite", this.getCategory(), ludicrite, "Set to false to disable the material ludicrite");
+
+        // mekanism
         osmium = this.config.getBoolean("osmium", this.getCategory(), osmium, "Set to false to disable the material osmium");
         refined_obsidian = this.config.getBoolean("refined_obsidian", this.getCategory(), refined_obsidian, "Set to false to disable the material refined_obsidian");
         refined_glowstone = this.config.getBoolean("refined_glowstone", this.getCategory(), refined_glowstone, "Set to false to disable the material refined_glowstone");
+
+        // project red core
         red_alloy = this.config.getBoolean("red_alloy", this.getCategory(), red_alloy, "Set to false to disable the material red_alloy");
         electrotine = this.config.getBoolean("electrotine", this.getCategory(), electrotine, "Set to false to disable the material electrotine");
         electrotine_alloy = this.config.getBoolean("electrotine_alloy", this.getCategory(), electrotine_alloy, "Set to false to disable the material electrotine_alloy");
+
+        // quark
         ender_biotite = this.config.getBoolean("ender_biotite", this.getCategory(), ender_biotite, "Set to false to disable the material ender_biotite");
+
+        // refined storage
         quartz_enriched_iron = this.config.getBoolean("quartz_enriched_iron", this.getCategory(), quartz_enriched_iron, "Set to false to disable the material quartz_enriched_iron");
+
+        // thermal expansion
         enderium = this.config.getBoolean("enderium", this.getCategory(), enderium, "Set to false to disable the material enderium");
         signalum = this.config.getBoolean("signalum", this.getCategory(), signalum, "Set to false to disable the material signalum");
         lumium = this.config.getBoolean("lumium", this.getCategory(), lumium, "Set to false to disable the material lumium");
+
+        // natures aura
         material_of_the_sky = this.config.getBoolean("material_of_the_sky", this.getCategory(), material_of_the_sky, "Set to false to disable the material material_of_the_sky");
-        infused_iron = this.config.getBoolean("infusedç_iron", this.getCategory(), infused_iron, "Set to false to disable the material infused_iron");
+        infused_iron = this.config.getBoolean("infused_iron", this.getCategory(), infused_iron, "Set to false to disable the material infused_iron");
         ancient_wood = this.config.getBoolean("ancient_wood", this.getCategory(), ancient_wood, "Set to false to disable the material ancient_wood");
+        // roots
         runestone = this.config.getBoolean("runestone", this.getCategory(), runestone, "Set to false to disable the material runestone");
+
+        // pixelmon reforged
+        firestone = this.config.getBoolean("firestone", this.getCategory(), firestone, "Set to false to disable the material firestone");
+        waterstone = this.config.getBoolean("waterstone", this.getCategory(), waterstone, "Set to false to disable the material waterstone");
+        leafstone = this.config.getBoolean("leafstone", this.getCategory(), leafstone, "Set to false to disable the material leafstone");
+        thunderstone = this.config.getBoolean("thunderstone", this.getCategory(), thunderstone, "Set to false to disable the material thunderstone");
+        sunstone = this.config.getBoolean("sunstone", this.getCategory(), leafstone, "Set to false to disable the material sunstone");
+        dawnstone = this.config.getBoolean("dawnstone", this.getCategory(), dawnstone, "Set to false to disable the material dawnstone");
+        duskstone = this.config.getBoolean("duskstone", this.getCategory(), leafstone, "Set to false to disable the material duskstone");
+        crystal = this.config.getBoolean("crystal", this.getCategory(), crystal, "Set to false to disable the material crystal");
     }
 
     @Override

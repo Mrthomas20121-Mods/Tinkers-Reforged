@@ -79,6 +79,7 @@ public class ModuleExtremeReactor implements ModuleBase {
     }
     @Override
     public void init(FMLInitializationEvent e) {
+
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {

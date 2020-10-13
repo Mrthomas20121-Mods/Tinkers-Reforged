@@ -71,6 +71,7 @@ public class ModuleMekanism implements ModuleBase {
             Resources.materials.add(Resources.osmium);
         }
     }
-    public void init(FMLInitializationEvent e) {}
+    public void init(FMLInitializationEvent e) {
+    }
     public void postInit(FMLPostInitializationEvent e) { }
 }

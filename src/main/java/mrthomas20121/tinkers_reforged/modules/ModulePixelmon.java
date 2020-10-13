@@ -40,42 +40,49 @@ public class ModulePixelmon implements ModuleBase {
 
         if(ConfigMaterials.firestone)
         {
+            Resources.fire.setTemp(500);
             Resources.fire.addTrait(Traits.traitBackfire);
             Resources.fire.createGemMaterial(fireWaterStats);
         }
         if(ConfigMaterials.waterstone)
         {
+            Resources.water.setTemp(500);
             Resources.water.addTrait(TinkerTraits.aquadynamic);
             Resources.water.createGemMaterial(fireWaterStats);
         }
         if(ConfigMaterials.leafstone)
         {
-
+            Resources.leaf.setTemp(500);
             Resources.leaf.addTrait(Traits.traitLeafblower);
             Resources.leaf.createGemMaterial(leafStats);
         }
         if(ConfigMaterials.thunderstone)
         {
+            Resources.thunder.setTemp(750);
             Resources.thunder.addTrait(Traits.traitRod);
             Resources.thunder.createGemMaterial(otherStats);
         }
         if(ConfigMaterials.sunstone)
         {
+            Resources.sun.setTemp(200);
             Resources.sun.addTrait(Traits.light);
             Resources.sun.createGemMaterial(otherStats);
         }
         if(ConfigMaterials.dawnstone)
         {
+            Resources.dawn.setTemp(500);
             Resources.dawn.addTrait(Traits.life_steal);
             Resources.dawn.createGemMaterial(otherStats);
         }
         if(ConfigMaterials.duskstone)
         {
+            Resources.dusk.setTemp(500);
             Resources.dusk.addTrait(TinkerTraits.poisonous);
             Resources.dusk.createGemMaterial(otherStats);
         }
         if(ConfigMaterials.crystal)
         {
+            Resources.crystal.setTemp(230);
             Resources.crystal.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
             Resources.crystal.addTrait(TinkerTraits.jagged);
             Resources.crystal.createGemMaterial(leafStats);
@@ -110,6 +117,7 @@ public class ModulePixelmon implements ModuleBase {
 
         OreDictionary.registerOre("gemDuskstone", PixelmonItems.duskStone);
         OreDictionary.registerOre("nuggetDuskstone", PixelmonItems.duskStoneShard);
+
     }
 
     @Override

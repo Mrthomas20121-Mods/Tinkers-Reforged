@@ -107,51 +107,51 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.palis);
         }
 
-        if(ConfigMaterials.redstonia)
+        if(ConfigMaterials.restonia)
         {
-            Resources.redstonia.addTrait(Traits.flux);
-            Resources.redstonia.createGemMaterial(gemStats);
+            Resources.restonia.addTrait(Traits.flux);
+            Resources.restonia.createGemMaterial(gemStats);
 
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.redstonia, gemStats, 0);
+                armorUtils.setArmorStats(Resources.restonia, gemStats, 0);
             }
 
-            Resources.materials.add(Resources.redstonia);
+            Resources.materials.add(Resources.restonia);
         }
 
-        if(ConfigMaterials.diamantine)
+        if(ConfigMaterials.diamatine)
         {
-            Resources.diamantine.addTrait(Traits.carbon);
-            Resources.diamantine.createGemMaterial(gemStats);
+            Resources.diamatine.addTrait(Traits.carbon);
+            Resources.diamatine.createGemMaterial(gemStats);
 
             if(Loader.isModLoaded("conarm"))
             {
-                armorUtils.setArmorStats(Resources.diamantine, gemStats, 0);
+                armorUtils.setArmorStats(Resources.diamatine, gemStats, 0);
             }
 
-            Resources.materials.add(Resources.diamantine);
+            Resources.materials.add(Resources.diamatine);
         }
     }
     @Override
     public void init(FMLInitializationEvent e) {
-        OredictHelper.RegisterGemItem("Redstonia", new ItemStack(InitItems.itemCrystal, 1, 0));
+        OredictHelper.RegisterGemItem("Restonia", new ItemStack(InitItems.itemCrystal, 1, 0));
         OredictHelper.RegisterGemItem("Palis", new ItemStack(InitItems.itemCrystal, 1, 1));
-        OredictHelper.RegisterGemItem("Diamantine", new ItemStack(InitItems.itemCrystal, 1, 2));
+        OredictHelper.RegisterGemItem("Diamatine", new ItemStack(InitItems.itemCrystal, 1, 2));
         OredictHelper.RegisterGemItem("Void", new ItemStack(InitItems.itemCrystal, 1, 3));
         OredictHelper.RegisterGemItem("Emeradic", new ItemStack(InitItems.itemCrystal, 1, 4));
         OredictHelper.RegisterGemItem("Enori", new ItemStack(InitItems.itemCrystal, 1, 5));
 
-        OredictHelper.RegisterNuggetItem("Redstonia", new ItemStack(InitItems.itemCrystalShard, 1, 0));
+        OredictHelper.RegisterNuggetItem("Restonia", new ItemStack(InitItems.itemCrystalShard, 1, 0));
         OredictHelper.RegisterNuggetItem("Palis", new ItemStack(InitItems.itemCrystalShard, 1, 1));
         OredictHelper.RegisterNuggetItem("Diamantine", new ItemStack(InitItems.itemCrystalShard, 1, 2));
         OredictHelper.RegisterNuggetItem("Void", new ItemStack(InitItems.itemCrystalShard, 1, 3));
         OredictHelper.RegisterNuggetItem("Emeradic", new ItemStack(InitItems.itemCrystalShard, 1, 4));
         OredictHelper.RegisterNuggetItem("Enori", new ItemStack(InitItems.itemCrystalShard, 1, 5));
 
-        OredictHelper.RegisterBlock("Redstonia", new ItemStack(InitBlocks.blockCrystal, 1, 0));
+        OredictHelper.RegisterBlock("Restonia", new ItemStack(InitBlocks.blockCrystal, 1, 0));
         OredictHelper.RegisterBlock("Palis", new ItemStack(InitBlocks.blockCrystal, 1, 1));
-        OredictHelper.RegisterBlock("Diamantine", new ItemStack(InitBlocks.blockCrystal, 1, 2));
+        OredictHelper.RegisterBlock("Diamatine", new ItemStack(InitBlocks.blockCrystal, 1, 2));
         OredictHelper.RegisterBlock("Void", new ItemStack(InitBlocks.blockCrystal, 1, 3));
         OredictHelper.RegisterBlock("Emeradic", new ItemStack(InitBlocks.blockCrystal, 1, 4));
         OredictHelper.RegisterBlock("Enori", new ItemStack(InitBlocks.blockCrystal, 1, 5));
@@ -163,33 +163,15 @@ public class ModuleAA implements ModuleBase {
         Resources.void_crystal.getMaterial().addItem("gemVoid", 1, Material.VALUE_Ingot);
         Resources.emeradic.getMaterial().setRepresentativeItem("gemEmeradic");
         Resources.emeradic.getMaterial().addItem("gemEmeradic", 1, Material.VALUE_Ingot);
-        Resources.redstonia.getMaterial().setRepresentativeItem("gemRedstonia");
-        Resources.redstonia.getMaterial().addItem("gemRedstonia", 1, Material.VALUE_Ingot);
-        Resources.diamantine.getMaterial().setRepresentativeItem("gemDiamantine");
-        Resources.diamantine.getMaterial().addItem("gemDiamantine", 1, Material.VALUE_Ingot);
+        Resources.restonia.getMaterial().setRepresentativeItem("gemRestonia");
+        Resources.restonia.getMaterial().addItem("gemRestonia", 1, Material.VALUE_Ingot);
+        Resources.diamatine.getMaterial().setRepresentativeItem("gemDiamatine");
+        Resources.diamatine.getMaterial().addItem("gemDiamatine", 1, Material.VALUE_Ingot);
         Resources.palis.getMaterial().setRepresentativeItem("gemPalis");
         Resources.palis.getMaterial().addItem("gemPalis", 1, Material.VALUE_Ingot);
-
-        registerGems("QuartzBlack", "blackquartz", true);
-        registerGems("Enori", "enori", false);
-        registerGems("Void", "void", false);
-        registerGems("Emeradic", "emeradic", false);
-        registerGems("Palis", "palis", false);
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {
 
-    }
-    private void registerGems(String ore, String fluid, boolean small) {
-        SmelteryUtils.registerCasting("nugget"+ore, castNugget, FluidRegistry.getFluid(fluid), Material.VALUE_Nugget);
-        SmelteryUtils.registerCasting("gem"+ore, castIngot, FluidRegistry.getFluid(fluid), Material.VALUE_Ingot);
-        SmelteryUtils.registerMelting("gem"+ore, FluidRegistry.getFluid(fluid), Material.VALUE_Ingot);
-        SmelteryUtils.registerMelting("block"+ore, FluidRegistry.getFluid(fluid), Material.VALUE_Block);
-        if(small) {
-            SmelteryUtils.registerSmallBlockCasting(ore, FluidRegistry.getFluid(fluid));
-        }
-        else {
-            SmelteryUtils.registerBlockCasting(ore, FluidRegistry.getFluid(fluid));
-        }
     }
 }
