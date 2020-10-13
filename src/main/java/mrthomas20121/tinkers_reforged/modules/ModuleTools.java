@@ -10,7 +10,6 @@ import mrthomas20121.tinkers_reforged.tools.*;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -25,6 +24,7 @@ import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.tools.AoeToolCore;
 import slimeknights.tconstruct.library.tools.Pattern;
 import slimeknights.tconstruct.library.tools.ToolPart;
 import slimeknights.tconstruct.tools.TinkerModifiers;
@@ -39,6 +39,7 @@ public class ModuleTools implements ModuleBase {
     public static ToolPart clubHead;
     public static ToolPart greatBlade;
     public static ToolPart CurvedBlade;
+    public static ToolPart propickHead;
 
     // tools
     public static SwordGladius gladius = null;
@@ -46,6 +47,7 @@ public class ModuleTools implements ModuleBase {
     public static SwordGreatSword greatsword = null;
     public static SwordKhopesh khopesh = null;
     public static ToolRunicKnife knife = null;
+    public static AoeToolCore propick = null;
 
     public void preInit(FMLPreInitializationEvent e)
     {
@@ -55,34 +57,6 @@ public class ModuleTools implements ModuleBase {
     }
 
     public void postInit(FMLPostInitializationEvent event) { }
-
-    @SubscribeEvent
-    public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-        IForgeRegistry<IRecipe> registry = event.getRegistry();
-
-        TinkerTools.registerToolForgeBlock(registry, "blockTitanium");
-        TinkerTools.registerToolForgeBlock(registry, "blockAluminum");
-        TinkerTools.registerToolForgeBlock(registry, "blockIridium");
-        TinkerTools.registerToolForgeBlock(registry, "blockRuby");
-        TinkerTools.registerToolForgeBlock(registry, "blockAmethyst");
-        TinkerTools.registerToolForgeBlock(registry, "blockSapphire");
-
-        if(ConfigModule.naturesaura) {
-            TinkerTools.registerToolForgeBlock(registry, "blockInfusedIron");
-        }
-
-        if(ConfigModule.thermalfoundation) {
-            TinkerTools.registerToolForgeBlock(registry, "blockConstantan");
-            TinkerTools.registerToolForgeBlock(registry, "blockLumium");
-            TinkerTools.registerToolForgeBlock(registry, "blockSignalum");
-            TinkerTools.registerToolForgeBlock(registry, "blockEnderium");
-        }
-        if(ConfigModule.botania) {
-            TinkerTools.registerToolForgeBlock(registry, "blockManasteel");
-            TinkerTools.registerToolForgeBlock(registry, "blockElementium");
-            TinkerTools.registerToolForgeBlock(registry, "blockTerrasteel");
-        }
-    }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -155,6 +129,22 @@ public class ModuleTools implements ModuleBase {
                 TinkersReforged.proxy.registerToolModel(khopesh);
                 r.register(khopesh);
                 TinkerRegistry.registerToolForgeCrafting(khopesh);
+            }
+
+            if(Loader.isModLoaded("geolosys"))
+            {
+                propickHead = new ToolPart(Material.VALUE_Ingot*3);
+                propickHead.setRegistryName(TinkersReforged.MODID,"propick_head");
+                propickHead.setTranslationKey(TinkersReforged.MODID + ".propick_head");
+                TinkersReforged.proxy.registerToolPartModel(propickHead);
+                r.register(propickHead);
+                registerStencil(propickHead);
+
+                propick = new ToolProPick();
+                propick.setRegistryName(TinkersReforged.MODID, "propick");
+                propick.setTranslationKey(TinkersReforged.MODID+".propick");
+                r.register(propick);
+                TinkerRegistry.registerToolForgeCrafting(propick);
             }
 
             for(IModifier modifier : getTinkerModifiers())
