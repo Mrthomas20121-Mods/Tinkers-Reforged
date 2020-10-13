@@ -52,7 +52,7 @@ item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy block
 # Fluids
 fluid.infused_iron=Molten Infused Iron
 fluid.material_of_the_sky=Molten of the sky
-fluid.starmetal=Starmetal
+fluid.starmetal=Molten Starmetal
 fluid.blutonium=Molten Blutonium
 fluid.ludicrite=Molten Ludicrite
 fluid.qivium=Molten Qivium
@@ -69,8 +69,8 @@ fluid.enori=Molten Enori
 fluid.palis=Molten Palis
 fluid.void=Molten Void
 fluid.emeradic=Molten Emeradic
-fluid.redstonia=Molten Redstonia
-fluid.diamantine=Molten Diamantine
+fluid.restonia=Molten Restonia
+fluid.diamatine=Molten Diamatine
 fluid.ruby=Molten Ruby
 fluid.sapphire=Molten Sapphire
 fluid.peridot=Molten Peridot
@@ -82,6 +82,14 @@ fluid.amethyst=Molten Amethyst
 fluid.aquamarine=Molten Aquamarine
 fluid.magnite=Molten Magnite
 fluid.hexcite=Molten Hexcite
+fluid.waterstone=Molten Waterstone
+fluid.firestone=Molten Firestone
+fluid.leafstone=Molten Leafstone
+fluid.thunderstone=Molten Thunderstone
+fluid.sunstone=Molten Sunstone
+fluid.dawnstone=Molten Dawnstone
+fluid.duskstone=Molten Duststone
+fluid.thaumium=Molten Thaumium
 
 # mining levels
 ui.mininglevel.lavium=Lavium
@@ -97,6 +105,7 @@ material.ref_platinum.name=Platinum
 material.ref_iridium.name=Iridium
 material.ref_invar.name=Invar
 material.ref_aluminium.name=Aluminium
+material.ref_amethyst.name=Amethyst
 
 # thermalfoundation materials
 material.ref_enderium.name=Enderium
@@ -117,9 +126,9 @@ material.ref_material_of_the_sky.name=Material Of The Sky
 material.ref_blackquartz.name=Black Quartz
 material.ref_enori.name=Enori Crystal
 material.ref_void.name=Void Crystal
-material.ref_redstonia.name=Redstonia Crystal
+material.ref_restonia.name=Restonia Crystal
 material.ref_emeradic.name=Emeradic Crystal
-material.ref_diamantine.name=Diamantine Crystal
+material.ref_diamatine.name=Diamatine Crystal
 material.ref_palis.name=Palis Crystal
 
 # Appliedenergistic2 materials
@@ -154,9 +163,6 @@ material.red_string.name=Red String
 material.ref_mana_string.name=Mana String
 material.ref_gaia_spirit.name=Gaia Spirit
 
-# Mystical world
-material.reforged_amethyst.name=Amethyst
-
 # Mekanism
 material.ref_osmium.name=Osmium
 material.ref_refined_obsidian.name=Refined Obsidian
@@ -171,7 +177,25 @@ material.ref_blutonium.name=Blutonium
 material.ref_ludicrite.name=Ludicrite
 material.ref_cyanite.name=Cyanite
 
-# custom mats
+# pixelmon
+material.ref_firestone.name=Firestone
+material.ref_waterstone.name=Waterstone
+material.ref_leafstone.name=Leafstone
+material.ref_thunderstone.name=Thunderstone
+material.ref_sunstone.name=Sunstone
+material.ref_dawnstone.name=Dawnstone
+material.ref_duskstone.name=Duskstone
+material.ref_crystal.name=Crystal
+
+# project red core
+material.ref_electrotine.name=Electrotine
+material.ref_electrotine_alloy.name=Electrotine Alloy
+material.ref_red_alloy.name=Red Alloy
+
+# thaumcraft
+material.ref_thaumium.name=Thaumium
+
+# tinkers reforged
 material.ref_lavium.name=Lavium
 material.ref_qivium.name=Qivium
 

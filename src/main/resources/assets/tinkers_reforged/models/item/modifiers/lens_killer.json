@@ -1,5 +1,8 @@
  {
 	"textures": {
 		"greatsword": "tinkersreforged:items/greatsword/mod_lens_killer",
+		"khopesh": "tinkersreforged:items/khopesh/mod_lens_killer",
+		"gladius": "tinkersreforged:items/gladius/mod_lens_killer",
+		"club": "tinkersreforged:items/club/mod_lens_killer",
 	}
 }
