@@ -18,5 +18,9 @@
   {
     "type": "tool",
     "data": "tools/runic_knife.json"
+  },
+    {
+    "type": "tool",
+    "data": "tools/lightsword.json"
   }
 ]

@@ -7,11 +7,12 @@
   ],
   "key": {
     "#": {
-      "item": "tinkers_reforged:kovar_ingot"
+	  "type":"forge:ore_dict",
+      "ore": "ingotKovar"
     }
   },
   "result": {
     "item": "tinkers_reforged:kovar_nugget",
-    "amount":9
+    "count":9
   }
 }

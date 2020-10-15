@@ -40,6 +40,7 @@ public class ModuleTools implements ModuleBase {
     public static ToolPart greatBlade;
     public static ToolPart CurvedBlade;
     public static ToolPart propickHead;
+    public static ToolPart lightblade;
 
     // tools
     public static SwordGladius gladius = null;
@@ -48,6 +49,7 @@ public class ModuleTools implements ModuleBase {
     public static SwordKhopesh khopesh = null;
     public static ToolRunicKnife knife = null;
     public static AoeToolCore propick = null;
+    public static SwordLight swordLight = null;
 
     public void preInit(FMLPreInitializationEvent e)
     {
@@ -72,6 +74,23 @@ public class ModuleTools implements ModuleBase {
                 r.register(gladius);
                 TinkersReforged.proxy.registerToolModel(gladius);
                 TinkerRegistry.registerToolForgeCrafting(gladius);
+            }
+
+            if(ConfigReforged.gladius) {
+
+                lightblade = new ToolPart(Material.VALUE_Ingot*3);
+                lightblade.setRegistryName(TinkersReforged.MODID, "light_blade");
+                lightblade.setTranslationKey(TinkersReforged.MODID+".light_blade");
+                TinkersReforged.proxy.registerToolPartModel(lightblade);
+                r.register(lightblade);
+
+				swordLight = new SwordLight();
+                swordLight.setRegistryName(TinkersReforged.MODID, "lightsword");
+                swordLight.setTranslationKey(TinkersReforged.MODID + ".lightblade");
+                r.register(swordLight);
+                TinkersReforged.proxy.registerToolModel(swordLight);
+                TinkerRegistry.registerToolForgeCrafting(swordLight);
+                r.register(swordLight);
             }
 
             if(ConfigReforged.runedKnife && Loader.isModLoaded("roots")) {
@@ -143,7 +162,9 @@ public class ModuleTools implements ModuleBase {
                 propick = new ToolProPick();
                 propick.setRegistryName(TinkersReforged.MODID, "propick");
                 propick.setTranslationKey(TinkersReforged.MODID+".propick");
+                TinkersReforged.proxy.registerToolModel(propick);
                 r.register(propick);
+
                 TinkerRegistry.registerToolForgeCrafting(propick);
             }
 

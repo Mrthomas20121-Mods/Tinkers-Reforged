@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
@@ -119,6 +120,38 @@ public class ModuleCommonMaterials implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent e) {
+        if(!OreDictionary.doesOreNameExist("ingotPlatinium"))
+        {
+            Resources.platinum.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("ingotIridium"))
+        {
+            Resources.iridium.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("ingotAluminum"))
+        {
+            Resources.aluminum.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("ingotTitanium"))
+        {
+            Resources.titanium.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("gemAmethyst"))
+        {
+            Resources.amethyst.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("gemRuby"))
+        {
+            Resources.ruby.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("gemSapphire") && !Loader.isModLoaded("tinkersworld"))
+        {
+            Resources.sapphire.getMaterial().setCastable(false).setCraftable(false);
+        }
+        if(!OreDictionary.doesOreNameExist("gemPeridot"))
+        {
+            Resources.peridot.getMaterial().setCastable(false).setCraftable(false);
+        }
     }
     @Override
     public void postInit(FMLPostInitializationEvent e) {}

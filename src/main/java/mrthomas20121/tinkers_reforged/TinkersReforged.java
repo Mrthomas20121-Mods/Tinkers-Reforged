@@ -48,12 +48,12 @@ public class TinkersReforged
         proxy.registerBookData();
         proxy.init(event);
         Modules.init(event);
+        Modifiers.init();
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         proxy.registerToolCrafting();
-        Modifiers.init();
         proxy.postInit(event);
         Modules.postInit(event);
     }

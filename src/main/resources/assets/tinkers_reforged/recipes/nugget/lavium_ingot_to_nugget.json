@@ -7,11 +7,12 @@
   ],
   "key": {
     "#": {
-      "item": "tinkers_reforged:lavium_ingot"
+	  "type":"forge:ore_dict",
+      "ore": "ingotLavium"
     }
   },
   "result": {
     "item": "tinkers_reforged:lavium_nugget",
-    "amount":9
+    "count":9
   }
 }

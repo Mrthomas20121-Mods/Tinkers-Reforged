@@ -7,11 +7,12 @@
   ],
   "key": {
     "#": {
-      "item": "tinkers_reforged:qivium_ingot"
+	  "type":"forge:ore_dict",
+      "ore": "ingotQivium"
     }
   },
   "result": {
     "item": "tinkers_reforged:qivium_nugget",
-    "amount":9
+    "count":9
   }
 }

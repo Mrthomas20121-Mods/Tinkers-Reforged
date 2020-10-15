@@ -22,6 +22,9 @@ public class ConfigReforged extends ConfigBase {
             "thermalfoundation:pyrotheum:2000:1000:1000"
     };
 
+    public static String materialsBotania = "iron:wood:stone";
+    public static String materialStarmetal = "iron";
+
     public static ConfigBase getInstance() {
         return new ConfigReforged();
     }
@@ -46,10 +49,16 @@ public class ConfigReforged extends ConfigBase {
         greatsword = this.getConfig().getBoolean("weapon_greatsword", this.getCategory(), greatsword, "Set to false to disable the Greatsword weapon.");
         runedKnife = this.getConfig().getBoolean("weapon_runic_knife", this.getCategory(), runedKnife, "Set to false to disable the Runic Knife weapon.");
 
-        // botania stuff
-        mana = this.getConfig().getInt("mana", this.getCategory(), mana, 0, 50000, "How much mana the pool will use to create manasteel/livingwood/livingrock tinkers parts.");
+        // botania mana
+        mana = this.getConfig().getInt("mana", this.getCategory(), mana, 0, 50000, "How much mana the pool will use to create manasteel tinkers parts.");
         // fuels
         fuels = this.getConfig().getStringList("smeltery_fuels", this.getCategory(), fuels, "Fuels to registers. syntax is modid:fluidname:temp:amount:fuelduration");
+
+        // botania material
+        materialsBotania = this.getConfig().getString("botania_parts_crafting", this.getCategory(), materialsBotania, "materials used to create manasteel,livingwood,livingrock part for the infusion recipe.");
+
+        // starmetal
+        materialStarmetal = this.getConfig().getString("starmetal_part", this.getCategory(), materialStarmetal, "material used to create starmetal part.");
 
         alloyrecipes = this.getConfig().getBoolean("alloys", this.getCategory(), alloyrecipes, "Set to false to remove alloys recipes.");
     }

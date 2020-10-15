@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
@@ -79,19 +80,24 @@ public class ModuleBotania implements ModuleBase {
         OreDictionary.registerOre("blockTerrasteel", new ItemStack(ModBlocks.storage, 1, 1));
         OreDictionary.registerOre("blockElementium", new ItemStack(ModBlocks.storage, 1, 2));
 
+        String[] data = ConfigReforged.materialsBotania.split(":");
+        Material manasteel = TinkerRegistry.getMaterial(data[0]);
+        Material livingwood = TinkerRegistry.getMaterial(data[1]);
+        Material livingrock = TinkerRegistry.getMaterial(data[2]);
+
         for(IToolPart part : TinkerRegistry.getToolParts())
         {
             if(part.canUseMaterial(Resources.manasteel.getMaterial()) && ConfigMaterials.manasteel)
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.getMaterial()), part.getItemstackWithMaterial(TinkerMaterials.iron), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.getMaterial()), part.getItemstackWithMaterial(manasteel), ConfigReforged.mana));
             }
             if(part.canUseMaterial(Resources.livingrock.getMaterial()) && ConfigMaterials.livingrock)
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.getMaterial()), part.getItemstackWithMaterial(TinkerMaterials.stone), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.getMaterial()), part.getItemstackWithMaterial(livingrock), ConfigReforged.mana));
             }
             if(part.canUseMaterial(Resources.livingwood.getMaterial()) && ConfigMaterials.livingwood)
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.getMaterial()), part.getItemstackWithMaterial(TinkerMaterials.wood), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.getMaterial()), part.getItemstackWithMaterial(livingwood), ConfigReforged.mana));
             }
         }
     }

@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.tinkers_reforged.config.ConfigModule;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -12,7 +13,7 @@ public class Modules {
     public static final ModuleNatureAura natureAura = new ModuleNatureAura();
     public static final ModuleAe ae = new ModuleAe();
     public static ModuleAA aa = null;
-    public static final ModuleAstralSorcery astral = new ModuleAstralSorcery();
+    public static final ModuleBase astral = new ModuleAstralSorcery();
     public static ModuleAtum atum = null;
     public static final ModuleBotania botania = new ModuleBotania();
     public static ModuleBlueSkies blueskies = null;

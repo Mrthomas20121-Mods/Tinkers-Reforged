@@ -28,7 +28,11 @@ item.tinkers_reforged.kovar_gear.name=Kovar Gear
 # Gladius
 item.tinkers_reforged.gladius.name=Gladius
 item.tinkers_reforged.gladius.desc=A broadsword with a bit more damage and less attack speed but slow enemies.
-item.tinkers_reforged.gladius_bindings.name=Gladius Bindings
+
+# Lightsword
+item.tinkers_reforged.light_blade.name=Light Blade
+item.tinkers_reforged.lightsword.name=Lightsword
+item.tinkers_reforged.lightsword.desc=Werewolf slayers
 
 # Club
 item.tinkers_reforged.club.name=Club
@@ -48,6 +52,10 @@ item.tinkers_reforged.greatsword.desc=A great and powerful sword.
 # runed_knife
 item.tinkers_reforged.runic_knife.name=Runic Knife
 item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy blocks.
+
+# propick
+item.tinkers_reforged.propick.name=Propector Pickaxe
+item.tinkers_reforged.propick.desc=a Pickaxe used to find ores.
 
 # Fluids
 fluid.infused_iron=Molten Infused Iron
@@ -104,7 +112,7 @@ material.ref_titanium.name=Titanium
 material.ref_platinum.name=Platinum
 material.ref_iridium.name=Iridium
 material.ref_invar.name=Invar
-material.ref_aluminium.name=Aluminium
+material.ref_aluminum.name=Aluminium
 material.ref_amethyst.name=Amethyst
 
 # thermalfoundation materials
@@ -120,7 +128,7 @@ material.ref_hexcite.name=Hexcite
 # naturesaura materials
 material.ref_infused_iron.name=Infused Iron
 material.ref_ancient_wood.name=Ancient Wood
-material.ref_material_of_the_sky.name=Material Of The Sky
+material.ref_sky.name=Material Of The Sky
 
 ## aa materials
 material.ref_blackquartz.name=Black Quartz
@@ -319,3 +327,6 @@ modifier.ref_terrestrial_artifact.desc=§oShiny!§r\nIncreased durability!
 
 modifier.ref_shulker_pearl.name=Shulker Pearl
 modifier.ref_shulker_pearl.desc=§oBetter than an eletra§r\nRemove Levitation effect.
+
+modifier.ref_digging.name=Digging
+modifier.ref_digging.desc=Increase Mining speed
