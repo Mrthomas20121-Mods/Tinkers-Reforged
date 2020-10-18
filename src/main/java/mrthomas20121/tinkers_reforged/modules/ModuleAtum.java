@@ -4,7 +4,7 @@ import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.common.OredictHelper;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import com.teammetallurgy.atum.init.AtumBlocks;
 import net.minecraft.item.ItemStack;
@@ -22,7 +22,7 @@ public class ModuleAtum implements ModuleBase {
     }
     public void preInit(FMLPreInitializationEvent e) {
 
-        if(ConfigMaterials.limestone) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.limestone.getMaterial().getIdentifier())) {
             MaterialStats limestoneStats = new MaterialStats();
             limestoneStats.setHeadMaterialStats(180, 3.1f, 2.2f, HarvestLevels.STONE);
             limestoneStats.setHandleMaterialStats(0.9f, 50);
@@ -40,7 +40,7 @@ public class ModuleAtum implements ModuleBase {
             }
             Resources.materials.add(Resources.limestone);
         }
-        if (ConfigMaterials.khnumite) {
+        if (TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.khnumite.getMaterial().getIdentifier())) {
 
             MaterialStats khnumiteStats = new MaterialStats();
             khnumiteStats.setHeadMaterialStats(230, 3.5f, 2.9f, HarvestLevels.STONE);
@@ -59,10 +59,10 @@ public class ModuleAtum implements ModuleBase {
         }
     }
     public void init(FMLInitializationEvent e) { 
-        if(ConfigMaterials.khnumite) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.khnumite.getMaterial().getIdentifier())) {
             Resources.khnumite.getMaterial().setRepresentativeItem("ingotKhnumite");
         }
-        if(ConfigMaterials.limestone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.limestone.getMaterial().getIdentifier()))
         {
             Resources.limestone.addItems(new ItemStack(AtumBlocks.LIMESTONE));
         }

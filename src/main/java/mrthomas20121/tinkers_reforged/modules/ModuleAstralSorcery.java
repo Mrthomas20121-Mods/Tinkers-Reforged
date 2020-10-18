@@ -6,8 +6,8 @@ import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
 import mrthomas20121.tinkers_reforged.config.ConfigReforged;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,7 +17,6 @@ import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
-import slimeknights.tconstruct.tools.TinkerMaterials;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleAstralSorcery implements ModuleBase {
@@ -34,7 +33,7 @@ public class ModuleAstralSorcery implements ModuleBase {
         iron.setExtraMaterialStats(50);
         iron.setBowMaterialStats(0.5f, 1.5f, 7f);
 
-        if(ConfigMaterials.starmetal)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.starmetal.getMaterial().getIdentifier()))
         {
             Resources.starmetal.setOredict("AstralStarmetal");
             Resources.starmetal.addTrait(Traits.astral, MaterialTypes.HEAD);
@@ -53,7 +52,7 @@ public class ModuleAstralSorcery implements ModuleBase {
 
         for(IToolPart part : TinkerRegistry.getToolParts())
         {
-            if(part.canUseMaterial(Resources.starmetal.getMaterial()) && ConfigMaterials.starmetal)
+            if(part.canUseMaterial(Resources.starmetal.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.starmetal.getMaterial().getIdentifier()))
             {
                 InfusionRecipeRegistry.recipes.add(new BasicInfusionRecipe(part.getItemstackWithMaterial(Resources.starmetal.getMaterial()), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(ConfigReforged.materialStarmetal))));
             }

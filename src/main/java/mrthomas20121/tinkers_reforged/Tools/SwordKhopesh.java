@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.tools;
 
-import mrthomas20121.tinkers_reforged.modules.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,7 +21,7 @@ public class SwordKhopesh extends SwordCore {
 
     public SwordKhopesh() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(ModuleTools.CurvedBlade),
+                PartMaterialType.head(Tools.CurvedBlade),
                 PartMaterialType.extra(TinkerTools.crossGuard));
         this.addCategory(Category.WEAPON);
     }

@@ -8,7 +8,7 @@ import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.FluidUtils;
 import mrthomas20121.biolib.util.armorUtils;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 import mrthomas20121.biolib.common.OredictHelper;
 import mrthomas20121.tinkers_reforged.config.ConfigReforged;
@@ -78,7 +78,7 @@ public class ModuleItems implements ModuleBase {
         baseStats.setExtraMaterialStats(300);
         baseStats.setBowMaterialStats(9.2f, 7.1f, 5.2f);
 
-        if(ConfigMaterials.qivium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.qivium.getMaterial().getIdentifier()))
         {
             Resources.qivium.addTrait(TinkerTraits.momentum);
             Resources.qivium.addTrait(Traits.pyromancy, MaterialTypes.HEAD);
@@ -91,7 +91,7 @@ public class ModuleItems implements ModuleBase {
             Resources.materials.add(Resources.qivium);
         }
 
-        if(ConfigMaterials.lavium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.lavium.getMaterial().getIdentifier()))
         {
             Resources.lavium.addTrait(TinkerTraits.momentum);
             Resources.lavium.addTrait(Traits.life_steal, MaterialTypes.HEAD);

@@ -3,7 +3,7 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -34,14 +34,18 @@ public class ModuleCommonMaterials implements ModuleBase {
         gemStats.setHandleMaterialStats(1.4f, 0);
         gemStats.setExtraMaterialStats(10);
 
-        if(ConfigMaterials.platinum)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.platinum.getMaterial().getIdentifier()))
         {
             Resources.platinum.setTemp(2000);
             Resources.platinum.addTrait(TinkerTraits.dense);
             Resources.platinum.createMaterial(commonStats);
             Resources.materials.add(Resources.platinum);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.platinum, commonStats, 1);
+            }
         }
-        if(ConfigMaterials.iridium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.iridium.getMaterial().getIdentifier()))
         {
             Resources.iridium.setTemp(2446);
             Resources.iridium.addTrait(TinkerTraits.alien, MaterialTypes.HEAD);
@@ -49,72 +53,91 @@ public class ModuleCommonMaterials implements ModuleBase {
             Resources.iridium.createMaterial(commonStats);
 
             Resources.materials.add(Resources.iridium);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.iridium, commonStats, 1);
+            }
         }
-        if(ConfigMaterials.invar)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.invar.getMaterial().getIdentifier()))
         {
             Resources.invar.setTemp(2000);
             Resources.invar.addTrait(TinkerTraits.hellish);
             Resources.invar.createMaterial(commonStats);
             Resources.materials.add(Resources.invar);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.invar, commonStats, 1);
+            }
         }
-        if(ConfigMaterials.aluminum)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.aluminum.getMaterial().getIdentifier()))
         {
             Resources.aluminum.setTemp(1900);
             Resources.aluminum.addTrait(TinkerTraits.dense);
             Resources.aluminum.createMaterial(commonStats);
             Resources.materials.add(Resources.aluminum);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.aluminum, commonStats, 1);
+            }
         }
-        if(ConfigMaterials.titanium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.titanium.getMaterial().getIdentifier()))
         {
             Resources.titanium.setTemp(2000);
             Resources.titanium.addTrait(TinkerTraits.lightweight);
             Resources.titanium.createMaterial(commonStats);
             Resources.materials.add(Resources.titanium);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.titanium, commonStats, 1);
+            }
         }
-        if(ConfigMaterials.amethyst)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.amethyst.getMaterial().getIdentifier()))
         {
             Resources.amethyst.setTemp(1500);
             Resources.amethyst.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
             Resources.amethyst.addTrait(TinkerTraits.jagged);
             Resources.amethyst.createGemMaterial(gemStats);
             Resources.materials.add(Resources.amethyst);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.amethyst, gemStats, 1);
+            }
         }
-        if(ConfigMaterials.sapphire)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.sapphire.getMaterial().getIdentifier()))
         {
             Resources.sapphire.setTemp(1500);
             Resources.sapphire.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
             Resources.sapphire.addTrait(TinkerTraits.fractured);
             Resources.sapphire.createGemMaterial(gemStats);
             Resources.materials.add(Resources.sapphire);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.sapphire, gemStats, 0);
+            }
         }
-        if(ConfigMaterials.ruby)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.ruby.getMaterial().getIdentifier()))
         {
             Resources.ruby.setTemp(1500);
             Resources.ruby.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
             Resources.ruby.addTrait(TinkerTraits.fractured);
             Resources.ruby.createGemMaterial(gemStats);
             Resources.materials.add(Resources.ruby);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.ruby, gemStats, 0);
+            }
         }
-        if(ConfigMaterials.peridot)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.peridot.getMaterial().getIdentifier()))
         {
             Resources.peridot.setTemp(1500);
             Resources.peridot.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
             Resources.peridot.addTrait(TinkerTraits.fractured);
             Resources.peridot.createGemMaterial(gemStats);
             Resources.materials.add(Resources.peridot);
-        }
-
-        if(Loader.isModLoaded("conarm"))
-        {
-            if(ConfigMaterials.titanium) armorUtils.setArmorStats(Resources.titanium, commonStats, 1);
-            if(ConfigMaterials.invar) armorUtils.setArmorStats(Resources.invar,commonStats, 1);
-            if(ConfigMaterials.platinum) armorUtils.setArmorStats(Resources.platinum, commonStats, 1);
-            if(ConfigMaterials.iridium) armorUtils.setArmorStats(Resources.iridium, commonStats, 1);
-            if(ConfigMaterials.aluminum) armorUtils.setArmorStats(Resources.aluminum, commonStats, 1);
-            if(ConfigMaterials.amethyst) armorUtils.setArmorStats(Resources.amethyst, gemStats, 2);
-            if(ConfigMaterials.ruby) armorUtils.setArmorStats(Resources.ruby, gemStats, 0);
-            if(ConfigMaterials.sapphire) armorUtils.setArmorStats(Resources.sapphire, gemStats, 0);
-            if(ConfigMaterials.peridot) armorUtils.setArmorStats(Resources.peridot, gemStats, 0);
+            if(Loader.isModLoaded("conarm"))
+            {
+                armorUtils.setArmorStats(Resources.peridot, gemStats, 0);
+            }
         }
     }
 

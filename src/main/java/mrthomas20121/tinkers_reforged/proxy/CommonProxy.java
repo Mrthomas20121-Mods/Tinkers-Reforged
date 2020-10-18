@@ -1,6 +1,6 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.tinkers_reforged.config.Config;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -19,7 +19,6 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
 
-        Config.readConfig(e);
     }
 
     public void init(FMLInitializationEvent e) {

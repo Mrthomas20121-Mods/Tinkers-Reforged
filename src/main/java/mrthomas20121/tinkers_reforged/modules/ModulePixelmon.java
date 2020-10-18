@@ -4,10 +4,9 @@ import com.pixelmonmod.pixelmon.config.PixelmonBlocks;
 import com.pixelmonmod.pixelmon.config.PixelmonItems;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -38,49 +37,49 @@ public class ModulePixelmon implements ModuleBase {
         leafStats.setExtraMaterialStats(10);
         leafStats.setBowMaterialStats(3, 5, 4);
 
-        if(ConfigMaterials.firestone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.fire.getMaterial().getIdentifier()))
         {
             Resources.fire.setTemp(500);
             Resources.fire.addTrait(Traits.traitBackfire);
             Resources.fire.createGemMaterial(fireWaterStats);
         }
-        if(ConfigMaterials.waterstone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.water.getMaterial().getIdentifier()))
         {
             Resources.water.setTemp(500);
             Resources.water.addTrait(TinkerTraits.aquadynamic);
             Resources.water.createGemMaterial(fireWaterStats);
         }
-        if(ConfigMaterials.leafstone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.leaf.getMaterial().getIdentifier()))
         {
             Resources.leaf.setTemp(500);
             Resources.leaf.addTrait(Traits.traitLeafblower);
             Resources.leaf.createGemMaterial(leafStats);
         }
-        if(ConfigMaterials.thunderstone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.thunder.getMaterial().getIdentifier()))
         {
             Resources.thunder.setTemp(750);
             Resources.thunder.addTrait(Traits.traitRod);
             Resources.thunder.createGemMaterial(otherStats);
         }
-        if(ConfigMaterials.sunstone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.sun.getMaterial().getIdentifier()))
         {
             Resources.sun.setTemp(200);
             Resources.sun.addTrait(Traits.light);
             Resources.sun.createGemMaterial(otherStats);
         }
-        if(ConfigMaterials.dawnstone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.dawn.getMaterial().getIdentifier()))
         {
             Resources.dawn.setTemp(500);
             Resources.dawn.addTrait(Traits.life_steal);
             Resources.dawn.createGemMaterial(otherStats);
         }
-        if(ConfigMaterials.duskstone)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.dusk.getMaterial().getIdentifier()))
         {
             Resources.dusk.setTemp(500);
             Resources.dusk.addTrait(TinkerTraits.poisonous);
             Resources.dusk.createGemMaterial(otherStats);
         }
-        if(ConfigMaterials.crystal)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.crystal.getMaterial().getIdentifier()))
         {
             Resources.crystal.setTemp(230);
             Resources.crystal.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);

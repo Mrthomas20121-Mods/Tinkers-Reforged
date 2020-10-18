@@ -1,8 +1,7 @@
 package mrthomas20121.tinkers_reforged.modifiers;
 
 import mrthomas20121.biolib.common.ModifierModuleBase;
-import mrthomas20121.tinkers_reforged.config.ConfigModule;
-import net.minecraftforge.fml.common.Loader;
+import mrthomas20121.tinkers_reforged.modules.Modules;
 
 public class Modifiers {
 
@@ -13,27 +12,27 @@ public class Modifiers {
     public static ModifierModuleBase moduleModEnvTech = null;
 
     public static void init() {
-        if(Loader.isModLoaded("actuallyadditions") && ConfigModule.actuallyadditions)
+        if(Modules.isLoaded("actuallyadditions"))
         {
             moduleModAA = new ModuleModAA();
             moduleModAA.init();
         }
-        if(Loader.isModLoaded("naturesaura") && ConfigModule.naturesaura)
+        if(Modules.isLoaded("naturesaura"))
         {
             moduleModNaturesAura = new ModuleModNaturesAura();
             moduleModNaturesAura.init();
         }
-        if(Loader.isModLoaded("biomesoplenty") && ConfigModule.biomesoplenty)
+        if(Modules.isLoaded("biomesoplenty"))
         {
             moduleModBop = new ModuleModBop();
             moduleModBop.init();
         }
-        if(Loader.isModLoaded("darkutils") && ConfigModule.darkutils)
+        if(Modules.isLoaded("darkutils"))
         {
             moduleModDarkUtils = new ModuleModDarkUtils();
             moduleModDarkUtils.init();
         }
-        if(Loader.isModLoaded("environmentaltech") && ConfigModule.environmentaltech)
+        if(Modules.isLoaded("environmentaltech"))
         {
             moduleModEnvTech = new ModuleModEnvTech();
             moduleModEnvTech.init();

@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.tools;
 
-import mrthomas20121.tinkers_reforged.modules.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,7 +20,7 @@ import java.util.List;
 public class SwordGreatSword extends SwordCore {
     public SwordGreatSword() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(ModuleTools.greatBlade),
+                PartMaterialType.head(Tools.greatBlade),
                 PartMaterialType.extra(TinkerTools.wideGuard));
         this.addCategory(Category.WEAPON);
     }

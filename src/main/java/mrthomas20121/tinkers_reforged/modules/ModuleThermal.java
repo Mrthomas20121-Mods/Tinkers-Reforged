@@ -2,10 +2,9 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.biolib.util.FluidUtils;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,7 +26,7 @@ public class ModuleThermal implements ModuleBase {
         baseStats.setExtraMaterialStats(80);
         baseStats.setBowMaterialStats(7.3f, 2, 7f);
 
-        if(ConfigMaterials.enderium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.enderium.getMaterial().getIdentifier()))
         {
 
             MaterialStats enderiumStats = new MaterialStats();
@@ -49,7 +48,7 @@ public class ModuleThermal implements ModuleBase {
             }
         }
 
-        if(ConfigMaterials.signalum)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.signalum.getMaterial().getIdentifier()))
         {
             Resources.signalum.setTemp(1500);
             Resources.signalum.addTrait(Traits.flux, MaterialTypes.HEAD);
@@ -63,7 +62,7 @@ public class ModuleThermal implements ModuleBase {
             }
         }
 
-        if(ConfigMaterials.lumium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.lumium.getMaterial().getIdentifier()))
         {
             Resources.lumium.setTemp(1500);
             Resources.lumium.addTrait(Traits.light);

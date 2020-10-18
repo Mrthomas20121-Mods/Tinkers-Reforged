@@ -2,7 +2,7 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -15,7 +15,7 @@ public class ModuleThaumcraft implements ModuleBase {
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
 
-        if(ConfigMaterials.thaumium)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.thaumium.getMaterial().getIdentifier()))
         {
             MaterialStats thaumiumStats = new MaterialStats();
             thaumiumStats.setHeadMaterialStats(400, 7, 4.25f, HarvestLevels.OBSIDIAN);

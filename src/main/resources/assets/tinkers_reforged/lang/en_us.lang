@@ -1,3 +1,19 @@
+# config
+config.tinkers_reforged.enableAlloy=Enable Alloy recipes.
+config.tinkers_reforged.manacost=How much mana Livingwood/Livingrock/Manasteel parts cost.
+config.tinkers_reforged.fuels=Fuels added by this mod. syntax is : modid:fluid_name:temp:amount:fuel_duration
+config.tinkers_reforged.parts_botania=Materials used to create Manasteel, Livingwood, Livingrock parts. syntax is: manasteel:livingwood:livingrock
+config.tinkers_reforged.parts_astral=Material used to create starmetal parts.
+config.tinkers_reforged.material=Materials to remove list.
+config.tinkers_reforged.modules=Modules to disable list. module name is the mod id
+config.tinkers_reforged.tools=Enable the Tinkers Reforged tools.
+config.tinkers_reforged.tool.gladius=Enable the gladius.
+config.tinkers_reforged.tool.club=Enable the club.
+config.tinkers_reforged.tool.greatsword=Enable the greatsword.
+config.tinkers_reforged.tool.khopesh=Enable the khopesh.
+config.tinkers_reforged.tool.knife=Enable the Roots Knife.
+config.tinkers_reforged.tool.lightsword=Enable the Lightsword.
+
 # creative tab
 itemGroup.tinkers_reforged=Tinkers' Reforged
 
@@ -49,11 +65,12 @@ item.tinkers_reforged.great_blade.name=Great Blade
 item.tinkers_reforged.greatsword.name=Greatsword
 item.tinkers_reforged.greatsword.desc=A great and powerful sword.
 
-# runed_knife
+# runic_knife
 item.tinkers_reforged.runic_knife.name=Runic Knife
 item.tinkers_reforged.runic_knife.desc=A Knife used to get Moss from mossy blocks.
 
 # propick
+item.tinkers_reforged.propick_head.name=Propector Pickaxe Head
 item.tinkers_reforged.propick.name=Propector Pickaxe
 item.tinkers_reforged.propick.desc=a Pickaxe used to find ores.
 
@@ -84,7 +101,7 @@ fluid.sapphire=Molten Sapphire
 fluid.peridot=Molten Peridot
 fluid.titanium=Molten Titanium
 fluid.platinum=Molten Platinum
-fluid.aluminium=Molten aluminium
+fluid.aluminum=Molten aluminum
 fluid.iridium=Molten Iridium
 fluid.amethyst=Molten Amethyst
 fluid.aquamarine=Molten Aquamarine
@@ -98,6 +115,7 @@ fluid.sunstone=Molten Sunstone
 fluid.dawnstone=Molten Dawnstone
 fluid.duskstone=Molten Duststone
 fluid.thaumium=Molten Thaumium
+fluid.khnumite=Molten Khnumite
 
 # mining levels
 ui.mininglevel.lavium=Lavium

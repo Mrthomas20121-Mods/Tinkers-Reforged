@@ -79,14 +79,6 @@ public class Resources {
     public static MaterialWrapper blutonium = new MaterialWrapper("ref_", "blutonium", 0x4642D6);
     public static MaterialWrapper cyanite = new MaterialWrapper("ref_", "cyanite", 0x5CAFDB);
 
-    // environmental tech
-    public static MaterialWrapper litherite = new MaterialWrapper("ref_", "litherite", 0xD9DB5C);
-    public static MaterialWrapper erodium = new MaterialWrapper("ref_", "erodium", 0xDD5EDD);
-    public static MaterialWrapper kyronite = new MaterialWrapper("ref_", "kyronite", 0x4642D6);
-    public static MaterialWrapper pladium = new MaterialWrapper("ref_", "pladium", 0x5CAFDB);
-    public static MaterialWrapper ionite = new MaterialWrapper("ref_", "ionite", 0x5CAFDB);
-    public static MaterialWrapper aethium = new MaterialWrapper("ref_", "aethium", 0x5CAFDB);
-
     // mekanism MaterialWrappers
     public static MaterialWrapper osmium = new MaterialWrapper("ref_", "osmium", 0x7F8EB2);
     public static MaterialWrapper refined_obsidian = new MaterialWrapper("ref_", "refined_obsidian", 0x463763);

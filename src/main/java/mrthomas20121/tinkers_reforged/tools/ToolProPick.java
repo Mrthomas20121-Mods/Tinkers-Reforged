@@ -6,8 +6,6 @@ import com.oitsjustjose.geolosys.common.api.world.DepositMultiOre;
 import com.oitsjustjose.geolosys.common.api.world.DepositStone;
 import com.oitsjustjose.geolosys.common.api.world.IOre;
 import com.oitsjustjose.geolosys.common.config.ModConfig;
-import com.oitsjustjose.geolosys.common.items.ItemProPick;
-import mrthomas20121.tinkers_reforged.modules.ModuleTools;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -33,7 +31,7 @@ public class ToolProPick extends AoeToolCore {
     public ToolProPick()
     {
         super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(ModuleTools.propickHead),
+                PartMaterialType.head(Tools.propickHead),
                 PartMaterialType.extra(TinkerTools.binding));
     }
 

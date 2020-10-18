@@ -1,15 +1,12 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.biolib.common.SmelteryUtils;
 import mrthomas20121.biolib.common.OredictHelper;
 import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.biolib.util.FluidUtils;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -32,7 +29,7 @@ public class ModuleBlueSkies implements ModuleBase {
         gemStats.setExtraMaterialStats(10);
         gemStats.setBowMaterialStats(1.5f, 5.2f, 3.2f);
 
-        if(ConfigMaterials.horizonite) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.horizonite.getMaterial().getIdentifier())) {
             Resources.horizonite.addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
             Resources.horizonite.addTrait(Traits.pyromancy);
             Resources.horizonite.createMaterial(gemStats);
@@ -43,7 +40,7 @@ public class ModuleBlueSkies implements ModuleBase {
             }
             Resources.materials.add(Resources.horizonite);
         }
-        if(ConfigMaterials.pyrope) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.pyrope.getMaterial().getIdentifier())) {
             Resources.pyrope.addTrait(Traits.traitFast, MaterialTypes.HEAD);
             Resources.pyrope.addTrait(TinkerTraits.sharp);
             Resources.pyrope.createGemMaterial(gemStats);
@@ -55,7 +52,7 @@ public class ModuleBlueSkies implements ModuleBase {
             Resources.materials.add(Resources.pyrope);
         }
 
-        if(ConfigMaterials.charoite) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.charoite.getMaterial().getIdentifier())) {
             MaterialStats charoiteStats = new MaterialStats();
             charoiteStats.setHeadMaterialStats(400, 8f, 8f, HarvestLevels.DIAMOND);
             charoiteStats.setHandleMaterialStats(1.5f, 100);

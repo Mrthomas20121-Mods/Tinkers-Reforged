@@ -1,6 +1,6 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "tinkers_reforged:items/lightblade/blade"
+        "layer0": "tinkers_reforged:items/lightsword/blade"
     }
 }

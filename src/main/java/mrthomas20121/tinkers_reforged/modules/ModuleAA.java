@@ -2,17 +2,15 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.common.OredictHelper;
-import mrthomas20121.biolib.common.SmelteryUtils;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 
 import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
 import de.ellpeck.actuallyadditions.mod.items.*;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -21,9 +19,6 @@ import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
-
-import static slimeknights.tconstruct.smeltery.TinkerSmeltery.castIngot;
-import static slimeknights.tconstruct.smeltery.TinkerSmeltery.castNugget;
 
 public class ModuleAA implements ModuleBase {
 
@@ -39,7 +34,7 @@ public class ModuleAA implements ModuleBase {
         gemStats.setExtraMaterialStats(100);
         gemStats.setBowMaterialStats(2f, 1.4f, 7f);
 
-        if(ConfigMaterials.blackquartz)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.blackquartz.getMaterial().getIdentifier()))
         {
             Resources.blackquartz.addTrait(TinkerTraits.crude2, MaterialTypes.HEAD);
             Resources.blackquartz.addTrait(TinkerTraits.sharp);
@@ -53,7 +48,7 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.blackquartz);
         }
 
-        if(ConfigMaterials.enori)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.enori.getMaterial().getIdentifier()))
         {
             Resources.enori.addTrait(Traits.starry_night, MaterialTypes.HEAD);
             Resources.enori.addTrait(Traits.starshaped);
@@ -67,7 +62,7 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.enori);
         }
 
-        if(ConfigMaterials.void_crystal)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.void_crystal.getMaterial().getIdentifier()))
         {
             Resources.void_crystal.addTrait(Traits.void_trait);
             Resources.void_crystal.createGemMaterial(gemStats);
@@ -80,7 +75,7 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.void_crystal);
         }
 
-        if(ConfigMaterials.emeradic)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.emeradic.getMaterial().getIdentifier()))
         {
             Resources.emeradic.addTrait(Traits.villager_love, MaterialTypes.HEAD);
             Resources.emeradic.addTrait(Traits.curse);
@@ -94,7 +89,7 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.emeradic);
         }
 
-        if(ConfigMaterials.palis)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.palis.getMaterial().getIdentifier()))
         {
             Resources.palis.addTrait(Traits.rose);
             Resources.palis.createGemMaterial(gemStats);
@@ -107,7 +102,7 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.palis);
         }
 
-        if(ConfigMaterials.restonia)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.restonia.getMaterial().getIdentifier()))
         {
             Resources.restonia.addTrait(Traits.flux);
             Resources.restonia.createGemMaterial(gemStats);
@@ -120,7 +115,7 @@ public class ModuleAA implements ModuleBase {
             Resources.materials.add(Resources.restonia);
         }
 
-        if(ConfigMaterials.diamatine)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.diamatine.getMaterial().getIdentifier()))
         {
             Resources.diamatine.addTrait(Traits.carbon);
             Resources.diamatine.createGemMaterial(gemStats);

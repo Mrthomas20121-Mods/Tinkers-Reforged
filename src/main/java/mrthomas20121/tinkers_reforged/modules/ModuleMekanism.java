@@ -3,11 +3,10 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -30,7 +29,7 @@ public class ModuleMekanism implements ModuleBase {
         refined.setExtraMaterialStats(50);
         refined.setBowMaterialStats(2.9f, 7, 5.1f);
 
-        if(ConfigMaterials.refined_obsidian) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.refined_obsidian.getMaterial().getIdentifier())) {
             Resources.refined_obsidian.addTrait(Traits.refined, MaterialTypes.HEAD);
             Resources.refined_obsidian.addTrait(TinkerTraits.duritos);
             Resources.refined_obsidian.createMaterial(refined);
@@ -41,7 +40,7 @@ public class ModuleMekanism implements ModuleBase {
             }
             Resources.materials.add(Resources.refined_obsidian);
         }
-        if(ConfigMaterials.refined_glowstone) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.refined_glowstone.getMaterial().getIdentifier())) {
 
             Resources.refined_glowstone.addTrait(Traits.refined, MaterialTypes.HEAD);
             Resources.refined_glowstone.addTrait(Traits.light);
@@ -53,7 +52,7 @@ public class ModuleMekanism implements ModuleBase {
             }
             Resources.materials.add(Resources.refined_glowstone);
         }
-        if(ConfigMaterials.osmium) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.osmium.getMaterial().getIdentifier())) {
             MaterialStats osmium = new MaterialStats();
             osmium.setHeadMaterialStats(410, 5.5f, 5.5f, HarvestLevels.DIAMOND);
             osmium.setHandleMaterialStats(1.2f, 80);

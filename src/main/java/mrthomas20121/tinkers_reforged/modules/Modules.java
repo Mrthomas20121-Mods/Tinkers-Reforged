@@ -1,7 +1,8 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.tinkers_reforged.config.ConfigModule;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -27,62 +28,62 @@ public class Modules {
     public static final ModuleProjectRedCore project_red_core = new ModuleProjectRedCore();
     public static final ModuleItems moduleItems = new ModuleItems();
     // tool module
-    public static final ModuleTools tools = new ModuleTools();
+    public static final Tools tools = new Tools();
 
     public static void preInit(FMLPreInitializationEvent event) {
         moduleItems.preInit(event);
         common_materials_module.preInit(event);
 
-        if(Loader.isModLoaded("actuallyadditions") && ConfigModule.actuallyadditions) {
+        if(isLoaded("actuallyadditions")) {
             aa = new ModuleAA();
             aa.preInit(event);
         }
-        if(Loader.isModLoaded("appliedenergistics2") && ConfigModule.appliedenergistics) {
+        if(isLoaded("appliedenergistics2")) {
             ae.preInit(event);
         }
-        if(Loader.isModLoaded("astralsorcery") && ConfigModule.astralsorcery) {
+        if(isLoaded("astralsorcery")) {
             astral.preInit(event);
         }
-        if(Loader.isModLoaded("atum") && ConfigModule.atum) {
+        if(isLoaded("atum")) {
             atum = new ModuleAtum();
             atum.preInit(event);
         }
-        if(Loader.isModLoaded("bigreactors") && ConfigModule.bigreactors) {
-            extreme.preInit(event);
-        }
-        if(Loader.isModLoaded("blue_skies") && ConfigModule.blueskies) {
+        if(isLoaded("blue_skies")) {
             blueskies = new ModuleBlueSkies();
             blueskies.preInit(event);
         }
-        if(Loader.isModLoaded("botania") && ConfigModule.botania)
+        if(isLoaded("botania"))
         {
             botania.preInit(event);
         }
-        if(Loader.isModLoaded("cavern") && ConfigModule.cavernII)
+        if(isLoaded("cavern"))
         {
             cavernII.preInit(event);
         }
-        if(Loader.isModLoaded("mekanism") && ConfigModule.mekanism) {
+        if(isLoaded("bigreactors")) {
+            extreme.preInit(event);
+        }
+        if(isLoaded("mekanism")) {
             mekanism.preInit(event);
         }
-        if(Loader.isModLoaded("naturesaura") && ConfigModule.naturesaura) {
+        if(isLoaded("naturesaura")) {
             natureAura.preInit(event);
         }
-        if(Loader.isModLoaded("pixelmon") && ConfigModule.pixelmon_reforged) {
+        if(isLoaded("pixelmon")) {
             pixelmon_reforged = new ModulePixelmon();
             pixelmon_reforged.preInit(event);
         }
-        if(Loader.isModLoaded("projectred-core") && ConfigModule.projectred_core) {
+        if(isLoaded("projectred-core")) {
             project_red_core.preInit(event);
         }
-        if(Loader.isModLoaded("roots") && ConfigModule.roots) {
+        if(isLoaded("roots")) {
             roots.preInit(event);
         }
-        if(Loader.isModLoaded("thaumcraft") && ConfigModule.thermalfoundation) {
+        if(isLoaded("thaumcraft")) {
             thaumcraft = new ModuleThaumcraft();
             thaumcraft.preInit(event);
         }
-        if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
+        if(isLoaded("thermalfoundation")) {
             thermal.preInit(event);
         }
     }
@@ -91,61 +92,64 @@ public class Modules {
         moduleItems.init(event);
         common_materials_module.init(event);
 
-        if(Loader.isModLoaded("actuallyadditions") && ConfigModule.actuallyadditions) {
-            aa = new ModuleAA();
+        if(isLoaded("actuallyadditions")) {
             aa.init(event);
         }
-        if(Loader.isModLoaded("appliedenergistics2") && ConfigModule.appliedenergistics) {
+        if(isLoaded("appliedenergistics2")) {
             ae.init(event);
         }
-        if(Loader.isModLoaded("astralsorcery") && ConfigModule.astralsorcery) {
+        if(isLoaded("astralsorcery")) {
             astral.init(event);
         }
-        if(Loader.isModLoaded("atum") && ConfigModule.atum) {
+        if(isLoaded("atum")) {
             atum.init(event);
         }
-        if(Loader.isModLoaded("bigreactors") && ConfigModule.bigreactors) {
-            extreme.init(event);
-        }
-        if(Loader.isModLoaded("blue_skies") && ConfigModule.blueskies) {
+        if(isLoaded("blue_skies")) {
             blueskies.init(event);
         }
-        if(Loader.isModLoaded("botania") && ConfigModule.botania)
+        if(isLoaded("botania"))
         {
             botania.init(event);
         }
-        if(Loader.isModLoaded("cavern") && ConfigModule.cavernII)
+        if(isLoaded("cavern"))
         {
             cavernII.init(event);
         }
-        if(Loader.isModLoaded("mekanism") && ConfigModule.mekanism) {
+        if(isLoaded("bigreactors")) {
+            extreme.init(event);
+        }
+        if(isLoaded("mekanism")) {
             mekanism.init(event);
         }
-        if(Loader.isModLoaded("naturesaura") && ConfigModule.naturesaura) {
+        if(isLoaded("naturesaura")) {
             natureAura.init(event);
         }
-        if(Loader.isModLoaded("pixelmon") && ConfigModule.pixelmon_reforged) {
-            pixelmon_reforged = new ModulePixelmon();
+        if(isLoaded("pixelmon")) {
             pixelmon_reforged.init(event);
         }
-        if(Loader.isModLoaded("projectred-core") && ConfigModule.projectred_core) {
+        if(isLoaded("projectred-core")) {
             project_red_core.init(event);
         }
-        if(Loader.isModLoaded("roots") && ConfigModule.roots) {
+        if(isLoaded("roots")) {
             roots.init(event);
         }
-        if(Loader.isModLoaded("thaumcraft") && ConfigModule.thermalfoundation) {
+        if(isLoaded("thaumcraft")) {
             thaumcraft.init(event);
         }
-        if(Loader.isModLoaded("thermalfoundation") && ConfigModule.thermalfoundation) {
+        if(isLoaded("thermalfoundation")) {
             thermal.init(event);
         }
     }
 
     public static void postInit(FMLPostInitializationEvent event) {
-        if(Loader.isModLoaded("atum") && ConfigModule.atum) {
+        if(isLoaded("atum")) {
             atum.postInit(event);
         }
         moduleItems.postInit(event);
+    }
+
+    public static boolean isLoaded(String modid)
+    {
+        return Loader.isModLoaded(modid) && !TinkersReforgedConfig.SettingMaterials.containModules(modid);
     }
 }

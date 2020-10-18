@@ -6,6 +6,7 @@ import mrthomas20121.tinkers_reforged.modules.*;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import mrthomas20121.tinkers_reforged.resources.Resources;
+import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
@@ -60,40 +61,40 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerToolCrafting()
     {
-        if(ModuleTools.gladius != null)
+        if(Tools.gladius != null)
         {
-            ToolBuildGuiInfo gladiusGui = new ToolBuildGuiInfo(ModuleTools.gladius);
+            ToolBuildGuiInfo gladiusGui = new ToolBuildGuiInfo(Tools.gladius);
             gladiusGui.addSlotPosition(33 - 20 - 1, 42 + 20);
             gladiusGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
             gladiusGui.addSlotPosition(33 - 2 - 1, 42 + 2);
             TinkerRegistryClient.addToolBuilding(gladiusGui);
         }
-        if(ModuleTools.knife != null)
+        if(Tools.knife != null)
         {
-            ToolBuildGuiInfo runedKnifeGui = new ToolBuildGuiInfo(ModuleTools.knife);
+            ToolBuildGuiInfo runedKnifeGui = new ToolBuildGuiInfo(Tools.knife);
             runedKnifeGui.addSlotPosition(33 - 20 - 1, 42 + 20);
             runedKnifeGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
             runedKnifeGui.addSlotPosition(33 - 2 - 1, 42 + 2);
             TinkerRegistryClient.addToolBuilding(runedKnifeGui);
         }
-        if(ModuleTools.club != null)
+        if(Tools.club != null)
         {
-            ToolBuildGuiInfo clubGui = new ToolBuildGuiInfo(ModuleTools.club);
+            ToolBuildGuiInfo clubGui = new ToolBuildGuiInfo(Tools.club);
             clubGui.addSlotPosition(33 - 20 - 1, 42 + 20);
             clubGui.addSlotPosition(33 - 2 - 1, 42 + 2);
             TinkerRegistryClient.addToolBuilding(clubGui);
         }
-        if(ModuleTools.greatsword != null)
+        if(Tools.greatsword != null)
         {
-            ToolBuildGuiInfo greatSwordGui = new ToolBuildGuiInfo(ModuleTools.greatsword);
+            ToolBuildGuiInfo greatSwordGui = new ToolBuildGuiInfo(Tools.greatsword);
             greatSwordGui.addSlotPosition(33 - 20 - 1, 42 + 20);
             greatSwordGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
             greatSwordGui.addSlotPosition(33 - 2 - 1, 42 + 2);
             TinkerRegistryClient.addToolBuilding(greatSwordGui);
         }
-        if(ModuleTools.khopesh != null)
+        if(Tools.khopesh != null)
         {
-            ToolBuildGuiInfo khopeshGui = new ToolBuildGuiInfo(ModuleTools.khopesh);
+            ToolBuildGuiInfo khopeshGui = new ToolBuildGuiInfo(Tools.khopesh);
             khopeshGui.addSlotPosition(33 - 20 - 1, 42 + 20);
             khopeshGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
             khopeshGui.addSlotPosition(33 - 2 - 1, 42 + 2);

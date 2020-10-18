@@ -35,6 +35,7 @@ public class ModuleFluids {
     public static void registerFluidBlock(IForgeRegistry<Block> r, Fluid f) {
         BlockFluidMolten fluidBlock = new BlockFluidMolten(f);
         fluidBlock.setRegistryName(TinkersReforged.MODID, "molten_"+f.getName());
+        fluidBlock.setTranslationKey(TinkersReforged.MODID+"."+f.getName());
         f.setUnlocalizedName(f.getName());
         ItemBlock itemBlock = new ItemBlock(fluidBlock);
         itemBlock.setRegistryName(fluidBlock.getRegistryName());

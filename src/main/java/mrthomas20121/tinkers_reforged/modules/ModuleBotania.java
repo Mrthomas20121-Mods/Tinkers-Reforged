@@ -3,8 +3,8 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.config.ConfigReforged;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.item.ItemStack;
@@ -18,7 +18,6 @@ import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.MaterialTypes;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
-import slimeknights.tconstruct.tools.TinkerMaterials;
 import slimeknights.tconstruct.tools.TinkerTraits;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.recipe.RecipeManaInfusion;
@@ -40,7 +39,7 @@ public class ModuleBotania implements ModuleBase {
         living.setExtraMaterialStats(0);
         living.setBowMaterialStats(0.9f, 1.7f, 5f);
 
-        if(ConfigMaterials.manasteel)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.manasteel.getMaterial().getIdentifier()))
         {
             MaterialStats manasteelStats = new MaterialStats();
             manasteelStats.setHeadMaterialStats(204, 6f, 4f, HarvestLevels.DIAMOND);
@@ -57,14 +56,14 @@ public class ModuleBotania implements ModuleBase {
                 armorUtils.setArmorStats(Resources.manasteel, manasteelStats, 1f);
             }
         }
-        if(ConfigMaterials.livingwood)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.livingwood.getMaterial().getIdentifier()))
         {
             Resources.livingwood.setOredict("");
             Resources.livingwood.addTrait(Traits.traitLiving, MaterialTypes.HEAD);
             Resources.livingwood.addTrait(TinkerTraits.cheapskate);
             Resources.livingwood.createMaterial(living, "livingwood");
         }
-        if(ConfigMaterials.livingrock)
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.livingrock.getMaterial().getIdentifier()))
         {
             Resources.livingrock.setOredict("");
             Resources.livingrock.addTrait(Traits.traitLiving, MaterialTypes.HEAD);
@@ -87,15 +86,15 @@ public class ModuleBotania implements ModuleBase {
 
         for(IToolPart part : TinkerRegistry.getToolParts())
         {
-            if(part.canUseMaterial(Resources.manasteel.getMaterial()) && ConfigMaterials.manasteel)
+            if(part.canUseMaterial(Resources.manasteel.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.manasteel.getMaterial().getIdentifier()))
             {
                 BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.getMaterial()), part.getItemstackWithMaterial(manasteel), ConfigReforged.mana));
             }
-            if(part.canUseMaterial(Resources.livingrock.getMaterial()) && ConfigMaterials.livingrock)
+            if(part.canUseMaterial(Resources.livingrock.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.livingrock.getMaterial().getIdentifier()))
             {
                 BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.getMaterial()), part.getItemstackWithMaterial(livingrock), ConfigReforged.mana));
             }
-            if(part.canUseMaterial(Resources.livingwood.getMaterial()) && ConfigMaterials.livingwood)
+            if(part.canUseMaterial(Resources.livingwood.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.livingwood.getMaterial().getIdentifier()))
             {
                 BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.getMaterial()), part.getItemstackWithMaterial(livingwood), ConfigReforged.mana));
             }

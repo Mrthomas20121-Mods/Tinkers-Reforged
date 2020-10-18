@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.tools;
 
-import mrthomas20121.tinkers_reforged.modules.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityMob;
@@ -20,7 +19,7 @@ public class SwordLight extends SwordCore {
     public SwordLight()
     {
         super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(ModuleTools.lightblade),
+                PartMaterialType.head(Tools.lightblade),
                 PartMaterialType.extra(TinkerTools.wideGuard));
         this.addCategory(Category.WEAPON);
     }

@@ -3,12 +3,11 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -29,7 +28,7 @@ public class ModuleNatureAura implements ModuleBase {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
 
-        if(ConfigMaterials.material_of_the_sky) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.ingot_of_the_sky.getMaterial().getIdentifier())) {
 
             MaterialStats sky = new MaterialStats();
             sky.setHeadMaterialStats(204, 6.05f, 4.20f, HarvestLevels.DIAMOND);
@@ -47,7 +46,7 @@ public class ModuleNatureAura implements ModuleBase {
             }
             Resources.materials.add(Resources.ingot_of_the_sky);
         }
-        if (ConfigMaterials.infused_iron) {
+        if (TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.infused_iron.getMaterial().getIdentifier())) {
             MaterialStats iron = new MaterialStats();
             iron.setHeadMaterialStats(204, 6.00f, 4.00f, HarvestLevels.DIAMOND);
             iron.setHandleMaterialStats(0.85f, 60);
@@ -64,7 +63,7 @@ public class ModuleNatureAura implements ModuleBase {
             }
             Resources.materials.add(Resources.infused_iron);
         }
-        if (ConfigMaterials.ancient_wood) {
+        if (TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.ancient_wood.getMaterial().getIdentifier())) {
             MaterialStats ancient_wood_stats = new MaterialStats();
             ancient_wood_stats.setHeadMaterialStats(100, 2.3f, 1.2f, HarvestLevels.STONE);
             ancient_wood_stats.setBowStringMaterialStats(1.5f);

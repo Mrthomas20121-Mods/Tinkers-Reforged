@@ -3,8 +3,8 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.config.ConfigMaterials;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -27,7 +27,7 @@ public class ModuleAe implements ModuleBase {
         stats.setExtraMaterialStats(70);
         stats.setBowMaterialStats(5.2f, 1.2f, 3f);
 
-        if(ConfigMaterials.certus_quartz) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.certus_quartz.getMaterial().getIdentifier())) {
 
             Resources.certus_quartz.addTrait(TinkerTraits.jagged, MaterialTypes.HEAD);
             Resources.certus_quartz.addTrait(TinkerTraits.fractured);
@@ -42,7 +42,7 @@ public class ModuleAe implements ModuleBase {
             }
             Resources.materials.add(Resources.certus_quartz);
         }
-        if(ConfigMaterials.fluix_crystal) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.fluix_crystal.getMaterial().getIdentifier())) {
             Resources.fluix_crystal.setOredict("Fluix");
             Resources.fluix_crystal.addTrait(Traits.flux, MaterialTypes.HEAD);
             Resources.fluix_crystal.addTrait(Traits.signal);

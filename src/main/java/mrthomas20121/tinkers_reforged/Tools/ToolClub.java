@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.tools;
 
-import mrthomas20121.tinkers_reforged.modules.ModuleTools;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,7 +21,7 @@ public class ToolClub extends SwordCore {
 
     public ToolClub() {
         super(PartMaterialType.handle(TinkerTools.toughToolRod),
-                PartMaterialType.head(ModuleTools.clubHead));
+                PartMaterialType.head(Tools.clubHead));
         this.addCategory(Category.WEAPON);
     }
 
