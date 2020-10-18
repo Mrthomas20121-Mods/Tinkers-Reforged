@@ -66,18 +66,12 @@ public class ModuleNatureAura implements ModuleBase {
         if (TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.ancient_wood.getMaterial().getIdentifier())) {
             MaterialStats ancient_wood_stats = new MaterialStats();
             ancient_wood_stats.setHeadMaterialStats(100, 2.3f, 1.2f, HarvestLevels.STONE);
-            ancient_wood_stats.setBowStringMaterialStats(1.5f);
             ancient_wood_stats.setArrowShaftMaterialStats(1.5f, 2);
             ancient_wood_stats.setBowMaterialStats(1.2f, 0.5f, 19f);
 
             Resources.ancient_wood.addTrait(TinkerTraits.ecological);
-            Resources.ancient_wood.getMaterial().addItem(new ItemStack(ModBlocks.ANCIENT_PLANKS, 1), 1, 144);
             Resources.ancient_wood.addWood(new ItemStack(ModBlocks.ANCIENT_PLANKS), new ItemStack(ModBlocks.ANCIENT_LOG));
             Resources.ancient_wood.createWoodMaterial(ancient_wood_stats);
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.ancient_wood, ancient_wood_stats, 0);
-            }
             Resources.materials.add(Resources.ancient_wood);
         }
     }
