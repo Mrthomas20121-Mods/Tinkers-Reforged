@@ -19,4 +19,4 @@
 * Project Red Exploration(as of 1.4.0)
 * Libvulpe/advanced rocketry(as of 1.4.0)
 * Thaumcraft(as of 1.4.0)
-Compatible with others addons such as plustic, Tinkers Evolution, Metarialis.
+## Compatible with others addons such as plustic, Tinkers Evolution, Metarialis.
