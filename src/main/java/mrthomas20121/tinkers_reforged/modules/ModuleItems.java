@@ -11,7 +11,6 @@ import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 import mrthomas20121.biolib.common.OredictHelper;
-import mrthomas20121.tinkers_reforged.config.ConfigReforged;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -105,7 +104,7 @@ public class ModuleItems implements ModuleBase {
         }
     }
     public void init(FMLInitializationEvent e) {
-        if(ConfigReforged.alloyrecipes)
+        if(TinkersReforgedConfig.SettingGeneral.enableAlloyRecipes)
         {
             FluidStack ardite = new FluidStack(FluidRegistry.getFluid("ardite"), 288);
             FluidStack purpleslime = new FluidStack(FluidRegistry.getFluid("purpleslime"), 144);
@@ -127,7 +126,7 @@ public class ModuleItems implements ModuleBase {
         new FluidStack(FluidUtils.getFluid("kovar"), Material.VALUE_Block),
         true, true));
 
-        for(String fuel : ConfigReforged.fuels)
+        for(String fuel : TinkersReforgedConfig.SettingGeneral.fuels)
         {
             String[] entries = fuel.split(":");
             if(Loader.isModLoaded(entries[0]))

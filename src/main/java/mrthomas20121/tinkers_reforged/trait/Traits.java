@@ -32,4 +32,5 @@ public class Traits {
     public static final TraitBackfire traitBackfire = new TraitBackfire();
     public static final TraitLeafBlower traitLeafblower = new TraitLeafBlower();
     public static final TraitCrystalSurge traitCrystalSurge = new TraitCrystalSurge();
+    public static final TraitEndersteel traitEnderSteel = new TraitEndersteel();
 }

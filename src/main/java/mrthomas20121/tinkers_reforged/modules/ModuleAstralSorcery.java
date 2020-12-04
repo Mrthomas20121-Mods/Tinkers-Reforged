@@ -5,7 +5,6 @@ import hellfirepvp.astralsorcery.common.crafting.infusion.recipes.BasicInfusionR
 import mrthomas20121.biolib.common.ModuleBase;
 import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.config.ConfigReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
 import mrthomas20121.tinkers_reforged.resources.Resources;
@@ -54,7 +53,7 @@ public class ModuleAstralSorcery implements ModuleBase {
         {
             if(part.canUseMaterial(Resources.starmetal.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.starmetal.getMaterial().getIdentifier()))
             {
-                InfusionRecipeRegistry.recipes.add(new BasicInfusionRecipe(part.getItemstackWithMaterial(Resources.starmetal.getMaterial()), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(ConfigReforged.materialStarmetal))));
+                InfusionRecipeRegistry.recipes.add(new BasicInfusionRecipe(part.getItemstackWithMaterial(Resources.starmetal.getMaterial()), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.materialStarmetal))));
             }
         }
     }

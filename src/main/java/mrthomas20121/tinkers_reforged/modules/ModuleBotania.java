@@ -5,7 +5,6 @@ import mrthomas20121.biolib.objects.material.MaterialStats;
 import mrthomas20121.biolib.util.armorUtils;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.config.ConfigReforged;
 import mrthomas20121.tinkers_reforged.resources.Resources;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
@@ -79,7 +78,7 @@ public class ModuleBotania implements ModuleBase {
         OreDictionary.registerOre("blockTerrasteel", new ItemStack(ModBlocks.storage, 1, 1));
         OreDictionary.registerOre("blockElementium", new ItemStack(ModBlocks.storage, 1, 2));
 
-        String[] data = ConfigReforged.materialsBotania.split(":");
+        String[] data = TinkersReforgedConfig.SettingGeneral.infusionMaterials.split(":");
         Material manasteel = TinkerRegistry.getMaterial(data[0]);
         Material livingwood = TinkerRegistry.getMaterial(data[1]);
         Material livingrock = TinkerRegistry.getMaterial(data[2]);
@@ -88,15 +87,15 @@ public class ModuleBotania implements ModuleBase {
         {
             if(part.canUseMaterial(Resources.manasteel.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.manasteel.getMaterial().getIdentifier()))
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.getMaterial()), part.getItemstackWithMaterial(manasteel), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.manasteel.getMaterial()), part.getItemstackWithMaterial(manasteel), TinkersReforgedConfig.SettingGeneral.manaCost));
             }
             if(part.canUseMaterial(Resources.livingrock.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.livingrock.getMaterial().getIdentifier()))
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.getMaterial()), part.getItemstackWithMaterial(livingrock), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingrock.getMaterial()), part.getItemstackWithMaterial(livingrock), TinkersReforgedConfig.SettingGeneral.manaCost));
             }
             if(part.canUseMaterial(Resources.livingwood.getMaterial()) && TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.livingwood.getMaterial().getIdentifier()))
             {
-                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.getMaterial()), part.getItemstackWithMaterial(livingwood), ConfigReforged.mana));
+                BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(Resources.livingwood.getMaterial()), part.getItemstackWithMaterial(livingwood), TinkersReforgedConfig.SettingGeneral.manaCost));
             }
         }
     }
