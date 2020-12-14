@@ -1,86 +1,77 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.resources.Resources;
-import net.minecraftforge.fml.common.Loader;
+import mrthomas20121.tinkers_reforged.trait.*;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.materials.MaterialTypes;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
 public class ModuleThermal implements ModuleBase {
 
-    public ModuleThermal() {
-    }
+    MaterialGen enderium = new MaterialGen("enderium", 0x006C5F, "Enderium", 1200);
+    MaterialGen lumium = new MaterialGen("lumium", 0xEAD981, "Lumium", 1200);
+    MaterialGen signalum = new MaterialGen("signalum", 0xA32500, "Signalum", 1200);
+
     @Override
-    public void preInit(FMLPreInitializationEvent e) {
-
-        MaterialStats baseStats = new MaterialStats();
-        baseStats.setHeadMaterialStats(500, 7.3f, 6.9f, HarvestLevels.OBSIDIAN);
-        baseStats.setHandleMaterialStats(1.2f, 90);
-        baseStats.setExtraMaterialStats(80);
-        baseStats.setBowMaterialStats(7.3f, 2, 7f);
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.enderium.getMaterial().getIdentifier()))
-        {
-
-            MaterialStats enderiumStats = new MaterialStats();
-            enderiumStats.setHeadMaterialStats(750, 9.2f, 8.5f, HarvestLevels.COBALT);
-            enderiumStats.setHandleMaterialStats(0.99f, 190);
-            enderiumStats.setExtraMaterialStats(90);
-            enderiumStats.setBowMaterialStats(9.2f, 3.5f, 8.5f);
-
-            Resources.enderium.setTemp(1900);
-            Resources.enderium.addTrait(Traits.enderfestation);
-            Resources.enderium.addTrait(Traits.traitTeleport);
-            Resources.enderium.addTrait(Traits.ender, MaterialTypes.HEAD);
-            Resources.enderium.createMaterial(enderiumStats);
-            Resources.materials.add(Resources.enderium);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.enderium, enderiumStats, 2);
-            }
+    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(enderium.getIdentifier())) {
+            enderium.getMaterial().addTrait(new TraitEnderfestation());
+            enderium.getMaterial().addTrait(new TraitEnder(), MaterialTypes.HEAD);
+            TinkerRegistry.addMaterial(enderium.getMaterial());
+            TinkerRegistry.addMaterialStats(enderium.getMaterial(),
+                    new HeadMaterialStats(750, 9.2f, 8.5f, HarvestLevels.COBALT),
+                    new HandleMaterialStats(0.99f, 190),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(9.2f, 3.5f, 8.5f));
         }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.signalum.getMaterial().getIdentifier()))
-        {
-            Resources.signalum.setTemp(1500);
-            Resources.signalum.addTrait(Traits.flux, MaterialTypes.HEAD);
-            Resources.signalum.addTrait(Traits.signal);
-            Resources.signalum.createMaterial(baseStats);
-            Resources.materials.add(Resources.signalum);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.signalum, baseStats, 1);
-            }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(lumium.getIdentifier())) {
+            lumium.getMaterial().addTrait(new TraitBright());
+            lumium.getMaterial().addTrait(new TraitRod(), MaterialTypes.HEAD);
+            TinkerRegistry.addMaterial(lumium.getMaterial());
+            TinkerRegistry.addMaterialStats(lumium.getMaterial(),
+                    new HeadMaterialStats(500, 9.2f, 8.5f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(0.99f, 190),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(5.2f, 1.5f, 10));
         }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.lumium.getMaterial().getIdentifier()))
-        {
-            Resources.lumium.setTemp(1500);
-            Resources.lumium.addTrait(Traits.light);
-            Resources.lumium.addTrait(Traits.traitRod, MaterialTypes.HEAD);
-            Resources.lumium.createMaterial(baseStats);
-            Resources.materials.add(Resources.lumium);
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.lumium, baseStats, 1);
-            }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(signalum.getIdentifier())) {
+            signalum.getMaterial().addTrait(new TraitTeleport());
+            signalum.getMaterial().addTrait(new TraitFlux(), MaterialTypes.HEAD);
+            TinkerRegistry.addMaterial(signalum.getMaterial());
+            TinkerRegistry.addMaterialStats(signalum.getMaterial(),
+                    new HeadMaterialStats(500, 9.2f, 8.5f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(0.99f, 190),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(5.2f, 1.5f, 10));
         }
     }
-    @Override
-    public void init(FMLInitializationEvent e) {
 
-    }
     @Override
-    public void postInit(FMLPostInitializationEvent e) {
+    public void init(FMLInitializationEvent fmlInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(enderium.getIdentifier())) {
+            enderium.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(lumium.getIdentifier())) {
+            lumium.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(signalum.getIdentifier())) {
+            signalum.init();
+        }
+        Fluid pyrotheum = FluidRegistry.getFluid("pyrotheum");
+        pyrotheum.setTemperature(2000);
+        if(TinkersReforgedConfig.SettingGeneral.pyrotheum) TinkerRegistry.registerSmelteryFuel(new FluidStack(pyrotheum, 1000), 500);
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
 
     }
 }

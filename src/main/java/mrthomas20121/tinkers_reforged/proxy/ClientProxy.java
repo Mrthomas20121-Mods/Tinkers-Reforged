@@ -1,11 +1,9 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
 import mrthomas20121.biolib.objects.book.BookHelper;
-import mrthomas20121.biolib.objects.material.MaterialWrapper;
-import mrthomas20121.tinkers_reforged.modules.*;
+import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
-import mrthomas20121.tinkers_reforged.resources.Resources;
 import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -23,6 +21,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
+import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
@@ -45,9 +44,8 @@ public class ClientProxy extends CommonProxy {
     @SideOnly(Side.CLIENT)
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-        for (MaterialWrapper resource : Resources.materials) {
-            resource.getMaterial().setRenderInfo(resource.getMaterial().materialTextColor);
-        }
+
+        TinkerRegistry.getAllMaterials().forEach((material) -> { if(material.getIdentifier().contains("ref_")) material.setRenderInfo(material.materialTextColor); });
     }
     @Override
     public <T extends Item & IToolPart> void registerToolPartModel(T part) {
@@ -116,19 +114,8 @@ public class ClientProxy extends CommonProxy {
     }
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        TinkersReforged.getLogger().info("Loading Model");
-        ArrayList<Item> items = ModuleItems.genArrayList();
-        for(Item item : items) {
+        for(Item item : ReforgedRegistry.getItems()) {
             ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
-        for(ItemBlock itemBlock: ModuleFluids.blockFluids) {
-            ModelLoader.setCustomModelResourceLocation(itemBlock, 0, new ModelResourceLocation(itemBlock.getRegistryName(), "normal"));
-            ModelLoader.setCustomStateMapper(itemBlock.getBlock(), new StateMapperBase() {
-                @Override
-                public ModelResourceLocation getModelResourceLocation(IBlockState state) {
-                    return new ModelResourceLocation(itemBlock.getRegistryName(), "normal");
-                }});
-        }
-        ModuleItems.InitModels();
     }
 }

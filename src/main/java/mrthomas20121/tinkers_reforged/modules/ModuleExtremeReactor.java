@@ -1,86 +1,79 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.biolib.util.armorUtils;
+import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.resources.Resources;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.BowMaterialStats;
+import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
+import slimeknights.tconstruct.library.materials.HandleMaterialStats;
+import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
 public class ModuleExtremeReactor implements ModuleBase {
 
-    public ModuleExtremeReactor() {
+    MaterialGen yellorium = new MaterialGen("yellorium", 0xD9DB5C, "Yellorium", 800);
+    MaterialGen cyanite = new MaterialGen("cyanite", 0x5CAFDB, "Cyanite", 800);
+    MaterialGen ludicrite = new MaterialGen("ludicrite", 0xDD5EDD, "Ludicrite", 800);
+    MaterialGen blutonium = new MaterialGen("blutonium", 0x4642D6, "Blutonium", 1000);
+
+    @Override
+    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(yellorium.getIdentifier())) {
+            TinkerRegistry.addMaterial(yellorium.getMaterial());
+            TinkerRegistry.addMaterialStats(yellorium.getMaterial(),
+                    new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(1.1f, 100),
+                    new ExtraMaterialStats(5),
+                    new BowMaterialStats(5.3f, 5.5f, 5.3f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(cyanite.getIdentifier())) {
+            TinkerRegistry.addMaterial(cyanite.getMaterial());
+            TinkerRegistry.addMaterialStats(cyanite.getMaterial(),
+                    new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(1.1f, 30),
+                    new ExtraMaterialStats(5),
+                    new BowMaterialStats(2.3f, 5.2f, 4.3f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(ludicrite.getIdentifier())) {
+            TinkerRegistry.addMaterial(ludicrite.getMaterial());
+            TinkerRegistry.addMaterialStats(ludicrite.getMaterial(),
+                    new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(1.1f, 100),
+                    new ExtraMaterialStats(5),
+                    new BowMaterialStats(7.1f, 5.1f, 3.1f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blutonium.getIdentifier())) {
+            TinkerRegistry.addMaterial(blutonium.getMaterial());
+            TinkerRegistry.addMaterialStats(blutonium.getMaterial(),
+                    new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(1.1f, 100),
+                    new ExtraMaterialStats(5),
+                    new BowMaterialStats(2.1f, 10.1f, 5.1f));
+        }
     }
 
     @Override
-    public void preInit(FMLPreInitializationEvent e) {
-        MaterialStats stats = new MaterialStats();
-        stats.setHeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN);
-        stats.setHandleMaterialStats(1.1f, 100);
-        stats.setExtraMaterialStats(20);
-        stats.setBowMaterialStats(2.1f, 10.1f, 5.1f);
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.yellorium.getMaterial().getIdentifier()))
-        {
-            Resources.yellorium.addTrait(Traits.radioactive);
-            Resources.yellorium.createMaterial(stats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.yellorium, stats, 1f);
-            }
-            Resources.materials.add(Resources.yellorium);
+    public void init(FMLInitializationEvent fmlInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(yellorium.getIdentifier())) {
+            yellorium.init();
         }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.blutonium.getMaterial().getIdentifier()))
-        {
-            Resources.blutonium.addTrait(Traits.nuclearwaste);
-            Resources.blutonium.createMaterial(stats);
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.blutonium, stats, 1f);
-            }
-            Resources.materials.add(Resources.blutonium);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(cyanite.getIdentifier())) {
+            cyanite.init();
         }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.ludicrite.getMaterial().getIdentifier()))
-        {
-            Resources.ludicrite.addTrait(Traits.nuclearwaste);
-            Resources.ludicrite.addTrait(Traits.radioactive, MaterialTypes.HEAD);
-            Resources.ludicrite.createMaterial(stats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.ludicrite, stats, 1.5f);
-            }
-            Resources.materials.add(Resources.ludicrite);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(ludicrite.getIdentifier())) {
+            ludicrite.init();
         }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.cyanite.getMaterial().getIdentifier()))
-        {
-            Resources.cyanite.addTrait(Traits.nuclearwaste, MaterialTypes.HEAD);
-            Resources.cyanite.addTrait(Traits.traitSoft);
-            Resources.cyanite.createMaterial(stats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.cyanite, stats, 0);
-            }
-            Resources.materials.add(Resources.cyanite);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blutonium.getIdentifier())) {
+            blutonium.init();
         }
     }
-    @Override
-    public void init(FMLInitializationEvent e) {
 
-    }
     @Override
-    public void postInit(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
 
     }
 }

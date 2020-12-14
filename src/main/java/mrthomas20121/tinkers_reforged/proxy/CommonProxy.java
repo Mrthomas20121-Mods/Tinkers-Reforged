@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -16,11 +15,7 @@ import slimeknights.tconstruct.library.tools.ToolCore;
 @Mod.EventBusSubscriber
 public class CommonProxy {
 
-
-    public void preInit(FMLPreInitializationEvent e) {
-
-    }
-
+    public void preInit(FMLPreInitializationEvent e) { }
     public void init(FMLInitializationEvent e) {
         Modules.tools.init(e);
     }

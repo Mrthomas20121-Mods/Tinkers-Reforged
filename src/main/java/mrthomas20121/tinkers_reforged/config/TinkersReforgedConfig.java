@@ -1,17 +1,11 @@
 package mrthomas20121.tinkers_reforged.config;
 
-import com.google.common.collect.Lists;
-import mrthomas20121.biolib.config.ConfigBase;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import org.apache.logging.log4j.Level;
-
-import java.util.ArrayList;
 
 import static mrthomas20121.tinkers_reforged.TinkersReforged.MODID;
 
@@ -38,19 +32,21 @@ public class TinkersReforgedConfig {
         @Config.LangKey("config."+MODID+".manacost")
         public static int manaCost = 2000;
 
-        @Config.Comment("Fuels added by this mod. syntax is : modid:fluid_name:temp:amount:fuel_duration")
-        @Config.LangKey("config."+MODID+".fuels")
-        public static String[] fuels = {
-                "thermalfoundation:pyrotheum:2000:1000:1000"
-        };
+        @Config.Comment("Make pyrotheum a smeltery fuel.")
+        @Config.LangKey("config."+MODID+".pyrotheum")
+        public static boolean pyrotheum = true;
 
-        @Config.Comment("Materials used to create Manasteel, Livingwood, Livingrock parts. syntax is: manasteel:livingwood:livingrock")
+        @Config.Comment("Materials used to create Manasteel tool parts.")
         @Config.LangKey("config."+MODID+".parts_botania")
-        public static String infusionMaterials = "iron:wood:stone";
+        public static String infusionMaterial = "iron";
 
-        @Config.Comment("Material used to create starmetal parts.")
+        @Config.Comment("Tinker Material used to create starmetal parts.")
         @Config.LangKey("config."+MODID+".parts_astral")
         public static String materialStarmetal = "iron";
+
+        @Config.Comment("Damage multiplier for the Astral Infusion trait")
+        @Config.LangKey("config."+MODID+".astral_infusion")
+        public static double dmgMultiplier = 1.2;
     }
 
     @Config(modid = MODID, name = "Tinkers Reforged - Tools")
@@ -115,9 +111,9 @@ public class TinkersReforgedConfig {
         public static boolean containModules(String moduleName)
         {
             boolean result = false;
-            for(String material: materials)
+            for(String module: modules)
             {
-                if(material.equals(moduleName))
+                if(module.equals(moduleName))
                 {
                     result = true;
                     break;

@@ -1,172 +1,211 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.biolib.common.OredictHelper;
-import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.biolib.util.armorUtils;
-import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.Traits;
-
 import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
-import de.ellpeck.actuallyadditions.mod.items.*;
-import mrthomas20121.tinkers_reforged.resources.Resources;
+import de.ellpeck.actuallyadditions.mod.items.InitItems;
+import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.biolib.util.ConarmUtil;
+import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.trait.*;
+import mrthomas20121.tinkers_reforged.trait.modifier.ModEnderStar;
+import mrthomas20121.tinkers_reforged.trait.modifier.ModLensKiller;
+import mrthomas20121.tinkers_reforged.trait.modifier.ModLensMiner;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import slimeknights.tconstruct.library.materials.Material;
-import slimeknights.tconstruct.library.materials.MaterialTypes;
+import net.minecraftforge.oredict.OreDictionary;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleAA implements ModuleBase {
 
-    public ModuleAA() {
+    MaterialGen blackquartz = new MaterialGen("blackquartz", 0x161515, "BlackQuartz", 700, 1);
+    MaterialGen restonia = new MaterialGen("restonia", 0xF30000, "Restonia", 500, 1);
+    MaterialGen palis = new MaterialGen("palis", 0x1E1B88, "Palis", 700, 1);
+    MaterialGen diamatine = new MaterialGen("diamatine", 0x9A9CFF, "Diamatine", 700, 1);
+    MaterialGen void_crystal = new MaterialGen("void", 0x171717, "Void", 700, 1);
+    MaterialGen emeradic = new MaterialGen("emeradic", 0x15EA0A, "Emeradic", 700, 1);
+    MaterialGen enori = new MaterialGen("enori", 0x15EA0A, "Enori", 700, 1);
 
+    @Override
+    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blackquartz.getIdentifier())) {
+            blackquartz.preInit();
+            blackquartz.getMaterial().addTrait(TinkerTraits.crude2, MaterialTypes.HEAD);
+            blackquartz.getMaterial().addTrait(TinkerTraits.sharp);
+            TinkerRegistry.addMaterial(blackquartz.getMaterial());
+            TinkerRegistry.addMaterialStats(blackquartz.getMaterial(),
+                    new HeadMaterialStats(304, 6.5f, 6f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(2, 1.4f, 7));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(blackquartz.getMaterial(), 0);
+            }
+        }
+
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(restonia.getIdentifier())) {
+            restonia.preInit();
+            restonia.getMaterial().addTrait(new TraitFlux());
+            TinkerRegistry.addMaterial(restonia.getMaterial());
+            TinkerRegistry.addMaterialStats(restonia.getMaterial(),
+                    new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(10, 1.2f, 3));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(restonia.getMaterial(), 0);
+            }
+        }
+
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(palis.getIdentifier())) {
+            palis.preInit();
+            palis.getMaterial().addTrait(new TraitRose());
+            TinkerRegistry.addMaterial(palis.getMaterial());
+            TinkerRegistry.addMaterialStats(palis.getMaterial(),
+                    new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(10, 1.2f, 3));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(palis.getMaterial(), 0);
+            }
+        }
+
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diamatine.getIdentifier())) {
+            diamatine.preInit();
+            diamatine.getMaterial().addTrait(new TraitCarbon());
+            TinkerRegistry.addMaterial(diamatine.getMaterial());
+            TinkerRegistry.addMaterialStats(diamatine.getMaterial(),
+                    new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(10, 1.2f, 3));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(diamatine.getMaterial(), 0);
+            }
+        }
+
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(void_crystal.getIdentifier())) {
+            void_crystal.preInit();
+            void_crystal.getMaterial().addTrait(new TraitVoid());
+            TinkerRegistry.addMaterial(void_crystal.getMaterial());
+            TinkerRegistry.addMaterialStats(void_crystal.getMaterial(),
+                    new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(10, 1.2f, 3));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(void_crystal.getMaterial(), 0);
+            }
+        }
+
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(void_crystal.getIdentifier())) {
+            emeradic.preInit();
+            emeradic.getMaterial().addTrait(new TraitVillagerLove(1), MaterialTypes.HEAD);
+            emeradic.getMaterial().addTrait(new TraitCurse());
+            TinkerRegistry.addMaterial(emeradic.getMaterial());
+            TinkerRegistry.addMaterialStats(emeradic.getMaterial(),
+                    new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(10, 1.2f, 3));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(emeradic.getMaterial(), 0);
+            }
+        }
+
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(enori.getIdentifier())) {
+            enori.preInit();
+            enori.getMaterial().addTrait(new TraitStarryNight(), MaterialTypes.HEAD);
+            enori.getMaterial().addTrait(new TraitStarShaped());
+            TinkerRegistry.addMaterial(enori.getMaterial());
+            TinkerRegistry.addMaterialStats(enori.getMaterial(),
+                    new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 60),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(10, 1.2f, 3));
+
+            if(Loader.isModLoaded("conarm")) {
+                ConarmUtil.addArmorMat(enori.getMaterial(), 0);
+            }
+        }
     }
 
     @Override
-    public void preInit(FMLPreInitializationEvent e) {
-        MaterialStats gemStats = new MaterialStats();
-        gemStats.setHeadMaterialStats(304, 6.5f, 6f, HarvestLevels.DIAMOND);
-        gemStats.setHandleMaterialStats(1.2f, 60);
-        gemStats.setExtraMaterialStats(100);
-        gemStats.setBowMaterialStats(2f, 1.4f, 7f);
+    public void init(FMLInitializationEvent fmlInitializationEvent) {
+        OreDictionary.registerOre("gemRestonia", new ItemStack(InitItems.itemCrystal, 1, 0));
+        OreDictionary.registerOre("gemPalis", new ItemStack(InitItems.itemCrystal, 1, 1));
+        OreDictionary.registerOre("gemDiamatine", new ItemStack(InitItems.itemCrystal, 1, 2));
+        OreDictionary.registerOre("gemVoid", new ItemStack(InitItems.itemCrystal, 1, 3));
+        OreDictionary.registerOre("gemEmeradic", new ItemStack(InitItems.itemCrystal, 1, 4));
+        OreDictionary.registerOre("gemEnori", new ItemStack(InitItems.itemCrystal, 1, 5));
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.blackquartz.getMaterial().getIdentifier()))
-        {
-            Resources.blackquartz.addTrait(TinkerTraits.crude2, MaterialTypes.HEAD);
-            Resources.blackquartz.addTrait(TinkerTraits.sharp);
-            Resources.blackquartz.createGemMaterial(gemStats);
+        OreDictionary.registerOre("nuggetRestonia", new ItemStack(InitItems.itemCrystalShard, 1, 0));
+        OreDictionary.registerOre("nuggetPalis", new ItemStack(InitItems.itemCrystalShard, 1, 1));
+        OreDictionary.registerOre("nuggetDiamatine", new ItemStack(InitItems.itemCrystalShard, 1, 2));
+        OreDictionary.registerOre("nuggetVoid", new ItemStack(InitItems.itemCrystalShard, 1, 3));
+        OreDictionary.registerOre("nuggetEmeradic", new ItemStack(InitItems.itemCrystalShard, 1, 4));
+        OreDictionary.registerOre("nuggetEnori", new ItemStack(InitItems.itemCrystalShard, 1, 5));
 
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.blackquartz, gemStats, 0);
-            }
+        OreDictionary.registerOre("blockRestonia", new ItemStack(InitBlocks.blockCrystal, 1, 0));
+        OreDictionary.registerOre("blockPalis", new ItemStack(InitBlocks.blockCrystal, 1, 1));
+        OreDictionary.registerOre("blockDiamatine", new ItemStack(InitBlocks.blockCrystal, 1, 2));
+        OreDictionary.registerOre("blockVoid", new ItemStack(InitBlocks.blockCrystal, 1, 3));
+        OreDictionary.registerOre("blockEmeradic", new ItemStack(InitBlocks.blockCrystal, 1, 4));
+        OreDictionary.registerOre("blockEnori", new ItemStack(InitBlocks.blockCrystal, 1, 5));
 
-            Resources.materials.add(Resources.blackquartz);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blackquartz.getIdentifier())) {
+            blackquartz.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(restonia.getIdentifier())) {
+            restonia.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(palis.getIdentifier())) {
+            palis.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diamatine.getIdentifier())) {
+            diamatine.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(void_crystal.getIdentifier())) {
+            void_crystal.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(emeradic.getIdentifier())) {
+            emeradic.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(enori.getIdentifier())) {
+            enori.init();
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.enori.getMaterial().getIdentifier()))
-        {
-            Resources.enori.addTrait(Traits.starry_night, MaterialTypes.HEAD);
-            Resources.enori.addTrait(Traits.starshaped);
-            Resources.enori.createGemMaterial(gemStats);
+        ModEnderStar modEnderStar = new ModEnderStar();
+        ModLensKiller modLensKiller = new ModLensKiller();
+        ModLensMiner modLensMiner = new ModLensMiner();
 
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.enori, gemStats, 0);
-            }
+        modEnderStar.addItem(new ItemStack(InitItems.itemMisc, 1, 19), 1, 1);
+        modLensKiller.addItem(new ItemStack(InitItems.itemMoreDamageLens), 1, 1);
+        modLensMiner.addItem(new ItemStack(InitItems.itemMiningLens), 1, 1);
 
-            Resources.materials.add(Resources.enori);
-        }
+        TinkersReforged.proxy.registerModifierModel(modEnderStar,
+                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modEnderStar.getIdentifier()));
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.void_crystal.getMaterial().getIdentifier()))
-        {
-            Resources.void_crystal.addTrait(Traits.void_trait);
-            Resources.void_crystal.createGemMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.void_crystal, gemStats, 0);
-            }
-
-            Resources.materials.add(Resources.void_crystal);
-        }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.emeradic.getMaterial().getIdentifier()))
-        {
-            Resources.emeradic.addTrait(Traits.villager_love, MaterialTypes.HEAD);
-            Resources.emeradic.addTrait(Traits.curse);
-            Resources.emeradic.createGemMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.emeradic, gemStats, 0);
-            }
-
-            Resources.materials.add(Resources.emeradic);
-        }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.palis.getMaterial().getIdentifier()))
-        {
-            Resources.palis.addTrait(Traits.rose);
-            Resources.palis.createGemMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.palis, gemStats, 0);
-            }
-
-            Resources.materials.add(Resources.palis);
-        }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.restonia.getMaterial().getIdentifier()))
-        {
-            Resources.restonia.addTrait(Traits.flux);
-            Resources.restonia.createGemMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.restonia, gemStats, 0);
-            }
-
-            Resources.materials.add(Resources.restonia);
-        }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.diamatine.getMaterial().getIdentifier()))
-        {
-            Resources.diamatine.addTrait(Traits.carbon);
-            Resources.diamatine.createGemMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.diamatine, gemStats, 0);
-            }
-
-            Resources.materials.add(Resources.diamatine);
-        }
+        TinkersReforged.proxy.registerModifierModel(modLensKiller,
+                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modLensKiller.getIdentifier()));
     }
-    @Override
-    public void init(FMLInitializationEvent e) {
-        OredictHelper.RegisterGemItem("Restonia", new ItemStack(InitItems.itemCrystal, 1, 0));
-        OredictHelper.RegisterGemItem("Palis", new ItemStack(InitItems.itemCrystal, 1, 1));
-        OredictHelper.RegisterGemItem("Diamatine", new ItemStack(InitItems.itemCrystal, 1, 2));
-        OredictHelper.RegisterGemItem("Void", new ItemStack(InitItems.itemCrystal, 1, 3));
-        OredictHelper.RegisterGemItem("Emeradic", new ItemStack(InitItems.itemCrystal, 1, 4));
-        OredictHelper.RegisterGemItem("Enori", new ItemStack(InitItems.itemCrystal, 1, 5));
 
-        OredictHelper.RegisterNuggetItem("Restonia", new ItemStack(InitItems.itemCrystalShard, 1, 0));
-        OredictHelper.RegisterNuggetItem("Palis", new ItemStack(InitItems.itemCrystalShard, 1, 1));
-        OredictHelper.RegisterNuggetItem("Diamantine", new ItemStack(InitItems.itemCrystalShard, 1, 2));
-        OredictHelper.RegisterNuggetItem("Void", new ItemStack(InitItems.itemCrystalShard, 1, 3));
-        OredictHelper.RegisterNuggetItem("Emeradic", new ItemStack(InitItems.itemCrystalShard, 1, 4));
-        OredictHelper.RegisterNuggetItem("Enori", new ItemStack(InitItems.itemCrystalShard, 1, 5));
-
-        OredictHelper.RegisterBlock("Restonia", new ItemStack(InitBlocks.blockCrystal, 1, 0));
-        OredictHelper.RegisterBlock("Palis", new ItemStack(InitBlocks.blockCrystal, 1, 1));
-        OredictHelper.RegisterBlock("Diamatine", new ItemStack(InitBlocks.blockCrystal, 1, 2));
-        OredictHelper.RegisterBlock("Void", new ItemStack(InitBlocks.blockCrystal, 1, 3));
-        OredictHelper.RegisterBlock("Emeradic", new ItemStack(InitBlocks.blockCrystal, 1, 4));
-        OredictHelper.RegisterBlock("Enori", new ItemStack(InitBlocks.blockCrystal, 1, 5));
-        Resources.blackquartz.getMaterial().setRepresentativeItem("gemQuartzBlack");
-        Resources.blackquartz.getMaterial().addItem("gemQuartzBlack", 1, Material.VALUE_Ingot);
-        Resources.enori.getMaterial().setRepresentativeItem("gemEnori");
-        Resources.enori.getMaterial().addItem("gemEnori", 1, Material.VALUE_Ingot);
-        Resources.void_crystal.getMaterial().setRepresentativeItem("gemVoid");
-        Resources.void_crystal.getMaterial().addItem("gemVoid", 1, Material.VALUE_Ingot);
-        Resources.emeradic.getMaterial().setRepresentativeItem("gemEmeradic");
-        Resources.emeradic.getMaterial().addItem("gemEmeradic", 1, Material.VALUE_Ingot);
-        Resources.restonia.getMaterial().setRepresentativeItem("gemRestonia");
-        Resources.restonia.getMaterial().addItem("gemRestonia", 1, Material.VALUE_Ingot);
-        Resources.diamatine.getMaterial().setRepresentativeItem("gemDiamatine");
-        Resources.diamatine.getMaterial().addItem("gemDiamatine", 1, Material.VALUE_Ingot);
-        Resources.palis.getMaterial().setRepresentativeItem("gemPalis");
-        Resources.palis.getMaterial().addItem("gemPalis", 1, Material.VALUE_Ingot);
-    }
     @Override
-    public void postInit(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
 
     }
 }

@@ -6,7 +6,7 @@ public class Traits {
     public static final TraitEnderfestation enderfestation = new TraitEnderfestation();
     public static final TraitSignal signal = new TraitSignal();
     public static final TraitBright light = new TraitBright();
-    public static final TraitAstral astral = new TraitAstral();
+    public static final TraitAstralInfusion traitAstralInfusion = new TraitAstralInfusion();
     public static final TraitAuraInfusion AURA_INFUSION = new TraitAuraInfusion();
     public static final TraitRadioactive radioactive = new TraitRadioactive();
     public static final TraitNuclearWaste nuclearwaste = new TraitNuclearWaste();

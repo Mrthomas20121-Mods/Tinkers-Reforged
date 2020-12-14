@@ -238,8 +238,8 @@ modifier.ref_enderfestation.desc=§oHate these little pest, they spawn everywher
 modifier.ref_bright.name=Bright
 modifier.ref_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
 
-modifier.ref_astral.name=Astral
-modifier.ref_astral.desc=§oI can see in the dark!§r
+modifier.ref_astral_infusion.name=Astral Infusion
+modifier.ref_astral_infusion.desc=§oConstellation go brr§rGet an effect when a constelation is in the sky at night.
 
 modifier.aura_infusion.name=Aura Infusion
 modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?§r\nRepair your tool using aura.
@@ -257,7 +257,7 @@ modifier.life_steal.name=Life Steal
 modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
 
 modifier.ref_refined.name=Refined
-modifier.ref_refined.desc=§oNot so fast!§r\nMine Obsidian faster.
+modifier.ref_refined.desc=§oSomething smell fishy§r\nBreak Obsidian faster.
 
 modifier.ref_flux.name=Flux
 modifier.ref_flux.desc=§oHow does that work?§r\nHave a chance to not use durability but will exaust you faster.
@@ -280,8 +280,11 @@ modifier.ref_void.desc=§oThis seems empty§r\nVoid items dropped from blocks.
 modifier.ref_starry_night.name=Starry Night
 modifier.ref_starry_night.desc=§oOh look a star!§r\nGive Haste at night
 
+modifier.ref_enriching.name=Enriching
+modifier.ref_enriching.desc=§oUranium i'm coming for you§r\nHeal back some hp after taking damage.
+
 modifier.ref_carbon.name=Carbon
-modifier.ref_carbon.desc=§oHard as a rock§r\nIncrease the durability.
+modifier.ref_carbon.desc=§oHard as a rock§r\nIncrease Tool durability.
 
 modifier.ref_fey.name=Fey
 modifier.ref_fey.desc=§oBehold Nature!§r\nFey Spirits empowered your tools, giving it a overall boost.
@@ -348,3 +351,6 @@ modifier.ref_shulker_pearl.desc=§oBetter than an eletra§r\nRemove Levitation e
 
 modifier.ref_digging.name=Digging
 modifier.ref_digging.desc=Increase Mining speed
+
+modifier.ref_god_gift.name=Gift from Above
+modifier.ref_god_gift.desc=§oLook! a gift§r\nReflect 5% of damage taken.

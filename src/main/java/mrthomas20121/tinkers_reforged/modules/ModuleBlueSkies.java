@@ -1,99 +1,118 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.common.ModuleBase;
-import mrthomas20121.biolib.common.OredictHelper;
-import mrthomas20121.biolib.objects.material.MaterialStats;
-import mrthomas20121.biolib.util.armorUtils;
+import com.legacy.blue_skies.blocks.BlocksSkies;
+import com.legacy.blue_skies.items.ItemsSkies;
+import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.Traits;
-import mrthomas20121.tinkers_reforged.resources.Resources;
-import net.minecraftforge.fml.common.Loader;
+import mrthomas20121.tinkers_reforged.trait.TraitFast;
+import mrthomas20121.tinkers_reforged.trait.TraitPyromancy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import com.legacy.blue_skies.items.ItemsSkies;
-import com.legacy.blue_skies.blocks.BlocksSkies;
-import slimeknights.tconstruct.library.materials.MaterialTypes;
+import net.minecraftforge.oredict.OreDictionary;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleBlueSkies implements ModuleBase {
 
-    public ModuleBlueSkies() {
+    MaterialGen horizonnite = new MaterialGen("horizonite", 0xF27B2B, "Horizonite", 700);
+    MaterialGen charoite = new MaterialGen("charoite", 0x9A7FBA, "Charoite", 500);
+    MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500);
+    MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500);
+    MaterialGen turquoise = new MaterialGen("turquoise", 0xDA283E, "Turquoise", 500);
+
+    @Override
+    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(horizonnite.getIdentifier())) {
+            horizonnite.preInit();
+            horizonnite.getMaterial().addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
+            horizonnite.getMaterial().addTrait(new TraitPyromancy());
+            TinkerRegistry.addMaterial(horizonnite.getMaterial());
+            TinkerRegistry.addMaterialStats(horizonnite.getMaterial(),
+                    new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(0.9f, 90),
+                    new ExtraMaterialStats(10),
+                    new BowMaterialStats(3.5f, 2.2f, 4.2f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charoite.getIdentifier())) {
+            charoite.preInit();
+            charoite.getMaterial().addTrait(TinkerTraits.lightweight);
+            TinkerRegistry.addMaterial(charoite.getMaterial());
+            TinkerRegistry.addMaterialStats(charoite.getMaterial(),
+                    new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(0.9f, 90),
+                    new ExtraMaterialStats(10),
+                    new BowMaterialStats(2.5f, 3.2f, 3.2f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diopside.getIdentifier())) {
+            diopside.preInit();
+            diopside.getMaterial().addTrait(TinkerTraits.sharp);
+            TinkerRegistry.addMaterial(diopside.getMaterial());
+            TinkerRegistry.addMaterialStats(diopside.getMaterial(),
+                    new HeadMaterialStats(400, 8f, 8f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(1.2f, 90),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(3, 8.2f, 2.1f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(pyrope.getIdentifier())) {
+            pyrope.preInit();
+            pyrope.getMaterial().addTrait(new TraitFast());
+            TinkerRegistry.addMaterial(pyrope.getMaterial());
+            TinkerRegistry.addMaterialStats(pyrope.getMaterial(),
+                    new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(0.9f, 90),
+                    new ExtraMaterialStats(10),
+                    new BowMaterialStats(3.5f, 2.2f, 4.2f));
+        }
     }
 
-    public void preInit(FMLPreInitializationEvent e) {
-        MaterialStats gemStats = new MaterialStats();
-        gemStats.setHeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND);
-        gemStats.setHandleMaterialStats(0.9f, 90);
-        gemStats.setExtraMaterialStats(10);
-        gemStats.setBowMaterialStats(1.5f, 5.2f, 3.2f);
+    @Override
+    public void init(FMLInitializationEvent fmlInitializationEvent) {
+        OreDictionary.registerOre("ingotVentium", ItemsSkies.ventium_ingot);
+        OreDictionary.registerOre("bucketVentium", ItemsSkies.ventium_bucket);
+        OreDictionary.registerOre("oreVentium", BlocksSkies.ventium_ore);
+        OreDictionary.registerOre("ingotHorizonite", ItemsSkies.horizonite_ingot);
+        OreDictionary.registerOre("oreHorizonite", BlocksSkies.horizonite_ore);
+        OreDictionary.registerOre("blockHorizonnite", BlocksSkies.horizonite_block);
+        OreDictionary.registerOre("ingotFalsite", ItemsSkies.falsite_ingot);
+        OreDictionary.registerOre("oreFalsite", BlocksSkies.falsite_ore);
+        OreDictionary.registerOre("gemPyrope", ItemsSkies.pyrope_gem);
+        OreDictionary.registerOre("orePyrope", BlocksSkies.everbright_pyrope_ore);
+        OreDictionary.registerOre("orePyrope", BlocksSkies.everdawn_pyrope_ore);
+        OreDictionary.registerOre("blockPyrope", BlocksSkies.pyrope_block);
+        OreDictionary.registerOre("gemTurquoise", ItemsSkies.turquoise_gem);
+        OreDictionary.registerOre("oreTurquoise", BlocksSkies.everbright_turquoise_ore);
+        OreDictionary.registerOre("oreTurquoise", BlocksSkies.everdawn_turquoise_ore);
+        OreDictionary.registerOre("blockTurquoise", BlocksSkies.turquoise_block);
+        OreDictionary.registerOre("gemCharoite", ItemsSkies.charoite);
+        OreDictionary.registerOre("oreCharoite", BlocksSkies.everbright_charoite_ore);
+        OreDictionary.registerOre("oreCharoite", BlocksSkies.everdawn_charoite_ore);
+        OreDictionary.registerOre("gemDiopside", ItemsSkies.diopside_gem);
+        OreDictionary.registerOre("oreDiopside", BlocksSkies.everbright_diopside_ore);
+        OreDictionary.registerOre("oreDiopside", BlocksSkies.everdawn_diopside_ore);
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.horizonite.getMaterial().getIdentifier())) {
-            Resources.horizonite.addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
-            Resources.horizonite.addTrait(Traits.pyromancy);
-            Resources.horizonite.createMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.horizonite, gemStats, 1);
-            }
-            Resources.materials.add(Resources.horizonite);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(horizonnite.getIdentifier())) {
+            horizonnite.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.pyrope.getMaterial().getIdentifier())) {
-            Resources.pyrope.addTrait(Traits.traitFast, MaterialTypes.HEAD);
-            Resources.pyrope.addTrait(TinkerTraits.sharp);
-            Resources.pyrope.createGemMaterial(gemStats);
-
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.pyrope, gemStats, 0);
-            }
-            Resources.materials.add(Resources.pyrope);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charoite.getIdentifier())) {
+            charoite.init();
         }
-
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(Resources.charoite.getMaterial().getIdentifier())) {
-            MaterialStats charoiteStats = new MaterialStats();
-            charoiteStats.setHeadMaterialStats(400, 8f, 8f, HarvestLevels.DIAMOND);
-            charoiteStats.setHandleMaterialStats(1.5f, 100);
-            charoiteStats.setExtraMaterialStats(100);
-            charoiteStats.setBowMaterialStats(5f, 5.2f, 5f);
-
-            Resources.charoite.addTrait(TinkerTraits.lightweight, MaterialTypes.HEAD);
-            Resources.charoite.addTrait(TinkerTraits.sharp);
-            Resources.charoite.createGemMaterial(charoiteStats);
-            if(Loader.isModLoaded("conarm"))
-            {
-                armorUtils.setArmorStats(Resources.charoite, charoiteStats, 0);
-            }
-            Resources.materials.add(Resources.charoite);
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diopside.getIdentifier())) {
+            diopside.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(pyrope.getIdentifier())) {
+            pyrope.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.containMaterials(turquoise.getIdentifier())) {
+            turquoise.init();
         }
     }
-    public void init(FMLInitializationEvent e) {
-        OredictHelper.RegisterIngotItem("Ventium", ItemsSkies.ventium_ingot);
-        OredictHelper.RegisterBucketItem("Ventium", ItemsSkies.ventium_bucket);
-        OredictHelper.RegisterOreBlock("Ventium", BlocksSkies.ventium_ore);
-        OredictHelper.RegisterIngotItem("Horizonite", ItemsSkies.horizonite_ingot);
-        OredictHelper.RegisterOreBlock("Horizonite", BlocksSkies.horizonite_ore);
-        OredictHelper.RegisterBlock("Horizonnite", BlocksSkies.horizonite_block);
-        OredictHelper.RegisterIngotItem("Falsite", ItemsSkies.falsite_ingot);
-        OredictHelper.RegisterOreBlock("Falsite", BlocksSkies.falsite_ore);
-        OredictHelper.RegisterGemItem("Pyrope", ItemsSkies.pyrope_gem);
-        OredictHelper.RegisterOreBlock("Pyrope", BlocksSkies.everbright_pyrope_ore);
-        OredictHelper.RegisterOreBlock("Pyrope", BlocksSkies.everdawn_pyrope_ore);
-        OredictHelper.RegisterBlock("Pyrope", BlocksSkies.pyrope_block);
-        OredictHelper.RegisterGemItem("Turquoise", ItemsSkies.turquoise_gem);
-        OredictHelper.RegisterOreBlock("Turquoise", BlocksSkies.everbright_turquoise_ore);
-        OredictHelper.RegisterOreBlock("Turquoise", BlocksSkies.everdawn_turquoise_ore);
-        OredictHelper.RegisterBlock("Turquoise", BlocksSkies.turquoise_block);
-        OredictHelper.RegisterGemItem("Charoite", ItemsSkies.charoite);
-        OredictHelper.RegisterOreBlock("Charoite", BlocksSkies.everbright_charoite_ore);
-        OredictHelper.RegisterOreBlock("Charoite", BlocksSkies.everdawn_charoite_ore);
-        OredictHelper.RegisterGemItem("Diopside", ItemsSkies.diopside_gem);
-        OredictHelper.RegisterOreBlock("Diopside", BlocksSkies.everbright_diopside_ore);
-        OredictHelper.RegisterOreBlock("Diopside", BlocksSkies.everdawn_diopside_ore);
-    }
-    public void postInit(FMLPostInitializationEvent e) {
+
+    @Override
+    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
 
     }
 }
