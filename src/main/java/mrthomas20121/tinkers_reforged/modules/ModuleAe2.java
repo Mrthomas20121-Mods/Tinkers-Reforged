@@ -2,11 +2,12 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import appeng.items.materials.MaterialType;
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitFlux;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
@@ -20,7 +21,7 @@ public class ModuleAe2 implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(certus_quartz.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.certus_quartz) {
             certus_quartz.addTrait(TinkerTraits.fractured);
             TinkerRegistry.addMaterial(certus_quartz);
             TinkerRegistry.addMaterialStats(certus_quartz,
@@ -30,7 +31,7 @@ public class ModuleAe2 implements ModuleBase {
                     new BowMaterialStats(4.2f, 1.2f, 3f));
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charged_certus_quartz.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.fluix_crystal) {
             fluix_crystal.addTrait(TinkerTraits.sharp);
             TinkerRegistry.addMaterial(fluix_crystal);
             TinkerRegistry.addMaterialStats(fluix_crystal,
@@ -40,8 +41,8 @@ public class ModuleAe2 implements ModuleBase {
                     new BowMaterialStats(4.5f, 7.3f, 1f));
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charged_certus_quartz.getIdentifier())) {
-            charged_certus_quartz.addTrait(new TraitFlux(), MaterialTypes.HEAD);
+        if(TinkersReforgedConfig.SettingMaterials.materials.charged_certus_quartz) {
+            charged_certus_quartz.addTrait(ReforgedTraits.flux, MaterialTypes.HEAD);
             charged_certus_quartz.addTrait(TinkerTraits.shocking);
             TinkerRegistry.addMaterial(charged_certus_quartz);
             TinkerRegistry.addMaterialStats(charged_certus_quartz,
@@ -55,22 +56,26 @@ public class ModuleAe2 implements ModuleBase {
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(certus_quartz.getIdentifier())) {
-            certus_quartz.setRepresentativeItem(MaterialType.CERTUS_QUARTZ_CRYSTAL.stack(1));
-            certus_quartz.addItem(MaterialType.CERTUS_QUARTZ_CRYSTAL.stack(1), 1, Material.VALUE_Ingot);
+        OreDictionary.registerOre("gemQuartzCertus", MaterialType.CERTUS_QUARTZ_CRYSTAL.stack(1));
+        OreDictionary.registerOre("gemQuartzCertusCharged", MaterialType.CERTUS_QUARTZ_CRYSTAL_CHARGED.stack(1));
+        OreDictionary.registerOre("gemFluix", MaterialType.FLUIX_CRYSTAL.stack(1));
+
+        if(TinkersReforgedConfig.SettingMaterials.materials.certus_quartz) {
             certus_quartz.setCraftable(true);
+            certus_quartz.setRepresentativeItem("gemQuartzCertus");
+            certus_quartz.addItem(MaterialType.CERTUS_QUARTZ_CRYSTAL.stack(1), 1, Material.VALUE_Ingot);
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(fluix_crystal.getIdentifier())) {
-            fluix_crystal.setRepresentativeItem(MaterialType.FLUIX_CRYSTAL.stack(1));
-            fluix_crystal.addItem(MaterialType.FLUIX_CRYSTAL.stack(1), 1, Material.VALUE_Ingot);
+        if(TinkersReforgedConfig.SettingMaterials.materials.fluix_crystal) {
             fluix_crystal.setCraftable(true);
+            fluix_crystal.setRepresentativeItem("gemFluix");
+            fluix_crystal.addItem(MaterialType.FLUIX_CRYSTAL.stack(1), 1, Material.VALUE_Ingot);
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charged_certus_quartz.getIdentifier())) {
-            charged_certus_quartz.setRepresentativeItem(MaterialType.CERTUS_QUARTZ_CRYSTAL_CHARGED.stack(1));
-            charged_certus_quartz.addItem(MaterialType.CERTUS_QUARTZ_CRYSTAL_CHARGED.stack(1), 1, Material.VALUE_Ingot);
+        if(TinkersReforgedConfig.SettingMaterials.materials.charged_certus_quartz) {
             charged_certus_quartz.setCraftable(true);
+            charged_certus_quartz.setRepresentativeItem("gemQuartzCertusCharged");
+            charged_certus_quartz.addItem(MaterialType.CERTUS_QUARTZ_CRYSTAL_CHARGED.stack(1), 1, Material.VALUE_Ingot);
         }
     }
 

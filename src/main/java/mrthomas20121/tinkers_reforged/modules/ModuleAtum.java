@@ -19,7 +19,7 @@ public class ModuleAtum implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(khnumite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.khnumite) {
             khnumite.addTrait(TinkerTraits.crude);
             TinkerRegistry.addMaterial(khnumite);
             TinkerRegistry.addMaterialStats(khnumite,
@@ -31,7 +31,7 @@ public class ModuleAtum implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(khnumite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.khnumite) {
             khnumite.setCraftable(true);
             khnumite.setRepresentativeItem("ingotKhnumite");
             khnumite.addItem("ingotKhnumite", 1, Material.VALUE_Ingot);

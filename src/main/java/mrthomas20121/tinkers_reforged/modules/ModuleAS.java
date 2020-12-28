@@ -3,8 +3,8 @@ package mrthomas20121.tinkers_reforged.modules;
 import hellfirepvp.astralsorcery.common.crafting.infusion.InfusionRecipeRegistry;
 import hellfirepvp.astralsorcery.common.crafting.infusion.recipes.BasicInfusionRecipe;
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitAstralInfusion;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -19,20 +19,29 @@ public class ModuleAS implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        starmetal.addTrait(new TraitAstralInfusion());
-        TinkerRegistry.addMaterial(starmetal);
-        TinkerRegistry.addMaterialStats(starmetal,
-                new HeadMaterialStats(200, 5.2f, 3.2f, HarvestLevels.DIAMOND),
-                new HandleMaterialStats(0.85f, 60),
-                new ExtraMaterialStats(50),
-                new BowMaterialStats(0.9f, 1.5f, 7f));
+        if(TinkersReforgedConfig.SettingMaterials.materials.starmetal) {
+            starmetal.addTrait(ReforgedTraits.astralInfusion);
+            TinkerRegistry.addMaterial(starmetal);
+            TinkerRegistry.addMaterialStats(starmetal,
+                    new HeadMaterialStats(200, 5.2f, 3.2f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(0.85f, 60),
+                    new ExtraMaterialStats(50),
+                    new BowMaterialStats(0.9f, 1.5f, 7f));
+        }
     }
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
+
+        if(TinkersReforgedConfig.SettingMaterials.materials.starmetal) {
+            starmetal.setCraftable(false).setCastable(false);
+            starmetal.setRepresentativeItem("ingotAstralStarmetal");
+            starmetal.addItem("ingotAstralStarmetal", 1, Material.VALUE_Ingot);
+        }
+
         for(IToolPart part : TinkerRegistry.getToolParts())
         {
-            if(part.canUseMaterial(starmetal) && TinkersReforgedConfig.SettingMaterials.containMaterials(starmetal.getIdentifier()))
+            if(part.canUseMaterial(starmetal))
             {
                 InfusionRecipeRegistry.recipes.add(new BasicInfusionRecipe(part.getItemstackWithMaterial(starmetal), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.materialStarmetal))));
             }

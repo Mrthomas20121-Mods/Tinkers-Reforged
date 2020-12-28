@@ -3,10 +3,9 @@ package mrthomas20121.tinkers_reforged.modules;
 import com.legacy.blue_skies.blocks.BlocksSkies;
 import com.legacy.blue_skies.items.ItemsSkies;
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitFast;
-import mrthomas20121.tinkers_reforged.trait.TraitPyromancy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -19,17 +18,17 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 public class ModuleBlueSkies implements ModuleBase {
 
     MaterialGen horizonnite = new MaterialGen("horizonite", 0xF27B2B, "Horizonite", 700);
-    MaterialGen charoite = new MaterialGen("charoite", 0x9A7FBA, "Charoite", 500);
-    MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500);
-    MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500);
-    MaterialGen turquoise = new MaterialGen("turquoise", 0xDA283E, "Turquoise", 500);
+    MaterialGen charoite = new MaterialGen("charoite", 0x9A7FBA, "Charoite", 500, true);
+    MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500, true);
+    MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500, true);
+    MaterialGen turquoise = new MaterialGen("turquoise", 0xDA283E, "Turquoise", 500, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(horizonnite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.horizonnite) {
             horizonnite.preInit();
             horizonnite.getMaterial().addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
-            horizonnite.getMaterial().addTrait(new TraitPyromancy());
+            horizonnite.getMaterial().addTrait(ReforgedTraits.pyromency);
             TinkerRegistry.addMaterial(horizonnite.getMaterial());
             TinkerRegistry.addMaterialStats(horizonnite.getMaterial(),
                     new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),
@@ -37,7 +36,7 @@ public class ModuleBlueSkies implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(3.5f, 2.2f, 4.2f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charoite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.charoite) {
             charoite.preInit();
             charoite.getMaterial().addTrait(TinkerTraits.lightweight);
             TinkerRegistry.addMaterial(charoite.getMaterial());
@@ -47,7 +46,7 @@ public class ModuleBlueSkies implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(2.5f, 3.2f, 3.2f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diopside.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.diopside) {
             diopside.preInit();
             diopside.getMaterial().addTrait(TinkerTraits.sharp);
             TinkerRegistry.addMaterial(diopside.getMaterial());
@@ -57,11 +56,21 @@ public class ModuleBlueSkies implements ModuleBase {
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(3, 8.2f, 2.1f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(pyrope.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.pyrope) {
             pyrope.preInit();
-            pyrope.getMaterial().addTrait(new TraitFast());
+            pyrope.getMaterial().addTrait(ReforgedTraits.fast);
             TinkerRegistry.addMaterial(pyrope.getMaterial());
             TinkerRegistry.addMaterialStats(pyrope.getMaterial(),
+                    new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),
+                    new HandleMaterialStats(0.9f, 90),
+                    new ExtraMaterialStats(10),
+                    new BowMaterialStats(3.5f, 2.2f, 4.2f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.materials.turquoise) {
+            turquoise.preInit();
+            turquoise.getMaterial().addTrait(TinkerTraits.fractured);
+            TinkerRegistry.addMaterial(turquoise.getMaterial());
+            TinkerRegistry.addMaterialStats(turquoise.getMaterial(),
                     new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),
                     new HandleMaterialStats(0.9f, 90),
                     new ExtraMaterialStats(10),
@@ -94,19 +103,19 @@ public class ModuleBlueSkies implements ModuleBase {
         OreDictionary.registerOre("oreDiopside", BlocksSkies.everbright_diopside_ore);
         OreDictionary.registerOre("oreDiopside", BlocksSkies.everdawn_diopside_ore);
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(horizonnite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.horizonnite) {
             horizonnite.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(charoite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.charoite) {
             charoite.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diopside.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.diopside) {
             diopside.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(pyrope.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.pyrope) {
             pyrope.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(turquoise.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.turquoise) {
             turquoise.init();
         }
     }

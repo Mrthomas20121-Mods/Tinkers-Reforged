@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
@@ -17,7 +16,6 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) { }
     public void init(FMLInitializationEvent e) {
-        Modules.tools.init(e);
     }
 
     public void postInit(FMLPostInitializationEvent e) { }

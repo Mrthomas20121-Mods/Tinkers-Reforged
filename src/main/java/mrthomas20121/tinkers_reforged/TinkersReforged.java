@@ -1,7 +1,5 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.modifiers.Modifiers;
-import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -22,7 +20,7 @@ public class TinkersReforged
     public static TinkersReforged instance;
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers' Reforged";
-    public static final String VERSION = "1.4.1";
+    public static final String VERSION = "1.5.0";
 
     private static Logger logger;
 
@@ -39,7 +37,7 @@ public class TinkersReforged
         MinecraftForge.EVENT_BUS.register(this);
         logger = event.getModLog();
         proxy.preInit(event);
-        Modules.preInit(event);
+        ModuleManager.get().preInit(event);
    }
 
     @Mod.EventHandler
@@ -47,15 +45,14 @@ public class TinkersReforged
     {
         proxy.registerBookData();
         proxy.init(event);
-        Modules.init(event);
-        Modifiers.init();
+        ModuleManager.get().init(event);
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         proxy.registerToolCrafting();
         proxy.postInit(event);
-        Modules.postInit(event);
+        ModuleManager.get().postInit(event);
     }
 
 }

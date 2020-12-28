@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.modules;
 import epicsquid.roots.init.ModRecipes;
 import epicsquid.roots.recipe.FeyCraftingRecipe;
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.TraitFey;
@@ -27,8 +28,8 @@ public class ModuleRoots implements ModuleBase {
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(runestone.getIdentifier())) {
-            runestone.addTrait(new TraitFey());
+        if(TinkersReforgedConfig.SettingMaterials.materials.runestone) {
+            runestone.addTrait(ReforgedTraits.fey);
             TinkerRegistry.addMaterial(runestone);
             TinkerRegistry.addMaterialStats(runestone,
                     new HeadMaterialStats(290, 5.5f, 3f, HarvestLevels.IRON),
@@ -45,7 +46,7 @@ public class ModuleRoots implements ModuleBase {
         runestone.addItem("runestone", 1, Material.VALUE_Ingot);
 
         for (IToolPart part : TinkerRegistry.getToolParts()) {
-            if(part.canUseMaterial(runestone) && TinkersReforgedConfig.SettingMaterials.containMaterials(runestone.getIdentifier()))
+            if(part.canUseMaterial(runestone) && TinkersReforgedConfig.SettingMaterials.materials.runestone)
             {
                 FeyCraftingRecipe recipe = new FeyCraftingRecipe(part.getItemstackWithMaterial(runestone));
                 recipe.addIngredients(

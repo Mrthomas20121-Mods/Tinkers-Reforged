@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.biolib.library.Registry;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.trait.TraitLiving;
 import mrthomas20121.tinkers_reforged.trait.TraitManaBoost;
@@ -29,18 +30,19 @@ public class ModuleBotania implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(manasteel.getIdentifier())) {
-            manasteel.addTrait(new TraitManaInfusion(), MaterialTypes.HEAD);
-            manasteel.addTrait(new TraitManaBoost());
+        if(TinkersReforgedConfig.SettingMaterials.materials.manasteel) {
+            manasteel.addTrait(ReforgedTraits.manaInfusion, MaterialTypes.HEAD);
+            manasteel.addTrait(ReforgedTraits.manaBoost);
             TinkerRegistry.addMaterial(manasteel);
             TinkerRegistry.addMaterialStats(manasteel,
                     new HeadMaterialStats(204, 6f, 4f, HarvestLevels.DIAMOND),
                     new HandleMaterialStats(1.2f, 9),
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(0.5f, 1.4f, 7f));
+            Registry.addBToolForgeBlock("blockManasteel");
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(livingwood.getIdentifier())) {
-            livingwood.addTrait(new TraitLiving());
+        if(TinkersReforgedConfig.SettingMaterials.materials.livingwood) {
+            livingwood.addTrait(ReforgedTraits.living);
             TinkerRegistry.addMaterial(livingwood);
             TinkerRegistry.addMaterialStats(livingwood,
                     new HeadMaterialStats(200, 4f, 4f, HarvestLevels.IRON),
@@ -48,8 +50,8 @@ public class ModuleBotania implements ModuleBase {
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(2f, 1.7f, 5f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(livingrock.getIdentifier())) {
-            livingrock.addTrait(new TraitLiving());
+        if(TinkersReforgedConfig.SettingMaterials.materials.livingrock) {
+            livingrock.addTrait(ReforgedTraits.living);
             TinkerRegistry.addMaterial(livingrock);
             TinkerRegistry.addMaterialStats(livingrock,
                     new HeadMaterialStats(200, 4f, 4f, HarvestLevels.IRON),
@@ -57,7 +59,7 @@ public class ModuleBotania implements ModuleBase {
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(3f, 1.7f, 3f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(dreamwood.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.dreamwood) {
             dreamwood.addTrait(TinkerTraits.ecological);
             TinkerRegistry.addMaterial(dreamwood);
             TinkerRegistry.addMaterialStats(dreamwood,
@@ -70,7 +72,7 @@ public class ModuleBotania implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(manasteel.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.manasteel) {
             manasteel.setRepresentativeItem("ingotManasteel");
             for(IToolPart part : TinkerRegistry.getToolParts())
             {
@@ -80,19 +82,18 @@ public class ModuleBotania implements ModuleBase {
                 }
             }
             OreDictionary.registerOre("blockManasteel", new ItemStack(ModBlocks.storage, 1, 0));
-            Registry.addBToolForgeBlock("blockManasteel");
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(livingwood.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.livingwood) {
             livingwood.addItem(ModBlocks.livingwood, 1);
             livingwood.setRepresentativeItem(ModBlocks.livingwood);
             livingwood.setCraftable(true);
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(livingrock.getIdentifier())) {
-            livingwood.addItem(ModBlocks.livingwood, 1);
-            livingwood.setRepresentativeItem(ModBlocks.livingwood);
-            livingwood.setCraftable(true);
+        if(TinkersReforgedConfig.SettingMaterials.materials.livingrock) {
+            livingrock.addItem(ModBlocks.livingrock, 1);
+            livingrock.setRepresentativeItem(ModBlocks.livingrock);
+            livingrock.setCraftable(true);
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(dreamwood.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.dreamwood) {
             dreamwood.setCraftable(true);
             dreamwood.addItem(ModBlocks.dreamwood, 1);
             dreamwood.setRepresentativeItem(ModBlocks.dreamwood);

@@ -1,9 +1,9 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitRefined;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -23,15 +23,15 @@ public class ModuleCavern2 implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(hexcite.getIdentifier())) {
-            hexcite.addTrait(new TraitRefined());
+        if(TinkersReforgedConfig.SettingMaterials.materials.hexcite) {
+            hexcite.addTrait(ReforgedTraits.refined);
             TinkerRegistry.addMaterial(hexcite);
             TinkerRegistry.addMaterialStats(hexcite,
                     new HeadMaterialStats(204, 5f, 5f, HarvestLevels.DIAMOND),
                     new HandleMaterialStats(1f, 100),
                     new ExtraMaterialStats(10));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(aquamarine.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.aquamarine) {
             aquamarine.addTrait(TinkerTraits.aquadynamic);
             TinkerRegistry.addMaterial(aquamarine);
             TinkerRegistry.addMaterialStats(aquamarine,
@@ -39,7 +39,7 @@ public class ModuleCavern2 implements ModuleBase {
                     new HandleMaterialStats(0.5f, 100),
                     new ExtraMaterialStats(10));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(magnite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.magnite) {
             magnite.preInit();
             magnite.getMaterial().addTrait(TinkerTraits.stonebound);
             TinkerRegistry.addMaterial(magnite.getMaterial());
@@ -52,15 +52,17 @@ public class ModuleCavern2 implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(hexcite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.hexcite) {
             hexcite.setCraftable(true);
             hexcite.addItem("gemHexcite", 1, Material.VALUE_Ingot);
             hexcite.setRepresentativeItem("gemHexcite");
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(aquamarine.getIdentifier())) {
-
+        if(TinkersReforgedConfig.SettingMaterials.materials.aquamarine) {
+            aquamarine.setCraftable(true);
+            aquamarine.addItem("gemAquamarine", 1, Material.VALUE_Ingot);
+            aquamarine.setRepresentativeItem("gemAquamarine");
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(magnite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.magnite) {
             magnite.init();
         }
     }

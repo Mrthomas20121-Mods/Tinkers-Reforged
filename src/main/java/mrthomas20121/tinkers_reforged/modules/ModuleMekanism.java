@@ -1,10 +1,9 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitBright;
-import mrthomas20121.tinkers_reforged.trait.TraitRefined;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -16,12 +15,12 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 public class ModuleMekanism implements ModuleBase {
 
     private MaterialGen osmium = new MaterialGen("osmium", 0x7F8EB2, "Osmium", 700);
-    private MaterialGen refined_obsidian = new MaterialGen("refined_obsidian", 0x463763, "Obsidian",700);
-    private MaterialGen refined_glownstone = new MaterialGen("refined_glowstone", 0xEAC829, "Glowstone", 700);
+    private MaterialGen refined_obsidian = new MaterialGen("refined_obsidian", 0x463763, "RefinedObsidian",700);
+    private MaterialGen refined_glownstone = new MaterialGen("refined_glowstone", 0xEAC829, "RefinedGlowstone", 700);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(osmium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.osmium) {
             osmium.preInit();
             osmium.getMaterial().addTrait(TinkerTraits.established, MaterialTypes.HEAD);
             osmium.getMaterial().addTrait(TinkerTraits.dense);
@@ -32,9 +31,9 @@ public class ModuleMekanism implements ModuleBase {
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(2.9f, 7, 5.1f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(refined_obsidian.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.refined_obsidian) {
             refined_obsidian.preInit();
-            refined_obsidian.getMaterial().addTrait(new TraitRefined(), MaterialTypes.HEAD);
+            refined_obsidian.getMaterial().addTrait(ReforgedTraits.refined, MaterialTypes.HEAD);
             refined_obsidian.getMaterial().addTrait(TinkerTraits.duritos);
             TinkerRegistry.addMaterial(refined_obsidian.getMaterial());
             TinkerRegistry.addMaterialStats(refined_obsidian.getMaterial(),
@@ -43,10 +42,10 @@ public class ModuleMekanism implements ModuleBase {
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(3.2f, 5, 6.1f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(refined_glownstone.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.refined_glowstone) {
             refined_glownstone.preInit();
-            refined_glownstone.getMaterial().addTrait(new TraitRefined(), MaterialTypes.HEAD);
-            refined_glownstone.getMaterial().addTrait(new TraitBright());
+            refined_glownstone.getMaterial().addTrait(ReforgedTraits.refined, MaterialTypes.HEAD);
+            refined_glownstone.getMaterial().addTrait(ReforgedTraits.bright);
             TinkerRegistry.addMaterial(refined_glownstone.getMaterial());
             TinkerRegistry.addMaterialStats(refined_glownstone.getMaterial(),
                     new HeadMaterialStats(550, 6.5f, 6.5f, HarvestLevels.OBSIDIAN),
@@ -58,13 +57,13 @@ public class ModuleMekanism implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(osmium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.osmium) {
             osmium.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(refined_obsidian.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.refined_obsidian) {
             refined_obsidian.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(refined_glownstone.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.refined_glowstone) {
             refined_glownstone.init();
         }
     }

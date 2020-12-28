@@ -1,12 +1,13 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedRegistry;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitLifeSteal;
-import mrthomas20121.tinkers_reforged.trait.TraitPyromancy;
+import mrthomas20121.tinkers_reforged.library.block.ReforgedBlockGlass;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -29,31 +30,38 @@ public class ModuleTinkersReforged implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        lavium.preInit();
-        lavium.getMaterial().addTrait(TinkerTraits.momentum);
-        lavium.getMaterial().addTrait(new TraitLifeSteal(), MaterialTypes.HEAD);
-        TinkerRegistry.addMaterial(lavium.getMaterial());
-        TinkerRegistry.addMaterialStats(lavium.getMaterial(),
-                new HeadMaterialStats(1000, 12.2f, 12.2f, HarvestLevels.COBALT),
-                new HandleMaterialStats(1.3f, 100),
-                new ExtraMaterialStats(100),
-                new BowMaterialStats(5.2f, 5.1f, 5.2f));
-
-        qivium.preInit();
-        qivium.getMaterial().addTrait(TinkerTraits.momentum);
-        qivium.getMaterial().addTrait(new TraitPyromancy(), MaterialTypes.HEAD);
-        TinkerRegistry.addMaterial(qivium.getMaterial());
-        TinkerRegistry.addMaterialStats(qivium.getMaterial(),
-                new HeadMaterialStats(1000, 12.2f, 12.2f, HarvestLevels.COBALT),
-                new HandleMaterialStats(1.3f, 100),
-                new ExtraMaterialStats(100),
-                new BowMaterialStats(5.2f, 5.2f, 5.2f));
+        if(TinkersReforgedConfig.SettingMaterials.materials.lavium) {
+            lavium.preInit();
+            lavium.getMaterial().addTrait(TinkerTraits.momentum);
+            lavium.getMaterial().addTrait(ReforgedTraits.lifeSteal, MaterialTypes.HEAD);
+            TinkerRegistry.addMaterial(lavium.getMaterial());
+            TinkerRegistry.addMaterialStats(lavium.getMaterial(),
+                    new HeadMaterialStats(1000, 12.2f, 12.2f, HarvestLevels.COBALT),
+                    new HandleMaterialStats(1.3f, 100),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(5.2f, 5.1f, 5.2f));
+        }
+        if(TinkersReforgedConfig.SettingMaterials.materials.qivium) {
+            qivium.preInit();
+            qivium.getMaterial().addTrait(TinkerTraits.momentum);
+            qivium.getMaterial().addTrait(ReforgedTraits.pyromency, MaterialTypes.HEAD);
+            TinkerRegistry.addMaterial(qivium.getMaterial());
+            TinkerRegistry.addMaterialStats(qivium.getMaterial(),
+                    new HeadMaterialStats(1000, 12.2f, 12.2f, HarvestLevels.COBALT),
+                    new HandleMaterialStats(1.3f, 100),
+                    new ExtraMaterialStats(100),
+                    new BowMaterialStats(5.2f, 5.2f, 5.2f));
+        }
     }
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        lavium.init();
-        qivium.init();
+        if(TinkersReforgedConfig.SettingMaterials.materials.lavium) {
+            lavium.init();
+        }
+        if(TinkersReforgedConfig.SettingMaterials.materials.qivium) {
+            qivium.init();
+        }
 
         if(TinkersReforgedConfig.SettingGeneral.enableAlloyRecipes)
         {
@@ -91,6 +99,10 @@ public class ModuleTinkersReforged implements ModuleBase {
         ReforgedRegistry.addItem(register(r, new Item(), "qivium_gear"));
     }
 
+    public static void registerBlocks(IForgeRegistry<Block> r) {
+        ReforgedRegistry.addBlock(register(r, new ReforgedBlockGlass(), "kovar_glass"));
+    }
+
     @Override
     public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
 
@@ -102,6 +114,12 @@ public class ModuleTinkersReforged implements ModuleBase {
         r.register(item);
         addOredict(item, name);
         return item;
+    }
+    private static Block register(IForgeRegistry<Block> r, Block block, String name) {
+        block.setRegistryName(TinkersReforged.MODID, name);
+        block.setTranslationKey(TinkersReforged.MODID+"."+name);
+        r.register(block);
+        return block;
     }
 
     private static void addOredict(Item item, String name) {

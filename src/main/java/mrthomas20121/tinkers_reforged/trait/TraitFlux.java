@@ -65,7 +65,6 @@ public class TraitFlux extends AbstractTrait {
         if (!rootCompound.hasKey("bioEnergy")) {
             rootCompound.setInteger("bioEnergy", 0);
         }
-        rootCompound.setInteger("bioEnergyCapacity",
-                ModifierNBT.readTag(modifierTag).level * 2);
+        rootCompound.setInteger("bioEnergyCapacity", 10000);
     }
 }

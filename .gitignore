@@ -1,4 +1,6 @@
 Pixelmon*
+*.js
+test.txt
 
 #ant stuff
 /bin/

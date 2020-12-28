@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -20,14 +20,14 @@ public class ModuleBaseMaterials implements ModuleBase {
     MaterialGen aluminum = new MaterialGen("aluminum", 0xBAAEA5, "Aluminum", 900);
     MaterialGen platinum = new MaterialGen("platinum", 0x45A5DD, "Platinum", 2000);
     MaterialGen invar = new MaterialGen("invar", 0xA8AFAB, "Invar", 800);
-    MaterialGen amethyst = new MaterialGen("amethyst", 0xA8AFAB, "Amethyst", 600, 1);
-    MaterialGen ruby = new MaterialGen("ruby", 0xA8AFAB, "Ruby", 600, 1);
-    MaterialGen sapphire = new MaterialGen("sapphire", 0xA8AFAB, "Sapphire", 600, 1);
-    MaterialGen peridot = new MaterialGen("peridot", 0xA8AFAB, "peridot", 600, 1);
+    MaterialGen amethyst = new MaterialGen("amethyst", 0xA8AFAB, "Amethyst", 600, true);
+    MaterialGen ruby = new MaterialGen("ruby", 0xA8AFAB, "Ruby", 600, true);
+    MaterialGen sapphire = new MaterialGen("sapphire", 0xA8AFAB, "Sapphire", 600, true);
+    MaterialGen peridot = new MaterialGen("peridot", 0xA8AFAB, "peridot", 600, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(zinc.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.zinc) {
             zinc.preInit();
             zinc.getMaterial().addTrait(TinkerTraits.crumbling, MaterialTypes.HEAD);
             zinc.getMaterial().addTrait(TinkerTraits.dense);
@@ -38,7 +38,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(2, 1.5f, 6));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(titanium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.titanium) {
             titanium.preInit();
             titanium.getMaterial().addTrait(TinkerTraits.lightweight);
             TinkerRegistry.addMaterial(titanium.getMaterial());
@@ -48,7 +48,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(3, 5, 3));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(iridium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.iridium) {
             iridium.preInit();
             iridium.getMaterial().addTrait(TinkerTraits.dense);
             TinkerRegistry.addMaterial(iridium.getMaterial());
@@ -58,7 +58,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(2),
                     new BowMaterialStats(5, 2.3f, 5));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(aluminum.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.aluminum) {
             aluminum.preInit();
             aluminum.getMaterial().addTrait(TinkerTraits.dense);
             TinkerRegistry.addMaterial(aluminum.getMaterial());
@@ -68,7 +68,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(8, 0.5f, 6));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(platinum.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.platinum) {
             platinum.preInit();
             platinum.getMaterial().addTrait(TinkerTraits.dense);
             TinkerRegistry.addMaterial(platinum.getMaterial());
@@ -78,7 +78,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(2, 12, 3));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(invar.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.invar) {
             invar.preInit();
             invar.getMaterial().addTrait(TinkerTraits.hellish);
             TinkerRegistry.addMaterial(invar.getMaterial());
@@ -88,7 +88,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(2, 1.5f, 6));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(amethyst.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.amethyst) {
             amethyst.preInit();
             amethyst.getMaterial().addTrait(TinkerTraits.sharp);
             TinkerRegistry.addMaterial(amethyst.getMaterial());
@@ -98,7 +98,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(2, 3, 5));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(ruby.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.ruby) {
             ruby.preInit();
             ruby.getMaterial().addTrait(TinkerTraits.sharp);
             TinkerRegistry.addMaterial(ruby.getMaterial());
@@ -108,9 +108,9 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(3, 2, 5));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(ruby.getIdentifier())) {
-            ruby.preInit();
-            ruby.getMaterial().addTrait(TinkerTraits.sharp);
+        if(TinkersReforgedConfig.SettingMaterials.materials.sapphire) {
+            sapphire.preInit();
+            sapphire.getMaterial().addTrait(TinkerTraits.sharp);
             TinkerRegistry.addMaterial(ruby.getMaterial());
             TinkerRegistry.addMaterialStats(ruby.getMaterial(),
                     new HeadMaterialStats(300, 5.7f, 6.3f, HarvestLevels.DIAMOND),
@@ -118,7 +118,7 @@ public class ModuleBaseMaterials implements ModuleBase {
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(5, 3, 2));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(peridot.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.peridot) {
             peridot.preInit();
             peridot.getMaterial().addTrait(TinkerTraits.splintering);
             TinkerRegistry.addMaterial(peridot.getMaterial());
@@ -132,34 +132,34 @@ public class ModuleBaseMaterials implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(!OreDictionary.getOres("ingotZinc").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(zinc.getIdentifier())) {
+        if(!OreDictionary.getOres("ingotZinc").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.zinc) {
             zinc.init();
         }
-        if(!OreDictionary.getOres("ingotTitanium").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(titanium.getIdentifier())) {
+        if(!OreDictionary.getOres("ingotTitanium").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.titanium) {
             titanium.init();
         }
-        if(!OreDictionary.getOres("ingotIridium").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(iridium.getIdentifier())) {
+        if(!OreDictionary.getOres("ingotIridium").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.iridium) {
             iridium.init();
         }
-        if(!OreDictionary.getOres("ingotAluminum").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(aluminum.getIdentifier())) {
+        if(!OreDictionary.getOres("ingotAluminum").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.aluminum) {
             aluminum.init();
         }
-        if(!OreDictionary.getOres("ingotPlatinum").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(platinum.getIdentifier())) {
+        if(!OreDictionary.getOres("ingotPlatinum").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.platinum) {
             platinum.init();
         }
-        if(!OreDictionary.getOres("ingotInvar").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(invar.getIdentifier())) {
+        if(!OreDictionary.getOres("ingotInvar").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.invar) {
             invar.init();
         }
-        if(!OreDictionary.getOres("gemAmethyst").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(amethyst.getIdentifier())) {
+        if(!OreDictionary.getOres("gemAmethyst").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.amethyst) {
             amethyst.init();
         }
-        if(!OreDictionary.getOres("gemRuby").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(ruby.getIdentifier())) {
+        if(!OreDictionary.getOres("gemRuby").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.ruby) {
             ruby.init();
         }
-        if(!OreDictionary.getOres("gemSapphire").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(sapphire.getIdentifier())) {
+        if(!OreDictionary.getOres("gemSapphire").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.sapphire) {
             sapphire.init();
         }
-        if(!OreDictionary.getOres("gemPeridot").isEmpty() && TinkersReforgedConfig.SettingMaterials.containMaterials(peridot.getIdentifier())) {
+        if(!OreDictionary.getOres("gemPeridot").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.peridot) {
             peridot.init();
         }
     }

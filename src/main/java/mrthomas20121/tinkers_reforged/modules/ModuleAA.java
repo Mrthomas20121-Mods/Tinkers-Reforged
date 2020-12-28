@@ -4,10 +4,10 @@ import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
 import de.ellpeck.actuallyadditions.mod.items.InitItems;
 import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.biolib.util.ConarmUtil;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.*;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModEnderStar;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModLensKiller;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModLensMiner;
@@ -25,17 +25,17 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleAA implements ModuleBase {
 
-    MaterialGen blackquartz = new MaterialGen("blackquartz", 0x161515, "BlackQuartz", 700, 1);
-    MaterialGen restonia = new MaterialGen("restonia", 0xF30000, "Restonia", 500, 1);
-    MaterialGen palis = new MaterialGen("palis", 0x1E1B88, "Palis", 700, 1);
-    MaterialGen diamatine = new MaterialGen("diamatine", 0x9A9CFF, "Diamatine", 700, 1);
-    MaterialGen void_crystal = new MaterialGen("void", 0x171717, "Void", 700, 1);
-    MaterialGen emeradic = new MaterialGen("emeradic", 0x15EA0A, "Emeradic", 700, 1);
-    MaterialGen enori = new MaterialGen("enori", 0x15EA0A, "Enori", 700, 1);
+    public static MaterialGen blackquartz = new MaterialGen("blackquartz", 0x161515, "QuartzBlack", 700, true);
+    public static MaterialGen restonia = new MaterialGen("restonia", 0xF30000, "Restonia", 500, true);
+    public static MaterialGen palis = new MaterialGen("palis", 0x1E1B88, "Palis", 700, true);
+    public static MaterialGen diamatine = new MaterialGen("diamatine", 0x9A9CFF, "Diamatine", 700, true);
+    public static MaterialGen void_crystal = new MaterialGen("void_crystal", 0x171717, "Void", 700, true);
+    public static MaterialGen emeradic = new MaterialGen("emeradic", 0x15EA0A, "Emeradic", 700, true);
+    public static MaterialGen enori = new MaterialGen("enori", 0x15EA0A, "Enori", 700, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blackquartz.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.black_quartz) {
             blackquartz.preInit();
             blackquartz.getMaterial().addTrait(TinkerTraits.crude2, MaterialTypes.HEAD);
             blackquartz.getMaterial().addTrait(TinkerTraits.sharp);
@@ -51,9 +51,9 @@ public class ModuleAA implements ModuleBase {
             }
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(restonia.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.restonia) {
             restonia.preInit();
-            restonia.getMaterial().addTrait(new TraitFlux());
+            restonia.getMaterial().addTrait(ReforgedTraits.flux);
             TinkerRegistry.addMaterial(restonia.getMaterial());
             TinkerRegistry.addMaterialStats(restonia.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -66,9 +66,9 @@ public class ModuleAA implements ModuleBase {
             }
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(palis.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.palis) {
             palis.preInit();
-            palis.getMaterial().addTrait(new TraitRose());
+            palis.getMaterial().addTrait(ReforgedTraits.rose);
             TinkerRegistry.addMaterial(palis.getMaterial());
             TinkerRegistry.addMaterialStats(palis.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -81,9 +81,9 @@ public class ModuleAA implements ModuleBase {
             }
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diamatine.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.diamatine) {
             diamatine.preInit();
-            diamatine.getMaterial().addTrait(new TraitCarbon());
+            diamatine.getMaterial().addTrait(ReforgedTraits.carbon);
             TinkerRegistry.addMaterial(diamatine.getMaterial());
             TinkerRegistry.addMaterialStats(diamatine.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -96,9 +96,9 @@ public class ModuleAA implements ModuleBase {
             }
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(void_crystal.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.void_crystal) {
             void_crystal.preInit();
-            void_crystal.getMaterial().addTrait(new TraitVoid());
+            void_crystal.getMaterial().addTrait(ReforgedTraits.voidTrait);
             TinkerRegistry.addMaterial(void_crystal.getMaterial());
             TinkerRegistry.addMaterialStats(void_crystal.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -111,10 +111,10 @@ public class ModuleAA implements ModuleBase {
             }
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(void_crystal.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.emeradic) {
             emeradic.preInit();
-            emeradic.getMaterial().addTrait(new TraitVillagerLove(1), MaterialTypes.HEAD);
-            emeradic.getMaterial().addTrait(new TraitCurse());
+            emeradic.getMaterial().addTrait(ReforgedTraits.villagerLove, MaterialTypes.HEAD);
+            emeradic.getMaterial().addTrait(ReforgedTraits.curse);
             TinkerRegistry.addMaterial(emeradic.getMaterial());
             TinkerRegistry.addMaterialStats(emeradic.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -127,10 +127,10 @@ public class ModuleAA implements ModuleBase {
             }
         }
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(enori.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
             enori.preInit();
-            enori.getMaterial().addTrait(new TraitStarryNight(), MaterialTypes.HEAD);
-            enori.getMaterial().addTrait(new TraitStarShaped());
+            enori.getMaterial().addTrait(ReforgedTraits.starryNight, MaterialTypes.HEAD);
+            enori.getMaterial().addTrait(ReforgedTraits.starShaped);
             TinkerRegistry.addMaterial(enori.getMaterial());
             TinkerRegistry.addMaterialStats(enori.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -167,25 +167,25 @@ public class ModuleAA implements ModuleBase {
         OreDictionary.registerOre("blockEmeradic", new ItemStack(InitBlocks.blockCrystal, 1, 4));
         OreDictionary.registerOre("blockEnori", new ItemStack(InitBlocks.blockCrystal, 1, 5));
 
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blackquartz.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.black_quartz) {
             blackquartz.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(restonia.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.restonia) {
             restonia.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(palis.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.palis) {
             palis.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(diamatine.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.diamatine) {
             diamatine.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(void_crystal.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.void_crystal) {
             void_crystal.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(emeradic.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.emeradic) {
             emeradic.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(enori.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
             enori.init();
         }
 

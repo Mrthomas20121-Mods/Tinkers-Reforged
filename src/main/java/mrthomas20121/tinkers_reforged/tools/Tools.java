@@ -2,19 +2,16 @@ package mrthomas20121.tinkers_reforged.tools;
 
 import com.google.common.collect.Lists;
 
+import mrthomas20121.tinkers_reforged.ModuleManager;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.modules.Modules;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -48,15 +45,6 @@ public class Tools {
     public static ToolRunicKnife knife = null;
     public static AoeToolCore propick = null;
     public static SwordLight swordLight = null;
-
-    public void preInit(FMLPreInitializationEvent e)
-    {
-    }
-    public void init(FMLInitializationEvent e)
-    {
-    }
-
-    public void postInit(FMLPostInitializationEvent event) { }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -100,7 +88,7 @@ public class Tools {
                 TinkerRegistry.registerToolForgeCrafting(knife);
             }
 
-            if(Modules.isLoaded("atum")) {
+            if(ModuleManager.isModLoaded("atum")) {
                 if(TinkersReforgedConfig.SettingTools.enableClub)
                 {
                     clubHead = new ToolPart(Material.VALUE_Ingot*3);
@@ -151,7 +139,7 @@ public class Tools {
                 }
             }
 
-            if(Modules.isLoaded("geolosys"))
+            if(ModuleManager.isModLoaded("geolosys"))
             {
                 propickHead = new ToolPart(Material.VALUE_Ingot*3);
                 propickHead.setRegistryName(TinkersReforged.MODID,"propick_head");

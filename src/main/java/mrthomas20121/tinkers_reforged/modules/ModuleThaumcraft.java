@@ -1,9 +1,9 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.trait.TraitCrystalSurge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -20,9 +20,9 @@ public class ModuleThaumcraft implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(thaumium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.thaumium) {
             thaumium.preInit();
-            thaumium.getMaterial().addTrait(new TraitCrystalSurge());
+            thaumium.getMaterial().addTrait(ReforgedTraits.crystalSurge);
             TinkerRegistry.addMaterial(thaumium.getMaterial());
             TinkerRegistry.addMaterialStats(thaumium.getMaterial(),
                     new HeadMaterialStats(100, 4.5f, 4.4f, HarvestLevels.DIAMOND),
@@ -34,7 +34,7 @@ public class ModuleThaumcraft implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(thaumium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.thaumium) {
             thaumium.init();
         }
     }

@@ -1,7 +1,8 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -22,7 +23,9 @@ public class ModuleExtremeReactor implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(yellorium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.yellorium) {
+			yellorium.preInit();
+            yellorium.getMaterial().addTrait(ReforgedTraits.radioactive);
             TinkerRegistry.addMaterial(yellorium.getMaterial());
             TinkerRegistry.addMaterialStats(yellorium.getMaterial(),
                     new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
@@ -30,7 +33,9 @@ public class ModuleExtremeReactor implements ModuleBase {
                     new ExtraMaterialStats(5),
                     new BowMaterialStats(5.3f, 5.5f, 5.3f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(cyanite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.cyanite) {
+			cyanite.preInit();
+            cyanite.getMaterial().addTrait(ReforgedTraits.nuclearWaste);
             TinkerRegistry.addMaterial(cyanite.getMaterial());
             TinkerRegistry.addMaterialStats(cyanite.getMaterial(),
                     new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
@@ -38,7 +43,9 @@ public class ModuleExtremeReactor implements ModuleBase {
                     new ExtraMaterialStats(5),
                     new BowMaterialStats(2.3f, 5.2f, 4.3f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(ludicrite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.ludicrite) {
+            ludicrite.preInit();
+            ludicrite.getMaterial().addTrait(ReforgedTraits.radioactive);
             TinkerRegistry.addMaterial(ludicrite.getMaterial());
             TinkerRegistry.addMaterialStats(ludicrite.getMaterial(),
                     new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
@@ -46,7 +53,9 @@ public class ModuleExtremeReactor implements ModuleBase {
                     new ExtraMaterialStats(5),
                     new BowMaterialStats(7.1f, 5.1f, 3.1f));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blutonium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.blutonium) {
+			blutonium.preInit();
+            blutonium.getMaterial().addTrait(ReforgedTraits.radioactive);
             TinkerRegistry.addMaterial(blutonium.getMaterial());
             TinkerRegistry.addMaterialStats(blutonium.getMaterial(),
                     new HeadMaterialStats(200, 5.3f, 5.3f, HarvestLevels.OBSIDIAN),
@@ -58,16 +67,16 @@ public class ModuleExtremeReactor implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(yellorium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.yellorium) {
             yellorium.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(cyanite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.cyanite) {
             cyanite.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(ludicrite.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.ludicrite) {
             ludicrite.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(blutonium.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.blutonium) {
             blutonium.init();
         }
     }

@@ -1,9 +1,12 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.biolib.objects.capability.BioCapabilityProvider;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.library.block.ReforgedItemBlock;
 import mrthomas20121.tinkers_reforged.modules.ModuleTinkersReforged;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -33,6 +36,10 @@ public class ReforgedRegistry {
         items.add(item);
     }
 
+    public static void addBlock(Block block) {
+        blocks.add(block);
+    }
+
     private static final ResourceLocation capability = new ResourceLocation(TinkersReforged.MODID, "energyCapability");
 
     @SubscribeEvent
@@ -47,5 +54,21 @@ public class ReforgedRegistry {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
         ModuleTinkersReforged.registerItems(r);
+        for(Block block : blocks) {
+            registerItemBlock(r, block);
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        IForgeRegistry<Block> r = event.getRegistry();
+        ModuleTinkersReforged.registerBlocks(r);
+    }
+
+    private static void registerItemBlock(IForgeRegistry<Item> r, Block block) {
+        Item itemBlock = new ReforgedItemBlock(block);
+        itemBlock.setRegistryName(block.getRegistryName());
+        itemBlock.setTranslationKey(block.getTranslationKey());
+        r.register(itemBlock);
     }
 }

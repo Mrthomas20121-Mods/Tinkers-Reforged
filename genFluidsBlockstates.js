@@ -7,7 +7,7 @@ let fluids = [
 	"ludicrite", 
 	"blutonium", 
 	"infused_iron", 
-	"molten_of_the_sky", 
+	"sky",
 	"starmetal", 
 	"refined_obsidian",
 	"refined_glowstone",
@@ -25,6 +25,7 @@ let fluids = [
 ];
 
 for(fluid of fluids) {
+console.log(`fluid.${fluid}.name=Molten ${fluid}`)
 let data = {
 	 "forge_marker": 1,
 	 "defaults": {
@@ -33,9 +34,9 @@ let data = {
 	 "variants": {
 	  "normal": [
 			{
-			"custom": {
-				"fluid": fluid
-				}
+			    "custom": {
+				    "fluid": fluid
+				 }
 			}
 		]
 	}

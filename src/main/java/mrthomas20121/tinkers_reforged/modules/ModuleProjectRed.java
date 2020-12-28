@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -19,7 +19,7 @@ public class ModuleProjectRed implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(red_alloy.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.red_alloy) {
             red_alloy.preInit();
             red_alloy.getMaterial().addTrait(TinkerTraits.jagged);
             TinkerRegistry.addMaterial(red_alloy.getMaterial());
@@ -29,7 +29,7 @@ public class ModuleProjectRed implements ModuleBase {
                     new ExtraMaterialStats(47),
                     new BowMaterialStats(4.8f, 4.2f, 4));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(electrotine_alloy.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.electrotine_alloy) {
             electrotine_alloy.preInit();
             electrotine_alloy.getMaterial().addTrait(TinkerTraits.shocking, MaterialTypes.HEAD);
             electrotine_alloy.getMaterial().addTrait(TinkerTraits.magnetic);
@@ -40,7 +40,7 @@ public class ModuleProjectRed implements ModuleBase {
                     new ExtraMaterialStats(80),
                     new BowMaterialStats(4.8f, 4.2f, 4));
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(electrotine.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.electrotine) {
             electrotine.addTrait(TinkerTraits.shocking);
             TinkerRegistry.addMaterial(electrotine);
             TinkerRegistry.addMaterialStats(electrotine,
@@ -53,15 +53,16 @@ public class ModuleProjectRed implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(red_alloy.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.red_alloy) {
             red_alloy.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(electrotine_alloy.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.electrotine_alloy) {
             electrotine_alloy.init();
         }
-        if(TinkersReforgedConfig.SettingMaterials.containMaterials(electrotine.getIdentifier())) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.electrotine) {
             electrotine.setCraftable(true);
             electrotine.addItem("dustElectrotine", 1, Material.VALUE_Ingot);
+            electrotine.setRepresentativeItem("dustElectrotine");
         }
     }
 

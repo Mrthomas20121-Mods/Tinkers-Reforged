@@ -5,11 +5,8 @@ import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import mrthomas20121.tinkers_reforged.tools.Tools;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -27,8 +24,6 @@ import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
-
-import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
