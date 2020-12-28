@@ -38,6 +38,7 @@ public class ModuleRS implements ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.quartz_enriched_iron) {
             quartz_enriched_iron.init();
         }
+        quartz_enriched_iron.getMaterial().setRepresentativeItem("ingotQuartzEnrichedIron");
         OreDictionary.registerOre("ingotQuartzEnrichedIron", RSItems.QUARTZ_ENRICHED_IRON);
     }
 

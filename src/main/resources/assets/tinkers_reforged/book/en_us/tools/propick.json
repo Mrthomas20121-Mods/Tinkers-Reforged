@@ -1,18 +1,11 @@
 {
-  "tool": "lightsword",
+  "tool": "propick",
   "text": [
     {
-      "text": "The lightsword is a sword used to slay Werewolves. It is effective against mobs"
-    },
-    {
-      "text": "\n"
-    },
-    {
-      "text": "Compatible with other offhand weapons or tools."
+      "text": "The Prospector Pickaxe is a tool used to find ore sample"
     }
   ],
   "properties": [
-    "Medium Damage",
-    "Can use offhand"
+    "Right click to find ore"
   ]
 }

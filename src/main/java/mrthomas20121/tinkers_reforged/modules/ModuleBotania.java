@@ -74,11 +74,12 @@ public class ModuleBotania implements ModuleBase {
     public void init(FMLInitializationEvent fmlInitializationEvent) {
         if(TinkersReforgedConfig.SettingMaterials.materials.manasteel) {
             manasteel.setRepresentativeItem("ingotManasteel");
+            manasteel.addItemIngot("ingotManasteel");
             for(IToolPart part : TinkerRegistry.getToolParts())
             {
-                if(part.canUseMaterial(manasteel))
+                if(part.canUseMaterial(manasteel) && (part.canBeCasted() || part.canBeCrafted()))
                 {
-                    BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(manasteel), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.infusionMaterial)), TinkersReforgedConfig.SettingGeneral.manaCost));
+                    BotaniaAPI.manaInfusionRecipes.add(new RecipeManaInfusion(part.getItemstackWithMaterial(manasteel), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.mods.manasteel.material)), TinkersReforgedConfig.SettingGeneral.mods.manasteel.cost));
                 }
             }
             OreDictionary.registerOre("blockManasteel", new ItemStack(ModBlocks.storage, 1, 0));

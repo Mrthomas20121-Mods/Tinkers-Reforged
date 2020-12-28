@@ -21,11 +21,11 @@ public class ModuleBlueSkies implements ModuleBase {
     MaterialGen charoite = new MaterialGen("charoite", 0x9A7FBA, "Charoite", 500, true);
     MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500, true);
     MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500, true);
-    MaterialGen turquoise = new MaterialGen("turquoise", 0xDA283E, "Turquoise", 500, true);
+    MaterialGen turquoise = new MaterialGen("turquoise", 0x5AE7D1, "Turquoise", 500, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        if(TinkersReforgedConfig.SettingMaterials.materials.horizonnite) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.horizonite) {
             horizonnite.preInit();
             horizonnite.getMaterial().addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
             horizonnite.getMaterial().addTrait(ReforgedTraits.pyromency);
@@ -103,7 +103,7 @@ public class ModuleBlueSkies implements ModuleBase {
         OreDictionary.registerOre("oreDiopside", BlocksSkies.everbright_diopside_ore);
         OreDictionary.registerOre("oreDiopside", BlocksSkies.everdawn_diopside_ore);
 
-        if(TinkersReforgedConfig.SettingMaterials.materials.horizonnite) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.horizonite) {
             horizonnite.init();
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.charoite) {

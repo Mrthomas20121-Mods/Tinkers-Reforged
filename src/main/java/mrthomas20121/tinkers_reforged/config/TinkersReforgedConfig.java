@@ -31,25 +31,73 @@ public class TinkersReforgedConfig {
         @Config.LangKey("config."+MODID+".enableAlloy")
         public static boolean enableAlloyRecipes = true;
 
-        @Config.Comment("How much mana Livingwood/Livingrock/Manasteel parts cost.")
-        @Config.LangKey("config."+MODID+".manacost")
-        public static int manaCost = 2000;
-
-        @Config.Comment("Make pyrotheum a smeltery fuel.")
-        @Config.LangKey("config."+MODID+".pyrotheum")
-        public static boolean pyrotheum = true;
-
-        @Config.Comment("Materials used to create Manasteel tool parts.")
-        @Config.LangKey("config."+MODID+".parts_botania")
-        public static String infusionMaterial = "iron";
-
-        @Config.Comment("Tinker Material used to create starmetal parts.")
-        @Config.LangKey("config."+MODID+".parts_astral")
-        public static String materialStarmetal = "iron";
+        @Config.Comment("Part of the config related to mods materials/interaction")
+        @Config.LangKey("config."+MODID+".mods")
+        public static SettingMods mods = new SettingMods();
 
         @Config.Comment("Damage multiplier for the Astral Infusion trait")
         @Config.LangKey("config."+MODID+".astral_infusion")
         public static double dmgMultiplier = 1.2;
+    }
+
+    public static class SettingMods {
+        @Config.Comment("Config for Manasteel material.")
+        @Config.LangKey("config."+MODID+".manasteel")
+        public Manasteel manasteel = new Manasteel();
+
+        @Config.Comment("Config for Starmetal material.")
+        @Config.LangKey("config."+MODID+".starmetal")
+        public Starmetal starmetal = new Starmetal();
+
+        @Config.Comment("Config for Infused Iron material.")
+        @Config.LangKey("config."+MODID+".infused_iron")
+        public InfusedIron infusedIron = new InfusedIron();
+
+        @Config.Comment("Config for Sky material.")
+        @Config.LangKey("config."+MODID+".sky")
+        public Sky sky = new Sky();
+
+        @Config.Comment("Make pyrotheum a smeltery fuel.")
+        @Config.LangKey("config."+MODID+".pyrotheum")
+        public boolean pyrotheum = true;
+    }
+
+    public static class Manasteel {
+        @Config.Comment("How much mana used per Manasteel parts.")
+        @Config.LangKey("config."+MODID+".manacost")
+        public int cost = 2000;
+
+        @Config.Comment("Materials used to create Manasteel tool parts.")
+        @Config.LangKey("config."+MODID+".manasteel_part")
+        public String material = "iron";
+    }
+
+    public static class Starmetal {
+
+        @Config.Comment("Materials used to create Starmetal tool parts.")
+        @Config.LangKey("config."+MODID+".starmetal_part")
+        public String material = "iron";
+    }
+
+    public static class InfusedIron {
+        @Config.Comment("How much aura is used to craft a Infused Iron part.")
+        @Config.LangKey("config."+MODID+".aura_cost")
+        public int aura_cost = 50;
+
+        @Config.Comment("Time it take to finish the craft.")
+        @Config.LangKey("config."+MODID+".time")
+        public int time = 25;
+
+        @Config.Comment("Materials used to create Infused Iron tool parts.")
+        @Config.LangKey("config."+MODID+".infused_iron_part")
+        public String material = "iron";
+    }
+
+    public static class Sky {
+
+        @Config.Comment("Materials used to create Manasteel tool parts.")
+        @Config.LangKey("config."+MODID+".manasteel_part")
+        public String material = "ref_infused_iron";
     }
 
     @Config(modid = MODID, name = "Tinkers Reforged - Tools")
@@ -210,10 +258,10 @@ public class TinkersReforgedConfig {
         @Config.RequiresMcRestart
         public boolean peridot = true;
 
-        @Config.Comment("Enable/Disable horizonnite material.")
-        @Config.LangKey("config."+MODID+".material.horizonnite")
+        @Config.Comment("Enable/Disable horizonite material.")
+        @Config.LangKey("config."+MODID+".material.horizonite")
         @Config.RequiresMcRestart
-        public boolean horizonnite = true;
+        public boolean horizonite = true;
 
         @Config.Comment("Enable/Disable charoite material.")
         @Config.LangKey("config."+MODID+".material.charoite")

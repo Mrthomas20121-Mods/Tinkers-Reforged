@@ -69,8 +69,8 @@ public class ModuleThermal implements ModuleBase {
             signalum.init();
         }
         Fluid pyrotheum = FluidRegistry.getFluid("pyrotheum");
-        pyrotheum.setTemperature(2000);
-        if(TinkersReforgedConfig.SettingGeneral.pyrotheum) TinkerRegistry.registerSmelteryFuel(new FluidStack(pyrotheum, 1000), 500);
+        pyrotheum.setTemperature(2273);
+        if(TinkersReforgedConfig.SettingGeneral.mods.pyrotheum) TinkerRegistry.registerSmelteryFuel(new FluidStack(pyrotheum, 1000), 500);
     }
 
     @Override

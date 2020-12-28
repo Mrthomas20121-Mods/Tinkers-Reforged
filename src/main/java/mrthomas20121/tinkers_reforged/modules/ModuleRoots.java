@@ -23,7 +23,7 @@ import slimeknights.tconstruct.tools.TinkerMaterials;
 
 public class ModuleRoots implements ModuleBase {
 
-    Material runestone = new Material("runestone", 0x71717F);
+    Material runestone = new Material("ref_runestone", 0x71717F);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

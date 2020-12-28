@@ -17,8 +17,8 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleCavern2 implements ModuleBase {
 
-    Material aquamarine = new Material("aquamarine", 0xA7E7E5);
-    Material hexcite = new Material("hexcite", 0xDEDEDE);
+    Material aquamarine = new Material("ref_aquamarine", 0xA7E7E5);
+    Material hexcite = new Material("ref_hexcite", 0xDEDEDE);
     MaterialGen magnite = new MaterialGen("magnite", 0xD22700, "Magnite", 500);
 
     @Override

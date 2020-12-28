@@ -45,10 +45,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(2, 1.4f, 7));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(blackquartz.getMaterial(), 0);
-            }
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.restonia) {
@@ -60,10 +56,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(10, 1.2f, 3));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(restonia.getMaterial(), 0);
-            }
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.palis) {
@@ -75,10 +67,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(10, 1.2f, 3));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(palis.getMaterial(), 0);
-            }
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.diamatine) {
@@ -90,10 +78,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(10, 1.2f, 3));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(diamatine.getMaterial(), 0);
-            }
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.void_crystal) {
@@ -105,10 +89,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(10, 1.2f, 3));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(void_crystal.getMaterial(), 0);
-            }
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.emeradic) {
@@ -121,10 +101,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(10, 1.2f, 3));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(emeradic.getMaterial(), 0);
-            }
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
@@ -137,10 +113,6 @@ public class ModuleAA implements ModuleBase {
                     new HandleMaterialStats(1.2f, 60),
                     new ExtraMaterialStats(100),
                     new BowMaterialStats(10, 1.2f, 3));
-
-            if(Loader.isModLoaded("conarm")) {
-                ConarmUtil.addArmorMat(enori.getMaterial(), 0);
-            }
         }
     }
 

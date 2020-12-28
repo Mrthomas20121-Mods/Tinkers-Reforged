@@ -15,7 +15,7 @@ public class ModuleProjectRed implements ModuleBase {
 
     MaterialGen red_alloy = new MaterialGen("red_alloy", 0xED4242, "RedAlloy", 500);
     MaterialGen electrotine_alloy = new MaterialGen("electrotine_alloy", 0x0E73AA, "ElectrotineAlloy", 700);
-    Material electrotine = new Material("electrotine", 0x43C7ED);
+    Material electrotine = new Material("ref_electrotine", 0x43C7ED);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

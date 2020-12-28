@@ -1,12 +1,18 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.biolib.util.ConarmUtil;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.modules.*;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.HeadMaterialStats;
+import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.library.utils.HarvestLevels;
 
 public class ModuleManager implements ModuleBase {
 
@@ -114,9 +120,20 @@ public class ModuleManager implements ModuleBase {
             moduleThermal = new ModuleThermal();
             moduleThermal.preInit(event);
         }
-        if(isModLoaded("tinkersreforged") && TinkersReforgedConfig.SettingMaterials.modules.tinkers_reforged) {
+        if(isModLoaded("tinkers_reforged") && TinkersReforgedConfig.SettingMaterials.modules.tinkers_reforged) {
             moduleTinkersReforged = new ModuleTinkersReforged();
             moduleTinkersReforged.preInit(event);
+        }
+        if(isModLoaded("conarm")) {
+            for(Material material: TinkerRegistry.getAllMaterials()) {
+                if(material.getIdentifier().contains("ref_")) {
+                    ModContainer modContainer = TinkerRegistry.getTrace(material);
+                    if(isModLoaded(modContainer.getModId())) {
+                        HeadMaterialStats head = material.getStats("head");
+                        if(head != null) ConarmUtil.addArmorMat(material, head.harvestLevel> HarvestLevels.COBALT ? 2: (head.harvestLevel>HarvestLevels.DIAMOND ? 1 : 0));
+                    }
+                }
+            }
         }
     }
 

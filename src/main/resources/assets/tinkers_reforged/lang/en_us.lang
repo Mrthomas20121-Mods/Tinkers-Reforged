@@ -75,134 +75,86 @@ item.tinkers_reforged.propick.name=Propector Pickaxe
 item.tinkers_reforged.propick.desc=a Pickaxe used to find ores.
 
 # Fluids
-fluid.infused_iron.name=Molten Infused Iron
-fluid.material_of_the_sky.name=Molten of the sky
-fluid.starmetal.name=Molten Starmetal
-fluid.blutonium.name=Molten Blutonium
-fluid.ludicrite.name=Molten Ludicrite
 fluid.qivium.name=Molten Qivium
-fluid.lavium.name=Molten Lavium
 fluid.kovar.name=Molten Kovar
-fluid.osmium.name=Molten Osmium
+fluid.lavium.name=Molten Lavium
+fluid.yellorium.name=Molten Yellorium
+fluid.ludicrite.name=Molten Ludicrite
+fluid.blutonium.name=Molten Blutonium
 fluid.refined_obsidian.name=Molten Refined Obsidian
 fluid.refined_glowstone.name=Molten Refined Glowstone
+fluid.osmium.name=Molten Osmium
+fluid.turquoise.name=Molten Turquoise
 fluid.horizonite.name=Molten Horizonite
-fluid.pyrope=Molten Pyrope
-fluid.blackquartz=Molten Black Quartz
-fluid.enori=Molten Enori
-fluid.palis=Molten Palis
-fluid.void=Molten Void
-fluid.emeradic=Molten Emeradic
-fluid.restonia=Molten Restonia
-fluid.diamatine=Molten Diamatine
-fluid.ruby=Molten Ruby
-fluid.sapphire=Molten Sapphire
-fluid.peridot=Molten Peridot
-fluid.titanium=Molten Titanium
-fluid.platinum=Molten Platinum
-fluid.aluminum=Molten aluminum
-fluid.iridium=Molten Iridium
-fluid.amethyst=Molten Amethyst
-fluid.aquamarine=Molten Aquamarine
-fluid.magnite=Molten Magnite
-fluid.hexcite=Molten Hexcite
-fluid.waterstone=Molten Waterstone
-fluid.firestone=Molten Firestone
-fluid.leafstone=Molten Leafstone
-fluid.thunderstone=Molten Thunderstone
-fluid.sunstone=Molten Sunstone
-fluid.dawnstone=Molten Dawnstone
-fluid.duskstone=Molten Duststone
-fluid.thaumium=Molten Thaumium
-fluid.khnumite=Molten Khnumite
+fluid.pyrope.name=Molten Pyrope
+fluid.diopside.name=Molten Diopside
+fluid.black_quartz.name=Molten Black Quartz
+fluid.enori.name=Molten Enori
+fluid.void_crystal.name=Molten Void Crystal
+fluid.zinc.name=Molten Zinc
+fluid.emeradic.name=Molten Emeradic
+fluid.diamatine.name=Molten Diamatine
+fluid.palis.name=Molten Palis
+fluid.restonia.name=Molten Restonia
+fluid.quartz_enriched_iron.name=Molten Quartz Enriched Iron
+fluid.firestone.name=Molten Firestone
+fluid.waterstone.name=Molten Waterstone
+fluid.leafstone.name=Molten Leafstone
+fluid.thunderstone.name=Molten Thunderstone
+fluid.dawnstone.name=Molten Dawnstone
+fluid.duskstone.name=Molten Duskstone
+fluid.sunstone.name=Molten Sunstone
+fluid.crystal.name=Molten Crystal
+fluid.thaumium.name=Molten Thaumium
+fluid.red_alloy.name=Molten Red Alloy
+fluid.electrotine_alloy.name=Molten Electrotine Alloy
+fluid.amethyst.name=Molten Amethyst
+fluid.sapphire.name=Molten Sapphire
+fluid.peridot.name=Molten Peridot
+fluid.ruby.name=Molten Ruby
 
 # mining levels
 ui.mininglevel.lavium=Lavium
 
 # materials
-
-# common materials
+material.ref_black_quartz.name=Black Quartz
+material.ref_restonia.name=Restonia
+material.ref_palis.name=Palis
+material.ref_diamatine.name=Diamatine
+material.ref_void_crystal.name=Void Crystal
+material.ref_emeradic.name=Emeradic
+material.ref_enori.name=Enori
+material.ref_certus_quartz.name=Certus Quartz
+material.ref_charged_certus_quartz.name=Charged Certus Quartz
+material.ref_starmetal.name=Starmetal
+material.ref_khnumite.name=Khnumite
+material.ref_zinc.name=Zinc
+material.ref_titanium.name=Titanium
+material.ref_platinum.name=Platinum
+material.ref_aluminum.name=Aluminum
+material.ref_iridium.name=Iridium
+material.ref_invar.name=Invar
+material.ref_amethyst.name=Amethyst
 material.ref_ruby.name=Ruby
 material.ref_sapphire.name=Sapphire
 material.ref_peridot.name=Peridot
-material.ref_titanium.name=Titanium
-material.ref_platinum.name=Platinum
-material.ref_iridium.name=Iridium
-material.ref_invar.name=Invar
-material.ref_aluminum.name=Aluminium
-material.ref_amethyst.name=Amethyst
-
-# thermalfoundation materials
-material.ref_enderium.name=Enderium
-material.ref_signalum.name=Signalum
-material.ref_lumium.name=Lumium
-
-## caver II materials
-material.ref_aquamarine.name=Aquamarine
-material.ref_magnite.name=Magnite
-material.ref_hexcite.name=Hexcite
-
-# naturesaura materials
-material.ref_infused_iron.name=Infused Iron
-material.ref_ancient_wood.name=Ancient Wood
-material.ref_sky.name=Material Of The Sky
-
-## aa materials
-material.ref_blackquartz.name=Black Quartz
-material.ref_enori.name=Enori Crystal
-material.ref_void.name=Void Crystal
-material.ref_restonia.name=Restonia Crystal
-material.ref_emeradic.name=Emeradic Crystal
-material.ref_diamatine.name=Diamatine Crystal
-material.ref_palis.name=Palis Crystal
-
-# Appliedenergistic2 materials
-material.ref_certus_quartz.name=Certus Quartz
-material.ref_fluix_crystal.name=Fluix Crystal
-
-# Astralsorcery materials
-material.ref_starmetal.name=Starmetal
-
-# Atum 2
-material.ref_limestone.name=Limestone
-material.ref_khnumite.name=Khnumite
-
-# blueskies
-material.ref_ventium.name=Ventium
 material.ref_horizonite.name=Horizonite
-material.ref_pyrope.name=Pyrope
-material.ref_turquoise.name=Turquoise
-material.ref_charoite.name=Charoite
-material.ref_dioside.name=Diopside
-
-# botania
 material.ref_manasteel.name=Manasteel
-material.ref_mana_diamond.name=Mana diamond
-material.ref_elementium.name=Elementium
-material.ref_terrasteel.name=Terrasteel
-material.ref_dragonstone.name=Dragonstone
-material.ref_livingrock.name=Livingrock
 material.ref_livingwood.name=Livingwood
+material.ref_livingrock.name=Livingrock
 material.ref_dreamwood.name=Dreamwood
-material.red_string.name=Red String
-material.ref_mana_string.name=Mana String
-material.ref_gaia_spirit.name=Gaia Spirit
-
-# Mekanism
+material.ref_aquamarine.name=Aquamarine
+material.ref_hexcite.name=Hexcite
+material.ref_magnite.name=Magnite
+material.ref_yellorium.name=Yellorium
+material.ref_cyanite.name=Cyanite
+material.ref_ludicrite.name=Ludicrite
+material.ref_blutonium.name=Blutonium
 material.ref_osmium.name=Osmium
 material.ref_refined_obsidian.name=Refined Obsidian
 material.ref_refined_glowstone.name=Refined Glowstone
-
-# Roots
-material.ref_runestone.name=Runestone
-
-# Extreme reactor
-material.ref_yellorium.name=Yellorium
-material.ref_blutonium.name=Blutonium
-material.ref_ludicrite.name=Ludicrite
-material.ref_cyanite.name=Cyanite
-
-# pixelmon
+material.ref_infused_iron.name=Infused Iron
+material.ref_sky.name=Sky
 material.ref_firestone.name=Firestone
 material.ref_waterstone.name=Waterstone
 material.ref_leafstone.name=Leafstone
@@ -211,18 +163,17 @@ material.ref_sunstone.name=Sunstone
 material.ref_dawnstone.name=Dawnstone
 material.ref_duskstone.name=Duskstone
 material.ref_crystal.name=Crystal
-
-# project red core
-material.ref_electrotine.name=Electrotine
-material.ref_electrotine_alloy.name=Electrotine Alloy
 material.ref_red_alloy.name=Red Alloy
-
-# thaumcraft
+material.ref_electrotine_alloy.name=Electrotine Alloy
+material.ref_electrotine.name=Electrotine
+material.ref_runestone.name=Runestone
+material.ref_quartz_enriched_iron.name=Quartz Enriched Iron
 material.ref_thaumium.name=Thaumium
-
-# tinkers reforged
-material.ref_lavium.name=Lavium
+material.ref_enderium.name=Enderium
+material.ref_signalum.name=Signalum
+material.ref_lumium.name=Lumium
 material.ref_qivium.name=Qivium
+material.ref_lavium.name=Lavium
 
 # Traits and Modifiers
 modifier.ref_signal.name=Signal

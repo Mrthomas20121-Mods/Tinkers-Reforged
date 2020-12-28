@@ -18,6 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.fluid.FluidMolten;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
@@ -30,6 +31,10 @@ public class ModuleTinkersReforged implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+        FluidMolten kovar_fluid = new FluidMolten("kovar", 0x9098A0);
+        FluidRegistry.registerFluid(kovar_fluid);
+        FluidRegistry.addBucketForFluid(kovar_fluid);
+
         if(TinkersReforgedConfig.SettingMaterials.materials.lavium) {
             lavium.preInit();
             lavium.getMaterial().addTrait(TinkerTraits.momentum);
