@@ -23,10 +23,10 @@ import vazkii.botania.common.block.ModBlocks;
 
 public class ModuleBotania implements ModuleBase {
 
-    Material manasteel = new Material("manasteel", 0x3389FF);
-    Material livingwood = new Material("livingwood", 0x2E1106);
-    Material livingrock = new Material("livingrock", 0xCCCEBC);
-    Material dreamwood = new Material("dreamwood", 0xA6BCB6);
+    Material manasteel = new Material("ref_manasteel", 0x3389FF);
+    Material livingwood = new Material("ref_livingwood", 0x2E1106);
+    Material livingrock = new Material("ref_livingrock", 0xCCCEBC);
+    Material dreamwood = new Material("ref_dreamwood", 0xA6BCB6);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

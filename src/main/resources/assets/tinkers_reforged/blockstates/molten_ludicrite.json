@@ -1,15 +1,15 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "forge:fluid"
+    "model": "forge:fluid",
+    "textures": {}
   },
   "variants": {
-    "normal": [
-      {
-        "custom": {
-          "fluid": "ludicrite"
-        }
+    "normal": {
+      "transform": "forge:default-item",
+      "custom": {
+        "fluid": "ludicrite"
       }
-    ]
+    }
   }
 }

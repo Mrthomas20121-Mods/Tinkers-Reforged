@@ -117,7 +117,6 @@ public class ModuleTinkersReforged implements ModuleBase {
         item.setRegistryName(TinkersReforged.MODID, name);
         item.setTranslationKey(TinkersReforged.MODID+"."+name);
         r.register(item);
-        addOredict(item, name);
         return item;
     }
     private static Block register(IForgeRegistry<Block> r, Block block, String name) {
@@ -125,11 +124,5 @@ public class ModuleTinkersReforged implements ModuleBase {
         block.setTranslationKey(TinkersReforged.MODID+"."+name);
         r.register(block);
         return block;
-    }
-
-    private static void addOredict(Item item, String name) {
-        String[] ores = name.split("_");
-        String ore = ores[1]+StringUtils.capitalize(ores[0]);
-        OreDictionary.registerOre(ore, item);
     }
 }

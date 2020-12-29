@@ -6,6 +6,7 @@ import de.ellpeck.naturesaura.api.recipes.OfferingRecipe;
 import de.ellpeck.naturesaura.blocks.ModBlocks;
 import de.ellpeck.naturesaura.items.ModItems;
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ModuleManager;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
@@ -94,8 +95,7 @@ public class ModuleNaturesAura implements ModuleBase {
 
         ModToken token = new ModToken();
         token.addRecipeMatch(new RecipeMatch.ItemCombination(1, new ItemStack(ModItems.TOKEN_EUPHORIA), new ItemStack(ModItems.TOKEN_TERROR), new ItemStack(ModItems.TOKEN_RAGE), new ItemStack(ModItems.TOKEN_GRIEF)));
-        TinkersReforged.proxy.registerModifierModel(token,
-                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + token.getIdentifier()));
+        ModuleManager.addModifier(token);
     }
 
     @Override

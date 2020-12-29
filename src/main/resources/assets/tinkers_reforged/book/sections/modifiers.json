@@ -1,42 +1,52 @@
 [
   {
     "type": "modifier",
-    "data": "modifiers/ender_star.json"
+    "data": "modifiers/ender_star.json",
+	"mod": "actuallyadditions"
   },
   {
     "type": "modifier",
-    "data": "modifiers/lens_killer.json"
+    "data": "modifiers/lens_killer.json",
+	"mod": "actuallyadditions"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_lens_miner.json"
+    "data": "modifiers/ref_lens_miner.json",
+	"mod": "actuallyadditions"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_amber.json"
+    "data": "modifiers/ref_amber.json",
+	"mod": "biomesoplenty"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_malachite.json"
+    "data": "modifiers/ref_malachite.json",
+	"mod": "biomesoplenty"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_tanzanite.json"
+    "data": "modifiers/ref_tanzanite.json",
+	"mod": "biomesoplenty"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_topaz.json"
+    "data": "modifiers/ref_topaz.json",
+	"mod": "biomesoplenty"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_terrestrial_artifact.json"
+    "data": "modifiers/ref_terrestrial_artifact.json",
+	"mod": "biomesoplenty"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_shulker_pearl.json"
+    "data": "modifiers/ref_shulker_pearl.json",
+	"mod": "darkutils"
   },
   {
     "type": "modifier",
-    "data": "modifiers/ref_digging.json"
+    "data": "modifiers/ref_digging.json",
+	"mod": "environmentaltech"
   }
 ]

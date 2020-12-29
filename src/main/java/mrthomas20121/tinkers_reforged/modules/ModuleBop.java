@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import biomesoplenty.api.item.BOPItems;
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ModuleManager;
 import mrthomas20121.tinkers_reforged.trait.modifier.*;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -28,6 +29,12 @@ public class ModuleBop implements ModuleBase {
         topaz.addItem("gemTopaz");
         malachite.addItem("gemMalachite");
         terrestrialArtifact.addItem(BOPItems.terrestrial_artifact, 1, 1);
+
+        ModuleManager.addModifier(tanzanite);
+        ModuleManager.addModifier(amber);
+        ModuleManager.addModifier(topaz);
+        ModuleManager.addModifier(malachite);
+        ModuleManager.addModifier(terrestrialArtifact);
     }
 
     @Override

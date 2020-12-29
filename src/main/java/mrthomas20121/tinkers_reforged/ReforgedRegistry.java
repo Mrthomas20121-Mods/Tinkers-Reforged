@@ -1,19 +1,19 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.biolib.objects.capability.BioCapabilityProvider;
-import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.library.block.ReforgedItemBlock;
 import mrthomas20121.tinkers_reforged.modules.ModuleTinkersReforged;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
+import org.apache.commons.lang3.StringUtils;
 import slimeknights.tconstruct.library.tools.TinkerToolCore;
 
 import java.util.ArrayList;
@@ -41,6 +41,12 @@ public class ReforgedRegistry {
     }
 
     private static final ResourceLocation capability = new ResourceLocation(TinkersReforged.MODID, "energyCapability");
+
+    public static void init() {
+        for(Item item: items) {
+            addOredict(item, item.getRegistryName().getPath());
+        }
+    }
 
     @SubscribeEvent
     public static void CapabilitiesEvent(AttachCapabilitiesEvent<ItemStack> event) {
@@ -70,5 +76,11 @@ public class ReforgedRegistry {
         itemBlock.setRegistryName(block.getRegistryName());
         itemBlock.setTranslationKey(block.getTranslationKey());
         r.register(itemBlock);
+    }
+
+    private static void addOredict(Item item, String name) {
+        String[] ores = name.split("_");
+        String ore = ores[1]+ StringUtils.capitalize(ores[0]);
+        OreDictionary.registerOre(ore, item);
     }
 }

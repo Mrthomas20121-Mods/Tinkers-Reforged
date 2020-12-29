@@ -4,6 +4,10 @@ import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.biolib.util.ConarmUtil;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.modules.*;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -12,13 +16,22 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
+
+import java.util.ArrayList;
 
 public class ModuleManager implements ModuleBase {
 
     private static ModuleManager instance = new ModuleManager();
     public static ModuleManager get() {
         return instance;
+    }
+
+    private static ArrayList<Modifier> modifiers = new ArrayList<>();
+
+    public static void addModifier(Modifier modifier) {
+        modifiers.add(modifier);
     }
 
     public ModuleAA moduleAA;
@@ -199,6 +212,10 @@ public class ModuleManager implements ModuleBase {
         }
         if(isModLoaded("tinkersreforged") && TinkersReforgedConfig.SettingMaterials.modules.tinkers_reforged) {
             moduleTinkersReforged.init(event);
+        }
+
+        for(Modifier modifier: modifiers) {
+            TinkersReforged.proxy.registerModifierModel(modifier, new ResourceLocation("models/item/modifiers/" + modifier.getIdentifier()));
         }
     }
 

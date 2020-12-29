@@ -2,6 +2,7 @@
   {
     "name": "ref_modifiers",
     "data": "sections/modifiers.json",
+    "mod": "tinkers_reforged",
     "icon": {
       "item": {
         "id": "tinkers_reforged:lavium_dust"
@@ -11,6 +12,7 @@
   {
     "name": "ref_tools",
     "data": "sections/tools.json",
+    "mod": "tinkers_reforged",
     "icon": {
       "item": {
         "id": "minecraft:iron_sword"

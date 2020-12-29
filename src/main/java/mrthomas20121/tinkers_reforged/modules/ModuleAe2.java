@@ -32,7 +32,7 @@ public class ModuleAe2 implements ModuleBase {
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.fluix_crystal) {
-            fluix_crystal.addTrait(TinkerTraits.sharp);
+            fluix_crystal.addTrait(ReforgedTraits.signal);
             TinkerRegistry.addMaterial(fluix_crystal);
             TinkerRegistry.addMaterialStats(fluix_crystal,
                     new HeadMaterialStats(230, 4.2f, 3f, HarvestLevels.DIAMOND),

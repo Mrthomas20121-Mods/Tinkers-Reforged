@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ModuleManager;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModDigging;
 import net.minecraft.util.ResourceLocation;
@@ -26,8 +27,7 @@ public class ModuleEnvTech implements ModuleBase {
         digging.addItem("blockPladium");
         digging.addItem("blockIonite");
 
-        TinkersReforged.proxy.registerModifierModel(digging,
-                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + digging.getIdentifier()));
+        ModuleManager.addModifier(digging);
     }
 
     @Override

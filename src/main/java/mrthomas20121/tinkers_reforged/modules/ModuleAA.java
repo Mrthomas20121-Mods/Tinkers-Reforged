@@ -3,7 +3,6 @@ package mrthomas20121.tinkers_reforged.modules;
 import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
 import de.ellpeck.actuallyadditions.mod.items.InitItems;
 import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.biolib.util.ConarmUtil;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
@@ -13,7 +12,6 @@ import mrthomas20121.tinkers_reforged.trait.modifier.ModLensKiller;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModLensMiner;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -31,7 +29,7 @@ public class ModuleAA implements ModuleBase {
     public static MaterialGen diamatine = new MaterialGen("diamatine", 0x9A9CFF, "Diamatine", 700, true);
     public static MaterialGen void_crystal = new MaterialGen("void_crystal", 0x171717, "Void", 700, true);
     public static MaterialGen emeradic = new MaterialGen("emeradic", 0x15EA0A, "Emeradic", 700, true);
-    public static MaterialGen enori = new MaterialGen("enori", 0x15EA0A, "Enori", 700, true);
+    public static MaterialGen enori = new MaterialGen("enori", 0xF6F3FF, "Enori", 700, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

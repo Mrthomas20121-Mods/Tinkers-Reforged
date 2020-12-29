@@ -1,8 +1,11 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ModuleManager;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModShulkerPearl;
 import net.darkhax.darkutils.features.shulkerpearl.FeatureShulkerPearlItem;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -19,6 +22,7 @@ public class ModuleDarkUtils implements ModuleBase {
 
         ModShulkerPearl shulkerPearl = new ModShulkerPearl();
         shulkerPearl.addItem(FeatureShulkerPearlItem.itemShulkerPearl);
+        ModuleManager.addModifier(shulkerPearl);
     }
 
     @Override
