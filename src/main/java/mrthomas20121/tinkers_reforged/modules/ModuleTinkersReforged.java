@@ -6,14 +6,20 @@ import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.library.Utils;
 import mrthomas20121.tinkers_reforged.library.block.ReforgedBlockGlass;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.commons.lang3.StringUtils;
@@ -26,12 +32,13 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleTinkersReforged implements ModuleBase {
 
-    MaterialGen lavium = new MaterialGen("lavium", 0x9FAF59, "Lavium", 800);
-    MaterialGen qivium = new MaterialGen("qivium", 0xAF7259, "Qivium", 800);
+    public static MaterialGen lavium = new MaterialGen("lavium", 0x9FAF59, "Lavium", 800);
+    public static MaterialGen qivium = new MaterialGen("qivium", 0xAF7259, "Qivium", 800);
+
+    private FluidMolten kovar_fluid = new FluidMolten("kovar", 0x9098A0);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
-        FluidMolten kovar_fluid = new FluidMolten("kovar", 0x9098A0);
         FluidRegistry.registerFluid(kovar_fluid);
         FluidRegistry.addBucketForFluid(kovar_fluid);
 
@@ -70,38 +77,33 @@ public class ModuleTinkersReforged implements ModuleBase {
 
         if(TinkersReforgedConfig.SettingGeneral.enableAlloyRecipes)
         {
-            FluidStack ardite =FluidRegistry.getFluidStack("ardite", 288);
-            FluidStack purpleslime = FluidRegistry.getFluidStack("purpleslime", 144);
-            FluidStack laviumStack = FluidRegistry.getFluidStack("lavium", 144);
-            FluidStack glass = FluidRegistry.getFluidStack("glass", 1000);
-            FluidStack qiviumStack = FluidRegistry.getFluidStack("qivium", 144);
-            FluidStack kovarStack = FluidRegistry.getFluidStack("kovar", 144);
-            TinkerRegistry.registerAlloy(laviumStack, glass, new FluidStack(FluidRegistry.getFluid("cobalt"), 288), purpleslime);
-            TinkerRegistry.registerAlloy(qiviumStack, glass, ardite, purpleslime);
-            TinkerRegistry.registerAlloy(kovarStack, laviumStack, qiviumStack);
-            TinkerSmeltery.registerOredictMeltingCasting(kovarStack.getFluid(), "Kovar");
+            FluidStack ardite = FluidRegistry.getFluidStack("ardite", Material.VALUE_SearedBlock);
+            FluidStack cobalt = FluidRegistry.getFluidStack("cobalt", Material.VALUE_SearedBlock);
+            FluidStack purpleslime = FluidRegistry.getFluidStack("purpleslime", Material.VALUE_Ingot);
+            FluidStack glass = FluidRegistry.getFluidStack("glass", Material.VALUE_Glass);
+            FluidStack lavium = new FluidStack(FluidRegistry.getFluid("lavium"), Material.VALUE_Ingot);
+            FluidStack qivium = new FluidStack(FluidRegistry.getFluid("qivium"), Material.VALUE_Ingot);
+            FluidStack kovar = new FluidStack(FluidRegistry.getFluid("kovar"), Material.VALUE_Ingot);FluidRegistry.getFluidStack("kovar", Material.VALUE_Ingot);
+
+            TinkerRegistry.registerAlloy(lavium, glass, cobalt, purpleslime);
+            TinkerRegistry.registerAlloy(qivium, glass, ardite, purpleslime);
+            TinkerRegistry.registerAlloy(kovar, lavium, qivium);
+            TinkerSmeltery.registerOredictMeltingCasting(kovar.getFluid(), "Kovar");
         }
+
+        TinkerRegistry.registerTableCasting(new ItemStack(Utils.getItem("kovar_glass"), 1), new ItemStack(Blocks.GLASS), kovar_fluid, Material.VALUE_SearedBlock);
     }
 
     public static void registerItems(IForgeRegistry<Item> r) {
-        // kovar
-        ReforgedRegistry.addItem(register(r, new Item(), "kovar_ingot"));
-        ReforgedRegistry.addItem(register(r, new Item(), "kovar_dust"));
-        ReforgedRegistry.addItem(register(r, new Item(), "kovar_nugget"));
-        ReforgedRegistry.addItem(register(r, new Item(), "kovar_plate"));
-        ReforgedRegistry.addItem(register(r, new Item(), "kovar_gear"));
-        // lavium
-        ReforgedRegistry.addItem(register(r, new Item(), "lavium_ingot"));
-        ReforgedRegistry.addItem(register(r, new Item(), "lavium_dust"));
-        ReforgedRegistry.addItem(register(r, new Item(), "lavium_nugget"));
-        ReforgedRegistry.addItem(register(r, new Item(), "lavium_plate"));
-        ReforgedRegistry.addItem(register(r, new Item(), "lavium_gear"));
-        // qivium
-        ReforgedRegistry.addItem(register(r, new Item(), "qivium_ingot"));
-        ReforgedRegistry.addItem(register(r, new Item(), "qivium_dust"));
-        ReforgedRegistry.addItem(register(r, new Item(), "qivium_nugget"));
-        ReforgedRegistry.addItem(register(r, new Item(), "qivium_plate"));
-        ReforgedRegistry.addItem(register(r, new Item(), "qivium_gear"));
+
+        for(Mats mat : Mats.values()) {
+            String materialName = StringUtils.capitalize(mat.name().toLowerCase());
+            for(String p: mat.properties) {
+                Item item = register(r, new Item(), materialName.toLowerCase()+"_"+p.toLowerCase());
+                ReforgedRegistry.addItem(item);
+                OreDictionary.registerOre(p.toLowerCase()+materialName, item);
+            }
+        }
     }
 
     public static void registerBlocks(IForgeRegistry<Block> r) {
@@ -116,6 +118,7 @@ public class ModuleTinkersReforged implements ModuleBase {
     private static Item register(IForgeRegistry<Item> r, Item item, String name) {
         item.setRegistryName(TinkersReforged.MODID, name);
         item.setTranslationKey(TinkersReforged.MODID+"."+name);
+        item.setCreativeTab(CreativeTabs.MATERIALS);
         r.register(item);
         return item;
     }
@@ -124,5 +127,21 @@ public class ModuleTinkersReforged implements ModuleBase {
         block.setTranslationKey(TinkersReforged.MODID+"."+name);
         r.register(block);
         return block;
+    }
+
+    private enum Mats {
+        KOVAR("ingot", "nugget", "dust", "plate", "gear"),
+        LAVIUM("ingot", "nugget", "dust", "plate", "gear"),
+        QIVIUM("ingot", "nugget", "dust", "plate", "gear");
+
+        String[] properties;
+
+        Mats() {
+            this("ingot", "nugget");
+        }
+
+        Mats(String ...properties) {
+            this.properties = properties;
+        }
     }
 }

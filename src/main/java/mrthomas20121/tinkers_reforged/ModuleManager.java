@@ -210,7 +210,7 @@ public class ModuleManager implements ModuleBase {
         if(isModLoaded("thermalexpansion") && TinkersReforgedConfig.SettingMaterials.modules.thermal) {
             moduleThermal.init(event);
         }
-        if(isModLoaded("tinkersreforged") && TinkersReforgedConfig.SettingMaterials.modules.tinkers_reforged) {
+        if(isModLoaded("tinkers_reforged") && TinkersReforgedConfig.SettingMaterials.modules.tinkers_reforged) {
             moduleTinkersReforged.init(event);
         }
 

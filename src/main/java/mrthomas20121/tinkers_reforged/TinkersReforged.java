@@ -52,7 +52,6 @@ public class TinkersReforged
         proxy.registerBookData();
         proxy.init(event);
         ModuleManager.get().init(event);
-        ReforgedRegistry.init();
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)

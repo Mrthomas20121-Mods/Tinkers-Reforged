@@ -42,12 +42,6 @@ public class ReforgedRegistry {
 
     private static final ResourceLocation capability = new ResourceLocation(TinkersReforged.MODID, "energyCapability");
 
-    public static void init() {
-        for(Item item: items) {
-            addOredict(item, item.getRegistryName().getPath());
-        }
-    }
-
     @SubscribeEvent
     public static void CapabilitiesEvent(AttachCapabilitiesEvent<ItemStack> event) {
         ItemStack stack = event.getObject();

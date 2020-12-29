@@ -76,7 +76,6 @@ public class Tools {
                 r.register(swordLight);
                 TinkersReforged.proxy.registerToolModel(swordLight);
                 TinkerRegistry.registerToolForgeCrafting(swordLight);
-                r.register(swordLight);
             }
 
             if(TinkersReforgedConfig.SettingTools.enableKnife && Loader.isModLoaded("roots")) {
