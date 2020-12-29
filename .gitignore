@@ -1,5 +1,5 @@
-Pixelmon*
 *.js
+*.py
 test.txt
 
 #ant stuff
