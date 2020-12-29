@@ -1,10 +1,16 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
 import mrthomas20121.biolib.objects.book.BookHelper;
+import mrthomas20121.biolib.objects.book.ModifierSectionTransformer;
+import mrthomas20121.biolib.objects.book.ToolSectionTransformer;
 import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
+import mrthomas20121.tinkers_reforged.library.book.ModFileRepository;
+import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ModifierModSectionTransformer;
+import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ToolModSectiontransformer;
 import mrthomas20121.tinkers_reforged.tools.Tools;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -20,6 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
+import slimeknights.tconstruct.library.book.TinkerBook;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
@@ -97,20 +104,23 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerBookData() {
-        BookHelper book = new BookHelper(TinkersReforged.MODID);
-        book.addRepository();
-        book.addModifierTransformer("ref_");
-        book.addToolTransformer("ref_");
+        TinkerBook.INSTANCE.addRepository(new ModFileRepository(TinkersReforged.MODID+":book"));
+        TinkerBook.INSTANCE.addTransformer(new ModifierModSectionTransformer());
+        TinkerBook.INSTANCE.addTransformer(new ToolModSectiontransformer());
     }
 
     @Override
     public void registerToolModel(ToolCore tc) {
         ModelRegisterUtil.registerToolModel(tc);
     }
+
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         for(Item item : ReforgedRegistry.getItems()) {
-            ModelLoader.setCustomModelResourceLocation(item, 0 , new ModelResourceLocation(item.getRegistryName(), "inventory"));
+            ModelRegisterUtil.registerItemModel(item);
+        }
+        for(Block block: ReforgedRegistry.getBlocks()) {
+            ModelRegisterUtil.registerItemModel(block);
         }
     }
 }
