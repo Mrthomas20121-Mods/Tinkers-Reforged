@@ -1,5 +1,8 @@
 package mrthomas20121.tinkers_reforged.tools;
 
+import com.teammetallurgy.atum.entity.stone.EntityStoneBase;
+import gnu.trove.map.TObjectFloatMap;
+import gnu.trove.map.hash.TObjectFloatHashMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -7,6 +10,10 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
@@ -18,6 +25,8 @@ import slimeknights.tconstruct.tools.TinkerTools;
 import java.util.List;
 
 public class ToolClub extends SwordCore {
+
+    private static final TObjectFloatMap<EntityLivingBase> cooldown = new TObjectFloatHashMap<>();
 
     public ToolClub() {
         super(PartMaterialType.handle(TinkerTools.toughToolRod),
@@ -35,6 +44,34 @@ public class ToolClub extends SwordCore {
 
         return data;
     }
+
+    @SubscribeEvent
+    public static void onHurt(LivingHurtEvent event) {
+        EntityLivingBase target = event.getEntityLiving();
+        Entity source = event.getSource().getTrueSource();
+        if (!(target instanceof EntityStoneBase) && source instanceof EntityLivingBase) {
+            EntityLivingBase attacker = (EntityLivingBase) source;
+            if (attacker.getHeldItemMainhand().getItem() instanceof ToolClub) {
+                float knockback = 0.0F;
+                if (cooldown.get(attacker) == 1.0F) {
+                    knockback = 1.8F;
+                }
+                target.addVelocity((double) (-MathHelper.sin(attacker.rotationYaw * 3.1415927F / 180.0F) * knockback * 0.5F), 0.1D, (double) (MathHelper.cos(attacker.rotationYaw * 3.1415927F / 180.0F) * knockback * 0.5F));
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onAttack(AttackEntityEvent event) {
+        EntityPlayer player = event.getEntityPlayer();
+        if (player.world.isRemote) return;
+        if (event.getTarget() instanceof EntityLivingBase && !(event.getTarget() instanceof EntityStoneBase)) {
+            if (player.getHeldItemMainhand().getItem() instanceof ToolClub) {
+                cooldown.put(player, player.getCooledAttackStrength(0.5F));
+            }
+        }
+    }
+
     @Override
     public float damagePotential() { return 2.6f; }
 
@@ -45,39 +82,6 @@ public class ToolClub extends SwordCore {
 
     @Override
     public boolean dealDamage(ItemStack stack, EntityLivingBase player, Entity entity, float damage) {
-        // deal damage first
-        boolean hit = super.dealDamage(stack, player, entity, damage);
-        // and then sweep
-        if(hit && !ToolHelper.isBroken(stack)) {
-            // sweep code from EntityPlayer#attackTargetEntityWithCurrentItem()
-            // basically: no crit, no sprinting and has to stand on the ground for sweep. Also has to move regularly slowly
-            double d0 = (double) (player.distanceWalkedModified - player.prevDistanceWalkedModified);
-            boolean flag = true;
-            if(player instanceof EntityPlayer) {
-                flag = ((EntityPlayer) player).getCooledAttackStrength(0.5F) > 0.9f;
-
-                float knockback = 0.0F;
-                if (((EntityPlayer) player).getCooldownPeriod() == 1.0F) {
-                    knockback = 1.8F;
-                }
-                entity.addVelocity((double) (-MathHelper.sin(player.rotationYaw * 3.1415927F / 180.0F) * knockback * 0.5F), 0.1D, (double) (MathHelper.cos(player.rotationYaw * 3.1415927F / 180.0F) * knockback * 0.5F));
-            }
-            boolean flag2 = player.fallDistance > 0.0F && !player.onGround && !player.isOnLadder() && !player.isInWater() && !player.isPotionActive(MobEffects.BLINDNESS) && !player.isRiding();
-            if(flag && !player.isSprinting() && !flag2 && player.onGround && d0 < (double) player.getAIMoveSpeed()) {
-                for(EntityLivingBase entitylivingbase : player.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, entity.getEntityBoundingBox().expand(1.0D, 0.25D, 1.0D))) {
-                    if(entitylivingbase != player && entitylivingbase != entity && !player.isOnSameTeam(entitylivingbase) && player.getDistanceSq(entitylivingbase) < 9.0D) {
-                        entitylivingbase.knockBack(player, 0.4F, (double) MathHelper.sin(player.rotationYaw * 0.017453292F), (double) (-MathHelper.cos(player.rotationYaw * 0.017453292F)));
-                        super.dealDamage(stack, player, entitylivingbase, 1f);
-                    }
-                }
-
-                player.getEntityWorld().playSound(null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, player.getSoundCategory(), 1.0F, 1.0F);
-                if(player instanceof EntityPlayer) {
-                    ((EntityPlayer) player).spawnSweepParticles();
-                }
-            }
-        }
-
-        return hit;
+        return super.dealDamage(stack, player, entity, damage);
     }
 }

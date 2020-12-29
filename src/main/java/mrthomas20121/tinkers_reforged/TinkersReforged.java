@@ -1,6 +1,9 @@
 package mrthomas20121.tinkers_reforged;
 
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.tools.ToolClub;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -35,6 +38,9 @@ public class TinkersReforged
     public void preInit(FMLPreInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(this);
+        if(Loader.isModLoaded("atum") && TinkersReforgedConfig.SettingMaterials.modules.atum && TinkersReforgedConfig.SettingTools.enableClub) {
+            MinecraftForge.EVENT_BUS.register(ToolClub.class);
+        }
         logger = event.getModLog();
         proxy.preInit(event);
         ModuleManager.get().preInit(event);

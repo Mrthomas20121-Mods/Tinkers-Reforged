@@ -51,10 +51,7 @@ public class MaterialGen {
     }
 
     public void preInit() {
-        boolean isRegistered = FluidRegistry.registerFluid(fluid);
-        if(isRegistered) {
-            Registry.addFluidBlock(TinkersReforged.MODID, fluid.getName());
-        }
+        FluidRegistry.registerFluid(fluid);
         fluid = FluidRegistry.getFluid(fluid.getName());
 		fluid.setTemperature(temp);
         FluidRegistry.addBucketForFluid(fluid);

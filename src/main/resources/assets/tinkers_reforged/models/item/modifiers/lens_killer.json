@@ -1,8 +1,10 @@
  {
 	"textures": {
-		"greatsword": "tinkersreforged:items/greatsword/mod_lens_killer",
-		"khopesh": "tinkersreforged:items/khopesh/mod_lens_killer",
-		"gladius": "tinkersreforged:items/gladius/mod_lens_killer",
-		"club": "tinkersreforged:items/club/mod_lens_killer",
+		"greatsword": "tinkers_reforged:items/greatsword/mod_lens_killer",
+		"khopesh": "tinkers_reforged:items/khopesh/mod_lens_killer",
+		"gladius": "tinkers_reforged:items/gladius/mod_lens_killer",
+		"club": "tinkers_reforged:items/club/mod_lens_killer",
+		"lightsword": "tinkers_reforged:items/lightsword/mod_lens_killer",
+		"runic_knife": "tinkers_reforged:items/runic_knife/mod_lens_killer"
 	}
 }

@@ -4,6 +4,7 @@
 		"gladius": "tinkers_reforged:items/gladius/mod_sharpness",
 		"greatsword": "tinkers_reforged:items/greatsword/mod_sharpness",
 		"club": "tinkers_reforged:items/club/mod_sharpness",
-		"lightsword": "tinkers_reforged:items/lightsword/mod_sharpness"
+		"lightsword": "tinkers_reforged:items/lightsword/mod_sharpness",
+		"runic_knife": "tinkers_reforged:items/runic_knife/mod_sharpness"
 	}
 }
