@@ -19,6 +19,7 @@ public class TraitCurse extends AbstractTrait {
             EntityLivingBase output = target;
             output.setDropItemsWhenDead(false);
             output.setHealth(output.getHealth()*0.5f);
+            output.setPosition(target.getPosition().getX(), target.getPosition().getY(), target.getPosition().getZ());
             if(chance > 80) {
                 world.spawnEntity(output);
             }

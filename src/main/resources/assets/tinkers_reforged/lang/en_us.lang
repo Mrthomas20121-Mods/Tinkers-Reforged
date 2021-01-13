@@ -104,7 +104,7 @@ fluid.ruby.name=Molten Ruby
 ui.mininglevel.lavium=Lavium
 
 # materials
-material.ref_black_quartz.name=Black Quartz
+material.ref_blackquartz.name=Black Quartz
 material.ref_restonia.name=Restonia
 material.ref_palis.name=Palis
 material.ref_diamatine.name=Diamatine

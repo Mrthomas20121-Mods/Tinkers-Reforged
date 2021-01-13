@@ -35,7 +35,7 @@ public class ModuleTinkersReforged implements ModuleBase {
     public static MaterialGen lavium = new MaterialGen("lavium", 0x9FAF59, "Lavium", 800);
     public static MaterialGen qivium = new MaterialGen("qivium", 0xAF7259, "Qivium", 800);
 
-    private FluidMolten kovar_fluid = new FluidMolten("kovar", 0x9098A0);
+    private FluidMolten kovar_fluid = new FluidMolten("kovar", 0x5369C6);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

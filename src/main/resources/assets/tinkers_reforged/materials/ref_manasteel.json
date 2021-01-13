@@ -1,0 +1,10 @@
+{
+    "type": "metal_textured",
+    "parameters": {
+        "texture": "tinkers_reforged:materials/manasteel",
+        "color": "3389FF",
+        "shinyness": 0.3,
+        "brightness": 0.3,
+        "hueshift": 0
+    }
+}

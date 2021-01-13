@@ -1,10 +1,11 @@
 {
-    "type": "metal_textured",
+    "type": "multicolor",
     "parameters": {
-        "texture": "minecraft:blocks/cobblestone",
-        "color": "9FAF59",
-        "shinyness": 0.6,
-        "brightness": 0.4,
-        "hueshift": 0.1
+        "dark": "58602C",
+        "mid": "6B7734",
+        "bright": "9FAF59",
+        "shinyness": 0.3,
+        "brightness": 0.3,
+        "hueshift": 0
     }
 }
