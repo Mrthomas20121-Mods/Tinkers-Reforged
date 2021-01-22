@@ -448,6 +448,26 @@ public class TinkersReforgedConfig {
         @Config.RequiresMcRestart
         public boolean lumium = true;
 
+        @Config.Comment("Enable/Disable Nickel Silver material.")
+        @Config.LangKey("config."+MODID+".material.nickel_silver")
+        @Config.RequiresMcRestart
+        public boolean nickel_silver = true;
+
+        @Config.Comment("Enable/Disable Tool Steel material.")
+        @Config.LangKey("config."+MODID+".material.tool_steel")
+        @Config.RequiresMcRestart
+        public boolean tool_steel = true;
+
+        @Config.Comment("Enable/Disable Titanium Alloy material.")
+        @Config.LangKey("config."+MODID+".material.titanium_alloy")
+        @Config.RequiresMcRestart
+        public boolean titanium_alloy = true;
+
+        @Config.Comment("Enable/Disable Mangalloy material.")
+        @Config.LangKey("config."+MODID+".material.mangalloy")
+        @Config.RequiresMcRestart
+        public boolean mangalloy = true;
+
         @Config.Comment("Enable/Disable qivium material.")
         @Config.LangKey("config."+MODID+".material.qivium")
         @Config.RequiresMcRestart
@@ -519,6 +539,11 @@ public class TinkersReforgedConfig {
         @Config.LangKey("config."+MODID+".module.extreme_reactor")
         @Config.RequiresMcRestart
         public boolean extreme_reactor = true;
+
+        @Config.Comment("Enable/Disable Heat and Climate module.")
+        @Config.LangKey("config."+MODID+".module.heat_and_climate")
+        @Config.RequiresMcRestart
+        public boolean heat_and_climate = true;
 
         @Config.Comment("Enable/Disable mekanism module.")
         @Config.LangKey("config."+MODID+".module.mekanism")

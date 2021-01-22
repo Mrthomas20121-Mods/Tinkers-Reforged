@@ -45,6 +45,7 @@ public class ModuleManager implements ModuleBase {
     public ModuleDarkUtils moduleDarkUtils;
     public ModuleEnvTech moduleEnvTech;
     public ModuleExtremeReactor moduleExtremeReactor;
+    public ModuleHeatAndClimate moduleHeatAndClimate;
     public ModuleMekanism moduleMekanism;
     public ModuleNaturesAura moduleNaturesAura;
     public ModulePixelmon modulePixelmon;
@@ -100,6 +101,10 @@ public class ModuleManager implements ModuleBase {
         if(isModLoaded("bigreactors") && TinkersReforgedConfig.SettingMaterials.modules.extreme_reactor) {
             moduleExtremeReactor = new ModuleExtremeReactor();
             moduleExtremeReactor.preInit(event);
+        }
+        if(isModLoaded("heatandclimate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
+            moduleHeatAndClimate = new ModuleHeatAndClimate();
+            moduleHeatAndClimate.preInit(event);
         }
         if(isModLoaded("mekanism") && TinkersReforgedConfig.SettingMaterials.modules.mekanism) {
             moduleMekanism = new ModuleMekanism();
@@ -184,6 +189,9 @@ public class ModuleManager implements ModuleBase {
         }
         if(isModLoaded("bigreactors") && TinkersReforgedConfig.SettingMaterials.modules.extreme_reactor) {
             moduleExtremeReactor.init(event);
+        }
+        if(isModLoaded("heatandclimate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
+            moduleHeatAndClimate.init(event);
         }
         if(isModLoaded("mekanism") && TinkersReforgedConfig.SettingMaterials.modules.mekanism) {
             moduleMekanism.init(event);

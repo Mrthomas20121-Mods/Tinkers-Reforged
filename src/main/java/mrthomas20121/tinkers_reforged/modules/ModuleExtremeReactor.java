@@ -16,10 +16,10 @@ import slimeknights.tconstruct.library.utils.HarvestLevels;
 
 public class ModuleExtremeReactor implements ModuleBase {
 
-    MaterialGen yellorium = new MaterialGen("yellorium", 0xD9DB5C, "Yellorium", 800);
-    MaterialGen cyanite = new MaterialGen("cyanite", 0x5CAFDB, "Cyanite", 800);
-    MaterialGen ludicrite = new MaterialGen("ludicrite", 0xDD5EDD, "Ludicrite", 800);
-    MaterialGen blutonium = new MaterialGen("blutonium", 0x4642D6, "Blutonium", 1000);
+    private MaterialGen yellorium = new MaterialGen("yellorium", 0xD9DB5C, "Yellorium", 800);
+    private MaterialGen cyanite = new MaterialGen("cyanite", 0x5CAFDB, "Cyanite", 800);
+    private MaterialGen ludicrite = new MaterialGen("ludicrite", 0xDD5EDD, "Ludicrite", 800);
+    private MaterialGen blutonium = new MaterialGen("blutonium", 0x4642D6, "Blutonium", 1000);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
