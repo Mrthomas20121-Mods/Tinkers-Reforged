@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.tools;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -29,6 +30,8 @@ public class SwordLight extends SwordCore {
         ToolNBT data = buildDefaultTag(materials);
 
         data.durability *= 0.9f;
+        data.attackSpeedMultiplier*=1.5f;
+        data.attack*=0.6f;
 
         return data;
     }
@@ -45,7 +48,7 @@ public class SwordLight extends SwordCore {
 
     @Override
     public boolean dealDamage(ItemStack stack, EntityLivingBase player, Entity entity, float damage) {
-        if(entity instanceof EntityMob)
+        if(entity.isCreatureType(EnumCreatureType.MONSTER, false))
         {
             DamageSource damageSource = DamageSource.causeIndirectMagicDamage(entity, player);
             entity.attackEntityFrom(damageSource, 6);

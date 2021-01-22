@@ -17,8 +17,8 @@ import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.List;
 
-public class SwordGreatSword extends SwordCore {
-    public SwordGreatSword() {
+public class SwordGreat extends SwordCore {
+    public SwordGreat() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
                 PartMaterialType.head(Tools.greatBlade),
                 PartMaterialType.extra(TinkerTools.wideGuard));

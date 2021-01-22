@@ -32,7 +32,7 @@ public class ReforgedTraits {
     public static final TraitRose rose = new TraitRose();
     public static final TraitSignal signal = new TraitSignal();
     public static final TraitSoft soft = new TraitSoft();
-    public static final TraitStarryNight starryNight = new TraitStarryNight();
+    public static final TraitStarMagnetism starMagnetism = new TraitStarMagnetism();
     public static final TraitStarShaped starShaped = new TraitStarShaped();
     public static final TraitTeleport teleport = new TraitTeleport();
     public static final TraitVillagerLove villagerLove = new TraitVillagerLove(1);

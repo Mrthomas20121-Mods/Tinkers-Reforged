@@ -21,7 +21,7 @@ public class SwordKhopesh extends SwordCore {
 
     public SwordKhopesh() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
-                PartMaterialType.head(Tools.CurvedBlade),
+                PartMaterialType.head(Tools.curvedBlade),
                 PartMaterialType.extra(TinkerTools.crossGuard));
         this.addCategory(Category.WEAPON);
     }

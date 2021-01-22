@@ -42,11 +42,9 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init(FMLInitializationEvent e) {
     }
-
-    @SideOnly(Side.CLIENT)
+    
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-
         TinkerRegistry.getAllMaterials().forEach((material) -> { if(material.getIdentifier().contains("ref_")) material.setRenderInfo(material.materialTextColor); });
     }
     @Override
@@ -68,6 +66,14 @@ public class ClientProxy extends CommonProxy {
             gladiusGui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
             gladiusGui.addSlotPosition(33 - 2 - 1, 42 + 2);
             TinkerRegistryClient.addToolBuilding(gladiusGui);
+        }
+        if(Tools.swordLight != null)
+        {
+            ToolBuildGuiInfo lightsword_gui = new ToolBuildGuiInfo(Tools.swordLight);
+            lightsword_gui.addSlotPosition(33 - 20 - 1, 42 + 20);
+            lightsword_gui.addSlotPosition(33 + 20 - 5, 42 - 20 + 4);
+            lightsword_gui.addSlotPosition(33 - 2 - 1, 42 + 2);
+            TinkerRegistryClient.addToolBuilding(lightsword_gui);
         }
         if(Tools.knife != null)
         {

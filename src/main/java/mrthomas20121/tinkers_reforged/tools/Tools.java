@@ -21,6 +21,7 @@ import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.AoeToolCore;
 import slimeknights.tconstruct.library.tools.Pattern;
+import slimeknights.tconstruct.library.tools.ToolCore;
 import slimeknights.tconstruct.library.tools.ToolPart;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerTools;
@@ -33,14 +34,14 @@ public class Tools {
     // tool parts
     public static ToolPart clubHead;
     public static ToolPart greatBlade;
-    public static ToolPart CurvedBlade;
+    public static ToolPart curvedBlade;
     public static ToolPart propickHead;
     public static ToolPart lightblade;
 
     // tools
     public static SwordGladius gladius = null;
     public static ToolClub club = null;
-    public static SwordGreatSword greatsword = null;
+    public static SwordGreat greatsword = null;
     public static SwordKhopesh khopesh = null;
     public static ToolRunicKnife knife = null;
     public static AoeToolCore propick = null;
@@ -53,107 +54,40 @@ public class Tools {
         if(TinkersReforgedConfig.SettingTools.enableTools)
         {
             if(TinkersReforgedConfig.SettingTools.enableGladius) {
-
-                gladius = new SwordGladius();
-                gladius.setRegistryName(TinkersReforged.MODID, "gladius");
-                gladius.setTranslationKey(TinkersReforged.MODID + ".gladius");
-                r.register(gladius);
-                TinkersReforged.proxy.registerToolModel(gladius);
-                TinkerRegistry.registerToolForgeCrafting(gladius);
+                gladius = registerTool(r, "gladius", new SwordGladius());
             }
 
             if(TinkersReforgedConfig.SettingTools.enableLightsword) {
-
-                lightblade = new ToolPart(Material.VALUE_Ingot*3);
-                lightblade.setRegistryName(TinkersReforged.MODID, "light_blade");
-                lightblade.setTranslationKey(TinkersReforged.MODID+".light_blade");
-                TinkersReforged.proxy.registerToolPartModel(lightblade);
-                r.register(lightblade);
-
-				swordLight = new SwordLight();
-                swordLight.setRegistryName(TinkersReforged.MODID, "lightsword");
-                swordLight.setTranslationKey(TinkersReforged.MODID + ".lightsword");
-                r.register(swordLight);
-                TinkersReforged.proxy.registerToolModel(swordLight);
-                TinkerRegistry.registerToolForgeCrafting(swordLight);
+                lightblade = registerPart(r, "light_blade", Material.VALUE_Ingot*3);
+				swordLight = registerTool(r, "lightsword", new SwordLight());
             }
 
             if(TinkersReforgedConfig.SettingTools.enableKnife && Loader.isModLoaded("roots")) {
-                knife = new ToolRunicKnife();
-                knife.setRegistryName(TinkersReforged.MODID, "runic_knife");
-                knife.setTranslationKey(TinkersReforged.MODID + ".runic_knife");
-                r.register(knife);
-                TinkersReforged.proxy.registerToolModel(knife);
-                TinkerRegistry.registerToolForgeCrafting(knife);
+                knife = registerTool(r, "runic_knife", new ToolRunicKnife());
             }
 
-            if(ModuleManager.isModLoaded("atum")) {
+            if(ModuleManager.isModLoaded("atum") && TinkersReforgedConfig.SettingMaterials.modules.atum) {
                 if(TinkersReforgedConfig.SettingTools.enableClub)
                 {
-                    clubHead = new ToolPart(Material.VALUE_Ingot*3);
-                    clubHead.setRegistryName(TinkersReforged.MODID,"club_head");
-                    clubHead.setTranslationKey(TinkersReforged.MODID + ".club_head");
-                    r.register(clubHead);
-                    TinkersReforged.proxy.registerToolPartModel(clubHead);
-                    registerStencil(clubHead);
-
-                    club = new ToolClub();
-                    club.setRegistryName(TinkersReforged.MODID, "club");
-                    club.setTranslationKey(TinkersReforged.MODID + ".club");
-                    r.register(club);
-                    TinkersReforged.proxy.registerToolModel(club);
-                    TinkerRegistry.registerToolForgeCrafting(club);
+                    clubHead = registerPart(r, "club_head", Material.VALUE_Ingot*3);
+                    club = registerTool(r, "club", new ToolClub());
                 }
 
                 if(TinkersReforgedConfig.SettingTools.enableGreatsword) {
-                    greatBlade = new ToolPart(Material.VALUE_Ingot*4);
-                    greatBlade.setRegistryName(TinkersReforged.MODID,"great_blade");
-                    greatBlade.setTranslationKey(TinkersReforged.MODID + ".great_blade");
-                    r.register(greatBlade);
-                    TinkersReforged.proxy.registerToolPartModel(greatBlade);
-                    registerStencil(greatBlade);
-
-                    greatsword = new SwordGreatSword();
-                    greatsword.setRegistryName(TinkersReforged.MODID, "greatsword");
-                    greatsword.setTranslationKey(TinkersReforged.MODID + ".greatsword");
-                    TinkersReforged.proxy.registerToolModel(greatsword);
-                    r.register(greatsword);
-                    TinkerRegistry.registerToolForgeCrafting(greatsword);
+                    greatBlade = registerPart(r, "great_blade", Material.VALUE_Ingot*4);
+                    greatsword = registerTool(r, "greatsword", new SwordGreat());
                 }
 
                 if(TinkersReforgedConfig.SettingTools.enableKhopesh) {
-                    CurvedBlade = new ToolPart(Material.VALUE_Ingot*3);
-                    CurvedBlade.setRegistryName(TinkersReforged.MODID,"curved_blade");
-                    CurvedBlade.setTranslationKey(TinkersReforged.MODID + ".curved_blade");
-                    TinkersReforged.proxy.registerToolPartModel(CurvedBlade);
-                    r.register(CurvedBlade);
-                    registerStencil(CurvedBlade);
-
-                    khopesh = new SwordKhopesh();
-                    khopesh.setRegistryName(TinkersReforged.MODID, "khopesh");
-                    khopesh.setTranslationKey(TinkersReforged.MODID + ".khopesh");
-                    TinkersReforged.proxy.registerToolModel(khopesh);
-                    r.register(khopesh);
-                    TinkerRegistry.registerToolForgeCrafting(khopesh);
+                    curvedBlade = registerPart(r, "curved_blade", Material.VALUE_Ingot*3);
+                    khopesh = registerTool(r, "khopesh", new SwordKhopesh());
                 }
             }
 
             if(ModuleManager.isModLoaded("geolosys"))
             {
-                propickHead = new ToolPart(Material.VALUE_Ingot*3);
-                propickHead.setRegistryName(TinkersReforged.MODID,"propick_head");
-                propickHead.setTranslationKey(TinkersReforged.MODID + ".propick_head");
-                TinkersReforged.proxy.registerToolPartModel(propickHead);
-                r.register(propickHead);
-                registerStencil(propickHead);
-
-                propick = new ToolProPick();
-                propick.setRegistryName(TinkersReforged.MODID, "propick");
-                propick.setTranslationKey(TinkersReforged.MODID+".propick");
-                TinkersReforged.proxy.registerToolModel(propick);
-                r.register(propick);
-
-                TinkerRegistry.registerToolForgeCrafting(propick);
+                propickHead = registerPart(r, "propick_head", Material.VALUE_Ingot*3);
+                propick = registerTool(r, "propick", new ToolProPick());
             }
 
             for(IModifier modifier : getTinkerModifiers())
@@ -162,9 +96,6 @@ public class Tools {
                         new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modifier.getIdentifier()));
             }
         }
-    }
-    private static void registerStencil(ToolPart part) {
-        TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), part));
     }
     private static ArrayList<Modifier> getTinkerModifiers()
     {
@@ -189,5 +120,24 @@ public class Tools {
                 TinkerModifiers.modWebbed,
                 TinkerModifiers.modBlasting
         );
+    }
+
+    private static ToolPart registerPart(IForgeRegistry<Item> r, String name, int cost) {
+        ToolPart part = new ToolPart(cost);
+        part.setRegistryName(TinkersReforged.MODID,name);
+        part.setTranslationKey(TinkersReforged.MODID + "."+name);
+        TinkersReforged.proxy.registerToolPartModel(part);
+        r.register(part);
+        TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), part));
+        return part;
+    }
+
+    private static <T extends ToolCore> T registerTool(IForgeRegistry<Item> r, String name, T tool) {
+        tool.setRegistryName(TinkersReforged.MODID,name);
+        tool.setTranslationKey(TinkersReforged.MODID + "."+name);
+        TinkersReforged.proxy.registerToolModel(tool);
+        r.register(tool);
+        TinkerRegistry.registerToolForgeCrafting(tool);
+        return tool;
     }
 }

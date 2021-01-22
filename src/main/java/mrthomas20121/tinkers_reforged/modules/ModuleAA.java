@@ -103,7 +103,7 @@ public class ModuleAA implements ModuleBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
             enori.preInit();
-            enori.getMaterial().addTrait(ReforgedTraits.starryNight, MaterialTypes.HEAD);
+            enori.getMaterial().addTrait(ReforgedTraits.starMagnetism, MaterialTypes.HEAD);
             enori.getMaterial().addTrait(ReforgedTraits.starShaped);
             TinkerRegistry.addMaterial(enori.getMaterial());
             TinkerRegistry.addMaterialStats(enori.getMaterial(),

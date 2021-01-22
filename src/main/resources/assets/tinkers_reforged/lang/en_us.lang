@@ -253,7 +253,7 @@ modifier.ref_fast.name=Fast
 modifier.ref_fast.desc=§oGotta go fast!§r\nYour tool speed is increased but have less durability.
 
 modifier.ref_backfire.name=Backfire
-modifier.ref_backfire.desc=§oToo Hot to handle§r\nSet you on fire because it is too hot to handle.
+modifier.ref_backfire.desc=§oIt never backfire...§r\nSet you on fire because it is too hot to handle.
 
 modifier.ref_leafblower.name=Leafblower
 modifier.ref_leafblower.desc=§oI am a whistleblower now§r\nStanding on grass blocks double your attack.
@@ -296,3 +296,9 @@ modifier.ref_digging.desc=Increase Mining speed
 
 modifier.ref_god_gift.name=Gift from Above
 modifier.ref_god_gift.desc=§oLook! a gift§r\nReflect 5% of damage taken.
+
+modifier.ref_holding.name=Holding
+modifier.ref_holding.desc=§oLook what i can hold!§r\nYour tool base stats get multiply by 1.5.
+
+modifier.ref_endsteel.name=Endsteel
+modifier.ref_endsteel.desc=§oVery Durable!§r\nYour Tool get more durability at the cost of attack damage and mining speed.
