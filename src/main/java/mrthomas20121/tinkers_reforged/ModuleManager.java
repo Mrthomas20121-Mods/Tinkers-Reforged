@@ -102,7 +102,7 @@ public class ModuleManager implements ModuleBase {
             moduleExtremeReactor = new ModuleExtremeReactor();
             moduleExtremeReactor.preInit(event);
         }
-        if(isModLoaded("heatandclimate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
+        if(isModLoaded("dcs_climate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
             moduleHeatAndClimate = new ModuleHeatAndClimate();
             moduleHeatAndClimate.preInit(event);
         }
@@ -190,7 +190,7 @@ public class ModuleManager implements ModuleBase {
         if(isModLoaded("bigreactors") && TinkersReforgedConfig.SettingMaterials.modules.extreme_reactor) {
             moduleExtremeReactor.init(event);
         }
-        if(isModLoaded("heatandclimate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
+        if(isModLoaded("dcs_climate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
             moduleHeatAndClimate.init(event);
         }
         if(isModLoaded("mekanism") && TinkersReforgedConfig.SettingMaterials.modules.mekanism) {
@@ -209,7 +209,6 @@ public class ModuleManager implements ModuleBase {
             moduleRoots.init(event);
         }
         if(isModLoaded("refinedstorage") && TinkersReforgedConfig.SettingMaterials.modules.refined_storage) {
-            moduleRS = new ModuleRS();
             moduleRS.init(event);
         }
         if(isModLoaded("thaumcraft") && TinkersReforgedConfig.SettingMaterials.modules.thaumcraft) {
@@ -262,6 +261,9 @@ public class ModuleManager implements ModuleBase {
         if(isModLoaded("bigreactors") && TinkersReforgedConfig.SettingMaterials.modules.extreme_reactor) {
             moduleExtremeReactor.postInit(event);
         }
+        if(isModLoaded("dcs_climate") && TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate)  {
+            moduleHeatAndClimate.postInit(event);
+        }
         if(isModLoaded("mekanism") && TinkersReforgedConfig.SettingMaterials.modules.mekanism) {
             moduleMekanism.postInit(event);
         }
@@ -278,7 +280,6 @@ public class ModuleManager implements ModuleBase {
             moduleRoots.postInit(event);
         }
         if(isModLoaded("refinedstorage") && TinkersReforgedConfig.SettingMaterials.modules.refined_storage) {
-            moduleRS = new ModuleRS();
             moduleRS.postInit(event);
         }
         if(isModLoaded("thaumcraft") && TinkersReforgedConfig.SettingMaterials.modules.thaumcraft) {

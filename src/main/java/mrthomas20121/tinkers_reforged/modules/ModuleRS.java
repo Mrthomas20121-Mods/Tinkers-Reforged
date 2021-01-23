@@ -35,11 +35,12 @@ public class ModuleRS implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
+        OreDictionary.registerOre("ingotQuartzEnrichedIron", RSItems.QUARTZ_ENRICHED_IRON);
         if(TinkersReforgedConfig.SettingMaterials.materials.quartz_enriched_iron) {
             quartz_enriched_iron.init();
+            quartz_enriched_iron.getMaterial().setRepresentativeItem(RSItems.QUARTZ_ENRICHED_IRON);
+            quartz_enriched_iron.getMaterial().setRepresentativeItem("ingotQuartzEnrichedIron");
         }
-        quartz_enriched_iron.getMaterial().setRepresentativeItem("ingotQuartzEnrichedIron");
-        OreDictionary.registerOre("ingotQuartzEnrichedIron", RSItems.QUARTZ_ENRICHED_IRON);
     }
 
     @Override
