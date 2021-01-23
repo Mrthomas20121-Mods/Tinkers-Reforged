@@ -18,10 +18,10 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class ModuleHeatAndClimate implements ModuleBase {
 
-    private MaterialGen nickel_silver = new MaterialGen("nickel_silver", 0x9F8E73, "NickelSilver", 800);
+    private MaterialGen nickel_silver = new MaterialGen("nickelsilver", 0xC6D2D1, "Nickelsilver", 800);
     private MaterialGen tool_steel = new MaterialGen("tool_steel", 0x85AB93, "ToolSteel", 900);
-    private MaterialGen titanium_alloy = new MaterialGen("titanium_alloy", 0xC6D2D1, "TitaniumAlloy", 700);
-    private MaterialGen mangalloy = new MaterialGen("mangalloy", 0xC66B6E, "mangalloy", 700);
+    private MaterialGen titanium_alloy = new MaterialGen("titanium_alloy", 0x9F8E73, "TitaniumAlloy", 700);
+    private MaterialGen mangalloy = new MaterialGen("mangalloy", 0xC66B6E, "Mangalloy", 700);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

@@ -99,6 +99,10 @@ fluid.amethyst.name=Molten Amethyst
 fluid.sapphire.name=Molten Sapphire
 fluid.peridot.name=Molten Peridot
 fluid.ruby.name=Molten Ruby
+fluid.nickelsilver.name=Molten Nickelsilver
+fluid.tool_steel.name=Molten Tool Steel
+fluid.titanium_alloy.name=Titanium Alloy
+fluid.mangalloy.name=Mangalloy
 
 # mining levels
 ui.mininglevel.lavium=Lavium
@@ -164,6 +168,10 @@ material.ref_thaumium.name=Thaumium
 material.ref_enderium.name=Enderium
 material.ref_signalum.name=Signalum
 material.ref_lumium.name=Lumium
+material.ref_nickelsilver.name=Nickelsilver
+material.ref_tool_steel=Tool Steel
+material.ref_titanium_alloy.name=Titanium Alloy
+material.ref_mangalloy.name=Mangalloy
 material.ref_qivium.name=Qivium
 material.ref_lavium.name=Lavium
 
