@@ -31,6 +31,10 @@ public class ModuleAA implements ModuleBase {
     public static MaterialGen emeradic = new MaterialGen("emeradic", 0x15EA0A, "Emeradic", 700, true);
     public static MaterialGen enori = new MaterialGen("enori", 0xF6F3FF, "Enori", 700, true);
 
+    public static ModEnderStar modEnderStar = new ModEnderStar();
+    public static ModLensKiller modLensKiller = new ModLensKiller();
+    public static ModLensMiner modLensMiner = new ModLensMiner();
+
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
         if(TinkersReforgedConfig.SettingMaterials.materials.black_quartz) {
@@ -158,10 +162,6 @@ public class ModuleAA implements ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
             enori.init();
         }
-
-        ModEnderStar modEnderStar = new ModEnderStar();
-        ModLensKiller modLensKiller = new ModLensKiller();
-        ModLensMiner modLensMiner = new ModLensMiner();
 
         modEnderStar.addItem(new ItemStack(InitItems.itemMisc, 1, 19), 1, 1);
         modLensKiller.addItem(new ItemStack(InitItems.itemMoreDamageLens), 1, 1);

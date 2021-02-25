@@ -1,28 +1,22 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.biolib.objects.book.BookHelper;
-import mrthomas20121.biolib.objects.book.ModifierSectionTransformer;
-import mrthomas20121.biolib.objects.book.ToolSectionTransformer;
 import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import mrthomas20121.tinkers_reforged.library.book.ModFileRepository;
-import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ModifierModSectionTransformer;
-import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ToolModSectiontransformer;
+import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ModifiersSectionTransformer;
+import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ToolsSectiontransformer;
 import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
@@ -111,8 +105,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerBookData() {
         TinkerBook.INSTANCE.addRepository(new ModFileRepository(TinkersReforged.MODID+":book"));
-        TinkerBook.INSTANCE.addTransformer(new ModifierModSectionTransformer());
-        TinkerBook.INSTANCE.addTransformer(new ToolModSectiontransformer());
+        TinkerBook.INSTANCE.addTransformer(new ModifiersSectionTransformer());
+        TinkerBook.INSTANCE.addTransformer(new ToolsSectiontransformer());
     }
 
     @Override
