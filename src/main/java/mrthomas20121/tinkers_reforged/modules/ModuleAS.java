@@ -37,13 +37,13 @@ public class ModuleAS implements ModuleBase {
             starmetal.setCraftable(false).setCastable(false);
             starmetal.setRepresentativeItem("ingotAstralStarmetal");
             starmetal.addItem("ingotAstralStarmetal", 1, Material.VALUE_Ingot);
-        }
 
-        for(IToolPart part : TinkerRegistry.getToolParts())
-        {
-            if(part.canUseMaterial(starmetal) && (part.canBeCasted() || part.canBeCrafted()))
+            for(IToolPart part : TinkerRegistry.getToolParts())
             {
-                InfusionRecipeRegistry.recipes.add(new BasicInfusionRecipe(part.getItemstackWithMaterial(starmetal), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.mods.starmetal.material))));
+                if(part.canUseMaterial(starmetal) && (part.canBeCasted() || part.canBeCrafted()))
+                {
+                    InfusionRecipeRegistry.recipes.add(new BasicInfusionRecipe(part.getItemstackWithMaterial(starmetal), part.getItemstackWithMaterial(TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.mods.starmetal.material))));
+                }
             }
         }
     }

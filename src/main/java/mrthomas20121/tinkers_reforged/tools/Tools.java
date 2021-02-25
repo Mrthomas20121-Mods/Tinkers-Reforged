@@ -97,6 +97,7 @@ public class Tools {
             }
         }
     }
+    
     private static ArrayList<Modifier> getTinkerModifiers()
     {
         return Lists.newArrayList(

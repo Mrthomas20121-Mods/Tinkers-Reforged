@@ -169,7 +169,7 @@ material.ref_enderium.name=Enderium
 material.ref_signalum.name=Signalum
 material.ref_lumium.name=Lumium
 material.ref_nickelsilver.name=Nickelsilver
-material.ref_tool_steel=Tool Steel
+material.ref_tool_steel.name=Tool Steel
 material.ref_titanium_alloy.name=Titanium Alloy
 material.ref_mangalloy.name=Mangalloy
 material.ref_qivium.name=Qivium
@@ -177,19 +177,19 @@ material.ref_lavium.name=Lavium
 
 # Traits and Modifiers
 modifier.ref_signal.name=Signal
-modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode.
+modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode instantly.
 
 modifier.ref_ender.name=Ender
-modifier.ref_ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Ender Mobs.
+modifier.ref_ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Mobs with ender in their name.
 
 modifier.ref_enderfestation.name=Enderfestation
 modifier.ref_enderfestation.desc=§oHate these little pest, they spawn everywhere!§r\nMining blocks have a chance of spawning an endermite.
 
 modifier.ref_bright.name=Bright
-modifier.ref_bright.desc=§oYo Sun gimme your power!§r\nYour tool gain more damage/mining speed with a open sun.
+modifier.ref_bright.desc=§oSolar powered!§r\nYour tool gain more damage/mining speed with a open sun.
 
 modifier.ref_astral_infusion.name=Astral Infusion
-modifier.ref_astral_infusion.desc=§oConstellation go brr§rGet an effect when a constelation is in the sky at night.
+modifier.ref_astral_infusion.desc=§oConstellation go brr§r\nGet the effect of your player attuned constelation at night.
 
 modifier.aura_infusion.name=Aura Infusion
 modifier.aura_infusion.desc=§oThe Tool seems to self repair but at what cost?§r\nRepair your tool using aura.
@@ -204,7 +204,7 @@ modifier.nuclear_waste.name=Nuclear Waste
 modifier.nuclear_waste.desc=§oNuclear Infusion anyone?§r\nGet a random vanilla potion effect after mining or attacking.
 
 modifier.life_steal.name=Life Steal
-modifier.life_steal.desc=§oYou want MORE???§r\nSteal Heart from mobs.
+modifier.life_steal.desc=§oFeels Good§r\nSteal Health from mobs.
 
 modifier.ref_refined.name=Refined
 modifier.ref_refined.desc=§oSomething smell fishy§r\nBreak Obsidian faster.

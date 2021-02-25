@@ -1,26 +1,37 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import hellfirepvp.astralsorcery.common.constellation.IConstellation;
-import hellfirepvp.astralsorcery.common.constellation.distribution.ConstellationSkyHandler;
-import hellfirepvp.astralsorcery.common.constellation.distribution.WorldSkyHandler;
-import hellfirepvp.astralsorcery.common.lib.Constellations;
-import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import hellfirepvp.astralsorcery.common.constellation.IMajorConstellation;
+import hellfirepvp.astralsorcery.common.constellation.effect.ConstellationEffect;
+import hellfirepvp.astralsorcery.common.data.research.PlayerProgress;
+import hellfirepvp.astralsorcery.common.data.research.ResearchManager;
+import hellfirepvp.astralsorcery.common.util.ILocatable;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
-import slimeknights.tconstruct.library.utils.ToolHelper;
 
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 public class TraitAstralInfusion extends AbstractTrait {
     public TraitAstralInfusion() {
         super("ref_astral_infusion", 0xFFFFFF);
+    }
+
+    private NBTTagCompound getNBTFromFile(File file){
+        NBTTagCompound tag = null;
+
+        try {
+            tag = CompressedStreamTools.read(file);
+        }
+        catch (IOException e2) {
+            // do nothing
+        }
+        return tag;
     }
 
     @Override
@@ -28,65 +39,25 @@ public class TraitAstralInfusion extends AbstractTrait {
         if(entity.isEntityAlive() && isSelected && !world.isRemote) {
             if(entity instanceof EntityPlayer) {
                 EntityPlayer player = (EntityPlayer)entity;
-                if((world.getWorldTime() >= 13000 && this.isToolWithTrait(((EntityPlayer) entity).getHeldItemMainhand()))) {
+                if(this.isToolWithTrait(((EntityPlayer) entity).getHeldItemMainhand())) {
 
-                    WorldSkyHandler worldSkyHandler = ConstellationSkyHandler.getInstance().getWorldHandler(world);
-                    if (worldSkyHandler != null) {
-                        List<IConstellation> constellations = worldSkyHandler.getActiveConstellations();
+                    PlayerProgress playerProgress = new PlayerProgress();
+                    UUID user = player.getUniqueID();
+                    File file = ResearchManager.getPlayerFile(user);
+                    NBTTagCompound tagCompound = getNBTFromFile(file);
+                    playerProgress.load(tagCompound);
 
-                        for(IConstellation constellation : constellations)
-                        {
-                            switch (constellation.getSimpleName()) {
-                                case "aevitas":
-                                    if(random.nextInt(100) < 60)
-                                        ToolHelper.healTool(tool, 10, player);
-                                    break;
-                                case "armara":
-                                    if(random.nextInt(100) < 60)
-                                        player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 100, 0, false, true));
-                                    break;
-                                case "discidia":
-
-                                case "evorsio":
-
-                                case "vicio":
-                                    if(random.nextInt(100) < 60)
-                                        player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 100, 0, false, true));
-                                    break;
-
+                    if(playerProgress.wasOnceAttuned() && world.getWorldTime() > 13000) {
+                        IMajorConstellation constellation = playerProgress.getAttunedConstellation();
+                        if(constellation != null) {
+                            if(random.nextFloat() > 0.5f) {
+                                ConstellationEffect effect = constellation.getRitualEffect(ILocatable.fromPos(player.getPosition()));
+                                effect.playEffect(world, player.getPosition(), 1f, effect.provideProperties(0), null);
                             }
                         }
                     }
                 }
             }
         }
-    }
-
-    @Override
-    public void miningSpeed(ItemStack tool, PlayerEvent.BreakSpeed event) {
-        World world = event.getEntityPlayer().getEntityWorld();
-        WorldSkyHandler worldSkyHandler = ConstellationSkyHandler.getInstance().getWorldHandler(world);
-        if(world.getWorldTime()>=13000 && worldSkyHandler != null) {
-            List<IConstellation> constellations = worldSkyHandler.getActiveConstellations();
-            if(constellations.contains(Constellations.evorsio)) {
-                float speed = event.getNewSpeed()*1.5f;
-                if(event.getEntityPlayer().getHealth()<5) {
-                    event.setNewSpeed(speed*1.2f);
-                }
-            }
-        }
-    }
-
-    @Override
-    public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
-        World world = player.getEntityWorld();
-        WorldSkyHandler worldSkyHandler = ConstellationSkyHandler.getInstance().getWorldHandler(world);
-        if(world.getWorldTime()>=13000 && worldSkyHandler != null) {
-            List<IConstellation> constellations = worldSkyHandler.getActiveConstellations();
-            if(constellations.contains(Constellations.discidia)) {
-                return (float)(newDamage*TinkersReforgedConfig.SettingGeneral.dmgMultiplier);
-            }
-        }
-        return super.damage(tool, player, target, damage, newDamage, isCritical);
     }
 }
