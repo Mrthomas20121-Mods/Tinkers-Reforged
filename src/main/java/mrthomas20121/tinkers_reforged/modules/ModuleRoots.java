@@ -29,7 +29,7 @@ public class ModuleRoots implements ModuleBase {
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.runestone) {
-            runestone.addTrait(ReforgedTraits.fey);
+            runestone.addTrait(ReforgedTraits.fey, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(runestone);
             TinkerRegistry.addMaterialStats(runestone,
                     new HeadMaterialStats(290, 5.5f, 3f, HarvestLevels.IRON),
@@ -45,18 +45,20 @@ public class ModuleRoots implements ModuleBase {
         runestone.setRepresentativeItem("runestone");
         runestone.addItem("runestone", 1, Material.VALUE_Ingot);
 
-        for (IToolPart part : TinkerRegistry.getToolParts()) {
-            if(part.canUseMaterial(runestone) && TinkersReforgedConfig.SettingMaterials.materials.runestone)
-            {
-                FeyCraftingRecipe recipe = new FeyCraftingRecipe(part.getItemstackWithMaterial(runestone));
-                recipe.addIngredients(
-                        new ItemStack(Items.DYE, 1, 4),
-                        part.getItemstackWithMaterial(TinkerMaterials.stone),
-                        new ItemStack(Blocks.STONE, 1),
-                        new ItemStack(Blocks.STONE, 1),
-                        new ItemStack(Blocks.STONE, 1)
-                );
-                ModRecipes.addFeyCraftingRecipe(new ResourceLocation(TinkersReforged.MODID, "runestone_toolpart_"+ ((MaterialItem) part).getRegistryName()), recipe);
+        if(TinkersReforgedConfig.SettingMaterials.materials.runestone) {
+            for (IToolPart part : TinkerRegistry.getToolParts()) {
+                if(part.canUseMaterial(runestone) && TinkersReforgedConfig.SettingMaterials.materials.runestone)
+                {
+                    FeyCraftingRecipe recipe = new FeyCraftingRecipe(part.getItemstackWithMaterial(runestone));
+                    recipe.addIngredients(
+                            new ItemStack(Items.DYE, 1, 4),
+                            part.getItemstackWithMaterial(TinkerMaterials.stone),
+                            new ItemStack(Blocks.STONE, 1),
+                            new ItemStack(Blocks.STONE, 1),
+                            new ItemStack(Blocks.STONE, 1)
+                    );
+                    ModRecipes.addFeyCraftingRecipe(new ResourceLocation(TinkersReforged.MODID, "runestone_toolpart_"+ ((MaterialItem) part).getRegistryName()), recipe);
+                }
             }
         }
     }
