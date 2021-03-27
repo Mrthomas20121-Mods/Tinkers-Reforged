@@ -51,7 +51,7 @@ repositories {
     }
 }
 
-version = "1.5.2"
+version = "1.5.3"
 group= "mrthomas20121.tinkers_reforged"
 archivesBaseName = "tinkers_reforged"
 
