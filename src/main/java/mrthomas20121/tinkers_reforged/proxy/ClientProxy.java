@@ -3,7 +3,9 @@ package mrthomas20121.tinkers_reforged.proxy;
 import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 
-import mrthomas20121.tinkers_reforged.library.book.ModFileRepository;
+import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.library.book.ModifiersTransformer;
+import mrthomas20121.tinkers_reforged.library.book.ToolsTransformer;
 import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ModifiersSectionTransformer;
 import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ToolsSectiontransformer;
 import mrthomas20121.tinkers_reforged.tools.Tools;
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import slimeknights.mantle.client.book.repository.FileRepository;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
@@ -104,9 +107,17 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerBookData() {
-        TinkerBook.INSTANCE.addRepository(new ModFileRepository(TinkersReforged.MODID+":book"));
-        TinkerBook.INSTANCE.addTransformer(new ModifiersSectionTransformer());
-        TinkerBook.INSTANCE.addTransformer(new ToolsSectiontransformer());
+        TinkerBook.INSTANCE.addRepository(new FileRepository(TinkersReforged.MODID+":book"));
+
+        // add modifiers transformers
+        //TinkerBook.INSTANCE.addTransformer(new ModifiersSectionTransformer());
+        //TinkerBook.INSTANCE.addTransformer(new ModifiersTransformer());
+
+        // add tools if they are loaded
+        if(TinkersReforgedConfig.SettingTools.enableTools) {
+            //TinkerBook.INSTANCE.addTransformer(new ToolsSectiontransformer());
+            //TinkerBook.INSTANCE.addTransformer(new ToolsTransformer());
+        }
     }
 
     @Override

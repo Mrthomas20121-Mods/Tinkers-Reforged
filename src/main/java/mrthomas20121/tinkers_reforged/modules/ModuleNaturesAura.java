@@ -69,7 +69,7 @@ public class ModuleNaturesAura implements ModuleBase {
 
                 if(part.canUseMaterial(infused_iron) && (part.canBeCasted() || part.canBeCrafted())) {
                     Material mat = TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.mods.infusedIron.material);
-                    ResourceLocation name = new ResourceLocation(TinkersReforged.MODID, "infusion_"+mat.getIdentifier()+"_"+part.getOutlineRenderStack().getItem().getRegistryName().getPath());
+                    ResourceLocation name = new ResourceLocation(TinkersReforged.MODID, "infusion_"+mat.getIdentifier()+"_"+part.getItemstackWithMaterial(mat).getItem().getRegistryName().getPath());
                     ItemStack input = part.getItemstackWithMaterial(mat);
                     ItemStack output = part.getItemstackWithMaterial(infused_iron);
                     NaturesAuraAPI.ALTAR_RECIPES.put(name, new AltarRecipe(name, Ingredient.fromStacks(input), output, Ingredient.EMPTY, TinkersReforgedConfig.SettingGeneral.mods.infusedIron.aura_cost, TinkersReforgedConfig.SettingGeneral.mods.infusedIron.time));
@@ -84,7 +84,7 @@ public class ModuleNaturesAura implements ModuleBase {
 
                 if(part.canUseMaterial(sky) && (part.canBeCasted() || part.canBeCrafted())) {
                     Material mat = TinkerRegistry.getMaterial(TinkersReforgedConfig.SettingGeneral.mods.sky.material);
-                    ResourceLocation name = new ResourceLocation(TinkersReforged.MODID, "offering_"+mat.getIdentifier()+"_"+part.getOutlineRenderStack().getItem().getRegistryName().getPath());
+                    ResourceLocation name = new ResourceLocation(TinkersReforged.MODID, "offering_"+mat.getIdentifier()+"_"+part.getItemstackWithMaterial(mat).getItem().getRegistryName().getPath());
                     ItemStack input = part.getItemstackWithMaterial(mat);
                     input.setCount(3);
                     ItemStack output = part.getItemstackWithMaterial(sky);

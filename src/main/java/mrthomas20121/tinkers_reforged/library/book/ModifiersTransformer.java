@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.library.book;
 
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.modules.ModuleAA;
 import net.minecraftforge.fml.common.Loader;
 import slimeknights.mantle.client.book.data.BookData;
@@ -30,7 +31,7 @@ public class ModifiersTransformer extends SectionTransformer {
     {
         ContentListing listing = (ContentListing)section.pages.get(0).content;
         PageData page = new PageData();
-        page.source = new FileRepository("tconstruct:book");
+        page.source = new FileRepository(TinkersReforged.MODID+":book");
         page.parent = section;
         page.type = "modifier";
         page.data = "modifiers/" + mod.identifier + ".json";

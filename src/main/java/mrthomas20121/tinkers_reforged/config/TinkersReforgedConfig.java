@@ -130,6 +130,10 @@ public class TinkersReforgedConfig {
         @Config.Comment("Enable the lightsword.")
         @Config.LangKey("config."+MODID+".tool.lightsword")
         public static boolean enableLightsword = true;
+
+        @Config.Comment("Enable the Prospector Pickaxe.")
+        @Config.LangKey("config."+MODID+".tool.propick")
+        public static boolean enableProPick = true;
     }
 
 

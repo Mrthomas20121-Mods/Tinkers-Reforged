@@ -62,7 +62,7 @@ public class Tools {
 				swordLight = registerTool(r, "lightsword", new SwordLight());
             }
 
-            if(TinkersReforgedConfig.SettingTools.enableKnife && Loader.isModLoaded("roots")) {
+            if(TinkersReforgedConfig.SettingTools.enableKnife && Loader.isModLoaded("roots") && TinkersReforgedConfig.SettingMaterials.modules.roots) {
                 knife = registerTool(r, "runic_knife", new ToolRunicKnife());
             }
 

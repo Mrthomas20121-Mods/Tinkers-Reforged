@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.library.book;
 
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraftforge.fml.common.Loader;
@@ -14,7 +15,7 @@ import slimeknights.tconstruct.library.tools.TinkerToolCore;
 public class ToolsTransformer extends SectionTransformer {
 
     public ToolsTransformer() {
-        super("tools");
+        super("refs_tools");
     }
 
     @Override
@@ -30,9 +31,15 @@ public class ToolsTransformer extends SectionTransformer {
                 if(TinkersReforgedConfig.SettingTools.enableGreatsword) addTool(section, Tools.greatsword);
                 if(TinkersReforgedConfig.SettingTools.enableKhopesh) addTool(section, Tools.khopesh);
             }
+
             if(Loader.isModLoaded("roots") && TinkersReforgedConfig.SettingMaterials.modules.roots)
             {
                 if(TinkersReforgedConfig.SettingTools.enableKnife) addTool(section, Tools.knife);
+            }
+
+            if(Loader.isModLoaded("geolosys"))
+            {
+                if(TinkersReforgedConfig.SettingTools.enableProPick) addTool(section, Tools.knife);
             }
         }
     }
@@ -40,10 +47,10 @@ public class ToolsTransformer extends SectionTransformer {
     {
         ContentListing listing = (ContentListing)section.pages.get(0).content;
         PageData page = new PageData();
-        page.source = new FileRepository("tconstruct:book");
+        page.source = new FileRepository(TinkersReforged.MODID+":book");
         page.parent = section;
         page.type = "tool";
-        page.data = "tools/" + tool.getLocalizedToolName() + ".json";
+        page.data = "tools/" + tool.getRegistryName().getPath() + ".json";
         section.pages.add(page);
         page.load();
         listing.addEntry(tool.getLocalizedName(), page);
