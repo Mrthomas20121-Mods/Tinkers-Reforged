@@ -123,8 +123,8 @@ public class MaterialsBaseMaterials implements ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.sapphire) {
             sapphire.preInit();
             sapphire.getMaterial().addTrait(TinkerTraits.sharp);
-            TinkerRegistry.addMaterial(ruby.getMaterial());
-            TinkerRegistry.addMaterialStats(ruby.getMaterial(),
+            TinkerRegistry.addMaterial(sapphire.getMaterial());
+            TinkerRegistry.addMaterialStats(sapphire.getMaterial(),
                     new HeadMaterialStats(300, 5.7f, 6.3f, HarvestLevels.DIAMOND),
                     new HandleMaterialStats(0.6f, 190),
                     new ExtraMaterialStats(10),
