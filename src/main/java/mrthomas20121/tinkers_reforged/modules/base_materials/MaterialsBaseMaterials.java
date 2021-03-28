@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.modules.base_materials;
 
 import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -28,6 +29,16 @@ public class MaterialsBaseMaterials implements ModuleBase {
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+        if(TinkersReforgedConfig.SettingMaterials.materials.glowstone) {
+            glowstone.addTrait(TinkerTraits.lightweight, MaterialTypes.HEAD);
+            glowstone.addTrait(ReforgedTraits.bright);
+            TinkerRegistry.addMaterial(glowstone);
+            TinkerRegistry.addMaterialStats(glowstone
+                    new HeadMaterialStats(500, 5.7f, 6.3f, HarvestLevels.OBSIDIAN),
+                    new HandleMaterialStats(1, 90),
+                    new ExtraMaterialStats(10),
+                    new BowMaterialStats(2, 1.5f, 6));
+        }
         if(TinkersReforgedConfig.SettingMaterials.materials.zinc) {
             zinc.preInit();
             zinc.getMaterial().addTrait(TinkerTraits.crumbling, MaterialTypes.HEAD);
