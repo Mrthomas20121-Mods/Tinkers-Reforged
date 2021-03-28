@@ -179,6 +179,9 @@ material.ref_lavium.name=Lavium
 modifier.ref_signal.name=Signal
 modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode instantly.
 
+modifier.ref_aftershot.name=Aftershpt
+modifier.ref_aftershot.desc=§oYummy§r\nHeal after dealing damage.
+
 modifier.ref_ender.name=Ender
 modifier.ref_ender.desc=§oDon't look in their eyes!§r\nDeal double damage to Mobs with ender in their name.
 

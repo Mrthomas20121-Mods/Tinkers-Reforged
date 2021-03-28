@@ -2,7 +2,7 @@ package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.biolib.objects.capability.BioCapabilityProvider;
 import mrthomas20121.tinkers_reforged.library.block.ReforgedItemBlock;
-import mrthomas20121.tinkers_reforged.modules.ModuleTinkersReforged;
+import mrthomas20121.tinkers_reforged.modules.tinkers_reforged.MaterialsTinkersReforged;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -53,7 +53,7 @@ public class ReforgedRegistry {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> r = event.getRegistry();
-        ModuleTinkersReforged.registerItems(r);
+        MaterialsTinkersReforged.registerItems(r);
         for(Block block : blocks) {
             registerItemBlock(r, block);
         }
@@ -62,7 +62,7 @@ public class ReforgedRegistry {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> r = event.getRegistry();
-        ModuleTinkersReforged.registerBlocks(r);
+        MaterialsTinkersReforged.registerBlocks(r);
     }
 
     private static void registerItemBlock(IForgeRegistry<Item> r, Block block) {

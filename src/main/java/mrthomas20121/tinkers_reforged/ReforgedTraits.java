@@ -37,4 +37,6 @@ public class ReforgedTraits {
     public static final TraitTeleport teleport = new TraitTeleport();
     public static final TraitVillagerLove villagerLove = new TraitVillagerLove(1);
     public static final TraitVoid voidTrait = new TraitVoid();
+    public static final TraitShinystone shinystone = new TraitShinystone();
+    public static final TraitAftershot aftershot = new TraitAftershot();
 }

@@ -67,14 +67,14 @@ public class TinkersReforgedConfig {
         @Config.LangKey("config."+MODID+".manacost")
         public int cost = 2000;
 
-        @Config.Comment("Materials used to create Manasteel tool parts.")
+        @Config.Comment("MaterialsAA used to create Manasteel tool parts.")
         @Config.LangKey("config."+MODID+".manasteel_part")
         public String material = "iron";
     }
 
     public static class Starmetal {
 
-        @Config.Comment("Materials used to create Starmetal tool parts.")
+        @Config.Comment("MaterialsAA used to create Starmetal tool parts.")
         @Config.LangKey("config."+MODID+".starmetal_part")
         public String material = "iron";
     }
@@ -88,14 +88,14 @@ public class TinkersReforgedConfig {
         @Config.LangKey("config."+MODID+".time")
         public int time = 25;
 
-        @Config.Comment("Materials used to create Infused Iron tool parts.")
+        @Config.Comment("MaterialsAA used to create Infused Iron tool parts.")
         @Config.LangKey("config."+MODID+".infused_iron_part")
         public String material = "iron";
     }
 
     public static class Sky {
 
-        @Config.Comment("Materials used to create Manasteel tool parts.")
+        @Config.Comment("MaterialsAA used to create Manasteel tool parts.")
         @Config.LangKey("config."+MODID+".manasteel_part")
         public String material = "ref_infused_iron";
     }
@@ -137,10 +137,10 @@ public class TinkersReforgedConfig {
     }
 
 
-    @Config(modid = MODID, name = "Tinkers Reforged - Materials and Modules")
+    @Config(modid = MODID, name = "Tinkers Reforged - MaterialsAA and Modules")
     public static class SettingMaterials {
 
-        @Config.Comment("Materials list.")
+        @Config.Comment("MaterialsAA list.")
         @Config.LangKey("config."+MODID+".material")
         @Config.RequiresMcRestart
         public static Materials materials = new Materials();

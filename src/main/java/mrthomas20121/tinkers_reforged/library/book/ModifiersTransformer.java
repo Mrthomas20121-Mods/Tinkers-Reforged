@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged.library.book;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.modules.ModuleAA;
+import mrthomas20121.tinkers_reforged.modules.actuallyadditions.MaterialsAA;
 import net.minecraftforge.fml.common.Loader;
 import slimeknights.mantle.client.book.data.BookData;
 import slimeknights.mantle.client.book.data.PageData;
@@ -22,9 +22,9 @@ public class ModifiersTransformer extends SectionTransformer {
     public void transform(BookData book, SectionData section) {
         if(Loader.isModLoaded("actuallyadditions"))
         {
-            addModifier(section, ModuleAA.modEnderStar);
-            addModifier(section, ModuleAA.modLensKiller);
-            addModifier(section, ModuleAA.modLensMiner);
+            addModifier(section, MaterialsAA.modEnderStar);
+            addModifier(section, MaterialsAA.modLensKiller);
+            addModifier(section, MaterialsAA.modLensMiner);
         }
     }
     private static void addModifier(SectionData section, ModifierTrait mod)
