@@ -33,8 +33,8 @@ public class MaterialsBaseMaterials implements ModuleBase {
             glowstone.addTrait(TinkerTraits.lightweight, MaterialTypes.HEAD);
             glowstone.addTrait(ReforgedTraits.bright);
             TinkerRegistry.addMaterial(glowstone);
-            TinkerRegistry.addMaterialStats(glowstone
-                    new HeadMaterialStats(500, 5.7f, 6.3f, HarvestLevels.OBSIDIAN),
+            TinkerRegistry.addMaterialStats(glowstone,
+                    new HeadMaterialStats(450, 4.7f, 4.3f, HarvestLevels.IRON),
                     new HandleMaterialStats(1, 90),
                     new ExtraMaterialStats(10),
                     new BowMaterialStats(2, 1.5f, 6));
