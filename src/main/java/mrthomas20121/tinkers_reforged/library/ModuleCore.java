@@ -18,7 +18,7 @@ public abstract class ModuleCore {
     }
 
     public ModuleCore(String name) {
-        this.name = new ResourceLocation(TinkersReforged.MODID, name);
+        this(new ResourceLocation(name, "module_"+name));
     }
 
     public abstract boolean canLoad();
@@ -38,6 +38,6 @@ public abstract class ModuleCore {
     }
 
     protected boolean isDepLoaded() {
-        return Loader.isModLoaded(this.name.getPath());
+        return Loader.isModLoaded(this.name.getNamespace());
     }
 }
