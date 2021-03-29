@@ -15,17 +15,17 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class MaterialsBaseMaterials implements ModuleBase {
 
-    Material glowstone = new Material("ref_glowsotne", 0xFFC16B);
+    Material glowstone = new Material("ref_glowstone", 0xFFC16B);
     MaterialGen zinc = new MaterialGen("zinc", 0x94BD5E, "Zinc", 600);
     MaterialGen titanium = new MaterialGen("titanium", 0xB2669E, "Titanium", 1000);
     MaterialGen iridium = new MaterialGen("iridium", 0x80818E, "Iridium", 1200);
     MaterialGen aluminum = new MaterialGen("aluminum", 0xBAAEA5, "Aluminum", 900);
-    MaterialGen platinum = new MaterialGen("platinum", 0x45A5DD, "Platinum", 2000);
-    MaterialGen invar = new MaterialGen("invar", 0xA8AFAB, "Invar", 800);
-    MaterialGen amethyst = new MaterialGen("amethyst", 0xA8AFAB, "Amethyst", 600, true);
-    MaterialGen ruby = new MaterialGen("ruby", 0xA8AFAB, "Ruby", 600, true);
+    MaterialGen platinum = new MaterialGen("platinum", 0x50939E, "Platinum", 2000);
+    MaterialGen invar = new MaterialGen("invar", 0xA2A4AA, "Invar", 800);
+    MaterialGen amethyst = new MaterialGen("amethyst", 0xF98EEB, "Amethyst", 600, true);
+    MaterialGen ruby = new MaterialGen("ruby", 0xFF1C28, "Ruby", 600, true);
     MaterialGen sapphire = new MaterialGen("sapphire", 0xA8AFAB, "Sapphire", 600, true);
-    MaterialGen peridot = new MaterialGen("peridot", 0xA8AFAB, "peridot", 600, true);
+    MaterialGen peridot = new MaterialGen("peridot", 0x6EC94A, "peridot", 600, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {

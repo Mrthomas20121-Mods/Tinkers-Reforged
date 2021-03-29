@@ -20,7 +20,7 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 public class MaterialsMekanism implements ModuleBase {
 
     private MaterialGen osmium = new MaterialGen("osmium", 0x7F8EB2, "Osmium", 700);
-    private Material refined_obsidian = new Material("refined_obsidian", 0x463763);
+    private Material refined_obsidian = new Material("ref_refined_obsidian", 0x463763);
     private Material refined_glownstone = new Material("ref_refined_glowstone", 0xEAC829);
 
     @Override
@@ -37,7 +37,7 @@ public class MaterialsMekanism implements ModuleBase {
                     new BowMaterialStats(2.9f, 7, 5.1f));
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.refined_obsidian) {
-            refined_obsidian.addTrait(ReforgedTraits.refined, MaterialTypes.HEAD);
+            refined_obsidian.addTrait(ReforgedTraits.soft, MaterialTypes.HEAD);
             refined_obsidian.addTrait(TinkerTraits.duritos);
             TinkerRegistry.addMaterial(refined_obsidian);
             TinkerRegistry.addMaterialStats(refined_obsidian,

@@ -17,7 +17,7 @@ public class TraitSoft extends AbstractTrait {
         ToolNBT data = TagUtil.getToolStats(rootCompound);
 
         data.attackSpeedMultiplier*=1.1f;
-        data.harvestLevel=0;
+        data.harvestLevel=HarvestLevels.OBSIDIAN;
 
         TagUtil.setToolTag(rootCompound, data.get());
     }

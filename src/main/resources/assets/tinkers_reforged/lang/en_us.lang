@@ -120,6 +120,7 @@ material.ref_charged_certus_quartz.name=Charged Certus Quartz
 material.ref_fluix_crystal.name=Fluix Crystal
 material.ref_starmetal.name=Starmetal
 material.ref_khnumite.name=Khnumite
+material.ref_glowstone.name=Glowstone
 material.ref_zinc.name=Zinc
 material.ref_titanium.name=Titanium
 material.ref_platinum.name=Platinum
@@ -258,7 +259,7 @@ modifier.ref_teleport.name=Teleport
 modifier.ref_teleport.desc=§oWhere are my items?§r\nBlocks mined get teleported to your inventory.
 
 modifier.ref_soft.name=Soft
-modifier.ref_soft.desc=§oVery Spongy§r\nYour tool mining level is set to 1.
+modifier.ref_soft.desc=§oVery Spongy§r\nYour tool mining level is set to Obsidian.
 
 modifier.ref_fast.name=Fast
 modifier.ref_fast.desc=§oGotta go fast!§r\nYour tool speed is increased but have less durability.
