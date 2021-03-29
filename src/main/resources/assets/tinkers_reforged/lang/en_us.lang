@@ -211,7 +211,7 @@ modifier.life_steal.name=Life Steal
 modifier.life_steal.desc=§oFeels Good§r\nSteal Health from mobs.
 
 modifier.ref_refined.name=Refined
-modifier.ref_refined.desc=§oSomething smell fishy§r\nBreak Obsidian faster.
+modifier.ref_refined.desc=§oSomething smell fishy§r\nBreak Obsidian Instantly.
 
 modifier.ref_flux.name=Flux
 modifier.ref_flux.desc=§oHow does that work?§r\nHave a chance to not use durability but will exaust you faster.
