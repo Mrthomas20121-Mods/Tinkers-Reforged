@@ -1,7 +1,9 @@
 package mrthomas20121.tinkers_reforged.trait;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitRefined extends AbstractTrait {
@@ -12,11 +14,10 @@ public class TraitRefined extends AbstractTrait {
     }
 
     @Override
-    public void miningSpeed(ItemStack tool, PlayerEvent.BreakSpeed event) {
-        if(this.isToolWithTrait(tool)) {
-            if(event.getState().getBlock().getLocalizedName().toLowerCase().contains("obsidian")) {
-                event.setNewSpeed(event.getOriginalSpeed()+speed);
-            }
+    public void beforeBlockBreak(ItemStack tool, BlockEvent.BreakEvent event) {
+        if(event.getState().getBlock().getRegistryName().equals(Blocks.OBSIDIAN.getRegistryName())) {
+            event.getState().getBlock().dropBlockAsItem(event.getWorld(), event.getPos(), event.getState(), 0);
+            event.getWorld().setBlockState(event.getPos(), Blocks.AIR.getDefaultState());
         }
     }
 }
