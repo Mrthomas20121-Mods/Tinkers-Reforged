@@ -25,7 +25,7 @@ public class MaterialsBaseMaterials implements ModuleBase {
     MaterialGen amethyst = new MaterialGen("amethyst", 0xF98EEB, "Amethyst", 600, true);
     MaterialGen ruby = new MaterialGen("ruby", 0xFF1C28, "Ruby", 600, true);
     MaterialGen sapphire = new MaterialGen("sapphire", 0xA8AFAB, "Sapphire", 600, true);
-    MaterialGen peridot = new MaterialGen("peridot", 0x6EC94A, "peridot", 600, true);
+    MaterialGen peridot = new MaterialGen("peridot", 0x6EC94A, "Peridot", 600, true);
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
@@ -144,6 +144,12 @@ public class MaterialsBaseMaterials implements ModuleBase {
 
     @Override
     public void init(FMLInitializationEvent fmlInitializationEvent) {
+
+        if(TinkersReforgedConfig.SettingMaterials.materials.glowstone) {
+            glowstone.setRepresentativeItem("dustGlowstone");
+            glowstone.addItem("dustGlowstone", 1, 1);
+        }
+
         if(!OreDictionary.getOres("ingotZinc").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.zinc) {
             zinc.init();
         }

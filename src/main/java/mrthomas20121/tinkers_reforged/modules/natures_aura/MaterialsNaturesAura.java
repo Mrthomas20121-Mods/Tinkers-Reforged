@@ -31,6 +31,8 @@ public class MaterialsNaturesAura implements ModuleBase {
     Material infused_iron = new Material("ref_infused_iron", 0x34BA3D);
     Material sky = new Material("ref_sky", 0x9BDFFF);
 
+    public static final ModToken token = new ModToken();
+
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
         if(TinkersReforgedConfig.SettingMaterials.materials.infused_iron) {
@@ -92,9 +94,9 @@ public class MaterialsNaturesAura implements ModuleBase {
                 }
             }
         }
-
-        ModToken token = new ModToken();
-        token.addRecipeMatch(new RecipeMatch.ItemCombination(1, new ItemStack(ModItems.TOKEN_EUPHORIA), new ItemStack(ModItems.TOKEN_TERROR), new ItemStack(ModItems.TOKEN_RAGE), new ItemStack(ModItems.TOKEN_GRIEF)));
+        if(TinkersReforgedConfig.SettingMaterials.modifiers.token) {
+            token.addRecipeMatch(new RecipeMatch.ItemCombination(1, new ItemStack(ModItems.TOKEN_EUPHORIA), new ItemStack(ModItems.TOKEN_TERROR), new ItemStack(ModItems.TOKEN_RAGE), new ItemStack(ModItems.TOKEN_GRIEF)));
+        }
         ModuleManager.addModifier(token);
     }
 

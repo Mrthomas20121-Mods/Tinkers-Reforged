@@ -15,7 +15,7 @@ import slimeknights.tconstruct.library.tools.TinkerToolCore;
 public class ToolsTransformer extends SectionTransformer {
 
     public ToolsTransformer() {
-        super("refs_tools");
+        super("tools");
     }
 
     @Override

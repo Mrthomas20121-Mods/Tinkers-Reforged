@@ -6,6 +6,9 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.library.modifiers.Modifier;
+
+import java.util.ArrayList;
 
 public abstract class ModuleCore {
 
@@ -38,5 +41,9 @@ public abstract class ModuleCore {
 
     protected boolean isDepLoaded() {
         return Loader.isModLoaded(this.name.getNamespace());
+    }
+
+    public ArrayList<Modifier> getModifiers() {
+        return new ArrayList<>();
     }
 }

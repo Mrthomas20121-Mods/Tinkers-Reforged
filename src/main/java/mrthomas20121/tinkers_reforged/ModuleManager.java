@@ -49,6 +49,10 @@ public class ModuleManager implements ModuleBase {
     private static ArrayList<Modifier> modifiers = new ArrayList<>();
     private static ArrayList<ModuleCore> modules = new ArrayList<>();
 
+    public static ArrayList<ModuleCore> getModules() {
+        return modules;
+    }
+
     public static void addModifier(Modifier modifier) {
         modifiers.add(modifier);
     }

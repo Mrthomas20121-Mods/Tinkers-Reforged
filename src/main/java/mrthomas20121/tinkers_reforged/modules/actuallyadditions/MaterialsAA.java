@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.modules.actuallyadditions;
 
+import com.google.common.collect.Lists;
 import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
 import de.ellpeck.actuallyadditions.mod.items.InitItems;
 import mrthomas20121.biolib.library.ModuleBase;
@@ -18,8 +19,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MaterialsAA implements ModuleBase {
 
@@ -31,9 +36,9 @@ public class MaterialsAA implements ModuleBase {
     public static MaterialGen emeradic = new MaterialGen("emeradic", 0x15EA0A, "Emeradic", 700, true);
     public static MaterialGen enori = new MaterialGen("enori", 0xF6F3FF, "Enori", 700, true);
 
-    public static ModEnderStar modEnderStar = new ModEnderStar();
-    public static ModLensKiller modLensKiller = new ModLensKiller();
-    public static ModLensMiner modLensMiner = new ModLensMiner();
+    public static final ModEnderStar modEnderStar = new ModEnderStar();
+    public static final ModLensKiller modLensKiller = new ModLensKiller();
+    public static final ModLensMiner modLensMiner = new ModLensMiner();
 
     @Override
     public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
@@ -163,9 +168,15 @@ public class MaterialsAA implements ModuleBase {
             enori.init();
         }
 
-        modEnderStar.addItem(new ItemStack(InitItems.itemMisc, 1, 19), 1, 1);
-        modLensKiller.addItem(new ItemStack(InitItems.itemMoreDamageLens), 1, 1);
-        modLensMiner.addItem(new ItemStack(InitItems.itemMiningLens), 1, 1);
+        if(TinkersReforgedConfig.SettingMaterials.modifiers.enderstar) {
+            modEnderStar.addItem(new ItemStack(InitItems.itemMisc, 1, 19), 1, 1);
+        }
+        if(TinkersReforgedConfig.SettingMaterials.modifiers.lens_killer) {
+            modLensKiller.addItem(new ItemStack(InitItems.itemMoreDamageLens), 1, 1);
+        }
+        if(TinkersReforgedConfig.SettingMaterials.modifiers.lens_miner) {
+            modLensMiner.addItem(new ItemStack(InitItems.itemMiningLens), 1, 1);
+        }
 
         TinkersReforged.proxy.registerModifierModel(modEnderStar,
                 new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modEnderStar.getIdentifier()));

@@ -5,6 +5,9 @@ import mrthomas20121.tinkers_reforged.library.ModuleCore;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.library.modifiers.Modifier;
+
+import java.util.ArrayList;
 
 public class ModuleDarkUtils extends ModuleCore {
 
@@ -31,5 +34,12 @@ public class ModuleDarkUtils extends ModuleCore {
     @Override
     public void postInit(FMLPostInitializationEvent event) {
         this.getMaterialClass().postInit(event);
+    }
+
+    @Override
+    public ArrayList<Modifier> getModifiers() {
+        ArrayList<Modifier> list = new ArrayList<>();
+        list.add(ModifiersDarkUtils.shulkerPearl);
+        return list;
     }
 }

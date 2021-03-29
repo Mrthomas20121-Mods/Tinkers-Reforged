@@ -1,10 +1,14 @@
 package mrthomas20121.tinkers_reforged.modules.environmental_tech;
 
+import com.google.common.collect.Lists;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ModuleCore;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import slimeknights.tconstruct.library.modifiers.Modifier;
+
+import java.util.ArrayList;
 
 public class ModuleEnvTech extends ModuleCore {
 
@@ -31,5 +35,10 @@ public class ModuleEnvTech extends ModuleCore {
     @Override
     public void postInit(FMLPostInitializationEvent event) {
         this.getMaterialClass().postInit(event);
+    }
+
+    @Override
+    public ArrayList<Modifier> getModifiers() {
+        return Lists.newArrayList(ModifiersEnvTech.digging);
     }
 }

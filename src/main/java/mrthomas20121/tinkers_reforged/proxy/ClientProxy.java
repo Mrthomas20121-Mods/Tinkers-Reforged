@@ -107,7 +107,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerBookData() {
-        TinkerBook.INSTANCE.addRepository(new FileRepository(TinkersReforged.MODID+":book"));
+        //TinkerBook.INSTANCE.addRepository(new FileRepository(TinkersReforged.MODID+":book"));
 
         // add modifiers transformers
         //TinkerBook.INSTANCE.addTransformer(new ModifiersSectionTransformer());
