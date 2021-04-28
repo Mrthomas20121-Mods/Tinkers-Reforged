@@ -3,7 +3,7 @@ buildscript {
         jcenter()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "http://maven.minecraftforge.net/"
         }
         maven {
             name = "sonatype"
@@ -49,6 +49,10 @@ repositories {
         name = "astral sorcery"
         url = "https://maven.hellfiredev.net/"
     }
+    removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
+    maven {
+        url "https://maven.minecraftforge.net/"
+    }
 }
 
 version = "1.5.4"
@@ -76,8 +80,9 @@ dependencies {
     compile 'slimeknights:TConstruct:1.12.2-2.13.0.183'
     compile 'vazkii.botania:Botania:r1.10-359.39'
     compile 'com.azanor.baubles:Baubles:1.12-1.5.2'
-    compile 'appeng:appliedenergistics2:rv6-stable-7'
     compile 'hellfirepvp.astralsorcery:astralsorcery:1.12.2-1.10.25-v167'
+    //compile 'mrtjp:MrTJPCore:1.12.2-2.1.4.43'
+    //compile 'mrtjp:ProjectRed:1.12.2-4.9.3.118'
     compile fileTree(include: ["*.jar"], dir: "libs")
 }
 
