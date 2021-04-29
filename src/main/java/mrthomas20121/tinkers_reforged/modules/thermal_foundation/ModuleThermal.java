@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class ModuleThermal extends ModuleCore {
 
     public ModuleThermal() {
-        super("thermal_foundation");
+        super("thermalfoundation");
     }
 
     @Override
