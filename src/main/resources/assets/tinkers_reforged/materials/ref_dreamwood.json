@@ -1,6 +1,6 @@
 {
   "type": "block",
   "parameters": {
-    "texture": "botania:blocks/dreamwood0"
+    "texture": "tinkers_reforged:materials/dreamwood0"
   }
 }

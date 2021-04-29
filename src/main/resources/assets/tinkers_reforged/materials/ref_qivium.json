@@ -1,9 +1,9 @@
 {
     "type": "multicolor",
     "parameters": {
-        "dark": "60392C",
-        "mid": "774734",
-        "bright": "AF7259",
+        "dark": "773D56",
+        "mid": "A56A82",
+        "bright": "D893AF",
         "shinyness": 0.3,
         "brightness": 0.3,
         "hueshift": 0
