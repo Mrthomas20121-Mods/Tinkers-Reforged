@@ -1,0 +1,9 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "ctm",
+        "textures": [
+            "tinkers_reforged:blocks/material/kovar_glass_ct"
+        ]
+    }
+}
