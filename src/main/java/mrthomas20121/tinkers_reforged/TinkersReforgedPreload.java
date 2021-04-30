@@ -22,9 +22,14 @@ public class TinkersReforgedPreload {
         ModuleManager.addModule(Reference.blue_skies, new MaterialsBlueSkies());
         ModuleManager.addModule(Reference.botania, new MaterialsBotania());
         ModuleManager.addModule(Reference.cavern2, new MaterialsCavern2());
-        ModuleManager.addModule(Reference.forestry, new MaterialsForestry());
+        ModuleManager.addModule(Reference.reactor, new MaterialsExtremeReactor());
+        // module not finished
+        // ModuleManager.addModule(Reference.forestry, new MaterialsForestry());
         ModuleManager.addModule(Reference.darkutils, new ModifiersDarkUtils());
+        ModuleManager.addModule(Reference.naturesaura, new MaterialsNaturesAura());
+        ModuleManager.addModule(Reference.pixelmon, new MaterialsPixelmon());
         ModuleManager.addModule(Reference.project_red, new MaterialsProjectRed());
+        ModuleManager.addModule(Reference.refined_storage, new MaterialsRS());
         ModuleManager.addModule(Reference.roots, new MaterialsRoots());
         ModuleManager.addModule(Reference.thermalfoundation, new MaterialsThermal());
         ModuleManager.addModule(Reference.thaumcraft, new MaterialsThaumcraft());

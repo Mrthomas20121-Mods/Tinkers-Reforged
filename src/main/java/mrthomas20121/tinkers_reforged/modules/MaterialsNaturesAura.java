@@ -1,23 +1,22 @@
-package mrthomas20121.tinkers_reforged.modules.natures_aura;
+package mrthomas20121.tinkers_reforged.modules;
 
 import de.ellpeck.naturesaura.api.NaturesAuraAPI;
 import de.ellpeck.naturesaura.api.recipes.AltarRecipe;
 import de.ellpeck.naturesaura.api.recipes.OfferingRecipe;
 import de.ellpeck.naturesaura.blocks.ModBlocks;
 import de.ellpeck.naturesaura.items.ModItems;
-import mrthomas20121.biolib.library.ModuleBase;
-import mrthomas20121.tinkers_reforged.ModuleManager;
-import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.compat.NaturesAuraCompat;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.library.ForgeUtils;
+import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
+import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModToken;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.mantle.util.RecipeMatch;
 import slimeknights.tconstruct.library.TinkerRegistry;
@@ -26,15 +25,20 @@ import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsNaturesAura implements ModuleBase {
+public class MaterialsNaturesAura extends ModuleReforgedBase {
 
-    Material infused_iron = new Material("ref_infused_iron", 0x34BA3D);
-    Material sky = new Material("ref_sky", 0x9BDFFF);
+    private Material infused_iron = new Material("ref_infused_iron", 0x34BA3D);
+    private Material sky = new Material("ref_sky", 0x9BDFFF);
 
     public static final ModToken token = new ModToken();
 
     @Override
-    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+    public boolean canLoad() {
+        return TinkersReforgedConfig.SettingMaterials.modules.naturesaura;
+    }
+
+    @Override
+    public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.infused_iron) {
             infused_iron.addTrait(ReforgedTraits.auraInfusion, MaterialTypes.HEAD);
             infused_iron.addTrait(TinkerTraits.magnetic2);
@@ -58,7 +62,7 @@ public class MaterialsNaturesAura implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent fmlInitializationEvent) {
+    public void init() {
         OreDictionary.registerOre("blockInfusedIron", ModBlocks.INFUSED_IRON);
         OreDictionary.registerOre("ingotInfusedIron", ModItems.INFUSED_IRON);
         OreDictionary.registerOre("ingotSky", ModItems.SKY_INGOT);
@@ -74,7 +78,7 @@ public class MaterialsNaturesAura implements ModuleBase {
                     ResourceLocation name = new ResourceLocation(TinkersReforged.MODID, "infusion_"+mat.getIdentifier()+"_"+part.getItemstackWithMaterial(mat).getItem().getRegistryName().getPath());
                     ItemStack input = part.getItemstackWithMaterial(mat);
                     ItemStack output = part.getItemstackWithMaterial(infused_iron);
-                    NaturesAuraAPI.ALTAR_RECIPES.put(name, new AltarRecipe(name, Ingredient.fromStacks(input), output, Ingredient.EMPTY, TinkersReforgedConfig.SettingGeneral.mods.infusedIron.aura_cost, TinkersReforgedConfig.SettingGeneral.mods.infusedIron.time));
+                    NaturesAuraCompat.addAltarRecipe(name, input, output);
                 }
             }
         }
@@ -90,18 +94,14 @@ public class MaterialsNaturesAura implements ModuleBase {
                     ItemStack input = part.getItemstackWithMaterial(mat);
                     input.setCount(3);
                     ItemStack output = part.getItemstackWithMaterial(sky);
-                    NaturesAuraAPI.OFFERING_RECIPES.put(name, new OfferingRecipe(name, Ingredient.fromStacks(input), Ingredient.fromItem(ModItems.CALLING_SPIRIT), output));
+
+                    NaturesAuraCompat.addOfferingRecipe(name, input, output);
                 }
             }
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.token) {
             token.addRecipeMatch(new RecipeMatch.ItemCombination(1, new ItemStack(ModItems.TOKEN_EUPHORIA), new ItemStack(ModItems.TOKEN_TERROR), new ItemStack(ModItems.TOKEN_RAGE), new ItemStack(ModItems.TOKEN_GRIEF)));
+            ModuleManager.modifiers.add(token);
         }
-        ModuleManager.addModifier(token);
-    }
-
-    @Override
-    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
-
     }
 }

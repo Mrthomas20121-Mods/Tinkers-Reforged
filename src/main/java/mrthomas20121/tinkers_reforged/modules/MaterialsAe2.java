@@ -46,7 +46,7 @@ public class MaterialsAe2 extends ModuleReforgedBase {
         }
 
         if(TinkersReforgedConfig.SettingMaterials.materials.charged_certus_quartz) {
-            charged_certus_quartz.addTrait(ReforgedTraits.flux, MaterialTypes.HEAD);
+            charged_certus_quartz.addTrait(TinkerTraits.dense, MaterialTypes.HEAD);
             charged_certus_quartz.addTrait(TinkerTraits.shocking);
             TinkerRegistry.addMaterial(charged_certus_quartz);
             TinkerRegistry.addMaterialStats(charged_certus_quartz,

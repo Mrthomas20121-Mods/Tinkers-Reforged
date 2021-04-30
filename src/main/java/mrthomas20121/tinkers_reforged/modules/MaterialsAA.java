@@ -54,7 +54,7 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.restonia) {
             restonia.preInit();
-            restonia.getMaterial().addTrait(ReforgedTraits.flux);
+            restonia.getMaterial().addTrait(ReforgedTraits.aftershot);
             TinkerRegistry.addMaterial(restonia.getMaterial());
             TinkerRegistry.addMaterialStats(restonia.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),

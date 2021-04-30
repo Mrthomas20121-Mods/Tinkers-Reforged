@@ -1,12 +1,9 @@
-package mrthomas20121.tinkers_reforged.modules.heat_and_climate;
+package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
+import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
 import slimeknights.tconstruct.library.materials.HandleMaterialStats;
@@ -16,7 +13,7 @@ import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsHeatAndClimate implements ModuleBase {
+public class MaterialsHeatAndClimate extends ModuleReforgedBase {
 
     private MaterialGen nickel_silver = new MaterialGen("nickelsilver", 0xC6D2D1, "Nickelsilver", 800);
     private MaterialGen tool_steel = new MaterialGen("tool_steel", 0x85AB93, "ToolSteel", 900);
@@ -24,7 +21,12 @@ public class MaterialsHeatAndClimate implements ModuleBase {
     private MaterialGen mangalloy = new MaterialGen("mangalloy", 0xC66B6E, "Mangalloy", 700);
 
     @Override
-    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+    public boolean canLoad() {
+        return TinkersReforgedConfig.SettingMaterials.modules.heat_and_climate;
+    }
+
+    @Override
+    public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.nickel_silver) {
             nickel_silver.preInit();
             nickel_silver.getMaterial().addTrait(TinkerTraits.magnetic);
@@ -70,7 +72,7 @@ public class MaterialsHeatAndClimate implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent fmlInitializationEvent) {
+    public void init() {
         if(FluidRegistry.isFluidRegistered("manganese")) {
             TinkerSmeltery.registerOredictMeltingCasting(FluidRegistry.getFluid("manganese"), "Manganese");
         }
@@ -86,10 +88,5 @@ public class MaterialsHeatAndClimate implements ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.mangalloy) {
             mangalloy.init();
         }
-    }
-
-    @Override
-    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
-
     }
 }

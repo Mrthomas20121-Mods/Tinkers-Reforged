@@ -17,7 +17,6 @@ public class ReforgedTraits {
     public static final TraitEnriching enriching = new TraitEnriching();
     public static final TraitFast fast = new TraitFast();
     public static final TraitFey fey = new TraitFey();
-    public static final TraitFlux flux = new TraitFlux();
     public static final TraitGodGift godGift = new TraitGodGift();
     public static final TraitLeafBlower leafBlower = new TraitLeafBlower();
     public static final TraitLifeSteal lifeSteal = new TraitLifeSteal();

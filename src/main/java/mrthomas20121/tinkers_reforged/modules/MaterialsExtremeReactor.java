@@ -1,12 +1,10 @@
-package mrthomas20121.tinkers_reforged.modules.extreme_reactor;
+package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.BowMaterialStats;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
@@ -14,7 +12,7 @@ import slimeknights.tconstruct.library.materials.HandleMaterialStats;
 import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
-public class MaterialsExtremeReactor implements ModuleBase {
+public class MaterialsExtremeReactor extends ModuleReforgedBase {
 
     private MaterialGen yellorium = new MaterialGen("yellorium", 0xD9DB5C, "Yellorium", 800);
     private MaterialGen cyanite = new MaterialGen("cyanite", 0x5CAFDB, "Cyanite", 800);
@@ -22,7 +20,12 @@ public class MaterialsExtremeReactor implements ModuleBase {
     private MaterialGen blutonium = new MaterialGen("blutonium", 0x4642D6, "Blutonium", 1000);
 
     @Override
-    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+    public boolean canLoad() {
+        return TinkersReforgedConfig.SettingMaterials.modules.extreme_reactor;
+    }
+
+    @Override
+    public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.yellorium) {
 			yellorium.preInit();
             yellorium.getMaterial().addTrait(ReforgedTraits.radioactive);
@@ -66,7 +69,7 @@ public class MaterialsExtremeReactor implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent fmlInitializationEvent) {
+    public void init() {
         if(TinkersReforgedConfig.SettingMaterials.materials.yellorium) {
             yellorium.init();
         }
@@ -79,10 +82,5 @@ public class MaterialsExtremeReactor implements ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.blutonium) {
             blutonium.init();
         }
-    }
-
-    @Override
-    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
-
     }
 }
