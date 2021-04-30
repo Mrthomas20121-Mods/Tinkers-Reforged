@@ -1,16 +1,9 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import epicsquid.roots.init.ModRecipes;
-import epicsquid.roots.recipe.FeyCraftingRecipe;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
-import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.compat.RootsCompat;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.MaterialItem;
@@ -46,6 +39,7 @@ public class MaterialsRoots extends ModuleReforgedBase {
     public void init() {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.runestone) {
+            runestone.setCraftable(false);
             runestone.setRepresentativeItem("runestone");
             runestone.addItem("runestone", 1, Material.VALUE_Ingot);
 

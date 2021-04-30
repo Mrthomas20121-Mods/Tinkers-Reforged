@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.modules.pixelmon;
 
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ModuleCore;
+import mrthomas20121.tinkers_reforged.modules.MaterialsPixelmon;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

@@ -1,24 +1,26 @@
-package mrthomas20121.tinkers_reforged.modules.project_red;
+package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsProjectRed implements ModuleBase {
+public class MaterialsProjectRed extends ModuleReforgedBase {
 
-    MaterialGen red_alloy = new MaterialGen("red_alloy", 0xED4242, "RedAlloy", 500);
-    MaterialGen electrotine_alloy = new MaterialGen("electrotine_alloy", 0x0E73AA, "ElectrotineAlloy", 700);
-    Material electrotine = new Material("ref_electrotine", 0x43C7ED);
+    private MaterialGen red_alloy = new MaterialGen("red_alloy", 0xED4242, "RedAlloy", 500);
+    private MaterialGen electrotine_alloy = new MaterialGen("electrotine_alloy", 0x0E73AA, "ElectrotineAlloy", 700);
+    private Material electrotine = new Material("ref_electrotine", 0x43C7ED);
 
     @Override
-    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+    public boolean canLoad() {
+        return TinkersReforgedConfig.SettingMaterials.modules.project_red;
+    }
+
+    @Override
+    public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.red_alloy) {
             red_alloy.preInit();
             red_alloy.getMaterial().addTrait(TinkerTraits.jagged);
@@ -52,7 +54,7 @@ public class MaterialsProjectRed implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent fmlInitializationEvent) {
+    public void init() {
         if(TinkersReforgedConfig.SettingMaterials.materials.red_alloy) {
             red_alloy.init();
         }
@@ -64,10 +66,5 @@ public class MaterialsProjectRed implements ModuleBase {
             electrotine.addItem("dustElectrotine", 1, Material.VALUE_Ingot);
             electrotine.setRepresentativeItem("dustElectrotine");
         }
-    }
-
-    @Override
-    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
-
     }
 }

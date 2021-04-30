@@ -1,14 +1,11 @@
-package mrthomas20121.tinkers_reforged.modules.pixelmon;
+package mrthomas20121.tinkers_reforged.modules;
 
-import com.pixelmonmod.pixelmon.config.PixelmonBlocks;
-import com.pixelmonmod.pixelmon.config.PixelmonItems;
-import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.Reference;
+import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.BowMaterialStats;
@@ -18,19 +15,24 @@ import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsPixelmon implements ModuleBase {
+public class MaterialsPixelmon extends ModuleReforgedBase {
 
-    MaterialGen firestone = new MaterialGen("firestone", 0xE98E33, "Firestone", 500, true);
-    MaterialGen waterstone = new MaterialGen("waterstone", 0x5D75A5, "Waterstone", 500, true);
-    MaterialGen leafstone = new MaterialGen("leafstone", 0x798957, "Leafstone", 500, true);
-    MaterialGen thunderstone = new MaterialGen("thunderstone", 0xB3DCAB, "Thunderstone", 500, true);
-    MaterialGen sunstone = new MaterialGen("sunstone", 0xD75A2B, "Sunstone", 500, true);
-    MaterialGen dawnstone = new MaterialGen("dawnstone", 0x0EBCB1, "Dawnstone", 500, true);
-    MaterialGen duskstone = new MaterialGen("duskstone", 0x795291, "Duskstone", 500, true);
-    MaterialGen crystal = new MaterialGen("crystal", 0x94D3D3, "Crystal", 800, true);
+    private MaterialGen firestone = new MaterialGen("firestone", 0xE98E33, "Firestone", 500, true);
+    private MaterialGen waterstone = new MaterialGen("waterstone", 0x5D75A5, "Waterstone", 500, true);
+    private MaterialGen leafstone = new MaterialGen("leafstone", 0x798957, "Leafstone", 500, true);
+    private MaterialGen thunderstone = new MaterialGen("thunderstone", 0xB3DCAB, "Thunderstone", 500, true);
+    private MaterialGen sunstone = new MaterialGen("sunstone", 0xD75A2B, "Sunstone", 500, true);
+    private MaterialGen dawnstone = new MaterialGen("dawnstone", 0x0EBCB1, "Dawnstone", 500, true);
+    private MaterialGen duskstone = new MaterialGen("duskstone", 0x795291, "Duskstone", 500, true);
+    private MaterialGen crystal = new MaterialGen("crystal", 0x94D3D3, "Crystal", 800, true);
 
     @Override
-    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+    public boolean canLoad() {
+        return TinkersReforgedConfig.SettingMaterials.modules.pixelmon;
+    }
+
+    @Override
+    public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.firestone) {
             firestone.preInit();
             firestone.getMaterial().addTrait(ReforgedTraits.backfire);
@@ -114,32 +116,32 @@ public class MaterialsPixelmon implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent fmlInitializationEvent) {
-        OreDictionary.registerOre("oreWaterstone", PixelmonBlocks.waterStoneOre);
-        OreDictionary.registerOre("gemWaterstone", PixelmonItems.waterStone);
-        OreDictionary.registerOre("nuggetWaterstone", PixelmonItems.waterStoneShard);
+    public void init() {
+        OreDictionary.registerOre("oreWaterstone", ForgeUtils.getBlock(Reference.pixelmon, "water_stone_ore"));
+        OreDictionary.registerOre("gemWaterstone", ForgeUtils.getItem(Reference.pixelmon, "water_stone"));
+        OreDictionary.registerOre("nuggetWaterstone", ForgeUtils.getItem(Reference.pixelmon, "water_stone_shard"));
 
-        OreDictionary.registerOre("oreFirestone", PixelmonBlocks.fireStoneOre);
-        OreDictionary.registerOre("gemFirestone", PixelmonItems.fireStone);
-        OreDictionary.registerOre("nuggetFirestone", PixelmonItems.fireStoneShard);
+        OreDictionary.registerOre("oreFirestone", ForgeUtils.getBlock(Reference.pixelmon, "fire_stone_ore"));
+        OreDictionary.registerOre("gemFirestone", ForgeUtils.getItem(Reference.pixelmon, "fire_stone"));
+        OreDictionary.registerOre("nuggetFirestone", ForgeUtils.getItem(Reference.pixelmon, "fire_stone_shard"));
 
-        OreDictionary.registerOre("oreLeafstone", PixelmonBlocks.leafStoneOre);
-        OreDictionary.registerOre("gemLeafstone", PixelmonItems.leafStone);
-        OreDictionary.registerOre("nuggetLeafstone", PixelmonItems.leafStoneShard);
+        OreDictionary.registerOre("oreLeafstone", ForgeUtils.getBlock(Reference.pixelmon, "leaf_stone_ore"));
+        OreDictionary.registerOre("gemLeafstone", ForgeUtils.getItem(Reference.pixelmon, "leaf_stone"));
+        OreDictionary.registerOre("nuggetLeafstone", ForgeUtils.getItem(Reference.pixelmon, "leaf_stone_shard"));
 
-        OreDictionary.registerOre("oreThunderstone", PixelmonBlocks.thunderStoneOre);
-        OreDictionary.registerOre("gemThunderstone", PixelmonItems.thunderStone);
-        OreDictionary.registerOre("nuggetThunderstone", PixelmonItems.thunderStoneShard);
+        OreDictionary.registerOre("oreThunderstone", ForgeUtils.getBlock(Reference.pixelmon, "thunder_stone_ore"));
+        OreDictionary.registerOre("gemThunderstone", ForgeUtils.getItem(Reference.pixelmon, "thunder_stone"));
+        OreDictionary.registerOre("nuggetThunderstone", ForgeUtils.getItem(Reference.pixelmon, "thunder_stone_shard"));
 
-        OreDictionary.registerOre("oreSunstone", PixelmonBlocks.sunStoneOre);
-        OreDictionary.registerOre("gemSunstone", PixelmonItems.sunStone);
-        OreDictionary.registerOre("nuggetSunstone", PixelmonItems.sunStoneShard);
+        OreDictionary.registerOre("oreSunstone", ForgeUtils.getBlock(Reference.pixelmon, "sun_stone_ore"));
+        OreDictionary.registerOre("gemSunstone", ForgeUtils.getItem(Reference.pixelmon, "sun_stone"));
+        OreDictionary.registerOre("nuggetSunstone", ForgeUtils.getItem(Reference.pixelmon, "sun_stone_shard"));
 
-        OreDictionary.registerOre("gemDawnstone", PixelmonItems.dawnStone);
-        OreDictionary.registerOre("nuggetDawnstone", PixelmonItems.dawnStoneShard);
+        OreDictionary.registerOre("gemDawnstone", ForgeUtils.getItem(Reference.pixelmon, "dawnstone"));
+        OreDictionary.registerOre("nuggetDawnstone", ForgeUtils.getItem(Reference.pixelmon, "dawnstone_shard"));
 
-        OreDictionary.registerOre("gemDuskstone", PixelmonItems.duskStone);
-        OreDictionary.registerOre("nuggetDuskstone", PixelmonItems.duskStoneShard);
+        OreDictionary.registerOre("gemDuskstone", ForgeUtils.getItem(Reference.pixelmon, "duskstone"));
+        OreDictionary.registerOre("nuggetDuskstone", ForgeUtils.getItem(Reference.pixelmon, "duskstone_shard"));
 
         if(TinkersReforgedConfig.SettingMaterials.materials.firestone) {
             firestone.init();
@@ -165,10 +167,5 @@ public class MaterialsPixelmon implements ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.crystal) {
             crystal.init();
         }
-    }
-
-    @Override
-    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
-
     }
 }

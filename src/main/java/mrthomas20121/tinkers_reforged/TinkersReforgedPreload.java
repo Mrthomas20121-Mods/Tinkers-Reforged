@@ -11,7 +11,7 @@ public class TinkersReforgedPreload {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        // modules
+        // load modules
         ModuleManager.addModule(TinkersReforged.MODID, new MaterialsTinkersReforged());
         ModuleManager.addModule(Reference.aa, new MaterialsAA());
         ModuleManager.addModule(Reference.ae2, new MaterialsAe2());
@@ -24,6 +24,7 @@ public class TinkersReforgedPreload {
         ModuleManager.addModule(Reference.cavern2, new MaterialsCavern2());
         ModuleManager.addModule(Reference.forestry, new MaterialsForestry());
         ModuleManager.addModule(Reference.darkutils, new ModifiersDarkUtils());
+        ModuleManager.addModule(Reference.project_red, new MaterialsProjectRed());
         ModuleManager.addModule(Reference.roots, new MaterialsRoots());
         ModuleManager.addModule(Reference.thermalfoundation, new MaterialsThermal());
         ModuleManager.addModule(Reference.thaumcraft, new MaterialsThaumcraft());
