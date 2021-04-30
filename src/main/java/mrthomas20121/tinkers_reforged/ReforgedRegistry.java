@@ -2,7 +2,7 @@ package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.biolib.objects.capability.BioCapabilityProvider;
 import mrthomas20121.tinkers_reforged.library.block.ReforgedItemBlock;
-import mrthomas20121.tinkers_reforged.modules.tinkers_reforged.MaterialsTinkersReforged;
+import mrthomas20121.tinkers_reforged.modules.MaterialsTinkersReforged;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

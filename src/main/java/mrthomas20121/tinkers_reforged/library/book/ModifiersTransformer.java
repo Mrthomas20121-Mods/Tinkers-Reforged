@@ -3,8 +3,6 @@ package mrthomas20121.tinkers_reforged.library.book;
 import mrthomas20121.tinkers_reforged.ModuleManager;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.library.ModuleCore;
-import mrthomas20121.tinkers_reforged.modules.actuallyadditions.MaterialsAA;
-import net.minecraftforge.fml.common.Loader;
 import slimeknights.mantle.client.book.data.BookData;
 import slimeknights.mantle.client.book.data.PageData;
 import slimeknights.mantle.client.book.data.SectionData;
@@ -12,7 +10,6 @@ import slimeknights.mantle.client.book.repository.FileRepository;
 import slimeknights.tconstruct.library.book.content.ContentListing;
 import slimeknights.tconstruct.library.book.sectiontransformer.SectionTransformer;
 import slimeknights.tconstruct.library.modifiers.Modifier;
-import slimeknights.tconstruct.library.modifiers.ModifierTrait;
 
 import java.util.ArrayList;
 

@@ -215,6 +215,10 @@ public class TinkersReforgedConfig {
         @Config.RequiresMcRestart
         public boolean khnumite = true;
 
+        @Config.Comment("Enable/Disable limestone material.")
+        @Config.RequiresMcRestart
+        public boolean limestone = true;
+
         @Config.Comment("Enable/Disable glowstone material.")
         @Config.RequiresMcRestart
         public boolean glowstone = true;

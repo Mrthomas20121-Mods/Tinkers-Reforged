@@ -8,6 +8,7 @@ import mrthomas20121.tinkers_reforged.library.book.ModifiersTransformer;
 import mrthomas20121.tinkers_reforged.library.book.ToolsTransformer;
 import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ModifiersSectionTransformer;
 import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ToolsSectiontransformer;
+import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
 import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -127,7 +128,7 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        for(Item item : ReforgedRegistry.getItems()) {
+        for(Item item : ModuleManager.items) {
             ModelRegisterUtil.registerItemModel(item);
         }
         for(Block block: ReforgedRegistry.getBlocks()) {

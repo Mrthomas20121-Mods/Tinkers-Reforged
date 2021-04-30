@@ -20,7 +20,6 @@ public class ModBonusDurability extends ToolModifier {
         this.durability = durability;
     }
 
-    // reimplementation of Tconstruct ModDiamond
     @Override
     public void applyEffect(NBTTagCompound rootCompound, NBTTagCompound modifierTag) {
         ToolNBT data = TagUtil.getToolStats(rootCompound);
