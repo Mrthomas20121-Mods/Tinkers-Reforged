@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
@@ -10,8 +11,7 @@ import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
-
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = TinkersReforged.MODID)
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) { }
