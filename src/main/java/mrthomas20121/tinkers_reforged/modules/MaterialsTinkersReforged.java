@@ -2,7 +2,6 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
-import mrthomas20121.tinkers_reforged.ReforgedRegistry;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
@@ -110,23 +109,14 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
         String[] parts = { "ingot", "nugget", "dust", "plate", "gear" };
 
         for(Mats mat : Mats.values()) {
-            String materialName = StringUtils.capitalize(mat.name().toLowerCase());
             for(String part: parts) {
-                Item item = register(r, new Item(), mat.name().toLowerCase()+"_"+part.toLowerCase());
-                OreDictionary.registerOre(part.toLowerCase()+materialName, item);
+                register(r, new Item(), mat.name().toLowerCase()+"_"+part.toLowerCase());
             }
         }
     }
 
     public void registerBlocks(IForgeRegistry<Block> r) {
         register(r, new ReforgedBlockGlass(), "kovar_glass");
-    }
-
-
-    private static void register(IForgeRegistry<Block> r, Block block, String name) {
-        block.setRegistryName(TinkersReforged.MODID, name);
-        block.setTranslationKey(TinkersReforged.MODID+"."+name);
-        r.register(block);
     }
 
     private enum Mats {

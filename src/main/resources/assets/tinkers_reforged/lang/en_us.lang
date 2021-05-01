@@ -103,11 +103,13 @@ fluid.nickelsilver.name=Molten Nickelsilver
 fluid.tool_steel.name=Molten Tool Steel
 fluid.titanium_alloy.name=Titanium Alloy
 fluid.mangalloy.name=Mangalloy
+fluid.titanium.nmae=MOlten Titanium
 
 # mining levels
 ui.mininglevel.lavium=Lavium
 
 # materials
+material.ref_limestone.name=Limestone
 material.ref_blackquartz.name=Black Quartz
 material.ref_restonia.name=Restonia
 material.ref_palis.name=Palis
@@ -180,7 +182,7 @@ material.ref_lavium.name=Lavium
 modifier.ref_signal.name=Signal
 modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode instantly.
 
-modifier.ref_aftershot.name=Aftershpt
+modifier.ref_aftershot.name=Aftershot
 modifier.ref_aftershot.desc=§oYummy§r\nHeal after dealing damage.
 
 modifier.ref_ender.name=Ender
@@ -191,6 +193,9 @@ modifier.ref_enderfestation.desc=§oHate these little pest, they spawn everywher
 
 modifier.ref_bright.name=Bright
 modifier.ref_bright.desc=§oSolar powered!§r\nYour tool gain more damage/mining speed with a open sun.
+
+modifier.ref_shinystone.name=Shinystone
+modifier.ref_shinystone.desc=§oLook! this stone is shiny§r\nAlways Crit if your tool is damaged.
 
 modifier.ref_astral_infusion.name=Astral Infusion
 modifier.ref_astral_infusion.desc=§oConstellation go brr§r\nGet the effect of your player attuned constelation at night.

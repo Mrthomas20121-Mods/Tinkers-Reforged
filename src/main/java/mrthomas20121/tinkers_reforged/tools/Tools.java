@@ -2,9 +2,7 @@ package mrthomas20121.tinkers_reforged.tools;
 
 import com.google.common.collect.Lists;
 
-import mrthomas20121.tinkers_reforged.ModuleManager;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -66,7 +64,7 @@ public class Tools {
                 knife = registerTool(r, "runic_knife", new ToolRunicKnife());
             }
 
-            if(ModuleManager.isModLoaded("atum") && TinkersReforgedConfig.SettingMaterials.modules.atum) {
+            if(Loader.isModLoaded("atum") && TinkersReforgedConfig.SettingMaterials.modules.atum) {
                 if(TinkersReforgedConfig.SettingTools.enableClub)
                 {
                     clubHead = registerPart(r, "club_head", Material.VALUE_Ingot*3);
@@ -84,21 +82,15 @@ public class Tools {
                 }
             }
 
-            if(ModuleManager.isModLoaded("geolosys"))
+            if(Loader.isModLoaded("geolosys"))
             {
                 propickHead = registerPart(r, "propick_head", Material.VALUE_Ingot*3);
                 propick = registerTool(r, "propick", new ToolProPick());
             }
-
-            for(IModifier modifier : getTinkerModifiers())
-            {
-                TinkersReforged.proxy.registerModifierModel(modifier,
-                        new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modifier.getIdentifier()));
-            }
         }
     }
 
-    private static ArrayList<Modifier> getTinkerModifiers()
+    public static ArrayList<Modifier> getTinkerModifiers()
     {
         return Lists.newArrayList(
                 TinkerModifiers.modBaneOfArthopods,

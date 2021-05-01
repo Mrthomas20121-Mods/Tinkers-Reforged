@@ -1,21 +1,25 @@
 package mrthomas20121.tinkers_reforged.library.module;
 
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import java.util.*;
 
+@Mod.EventBusSubscriber(modid = TinkersReforged.MODID)
 public class ModuleManager {
 
-    private static Map<String, ModuleReforgedBase> modules = new LinkedHashMap<>();
+    private static LinkedHashMap<String, ModuleReforgedBase> modules = new LinkedHashMap<>();
     public static List<Item> items = new ArrayList<>();
     public static List<Block> blocks = new ArrayList<>();
     public static List<Modifier> modifiers = new ArrayList<>();
@@ -77,6 +81,20 @@ public class ModuleManager {
         modules.forEach((mod, module)-> {
             if(isModLoaded(mod) && module.canLoad()) {
                 module.registerItems(r);
+            }
+        });
+
+        for(Block block: blocks) {
+            r.register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setTranslationKey(block.getTranslationKey()).setCreativeTab(block.getCreativeTab()));
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
+        IForgeRegistry<Block> r = event.getRegistry();
+        modules.forEach((mod, module) -> {
+            if(isModLoaded(mod) && module.canLoad()) {
+                module.registerBlocks(r);
             }
         });
     }

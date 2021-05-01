@@ -58,13 +58,13 @@ public class TinkersReforgedConfig {
         @Config.Comment("How much mana used per Manasteel parts.")
         public int cost = 2000;
 
-        @Config.Comment("MaterialsAA used to create Manasteel tool parts.")
+        @Config.Comment("Materials used to create Manasteel tool parts.")
         public String material = "iron";
     }
 
     public static class Starmetal {
 
-        @Config.Comment("MaterialsAA used to create Starmetal tool parts.")
+        @Config.Comment("Materials used to create Starmetal tool parts.")
         public String material = "iron";
     }
 
@@ -75,13 +75,13 @@ public class TinkersReforgedConfig {
         @Config.Comment("Time it take to finish the craft.")
         public int time = 25;
 
-        @Config.Comment("MaterialsAA used to create Infused Iron tool parts.")
+        @Config.Comment("Materials used to create Infused Iron tool parts.")
         public String material = "iron";
     }
 
     public static class Sky {
 
-        @Config.Comment("MaterialsAA used to create Manasteel tool parts.")
+        @Config.Comment("Materials used to create Manasteel tool parts.")
         public String material = "ref_infused_iron";
     }
 
@@ -114,7 +114,7 @@ public class TinkersReforgedConfig {
     }
 
 
-    @Config(modid = MODID, name = "Tinkers Reforged - MaterialsAA and Modules")
+    @Config(modid = MODID, name = "Tinkers Reforged - Materials and Modules")
     public static class SettingMaterials {
 
         @Config.Comment("Materials list.")
@@ -480,10 +480,6 @@ public class TinkersReforgedConfig {
         @Config.Comment("Enable/Disable dark_utils module.")
         @Config.RequiresMcRestart
         public boolean dark_utils = true;
-
-        @Config.Comment("Enable/Disable environmentaltech module.")
-        @Config.RequiresMcRestart
-        public boolean environmentaltech = true;
 
         @Config.Comment("Enable/Disable extreme_reactor module.")
         @Config.RequiresMcRestart

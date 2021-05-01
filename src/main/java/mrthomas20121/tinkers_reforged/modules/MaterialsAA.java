@@ -3,8 +3,8 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
-import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
+import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
 import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModEnderStar;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModLensKiller;
@@ -12,7 +12,6 @@ import mrthomas20121.tinkers_reforged.trait.modifier.ModLensMiner;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
@@ -171,18 +170,15 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.modifiers.enderstar) {
             modEnderStar.addItem(new ItemStack(ForgeUtils.getItem("actuallyadditions", "item_misc"), 1, 19), 1, 1);
+            ModuleManager.modifiers.add(modEnderStar);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.lens_killer) {
             modLensKiller.addItem(new ItemStack(ForgeUtils.getItem("actuallyadditions", "item_more_damage_lens")), 1, 1);
+            ModuleManager.modifiers.add(modLensKiller);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.lens_miner) {
             modLensMiner.addItem(new ItemStack(ForgeUtils.getItem("actuallyadditions", "item_mining_lens")), 1, 1);
+            ModuleManager.modifiers.add(modLensMiner);
         }
-
-        TinkersReforged.proxy.registerModifierModel(modEnderStar,
-                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modEnderStar.getIdentifier()));
-
-        TinkersReforged.proxy.registerModifierModel(modLensKiller,
-                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modLensKiller.getIdentifier()));
     }
 }

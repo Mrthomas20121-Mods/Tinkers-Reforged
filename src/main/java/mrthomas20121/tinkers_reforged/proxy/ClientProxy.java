@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
 
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.book.ModifiersTransformer;
 import mrthomas20121.tinkers_reforged.library.book.ToolsTransformer;
@@ -28,7 +29,7 @@ import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
-@Mod.EventBusSubscriber(Side.CLIENT)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = TinkersReforged.MODID)
 public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
@@ -117,5 +118,11 @@ public class ClientProxy extends CommonProxy {
         for(Block block: ModuleManager.blocks) {
             ModelRegisterUtil.registerItemModel(block);
         }
+
+        Tools.getTinkerModifiers().forEach(modifier ->  TinkersReforged.proxy.registerModifierModel(modifier,
+                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modifier.getIdentifier())));
+
+        ModuleManager.modifiers.forEach(modifier ->  TinkersReforged.proxy.registerModifierModel(modifier,
+                new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modifier.getIdentifier())));
     }
 }

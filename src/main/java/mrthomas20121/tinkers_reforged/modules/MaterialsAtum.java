@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
@@ -15,7 +16,7 @@ import slimeknights.tconstruct.library.utils.HarvestLevels.*;
 public class MaterialsAtum extends ModuleReforgedBase {
 
     private Material khnumite = new Material("ref_khnumite", 0x998B59);
-    private Material limestone = new Material("ref_limestone", 0x0);
+    private Material limestone = new Material("ref_limestone", 0xD3B68D);
 
     @Override
     public boolean canLoad() {
@@ -54,8 +55,11 @@ public class MaterialsAtum extends ModuleReforgedBase {
             khnumite.setCraftable(true);
             khnumite.setRepresentativeItem("ingotKhnumite");
             khnumite.addItem("ingotKhnumite", 1, Material.VALUE_Ingot);
+        }
 
-            limestone.setRepresentativeItem(ForgeUtils.getBlock("atum", "limestone"));
+        if(TinkersReforgedConfig.SettingMaterials.materials.limestone) {
+            limestone.setCraftable(true);
+            limestone.setRepresentativeItem(ForgeUtils.getBlock(Reference.atum, "limestone"));
             limestone.addItem(ForgeUtils.getBlock("atum", "limestone"), 1);
         }
     }

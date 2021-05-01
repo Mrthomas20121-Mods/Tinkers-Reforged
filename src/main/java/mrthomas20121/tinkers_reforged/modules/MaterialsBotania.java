@@ -95,8 +95,8 @@ public class MaterialsBotania extends ModuleReforgedBase {
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.dreamwood) {
             dreamwood.setCraftable(true);
-            dreamwood.addItem(ForgeUtils.getBlock(Reference.botania, "dreadwood"), 1);
-            dreamwood.setRepresentativeItem(ForgeUtils.getBlock(Reference.botania, "dreadwood"));
+            dreamwood.addItem(ForgeUtils.getBlock(Reference.botania, "dreamwood"), 1);
+            dreamwood.setRepresentativeItem(ForgeUtils.getBlock(Reference.botania, "dreamwood"));
         }
     }
 }

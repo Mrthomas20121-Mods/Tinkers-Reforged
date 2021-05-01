@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.library.module;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -26,6 +27,10 @@ public abstract class ModuleReforgedBase {
 
     }
 
+    public void registerBlocks(IForgeRegistry<Block> r) {
+
+    }
+
     public void registerRecipes(IForgeRegistry<IRecipe> r) {
 
     }
@@ -34,13 +39,20 @@ public abstract class ModuleReforgedBase {
 
     }
 
-    protected Item register(IForgeRegistry<Item> r, Item item, String name) {
+    protected void register(IForgeRegistry<Item> r, Item item, String name) {
         item.setRegistryName(TinkersReforged.MODID, name);
         item.setTranslationKey(TinkersReforged.MODID+"."+name);
         item.setCreativeTab(ModuleManager.tab);
         r.register(item);
         ModuleManager.items.add(item);
-        return item;
+    }
+
+    protected void register(IForgeRegistry<Block> r, Block block, String name) {
+        block.setRegistryName(TinkersReforged.MODID, name);
+        block.setTranslationKey(TinkersReforged.MODID+"."+name);
+        block.setCreativeTab(ModuleManager.tab);
+        r.register(block);
+        ModuleManager.blocks.add(block);
     }
 
     /**

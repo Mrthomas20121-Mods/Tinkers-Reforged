@@ -86,7 +86,7 @@ public class MaterialsBlueSkies extends ModuleReforgedBase {
         String[] gems = { "pyrope", "turquoise", "charoite", "diopside" };
 
         for(String gem: gems) {
-            OreDictionary.registerOre("gem"+ StringUtils.capitalize(gem), ForgeUtils.getItem(Reference.blue_skies, gem+"_gem"));
+            OreDictionary.registerOre("gem"+ StringUtils.capitalize(gem), ForgeUtils.getItem(Reference.blue_skies, gem.equals("charoite")? gem: gem+"_gem"));
             OreDictionary.registerOre("ore"+ StringUtils.capitalize(gem), ForgeUtils.getBlock(Reference.blue_skies, "everdawn_"+gem+"_ore"));
             OreDictionary.registerOre("ore"+ StringUtils.capitalize(gem), ForgeUtils.getBlock(Reference.blue_skies, "everbright_"+gem+"_ore"));
             OreDictionary.registerOre("block"+ StringUtils.capitalize(gem), ForgeUtils.getBlock(Reference.blue_skies, gem+"_block"));
