@@ -1,7 +1,5 @@
 package mrthomas20121.tinkers_reforged.proxy;
 
-import mrthomas20121.tinkers_reforged.ReforgedRegistry;
-import mrthomas20121.tinkers_reforged.TinkersReforged;
 
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.book.ModifiersTransformer;
@@ -131,7 +129,7 @@ public class ClientProxy extends CommonProxy {
         for(Item item : ModuleManager.items) {
             ModelRegisterUtil.registerItemModel(item);
         }
-        for(Block block: ReforgedRegistry.getBlocks()) {
+        for(Block block: ModuleManager.blocks) {
             ModelRegisterUtil.registerItemModel(block);
         }
     }

@@ -26,6 +26,8 @@ public class TinkersReforgedPreload {
         // module not finished
         // ModuleManager.addModule(Reference.forestry, new MaterialsForestry());
         ModuleManager.addModule(Reference.darkutils, new ModifiersDarkUtils());
+        ModuleManager.addModule(Reference.heat_climate, new MaterialsHeatAndClimate());
+        ModuleManager.addModule(Reference.mekanism, new MaterialsMekanism());
         ModuleManager.addModule(Reference.naturesaura, new MaterialsNaturesAura());
         ModuleManager.addModule(Reference.pixelmon, new MaterialsPixelmon());
         ModuleManager.addModule(Reference.project_red, new MaterialsProjectRed());

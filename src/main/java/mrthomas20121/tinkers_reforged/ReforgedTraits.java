@@ -13,7 +13,6 @@ public class ReforgedTraits {
     public static final TraitCurse curse = new TraitCurse();
     public static final TraitEnder ender = new TraitEnder();
     public static final TraitEnderfestation enderfestation = new TraitEnderfestation();
-    public static final TraitEndersteel enderSteel = new TraitEndersteel();
     public static final TraitEnriching enriching = new TraitEnriching();
     public static final TraitFast fast = new TraitFast();
     public static final TraitFey fey = new TraitFey();

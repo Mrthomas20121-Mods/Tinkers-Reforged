@@ -1,15 +1,10 @@
-package mrthomas20121.tinkers_reforged.modules.mekanism;
+package mrthomas20121.tinkers_reforged.modules;
 
-import mekanism.api.infuse.InfuseRegistry;
-import mekanism.api.infuse.InfuseType;
-import mekanism.common.recipe.RecipeHandler;
-import mrthomas20121.biolib.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.compat.MekanismCompat;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tools.IToolPart;
@@ -17,14 +12,19 @@ import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerMaterials;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsMekanism implements ModuleBase {
+public class MaterialsMekanism extends ModuleReforgedBase {
 
     private MaterialGen osmium = new MaterialGen("osmium", 0x7F8EB2, "Osmium", 700);
     private Material refined_obsidian = new Material("ref_refined_obsidian", 0x463763);
     private Material refined_glownstone = new Material("ref_refined_glowstone", 0xEAC829);
 
     @Override
-    public void preInit(FMLPreInitializationEvent fmlPreInitializationEvent) {
+    public boolean canLoad() {
+        return TinkersReforgedConfig.SettingMaterials.modules.mekanism;
+    }
+
+    @Override
+    public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.osmium) {
             osmium.preInit();
             osmium.getMaterial().addTrait(TinkerTraits.established, MaterialTypes.HEAD);
@@ -59,19 +59,18 @@ public class MaterialsMekanism implements ModuleBase {
     }
 
     @Override
-    public void init(FMLInitializationEvent fmlInitializationEvent) {
+    public void init() {
         if(TinkersReforgedConfig.SettingMaterials.materials.osmium) {
             osmium.init();
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.refined_obsidian) {
             refined_obsidian.addCommonItems("RefinedObsidian");
             refined_obsidian.setRepresentativeItem("ingotRefinedObsidian");
-            InfuseType diamond = InfuseRegistry.get("DIAMOND");
             for(IToolPart part : TinkerRegistry.getToolParts())
             {
                 if(part.canUseMaterial(refined_obsidian) && (part.canBeCasted() || part.canBeCrafted()))
                 {
-                    RecipeHandler.addMetallurgicInfuserRecipe(diamond, 10, part.getItemstackWithMaterial(TinkerMaterials.obsidian), part.getItemstackWithMaterial(refined_obsidian));
+                    MekanismCompat.addInfusionRecipe("DIAMOND", 10, part.getItemstackWithMaterial(TinkerMaterials.obsidian), part.getItemstackWithMaterial(refined_obsidian));
                 }
             }
         }
@@ -83,14 +82,9 @@ public class MaterialsMekanism implements ModuleBase {
             {
                 if(part.canUseMaterial(refined_glownstone) && (part.canBeCasted() || part.canBeCrafted()))
                 {
-                    RecipeHandler.addOsmiumCompressorRecipe(part.getItemstackWithMaterial(TinkerRegistry.getMaterial("ref_glowstone")), part.getItemstackWithMaterial(refined_glownstone));
+                    MekanismCompat.addOsmiumCompressorRecipe(part.getItemstackWithMaterial(TinkerRegistry.getMaterial("ref_glowstone")), part.getItemstackWithMaterial(refined_glownstone));
                 }
             }
         }
-    }
-
-    @Override
-    public void postInit(FMLPostInitializationEvent fmlPostInitializationEvent) {
-
     }
 }
