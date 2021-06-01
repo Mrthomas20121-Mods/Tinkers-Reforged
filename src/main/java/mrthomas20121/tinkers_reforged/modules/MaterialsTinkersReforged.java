@@ -90,7 +90,7 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
         {
             FluidStack ardite = FluidRegistry.getFluidStack("ardite", Material.VALUE_SearedBlock);
             FluidStack cobalt = FluidRegistry.getFluidStack("cobalt", Material.VALUE_SearedBlock);
-            FluidStack purpleslime = FluidRegistry.getFluidStack("purpleslime", Material.VALUE_Ingot);
+            FluidStack purpleslime = FluidRegistry.getFluidStack("purpleslime", 125);
             FluidStack glass = FluidRegistry.getFluidStack("glass", Material.VALUE_Glass);
             FluidStack lavium = new FluidStack(FluidRegistry.getFluid("lavium"), Material.VALUE_Ingot);
             FluidStack qivium = new FluidStack(FluidRegistry.getFluid("qivium"), Material.VALUE_Ingot);

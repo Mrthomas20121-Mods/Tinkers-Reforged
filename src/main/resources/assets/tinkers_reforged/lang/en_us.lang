@@ -195,7 +195,13 @@ modifier.ref_bright.name=Bright
 modifier.ref_bright.desc=§oSolar powered!§r\nYour tool gain more damage/mining speed with a open sun.
 
 modifier.ref_shinystone.name=Shinystone
-modifier.ref_shinystone.desc=§oLook! this stone is shiny§r\nAlways Crit if your tool is damaged.
+modifier.ref_shinystone.desc=§oShine like a stone§r\nAlways Crit if your tool is damaged.
+
+modifier.ref_experimental.name=Experimental
+modifier.ref_experimental.desc=§oWarning, it's Experimental!§r\ndouble your mining speed and attack speed but cut the other stats in half.
+
+modifier.ref_consolation_prize.name=Consolation Prize
+modifier.ref_consolation_prize.desc=§oThat's something i guess§r\nGive your Lowest stat a buff.
 
 modifier.ref_astral_infusion.name=Astral Infusion
 modifier.ref_astral_infusion.desc=§oConstellation go brr§r\nGet the effect of your player attuned constelation at night.
@@ -213,7 +219,7 @@ modifier.nuclear_waste.name=Nuclear Waste
 modifier.nuclear_waste.desc=§oNuclear Infusion anyone?§r\nGet a random vanilla potion effect after mining or attacking.
 
 modifier.life_steal.name=Life Steal
-modifier.life_steal.desc=§oFeels Good§r\nSteal Health from mobs.
+modifier.life_steal.desc=§oFeels Good to steal§r\nSteal Health from mobs.
 
 modifier.ref_refined.name=Refined
 modifier.ref_refined.desc=§oSomething smell fishy§r\nBreak Obsidian Instantly.
@@ -256,6 +262,12 @@ modifier.ref_mana_boost.desc=§oDamage go brr§r\nDrain mana from inventory/baub
 
 modifier.ref_living.name=Living
 modifier.ref_living.desc=§oIt feels so good!§r\nBlocking an attack heal you.
+
+modifier.ref_blessed_syringe.name=Blessed Syringe
+modifier.ref_blessed_syringe.desc=§oBless you!§r\nGet luck at the cost of durability.
+
+modifier.ref_overkill.name=Overkill
+modifier.ref_overkill.desc=§oStop it he's dead!§r\nGet Exp for doing more damage than an entity health.
 
 modifier.ref_rod.name=Lighting Rod
 modifier.ref_rod.desc=§oThunder and Lightning!§r\nHitting Mobs and Players summon a lighting at their position.

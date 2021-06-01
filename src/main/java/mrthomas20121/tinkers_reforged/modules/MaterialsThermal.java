@@ -1,13 +1,11 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModifierMagnet;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -32,6 +30,7 @@ public class MaterialsThermal extends ModuleReforgedBase {
     public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.enderium) {
 			enderium.preInit();
+			enderium.getMaterial().addTrait(ReforgedTraits.teleport, MaterialTypes.HANDLE);
             enderium.getMaterial().addTrait(ReforgedTraits.enderfestation);
             enderium.getMaterial().addTrait(ReforgedTraits.ender, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(enderium.getMaterial());
@@ -43,7 +42,7 @@ public class MaterialsThermal extends ModuleReforgedBase {
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.lumium) {
 			lumium.preInit();
-            lumium.getMaterial().addTrait(ReforgedTraits.bright);
+            lumium.getMaterial().addTrait(ReforgedTraits.experimental);
             lumium.getMaterial().addTrait(ReforgedTraits.rod, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(lumium.getMaterial());
             TinkerRegistry.addMaterialStats(lumium.getMaterial(),
@@ -54,7 +53,7 @@ public class MaterialsThermal extends ModuleReforgedBase {
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.signalum) {
             signalum.preInit();
-            signalum.getMaterial().addTrait(ReforgedTraits.teleport);
+            signalum.getMaterial().addTrait(ReforgedTraits.consolationPrize);
             signalum.getMaterial().addTrait(ReforgedTraits.shinystone, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(signalum.getMaterial());
             TinkerRegistry.addMaterialStats(signalum.getMaterial(),

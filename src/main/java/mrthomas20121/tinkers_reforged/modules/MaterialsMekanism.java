@@ -47,8 +47,8 @@ public class MaterialsMekanism extends ModuleReforgedBase {
                     new BowMaterialStats(3.2f, 5, 6.1f));
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.refined_glowstone) {
-            refined_glownstone.addTrait(ReforgedTraits.refined, MaterialTypes.HEAD);
-            refined_glownstone.addTrait(ReforgedTraits.bright);
+            refined_glownstone.addTrait(ReforgedTraits.overkill, MaterialTypes.HEAD);
+            refined_glownstone.addTrait(ReforgedTraits.blessedSyringe);
             TinkerRegistry.addMaterial(refined_glownstone);
             TinkerRegistry.addMaterialStats(refined_glownstone,
                     new HeadMaterialStats(550, 6.5f, 6.5f, HarvestLevels.OBSIDIAN),

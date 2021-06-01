@@ -37,4 +37,8 @@ public class ReforgedTraits {
     public static final TraitVoid voidTrait = new TraitVoid();
     public static final TraitShinystone shinystone = new TraitShinystone();
     public static final TraitAftershot aftershot = new TraitAftershot();
+    public static final TraitExperimental experimental = new TraitExperimental();
+    public static final TraitConsolationPrize consolationPrize = new TraitConsolationPrize();
+    public static final TraitOverkill overkill = new TraitOverkill();
+    public static final TraitBlessedSyringe blessedSyringe = new TraitBlessedSyringe();
 }
