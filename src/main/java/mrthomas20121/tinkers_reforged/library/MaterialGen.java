@@ -1,7 +1,5 @@
 package mrthomas20121.tinkers_reforged.library;
 
-import mrthomas20121.biolib.library.Registry;
-import mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -55,7 +53,6 @@ public class MaterialGen {
         fluid = FluidRegistry.getFluid(fluid.getName());
 		fluid.setTemperature(temp);
         FluidRegistry.addBucketForFluid(fluid);
-        Registry.addBToolForgeBlock("block"+oredict);
     }
 
     public void init()

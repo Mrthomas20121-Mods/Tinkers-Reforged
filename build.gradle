@@ -9,6 +9,10 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            name = "forge gradle 2.3 alternative"
+            url = "https://sizableshrimp.me/maven/"
+        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -48,10 +52,6 @@ repositories {
     maven {
         name = "astral sorcery"
         url = "https://maven.hellfiredev.net/"
-    }
-    removeIf { it instanceof MavenArtifactRepository && it.url.host == 'files.minecraftforge.net' }
-    maven {
-        url "https://maven.minecraftforge.net/"
     }
 }
 

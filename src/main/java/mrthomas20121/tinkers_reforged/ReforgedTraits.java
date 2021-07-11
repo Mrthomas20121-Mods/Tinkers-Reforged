@@ -9,7 +9,6 @@ public class ReforgedTraits {
     public static final TraitBackfire backfire = new TraitBackfire();
     public static final TraitBright bright = new TraitBright();
     public static final TraitCarbon carbon = new TraitCarbon();
-    public static final TraitCrystalSurge crystalSurge = new TraitCrystalSurge();
     public static final TraitCurse curse = new TraitCurse();
     public static final TraitEnder ender = new TraitEnder();
     public static final TraitEnderfestation enderfestation = new TraitEnderfestation();
@@ -26,7 +25,7 @@ public class ReforgedTraits {
     public static final TraitPyromancy pyromency = new TraitPyromancy();
     public static final TraitRadioactive radioactive = new TraitRadioactive();
     public static final TraitRefined refined = new TraitRefined();
-    public static final TraitRod rod = new TraitRod();
+    public static final TraitLightningRod rod = new TraitLightningRod();
     public static final TraitRose rose = new TraitRose();
     public static final TraitSignal signal = new TraitSignal();
     public static final TraitSoft soft = new TraitSoft();
@@ -41,4 +40,5 @@ public class ReforgedTraits {
     public static final TraitConsolationPrize consolationPrize = new TraitConsolationPrize();
     public static final TraitOverkill overkill = new TraitOverkill();
     public static final TraitBlessedSyringe blessedSyringe = new TraitBlessedSyringe();
+    public static final TraitTradeOff tradeOff = new TraitTradeOff();
 }

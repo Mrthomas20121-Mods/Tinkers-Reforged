@@ -4,16 +4,18 @@ import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.trait.TraitFluxForce;
+import mrthomas20121.tinkers_reforged.trait.TraitThaumicBomb;
 import slimeknights.tconstruct.library.TinkerRegistry;
-import slimeknights.tconstruct.library.materials.BowMaterialStats;
-import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
-import slimeknights.tconstruct.library.materials.HandleMaterialStats;
-import slimeknights.tconstruct.library.materials.HeadMaterialStats;
+import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
 public class MaterialsThaumcraft extends ModuleReforgedBase {
 
     private MaterialGen thaumium = new MaterialGen("thaumium", 0x7768A9, "Thaumium", 800);
+
+    private TraitFluxForce fluxForce = new TraitFluxForce();
+    private TraitThaumicBomb thaumicBomb = new TraitThaumicBomb();
 
     @Override
     public boolean canLoad() {
@@ -24,7 +26,9 @@ public class MaterialsThaumcraft extends ModuleReforgedBase {
     public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.thaumium) {
             thaumium.preInit();
-            thaumium.getMaterial().addTrait(ReforgedTraits.crystalSurge);
+            thaumium.getMaterial().addTrait(fluxForce, MaterialTypes.HEAD);
+            thaumium.getMaterial().addTrait(thaumicBomb, MaterialTypes.HANDLE);
+            thaumium.getMaterial().addTrait(thaumicBomb, MaterialTypes.EXTRA);
             TinkerRegistry.addMaterial(thaumium.getMaterial());
             TinkerRegistry.addMaterialStats(thaumium.getMaterial(),
                     new HeadMaterialStats(100, 4.5f, 4.4f, HarvestLevels.DIAMOND),

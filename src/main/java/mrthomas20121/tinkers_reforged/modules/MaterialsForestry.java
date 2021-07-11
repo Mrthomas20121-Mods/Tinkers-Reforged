@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.objects.item.ItemBase;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
@@ -14,6 +13,7 @@ public class MaterialsForestry extends ModuleReforgedBase {
     private String[] alloys = { "honey_alloy", "icey_alloy" };
 
     private MaterialGen honey_alloy = new MaterialGen("ref_honey_alloy", 0x0, "HoneyAlloy", 700);
+    private MaterialGen iceys_alloy = new MaterialGen("ref_icey_alloy", 0x0, "IceyAlloy", 700);
 
     @Override
     public boolean canLoad() {
@@ -23,6 +23,7 @@ public class MaterialsForestry extends ModuleReforgedBase {
     @Override
     public void preInit() {
         honey_alloy.preInit();
+        ModuleManager.alloys.add("honey_alloy");
     }
 
     @Override

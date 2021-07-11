@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.library.Registry;
 import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.compat.BotaniaCompat;
@@ -38,7 +37,6 @@ public class MaterialsBotania extends ModuleReforgedBase {
                     new HandleMaterialStats(1.2f, 9),
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(0.5f, 1.4f, 7f));
-            Registry.addBToolForgeBlock("blockManasteel");
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.livingwood) {
             livingwood.addTrait(ReforgedTraits.living);
@@ -74,6 +72,7 @@ public class MaterialsBotania extends ModuleReforgedBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.manasteel) {
             manasteel.setRepresentativeItem("ingotManasteel");
             manasteel.addItemIngot("ingotManasteel");
+            manasteel.addCommonItems("ManaSteel");
             for(IToolPart part : TinkerRegistry.getToolParts())
             {
                 if(part.canUseMaterial(manasteel) && (part.canBeCasted() || part.canBeCrafted()))

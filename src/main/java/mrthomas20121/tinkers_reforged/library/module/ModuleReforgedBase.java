@@ -23,6 +23,10 @@ public abstract class ModuleReforgedBase {
 
     public abstract boolean canLoad();
 
+    public void registerAlloys() {
+
+    }
+
     public void registerItems(IForgeRegistry<Item> r) {
 
     }

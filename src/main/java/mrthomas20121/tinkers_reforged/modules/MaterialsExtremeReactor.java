@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import mrthomas20121.biolib.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;

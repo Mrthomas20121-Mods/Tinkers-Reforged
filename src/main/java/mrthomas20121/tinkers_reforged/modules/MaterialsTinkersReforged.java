@@ -6,16 +6,15 @@ import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.block.ReforgedBlockGlass;
+import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
 import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
-import org.apache.commons.lang3.StringUtils;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.fluid.FluidMolten;
 import slimeknights.tconstruct.library.materials.*;
@@ -37,6 +36,10 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
 
     @Override
     public void preInit() {
+        ModuleManager.alloys.add("lavium");
+        ModuleManager.alloys.add("qivium");
+        ModuleManager.alloys.add("kovar");
+
         FluidRegistry.registerFluid(kovar_fluid);
         FluidRegistry.addBucketForFluid(kovar_fluid);
 
@@ -53,7 +56,7 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.qivium) {
             qivium.preInit();
-            qivium.getMaterial().addTrait(TinkerTraits.momentum);
+            qivium.getMaterial().addTrait(ReforgedTraits.tradeOff);
             qivium.getMaterial().addTrait(ReforgedTraits.pyromency, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(qivium.getMaterial());
             TinkerRegistry.addMaterialStats(qivium.getMaterial(),
@@ -66,16 +69,6 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
 
     @Override
     public void init() {
-
-        // register ores for the various parts
-        String[] parts = { "ingot", "nugget", "dust", "plate", "gear" };
-        for(Mats mat : Mats.values()) {
-            String materialName = StringUtils.capitalize(mat.name().toLowerCase());
-            for(String part: parts) {
-                Item item = ForgeUtils.getItem(TinkersReforged.MODID, mat.name().toLowerCase()+"_"+part.toLowerCase());
-                OreDictionary.registerOre(part.toLowerCase()+materialName, item);
-            }
-        }
 
         OreDictionary.registerOre("blockGlass", ForgeUtils.getBlock(TinkersReforged.MODID,"kovar_glass"));
 
@@ -105,23 +98,7 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
         TinkerRegistry.registerTableCasting(new ItemStack(ForgeUtils.getBlock(TinkersReforged.MODID,"kovar_glass"), 1), new ItemStack(Blocks.GLASS), kovar_fluid, Material.VALUE_SearedBlock);
     }
 
-    public void registerItems(IForgeRegistry<Item> r) {
-        String[] parts = { "ingot", "nugget", "dust", "plate", "gear" };
-
-        for(Mats mat : Mats.values()) {
-            for(String part: parts) {
-                register(r, new Item(), mat.name().toLowerCase()+"_"+part.toLowerCase());
-            }
-        }
-    }
-
     public void registerBlocks(IForgeRegistry<Block> r) {
         register(r, new ReforgedBlockGlass(), "kovar_glass");
-    }
-
-    private enum Mats {
-        KOVAR,
-        LAVIUM,
-        QIVIUM
     }
 }
