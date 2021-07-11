@@ -269,8 +269,14 @@ modifier.ref_blessed_syringe.desc=§oBless you!§r\nGet luck at the cost of dura
 modifier.ref_overkill.name=Overkill
 modifier.ref_overkill.desc=§oStop it he's dead!§r\nGet Exp for doing more damage than an entity health.
 
-modifier.ref_rod.name=Lighting Rod
-modifier.ref_rod.desc=§oThunder and Lightning!§r\nHitting Mobs and Players summon a lighting at their position.
+modifier.ref_lightning_rod.name=Lighting Rod
+modifier.ref_lightning_rod.desc=§oLightning Rod? He'll know what to do!§r\nSummon a Lightning when you hit a entity.
+
+modifier.ref_thaumic_bomb.name=Thaumic Bomb
+modifier.ref_thaumic_bomb.desc=§oAnyone can become a kamikaze§r\nDrain Vis in the environment to deal double damage. May cause an explosion at the target location.
+
+modifier.ref_flux_force.name=Flux Force
+modifier.ref_flux_force.desc=§oThe more the merrier§r\nThe Damage dealt is based on how much flux is in the chunk.
 
 modifier.ref_teleport.name=Teleport
 modifier.ref_teleport.desc=§oWhere are my items?§r\nBlocks mined get teleported to your inventory.
@@ -291,7 +297,7 @@ modifier.ref_crystal_surge.name=Crystal Surge
 modifier.ref_crystal_surge.desc=§oStonks§r\nDouble the drops from crystals.
 
 modifier.ender_star.name=Ender Star
-modifier.ender_star.desc=§oEnder Power!§r\nall Mobs can drop wither skeleton skulls.
+modifier.ender_star.desc=§oEnder Power!§r\nAll Mobs can drop wither skeleton skulls.
 
 modifier.lens_killer.name=Lens of The Killer
 modifier.lens_killer.desc=§oMoar Power!§r\nYour weapons deal more damage.
