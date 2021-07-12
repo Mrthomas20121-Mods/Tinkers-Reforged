@@ -32,7 +32,6 @@ public class ReforgedTraits {
     public static final TraitStarMagnetism starMagnetism = new TraitStarMagnetism();
     public static final TraitStarShaped starShaped = new TraitStarShaped();
     public static final TraitTeleport teleport = new TraitTeleport();
-    public static final TraitVillagerLove villagerLove = new TraitVillagerLove(1);
     public static final TraitVoid voidTrait = new TraitVoid();
     public static final TraitShinystone shinystone = new TraitShinystone();
     public static final TraitAftershot aftershot = new TraitAftershot();
@@ -41,4 +40,5 @@ public class ReforgedTraits {
     public static final TraitOverkill overkill = new TraitOverkill();
     public static final TraitBlessedSyringe blessedSyringe = new TraitBlessedSyringe();
     public static final TraitTradeOff tradeOff = new TraitTradeOff();
+    public static final TraitCaptureBall captureBall = new TraitCaptureBall();
 }
