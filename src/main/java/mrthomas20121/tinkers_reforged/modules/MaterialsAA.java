@@ -97,7 +97,7 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.emeradic) {
             emeradic.preInit();
-            emeradic.getMaterial().addTrait(ReforgedTraits.villagerLove, MaterialTypes.HEAD);
+            emeradic.getMaterial().addTrait(ReforgedTraits.captureBall, MaterialTypes.HEAD);
             emeradic.getMaterial().addTrait(ReforgedTraits.curse);
             TinkerRegistry.addMaterial(emeradic.getMaterial());
             TinkerRegistry.addMaterialStats(emeradic.getMaterial(),
