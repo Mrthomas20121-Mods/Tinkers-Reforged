@@ -180,7 +180,7 @@ material.ref_lavium.name=Lavium
 
 # Traits and Modifiers
 modifier.ref_signal.name=Signal
-modifier.ref_signal.desc=§oDude, stop hitting those Creepers!§r\nHitting Creeper make them explode instantly.
+modifier.ref_signal.desc=§oFlint and Steal§r\nRight Click Creeper to activate them.
 
 modifier.ref_aftershot.name=Aftershot
 modifier.ref_aftershot.desc=§oYummy§r\nHeal after dealing damage.
@@ -230,11 +230,11 @@ modifier.ref_flux.desc=§oHow does that work?§r\nHave a chance to not use durab
 modifier.ref_star_shaped.name=Star Shaped
 modifier.ref_star_shaped.desc=§oShaped like a star!§r\nAlways Crits
 
-modifier.ref_villager_love.name=Villager Love
-modifier.ref_villager_love.desc=§oEmerald for days!§r\nKilling Mobs have a chance of spawning a emerald
-
 modifier.ref_curse.name=Curse
 modifier.ref_curse.desc=§oCursed§r\nChance of resurecting the target.
+
+modifier.ref_capture_ball.name=Capture Ball
+modifier.ref_capture_ball.desc=§Go Pikachu!§rYou can right click on an entity to capture it. Right Click Again to release it.
 
 modifier.ref_rose.name=Rose
 modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nGrass have a chance of dropping dye.
