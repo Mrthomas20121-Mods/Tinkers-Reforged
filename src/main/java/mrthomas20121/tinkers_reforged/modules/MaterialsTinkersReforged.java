@@ -5,12 +5,11 @@ import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.block.ReforgedBlockGlass;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -22,12 +21,18 @@ import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsTinkersReforged extends ModuleReforgedBase {
+import java.util.List;
 
-    public static MaterialGen lavium = new MaterialGen("lavium", 0xA5E560, "Lavium", 800);
-    public static MaterialGen qivium = new MaterialGen("qivium", 0xD893AF, "Qivium", 800);
+public class MaterialsTinkersReforged extends ModuleBase {
 
-    private FluidMolten kovar_fluid = new FluidMolten("kovar", 0xFFC09CE5);
+    public final MaterialGen lavium = new MaterialGen("lavium", 0xA5E560, "Lavium", 800);
+    public final MaterialGen qivium = new MaterialGen("qivium", 0xD893AF, "Qivium", 800);
+
+    private final FluidMolten kovar_fluid = new FluidMolten("kovar", 0xFFC09CE5);
+
+    public MaterialsTinkersReforged() {
+        super(new ResourceLocation(TinkersReforged.MODID, "module"));
+    }
 
     @Override
     public boolean canLoad() {
@@ -35,11 +40,14 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
     }
 
     @Override
-    public void preInit() {
-        ModuleManager.alloys.add("lavium");
-        ModuleManager.alloys.add("qivium");
-        ModuleManager.alloys.add("kovar");
+    public void registerAlloys(List<String> alloys) {
+        alloys.add("lavium");
+        alloys.add("qivium");
+        alloys.add("kovar");
+    }
 
+    @Override
+    public void preInit() {
         FluidRegistry.registerFluid(kovar_fluid);
         FluidRegistry.addBucketForFluid(kovar_fluid);
 
@@ -96,9 +104,5 @@ public class MaterialsTinkersReforged extends ModuleReforgedBase {
         }
 
         TinkerRegistry.registerTableCasting(new ItemStack(ForgeUtils.getBlock(TinkersReforged.MODID,"kovar_glass"), 1), new ItemStack(Blocks.GLASS), kovar_fluid, Material.VALUE_SearedBlock);
-    }
-
-    public void registerBlocks(IForgeRegistry<Block> r) {
-        register(r, new ReforgedBlockGlass(), "kovar_glass");
     }
 }

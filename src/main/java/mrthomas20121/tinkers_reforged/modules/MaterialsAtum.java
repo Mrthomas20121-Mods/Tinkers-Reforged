@@ -3,7 +3,8 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
 import slimeknights.tconstruct.library.materials.HandleMaterialStats;
@@ -11,12 +12,20 @@ import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
-import slimeknights.tconstruct.library.utils.HarvestLevels.*;
 
-public class MaterialsAtum extends ModuleReforgedBase {
+/**
+ * MaterialsAtum.java
+ * @author mrthomas20121
+ * Materials for atum
+ */
+public class MaterialsAtum extends ModuleBase {
 
-    private Material khnumite = new Material("ref_khnumite", 0x998B59);
-    private Material limestone = new Material("ref_limestone", 0xD3B68D);
+    private final Material khnumite = new Material("ref_khnumite", 0x998B59);
+    private final Material limestone = new Material("ref_limestone", 0xD3B68D);
+
+    public MaterialsAtum() {
+        super(new ResourceLocation(Reference.atum, "module"));
+    }
 
     @Override
     public boolean canLoad() {
@@ -60,7 +69,7 @@ public class MaterialsAtum extends ModuleReforgedBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.limestone) {
             limestone.setCraftable(true);
             limestone.setRepresentativeItem(ForgeUtils.getBlock(Reference.atum, "limestone"));
-            limestone.addItem(ForgeUtils.getBlock("atum", "limestone"), 1);
+            limestone.addItem(ForgeUtils.getBlock(Reference.atum, "limestone"), 1);
         }
     }
 }

@@ -1,12 +1,11 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
 import slimeknights.tconstruct.library.materials.HandleMaterialStats;
@@ -15,11 +14,15 @@ import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsCavern2 extends ModuleReforgedBase {
+public class MaterialsCavern2 extends ModuleBase {
 
-    private Material aquamarine = new Material("ref_aquamarine", 0xA7E7E5);
-    private Material hexcite = new Material("ref_hexcite", 0xDEDEDE);
-    private MaterialGen magnite = new MaterialGen("magnite", 0xD22700, "Magnite", 500);
+    private final Material aquamarine = new Material("ref_aquamarine", 0xA7E7E5);
+    private final Material hexcite = new Material("ref_hexcite", 0xDEDEDE);
+    private final MaterialGen magnite = new MaterialGen("magnite", 0xD22700, "Magnite", 500);
+
+    public MaterialsCavern2() {
+        super(new ResourceLocation(Reference.cavern2, "module"));
+    }
 
     @Override
     public boolean canLoad() {

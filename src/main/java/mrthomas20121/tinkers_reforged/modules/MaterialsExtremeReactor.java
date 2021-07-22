@@ -1,9 +1,11 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.BowMaterialStats;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
@@ -11,12 +13,16 @@ import slimeknights.tconstruct.library.materials.HandleMaterialStats;
 import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
-public class MaterialsExtremeReactor extends ModuleReforgedBase {
+public class MaterialsExtremeReactor extends ModuleBase {
 
-    private MaterialGen yellorium = new MaterialGen("yellorium", 0xD9DB5C, "Yellorium", 800);
-    private MaterialGen cyanite = new MaterialGen("cyanite", 0x5CAFDB, "Cyanite", 800);
-    private MaterialGen ludicrite = new MaterialGen("ludicrite", 0xDD5EDD, "Ludicrite", 800);
-    private MaterialGen blutonium = new MaterialGen("blutonium", 0x4642D6, "Blutonium", 1000);
+    private final MaterialGen yellorium = new MaterialGen("yellorium", 0xD9DB5C, "Yellorium", 800);
+    private final MaterialGen cyanite = new MaterialGen("cyanite", 0x5CAFDB, "Cyanite", 800);
+    private final MaterialGen ludicrite = new MaterialGen("ludicrite", 0xDD5EDD, "Ludicrite", 800);
+    private final MaterialGen blutonium = new MaterialGen("blutonium", 0x4642D6, "Blutonium", 1000);
+
+    public MaterialsExtremeReactor() {
+        super(new ResourceLocation(Reference.extremeReactor, "module"));
+    }
 
     @Override
     public boolean canLoad() {

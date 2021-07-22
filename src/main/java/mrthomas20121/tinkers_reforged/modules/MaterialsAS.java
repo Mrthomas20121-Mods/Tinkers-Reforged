@@ -1,19 +1,25 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.compat.ASCompat;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
-public class MaterialsAS extends ModuleReforgedBase {
+public class MaterialsAS extends ModuleBase {
 
-    Material starmetal = new Material("ref_starmetal", 0x001169);
+    private final Material starmetal = new Material("ref_starmetal", 0x001169);
+
+    public MaterialsAS() {
+        super(new ResourceLocation(Reference.as, "module"));
+    }
 
     @Override
     public boolean canLoad() {

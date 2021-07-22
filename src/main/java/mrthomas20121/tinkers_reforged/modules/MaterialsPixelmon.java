@@ -5,7 +5,8 @@ import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.BowMaterialStats;
@@ -15,16 +16,20 @@ import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsPixelmon extends ModuleReforgedBase {
+public class MaterialsPixelmon extends ModuleBase {
 
-    private MaterialGen firestone = new MaterialGen("firestone", 0xE98E33, "Firestone", 500, true);
-    private MaterialGen waterstone = new MaterialGen("waterstone", 0x5D75A5, "Waterstone", 500, true);
-    private MaterialGen leafstone = new MaterialGen("leafstone", 0x798957, "Leafstone", 500, true);
-    private MaterialGen thunderstone = new MaterialGen("thunderstone", 0xB3DCAB, "Thunderstone", 500, true);
-    private MaterialGen sunstone = new MaterialGen("sunstone", 0xD75A2B, "Sunstone", 500, true);
-    private MaterialGen dawnstone = new MaterialGen("dawnstone", 0x0EBCB1, "Dawnstone", 500, true);
-    private MaterialGen duskstone = new MaterialGen("duskstone", 0x795291, "Duskstone", 500, true);
-    private MaterialGen crystal = new MaterialGen("crystal", 0x94D3D3, "Crystal", 800, true);
+    private final MaterialGen firestone = new MaterialGen("firestone", 0xE98E33, "Firestone", 500, true);
+    private final MaterialGen waterstone = new MaterialGen("waterstone", 0x5D75A5, "Waterstone", 500, true);
+    private final MaterialGen leafstone = new MaterialGen("leafstone", 0x798957, "Leafstone", 500, true);
+    private final MaterialGen thunderstone = new MaterialGen("thunderstone", 0xB3DCAB, "Thunderstone", 500, true);
+    private final MaterialGen sunstone = new MaterialGen("sunstone", 0xD75A2B, "Sunstone", 500, true);
+    private final MaterialGen dawnstone = new MaterialGen("dawnstone", 0x0EBCB1, "Dawnstone", 500, true);
+    private final MaterialGen duskstone = new MaterialGen("duskstone", 0x795291, "Duskstone", 500, true);
+    private final MaterialGen crystal = new MaterialGen("crystal", 0x94D3D3, "Crystal", 800, true);
+
+    public MaterialsPixelmon() {
+        super(new ResourceLocation(Reference.pixelmon, "module"));
+    }
 
     @Override
     public boolean canLoad() {

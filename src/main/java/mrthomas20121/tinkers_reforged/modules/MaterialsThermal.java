@@ -1,11 +1,13 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModifierMagnet;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -14,12 +16,16 @@ import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
-public class MaterialsThermal extends ModuleReforgedBase {
+public class MaterialsThermal extends ModuleBase {
 
-    private MaterialGen enderium = new MaterialGen("enderium", 0x006C5F, "Enderium", 1200);
-    private MaterialGen lumium = new MaterialGen("lumium", 0xEAD981, "Lumium", 1200);
-    private MaterialGen signalum = new MaterialGen("signalum", 0xA32500, "Signalum", 1200);
-    private ModifierMagnet magnet = new ModifierMagnet();
+    private final MaterialGen enderium = new MaterialGen("enderium", 0x006C5F, "Enderium", 1200);
+    private final MaterialGen lumium = new MaterialGen("lumium", 0xEAD981, "Lumium", 1200);
+    private final MaterialGen signalum = new MaterialGen("signalum", 0xA32500, "Signalum", 1200);
+    private final ModifierMagnet magnet = new ModifierMagnet();
+
+    public MaterialsThermal() {
+        super(new ResourceLocation(Reference.thermalfoundation, "module"));
+    }
 
     @Override
     public boolean canLoad() {

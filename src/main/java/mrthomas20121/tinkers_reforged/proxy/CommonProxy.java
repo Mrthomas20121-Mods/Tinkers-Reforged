@@ -25,9 +25,5 @@ public class CommonProxy {
     public void registerToolModel(ToolCore tc) { }
     public void registerModifierModel(IModifier mod, ResourceLocation rl) { }
     public void registerBookData() { }
-
-    public void registerToolCrafting()
-    {
-
-    }
+    public void registerToolCrafting() { }
 }

@@ -1,22 +1,26 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
-import net.minecraft.item.crafting.IRecipe;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsAe2 extends ModuleReforgedBase {
+public class MaterialsAe2 extends ModuleBase {
 
-    private Material certus_quartz = new Material("ref_certus_quartz", 0xBADBFF);
-    private Material charged_certus_quartz = new Material("ref_charged_certus_quartz", 0xBADBFF);
-    private Material fluix_crystal = new Material("ref_fluix_crystal", 0x614EAB);
+    private final Material certus_quartz = new Material("ref_certus_quartz", 0xBADBFF);
+    private final Material charged_certus_quartz = new Material("ref_charged_certus_quartz", 0xBADBFF);
+    private final Material fluix_crystal = new Material("ref_fluix_crystal", 0x614EAB);
+
+    public MaterialsAe2() {
+        super(new ResourceLocation(Reference.ae2, "module"));
+    }
 
     @Override
     public boolean canLoad() {

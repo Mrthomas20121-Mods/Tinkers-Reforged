@@ -234,7 +234,13 @@ modifier.ref_curse.name=Curse
 modifier.ref_curse.desc=§oCursed§r\nChance of resurecting the target.
 
 modifier.ref_capture_ball.name=Capture Ball
-modifier.ref_capture_ball.desc=§Go Pikachu!§rYou can right click on an entity to capture it. Right Click Again to release it.
+modifier.ref_capture_ball.desc=§oGo Pikachu!§r\nYou can right click on an entity to capture it. Right Click Again to release it.
+
+modifier.ref_stone_lover.name=Stone Lover
+modifier.ref_stone_lover.desc=§oYou love stone so much that you don't want to mine other blocks§r\nCan only mine Stone. \"Stone\" is defined by blocks using the stone oredict.
+
+modifier.ref_glow.name=Glow
+modifier.ref_glow.name=§oYou Glow§r\nYou're literally Glowing.
 
 modifier.ref_rose.name=Rose
 modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nGrass have a chance of dropping dye.

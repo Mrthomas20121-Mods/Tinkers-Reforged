@@ -1,8 +1,10 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
@@ -13,12 +15,16 @@ import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsHeatAndClimate extends ModuleReforgedBase {
+public class MaterialsHeatAndClimate extends ModuleBase {
 
-    private MaterialGen nickel_silver = new MaterialGen("nickelsilver", 0xC6D2D1, "Nickelsilver", 800);
-    private MaterialGen tool_steel = new MaterialGen("tool_steel", 0x85AB93, "ToolSteel", 900);
-    private MaterialGen titanium_alloy = new MaterialGen("titanium_alloy", 0x9F8E73, "TitaniumAlloy", 700);
-    private MaterialGen mangalloy = new MaterialGen("mangalloy", 0xC66B6E, "Mangalloy", 700);
+    private final MaterialGen nickel_silver = new MaterialGen("nickelsilver", 0xC6D2D1, "Nickelsilver", 800);
+    private final MaterialGen tool_steel = new MaterialGen("tool_steel", 0x85AB93, "ToolSteel", 900);
+    private final MaterialGen titanium_alloy = new MaterialGen("titanium_alloy", 0x9F8E73, "TitaniumAlloy", 700);
+    private final MaterialGen mangalloy = new MaterialGen("mangalloy", 0xC66B6E, "Mangalloy", 700);
+
+    public MaterialsHeatAndClimate() {
+        super(new ResourceLocation(Reference.heat_climate, "module"));
+    }
 
     @Override
     public boolean canLoad() {

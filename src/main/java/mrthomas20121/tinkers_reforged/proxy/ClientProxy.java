@@ -5,21 +5,19 @@ import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.book.ModifiersTransformer;
 import mrthomas20121.tinkers_reforged.library.book.ToolsTransformer;
-import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ModifiersSectionTransformer;
-import mrthomas20121.tinkers_reforged.library.book.sectiontransformer.ToolsSectiontransformer;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
 import mrthomas20121.tinkers_reforged.tools.Tools;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import slimeknights.mantle.client.book.repository.FileRepository;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
@@ -112,17 +110,20 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        for(Item item : ModuleManager.items) {
-            ModelRegisterUtil.registerItemModel(item);
+        // register item models
+        for(Item item : TinkersReforged.manager.getItems()) {
+            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "normal"));
         }
-        for(Block block: ModuleManager.blocks) {
-            ModelRegisterUtil.registerItemModel(block);
+
+        // register block model
+        for(Block block: TinkersReforged.manager.getBlocks()) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "normal"));
         }
 
         Tools.getTinkerModifiers().forEach(modifier ->  TinkersReforged.proxy.registerModifierModel(modifier,
                 new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modifier.getIdentifier())));
 
-        ModuleManager.modifiers.forEach(modifier ->  TinkersReforged.proxy.registerModifierModel(modifier,
+        TinkersReforged.manager.getModifiers().forEach(modifier ->  TinkersReforged.proxy.registerModifierModel(modifier,
                 new ResourceLocation(TinkersReforged.MODID, "models/item/modifiers/" + modifier.getIdentifier())));
     }
 }

@@ -1,21 +1,26 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
-import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.trait.TraitFluxForce;
 import mrthomas20121.tinkers_reforged.trait.TraitThaumicBomb;
+import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 
-public class MaterialsThaumcraft extends ModuleReforgedBase {
+public class MaterialsThaumcraft extends ModuleBase {
 
-    private MaterialGen thaumium = new MaterialGen("thaumium", 0x7768A9, "Thaumium", 800);
+    private final MaterialGen thaumium = new MaterialGen("thaumium", 0x7768A9, "Thaumium", 800);
 
-    private TraitFluxForce fluxForce = new TraitFluxForce();
-    private TraitThaumicBomb thaumicBomb = new TraitThaumicBomb();
+    private final TraitFluxForce fluxForce = new TraitFluxForce();
+    private final TraitThaumicBomb thaumicBomb = new TraitThaumicBomb();
+
+    public MaterialsThaumcraft() {
+        super(new ResourceLocation(Reference.thaumcraft, "module"));
+    }
 
     @Override
     public boolean canLoad() {

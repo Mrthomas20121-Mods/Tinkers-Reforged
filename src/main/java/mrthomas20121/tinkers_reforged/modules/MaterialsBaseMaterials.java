@@ -1,28 +1,37 @@
 package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
+import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsBaseMaterials extends ModuleReforgedBase {
+public class MaterialsBaseMaterials extends ModuleBase {
 
-    private Material glowstone = new Material("ref_glowstone", 0xFFC16B);
-    private MaterialGen zinc = new MaterialGen("zinc", 0x94BD5E, "Zinc", 600);
-    private MaterialGen titanium = new MaterialGen("titanium", 0xB2669E, "Titanium", 1000);
-    private MaterialGen iridium = new MaterialGen("iridium", 0x80818E, "Iridium", 1200);
-    private MaterialGen aluminum = new MaterialGen("aluminum", 0xBAAEA5, "Aluminum", 900);
-    private MaterialGen platinum = new MaterialGen("platinum", 0x50939E, "Platinum", 2000);
-    private MaterialGen invar = new MaterialGen("invar", 0xA2A4AA, "Invar", 800);
-    private MaterialGen amethyst = new MaterialGen("amethyst", 0xF98EEB, "Amethyst", 600, true);
-    private MaterialGen ruby = new MaterialGen("ruby", 0xFF1C28, "Ruby", 600, true);
-    private MaterialGen sapphire = new MaterialGen("sapphire", 0xA8AFAB, "Sapphire", 600, true);
-    private MaterialGen peridot = new MaterialGen("peridot", 0x6EC94A, "Peridot", 600, true);
+    private final Material glowstone = new Material("ref_glowstone", 0xFFC16B);
+    private final MaterialGen zinc = new MaterialGen("zinc", 0x94BD5E, "Zinc", 600);
+    private final MaterialGen titanium = new MaterialGen("titanium", 0xB2669E, "Titanium", 1000);
+    private final MaterialGen iridium = new MaterialGen("iridium", 0x80818E, "Iridium", 1200);
+    private final MaterialGen aluminum = new MaterialGen("aluminum", 0xBAAEA5, "Aluminum", 900);
+    private final MaterialGen platinum = new MaterialGen("platinum", 0x50939E, "Platinum", 2000);
+    private final MaterialGen invar = new MaterialGen("invar", 0xA2A4AA, "Invar", 800);
+    private final MaterialGen amethyst = new MaterialGen("amethyst", 0xF98EEB, "Amethyst", 600, true);
+    private final MaterialGen ruby = new MaterialGen("ruby", 0xFF1C28, "Ruby", 600, true);
+    private final MaterialGen sapphire = new MaterialGen("sapphire", 0xA8AFAB, "Sapphire", 600, true);
+    private final MaterialGen peridot = new MaterialGen("peridot", 0x6EC94A, "Peridot", 600, true);
+
+    public MaterialsBaseMaterials() {
+        super(new ResourceLocation(TinkersReforged.MODID, "moduleBaseMaterial"));
+    }
 
     @Override
     public boolean canLoad() {
@@ -32,7 +41,7 @@ public class MaterialsBaseMaterials extends ModuleReforgedBase {
     @Override
     public void preInit() {
         if(TinkersReforgedConfig.SettingMaterials.materials.glowstone) {
-            glowstone.addTrait(TinkerTraits.lightweight, MaterialTypes.HEAD);
+            glowstone.addTrait(ReforgedTraits.glow, MaterialTypes.HEAD);
             glowstone.addTrait(ReforgedTraits.bright);
             TinkerRegistry.addMaterial(glowstone);
             TinkerRegistry.addMaterialStats(glowstone,
@@ -148,8 +157,9 @@ public class MaterialsBaseMaterials extends ModuleReforgedBase {
     public void init() {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.glowstone) {
-            glowstone.setRepresentativeItem("dustGlowstone");
-            glowstone.addItem("dustGlowstone", 1, 1);
+            glowstone.setRepresentativeItem(Items.GLOWSTONE_DUST);
+            glowstone.addItem(Items.GLOWSTONE_DUST, 1, 1);
+            glowstone.addItem(new ItemStack(Blocks.GLOWSTONE), 1, 4);
         }
 
         if(!OreDictionary.getOres("ingotZinc").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.zinc) {

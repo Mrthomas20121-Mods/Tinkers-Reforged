@@ -1,9 +1,11 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.compat.RootsCompat;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.MaterialItem;
@@ -11,9 +13,13 @@ import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerMaterials;
 
-public class MaterialsRoots extends ModuleReforgedBase {
+public class MaterialsRoots extends ModuleBase {
 
-    private Material runestone = new Material("ref_runestone", 0x71717F);
+    private final Material runestone = new Material("ref_runestone", 0x71717F);
+
+    public MaterialsRoots() {
+        super(new ResourceLocation(Reference.roots, "module"));
+    }
 
     @Override
     public boolean canLoad() {

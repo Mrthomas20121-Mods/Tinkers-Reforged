@@ -3,13 +3,20 @@ package mrthomas20121.tinkers_reforged.modules;
 import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModShulkerPearl;
+import net.minecraft.util.ResourceLocation;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
-public class ModifiersDarkUtils extends ModuleReforgedBase {
+import java.util.List;
 
-    public static ModShulkerPearl shulkerPearl = new ModShulkerPearl();
+public class ModifiersDarkUtils extends ModuleBase {
+
+    private final ModShulkerPearl shulkerPearl = new ModShulkerPearl();
+
+    public ModifiersDarkUtils() {
+        super(new ResourceLocation(Reference.darkutils, "module"));
+    }
 
     @Override
     public boolean canLoad() {
@@ -22,11 +29,10 @@ public class ModifiersDarkUtils extends ModuleReforgedBase {
     }
 
     @Override
-    public void init() {
-
+    public void registerModifiers(List<Modifier> modifiers) {
         if(TinkersReforgedConfig.SettingMaterials.modifiers.shulker_pearl) {
             shulkerPearl.addItem(ForgeUtils.getItem(Reference.darkutils, "shulker_pearl"));
-            ModuleManager.modifiers.add(shulkerPearl);
+            modifiers.add(shulkerPearl);
         }
     }
 }

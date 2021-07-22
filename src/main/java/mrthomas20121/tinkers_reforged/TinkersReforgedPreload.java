@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
 import mrthomas20121.tinkers_reforged.modules.*;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -11,32 +10,31 @@ public class TinkersReforgedPreload {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        // load modules
-        ModuleManager.addModule(Reference.aa, new MaterialsAA());
-        ModuleManager.addModule(Reference.ae2, new MaterialsAe2());
-        ModuleManager.addModule(Reference.as, new MaterialsAS());
-        ModuleManager.addModule(Reference.atum, new MaterialsAtum());
-        ModuleManager.addModule("tinkers_reforged", new MaterialsBaseMaterials());
-        ModuleManager.addModule(Reference.bop, new ModifiersBop());
-        ModuleManager.addModule(Reference.blue_skies, new MaterialsBlueSkies());
-        ModuleManager.addModule(Reference.botania, new MaterialsBotania());
-        ModuleManager.addModule(Reference.cavern2, new MaterialsCavern2());
-        ModuleManager.addModule(Reference.reactor, new MaterialsExtremeReactor());
-        // module not finished
-        // ModuleManager.addModule(Reference.forestry, new MaterialsForestry());
-        ModuleManager.addModule(Reference.darkutils, new ModifiersDarkUtils());
-        ModuleManager.addModule(Reference.heat_climate, new MaterialsHeatAndClimate());
-        ModuleManager.addModule(Reference.mekanism, new MaterialsMekanism());
-        ModuleManager.addModule(Reference.naturesaura, new MaterialsNaturesAura());
-        ModuleManager.addModule(Reference.pixelmon, new MaterialsPixelmon());
-        ModuleManager.addModule(Reference.project_red, new MaterialsProjectRed());
-        ModuleManager.addModule(Reference.refined_storage, new MaterialsRS());
-        ModuleManager.addModule(Reference.roots, new MaterialsRoots());
-        ModuleManager.addModule(Reference.thermalfoundation, new MaterialsThermal());
-        ModuleManager.addModule(Reference.thaumcraft, new MaterialsThaumcraft());
-        ModuleManager.addModule("tinkers_reforged", new MaterialsTinkersReforged());
+        // load modules first then call earlyPreInit();
+        TinkersReforged.manager.add(new MaterialsAA());
+        TinkersReforged.manager.add(new MaterialsAe2());
+        TinkersReforged.manager.add(new MaterialsAS());
+        TinkersReforged.manager.add(new MaterialsAtum());
+        TinkersReforged.manager.add(new MaterialsBaseMaterials());
+        TinkersReforged.manager.add(new MaterialsBlueSkies());
+        TinkersReforged.manager.add(new MaterialsBotania());
+        TinkersReforged.manager.add(new MaterialsCavern2());
+        TinkersReforged.manager.add(new MaterialsExtremeReactor());
+        TinkersReforged.manager.add(new MaterialsForestry());
+        TinkersReforged.manager.add(new MaterialsHeatAndClimate());
+        TinkersReforged.manager.add(new MaterialsMekanism());
+        TinkersReforged.manager.add(new MaterialsNaturesAura());
+        TinkersReforged.manager.add(new MaterialsPixelmon());
+        TinkersReforged.manager.add(new MaterialsProjectRed());
+        TinkersReforged.manager.add(new MaterialsRoots());
+        TinkersReforged.manager.add(new MaterialsRS());
+        TinkersReforged.manager.add(new MaterialsThaumcraft());
+        TinkersReforged.manager.add(new MaterialsThermal());
+        TinkersReforged.manager.add(new MaterialsTinkersReforged());
+        TinkersReforged.manager.add(new ModifiersBop());
+        TinkersReforged.manager.add(new ModifiersDarkUtils());
 
-        // earlyPreInit to load materials before tinkers to avoid issues.
-        ModuleManager.earlyPreInit();
+        // preInit before tinkers to load some materials that are using the stone/wood oredict.
+        TinkersReforged.manager.earlyPreInit();
     }
 }

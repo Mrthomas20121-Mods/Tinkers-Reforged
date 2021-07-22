@@ -16,7 +16,7 @@ public class Reference {
     public static String cavern2 = "cavern";
     public static String darkutils = "darkutils";
     public static String envtech = "enrionmentaltech";
-    public static String reactor = "bigreactors";
+    public static String extremeReactor = "bigreactors";
     public static String forestry = "forestry";
     public static String heat_climate = "dcs_climate";
     public static String mekanism = "mekanism";

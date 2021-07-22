@@ -5,7 +5,8 @@ import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.StringUtils;
 import slimeknights.tconstruct.library.TinkerRegistry;
@@ -13,13 +14,17 @@ import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsBlueSkies extends ModuleReforgedBase {
+public class MaterialsBlueSkies extends ModuleBase {
 
-    private MaterialGen horizonnite = new MaterialGen("horizonite", 0xF27B2B, "Horizonite", 700);
-    private MaterialGen charoite = new MaterialGen("charoite", 0x9A7FBA, "Charoite", 500, true);
-    private MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500, true);
-    private MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500, true);
-    private MaterialGen turquoise = new MaterialGen("turquoise", 0x5AE7D1, "Turquoise", 500, true);
+    private final MaterialGen horizonnite = new MaterialGen("horizonite", 0xF27B2B, "Horizonite", 700);
+    private final MaterialGen charoite = new MaterialGen("charoite", 0x9A7FBA, "Charoite", 500, true);
+    private final MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500, true);
+    private final MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500, true);
+    private final MaterialGen turquoise = new MaterialGen("turquoise", 0x5AE7D1, "Turquoise", 500, true);
+
+    public MaterialsBlueSkies() {
+        super(new ResourceLocation(Reference.blue_skies, "module"));
+    }
 
     @Override
     public boolean canLoad() {

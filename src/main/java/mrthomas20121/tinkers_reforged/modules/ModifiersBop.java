@@ -1,20 +1,26 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import biomesoplenty.api.item.BOPItems;
 import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.*;
+import net.minecraft.util.ResourceLocation;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
-public class ModifiersBop extends ModuleReforgedBase {
+import java.util.List;
 
-    public static final ModTanzanite tanzanite = new ModTanzanite();
-    public static final ModAmber amber = new ModAmber();
-    public static final ModTopaz topaz = new ModTopaz();
-    public static final ModMalachite malachite = new ModMalachite();
-    public static final ModTerrestrialArtifact terrestrialArtifact = new ModTerrestrialArtifact();
+public class ModifiersBop extends ModuleBase {
+
+    private final ModTanzanite tanzanite = new ModTanzanite();
+    private final ModAmber amber = new ModAmber();
+    private final ModTopaz topaz = new ModTopaz();
+    private final ModMalachite malachite = new ModMalachite();
+    private final ModTerrestrialArtifact terrestrialArtifact = new ModTerrestrialArtifact();
+
+    public ModifiersBop() {
+        super(new ResourceLocation(Reference.bop, "module"));
+    }
 
     @Override
     public boolean canLoad() {
@@ -27,27 +33,26 @@ public class ModifiersBop extends ModuleReforgedBase {
     }
 
     @Override
-    public void init() {
-
+    public void registerModifiers(List<Modifier> modifiers) {
         if(TinkersReforgedConfig.SettingMaterials.modifiers.tanzanite) {
             tanzanite.addItem("gemTanzanite");
-            ModuleManager.modifiers.add(tanzanite);
+            modifiers.add(tanzanite);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.amber) {
             amber.addItem("gemAmber");
-            ModuleManager.modifiers.add(amber);
+            modifiers.add(amber);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.topaz) {
             topaz.addItem("gemTopaz");
-            ModuleManager.modifiers.add(topaz);
+            modifiers.add(topaz);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.malachite) {
             malachite.addItem("gemMalachite");
-            ModuleManager.modifiers.add(malachite);
+            modifiers.add(malachite);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.terrestrial_artifact) {
             terrestrialArtifact.addItem(ForgeUtils.getItem(Reference.bop, "terrestrial_artifact"), 1, 1);
-            ModuleManager.modifiers.add(terrestrialArtifact);
+            modifiers.add(terrestrialArtifact);
         }
     }
 }

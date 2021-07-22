@@ -1,24 +1,28 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModEnderStar;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModLensKiller;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModLensMiner;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsAA extends ModuleReforgedBase {
+import java.util.List;
+
+public class MaterialsAA extends ModuleBase {
 
     public static MaterialGen blackquartz = new MaterialGen("blackquartz", 0x161515, "QuartzBlack", 700, true);
     public static MaterialGen restonia = new MaterialGen("restonia", 0xF30000, "Restonia", 500, true);
@@ -31,6 +35,10 @@ public class MaterialsAA extends ModuleReforgedBase {
     public static final ModEnderStar modEnderStar = new ModEnderStar();
     public static final ModLensKiller modLensKiller = new ModLensKiller();
     public static final ModLensMiner modLensMiner = new ModLensMiner();
+
+    public MaterialsAA() {
+        super(new ResourceLocation(Reference.aa, "module"));
+    }
 
     @Override
     public boolean canLoad() {
@@ -53,7 +61,8 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.restonia) {
             restonia.preInit();
-            restonia.getMaterial().addTrait(ReforgedTraits.aftershot);
+            restonia.getMaterial().addTrait(ReforgedTraits.vengeance, MaterialTypes.HANDLE);
+            restonia.getMaterial().addTrait(ReforgedTraits.vengeance, MaterialTypes.EXTRA);
             TinkerRegistry.addMaterial(restonia.getMaterial());
             TinkerRegistry.addMaterialStats(restonia.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -64,7 +73,7 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.palis) {
             palis.preInit();
-            palis.getMaterial().addTrait(ReforgedTraits.rose);
+            palis.getMaterial().addTrait(ReforgedTraits.aridGravitation);
             TinkerRegistry.addMaterial(palis.getMaterial());
             TinkerRegistry.addMaterialStats(palis.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -75,7 +84,7 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.diamatine) {
             diamatine.preInit();
-            diamatine.getMaterial().addTrait(ReforgedTraits.carbon);
+            diamatine.getMaterial().addTrait(ReforgedTraits.dimensionalPunch, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(diamatine.getMaterial());
             TinkerRegistry.addMaterialStats(diamatine.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -98,7 +107,6 @@ public class MaterialsAA extends ModuleReforgedBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.emeradic) {
             emeradic.preInit();
             emeradic.getMaterial().addTrait(ReforgedTraits.captureBall, MaterialTypes.HEAD);
-            emeradic.getMaterial().addTrait(ReforgedTraits.curse);
             TinkerRegistry.addMaterial(emeradic.getMaterial());
             TinkerRegistry.addMaterialStats(emeradic.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),
@@ -109,7 +117,7 @@ public class MaterialsAA extends ModuleReforgedBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
             enori.preInit();
-            enori.getMaterial().addTrait(ReforgedTraits.starMagnetism, MaterialTypes.HEAD);
+            enori.getMaterial().addTrait(ReforgedTraits.stoneLover, MaterialTypes.HEAD);
             enori.getMaterial().addTrait(ReforgedTraits.starShaped);
             TinkerRegistry.addMaterial(enori.getMaterial());
             TinkerRegistry.addMaterialStats(enori.getMaterial(),
@@ -167,18 +175,21 @@ public class MaterialsAA extends ModuleReforgedBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.enori) {
             enori.init();
         }
+    }
 
+    @Override
+    public void registerModifiers(List<Modifier> modifiers) {
         if(TinkersReforgedConfig.SettingMaterials.modifiers.enderstar) {
             modEnderStar.addItem(new ItemStack(ForgeUtils.getItem("actuallyadditions", "item_misc"), 1, 19), 1, 1);
-            ModuleManager.modifiers.add(modEnderStar);
+            modifiers.add(modEnderStar);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.lens_killer) {
             modLensKiller.addItem(new ItemStack(ForgeUtils.getItem("actuallyadditions", "item_more_damage_lens")), 1, 1);
-            ModuleManager.modifiers.add(modLensKiller);
+            modifiers.add(modLensKiller);
         }
         if(TinkersReforgedConfig.SettingMaterials.modifiers.lens_miner) {
             modLensMiner.addItem(new ItemStack(ForgeUtils.getItem("actuallyadditions", "item_mining_lens")), 1, 1);
-            ModuleManager.modifiers.add(modLensMiner);
+            modifiers.add(modLensMiner);
         }
     }
 }

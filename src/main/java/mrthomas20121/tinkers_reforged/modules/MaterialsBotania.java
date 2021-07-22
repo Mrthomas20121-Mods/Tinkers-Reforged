@@ -5,8 +5,9 @@ import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.compat.BotaniaCompat;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ForgeUtils;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
@@ -14,12 +15,16 @@ import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsBotania extends ModuleReforgedBase {
+public class MaterialsBotania extends ModuleBase {
 
-    private Material manasteel = new Material("ref_manasteel", 0x3389FF);
-    private Material livingwood = new Material("ref_livingwood", 0x2E1106);
-    private Material livingrock = new Material("ref_livingrock", 0xCCCEBC);
-    private Material dreamwood = new Material("ref_dreamwood", 0xA6BCB6);
+    private final Material manasteel = new Material("ref_manasteel", 0x3389FF);
+    private final Material livingwood = new Material("ref_livingwood", 0x2E1106);
+    private final Material livingrock = new Material("ref_livingrock", 0xCCCEBC);
+    private final Material dreamwood = new Material("ref_dreamwood", 0xA6BCB6);
+
+    public MaterialsBotania() {
+        super(new ResourceLocation(Reference.botania, "module"));
+    }
 
     @Override
     public boolean canLoad() {

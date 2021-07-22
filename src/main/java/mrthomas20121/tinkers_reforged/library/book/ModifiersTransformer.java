@@ -1,7 +1,6 @@
 package mrthomas20121.tinkers_reforged.library.book;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
 import slimeknights.mantle.client.book.data.BookData;
 import slimeknights.mantle.client.book.data.PageData;
 import slimeknights.mantle.client.book.data.SectionData;
@@ -19,7 +18,7 @@ public class ModifiersTransformer extends SectionTransformer {
 
     @Override
     public void transform(BookData book, SectionData section) {
-        ModuleManager.modifiers.forEach(modifier -> addModifier(section, modifier));
+        TinkersReforged.manager.getModifiers().forEach(modifier -> addModifier(section, modifier));
     }
     private static void addModifier(SectionData section, Modifier mod)
     {

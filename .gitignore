@@ -21,7 +21,7 @@ Thumbs.db
 /build/
 /sources/
 /run*/
-/libs*/
+/libs/
 /ui/
 *.launch
 gradle-app.setting

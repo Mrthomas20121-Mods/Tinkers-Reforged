@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
+import mrthomas20121.tinkers_reforged.library.Manager;
 import mrthomas20121.tinkers_reforged.tools.ToolClub;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -20,8 +20,10 @@ import mrthomas20121.tinkers_reforged.proxy.CommonProxy;
         + "required-after:biolib@[1.1.2,);")
 public class TinkersReforged
 {
-    @Mod.Instance
+    @Mod.Instance(TinkersReforged.MODID)
     public static TinkersReforged instance;
+    // manager
+    public static Manager manager = new Manager();
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers Reforged";
     public static final String VERSION = "1.5.5";
@@ -44,7 +46,7 @@ public class TinkersReforged
         }
         logger = event.getModLog();
         proxy.preInit(event);
-        ModuleManager.preInit();
+        manager.preInit();
    }
 
     @Mod.EventHandler
@@ -52,14 +54,14 @@ public class TinkersReforged
     {
         proxy.registerBookData();
         proxy.init(event);
-        ModuleManager.init();
+        manager.init();
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         proxy.registerToolCrafting();
         proxy.postInit(event);
-        ModuleManager.postInit();
+        manager.postInit();
     }
 
 }

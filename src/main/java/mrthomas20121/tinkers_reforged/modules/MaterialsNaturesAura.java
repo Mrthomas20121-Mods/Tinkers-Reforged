@@ -1,8 +1,5 @@
 package mrthomas20121.tinkers_reforged.modules;
 
-import de.ellpeck.naturesaura.api.NaturesAuraAPI;
-import de.ellpeck.naturesaura.api.recipes.AltarRecipe;
-import de.ellpeck.naturesaura.api.recipes.OfferingRecipe;
 import de.ellpeck.naturesaura.blocks.ModBlocks;
 import de.ellpeck.naturesaura.items.ModItems;
 import mrthomas20121.tinkers_reforged.Reference;
@@ -10,25 +7,29 @@ import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.compat.NaturesAuraCompat;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.ForgeUtils;
-import mrthomas20121.tinkers_reforged.library.module.ModuleManager;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
 import mrthomas20121.tinkers_reforged.trait.modifier.ModToken;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.mantle.util.RecipeMatch;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsNaturesAura extends ModuleReforgedBase {
+import java.util.List;
 
-    private Material infused_iron = new Material("ref_infused_iron", 0x34BA3D);
-    private Material sky = new Material("ref_sky", 0x9BDFFF);
+public class MaterialsNaturesAura extends ModuleBase {
+
+    private final Material infused_iron = new Material("ref_infused_iron", 0x34BA3D);
+    private final Material sky = new Material("ref_sky", 0x9BDFFF);
+
+    public MaterialsNaturesAura() {
+        super(new ResourceLocation(Reference.naturesaura, "module"));
+    }
 
     public static final ModToken token = new ModToken();
 
@@ -58,6 +59,14 @@ public class MaterialsNaturesAura extends ModuleReforgedBase {
                     new HandleMaterialStats(1f, 60),
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(0.9f, 1.9f, 7.9f));
+        }
+    }
+
+    @Override
+    public void registerModifiers(List<Modifier> modifiers) {
+        if(TinkersReforgedConfig.SettingMaterials.modifiers.token) {
+            token.addRecipeMatch(new RecipeMatch.ItemCombination(1, new ItemStack(ModItems.TOKEN_EUPHORIA), new ItemStack(ModItems.TOKEN_TERROR), new ItemStack(ModItems.TOKEN_RAGE), new ItemStack(ModItems.TOKEN_GRIEF)));
+            modifiers.add(token);
         }
     }
 
@@ -98,10 +107,6 @@ public class MaterialsNaturesAura extends ModuleReforgedBase {
                     NaturesAuraCompat.addOfferingRecipe(name, input, output);
                 }
             }
-        }
-        if(TinkersReforgedConfig.SettingMaterials.modifiers.token) {
-            token.addRecipeMatch(new RecipeMatch.ItemCombination(1, new ItemStack(ModItems.TOKEN_EUPHORIA), new ItemStack(ModItems.TOKEN_TERROR), new ItemStack(ModItems.TOKEN_RAGE), new ItemStack(ModItems.TOKEN_GRIEF)));
-            ModuleManager.modifiers.add(token);
         }
     }
 }

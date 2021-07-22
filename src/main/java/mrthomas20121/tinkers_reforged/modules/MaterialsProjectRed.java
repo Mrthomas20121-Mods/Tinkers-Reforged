@@ -1,18 +1,24 @@
 package mrthomas20121.tinkers_reforged.modules;
 
+import mrthomas20121.tinkers_reforged.Reference;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsProjectRed extends ModuleReforgedBase {
+public class MaterialsProjectRed extends ModuleBase {
 
-    private MaterialGen red_alloy = new MaterialGen("red_alloy", 0xED4242, "RedAlloy", 500);
-    private MaterialGen electrotine_alloy = new MaterialGen("electrotine_alloy", 0x0E73AA, "ElectrotineAlloy", 700);
-    private Material electrotine = new Material("ref_electrotine", 0x43C7ED);
+    private final MaterialGen red_alloy = new MaterialGen("red_alloy", 0xED4242, "RedAlloy", 500);
+    private final MaterialGen electrotine_alloy = new MaterialGen("electrotine_alloy", 0x0E73AA, "ElectrotineAlloy", 700);
+    private final Material electrotine = new Material("ref_electrotine", 0x43C7ED);
+
+    public MaterialsProjectRed() {
+        super(new ResourceLocation(Reference.project_red, "module"));
+    }
 
     @Override
     public boolean canLoad() {

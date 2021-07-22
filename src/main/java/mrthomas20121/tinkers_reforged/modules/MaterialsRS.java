@@ -5,16 +5,21 @@ import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
-import mrthomas20121.tinkers_reforged.library.module.ModuleReforgedBase;
+import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
-public class MaterialsRS extends ModuleReforgedBase {
+public class MaterialsRS extends ModuleBase {
 
-    private MaterialGen quartz_enriched_iron = new MaterialGen("quartz_enriched_iron", 0xF1F0EC, "QuartzEnrichedIron", 500);
+    private final MaterialGen quartz_enriched_iron = new MaterialGen("quartz_enriched_iron", 0xF1F0EC, "QuartzEnrichedIron", 500);
+
+    public MaterialsRS() {
+        super(new ResourceLocation(Reference.refined_storage, "module"));
+    }
 
     @Override
     public boolean canLoad() {

@@ -13,10 +13,15 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import slimeknights.tconstruct.library.utils.ToolHelper;
 
+/**
+ * TraitCaptureBall.java
+ * @author mrthomas20121
+ * Trait Effect - Allow you to capture a mob by rightclicking an entity
+ */
 public class TraitCaptureBall extends RightClickTrait {
 
-    private static String key = "capture_ball";
-    private static String entity_data = "entity";
+    private final static String key = "capture_ball";
+    private final static String entity_data = "entity";
 
     public TraitCaptureBall() {
         super("ref_capture_ball", 0x0);

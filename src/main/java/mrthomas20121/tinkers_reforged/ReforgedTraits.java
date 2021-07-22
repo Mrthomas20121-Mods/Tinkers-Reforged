@@ -8,8 +8,6 @@ public class ReforgedTraits {
     public static final TraitAuraInfusion auraInfusion = new TraitAuraInfusion();
     public static final TraitBackfire backfire = new TraitBackfire();
     public static final TraitBright bright = new TraitBright();
-    public static final TraitCarbon carbon = new TraitCarbon();
-    public static final TraitCurse curse = new TraitCurse();
     public static final TraitEnder ender = new TraitEnder();
     public static final TraitEnderfestation enderfestation = new TraitEnderfestation();
     public static final TraitEnriching enriching = new TraitEnriching();
@@ -29,7 +27,6 @@ public class ReforgedTraits {
     public static final TraitRose rose = new TraitRose();
     public static final TraitSignal signal = new TraitSignal();
     public static final TraitSoft soft = new TraitSoft();
-    public static final TraitStarMagnetism starMagnetism = new TraitStarMagnetism();
     public static final TraitStarShaped starShaped = new TraitStarShaped();
     public static final TraitTeleport teleport = new TraitTeleport();
     public static final TraitVoid voidTrait = new TraitVoid();
@@ -41,4 +38,9 @@ public class ReforgedTraits {
     public static final TraitBlessedSyringe blessedSyringe = new TraitBlessedSyringe();
     public static final TraitTradeOff tradeOff = new TraitTradeOff();
     public static final TraitCaptureBall captureBall = new TraitCaptureBall();
+    public static final TraitStoneLover stoneLover = new TraitStoneLover();
+    public static final TraitGlow glow = new TraitGlow();
+    public static final TraitDimensionalPunch dimensionalPunch = new TraitDimensionalPunch();
+    public static final TraitVengeance vengeance = new TraitVengeance();
+    public static final TraitAridGravitation aridGravitation = new TraitAridGravitation();
 }
