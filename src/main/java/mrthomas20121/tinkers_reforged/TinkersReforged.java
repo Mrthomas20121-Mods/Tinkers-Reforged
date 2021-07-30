@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.Manager;
+import mrthomas20121.tinkers_reforged.library.potion.PotionRegistry;
 import mrthomas20121.tinkers_reforged.tools.ToolClub;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
@@ -41,7 +42,7 @@ public class TinkersReforged
     public void preInit(FMLPreInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(this);
-        if(Loader.isModLoaded("atum") && TinkersReforgedConfig.SettingMaterials.modules.atum && TinkersReforgedConfig.SettingTools.enableClub) {
+        if(Loader.isModLoaded(Reference.atum) && TinkersReforgedConfig.SettingMaterials.modules.atum && TinkersReforgedConfig.SettingTools.enableClub) {
             MinecraftForge.EVENT_BUS.register(ToolClub.class);
         }
         logger = event.getModLog();
