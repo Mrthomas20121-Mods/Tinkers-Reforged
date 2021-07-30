@@ -11,17 +11,17 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class Registry {
 
     @SubscribeEvent
-    public void registerBlocks(RegistryEvent.Register<Block> event) {
+    public static void registerBlocks(RegistryEvent.Register<Block> event) {
         TinkersReforged.manager.registerBlocks(event);
     }
 
     @SubscribeEvent
-    public void registerItems(RegistryEvent.Register<Item> event) {
+    public static void registerItems(RegistryEvent.Register<Item> event) {
         TinkersReforged.manager.registerItems(event);
     }
 
     @SubscribeEvent
-    public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         TinkersReforged.manager.registerRecipes(event.getRegistry());
     }
 }
