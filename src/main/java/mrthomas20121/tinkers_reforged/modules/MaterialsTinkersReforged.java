@@ -53,7 +53,7 @@ public class MaterialsTinkersReforged extends ModuleBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.lavium) {
             lavium.preInit();
-            lavium.getMaterial().addTrait(TinkerTraits.momentum);
+            lavium.getMaterial().addTrait(ReforgedTraits.snowball);
             lavium.getMaterial().addTrait(ReforgedTraits.lifeSteal, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(lavium.getMaterial());
             TinkerRegistry.addMaterialStats(lavium.getMaterial(),

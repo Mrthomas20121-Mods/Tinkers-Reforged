@@ -1,6 +1,6 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 
@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
  * @author mrthomas20121
  * Trait Effect - Deal more damage in another dimension
  */
-public class TraitDimensionalPunch extends RightClickTrait {
+public class TraitDimensionalPunch extends ReforgedTrait {
 
     public TraitDimensionalPunch() {
         super("ref_dimensional_punch", 0x0);

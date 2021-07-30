@@ -1,13 +1,13 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class TraitStoneLover extends RightClickTrait {
+public class TraitStoneLover extends ReforgedTrait {
 
     public TraitStoneLover() {
         super("ref_stone_lover", 0x0);

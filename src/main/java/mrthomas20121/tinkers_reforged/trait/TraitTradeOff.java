@@ -1,6 +1,6 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -12,7 +12,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import java.util.UUID;
 
-public class TraitTradeOff extends RightClickTrait {
+public class TraitTradeOff extends ReforgedTrait {
 
     public static final AttributeModifier healthModifier = new AttributeModifier(UUID.fromString("4dd40d86-656f-4cb6-ac94-10509e7156b2"), "Tinkers Reforged Health Modifier", -10d, 0);
 

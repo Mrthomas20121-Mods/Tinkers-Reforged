@@ -1,12 +1,12 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
 
-public class TraitThaumicBomb extends RightClickTrait {
+public class TraitThaumicBomb extends ReforgedTrait {
 
     public TraitThaumicBomb() {
         super("ref_thaumic_bomb", 0x0);

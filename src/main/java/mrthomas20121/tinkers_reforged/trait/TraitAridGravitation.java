@@ -1,6 +1,6 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
  * @author mrthomas20121
  * Trait Effect - if you break a sand block, it drop the blocks below it if they are sand blocks as well.
  */
-public class TraitAridGravitation extends RightClickTrait {
+public class TraitAridGravitation extends ReforgedTrait {
 
     public TraitAridGravitation() {
         super("ref_arid_gravitation", 0x0);

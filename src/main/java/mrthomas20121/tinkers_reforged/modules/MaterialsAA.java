@@ -62,7 +62,7 @@ public class MaterialsAA extends ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.restonia) {
             restonia.preInit();
             restonia.getMaterial().addTrait(ReforgedTraits.vengeance, MaterialTypes.HANDLE);
-            restonia.getMaterial().addTrait(ReforgedTraits.vengeance, MaterialTypes.EXTRA);
+            restonia.getMaterial().addTrait(ReforgedTraits.piercingDamage, MaterialTypes.EXTRA);
             TinkerRegistry.addMaterial(restonia.getMaterial());
             TinkerRegistry.addMaterialStats(restonia.getMaterial(),
                     new HeadMaterialStats(450, 6.7f, 6.2f, HarvestLevels.DIAMOND),

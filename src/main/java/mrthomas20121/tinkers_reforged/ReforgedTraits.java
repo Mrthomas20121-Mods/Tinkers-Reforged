@@ -24,7 +24,6 @@ public class ReforgedTraits {
     public static final TraitRadioactive radioactive = new TraitRadioactive();
     public static final TraitRefined refined = new TraitRefined();
     public static final TraitLightningRod rod = new TraitLightningRod();
-    public static final TraitRose rose = new TraitRose();
     public static final TraitSignal signal = new TraitSignal();
     public static final TraitSoft soft = new TraitSoft();
     public static final TraitStarShaped starShaped = new TraitStarShaped();
@@ -34,7 +33,6 @@ public class ReforgedTraits {
     public static final TraitAftershot aftershot = new TraitAftershot();
     public static final TraitExperimental experimental = new TraitExperimental();
     public static final TraitConsolationPrize consolationPrize = new TraitConsolationPrize();
-    public static final TraitOverkill overkill = new TraitOverkill();
     public static final TraitBlessedSyringe blessedSyringe = new TraitBlessedSyringe();
     public static final TraitTradeOff tradeOff = new TraitTradeOff();
     public static final TraitCaptureBall captureBall = new TraitCaptureBall();
@@ -43,4 +41,6 @@ public class ReforgedTraits {
     public static final TraitDimensionalPunch dimensionalPunch = new TraitDimensionalPunch();
     public static final TraitVengeance vengeance = new TraitVengeance();
     public static final TraitAridGravitation aridGravitation = new TraitAridGravitation();
+    public static final TraitSnowball snowball = new TraitSnowball();
+    public static final TraitPiercingDamage piercingDamage = new TraitPiercingDamage();
 }

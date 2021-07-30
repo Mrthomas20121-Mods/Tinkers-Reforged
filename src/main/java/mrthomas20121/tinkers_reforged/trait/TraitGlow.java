@@ -1,12 +1,12 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class TraitGlow extends RightClickTrait {
+public class TraitGlow extends ReforgedTrait {
 
     public TraitGlow() {
         super("ref_glow", 0x0);

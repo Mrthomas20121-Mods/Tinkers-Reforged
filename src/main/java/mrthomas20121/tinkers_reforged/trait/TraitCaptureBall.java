@@ -1,92 +1,89 @@
 package mrthomas20121.tinkers_reforged.trait;
 
-import mrthomas20121.tinkers_reforged.library.trait.RightClickTrait;
+import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import slimeknights.tconstruct.library.utils.ToolHelper;
+import org.lwjgl.input.Keyboard;
+
+import java.util.List;
 
 /**
  * TraitCaptureBall.java
  * @author mrthomas20121
  * Trait Effect - Allow you to capture a mob by rightclicking an entity
  */
-public class TraitCaptureBall extends RightClickTrait {
+public class TraitCaptureBall extends ReforgedTrait {
 
-    private final static String key = "capture_ball";
-    private final static String entity_data = "entity";
+    private final static String key = "entity_data";
+    private final static String entity_name = "id";
 
     public TraitCaptureBall() {
         super("ref_capture_ball", 0x0);
     }
 
     @Override
-    public void onRightClick(PlayerInteractEvent.RightClickItem event) {
-        ItemStack tool = event.getEntityPlayer().getHeldItem(EnumHand.MAIN_HAND);
-        BlockPos pos = event.getPos();
-        World world = event.getWorld();
-        if(doesEntityExist(world, pos) && isToolWithTrait(tool)) {
+    public void onTooltip(ItemStack tool, EntityPlayer player, List<String> toolTip) {
+        if(this.isToolWithTrait(tool)) {
             if(tool.hasTagCompound()) {
                 NBTTagCompound tag = tool.getTagCompound();
-                // check if the tag has the entity data
-                if(tag.hasKey(key)) {
-                    // read the entity data from the tool tag
-                    NBTTagCompound base = tag.getCompoundTag(key);
-                    Entity entity = getEntityFromNBT(base, world);
-                    entity.deserializeNBT(tag.getCompoundTag(entity_data));
-                    entity.setPosition(pos.getX(), pos.getY(), pos.getZ());
+                if(tag.hasKey(key) && (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT))) {
+                    NBTTagCompound entity_data = tag.getCompoundTag(key);
+                    String name = entity_data.getString(entity_name);
+                    toolTip.add(2, new TextComponentString(TextFormatting.AQUA+String.format("Captured entity : %s", EntityList.getTranslationName(new ResourceLocation(name)))).getFormattedText());
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onEntityRightClick(ItemStack tool, World world, EntityPlayer player, BlockPos pos, Entity target, EnumHand hand) {
+        if(tool.hasTagCompound()) {
+            NBTTagCompound itemTag = tool.getTagCompound();
+            if(itemTag != null) {
+                if(itemTag.hasKey(key)) {
+                    // do nothing
+                }
+                else {
+                    itemTag.setTag(key, target.serializeNBT());
                     if(!world.isRemote) {
                         ((WorldServer) world).spawnParticle(EnumParticleTypes.TOTEM, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 2, 0, 0, 0, 0.0, 0);
                     }
-                    world.spawnEntity(entity);
+                    world.removeEntity(target);
                 }
-                else {
-                    Entity entity = getEntityFromPos(world, pos);
-                    if(entity != null) {
-                        world.removeEntity(entity);
-                        NBTTagCompound entityData = new NBTTagCompound();
-                        entityData.setTag(entity_data, entity.serializeNBT());
-                        tag.setTag(key, entityData);
+            }
+        }
+    }
+
+    @Override
+    public void onBlockRightClick(ItemStack tool, World world, EntityPlayer player, BlockPos pos, EnumHand hand) {
+        BlockPos airPos = pos.up();
+        if(tool.hasTagCompound()) {
+            NBTTagCompound itemTag = tool.getTagCompound();
+            if(itemTag != null) {
+                if(itemTag.hasKey(key)) {
+                    NBTTagCompound entity_tag = itemTag.getCompoundTag(key);
+                    Entity entity = EntityList.createEntityFromNBT(entity_tag, world);
+                    if(entity != null && world.isAirBlock(airPos)) {
+                        entity.setPosition(airPos.getX(), airPos.getY(), airPos.getZ());
                         if(!world.isRemote) {
+                            world.spawnEntity(entity);
                             ((WorldServer) world).spawnParticle(EnumParticleTypes.TOTEM, pos.getX() + 0.5, pos.getY() + 0.2, pos.getZ() + 0.5, 2, 0, 0, 0, 0.0, 0);
                         }
-                        // damage the tool after capturing the entity
-                        ToolHelper.damageTool(tool, 10, event.getEntityPlayer());
+                        itemTag.removeTag(key);
                     }
                 }
             }
         }
-    }
-
-    private Entity getEntityFromNBT(NBTTagCompound tag, World world) {
-        NBTTagCompound data = tag.getCompoundTag(entity_data);
-        return EntityList.createEntityFromNBT(data, world);
-    }
-
-    private boolean doesEntityExist(World world, BlockPos pos) {
-        boolean bool = false;
-        for(Entity entity: world.loadedEntityList) {
-            if(entity.getPosition().equals(pos)) {
-                bool = true;
-                break;
-            }
-        }
-        return bool;
-    }
-
-    private Entity getEntityFromPos(World world, BlockPos pos) {
-        for(Entity entity: world.loadedEntityList) {
-            if(entity.getPosition().equals(pos)) {
-                return entity;
-            }
-        }
-        return null;
     }
 }
