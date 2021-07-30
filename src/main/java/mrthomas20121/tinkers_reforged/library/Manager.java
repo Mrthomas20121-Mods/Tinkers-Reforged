@@ -82,15 +82,16 @@ public class Manager extends IManager<ModuleBase> {
 
     @Override
     public void init() {
-        this.value.forEach(IModule::init);
-        this.value.forEach(moduleBase -> moduleBase.registerModifiers(modifiers));
-        alloys.forEach(alloy -> {
+        // always register oredict before adding the materials
+        this.alloys.forEach(alloy -> {
             OreDictionary.registerOre("ingot"+cap(alloy), ForgeUtils.getItem(TinkersReforged.MODID, alloy+"_"+"ingot"));
             OreDictionary.registerOre("dust"+cap(alloy), ForgeUtils.getItem(TinkersReforged.MODID, alloy+"_"+"dust"));
             OreDictionary.registerOre("plate"+cap(alloy), ForgeUtils.getItem(TinkersReforged.MODID, alloy+"_"+"plate"));
             OreDictionary.registerOre("gear"+cap(alloy), ForgeUtils.getItem(TinkersReforged.MODID, alloy+"_"+"gear"));
             OreDictionary.registerOre("block"+cap(alloy), ForgeUtils.getBlock(TinkersReforged.MODID, alloy+"_"+"block"));
         });
+        this.value.forEach(IModule::init);
+        this.value.forEach(moduleBase -> moduleBase.registerModifiers(modifiers));
     }
 
     @Override
