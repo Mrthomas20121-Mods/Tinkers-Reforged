@@ -180,7 +180,7 @@ material.ref_lavium.name=Lavium
 
 # Traits and Modifiers
 modifier.ref_signal.name=Signal
-modifier.ref_signal.desc=§oFlint and Steal§r\nRight Click Creeper to activate them.
+modifier.ref_signal.desc=§oBoom!§r\nRight Click Creeper ignite them.
 
 modifier.ref_aftershot.name=Aftershot
 modifier.ref_aftershot.desc=§oYummy§r\nHeal after dealing damage.
@@ -223,9 +223,6 @@ modifier.life_steal.desc=§oFeels Good to steal§r\nSteal Health from mobs.
 
 modifier.ref_refined.name=Refined
 modifier.ref_refined.desc=§oSomething smell fishy§r\nBreak Obsidian Instantly.
-
-modifier.ref_flux.name=Flux
-modifier.ref_flux.desc=§oHow does that work?§r\nHave a chance to not use durability but will exaust you faster.
 
 modifier.ref_star_shaped.name=Star Shaped
 modifier.ref_star_shaped.desc=§oShaped like a star!§r\nAlways Crits
@@ -286,6 +283,12 @@ modifier.ref_flux_force.desc=§oThe more the merrier§r\nThe Damage dealt is bas
 
 modifier.ref_teleport.name=Teleport
 modifier.ref_teleport.desc=§oWhere are my items?§r\nBlocks mined get teleported to your inventory.
+
+modifier.ref_piercing_damage.name=Piercing Damage
+modifier.ref_piercing_damage.desc=§oChest breaker!§r\nMake all damage Magic Damage and deal an additional Magic Piercing Damage based on the damage dealt.
+
+modifier.ref_vengeance.name=Vengeance
+modifier.ref_piercing_damage.desc=§oThe Banshee is mine to kill!§r\nAttack damage increases by a % of the last amount of damage you took.
 
 modifier.ref_soft.name=Soft
 modifier.ref_soft.desc=§oVery Spongy§r\nYour tool mining level is set to Obsidian.
