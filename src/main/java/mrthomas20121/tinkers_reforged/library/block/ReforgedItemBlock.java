@@ -7,5 +7,8 @@ public class ReforgedItemBlock extends ItemBlock {
 
     public ReforgedItemBlock(Block block) {
         super(block);
+        this.setRegistryName(block.getRegistryName());
+        this.setTranslationKey(block.getTranslationKey());
+        this.setCreativeTab(block.getCreativeTab());
     }
 }
