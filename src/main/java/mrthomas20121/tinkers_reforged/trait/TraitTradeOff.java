@@ -2,13 +2,14 @@ package mrthomas20121.tinkers_reforged.trait;
 
 import mrthomas20121.tinkers_reforged.library.trait.ReforgedTrait;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import slimeknights.tconstruct.library.tools.ToolNBT;
+import slimeknights.tconstruct.library.utils.TagUtil;
 
 import java.util.UUID;
 
@@ -18,6 +19,17 @@ public class TraitTradeOff extends ReforgedTrait {
 
     public TraitTradeOff() {
         super("ref_tradeoff", 0x0);
+    }
+
+    @Override
+    public void applyEffect(NBTTagCompound rootCompound, NBTTagCompound modifierTag) {
+        ToolNBT data = TagUtil.getToolStats(rootCompound);
+
+        data.attackSpeedMultiplier*=2;
+        data.attack*=2;
+        data.speed*=2;
+
+        TagUtil.setToolTag(rootCompound, data.get());
     }
 
     @Override
@@ -36,17 +48,5 @@ public class TraitTradeOff extends ReforgedTrait {
                 ((EntityPlayer)entity).getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).removeModifier(healthModifier);
             }
         }
-    }
-
-    @Override
-    public void miningSpeed(ItemStack tool, PlayerEvent.BreakSpeed event) {
-        if(this.isToolWithTrait(tool)) {
-            event.setNewSpeed(event.getOriginalSpeed()*2);
-        }
-    }
-
-    @Override
-    public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
-        return super.damage(tool, player, target, damage, newDamage, isCritical) * 2;
     }
 }

@@ -30,7 +30,6 @@ public class ReforgedTraits {
     public static final TraitTeleport teleport = new TraitTeleport();
     public static final TraitVoid voidTrait = new TraitVoid();
     public static final TraitShinystone shinystone = new TraitShinystone();
-    public static final TraitAftershot aftershot = new TraitAftershot();
     public static final TraitExperimental experimental = new TraitExperimental();
     public static final TraitConsolationPrize consolationPrize = new TraitConsolationPrize();
     public static final TraitBlessedSyringe blessedSyringe = new TraitBlessedSyringe();
@@ -43,4 +42,6 @@ public class ReforgedTraits {
     public static final TraitAridGravitation aridGravitation = new TraitAridGravitation();
     public static final TraitSnowball snowball = new TraitSnowball();
     public static final TraitPiercingDamage piercingDamage = new TraitPiercingDamage();
+    public static final TraitOverHealing overHealing = new TraitOverHealing();
+    public static final TraitEnchantedWood enchantedWood = new TraitEnchantedWood();
 }

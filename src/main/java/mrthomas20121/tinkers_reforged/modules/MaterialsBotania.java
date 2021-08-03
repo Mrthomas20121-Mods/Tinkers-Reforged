@@ -44,7 +44,7 @@ public class MaterialsBotania extends ModuleBase {
                     new BowMaterialStats(0.5f, 1.4f, 7f));
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.livingwood) {
-            livingwood.addTrait(ReforgedTraits.living);
+            livingwood.addTrait(ReforgedTraits.enchantedWood);
             TinkerRegistry.addMaterial(livingwood);
             TinkerRegistry.addMaterialStats(livingwood,
                     new HeadMaterialStats(200, 4f, 4f, HarvestLevels.IRON),
@@ -63,6 +63,7 @@ public class MaterialsBotania extends ModuleBase {
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.dreamwood) {
             dreamwood.addTrait(TinkerTraits.ecological);
+            dreamwood.addTrait(ReforgedTraits.enchantedWood, MaterialTypes.HEAD);
             TinkerRegistry.addMaterial(dreamwood);
             TinkerRegistry.addMaterialStats(dreamwood,
                     new HeadMaterialStats(200, 4f, 4f, HarvestLevels.DIAMOND),

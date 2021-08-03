@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -118,6 +119,33 @@ public class TraitManager {
             entity.attackEntityFrom(DamageSource.DRAGON_BREATH, entity.getHealth()/4);
         }
 
+    }
+
+    @SubscribeEvent
+    public static void onPlayerHeal(LivingHealEvent event) {
+        EntityLivingBase living = event.getEntityLiving();
+        ItemStack tool = living.getHeldItemMainhand();
+        float healing = event.getAmount();
+        if(living instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) living;
+
+            if(isTool(tool) && !ToolHelper.isBroken(tool)) {
+                TinkerUtil.getTraitsOrdered(tool).forEach(trait -> {
+                    if(trait instanceof ReforgedTrait) {
+                        ((ReforgedTrait) trait).onPlayerHeal(tool, player, healing);
+                    }
+                });
+            }
+        }
+        else {
+            if(isTool(tool) && !ToolHelper.isBroken(tool)) {
+                TinkerUtil.getTraitsOrdered(tool).forEach(trait -> {
+                    if(trait instanceof ReforgedTrait) {
+                        ((ReforgedTrait) trait).onEntityHeal(tool, living, healing);
+                    }
+                });
+            }
+        }
     }
 
     private static boolean isTool(ItemStack stack) {

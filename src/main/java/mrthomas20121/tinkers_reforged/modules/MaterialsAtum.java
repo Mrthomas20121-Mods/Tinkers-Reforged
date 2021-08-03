@@ -49,6 +49,7 @@ public class MaterialsAtum extends ModuleBase {
                     new HandleMaterialStats(0.9f, 80),
                     new ExtraMaterialStats(40));
         }
+
         if(TinkersReforgedConfig.SettingMaterials.materials.limestone) {
             limestone.addTrait(TinkerTraits.cheap);
             TinkerRegistry.addMaterialStats(limestone,
@@ -68,8 +69,8 @@ public class MaterialsAtum extends ModuleBase {
 
         if(TinkersReforgedConfig.SettingMaterials.materials.limestone) {
             limestone.setCraftable(true);
-            limestone.setRepresentativeItem(ForgeUtils.getBlock(Reference.atum, "limestone"));
-            limestone.addItem(ForgeUtils.getBlock(Reference.atum, "limestone"), 1);
+            limestone.setRepresentativeItem("stoneLimestone");
+            limestone.addItem("stoneLimestone", 1, Material.VALUE_Ingot);
         }
     }
 }

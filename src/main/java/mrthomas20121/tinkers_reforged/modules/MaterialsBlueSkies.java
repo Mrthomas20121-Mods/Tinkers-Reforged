@@ -6,6 +6,7 @@ import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import mrthomas20121.tinkers_reforged.trait.TraitFiery;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.StringUtils;
@@ -14,6 +15,10 @@ import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
+/**
+ * @author mrthomas20121
+ * Tinkers Materials for the mod blue skies
+ */
 public class MaterialsBlueSkies extends ModuleBase {
 
     private final MaterialGen horizonnite = new MaterialGen("horizonite", 0xF27B2B, "Horizonite", 700);
@@ -21,6 +26,9 @@ public class MaterialsBlueSkies extends ModuleBase {
     private final MaterialGen diopside = new MaterialGen("diopside", 0x4CE849, "Diopside", 500, true);
     private final MaterialGen pyrope = new MaterialGen("pyrope", 0xDA283E, "Pyrope", 500, true);
     private final MaterialGen turquoise = new MaterialGen("turquoise", 0x5AE7D1, "Turquoise", 500, true);
+
+    // traits specific to blue skies
+    private final TraitFiery fiery = new TraitFiery();
 
     public MaterialsBlueSkies() {
         super(new ResourceLocation(Reference.blue_skies, "module"));
@@ -36,7 +44,7 @@ public class MaterialsBlueSkies extends ModuleBase {
         if(TinkersReforgedConfig.SettingMaterials.materials.horizonite) {
             horizonnite.preInit();
             horizonnite.getMaterial().addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
-            horizonnite.getMaterial().addTrait(ReforgedTraits.pyromency);
+            horizonnite.getMaterial().addTrait(fiery);
             TinkerRegistry.addMaterial(horizonnite.getMaterial());
             TinkerRegistry.addMaterialStats(horizonnite.getMaterial(),
                     new HeadMaterialStats(200, 6.3f, 4f, HarvestLevels.DIAMOND),

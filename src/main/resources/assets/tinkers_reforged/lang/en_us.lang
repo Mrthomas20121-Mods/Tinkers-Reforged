@@ -234,16 +234,31 @@ modifier.ref_capture_ball.name=Capture Ball
 modifier.ref_capture_ball.desc=§oGo Pikachu!§r\nYou can right click on an entity to capture it. Right Click Again to release it.
 
 modifier.ref_stone_lover.name=Stone Lover
-modifier.ref_stone_lover.desc=§oYou love stone so much that you don't want to mine other blocks§r\nCan only mine Stone. \"Stone\" is defined by blocks using the stone oredict.
+modifier.ref_stone_lover.desc=§oYou love stone so much that you don't want to mine other blocks§r\nCan only mine Stone. "Stone" is defined by blocks using the stone oredict.
+
+modifier.ref_snowball.name=Snowball
+modifier.ref_snowball.desc=§oLet it go, Let it go!§r\nRight click to shoot snowball.
 
 modifier.ref_glow.name=Glow
-modifier.ref_glow.name=§oYou Glow§r\nYou're literally Glowing.
+modifier.ref_glow.name=§oYou Glow§r\nYou are glowing
+
+modifier.ref_tradeoff.name=Trade Off
+modifier.ref_tradeoff.name=§oHalf hp?§r\nHalf HP but your tool stats are doubled.
 
 modifier.ref_rose.name=Rose
 modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nGrass have a chance of dropping dye.
 
+modifier.ref_dimensional_punch.name=Dimensional Punch
+modifier.ref_dimensional_punch.desc=§oFalco Punch!§r\nDeal more damage in a dimension other than the Overwold.
+
+modifier.ref_enchanted_wood.name=Enchanted Wood
+modifier.ref_enchanted_wood.desc=§oThe Power of Enchanting!§r\nBreak Wood log faster.
+
 modifier.ref_void.name=Void
 modifier.ref_void.desc=§oThis seems empty§r\nVoid items dropped from blocks.
+
+modifier.ref_fiery.name=Reforged Fiery
+modifier.ref_fiery.desc=Set The Target on Fire
 
 modifier.ref_starry_night.name=Starry Night
 modifier.ref_starry_night.desc=§oOh look a star!§r\nGive Haste at night
@@ -288,7 +303,7 @@ modifier.ref_piercing_damage.name=Piercing Damage
 modifier.ref_piercing_damage.desc=§oChest breaker!§r\nMake all damage Magic Damage and deal an additional Magic Piercing Damage based on the damage dealt.
 
 modifier.ref_vengeance.name=Vengeance
-modifier.ref_piercing_damage.desc=§oThe Banshee is mine to kill!§r\nAttack damage increases by a % of the last amount of damage you took.
+modifier.ref_vengeance.desc=§oThe Banshee is mine to kill!§r\nAttack damage increases by a % of the last amount of damage you took.
 
 modifier.ref_soft.name=Soft
 modifier.ref_soft.desc=§oVery Spongy§r\nYour tool mining level is set to Obsidian.

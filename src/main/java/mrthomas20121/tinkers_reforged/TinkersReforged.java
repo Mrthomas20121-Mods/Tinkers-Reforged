@@ -2,7 +2,6 @@ package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.Manager;
-import mrthomas20121.tinkers_reforged.library.potion.PotionRegistry;
 import mrthomas20121.tinkers_reforged.tools.ToolClub;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;

@@ -18,7 +18,7 @@ public class MaterialsMekanism extends ModuleBase {
 
     private final MaterialGen osmium = new MaterialGen("osmium", 0x7F8EB2, "Osmium", 700);
     private final Material refined_obsidian = new Material("ref_refined_obsidian", 0x463763);
-    private final Material refined_glownstone = new Material("ref_refined_glowstone", 0xEAC829);
+    private final Material refined_glowstone = new Material("ref_refined_glowstone", 0xEAC829);
 
     public MaterialsMekanism() {
         super(new ResourceLocation(Reference.mekanism, "module"));
@@ -53,10 +53,10 @@ public class MaterialsMekanism extends ModuleBase {
                     new BowMaterialStats(3.2f, 5, 6.1f));
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.refined_glowstone) {
-            //refined_glownstone.addTrait(ReforgedTraits.overkill, MaterialTypes.HEAD);
-            refined_glownstone.addTrait(ReforgedTraits.blessedSyringe);
-            TinkerRegistry.addMaterial(refined_glownstone);
-            TinkerRegistry.addMaterialStats(refined_glownstone,
+            refined_glowstone.addTrait(ReforgedTraits.overHealing, MaterialTypes.HEAD);
+            refined_glowstone.addTrait(ReforgedTraits.blessedSyringe);
+            TinkerRegistry.addMaterial(refined_glowstone);
+            TinkerRegistry.addMaterialStats(refined_glowstone,
                     new HeadMaterialStats(550, 6.5f, 6.5f, HarvestLevels.OBSIDIAN),
                     new HandleMaterialStats(1.2f, 100),
                     new ExtraMaterialStats(50),
@@ -81,14 +81,14 @@ public class MaterialsMekanism extends ModuleBase {
             }
         }
         if(TinkersReforgedConfig.SettingMaterials.materials.refined_glowstone) {
-            refined_glownstone.setRepresentativeItem("ingotRefinedGlowstone");
-            refined_glownstone.addCommonItems("RefinedGlowstone");
+            refined_glowstone.setRepresentativeItem("ingotRefinedGlowstone");
+            refined_glowstone.addCommonItems("RefinedGlowstone");
 
             for(IToolPart part : TinkerRegistry.getToolParts())
             {
-                if(part.canUseMaterial(refined_glownstone) && (part.canBeCasted() || part.canBeCrafted()))
+                if(part.canUseMaterial(refined_glowstone) && (part.canBeCasted() || part.canBeCrafted()))
                 {
-                    MekanismCompat.addOsmiumCompressorRecipe(part.getItemstackWithMaterial(TinkerRegistry.getMaterial("ref_glowstone")), part.getItemstackWithMaterial(refined_glownstone));
+                    MekanismCompat.addOsmiumCompressorRecipe(part.getItemstackWithMaterial(TinkerRegistry.getMaterial("ref_glowstone")), part.getItemstackWithMaterial(refined_glowstone));
                 }
             }
         }

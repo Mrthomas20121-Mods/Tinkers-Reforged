@@ -28,4 +28,8 @@ public class ReforgedTrait extends AbstractTrait {
     public void onEntityRightClick(ItemStack tool, World world, EntityPlayer player, BlockPos pos, Entity target, EnumHand hand) {}
 
     public void onEntityAttack(ItemStack tool, EntityPlayer player, EntityLivingBase target, DamageSource source, float amount, LivingAttackEvent event) {}
+
+    public void onEntityHeal(ItemStack tool, EntityLivingBase entity, float amount) {}
+
+    public void onPlayerHeal(ItemStack tool, EntityPlayer player, float amount) {}
 }

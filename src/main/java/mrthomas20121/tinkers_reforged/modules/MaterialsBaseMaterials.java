@@ -2,11 +2,14 @@ package mrthomas20121.tinkers_reforged.modules;
 
 import mrthomas20121.tinkers_reforged.ReforgedTraits;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.library.ForgeUtils;
 import mrthomas20121.tinkers_reforged.library.MaterialGen;
 import mrthomas20121.tinkers_reforged.config.TinkersReforgedConfig;
 import mrthomas20121.tinkers_reforged.library.ModuleBase;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
@@ -155,11 +158,12 @@ public class MaterialsBaseMaterials extends ModuleBase {
 
     @Override
     public void init() {
-
         if(TinkersReforgedConfig.SettingMaterials.materials.glowstone) {
-            glowstone.setRepresentativeItem(Items.GLOWSTONE_DUST);
-            glowstone.addItem(Items.GLOWSTONE_DUST, 1, 1);
-            glowstone.addItem(new ItemStack(Blocks.GLOWSTONE), 1, 4);
+            Block glowstone_block = ForgeUtils.getBlock("minecraft", "glowstone");
+            glowstone.setCraftable(true);
+            glowstone.setRepresentativeItem("dustGlowstone");
+            glowstone.addItem("dustGlowstone", 1, Material.VALUE_Ingot);
+            glowstone.addItem(new ItemStack(glowstone_block), 1, Material.VALUE_Ingot*4);
         }
 
         if(!OreDictionary.getOres("ingotZinc").isEmpty() && TinkersReforgedConfig.SettingMaterials.materials.zinc) {
