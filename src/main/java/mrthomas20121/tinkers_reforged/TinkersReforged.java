@@ -26,7 +26,7 @@ public class TinkersReforged
     public static Manager manager = new Manager();
     public static final String MODID = "tinkers_reforged";
     public static final String NAME = "Tinkers Reforged";
-    public static final String VERSION = "1.5.5";
+    public static final String VERSION = "1.5.6";
 
     private static Logger logger;
 
