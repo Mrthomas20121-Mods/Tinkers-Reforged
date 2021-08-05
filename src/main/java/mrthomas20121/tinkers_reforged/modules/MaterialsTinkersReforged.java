@@ -93,13 +93,14 @@ public class MaterialsTinkersReforged extends ModuleBase {
             FluidStack cobalt = FluidRegistry.getFluidStack("cobalt", Material.VALUE_SearedBlock);
             FluidStack purpleslime = FluidRegistry.getFluidStack("purpleslime", 125);
             FluidStack glass = FluidRegistry.getFluidStack("glass", Material.VALUE_Glass);
-            FluidStack lavium = new FluidStack(FluidRegistry.getFluid("lavium"), Material.VALUE_Ingot);
-            FluidStack qivium = new FluidStack(FluidRegistry.getFluid("qivium"), Material.VALUE_Ingot);
-            FluidStack kovar = new FluidStack(FluidRegistry.getFluid("kovar"), Material.VALUE_Ingot);FluidRegistry.getFluidStack("kovar", Material.VALUE_Ingot);
+            FluidStack kovar = new FluidStack(FluidRegistry.getFluid("kovar"), Material.VALUE_Ingot);
 
-            TinkerRegistry.registerAlloy(lavium, glass, cobalt, purpleslime);
-            TinkerRegistry.registerAlloy(qivium, glass, ardite, purpleslime);
-            TinkerRegistry.registerAlloy(kovar, lavium, qivium);
+            if(TinkersReforgedConfig.SettingMaterials.materials.qivium) {
+                TinkerRegistry.registerAlloy(FluidRegistry.getFluidStack("qivium", Material.VALUE_Ingot), glass, ardite, purpleslime);
+            }
+            if(TinkersReforgedConfig.SettingMaterials.materials.lavium) {
+                TinkerRegistry.registerAlloy(FluidRegistry.getFluidStack("lavium", Material.VALUE_Ingot), glass, cobalt, purpleslime);
+            }
             TinkerSmeltery.registerOredictMeltingCasting(kovar.getFluid(), "Kovar");
         }
 
