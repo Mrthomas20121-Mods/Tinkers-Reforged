@@ -1,8 +1,0 @@
-{
-	"textures": {
-		"khopesh": "tinkers_reforged:items/khopesh/mod_beheading",
-		"gladius": "tinkers_reforged:items/gladius/mod_beheading",
-		"greatsword": "tinkers_reforged:items/greatsword/mod_beheading",
-		"club": "tinkers_reforged:items/club/mod_beheading"
-	}
-}
