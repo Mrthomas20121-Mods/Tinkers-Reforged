@@ -1,59 +1,29 @@
-*.js
-*.py
-test.txt
-
-#ant stuff
-/bin/
-/download/
-
-#Remove OS generated garbage
-*/.DS_Store
-.DS_Store
-.DS_Store?
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-
-#gradle stuff
-/.gradle
-/build/
-/sources/
-/run*/
-/libs*/
-/ui/
+# eclipse
+bin
 *.launch
-gradle-app.setting
+.settings
+.metadata
+.classpath
+.project
 
-# vscode stuff
-.vscode
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
 
-#IDEA files from Gradle
-.idea/
-/*.iml
-/*.ipr
-/*.iws
+# gradle
+build
+.gradle
 
-#Vim backups
-*~
+# other
+eclipse
+run
 
-#manual version override
-version.properties
+# Files from Forge MDK
+forge*changelog.txt
 
-#eclipse stuffs
-/.classpath
-/.project
-/.settings/
-/eclipse/
-/debug/
-*.lock
-/.metadata/
-/config/
-/logs/
-options.txt
-/saves/
-/out
-/src_old
-/resources_old
-/design
+lombok.config
+
+src/generated/resources/.cache/
