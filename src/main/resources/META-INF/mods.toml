@@ -1,0 +1,30 @@
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "MIT License"
+issueTrackerURL = "https://github.com/Mrthomas20121/Tinkers-Reforged/issues"
+
+[[mods]]
+modId = "tinkers_reforged"
+version = "1.0.0"
+displayName = "Tinkers Reforged"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/tinkers_reforged"
+#logoFile="tinkers_reforged_logo.png"
+#credits = "Team CoFH"
+authors = "Mrthomas20121"
+description = '''
+Add new materials to Tinkers Construct
+'''
+
+[[dependencies.tinkers_reforged]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[36.2.19,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.tinkers_reforged]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.16.5,)"
+    ordering = "NONE"
+    side = "BOTH"
