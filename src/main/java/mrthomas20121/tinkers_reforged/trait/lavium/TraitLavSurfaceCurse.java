@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.lavium;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -9,10 +9,10 @@ import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 import javax.annotation.Nonnull;
 
-public class TraitSurfaceCurse extends Modifier {
+public class TraitLavSurfaceCurse extends Modifier {
 
-    public TraitSurfaceCurse() {
-        super(0x0);
+    public TraitLavSurfaceCurse() {
+        super(0x81B366);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.datagen.ReforgedBlocksLoot;
-import mrthomas20121.tinkers_reforged.datagen.ReforgedLootTables;
 import mrthomas20121.tinkers_reforged.datagen.ReforgedMaterials;
 import mrthomas20121.tinkers_reforged.init.Resources;
 import mrthomas20121.tinkers_reforged.init.Traits;
@@ -40,6 +38,7 @@ public class TinkersReforged {
 			AbstractMaterialDataProvider materials = new ReforgedMaterials(gen);
 			gen.addProvider(materials);
 			gen.addProvider(new ReforgedMaterials.ReforgedTraits(gen, materials));
+			gen.addProvider(new ReforgedMaterials.ReforgedMaterialStats(gen, materials));
 		}
 		//else if(event.includeClient()) {
 			// lang and other stuff

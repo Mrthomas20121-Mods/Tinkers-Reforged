@@ -1,0 +1,22 @@
+{
+  "perStat": {
+    "tconstruct:head": [
+      {
+        "name": "tinkers_reforged:electric_damage",
+        "level": 1
+      }
+    ],
+    "tconstruct:extra": [
+      {
+        "name": "tinkers_reforged:electric_damage",
+        "level": 1
+      }
+    ],
+    "tconstruct:handle": [
+      {
+        "name": "tinkers_reforged:odin_blessing",
+        "level": 1
+      }
+    ]
+  }
+}

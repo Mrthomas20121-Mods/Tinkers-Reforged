@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.qivium;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 public class TraitSunfireBlessing extends Modifier {
 
     public TraitSunfireBlessing() {
-        super(0x0);
+        super(0xFF8F84);
     }
 
     @Override

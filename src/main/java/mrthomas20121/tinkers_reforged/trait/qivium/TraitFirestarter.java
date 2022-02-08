@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.qivium;
 
 import net.minecraft.entity.LivingEntity;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -11,7 +11,7 @@ import java.util.Objects;
 public class TraitFirestarter extends Modifier {
 
     public TraitFirestarter() {
-        super(0x0);
+        super(0xFF8F84);
     }
 
     @Override

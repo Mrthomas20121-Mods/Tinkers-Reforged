@@ -5,13 +5,17 @@ import mrthomas20121.tinkers_reforged.init.Traits;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import javax.annotation.Nonnull;
+
+import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 
 public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
@@ -56,13 +60,75 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addTraits(qivium, HandleMaterialStats.ID, Traits.qivium_firestarter.get());
             addTraits(qivium, ExtraMaterialStats.ID, Traits.qivium_firestarter.get());
             addTraits(qivium, ExtraMaterialStats.ID, Traits.qivium_sunfire_blessing.get());
+
+            addTraits(lavium, HeadMaterialStats.ID, Traits.lavium_ground_speed.get());
+            addTraits(lavium, HandleMaterialStats.ID, Traits.lavium_miner_blessing.get());
+            addTraits(lavium, ExtraMaterialStats.ID, Traits.lavium_miner_blessing.get());
+            addTraits(lavium, HeadMaterialStats.ID, Traits.lavium_surface_curse.get());
+
+            addTraits(duralumin, HeadMaterialStats.ID, Traits.duralumin_ultra_durable.get());
+            addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_overused.get());
+            addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_heat_transfer.get());
+            addTraits(duralumin, ExtraMaterialStats.ID, Traits.duralumin_heat_transfer.get());
+
+            addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electrostatic.get());
+            addTraits(electrical_copper, HandleMaterialStats.ID, Traits.electrical_copper_odin_blessing.get());
+            addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
+            addTraits(electrical_copper, ExtraMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
+
+            addTraits(aluminum, HeadMaterialStats.ID, Traits.aluminum_protective_layer.get());
+            addTraits(aluminum, HandleMaterialStats.ID, TinkerModifiers.lightweight.get());
+            addTraits(aluminum, HandleMaterialStats.ID, Traits.aluminum_metalic.get());
+            addTraits(aluminum, ExtraMaterialStats.ID, TinkerModifiers.lightweight.get());
         }
 
+        @Nonnull
         @Override
         public String getName() {
             return "Tinkers Reforged Material Traits";
         }
+    }
 
+    public static class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
 
+        public ReforgedMaterialStats(DataGenerator gen, AbstractMaterialDataProvider materials) {
+            super(gen, materials);
+        }
+
+        @Nonnull
+        @Override
+        public String getName() {
+            return "Tinkers Reforged Material Stats";
+        }
+
+        @Override
+        protected void addMaterialStats() {
+
+            addMaterialStats(qivium,
+                    new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(lavium,
+                    new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(aluminum,
+                    new HeadMaterialStats(250, 6f, IRON, 2f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.10f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(duralumin,
+                    new HeadMaterialStats(500, 7f, DIAMOND, 3f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.40f),
+                    ExtraMaterialStats.DEFAULT);
+
+            // electrical copper is iron with a bit more durability and have a better mining level
+            addMaterialStats(electrical_copper,
+                    new HeadMaterialStats(300, 6f, DIAMOND, 2f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.20f),
+                    ExtraMaterialStats.DEFAULT);
+        }
     }
 }

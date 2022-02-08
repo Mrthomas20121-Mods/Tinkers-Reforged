@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.electrical_copper;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
@@ -13,7 +13,7 @@ import java.util.Random;
 public class TraitElectrostatic extends Modifier {
 
     public TraitElectrostatic() {
-        super(0x0);
+        super(0xE0B475);
     }
 
     @Override

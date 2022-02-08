@@ -1,32 +1,27 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.lavium;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootContext;
 import net.minecraft.loot.LootParameterSet;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.LootTableManager;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
-import net.minecraftforge.common.ForgeHooks;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
 public class TraitMinerBlessing extends Modifier {
 
     public TraitMinerBlessing() {
-        super(0x0);
+        super(0x81B366);
     }
 
     @Override

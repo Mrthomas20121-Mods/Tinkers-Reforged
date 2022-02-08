@@ -1,0 +1,22 @@
+{
+  "perStat": {
+    "tconstruct:head": [
+      {
+        "name": "tinkers_reforged:protective_layer",
+        "level": 1
+      }
+    ],
+    "tconstruct:extra": [
+      {
+        "name": "tconstruct:lightweight",
+        "level": 1
+      }
+    ],
+    "tconstruct:handle": [
+      {
+        "name": "tinkers_reforged:metalic",
+        "level": 1
+      }
+    ]
+  }
+}

@@ -1,7 +1,6 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.qivium;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.world.World;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
@@ -12,7 +11,7 @@ import java.util.Objects;
 public class TraitFireplace extends Modifier {
 
     public TraitFireplace() {
-        super(0x11);
+        super(0xFF8F84);
     }
 
     @Override

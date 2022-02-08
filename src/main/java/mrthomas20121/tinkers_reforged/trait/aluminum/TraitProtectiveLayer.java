@@ -1,26 +1,22 @@
-package mrthomas20121.tinkers_reforged.trait;
+package mrthomas20121.tinkers_reforged.trait.aluminum;
 
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 import javax.annotation.Nonnull;
 
-public class TraitGroundSpeed extends Modifier {
+public class TraitProtectiveLayer extends Modifier {
 
-    public TraitGroundSpeed() {
-        super(0x0);
+    public TraitProtectiveLayer() {
+        super(0xD6E1E4);
     }
 
     @Override
     public void onBreakSpeed(@Nonnull IModifierToolStack tool, int level, @Nonnull PlayerEvent.BreakSpeed event, @Nonnull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
-        World world = event.getEntityLiving().getCommandSenderWorld();
-        BlockPos pos = event.getPos();
-        if(pos.getY() < world.getSeaLevel() && isEffective) {
-            event.setNewSpeed(event.getNewSpeed()+3.2f);
+        if(event.getPlayer().isInWater() && isEffective) {
+            event.setNewSpeed(event.getOriginalSpeed()*2);
         }
     }
 }
