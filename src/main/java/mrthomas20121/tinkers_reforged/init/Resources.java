@@ -17,10 +17,10 @@ import javax.annotation.Nonnull;
 
 public class Resources {
 
-    public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TinkersReforged.MOD_ID);
-    public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TinkersReforged.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
 
-    private static ItemGroup group = new ItemGroup(TinkersReforged.MOD_ID) {
+    private static final ItemGroup group = new ItemGroup(TinkersReforged.MOD_ID) {
 
         @Override
         @Nonnull
