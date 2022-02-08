@@ -43,6 +43,7 @@ public class ReforgedLootTables extends LootTableProvider {
     /**
      * Gets a name for this provider, to use in logging.
      */
+    @Nonnull
     @Override
     public String getName() {
         return TinkersReforged.MOD_ID + " LootTables";
