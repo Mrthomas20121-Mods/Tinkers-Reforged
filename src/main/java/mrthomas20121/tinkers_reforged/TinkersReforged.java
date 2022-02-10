@@ -52,6 +52,10 @@ public class TinkersReforged {
 			gen.addProvider(new ReforgedBlockStates(gen, fileHelper));
 			gen.addProvider(new ReforgedLang(gen));
 			gen.addProvider(new ReforgedRecipes(gen));
+			ReforgedBlocksTags tags = new ReforgedBlocksTags(gen, fileHelper);
+			gen.addProvider(tags);
+			gen.addProvider(new ReforgedFluidTags(gen, fileHelper));
+			gen.addProvider(new ReforgedItemsTags(gen, tags, fileHelper));
 		}
 	}
 }

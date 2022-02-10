@@ -19,7 +19,6 @@ import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
 
 public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
-    public static final MaterialId aluminum = createMaterial("aluminum");
     public static final MaterialId duralumin = createMaterial("duralumin");
     public static final MaterialId electrical_copper = createMaterial("electrical_copper");
     public static final MaterialId lavium = createMaterial("lavium");

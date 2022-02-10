@@ -1,24 +1,22 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.DeferredRegistrerFluid;
+import mrthomas20121.tinkers_reforged.api.ReforgedFluid;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.fluids.FluidAttributes;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.mantle.registration.ModelFluidAttributes;
-import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
-import slimeknights.mantle.registration.object.FluidObject;
 
 import javax.annotation.Nonnull;
 
@@ -26,7 +24,7 @@ public class Resources {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TinkersReforged.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
-    public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(TinkersReforged.MOD_ID);
+    public static final DeferredRegistrerFluid FLUIDS = new DeferredRegistrerFluid();
 
     public static final ItemGroup group = new ItemGroup(TinkersReforged.MOD_ID) {
 
@@ -37,14 +35,10 @@ public class Resources {
         }
     };
 
-    private static FluidAttributes.Builder hotBuilder() {
-        return ModelFluidAttributes.builder().density(2000).viscosity(10000).temperature(1000).sound(SoundEvents.BUCKET_FILL_LAVA, SoundEvents.BUCKET_EMPTY_LAVA);
-    }
-
-    public static FluidObject<ForgeFlowingFluid> duralumin = FLUIDS.register("duralumin", hotBuilder(), Material.LAVA, 0);
-    public static FluidObject<ForgeFlowingFluid> electrical_copper = FLUIDS.register("electrical_copper", hotBuilder().temperature(800), Material.LAVA, 0);
-    public static FluidObject<ForgeFlowingFluid> lavium = FLUIDS.register("lavium", hotBuilder().temperature(1500), Material.LAVA, 0);
-    public static FluidObject<ForgeFlowingFluid> qivium = FLUIDS.register("qivium", hotBuilder().temperature(1500), Material.LAVA, 0);
+    public static ReforgedFluid duralumin = FLUIDS.register("duralumin", 1000, 12);
+    public static ReforgedFluid electrical_copper = FLUIDS.register("electrical_copper", 1100, 5);
+    public static ReforgedFluid lavium = FLUIDS.register("lavium", 1500, 12);
+    public static ReforgedFluid qivium = FLUIDS.register("qivium", 1500, 12);
 
     public static RegistryObject<Block> aluminum_ore = registerBlock("aluminum_ore");
     public static RegistryObject<Block> aluminum_block = registerBlock("aluminum_block");

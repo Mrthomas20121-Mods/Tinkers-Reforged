@@ -14,7 +14,6 @@ public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
 
     @Override
     protected void addMaterialRenderInfo() {
-        buildRenderInfo(ReforgedMaterials.aluminum).color(0xD6E1E4);
         buildRenderInfo(ReforgedMaterials.duralumin).color(0xD1F1C1);
         buildRenderInfo(ReforgedMaterials.electrical_copper).color(0xE0B475);
         buildRenderInfo(ReforgedMaterials.lavium).color(0x81B366);

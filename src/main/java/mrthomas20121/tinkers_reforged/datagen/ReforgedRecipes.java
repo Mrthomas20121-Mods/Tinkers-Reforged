@@ -11,7 +11,6 @@ import slimeknights.tconstruct.library.data.recipe.ICommonRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
-import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import javax.annotation.Nonnull;
@@ -30,17 +29,24 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         String meltingFolder = "melting/";
         String castingFolder = "casting/";
 
-        metalCasting(consumer, Resources.duralumin, Resources.duralumin_block.get(), Resources.duralumin_ingot.get(), Resources.duralumin_nugget.get(), castingFolder, "duralumin");
-        metalCasting(consumer, Resources.electrical_copper, Resources.electrical_copper_block.get(), Resources.electrical_copper_ingot.get(), Resources.electrical_copper_nugget.get(), castingFolder, "electrical_copper");
-        metalCasting(consumer, Resources.lavium, Resources.lavium_block.get(), Resources.lavium_ingot.get(), Resources.lavium_nugget.get(), castingFolder, "lavium");
-        metalCasting(consumer, Resources.qivium, Resources.qivium_block.get(), Resources.qivium_ingot.get(), Resources.qivium_nugget.get(), castingFolder, "qivium");
+        metalCasting(consumer, Resources.duralumin.asObject(), Resources.duralumin_block.get(), Resources.duralumin_ingot.get(), Resources.duralumin_nugget.get(), castingFolder, "duralumin");
+        metalCasting(consumer, Resources.electrical_copper.asObject(), Resources.electrical_copper_block.get(), Resources.electrical_copper_ingot.get(), Resources.electrical_copper_nugget.get(), castingFolder, "electrical_copper");
+        metalCasting(consumer, Resources.lavium.asObject(), Resources.lavium_block.get(), Resources.lavium_ingot.get(), Resources.lavium_nugget.get(), castingFolder, "lavium");
+        metalCasting(consumer, Resources.qivium.asObject(), Resources.qivium_block.get(), Resources.qivium_ingot.get(), Resources.qivium_nugget.get(), castingFolder, "qivium");
 
-        metalMelting(consumer, Resources.duralumin.get(), "duralumin", false, meltingFolder, false);
-        metalMelting(consumer, Resources.electrical_copper.get(), "electrical_copper", false, meltingFolder, false);
-        metalMelting(consumer, Resources.lavium.get(), "lavium", false, meltingFolder, false);
 
-        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, 1000, true, materialFolder+"lavium_");
-        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, 1000, true, materialFolder+"qivium_");
+        materialMeltingCasting(consumer, ReforgedMaterials.duralumin, Resources.duralumin.asObject(), materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterials.electrical_copper, Resources.electrical_copper.asObject(), materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterials.lavium, Resources.lavium.asObject(), materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterials.qivium, Resources.qivium.asObject(), materialFolder);
+
+        metalMelting(consumer, Resources.duralumin.getFluid(), "duralumin", false, meltingFolder, false);
+        metalMelting(consumer, Resources.electrical_copper.getFluid(), "electrical_copper", false, meltingFolder, false);
+        metalMelting(consumer, Resources.lavium.getFluid(), "lavium", false, meltingFolder, false);
+        metalMelting(consumer, Resources.qivium.getFluid(), "qivium", false, meltingFolder, false);
+
+        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, 500, false, materialFolder+"lavium_");
+        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, 500, true, materialFolder+"qivium_");
     }
 
     @Nonnull

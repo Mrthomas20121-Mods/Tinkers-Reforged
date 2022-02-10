@@ -1,13 +1,17 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.ReforgedFluid;
 import mrthomas20121.tinkers_reforged.init.Resources;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.fml.RegistryObject;
+import slimeknights.mantle.registration.object.FluidObject;
 
 public class ReforgedBlockStates extends BlockStateProvider {
 
@@ -18,11 +22,17 @@ public class ReforgedBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        blockWithItem(Resources.aluminum_ore);
         blockWithItem(Resources.aluminum_block);
         blockWithItem(Resources.duralumin_block);
         blockWithItem(Resources.electrical_copper_block);
         blockWithItem(Resources.lavium_block);
         blockWithItem(Resources.qivium_block);
+
+        fluid(Resources.duralumin);
+        fluid(Resources.electrical_copper);
+        fluid(Resources.lavium);
+        fluid(Resources.qivium);
     }
 
     public void blockWithItem(RegistryObject<? extends Block> registryObject) {
@@ -32,5 +42,10 @@ public class ReforgedBlockStates extends BlockStateProvider {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "block/" + id.getPath());
         itemModels().cubeAll(id.getPath(), textureLocation);
+    }
+
+    public void fluid(ReforgedFluid fluid) {
+        ResourceLocation name = fluid.getBlock().get().getRegistryName();
+        simpleBlock(fluid.getBlock().get(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+"_still")));
     }
 }

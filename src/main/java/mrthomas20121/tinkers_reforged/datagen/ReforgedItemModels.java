@@ -36,6 +36,11 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(Resources.qivium_dust, "item/generated");
         itemWithModel(Resources.qivium_ingot, "item/generated");
         itemWithModel(Resources.qivium_nugget, "item/generated");
+
+        itemWithModel(Resources.duralumin.getBucket(), "item/generated");
+        itemWithModel(Resources.electrical_copper.getBucket(), "item/generated");
+        itemWithModel(Resources.lavium.getBucket(), "item/generated");
+        itemWithModel(Resources.qivium.getBucket(), "item/generated");
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {

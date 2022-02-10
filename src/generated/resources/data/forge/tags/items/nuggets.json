@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:aluminum_nugget",
+    "tinkers_reforged:duralumin_nugget",
+    "tinkers_reforged:electrical_copper_nugget",
+    "tinkers_reforged:lavium_nugget",
+    "tinkers_reforged:qivium_nugget"
+  ]
+}

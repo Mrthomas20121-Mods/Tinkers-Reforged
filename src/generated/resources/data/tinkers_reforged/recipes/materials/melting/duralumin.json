@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:duralumin",
+  "temperature": 700,
+  "result": {
+    "fluid": "tinkers_reforged:duralumin",
+    "amount": 144
+  }
+}

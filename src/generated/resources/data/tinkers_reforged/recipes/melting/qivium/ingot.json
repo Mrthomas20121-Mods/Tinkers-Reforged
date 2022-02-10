@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/qivium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:qivium",
+    "amount": 144
+  },
+  "temperature": 1200,
+  "time": 72
+}

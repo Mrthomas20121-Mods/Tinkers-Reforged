@@ -15,10 +15,6 @@ public class ReforgedMaterialSpriteProvider extends AbstractMaterialSpriteProvid
 
     @Override
     protected void addAllMaterials() {
-        buildMaterial(ReforgedMaterials.aluminum)
-                .meleeHarvest()
-                .fallbacks("metal")
-                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF596466).addARGB(102, 0xFF6D7B7D).addARGB(140, 0xFF91A0A2).addARGB(178, 0xFFA8B5B7).addARGB(216, 0xFFBFCBCE).addARGB(255, 0xFFD6E1E4).build());
         buildMaterial(ReforgedMaterials.qivium)
                 .meleeHarvest()
                 .fallbacks("metal")

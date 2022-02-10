@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:plates/qivium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/qivium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:qivium",
+    "amount": 144
+  },
+  "temperature": 1200,
+  "time": 72
+}

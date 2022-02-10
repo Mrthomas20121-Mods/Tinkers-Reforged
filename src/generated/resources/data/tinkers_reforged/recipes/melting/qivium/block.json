@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/qivium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:qivium",
+    "amount": 1296
+  },
+  "temperature": 1200,
+  "time": 216
+}

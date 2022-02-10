@@ -7,6 +7,6 @@
     "fluid": "tinkers_reforged:electrical_copper",
     "amount": 144
   },
-  "temperature": 500,
-  "time": 50
+  "temperature": 800,
+  "time": 60
 }
