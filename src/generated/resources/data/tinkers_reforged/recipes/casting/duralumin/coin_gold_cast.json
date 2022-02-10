@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/duralumin",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/coin"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:duralumin",
+    "amount": 48
+  },
+  "result": {
+    "tag": "forge:coins/duralumin"
+  },
+  "cooling_time": 33
+}

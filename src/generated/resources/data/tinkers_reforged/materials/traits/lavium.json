@@ -2,6 +2,10 @@
   "perStat": {
     "tconstruct:head": [
       {
+        "name": "tinkers_reforged:ground_speed",
+        "level": 1
+      },
+      {
         "name": "tinkers_reforged:surface_curse",
         "level": 1
       }

@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/ingot"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "tinkers_reforged:electrical_copper",
+    "amount": 144
+  },
+  "result": "tinkers_reforged:electrical_copper_ingot",
+  "cooling_time": 50
+}

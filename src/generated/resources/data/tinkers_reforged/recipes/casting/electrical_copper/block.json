@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "tag": "tinkers_reforged:electrical_copper",
+    "amount": 1296
+  },
+  "result": "tinkers_reforged:electrical_copper_block",
+  "cooling_time": 150
+}

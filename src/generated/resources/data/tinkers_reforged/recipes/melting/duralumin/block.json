@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/duralumin"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:duralumin",
+    "amount": 1296
+  },
+  "temperature": 700,
+  "time": 171
+}

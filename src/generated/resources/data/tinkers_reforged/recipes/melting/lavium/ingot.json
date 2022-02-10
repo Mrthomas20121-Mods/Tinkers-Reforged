@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/lavium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:lavium",
+    "amount": 144
+  },
+  "temperature": 1200,
+  "time": 72
+}

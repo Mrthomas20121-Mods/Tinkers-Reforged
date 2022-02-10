@@ -8,6 +8,10 @@
     ],
     "tconstruct:extra": [
       {
+        "name": "tinkers_reforged:firestarter",
+        "level": 1
+      },
+      {
         "name": "tinkers_reforged:sunfire_blessing",
         "level": 1
       }

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/electrical_copper"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:electrical_copper",
+    "amount": 1296
+  },
+  "temperature": 500,
+  "time": 150
+}

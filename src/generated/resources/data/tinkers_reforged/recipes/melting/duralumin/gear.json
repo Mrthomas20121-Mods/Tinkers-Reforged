@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/duralumin",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/duralumin"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:duralumin",
+    "amount": 576
+  },
+  "temperature": 700,
+  "time": 114
+}

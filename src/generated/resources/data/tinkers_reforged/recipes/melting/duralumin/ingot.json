@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/duralumin"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:duralumin",
+    "amount": 144
+  },
+  "temperature": 700,
+  "time": 57
+}

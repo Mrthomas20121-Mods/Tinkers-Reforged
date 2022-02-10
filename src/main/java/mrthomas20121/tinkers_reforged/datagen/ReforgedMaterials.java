@@ -35,7 +35,6 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(aluminum, 2, ORDER_GENERAL, false, 0xD6E1E4);
         addMaterial(duralumin, 3, ORDER_HARVEST, false, 0xD1F1C1);
         addMaterial(electrical_copper, 3, ORDER_GENERAL, false, 0xE0B475);
         addMaterial(lavium, 4, ORDER_HARVEST, false, 0x81B366);
@@ -58,28 +57,19 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialTraits() {
             addTraits(qivium, HeadMaterialStats.ID, Traits.qivium_fireplace.get());
             addTraits(qivium, HandleMaterialStats.ID, Traits.qivium_firestarter.get());
-            addTraits(qivium, ExtraMaterialStats.ID, Traits.qivium_firestarter.get());
-            addTraits(qivium, ExtraMaterialStats.ID, Traits.qivium_sunfire_blessing.get());
+            addTraits(qivium, ExtraMaterialStats.ID, Traits.qivium_firestarter.get(), Traits.qivium_sunfire_blessing.get());
 
-            addTraits(lavium, HeadMaterialStats.ID, Traits.lavium_ground_speed.get());
+            addTraits(lavium, HeadMaterialStats.ID, Traits.lavium_ground_speed.get(), Traits.lavium_surface_curse.get());
             addTraits(lavium, HandleMaterialStats.ID, Traits.lavium_miner_blessing.get());
             addTraits(lavium, ExtraMaterialStats.ID, Traits.lavium_miner_blessing.get());
-            addTraits(lavium, HeadMaterialStats.ID, Traits.lavium_surface_curse.get());
 
             addTraits(duralumin, HeadMaterialStats.ID, Traits.duralumin_ultra_durable.get());
             addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_overused.get());
-            addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_heat_transfer.get());
-            addTraits(duralumin, ExtraMaterialStats.ID, Traits.duralumin_heat_transfer.get());
+            addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_heat_transfer.get(), Traits.duralumin_heat_transfer.get());
 
-            addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electrostatic.get());
+            addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electrostatic.get(), Traits.electrical_copper_electric_damage.get());
             addTraits(electrical_copper, HandleMaterialStats.ID, Traits.electrical_copper_odin_blessing.get());
-            addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
             addTraits(electrical_copper, ExtraMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
-
-            addTraits(aluminum, HeadMaterialStats.ID, Traits.aluminum_protective_layer.get());
-            addTraits(aluminum, HandleMaterialStats.ID, TinkerModifiers.lightweight.get());
-            addTraits(aluminum, HandleMaterialStats.ID, Traits.aluminum_metalic.get());
-            addTraits(aluminum, ExtraMaterialStats.ID, TinkerModifiers.lightweight.get());
         }
 
         @Nonnull
@@ -112,11 +102,6 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addMaterialStats(lavium,
                     new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
-                    ExtraMaterialStats.DEFAULT);
-
-            addMaterialStats(aluminum,
-                    new HeadMaterialStats(250, 6f, IRON, 2f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.10f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(duralumin,
