@@ -1,6 +1,8 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.CastItems;
+import mrthomas20121.tinkers_reforged.api.CastType;
 import mrthomas20121.tinkers_reforged.init.Resources;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
@@ -41,11 +43,23 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(Resources.electrical_copper.getBucket(), "item/generated");
         itemWithModel(Resources.lavium.getBucket(), "item/generated");
         itemWithModel(Resources.qivium.getBucket(), "item/generated");
+        itemWithModel(Resources.redstone.getBucket(), "item/generated");
+        itemWithModel(Resources.blazing_copper.getBucket(), "item/generated");
+
+        for(CastType type : CastType.values()) {
+            castModel(CastItems.casts.get(type), type);
+        }
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
+    }
+
+    public void castModel(RegistryObject<? extends Item> registryObject, CastType type) {
+        ResourceLocation id = registryObject.getId();
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/" + type.name().toLowerCase());
+        singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 }

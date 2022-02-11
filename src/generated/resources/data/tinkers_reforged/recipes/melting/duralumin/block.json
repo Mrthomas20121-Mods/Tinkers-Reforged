@@ -4,7 +4,7 @@
     "tag": "forge:storage_blocks/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:duralumin",
+    "fluid": "tinkers_reforged:molten_duralumin",
     "amount": 1296
   },
   "temperature": 700,

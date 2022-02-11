@@ -3,7 +3,7 @@
   "input": "tinkers_reforged:duralumin",
   "temperature": 700,
   "result": {
-    "fluid": "tinkers_reforged:duralumin",
+    "fluid": "tinkers_reforged:molten_duralumin",
     "amount": 144
   }
 }

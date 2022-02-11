@@ -4,7 +4,7 @@
     "tag": "tconstruct:casts/multi_use/ingot"
   },
   "fluid": {
-    "tag": "tinkers_reforged:electrical_copper",
+    "tag": "tinkers_reforged:molten_electrical_copper",
     "amount": 144
   },
   "result": "tinkers_reforged:electrical_copper_ingot",

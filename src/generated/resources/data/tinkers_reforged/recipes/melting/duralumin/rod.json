@@ -13,7 +13,7 @@
     "tag": "forge:rods/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:duralumin",
+    "fluid": "tinkers_reforged:molten_duralumin",
     "amount": 72
   },
   "temperature": 700,

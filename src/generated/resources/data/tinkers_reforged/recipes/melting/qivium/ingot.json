@@ -4,7 +4,7 @@
     "tag": "forge:ingots/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:qivium",
+    "fluid": "tinkers_reforged:molten_qivium",
     "amount": 144
   },
   "temperature": 1200,

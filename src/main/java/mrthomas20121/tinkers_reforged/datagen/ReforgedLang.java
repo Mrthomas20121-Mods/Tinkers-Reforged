@@ -1,12 +1,16 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.CastItems;
+import mrthomas20121.tinkers_reforged.api.CastType;
 import mrthomas20121.tinkers_reforged.api.ReforgedFluid;
 import mrthomas20121.tinkers_reforged.init.Resources;
 import mrthomas20121.tinkers_reforged.init.Traits;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fml.RegistryObject;
+import org.apache.commons.lang3.StringUtils;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 
@@ -43,15 +47,24 @@ public class ReforgedLang extends LanguageProvider {
         addItem(Resources.qivium_ingot, "Qivium Ingot");
         addItem(Resources.qivium_nugget, "Qivium Nugget");
 
+        addFluid(Resources.redstone, "Liquid Redstone");
         addFluid(Resources.duralumin, "Molten Duralumin");
         addFluid(Resources.electrical_copper, "Molten Electrical Copper");
         addFluid(Resources.lavium, "Molten Lavium");
         addFluid(Resources.qivium, "Molten Qivium");
+        addFluid(Resources.blazing_copper, "Blazing Copper");
 
+        add(Resources.redstone.getBucket().get(), "Redstone Bucket");
         add(Resources.duralumin.getBucket().get(), "Duralumin Bucket");
         add(Resources.electrical_copper.getBucket().get(), "Electrical Copper Bucket");
         add(Resources.lavium.getBucket().get(), "Lavium Bucket");
         add(Resources.qivium.getBucket().get(), "Qivium Bucket");
+        add(Resources.blazing_copper.getBucket().get(), "Blazing Copper Bucket");
+
+        for(CastType type: CastType.values()) {
+            Item item = CastItems.casts.get(type).get();
+            add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
+        }
 
         addMaterial(ReforgedMaterials.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "German metal");
         addMaterial(ReforgedMaterials.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
@@ -95,5 +108,18 @@ public class ReforgedLang extends LanguageProvider {
 
     public void addGroup(String value) {
         add(String.format("itemGroup.%s", TinkersReforged.MOD_ID), value);
+    }
+
+    public String capitalize(String input) {
+        if(input.contains("_")) {
+            String[] split = input.split("_");
+            StringBuilder output = new StringBuilder();
+            for(String s : split) {
+                output.append(StringUtils.capitalize(s));
+                output.append(" ");
+            }
+            return output.toString().trim();
+        }
+        return StringUtils.capitalize(input);
     }
 }

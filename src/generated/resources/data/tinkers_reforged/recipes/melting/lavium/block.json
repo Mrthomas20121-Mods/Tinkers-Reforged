@@ -4,7 +4,7 @@
     "tag": "forge:storage_blocks/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:lavium",
+    "fluid": "tinkers_reforged:molten_lavium",
     "amount": 1296
   },
   "temperature": 1200,

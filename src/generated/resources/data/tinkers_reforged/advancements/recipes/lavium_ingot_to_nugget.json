@@ -1,0 +1,43 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:lavium_nugget"
+          ]
+        },
+        "criteria": {
+          "has_ingot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "item": "tinkers_reforged:lavium_ingot"
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "tinkers_reforged:lavium_nugget"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ingot",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

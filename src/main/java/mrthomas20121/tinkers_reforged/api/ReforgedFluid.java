@@ -23,8 +23,8 @@ public class ReforgedFluid extends AbstractFluid {
                 .temperature(temp)
                 .sound(SoundEvents.BUCKET_FILL, SoundEvents.BUCKET_EMPTY));
 
-        block = BLOCKS.register(name, () -> new FlowingFluidBlock(stillFluid, AbstractBlock.Properties.of(Material.LAVA).noCollission().strength(100.0F).lightLevel((state) ->  light).noDrops()));
-        bucket = ITEMS.register(bucket(name), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(net.minecraft.item.Items.BUCKET).stacksTo(1).tab(Resources.group)));
+        block = Resources.BLOCKS.register(name, () -> new FlowingFluidBlock(stillFluid, AbstractBlock.Properties.of(Material.LAVA).noCollission().strength(100.0F).lightLevel((state) ->  light).noDrops()));
+        bucket = Resources.ITEMS.register(bucket(name), () -> new BucketItem(stillFluid, new Item.Properties().craftRemainder(net.minecraft.item.Items.BUCKET).stacksTo(1).tab(Resources.group)));
 
         properties.bucket(bucket).block(block).explosionResistance(1000f).tickRate(9);
 

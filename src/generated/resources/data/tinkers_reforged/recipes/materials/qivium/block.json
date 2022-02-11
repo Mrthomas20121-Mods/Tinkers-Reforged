@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/qivium"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:qivium",
+  "leftover": {
+    "tag": "forge:ingots/qivium"
+  }
+}

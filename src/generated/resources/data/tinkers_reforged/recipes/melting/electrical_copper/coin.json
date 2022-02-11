@@ -13,7 +13,7 @@
     "tag": "forge:coins/electrical_copper"
   },
   "result": {
-    "fluid": "tinkers_reforged:electrical_copper",
+    "fluid": "tinkers_reforged:molten_electrical_copper",
     "amount": 48
   },
   "temperature": 800,

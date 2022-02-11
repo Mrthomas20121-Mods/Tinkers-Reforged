@@ -3,7 +3,7 @@
   "input": "tinkers_reforged:qivium",
   "temperature": 1200,
   "result": {
-    "fluid": "tinkers_reforged:qivium",
+    "fluid": "tinkers_reforged:molten_qivium",
     "amount": 144
   }
 }

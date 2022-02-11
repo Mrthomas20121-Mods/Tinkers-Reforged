@@ -13,7 +13,7 @@
     "tag": "forge:plates/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:duralumin",
+    "fluid": "tinkers_reforged:molten_duralumin",
     "amount": 144
   },
   "temperature": 700,

@@ -1,0 +1,53 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ingots/tin",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "tag": "forge:ores/redstone"
+        },
+        "result": {
+          "fluid": "tinkers_reforged:molten_redstone",
+          "amount": 200
+        },
+        "temperature": 500,
+        "time": 75,
+        "byproducts": [
+          {
+            "fluid": "tconstruct:molten_tin",
+            "amount": 48
+          }
+        ]
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "tconstruct:ore_melting",
+        "ingredient": {
+          "tag": "forge:ores/redstone"
+        },
+        "result": {
+          "fluid": "tinkers_reforged:molten_redstone",
+          "amount": 200
+        },
+        "temperature": 500,
+        "time": 75
+      }
+    }
+  ]
+}

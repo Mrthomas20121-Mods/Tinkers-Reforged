@@ -4,7 +4,7 @@
     "tag": "forge:nuggets/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:duralumin",
+    "fluid": "tinkers_reforged:molten_duralumin",
     "amount": 16
   },
   "temperature": 700,

@@ -1,25 +1,20 @@
 package mrthomas20121.tinkers_reforged.api;
 
+import mrthomas20121.tinkers_reforged.TinkersReforged;
+import net.minecraft.fluid.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
-
-import java.util.ArrayList;
-import java.util.List;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class DeferredRegistrerFluid {
 
-    private static List<ReforgedFluid> fluids = new ArrayList<>();
+    public static DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, TinkersReforged.MOD_ID);
 
     public void register(IEventBus bus) {
-        fluids.forEach(reforgedFluid -> {
-            reforgedFluid.getFLUIDS().register(bus);
-            reforgedFluid.getBLOCKS().register(bus);
-            reforgedFluid.getITEMS().register(bus);
-        });
+        FLUIDS.register(bus);
     }
 
     public ReforgedFluid register(String key, int temp, int light) {
-        ReforgedFluid fluid = ReforgedFluid.register(key, temp, light);
-        fluids.add(fluid);
-        return fluid;
+        return ReforgedFluid.register(key, temp, light);
     }
 }

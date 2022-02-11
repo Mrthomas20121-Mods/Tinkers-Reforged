@@ -15,7 +15,6 @@ import slimeknights.mantle.registration.object.FluidObject;
 
 public class ReforgedBlockStates extends BlockStateProvider {
 
-
     public ReforgedBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, TinkersReforged.MOD_ID, exFileHelper);
     }
@@ -33,9 +32,11 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(Resources.electrical_copper);
         fluid(Resources.lavium);
         fluid(Resources.qivium);
+        fluid(Resources.blazing_copper);
+        fluid(Resources.redstone);
     }
 
-    public void blockWithItem(RegistryObject<? extends Block> registryObject) {
+    public void blockWithItem(RegistryObject<Block> registryObject) {
         //block model
         simpleBlock(registryObject.get());
         //itemblock model

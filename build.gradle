@@ -65,7 +65,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'tinkers_reforged', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
+            args '--mod', 'tinkers_reforged', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 tinkers_reforged {
@@ -106,7 +106,7 @@ repositories {
         url 'https://cdn.hrzn.studio/maven/'
     }
     maven {
-        name 'crafttweaker and jei'
+        name 'crafttweaker'
         url 'https://maven.blamejared.com'
     }
     maven {

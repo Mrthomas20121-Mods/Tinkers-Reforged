@@ -14,10 +14,6 @@ import slimeknights.mantle.registration.object.FluidObject;
 
 public abstract class AbstractFluid {
 
-    private DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, TinkersReforged.MOD_ID);
-    protected DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
-    protected DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TinkersReforged.MOD_ID);
-
     protected RegistryObject<ForgeFlowingFluid.Source> stillFluid;
     protected RegistryObject<ForgeFlowingFluid.Flowing> flowingFluid;
 
@@ -30,26 +26,14 @@ public abstract class AbstractFluid {
 
     protected AbstractFluid(String name, FluidAttributes.Builder attributes) {
 
-        stillFluid = FLUIDS.register(name, () -> new ForgeFlowingFluid.Source(properties));
-        flowingFluid = FLUIDS.register(flowing(name), () -> new ForgeFlowingFluid.Flowing(properties));
+        stillFluid = DeferredRegistrerFluid.FLUIDS.register(name, () -> new ForgeFlowingFluid.Source(properties));
+        flowingFluid = DeferredRegistrerFluid.FLUIDS.register(flowing(name), () -> new ForgeFlowingFluid.Flowing(properties));
 
         properties = new ForgeFlowingFluid.Properties(stillFluid, flowingFluid, attributes);
     }
 
     public Fluid getFluid() {
         return stillFluid.get().getFluid();
-    }
-
-    public DeferredRegister<Fluid> getFLUIDS() {
-        return FLUIDS;
-    }
-
-    public DeferredRegister<Block> getBLOCKS() {
-        return BLOCKS;
-    }
-
-    public DeferredRegister<Item> getITEMS() {
-        return ITEMS;
     }
 
     public FluidObject<ForgeFlowingFluid> asObject() {

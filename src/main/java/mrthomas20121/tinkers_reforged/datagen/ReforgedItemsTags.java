@@ -1,10 +1,13 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.CastItems;
+import mrthomas20121.tinkers_reforged.api.CastType;
 import mrthomas20121.tinkers_reforged.init.Resources;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
+import net.minecraft.data.TagsProvider;
 import net.minecraft.item.Item;
 import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
@@ -39,6 +42,8 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     public static final ITag.INamedTag<Item> ALUMINUM_INGOT = ItemTags.bind("forge:ingots/aluminum");
     public static final ITag.INamedTag<Item> ALUMINUM_DUST = ItemTags.bind("forge:dusts/aluminum");
     public static final ITag.INamedTag<Item> ALUMINUM_NUGGET = ItemTags.bind("forge:nuggets/aluminum");
+
+    public static final ITag.INamedTag<Item> ALUMINUM_CASTS = ItemTags.bind("tinkers_reforged:casts/aluminum");
 
     public ReforgedItemsTags(DataGenerator gen, BlockTagsProvider blockTagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(gen, blockTagsProvider, TinkersReforged.MOD_ID, existingFileHelper);
@@ -89,5 +94,13 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(ALUMINUM_INGOT).add(Resources.aluminum_ingot.get());
         tag(ALUMINUM_DUST).add(Resources.aluminum_dust.get());
         tag(ALUMINUM_NUGGET).add(Resources.aluminum_nugget.get());
+
+        TagsProvider.Builder<Item> builder = tag(ALUMINUM_CASTS);
+        for(CastType type: CastType.values()) {
+            Item cast = CastItems.casts.get(type).get();
+            builder.add(cast);
+            ITag.INamedTag<Item> castTag = ItemTags.bind(String.format("tconstruct:casts/multi_use/%s", type.name().toLowerCase()));
+            tag(castTag).add(cast);
+        }
     }
 }

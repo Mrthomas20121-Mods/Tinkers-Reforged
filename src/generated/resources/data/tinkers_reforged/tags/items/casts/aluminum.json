@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:cast_blank",
+    "tinkers_reforged:cast_bow_limb",
+    "tinkers_reforged:cast_bowstring",
+    "tinkers_reforged:cast_broad_axe_head",
+    "tinkers_reforged:cast_broad_blade",
+    "tinkers_reforged:cast_coin",
+    "tinkers_reforged:cast_gear",
+    "tinkers_reforged:cast_gem",
+    "tinkers_reforged:cast_hammer_head",
+    "tinkers_reforged:cast_ingot",
+    "tinkers_reforged:cast_large_plate",
+    "tinkers_reforged:cast_nugget",
+    "tinkers_reforged:cast_pickaxe_head",
+    "tinkers_reforged:cast_plate",
+    "tinkers_reforged:cast_repair_kit",
+    "tinkers_reforged:cast_rod",
+    "tinkers_reforged:cast_small_axe_head",
+    "tinkers_reforged:cast_small_blade",
+    "tinkers_reforged:cast_tool_binding",
+    "tinkers_reforged:cast_tool_handle",
+    "tinkers_reforged:cast_tough_handle",
+    "tinkers_reforged:cast_wire"
+  ]
+}

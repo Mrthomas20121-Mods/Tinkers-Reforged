@@ -13,7 +13,7 @@
     "tag": "forge:gears/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:duralumin",
+    "fluid": "tinkers_reforged:molten_duralumin",
     "amount": 576
   },
   "temperature": 700,

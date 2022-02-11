@@ -4,7 +4,7 @@
     "tag": "tconstruct:casts/multi_use/ingot"
   },
   "fluid": {
-    "tag": "tinkers_reforged:lavium",
+    "tag": "tinkers_reforged:molten_lavium",
     "amount": 144
   },
   "result": "tinkers_reforged:lavium_ingot",
