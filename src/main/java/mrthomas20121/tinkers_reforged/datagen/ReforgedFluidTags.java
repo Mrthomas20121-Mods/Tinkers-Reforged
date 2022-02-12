@@ -55,7 +55,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
                         Resources.qivium.getFlowingFluid().get()
                 );
         // water tag
-        tag(WATER).add(Resources.redstone.getFluid());
+        tag(WATER).add(Resources.redstone.getFluid(), Resources.redstone.getFlowingFluid().get());
 
         tag(REDSTONE).add(Resources.redstone.getFluid());
         tag(BLAZING_COPPER).add(Resources.blazing_copper.getFluid());

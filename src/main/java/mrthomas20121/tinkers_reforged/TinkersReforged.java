@@ -71,7 +71,7 @@ public class TinkersReforged {
 		DataGenerator gen = event.getGenerator();
 		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 		if (event.includeServer()) {
-			//gen.addProvider(new ReforgedLootTables(gen));
+			gen.addProvider(new ReforgedLootTables(gen));
 			AbstractMaterialDataProvider materials = new ReforgedMaterials(gen);
 			gen.addProvider(materials);
 			gen.addProvider(new ReforgedMaterials.ReforgedTraits(gen, materials));

@@ -16,8 +16,6 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-// taken from Materialis
-// https://github.com/RCXcrafter/Materialis/blob/6eb500bfe7968748b5bca654cc421bd43a333618/src/main/java/com/rcx/materialis/datagen/MaterialisLootTables.java#L22
 public class ReforgedLootTables extends LootTableProvider {
 
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> lootTables = ImmutableList.of(Pair.of(ReforgedBlocksLoot::new, LootParameterSets.BLOCK));

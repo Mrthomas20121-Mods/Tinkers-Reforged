@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_redstone"
+    "tinkers_reforged:molten_redstone",
+    "tinkers_reforged:molten_redstone_flowing"
   ]
 }
