@@ -19,6 +19,9 @@ public class ReforgedItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+        itemWithModel(Resources.venom_plate, "item/generated");
+
         itemWithModel(Resources.aluminum_dust, "item/generated");
         itemWithModel(Resources.aluminum_ingot, "item/generated");
         itemWithModel(Resources.aluminum_nugget, "item/generated");
@@ -39,12 +42,18 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(Resources.qivium_ingot, "item/generated");
         itemWithModel(Resources.qivium_nugget, "item/generated");
 
+        itemWithModel(Resources.gausum_dust, "item/generated");
+        itemWithModel(Resources.gausum_ingot, "item/generated");
+        itemWithModel(Resources.gausum_nugget, "item/generated");
+
         itemWithModel(Resources.duralumin.getBucket(), "item/generated");
         itemWithModel(Resources.electrical_copper.getBucket(), "item/generated");
         itemWithModel(Resources.lavium.getBucket(), "item/generated");
         itemWithModel(Resources.qivium.getBucket(), "item/generated");
         itemWithModel(Resources.redstone.getBucket(), "item/generated");
         itemWithModel(Resources.blazing_copper.getBucket(), "item/generated");
+        itemWithModel(Resources.lapis.getBucket(), "item/generated");
+        itemWithModel(Resources.gausum.getBucket(), "item/generated");
 
         for(CastType type : CastType.values()) {
             castModel(CastItems.casts.get(type), type);

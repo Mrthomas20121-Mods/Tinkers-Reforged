@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "fluid": {
+    "tag": "forge:molten_lapis",
+    "amount": 144
+  },
+  "result": "minecraft:lapis_lazuli",
+  "cooling_time": 53
+}

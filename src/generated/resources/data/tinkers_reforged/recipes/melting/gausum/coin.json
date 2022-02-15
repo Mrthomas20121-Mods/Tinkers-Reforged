@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/gausum",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/gausum"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_gausum",
+    "amount": 48
+  },
+  "temperature": 1200,
+  "time": 48
+}

@@ -25,6 +25,7 @@ public class ReforgedLang extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addGroup("Tinkers Reforged");
+        add(Resources.venom_plate.get(), "Venom Plate");
         addBlock(Resources.aluminum_block, "Aluminum Block");
         addBlock(Resources.aluminum_ore, "Aluminum Ore");
         addItem(Resources.aluminum_dust, "Aluminum Dust");
@@ -46,20 +47,28 @@ public class ReforgedLang extends LanguageProvider {
         addItem(Resources.qivium_dust, "Qivium Dust");
         addItem(Resources.qivium_ingot, "Qivium Ingot");
         addItem(Resources.qivium_nugget, "Qivium Nugget");
+        addBlock(Resources.gausum_block, "Gausum Block");
+        addItem(Resources.gausum_dust, "Gausum Dust");
+        addItem(Resources.gausum_ingot, "Gausum Ingot");
+        addItem(Resources.gausum_nugget, "Gausum Nugget");
 
         addFluid(Resources.redstone, "Liquid Redstone");
         addFluid(Resources.duralumin, "Molten Duralumin");
         addFluid(Resources.electrical_copper, "Molten Electrical Copper");
         addFluid(Resources.lavium, "Molten Lavium");
         addFluid(Resources.qivium, "Molten Qivium");
-        addFluid(Resources.blazing_copper, "Blazing Copper");
+        addFluid(Resources.blazing_copper, "Molten Blazing Copper");
+        addFluid(Resources.gausum, "Molten Gausum");
+        addFluid(Resources.lapis, "Molten Lapis");
 
-        add(Resources.redstone.getBucket().get(), "Redstone Bucket");
-        add(Resources.duralumin.getBucket().get(), "Duralumin Bucket");
-        add(Resources.electrical_copper.getBucket().get(), "Electrical Copper Bucket");
-        add(Resources.lavium.getBucket().get(), "Lavium Bucket");
-        add(Resources.qivium.getBucket().get(), "Qivium Bucket");
-        add(Resources.blazing_copper.getBucket().get(), "Blazing Copper Bucket");
+        add(Resources.redstone.getBucket().get(), "Liquid Redstone Bucket");
+        add(Resources.duralumin.getBucket().get(), "Molten Duralumin Bucket");
+        add(Resources.electrical_copper.getBucket().get(), "Molten Electrical Copper Bucket");
+        add(Resources.lavium.getBucket().get(), "Molten Lavium Bucket");
+        add(Resources.qivium.getBucket().get(), "Molten Qivium Bucket");
+        add(Resources.gausum.getBucket().get(), "Molten Gausum Bucket");
+        add(Resources.lapis.getBucket().get(), "Molten Lapis Bucket");
+        add(Resources.blazing_copper.getBucket().get(), "Molten Blazing Copper Bucket");
 
         for(CastType type: CastType.values()) {
             Item item = CastItems.casts.get(type).get();
@@ -69,7 +78,8 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "German metal");
         addMaterial(ReforgedMaterials.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
         addMaterial(ReforgedMaterials.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
-        addMaterial(ReforgedMaterials.qivium, "Qivium", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
+        addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
+        addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
 
         addModifier(Traits.duralumin_heat_transfer, "Heat Transfer", "Lava is transfering its softness to the block next to it", "Break a block faster if it is next to lava");
         addModifier(Traits.duralumin_overused, "Overused", "Speed go brr", "Better mining speed at low Durability.");
@@ -83,7 +93,7 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(Traits.qivium_fireplace, "Fireplace", "Burn witch!", "Deal more damage to entities on fire.");
         addModifier(Traits.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
         addModifier(Traits.qivium_sunfire_blessing, "Sunfire Blessing", "Fire is good.", "Your tool repair itself while you are on fire.");
-
+        addModifier(Traits.venomous, "Venomous", "Venom is dangerous, i wouldn't bond with it.", "Your tool apply poison on hit with duration that scale on your damage dealt.");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

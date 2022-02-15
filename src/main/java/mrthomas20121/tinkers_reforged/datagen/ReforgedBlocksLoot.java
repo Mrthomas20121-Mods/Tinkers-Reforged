@@ -28,5 +28,6 @@ public class ReforgedBlocksLoot extends BlockLootTables {
         this.dropSelf(Resources.electrical_copper_block.get());
         this.dropSelf(Resources.lavium_block.get());
         this.dropSelf(Resources.qivium_block.get());
+        this.dropSelf(Resources.gausum_block.get());
     }
 }

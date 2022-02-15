@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/gausum"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_gausum",
+    "amount": 144
+  },
+  "temperature": 1200,
+  "time": 72
+}

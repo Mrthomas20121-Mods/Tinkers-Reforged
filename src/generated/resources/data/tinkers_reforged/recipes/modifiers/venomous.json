@@ -1,0 +1,16 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    {
+      "item": "tinkers_reforged:venom_plate"
+    }
+  ],
+  "tools": {
+    "tag": "tconstruct:modifiable/melee"
+  },
+  "result": {
+    "name": "tinkers_reforged:venomous",
+    "level": 1
+  },
+  "max_level": 1
+}

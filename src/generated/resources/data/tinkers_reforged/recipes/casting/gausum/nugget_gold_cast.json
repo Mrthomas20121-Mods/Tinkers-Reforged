@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_gausum",
+    "amount": 16
+  },
+  "result": "tinkers_reforged:gausum_nugget",
+  "cooling_time": 24
+}

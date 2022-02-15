@@ -23,6 +23,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId electrical_copper = createMaterial("electrical_copper");
     public static final MaterialId lavium = createMaterial("lavium");
     public static final MaterialId qivium = createMaterial("qivium");
+    public static final MaterialId gausum = createMaterial("gausum");
 
     private static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));
@@ -38,6 +39,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(electrical_copper, 3, ORDER_GENERAL, false, 0xE0B475);
         addMaterial(lavium, 4, ORDER_HARVEST, false, 0x81B366);
         addMaterial(qivium, 4, ORDER_WEAPON, false, 0xFF8F84);
+        addMaterial(gausum, 4, ORDER_HARVEST, false, 0x75BCC6);
     }
 
     @Nonnull
@@ -64,11 +66,13 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
             addTraits(duralumin, HeadMaterialStats.ID, Traits.duralumin_ultra_durable.get());
             addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_overused.get());
-            addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_heat_transfer.get(), Traits.duralumin_heat_transfer.get());
+            addTraits(duralumin, ExtraMaterialStats.ID, Traits.duralumin_heat_transfer.get(), Traits.duralumin_overused.get());
 
             addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electrostatic.get(), Traits.electrical_copper_electric_damage.get());
             addTraits(electrical_copper, HandleMaterialStats.ID, Traits.electrical_copper_odin_blessing.get());
             addTraits(electrical_copper, ExtraMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
+
+            addTraits(gausum, HeadMaterialStats.ID, Traits.duralumin_heat_transfer.get());
         }
 
         @Nonnull
@@ -94,13 +98,18 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialStats() {
 
             addMaterialStats(qivium,
-                    new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
+                    new HeadMaterialStats(800, 7.4f, DIAMOND, 3f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(lavium,
                     new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(gausum,
+                    new HeadMaterialStats(800, 7.4f, DIAMOND, 3f),
+                    HandleMaterialStats.DEFAULT.withDurability(2f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(duralumin,

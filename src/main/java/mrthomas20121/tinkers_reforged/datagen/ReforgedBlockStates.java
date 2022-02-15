@@ -27,6 +27,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(Resources.electrical_copper_block);
         blockWithItem(Resources.lavium_block);
         blockWithItem(Resources.qivium_block);
+        blockWithItem(Resources.gausum_block);
 
         fluid(Resources.duralumin);
         fluid(Resources.electrical_copper);
@@ -34,6 +35,8 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(Resources.qivium);
         fluid(Resources.blazing_copper);
         fluid(Resources.redstone);
+        fluid(Resources.gausum);
+        fluid(Resources.lapis);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {

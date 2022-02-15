@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.trait.ModifierVenomous;
 import mrthomas20121.tinkers_reforged.trait.electrical_copper.*;
 import mrthomas20121.tinkers_reforged.trait.duralumin.*;
 import mrthomas20121.tinkers_reforged.trait.lavium.*;
@@ -28,4 +29,6 @@ public class Traits {
     public static RegistryObject<Modifier> duralumin_ultra_durable = MODIFIERS.register("ultra_durable", TraitUltraDurable::new);
     public static RegistryObject<Modifier> duralumin_overused = MODIFIERS.register("overused", TraitOverused::new);
     public static RegistryObject<Modifier> duralumin_heat_transfer = MODIFIERS.register("heat_transfer", TraitHeatTransfer::new);
+
+    public static RegistryObject<Modifier> venomous = MODIFIERS.register("venomous", ModifierVenomous::new);
 }

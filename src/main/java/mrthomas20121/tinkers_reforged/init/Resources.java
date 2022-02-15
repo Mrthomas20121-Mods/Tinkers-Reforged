@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.DeferredRegistrerFluid;
+import mrthomas20121.tinkers_reforged.api.Metal;
 import mrthomas20121.tinkers_reforged.api.ReforgedFluid;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -32,12 +33,16 @@ public class Resources {
         }
     };
 
+    public static ReforgedFluid lapis = FLUIDS.register("molten_lapis", 900, 12);
     public static ReforgedFluid redstone = FLUIDS.register("molten_redstone", 800, 0);
     public static ReforgedFluid blazing_copper = FLUIDS.register("molten_blazing_copper", 1700, 12);
     public static ReforgedFluid duralumin = FLUIDS.register("molten_duralumin", 1000, 7);
     public static ReforgedFluid electrical_copper = FLUIDS.register("molten_electrical_copper", 1100, 12);
     public static ReforgedFluid lavium = FLUIDS.register("molten_lavium", 1500, 12);
     public static ReforgedFluid qivium = FLUIDS.register("molten_qivium", 1500, 12);
+    public static ReforgedFluid gausum = FLUIDS.register("molten_gausum", 1500, 12);
+
+    public static RegistryObject<Item> venom_plate = ITEMS.register("venom_plate", Resources::registerItem);
 
     public static RegistryObject<Block> aluminum_ore = BLOCKS.register("aluminum_ore", Resources::registerOreBlock);
     public static RegistryObject<Item> aluminum__ore_item = ITEMS.register("aluminum_ore", () -> Resources.registerItemBlock(aluminum_ore.get()));
@@ -52,6 +57,12 @@ public class Resources {
     public static RegistryObject<Item> duralumin_ingot = ITEMS.register("duralumin_ingot", Resources::registerItem);
     public static RegistryObject<Item> duralumin_nugget = ITEMS.register("duralumin_nugget", Resources::registerItem);
     public static RegistryObject<Item> duralumin_dust = ITEMS.register("duralumin_dust", Resources::registerItem);
+
+    public static RegistryObject<Block> gausum_block = BLOCKS.register("gausum_block", Resources::registerMetalBlock);
+    public static RegistryObject<Item> gausum_item_block = ITEMS.register("gausum_block", () -> Resources.registerItemBlock(gausum_block.get()));
+    public static RegistryObject<Item> gausum_ingot = ITEMS.register("gausum_ingot", Resources::registerItem);
+    public static RegistryObject<Item> gausum_nugget = ITEMS.register("gausum_nugget", Resources::registerItem);
+    public static RegistryObject<Item> gausum_dust = ITEMS.register("gausum_dust", Resources::registerItem);
 
     public static RegistryObject<Block> electrical_copper_block = BLOCKS.register("electrical_copper_block", Resources::registerMetalBlock);
     public static RegistryObject<Item> electrical_copper_item_block = ITEMS.register("electrical_copper_block", () -> Resources.registerItemBlock(electrical_copper_block.get()));

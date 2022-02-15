@@ -17,7 +17,7 @@ public class TraitSunfireBlessing extends Modifier {
 
     @Override
     public void onInventoryTick(@Nonnull IModifierToolStack tool, int level, @Nonnull World world, @Nonnull LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, @Nonnull ItemStack stack) {
-        if(holder.isOnFire()) {
+        if(holder.isOnFire() && isSelected) {
             ToolDamageUtil.repair(tool, 10);
         }
     }

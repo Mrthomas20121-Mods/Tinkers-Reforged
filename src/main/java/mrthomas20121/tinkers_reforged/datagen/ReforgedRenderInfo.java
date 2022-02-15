@@ -18,6 +18,7 @@ public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
         buildRenderInfo(ReforgedMaterials.electrical_copper).color(0xE0B475);
         buildRenderInfo(ReforgedMaterials.lavium).color(0x81B366);
         buildRenderInfo(ReforgedMaterials.qivium).color(0xFF8F84);
+        buildRenderInfo(ReforgedMaterials.gausum).color(0x75BCC6);
     }
 
     @Nonnull
