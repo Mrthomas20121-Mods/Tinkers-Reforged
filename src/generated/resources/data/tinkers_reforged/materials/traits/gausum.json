@@ -1,10 +1,8 @@
 {
-  "perStat": {
-    "tconstruct:head": [
-      {
-        "name": "tinkers_reforged:heat_transfer",
-        "level": 1
-      }
-    ]
-  }
+  "default": [
+    {
+      "name": "tinkers_reforged:magical_shrink",
+      "level": 1
+    }
+  ]
 }

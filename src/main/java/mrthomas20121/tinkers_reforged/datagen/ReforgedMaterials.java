@@ -72,7 +72,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addTraits(electrical_copper, HandleMaterialStats.ID, Traits.electrical_copper_odin_blessing.get());
             addTraits(electrical_copper, ExtraMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
 
-            addTraits(gausum, HeadMaterialStats.ID, Traits.duralumin_heat_transfer.get());
+            addDefaultTraits(gausum, Traits.magical_shrink.get());
         }
 
         @Nonnull

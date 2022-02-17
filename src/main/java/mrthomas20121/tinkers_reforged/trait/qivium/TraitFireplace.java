@@ -15,14 +15,10 @@ public class TraitFireplace extends Modifier {
     }
 
     @Override
-    public float getEntityDamage(@Nonnull IModifierToolStack tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
-        LivingEntity entity = Objects.requireNonNull(context.getLivingTarget());
-        LivingEntity attacker = context.getAttacker();
-
-        if(entity.isOnFire()) {
-            return damage+(entity.getHealth()*0.013f);
+    public int afterEntityHit(@Nonnull IModifierToolStack tool, int level, @Nonnull ToolAttackContext context, float damageDealt) {
+        if(context.getLivingTarget() != null && context.getLivingTarget().isOnFire()) {
+            context.getAttacker().setSecondsOnFire(5*level);
         }
-
-        return damage;
+        return super.afterEntityHit(tool, level, context, damageDealt);
     }
 }

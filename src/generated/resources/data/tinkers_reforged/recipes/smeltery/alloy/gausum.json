@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tinkers_reforged:molten_blazing_copper",
+      "amount": 288
+    },
+    {
+      "name": "tconstruct:molten_debris",
+      "amount": 288
+    },
+    {
+      "name": "tinkers_reforged:molten_lapis",
+      "amount": 1296
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_gausum",
+    "amount": 288
+  },
+  "temperature": 1200
+}

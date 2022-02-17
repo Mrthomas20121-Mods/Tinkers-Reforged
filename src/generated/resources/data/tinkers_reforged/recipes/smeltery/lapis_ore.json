@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:ore_melting",
+  "ingredient": {
+    "tag": "forge:ores/lapis"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_lapis",
+    "amount": 144
+  },
+  "temperature": 600,
+  "time": 64
+}

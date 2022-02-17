@@ -14,8 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 
-import java.util.function.Supplier;
-
 public class ReforgedLang extends LanguageProvider {
 
     public ReforgedLang(DataGenerator gen) {
@@ -81,19 +79,20 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
         addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
 
+        addModifier(Traits.magical_shrink, "Magical Shrink", "it's magical!", "Low Damage but High Attack Speed");
         addModifier(Traits.duralumin_heat_transfer, "Heat Transfer", "Lava is transfering its softness to the block next to it", "Break a block faster if it is next to lava");
         addModifier(Traits.duralumin_overused, "Overused", "Speed go brr", "Better mining speed at low Durability.");
-        addModifier(Traits.duralumin_ultra_durable, "Overused", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
+        addModifier(Traits.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
         addModifier(Traits.electrical_copper_electric_damage, "Electrical Damage", "Burst of energy", "Careful! Your tool is full of energy and could damage you anytime.");
         addModifier(Traits.electrical_copper_odin_blessing, "Odin's Blessing", "Odin loved to tell people they were worthy", "Buff each stats by 1.5.");
         addModifier(Traits.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "You have a chance to \"Shock\" entity when attacking dealing 1/3 of their current hp as damage.");
         addModifier(Traits.lavium_ground_speed, "Ground Speed", "Great Speed sea level", "Mine Faster below sea level.");
         addModifier(Traits.lavium_miner_blessing, "Miner Blessing", "More Ores for the win", "Ore yield more drops.");
         addModifier(Traits.lavium_surface_curse, "Surface Curse", "Never lucky babyrage.", "Your tool lose durability on the surface.");
-        addModifier(Traits.qivium_fireplace, "Fireplace", "Burn witch!", "Deal more damage to entities on fire.");
+        addModifier(Traits.qivium_fireplace, "Fireplace", "This is fine.", "burn when attacking entities on fire.");
         addModifier(Traits.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
         addModifier(Traits.qivium_sunfire_blessing, "Sunfire Blessing", "Fire is good.", "Your tool repair itself while you are on fire.");
-        addModifier(Traits.venomous, "Venomous", "Venom is dangerous, i wouldn't bond with it.", "Your tool apply poison on hit with duration that scale on your damage dealt.");
+        addModifier(Traits.venomous, "Venomous", "Don't get too close to a spider, they could bite you.", "Your tool apply poison on hit with duration that scale on your damage dealt.");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

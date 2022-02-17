@@ -5,6 +5,7 @@ import mrthomas20121.tinkers_reforged.api.CastItems;
 import mrthomas20121.tinkers_reforged.api.CastType;
 import mrthomas20121.tinkers_reforged.init.Resources;
 import mrthomas20121.tinkers_reforged.init.Traits;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -50,10 +51,10 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         String materialFolder = "materials/";
         String modifierFolder = "modifiers/";
-        String meltingFolder = "melting/";
-        String castingFolder = "casting/";
+        String meltingFolder = "smeltery/melting/";
+        String castingFolder = "smeltery/casting/";
         String castFolder = "smeltery/casts/";
-        String alloyFolder = "alloy/";
+        String alloyFolder = "smeltery/alloy/";
 
         blockIngotNuggetCompression(consumer, "aluminum", Resources.aluminum_block.get().asItem(), Resources.aluminum_ingot.get(), Resources.aluminum_nugget.get());
         blockIngotNuggetCompression(consumer, "duralumin", Resources.duralumin_block.get().asItem(), Resources.duralumin_ingot.get(), Resources.duralumin_nugget.get());
@@ -93,20 +94,42 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         metalComposite(consumer, Items.REDSTONE, Resources.electrical_copper_dust.get(), Resources.blazing_copper.asObject(), true, materialFolder, "electrical_copper");
 
-        AlloyRecipeBuilder.alloy(Resources.duralumin.getStill(), FluidValues.INGOT*4)
+        AlloyRecipeBuilder.alloy(Resources.duralumin.getStill(), FluidValues.INGOT*5)
                 .addInput(TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenAluminum.get(), FluidValues.METAL_BLOCK)
-                .build(consumer, prefix(Resources.duralumin.getBlock(), alloyFolder));
+                .build(consumer, modResource(alloyFolder+"duralumin"));
 
-        AlloyRecipeBuilder.alloy(Resources.blazing_copper.getStill(), FluidValues.GLASS_BLOCK)
+        // get more duralumin if you add lapis
+        AlloyRecipeBuilder.alloy(Resources.duralumin.getStill(), FluidValues.INGOT*15)
+                .addInput(TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
+                .addInput(TinkerFluids.moltenAluminum.get(), FluidValues.METAL_BLOCK)
+                .addInput(Resources.lapis.getStill(), FluidValues.GEM_BLOCK)
+                .build(consumer, modResource(alloyFolder+"duralumin_lapis"));
+
+        AlloyRecipeBuilder.alloy(Resources.blazing_copper.getStill(), FluidValues.METAL_BLOCK)
                 .addInput(TinkerFluids.moltenCopper.get(), FluidValues.METAL_BLOCK)
                 .addInput(TinkerFluids.blazingBlood.get(), FluidValues.GLASS_BLOCK)
-                .build(consumer, prefix(Resources.blazing_copper.getBlock(), alloyFolder));
+                .build(consumer, modResource(alloyFolder+"blazing_copper"));
 
-        AlloyRecipeBuilder.alloy(Resources.electrical_copper.getStill(), FluidValues.INGOT)
+        AlloyRecipeBuilder.alloy(Resources.electrical_copper.getStill(), FluidValues.INGOT*2)
                 .addInput(Resources.blazing_copper.getStill(), FluidValues.INGOT*2)
                 .addInput(Resources.redstone.getStill(), FluidValues.GLASS_BLOCK)
-                .build(consumer, prefix(Resources.electrical_copper.getBlock(), alloyFolder));
+                .build(consumer, modResource(alloyFolder+"electrical_copper"));
+
+        AlloyRecipeBuilder.alloy(Resources.gausum.getStill(), FluidValues.INGOT*2)
+                .addInput(Resources.blazing_copper.getStill(), FluidValues.INGOT*2)
+                .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT*2)
+                .addInput(Resources.lapis.getStill(), FluidValues.GEM_BLOCK)
+                .build(consumer, modResource(alloyFolder+"gausum"));
+
+        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.STORAGE_BLOCKS_LAPIS), Resources.lapis.getStill(), FluidValues.GEM_BLOCK).build(consumer, modResource(meltingFolder+"lapis_block"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.GEMS_LAPIS), Resources.lapis.getStill(), FluidValues.GEM).build(consumer, modResource(meltingFolder+"lapis_gem"));
+        oreMelting(consumer, Resources.lapis.getStill(), FluidValues.INGOT, "ores/lapis", 1.2f, "smeltery/lapis_ore", false);
+
+        ItemCastingRecipeBuilder.basinRecipe(Blocks.LAPIS_BLOCK)
+                .setFluidAndTime(Resources.lapis.asObject(), true, FluidValues.METAL_BLOCK)
+                .setSwitchSlots()
+                .build(consumer, modResource(castFolder+"lapis_block"));
 
         ItemCastingRecipeBuilder.tableRecipe(CastItems.casts.get(CastType.blank).get())
                 .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
@@ -126,7 +149,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         MeltingRecipeBuilder.melting(Ingredient.of(Items.REDSTONE_BLOCK), new FluidStack(Resources.redstone.getStill(), 900), 700, 50).build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/redstone_block"));
         oreMelting(consumer, Resources.redstone.getStill(), 200, "ores/redstone", 1.5f, "smeltery/redstone_ore", false, Byproduct.TIN);
 
-        MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(Resources.blazing_copper.getStill(), 50)), 150, 1500).build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/fuel/blazing_copper_fuel"));
+        MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(Resources.blazing_copper.getStill(), 50)), 150, 1500).build(consumer, modResource("smeltery/fuel/blazing_copper_fuel"));
 
         addCast(consumer, CastType.ingot, Tags.Items.INGOTS, castFolder);
         addCast(consumer, CastType.nugget, Tags.Items.NUGGETS, castFolder);

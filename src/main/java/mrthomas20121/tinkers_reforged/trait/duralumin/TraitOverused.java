@@ -17,7 +17,7 @@ public class TraitOverused extends Modifier {
     @Override
     public void onBreakSpeed(@Nonnull IModifierToolStack tool, int level, @Nonnull PlayerEvent.BreakSpeed event, @Nonnull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
         float bonusSpeed = getBonusSpeed(tool);
-        event.setNewSpeed(event.getNewSpeed()+bonusSpeed);
+        event.setNewSpeed(event.getNewSpeed()+bonusSpeed*level);
     }
 
     private float getBonusSpeed(@Nonnull IModifierToolStack tool) {

@@ -86,8 +86,8 @@
   "modifier.tinkers_reforged.electrostatic.description": "You have a chance to \"Shock\" entity when attacking dealing 1/3 of their current hp as damage.",
   "modifier.tinkers_reforged.electrostatic.flavor": "Shocking isn't it?",
   "modifier.tinkers_reforged.fireplace": "Fireplace",
-  "modifier.tinkers_reforged.fireplace.description": "Deal more damage to entities on fire.",
-  "modifier.tinkers_reforged.fireplace.flavor": "Burn witch!",
+  "modifier.tinkers_reforged.fireplace.description": "burn when attacking entities on fire.",
+  "modifier.tinkers_reforged.fireplace.flavor": "This is fine.",
   "modifier.tinkers_reforged.firestarter": "Firestarter",
   "modifier.tinkers_reforged.firestarter.description": "Attacks increases fire duration.",
   "modifier.tinkers_reforged.firestarter.flavor": "More Fire!",
@@ -97,6 +97,9 @@
   "modifier.tinkers_reforged.heat_transfer": "Heat Transfer",
   "modifier.tinkers_reforged.heat_transfer.description": "Break a block faster if it is next to lava",
   "modifier.tinkers_reforged.heat_transfer.flavor": "Lava is transfering its softness to the block next to it",
+  "modifier.tinkers_reforged.magical_shrink": "Magical Shrink",
+  "modifier.tinkers_reforged.magical_shrink.description": "Low Damage but High Attack Speed",
+  "modifier.tinkers_reforged.magical_shrink.flavor": "it's magical!",
   "modifier.tinkers_reforged.miner_blessing": "Miner Blessing",
   "modifier.tinkers_reforged.miner_blessing.description": "Ore yield more drops.",
   "modifier.tinkers_reforged.miner_blessing.flavor": "More Ores for the win",
@@ -112,10 +115,10 @@
   "modifier.tinkers_reforged.surface_curse": "Surface Curse",
   "modifier.tinkers_reforged.surface_curse.description": "Your tool lose durability on the surface.",
   "modifier.tinkers_reforged.surface_curse.flavor": "Never lucky babyrage.",
-  "modifier.tinkers_reforged.ultra_durable": "Overused",
+  "modifier.tinkers_reforged.ultra_durable": "Ultra Durable",
   "modifier.tinkers_reforged.ultra_durable.description": "Your tool last longer most of the time.",
   "modifier.tinkers_reforged.ultra_durable.flavor": "Brought back Duritos from Tinkers 1.12",
   "modifier.tinkers_reforged.venomous": "Venomous",
   "modifier.tinkers_reforged.venomous.description": "Your tool apply poison on hit with duration that scale on your damage dealt.",
-  "modifier.tinkers_reforged.venomous.flavor": "Venom is dangerous, i wouldn't bond with it."
+  "modifier.tinkers_reforged.venomous.flavor": "Don't get too close to a spider, they could bite you."
 }
