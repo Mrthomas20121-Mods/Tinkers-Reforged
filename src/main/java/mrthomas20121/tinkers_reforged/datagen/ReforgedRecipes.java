@@ -145,9 +145,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         ingotCasting(consumer, Resources.lapis.asObject(), true, Items.LAPIS_LAZULI, castFolder+"lapis_lazuli_gem");
 
         MeltingRecipeBuilder.melting(Ingredient.of(ReforgedItemsTags.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get().getFluid(), FluidValues.INGOT), 700, 50).build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.REDSTONE), new FluidStack(Resources.redstone.getStill(), 100), 700, 50).build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/redstone_dust"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.REDSTONE_BLOCK), new FluidStack(Resources.redstone.getStill(), 900), 700, 50).build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/redstone_block"));
-        oreMelting(consumer, Resources.redstone.getStill(), 200, "ores/redstone", 1.5f, "smeltery/redstone_ore", false, Byproduct.TIN);
 
         MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(Resources.blazing_copper.getStill(), 50)), 150, 1500).build(consumer, modResource("smeltery/fuel/blazing_copper_fuel"));
 

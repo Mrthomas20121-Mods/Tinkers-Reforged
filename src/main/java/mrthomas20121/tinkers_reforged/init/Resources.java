@@ -12,11 +12,13 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class Resources {
 
@@ -34,7 +36,7 @@ public class Resources {
     };
 
     public static ReforgedFluid lapis = FLUIDS.register("molten_lapis", 900, 12);
-    public static ReforgedFluid redstone = FLUIDS.register("molten_redstone", 800, 0);
+    public static ReforgedFluid redstone = registerIf("thermal", "molten_redstone", 800, 0);
     public static ReforgedFluid blazing_copper = FLUIDS.register("molten_blazing_copper", 1700, 12);
     public static ReforgedFluid duralumin = FLUIDS.register("molten_duralumin", 1000, 7);
     public static ReforgedFluid electrical_copper = FLUIDS.register("molten_electrical_copper", 1100, 12);
@@ -96,5 +98,13 @@ public class Resources {
 
     public static Block registerMetalBlock() {
         return new Block(AbstractBlock.Properties.of(Material.METAL).strength(2.5F).sound(SoundType.METAL));
+    }
+
+    @Nullable
+    public static ReforgedFluid registerIf(String mod, String name, int temp, int light) {
+        if(!ModList.get().isLoaded(mod)) {
+            return FLUIDS.register(name, temp, light);
+        }
+        return null;
     }
 }

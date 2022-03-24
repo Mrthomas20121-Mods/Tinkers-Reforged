@@ -1,0 +1,47 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+		{
+		  "value": {
+			"modid": "thermal",
+			"type": "forge:mod_loaded"
+		  },
+		  "type": "forge:not"
+		}
+	  ],
+      "recipe": {
+		  "type": "tconstruct:melting",
+		  "ingredient": {
+			"item": "minecraft:redstone"
+		  },
+		  "result": {
+			"fluid": "tinkers_reforged:molten_redstone",
+			"amount": 100
+		  },
+		  "temperature": 700,
+		  "time": 50
+		}
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+		  "type": "tconstruct:melting",
+		  "ingredient": {
+			"item": "minecraft:redstone"
+		  },
+		  "result": {
+			"fluid": "thermal:redstone",
+			"amount": 100
+		  },
+		  "temperature": 700,
+		  "time": 50
+		}
+    }
+  ]
+}
