@@ -21,6 +21,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final ITag.INamedTag<Fluid> BLAZING_COPPER = FluidTags.bind("forge:molten_blazing_copper");
     public static final ITag.INamedTag<Fluid> LAPIS = FluidTags.bind("forge:molten_lapis");
     public static final ITag.INamedTag<Fluid> GAUSUM = FluidTags.bind("forge:molten_gausum");
+    public static final ITag.INamedTag<Fluid> REDSTONE = FluidTags.bind("forge:redstone");
 
     // tinkers reforged tags
     public static final ITag.INamedTag<Fluid> DURALUMIN_ = FluidTags.bind("tinkers_reforged:molten_duralumin");
