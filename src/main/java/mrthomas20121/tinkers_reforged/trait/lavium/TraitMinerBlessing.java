@@ -1,13 +1,8 @@
 package mrthomas20121.tinkers_reforged.trait.lavium;
 
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootContext;
-import net.minecraft.loot.LootParameterSet;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.LootTableManager;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 import slimeknights.tconstruct.library.modifiers.Modifier;
@@ -15,8 +10,6 @@ import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.nbt.IModifierToolStack;
 
 import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Objects;
 
 public class TraitMinerBlessing extends Modifier {
 
@@ -27,19 +20,14 @@ public class TraitMinerBlessing extends Modifier {
     @Override
     public void afterBlockBreak(@Nonnull IModifierToolStack tool, int level, @Nonnull ToolHarvestContext context) {
         if(context.isEffective()) {
-            BlockState state = context.getState();
-            ResourceLocation name = Objects.requireNonNull(state.getBlock().getRegistryName());
-            if(name.getPath().contains("ore")) {
-                ResourceLocation loot = Objects.requireNonNull(state.getBlock().getLootTable());
-                ServerWorld world = context.getWorld();
-                if(!world.isClientSide()) {
-                    LootTableManager manager = world.getServer().getLootTables();
-                    LootTable table = manager.get(loot);
-                    List<ItemStack> stackList = table.getRandomItems(new LootContext.Builder(world).withRandom(world.random).create(new LootParameterSet.Builder().build()));
-                    BlockPos pos = context.getPos();
-                    for(ItemStack item: stackList) {
-                        world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), item));
-                    }
+            ServerWorld world = context.getWorld();
+            if(!world.isClientSide()) {
+                BlockPos pos = context.getPos();
+                if(RANDOM.nextFloat() > 0.1f) {
+                    world.addFreshEntity(new ItemEntity(world, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, new ItemStack(Items.CHARCOAL)));
+                }
+                else if(RANDOM.nextFloat() > 0.2f) {
+                    world.addFreshEntity(new ItemEntity(world, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, new ItemStack(Items.COAL)));
                 }
             }
         }
