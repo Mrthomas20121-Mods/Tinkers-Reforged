@@ -92,7 +92,6 @@ dependencies {
 }
 
 repositories {
-    mavenLocal()
     maven { // JEI
         name 'Prog Maven'
         url 'https://dvs1.progwml6.com/files/maven'
