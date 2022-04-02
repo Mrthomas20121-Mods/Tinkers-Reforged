@@ -87,7 +87,7 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(Traits.electrical_copper_odin_blessing, "Odin's Blessing", "Odin loved to tell people they were worthy", "Buff each stats by 1.5.");
         addModifier(Traits.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "You have a chance to \"Shock\" entity when attacking dealing 1/3 of their current hp as damage.");
         addModifier(Traits.lavium_ground_speed, "Ground Speed", "Great Speed sea level", "Mine Faster below sea level.");
-        addModifier(Traits.lavium_miner_blessing, "Miner Blessing", "More Ores for the win", "Ore yield more drops.");
+        addModifier(Traits.lavium_miner_blessing, "Miner Blessing", "You never have enough coal", "Blocks destroyed have a chance of dropping coal/charcoal if you're below y 20.");
         addModifier(Traits.lavium_surface_curse, "Surface Curse", "Never lucky babyrage.", "Your tool lose durability on the surface.");
         addModifier(Traits.qivium_fireplace, "Fireplace", "This is fine.", "burn when attacking entities on fire.");
         addModifier(Traits.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");

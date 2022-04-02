@@ -23,11 +23,13 @@ public class TraitMinerBlessing extends Modifier {
             ServerWorld world = context.getWorld();
             if(!world.isClientSide()) {
                 BlockPos pos = context.getPos();
-                if(RANDOM.nextFloat() < 0.1f*level) {
-                    world.addFreshEntity(new ItemEntity(world, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, new ItemStack(Items.CHARCOAL, level)));
-                }
-                else if(RANDOM.nextFloat() < 0.2f*level) {
-                    world.addFreshEntity(new ItemEntity(world, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, new ItemStack(Items.COAL, level)));
+                if(pos.getY() < 20) {
+                    if(RANDOM.nextFloat() < 0.1f*level) {
+                        world.addFreshEntity(new ItemEntity(world, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, new ItemStack(Items.CHARCOAL, 1)));
+                    }
+                    else if(RANDOM.nextFloat() < 0.2f*level) {
+                        world.addFreshEntity(new ItemEntity(world, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, new ItemStack(Items.COAL, 1)));
+                    }
                 }
             }
         }
