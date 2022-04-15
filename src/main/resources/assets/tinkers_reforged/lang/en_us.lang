@@ -243,7 +243,7 @@ modifier.ref_glow.name=Glow
 modifier.ref_glow.name=§oYou Glow§r\nYou are glowing
 
 modifier.ref_tradeoff.name=Trade Off
-modifier.ref_tradeoff.name=§oHalf hp?§r\nHalf HP but your tool stats are doubled.
+modifier.ref_tradeoff.desc=§oHalf hp?§r\nHalf HP but your tool stats are doubled.
 
 modifier.ref_rose.name=Rose
 modifier.ref_rose.desc=§oRose are Red, Violet are blue§r\nGrass have a chance of dropping dye.
