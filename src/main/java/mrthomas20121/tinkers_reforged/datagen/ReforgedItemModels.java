@@ -1,15 +1,15 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.api.CastItems;
-import mrthomas20121.tinkers_reforged.api.CastType;
-import mrthomas20121.tinkers_reforged.init.Resources;
+import mrthomas20121.tinkers_reforged.init.CastType;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ReforgedItemModels extends ItemModelProvider {
 
@@ -20,44 +20,48 @@ public class ReforgedItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        itemWithModel(Resources.venom_plate, "item/generated");
+        itemWithModel(TinkersReforgedItems.aluminum_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.aluminum_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.aluminum_nugget, "item/generated");
 
-        itemWithModel(Resources.aluminum_dust, "item/generated");
-        itemWithModel(Resources.aluminum_ingot, "item/generated");
-        itemWithModel(Resources.aluminum_nugget, "item/generated");
+        itemWithModel(TinkersReforgedItems.duralumin_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.duralumin_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.duralumin_nugget, "item/generated");
 
-        itemWithModel(Resources.duralumin_dust, "item/generated");
-        itemWithModel(Resources.duralumin_ingot, "item/generated");
-        itemWithModel(Resources.duralumin_nugget, "item/generated");
+        itemWithModel(TinkersReforgedItems.electrical_copper_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.electrical_copper_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.electrical_copper_nugget, "item/generated");
 
-        itemWithModel(Resources.electrical_copper_dust, "item/generated");
-        itemWithModel(Resources.electrical_copper_ingot, "item/generated");
-        itemWithModel(Resources.electrical_copper_nugget, "item/generated");
+        itemWithModel(TinkersReforgedItems.lavium_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.lavium_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.lavium_nugget, "item/generated");
 
-        itemWithModel(Resources.lavium_dust, "item/generated");
-        itemWithModel(Resources.lavium_ingot, "item/generated");
-        itemWithModel(Resources.lavium_nugget, "item/generated");
+        itemWithModel(TinkersReforgedItems.qivium_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.qivium_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.qivium_nugget, "item/generated");
 
-        itemWithModel(Resources.qivium_dust, "item/generated");
-        itemWithModel(Resources.qivium_ingot, "item/generated");
-        itemWithModel(Resources.qivium_nugget, "item/generated");
+        itemWithModel(TinkersReforgedItems.gausum_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.gausum_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.gausum_nugget, "item/generated");
 
-        itemWithModel(Resources.gausum_dust, "item/generated");
-        itemWithModel(Resources.gausum_ingot, "item/generated");
-        itemWithModel(Resources.gausum_nugget, "item/generated");
-
-        itemWithModel(Resources.duralumin.getBucket(), "item/generated");
-        itemWithModel(Resources.electrical_copper.getBucket(), "item/generated");
-        itemWithModel(Resources.lavium.getBucket(), "item/generated");
-        itemWithModel(Resources.qivium.getBucket(), "item/generated");
-        itemWithModel(Resources.redstone.getBucket(), "item/generated");
-        itemWithModel(Resources.blazing_copper.getBucket(), "item/generated");
-        itemWithModel(Resources.lapis.getBucket(), "item/generated");
-        itemWithModel(Resources.gausum.getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.duralumin.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.electrical_copper.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.lavium.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.qivium.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.redstone.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.blazing_copper.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.lapis.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedFluids.gausum.get().getBucket(), "item/generated");
 
         for(CastType type : CastType.values()) {
-            castModel(CastItems.casts.get(type), type);
+            castModel(TinkersReforgedItems.casts.get(type), type);
         }
+    }
+
+    public void itemWithModel(Item item, String model) {
+        ResourceLocation id = item.getRegistryName();
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
+        singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {

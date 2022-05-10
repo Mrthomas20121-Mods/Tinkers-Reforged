@@ -1,16 +1,16 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.init.Resources;
-import net.minecraft.block.Block;
-import net.minecraft.data.loot.BlockLootTables;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class ReforgedBlocksLoot extends BlockLootTables {
+public class ReforgedBlocksLoot extends BlockLoot {
 
     @Nonnull
     @Override
@@ -22,12 +22,12 @@ public class ReforgedBlocksLoot extends BlockLootTables {
 
     @Override
     protected void addTables() {
-        this.dropSelf(Resources.aluminum_ore.get());
-        this.dropSelf(Resources.aluminum_block.get());
-        this.dropSelf(Resources.duralumin_block.get());
-        this.dropSelf(Resources.electrical_copper_block.get());
-        this.dropSelf(Resources.lavium_block.get());
-        this.dropSelf(Resources.qivium_block.get());
-        this.dropSelf(Resources.gausum_block.get());
+        this.dropSelf(TinkersReforgedBlocks.aluminum_ore.get());
+        this.dropSelf(TinkersReforgedBlocks.aluminum_block.get());
+        this.dropSelf(TinkersReforgedBlocks.duralumin_block.get());
+        this.dropSelf(TinkersReforgedBlocks.electrical_copper_block.get());
+        this.dropSelf(TinkersReforgedBlocks.lavium_block.get());
+        this.dropSelf(TinkersReforgedBlocks.qivium_block.get());
+        this.dropSelf(TinkersReforgedBlocks.gausum_block.get());
     }
 }

@@ -1,21 +1,20 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.init.Traits;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import javax.annotation.Nonnull;
 
-import static slimeknights.tconstruct.library.utils.HarvestLevels.*;
+import static net.minecraft.world.item.Tiers.DIAMOND;
 
 public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
@@ -35,11 +34,11 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(duralumin, 3, ORDER_HARVEST, false, 0xD1F1C1);
-        addMaterial(electrical_copper, 3, ORDER_GENERAL, false, 0xE0B475);
-        addMaterial(lavium, 4, ORDER_HARVEST, false, 0x81B366);
-        addMaterial(qivium, 4, ORDER_WEAPON, false, 0xFF8F84);
-        addMaterial(gausum, 4, ORDER_HARVEST, false, 0x75BCC6);
+        addMaterial(duralumin, 3, ORDER_HARVEST, false);
+        addMaterial(electrical_copper, 3, ORDER_GENERAL, false);
+        addMaterial(lavium, 4, ORDER_HARVEST, false);
+        addMaterial(qivium, 4, ORDER_WEAPON, false);
+        addMaterial(gausum, 4, ORDER_HARVEST, false);
     }
 
     @Nonnull
@@ -56,23 +55,23 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-            addTraits(qivium, HeadMaterialStats.ID, Traits.qivium_fireplace.get());
-            addTraits(qivium, HandleMaterialStats.ID, Traits.qivium_firestarter.get());
-            addTraits(qivium, ExtraMaterialStats.ID, Traits.qivium_firestarter.get(), Traits.qivium_sunfire_blessing.get());
+            addTraits(qivium, HeadMaterialStats.ID, TinkersReforgedModifiers.qivium_fireplace);
+            addTraits(qivium, HandleMaterialStats.ID, TinkersReforgedModifiers.qivium_firestarter);
+            addTraits(qivium, ExtraMaterialStats.ID, TinkersReforgedModifiers.qivium_firestarter, TinkersReforgedModifiers.qivium_sunfire_blessing);
 
-            addTraits(lavium, HeadMaterialStats.ID, Traits.lavium_ground_speed.get(), Traits.lavium_surface_curse.get());
-            addTraits(lavium, HandleMaterialStats.ID, Traits.lavium_miner_blessing.get());
-            addTraits(lavium, ExtraMaterialStats.ID, Traits.lavium_miner_blessing.get());
+            addTraits(lavium, HeadMaterialStats.ID, TinkersReforgedModifiers.lavium_ground_speed, TinkersReforgedModifiers.lavium_surface_curse);
+            addTraits(lavium, HandleMaterialStats.ID, TinkersReforgedModifiers.lavium_miner_blessing);
+            addTraits(lavium, ExtraMaterialStats.ID, TinkersReforgedModifiers.lavium_miner_blessing);
 
-            addTraits(duralumin, HeadMaterialStats.ID, Traits.duralumin_ultra_durable.get());
-            addTraits(duralumin, HandleMaterialStats.ID, Traits.duralumin_overused.get());
-            addTraits(duralumin, ExtraMaterialStats.ID, Traits.duralumin_heat_transfer.get(), Traits.duralumin_overused.get());
+            addTraits(duralumin, HeadMaterialStats.ID, TinkersReforgedModifiers.duralumin_ultra_durable);
+            addTraits(duralumin, HandleMaterialStats.ID, TinkersReforgedModifiers.duralumin_overused);
+            addTraits(duralumin, ExtraMaterialStats.ID, TinkersReforgedModifiers.duralumin_heat_transfer, TinkersReforgedModifiers.duralumin_overused);
 
-            addTraits(electrical_copper, HeadMaterialStats.ID, Traits.electrical_copper_electrostatic.get(), Traits.electrical_copper_electric_damage.get());
-            addTraits(electrical_copper, HandleMaterialStats.ID, Traits.electrical_copper_odin_blessing.get());
-            addTraits(electrical_copper, ExtraMaterialStats.ID, Traits.electrical_copper_electric_damage.get());
+            addTraits(electrical_copper, HeadMaterialStats.ID, TinkersReforgedModifiers.electrical_copper_electrostatic, TinkersReforgedModifiers.electrical_copper_electric_damage);
+            addTraits(electrical_copper, HandleMaterialStats.ID, TinkersReforgedModifiers.electrical_copper_odin_blessing);
+            addTraits(electrical_copper, ExtraMaterialStats.ID, TinkersReforgedModifiers.electrical_copper_electric_damage);
 
-            addDefaultTraits(gausum, Traits.magical_shrink.get());
+            addDefaultTraits(gausum, TinkersReforgedModifiers.magical_shrink);
         }
 
         @Nonnull

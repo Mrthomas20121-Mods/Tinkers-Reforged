@@ -2,23 +2,18 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.CastItems;
-import mrthomas20121.tinkers_reforged.api.CastType;
+import mrthomas20121.tinkers_reforged.init.CastType;
 import mrthomas20121.tinkers_reforged.init.Resources;
-import mrthomas20121.tinkers_reforged.init.Traits;
-import net.minecraft.block.Blocks;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import net.minecraft.data.*;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.ITag;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fluids.FluidStack;
-import slimeknights.mantle.recipe.FluidIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
@@ -32,7 +27,6 @@ import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.shared.TinkerMaterials;
-import slimeknights.tconstruct.smeltery.data.Byproduct;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
@@ -47,7 +41,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
     }
 
     @Override
-    protected void buildShapelessRecipes(@Nonnull Consumer<IFinishedRecipe> consumer) {
+    protected void buildCraftingRecipes(@Nonnull Consumer<FinishedRecipe> consumer) {
 
         String materialFolder = "materials/";
         String modifierFolder = "modifiers/";
@@ -170,7 +164,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         addCast(consumer, CastType.tool_handle, TinkerToolParts.toolHandle.get(), castFolder);
         addCast(consumer, CastType.tough_handle, TinkerToolParts.toughHandle.get(), castFolder);
 
-        ModifierRecipeBuilder.modifier(Traits.venomous.get())
+        ModifierRecipeBuilder.modifier(TinkersReforgedModifiers.venomous.get())
                 .addInput(Ingredient.of(new ItemStack(Resources.venom_plate.get(), 10)))
                 .addSalvage(CastItems.casts.get(CastType.blank).get(), 1)
                 .setMaxLevel(1)

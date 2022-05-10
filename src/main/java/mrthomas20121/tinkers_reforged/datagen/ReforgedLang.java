@@ -2,17 +2,17 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.CastItems;
-import mrthomas20121.tinkers_reforged.api.CastType;
-import mrthomas20121.tinkers_reforged.api.ReforgedFluid;
-import mrthomas20121.tinkers_reforged.init.Resources;
-import mrthomas20121.tinkers_reforged.init.Traits;
+import mrthomas20121.tinkers_reforged.init.CastType;
+import mrthomas20121.tinkers_reforged.init.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.apache.commons.lang3.StringUtils;
+import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 public class ReforgedLang extends LanguageProvider {
 
@@ -23,50 +23,49 @@ public class ReforgedLang extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addGroup("Tinkers Reforged");
-        add(Resources.venom_plate.get(), "Venom Plate");
-        addBlock(Resources.aluminum_block, "Aluminum Block");
-        addBlock(Resources.aluminum_ore, "Aluminum Ore");
-        addItem(Resources.aluminum_dust, "Aluminum Dust");
-        addItem(Resources.aluminum_ingot, "Aluminum Ingot");
-        addItem(Resources.aluminum_nugget, "Aluminum Nugget");
-        addBlock(Resources.duralumin_block, "Duralumin Block");
-        addItem(Resources.duralumin_dust, "Duralumin Dust");
-        addItem(Resources.duralumin_ingot, "Duralumin Ingot");
-        addItem(Resources.duralumin_nugget, "Duralumin Nugget");
-        addBlock(Resources.electrical_copper_block, "Electrical Copper Block");
-        addItem(Resources.electrical_copper_dust, "Electrical Copper Dust");
-        addItem(Resources.electrical_copper_ingot, "Electrical Copper Ingot");
-        addItem(Resources.electrical_copper_nugget, "Electrical Copper Nugget");
-        addBlock(Resources.lavium_block, "Lavium Block");
-        addItem(Resources.lavium_dust, "Lavium Dust");
-        addItem(Resources.lavium_ingot, "Lavium Ingot");
-        addItem(Resources.lavium_nugget, "Lavium Nugget");
-        addBlock(Resources.qivium_block, "Qivium Block");
-        addItem(Resources.qivium_dust, "Qivium Dust");
-        addItem(Resources.qivium_ingot, "Qivium Ingot");
-        addItem(Resources.qivium_nugget, "Qivium Nugget");
-        addBlock(Resources.gausum_block, "Gausum Block");
-        addItem(Resources.gausum_dust, "Gausum Dust");
-        addItem(Resources.gausum_ingot, "Gausum Ingot");
-        addItem(Resources.gausum_nugget, "Gausum Nugget");
+        addBlock(TinkersReforgedBlocks.aluminum_block, "Aluminum Block");
+        addBlock(TinkersReforgedBlocks.aluminum_ore, "Aluminum Ore");
+        addItem(TinkersReforgedItems.aluminum_dust, "Aluminum Dust");
+        addItem(TinkersReforgedItems.aluminum_ingot, "Aluminum Ingot");
+        addItem(TinkersReforgedItems.aluminum_nugget, "Aluminum Nugget");
+        addBlock(TinkersReforgedBlocks.duralumin_block, "Duralumin Block");
+        addItem(TinkersReforgedItems.duralumin_dust, "Duralumin Dust");
+        addItem(TinkersReforgedItems.duralumin_ingot, "Duralumin Ingot");
+        addItem(TinkersReforgedItems.duralumin_nugget, "Duralumin Nugget");
+        addBlock(TinkersReforgedBlocks.electrical_copper_block, "Electrical Copper Block");
+        addItem(TinkersReforgedItems.electrical_copper_dust, "Electrical Copper Dust");
+        addItem(TinkersReforgedItems.electrical_copper_ingot, "Electrical Copper Ingot");
+        addItem(TinkersReforgedItems.electrical_copper_nugget, "Electrical Copper Nugget");
+        addBlock(TinkersReforgedBlocks.lavium_block, "Lavium Block");
+        addItem(TinkersReforgedItems.lavium_dust, "Lavium Dust");
+        addItem(TinkersReforgedItems.lavium_ingot, "Lavium Ingot");
+        addItem(TinkersReforgedItems.lavium_nugget, "Lavium Nugget");
+        addBlock(TinkersReforgedBlocks.qivium_block, "Qivium Block");
+        addItem(TinkersReforgedItems.qivium_dust, "Qivium Dust");
+        addItem(TinkersReforgedItems.qivium_ingot, "Qivium Ingot");
+        addItem(TinkersReforgedItems.qivium_nugget, "Qivium Nugget");
+        addBlock(TinkersReforgedBlocks.gausum_block, "Gausum Block");
+        addItem(TinkersReforgedItems.gausum_dust, "Gausum Dust");
+        addItem(TinkersReforgedItems.gausum_ingot, "Gausum Ingot");
+        addItem(TinkersReforgedItems.gausum_nugget, "Gausum Nugget");
 
-        addFluid(Resources.redstone, "Liquid Redstone");
-        addFluid(Resources.duralumin, "Molten Duralumin");
-        addFluid(Resources.electrical_copper, "Molten Electrical Copper");
-        addFluid(Resources.lavium, "Molten Lavium");
-        addFluid(Resources.qivium, "Molten Qivium");
-        addFluid(Resources.blazing_copper, "Molten Blazing Copper");
-        addFluid(Resources.gausum, "Molten Gausum");
-        addFluid(Resources.lapis, "Molten Lapis");
+        addFluid(TinkersReforgedFluids.redstone, "Liquid Redstone");
+        addFluid(TinkersReforgedFluids.duralumin, "Molten Duralumin");
+        addFluid(TinkersReforgedFluids.electrical_copper, "Molten Electrical Copper");
+        addFluid(TinkersReforgedFluids.lavium, "Molten Lavium");
+        addFluid(TinkersReforgedFluids.qivium, "Molten Qivium");
+        addFluid(TinkersReforgedFluids.blazing_copper, "Molten Blazing Copper");
+        addFluid(TinkersReforgedFluids.gausum, "Molten Gausum");
+        addFluid(TinkersReforgedFluids.lapis, "Molten Lapis");
 
-        add(Resources.redstone.getBucket().get(), "Liquid Redstone Bucket");
-        add(Resources.duralumin.getBucket().get(), "Molten Duralumin Bucket");
-        add(Resources.electrical_copper.getBucket().get(), "Molten Electrical Copper Bucket");
-        add(Resources.lavium.getBucket().get(), "Molten Lavium Bucket");
-        add(Resources.qivium.getBucket().get(), "Molten Qivium Bucket");
-        add(Resources.gausum.getBucket().get(), "Molten Gausum Bucket");
-        add(Resources.lapis.getBucket().get(), "Molten Lapis Bucket");
-        add(Resources.blazing_copper.getBucket().get(), "Molten Blazing Copper Bucket");
+        add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
+        add(TinkersReforgedFluids.duralumin.get().getBucket(), "Molten Duralumin Bucket");
+        add(TinkersReforgedFluids.electrical_copper.get().getBucket(), "Molten Electrical Copper Bucket");
+        add(TinkersReforgedFluids.lavium.get().getBucket(), "Molten Lavium Bucket");
+        add(TinkersReforgedFluids.qivium.get().getBucket(), "Molten Qivium Bucket");
+        add(TinkersReforgedFluids.gausum.get().getBucket(), "Molten Gausum Bucket");
+        add(TinkersReforgedFluids.lapis.get().getBucket(), "Molten Lapis Bucket");
+        add(TinkersReforgedFluids.blazing_copper.get().getBucket(), "Molten Blazing Copper Bucket");
 
         for(CastType type: CastType.values()) {
             Item item = CastItems.casts.get(type).get();
@@ -79,20 +78,19 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
         addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
 
-        addModifier(Traits.magical_shrink, "Magical Shrink", "it's magical!", "Low Damage but High Attack Speed");
-        addModifier(Traits.duralumin_heat_transfer, "Heat Transfer", "Lava is transfering its softness to the block next to it", "Break a block faster if it is next to lava");
-        addModifier(Traits.duralumin_overused, "Overused", "Speed go brr", "Better mining speed at low Durability.");
-        addModifier(Traits.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
-        addModifier(Traits.electrical_copper_electric_damage, "Electrical Damage", "Burst of energy", "Careful! Your tool is full of energy and could damage you anytime.");
-        addModifier(Traits.electrical_copper_odin_blessing, "Odin's Blessing", "Odin loved to tell people they were worthy", "Buff each stats by 1.5.");
-        addModifier(Traits.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "You have a chance to \"Shock\" entity when attacking dealing 1/3 of their current hp as damage.");
-        addModifier(Traits.lavium_ground_speed, "Ground Speed", "Great Speed sea level", "Mine Faster below sea level.");
-        addModifier(Traits.lavium_miner_blessing, "Miner Blessing", "You never have enough coal", "Blocks destroyed have a chance of dropping coal/charcoal if you're below y 20.");
-        addModifier(Traits.lavium_surface_curse, "Surface Curse", "Never lucky babyrage.", "Your tool lose durability on the surface.");
-        addModifier(Traits.qivium_fireplace, "Fireplace", "This is fine.", "burn when attacking entities on fire.");
-        addModifier(Traits.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
-        addModifier(Traits.qivium_sunfire_blessing, "Sunfire Blessing", "Fire is good.", "Your tool repair itself while you are on fire.");
-        addModifier(Traits.venomous, "Venomous", "Don't get too close to a spider, they could bite you.", "Your tool apply poison on hit with duration that scale on your damage dealt.");
+        addModifier(TinkersReforgedModifiers.magical_shrink, "Magical Shrink", "it's magical!", "Low Damage but High Attack Speed");
+        addModifier(TinkersReforgedModifiers.duralumin_heat_transfer, "Heat Transfer", "Lava is transfering its softness to the block next to it", "Break a block faster if it is next to lava");
+        addModifier(TinkersReforgedModifiers.duralumin_overused, "Overused", "Speed go brr", "Better mining speed at low Durability.");
+        addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
+        addModifier(TinkersReforgedModifiers.electrical_copper_electric_damage, "Electrical Damage", "Burst of energy", "Careful! Your tool is full of energy and could damage you anytime.");
+        addModifier(TinkersReforgedModifiers.electrical_copper_odin_blessing, "Odin's Blessing", "Odin loved to tell people they were worthy", "Buff each stats by 1.5.");
+        addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "You have a chance to \"Shock\" entity when attacking dealing 1/3 of their current hp as damage.");
+        addModifier(TinkersReforgedModifiers.lavium_ground_speed, "Ground Speed", "Great Speed sea level", "Mine Faster below sea level.");
+        addModifier(TinkersReforgedModifiers.lavium_miner_blessing, "Miner Blessing", "You never have enough coal", "Blocks destroyed have a chance of dropping coal/charcoal if you're below y 20.");
+        addModifier(TinkersReforgedModifiers.lavium_surface_curse, "Surface Curse", "Never lucky babyrage.", "Your tool lose durability on the surface.");
+        addModifier(TinkersReforgedModifiers.qivium_fireplace, "Fireplace", "This is fine.", "burn when attacking entities on fire.");
+        addModifier(TinkersReforgedModifiers.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
+        addModifier(TinkersReforgedModifiers.qivium_sunfire_blessing, "Sunfire Blessing", "Fire is good.", "Your tool repair itself while you are on fire.");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {
@@ -104,15 +102,15 @@ public class ReforgedLang extends LanguageProvider {
             add("material.tinkers_reforged." + id + ".encyclopedia", desc);
     }
 
-    public void addModifier(RegistryObject<Modifier> modifier, String name, String flavour, String desc) {
+    public void addModifier(StaticModifier<Modifier> modifier, String name, String flavour, String desc) {
         String id = modifier.getId().getPath();
         add("modifier.tinkers_reforged." + id, name);
         add("modifier.tinkers_reforged." + id + ".flavor", flavour);
         add("modifier.tinkers_reforged." + id + ".description", desc);
     }
 
-    public void addFluid(ReforgedFluid supplier, String name) {
-        add(String.format("fluid.%s.%s", TinkersReforged.MOD_ID, supplier.getFlowingFluid().getId().getPath().replace("_flowing", "")), name);
+    public void addFluid(FluidObject<ForgeFlowingFluid> supplier, String name) {
+        add(String.format("fluid.%s.%s", TinkersReforged.MOD_ID, supplier.getId().getPath().replace("_flowing", "")), name);
     }
 
     public void addGroup(String value) {

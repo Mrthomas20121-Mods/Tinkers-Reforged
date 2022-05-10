@@ -15,7 +15,7 @@ public class ReforgedConfig {
 
         CommonConfig(ForgeConfigSpec.Builder builder) {
             enableAluminumOre = builder.define("Enable/Disable Aluminum Ore Generation", true);
-            aluminumCount = builder.defineInRange("Aluminum Ore Count", 10, 0, 10);
+            aluminumCount = builder.defineInRange("Aluminum Ore Count", 5, 0, 10);
         }
     }
 }

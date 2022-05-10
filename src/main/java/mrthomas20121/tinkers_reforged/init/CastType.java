@@ -1,7 +1,6 @@
-package mrthomas20121.tinkers_reforged.api;
+package mrthomas20121.tinkers_reforged.init;
 
 public enum CastType {
-    blank,
     bow_limb,
     bowstring,
     broad_axe_head,
