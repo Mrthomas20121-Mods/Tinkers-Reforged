@@ -1,13 +1,13 @@
 {
   "type": "tconstruct:casting_table",
   "cast": {
-    "tag": "tconstruct:casts/single_use/ingot"
+    "tag": "tconstruct:casts/single_use/gem"
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "forge:molten_lapis",
-    "amount": 144
+    "tag": "tinkers_reforged:molten_lapis",
+    "amount": 100
   },
   "result": "minecraft:lapis_lazuli",
-  "cooling_time": 53
+  "cooling_time": 56
 }

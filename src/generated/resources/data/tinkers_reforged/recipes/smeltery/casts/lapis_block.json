@@ -3,7 +3,7 @@
   "switch_slots": true,
   "fluid": {
     "tag": "forge:molten_lapis",
-    "amount": 1296
+    "amount": 810
   },
   "result": "minecraft:lapis_block",
   "cooling_time": 160

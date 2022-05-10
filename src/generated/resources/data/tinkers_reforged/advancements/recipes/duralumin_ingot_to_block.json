@@ -10,7 +10,7 @@
         "parent": "minecraft:recipes/root",
         "rewards": {
           "recipes": [
-            "tinkers_reforged:gausum_block"
+            "tinkers_reforged:duralumin_block"
           ]
         },
         "criteria": {
@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:duralumin_ingot"
+                  "items": [
+                    "tinkers_reforged:duralumin_ingot"
+                  ]
                 }
               ]
             }
@@ -27,7 +29,7 @@
           "has_the_recipe": {
             "trigger": "minecraft:recipe_unlocked",
             "conditions": {
-              "recipe": "tinkers_reforged:gausum_block"
+              "recipe": "tinkers_reforged:duralumin_block"
             }
           }
         },

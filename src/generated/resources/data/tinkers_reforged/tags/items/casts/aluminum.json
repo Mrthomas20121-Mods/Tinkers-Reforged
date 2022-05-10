@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:cast_blank",
     "tinkers_reforged:cast_bow_limb",
     "tinkers_reforged:cast_bowstring",
     "tinkers_reforged:cast_broad_axe_head",

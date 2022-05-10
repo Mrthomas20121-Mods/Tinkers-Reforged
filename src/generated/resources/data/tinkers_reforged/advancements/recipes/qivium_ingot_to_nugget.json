@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:qivium_ingot"
+                  "items": [
+                    "tinkers_reforged:qivium_ingot"
+                  ]
                 }
               ]
             }

@@ -14,7 +14,7 @@
   },
   "fluid": {
     "tag": "tinkers_reforged:molten_gausum",
-    "amount": 576
+    "amount": 360
   },
   "result": {
     "tag": "forge:gears/gausum"

@@ -7,7 +7,7 @@
   "switch_slots": true,
   "fluid": {
     "tag": "forge:magma",
-    "amount": 144
+    "amount": 90
   },
   "result": "tinkers_reforged:qivium_ingot",
   "cooling_time": 42

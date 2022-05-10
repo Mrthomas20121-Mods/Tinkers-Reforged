@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:lavium_ingot"
+                  "items": [
+                    "tinkers_reforged:lavium_ingot"
+                  ]
                 }
               ]
             }

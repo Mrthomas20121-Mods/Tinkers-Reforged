@@ -6,7 +6,7 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "tinkers_reforged:molten_duralumin",
-    "amount": 16
+    "amount": 10
   },
   "result": "tinkers_reforged:duralumin_nugget",
   "cooling_time": 19

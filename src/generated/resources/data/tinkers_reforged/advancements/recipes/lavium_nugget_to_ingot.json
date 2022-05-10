@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:lavium_nugget"
+                  "items": [
+                    "tinkers_reforged:lavium_nugget"
+                  ]
                 }
               ]
             }

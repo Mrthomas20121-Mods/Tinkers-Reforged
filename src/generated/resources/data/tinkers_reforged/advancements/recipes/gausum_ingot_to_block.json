@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:gausum_ingot"
+                  "items": [
+                    "tinkers_reforged:gausum_ingot"
+                  ]
                 }
               ]
             }

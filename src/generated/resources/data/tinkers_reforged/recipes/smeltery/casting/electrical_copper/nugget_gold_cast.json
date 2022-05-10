@@ -5,7 +5,7 @@
   },
   "fluid": {
     "tag": "tinkers_reforged:molten_electrical_copper",
-    "amount": 16
+    "amount": 10
   },
   "result": "tinkers_reforged:electrical_copper_nugget",
   "cooling_time": 20

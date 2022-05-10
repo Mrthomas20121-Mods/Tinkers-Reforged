@@ -14,7 +14,7 @@
   },
   "fluid": {
     "tag": "tinkers_reforged:molten_electrical_copper",
-    "amount": 72
+    "amount": 45
   },
   "result": {
     "tag": "forge:rods/electrical_copper"

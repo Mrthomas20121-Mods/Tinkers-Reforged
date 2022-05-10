@@ -3,7 +3,7 @@
   "inputs": [
     {
       "name": "tinkers_reforged:molten_blazing_copper",
-      "amount": 288
+      "amount": 180
     },
     {
       "name": "tinkers_reforged:molten_redstone",
@@ -12,7 +12,7 @@
   ],
   "result": {
     "fluid": "tinkers_reforged:molten_electrical_copper",
-    "amount": 288
+    "amount": 180
   },
   "temperature": 800
 }

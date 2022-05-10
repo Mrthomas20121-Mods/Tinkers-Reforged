@@ -1,7 +1,6 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.api.CastItems;
 import mrthomas20121.tinkers_reforged.init.CastType;
 import mrthomas20121.tinkers_reforged.init.*;
 import net.minecraft.data.DataGenerator;
@@ -68,7 +67,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.blazing_copper.get().getBucket(), "Molten Blazing Copper Bucket");
 
         for(CastType type: CastType.values()) {
-            Item item = CastItems.casts.get(type).get();
+            Item item = TinkersReforgedItems.casts.get(type).get();
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
@@ -79,18 +78,10 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
 
         addModifier(TinkersReforgedModifiers.magical_shrink, "Magical Shrink", "it's magical!", "Low Damage but High Attack Speed");
-        addModifier(TinkersReforgedModifiers.duralumin_heat_transfer, "Heat Transfer", "Lava is transfering its softness to the block next to it", "Break a block faster if it is next to lava");
-        addModifier(TinkersReforgedModifiers.duralumin_overused, "Overused", "Speed go brr", "Better mining speed at low Durability.");
+        addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
-        addModifier(TinkersReforgedModifiers.electrical_copper_electric_damage, "Electrical Damage", "Burst of energy", "Careful! Your tool is full of energy and could damage you anytime.");
-        addModifier(TinkersReforgedModifiers.electrical_copper_odin_blessing, "Odin's Blessing", "Odin loved to tell people they were worthy", "Buff each stats by 1.5.");
-        addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "You have a chance to \"Shock\" entity when attacking dealing 1/3 of their current hp as damage.");
-        addModifier(TinkersReforgedModifiers.lavium_ground_speed, "Ground Speed", "Great Speed sea level", "Mine Faster below sea level.");
-        addModifier(TinkersReforgedModifiers.lavium_miner_blessing, "Miner Blessing", "You never have enough coal", "Blocks destroyed have a chance of dropping coal/charcoal if you're below y 20.");
-        addModifier(TinkersReforgedModifiers.lavium_surface_curse, "Surface Curse", "Never lucky babyrage.", "Your tool lose durability on the surface.");
-        addModifier(TinkersReforgedModifiers.qivium_fireplace, "Fireplace", "This is fine.", "burn when attacking entities on fire.");
-        addModifier(TinkersReforgedModifiers.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
-        addModifier(TinkersReforgedModifiers.qivium_sunfire_blessing, "Sunfire Blessing", "Fire is good.", "Your tool repair itself while you are on fire.");
+        addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "Breaking blocks \"Shock\" you making you take 1 dmg.");
+       addModifier(TinkersReforgedModifiers.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

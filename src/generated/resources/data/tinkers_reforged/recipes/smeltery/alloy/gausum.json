@@ -3,20 +3,20 @@
   "inputs": [
     {
       "name": "tinkers_reforged:molten_blazing_copper",
-      "amount": 288
+      "amount": 180
     },
     {
       "name": "tconstruct:molten_debris",
-      "amount": 288
+      "amount": 180
     },
     {
       "name": "tinkers_reforged:molten_lapis",
-      "amount": 1296
+      "amount": 810
     }
   ],
   "result": {
     "fluid": "tinkers_reforged:molten_gausum",
-    "amount": 288
+    "amount": 180
   },
   "temperature": 1200
 }

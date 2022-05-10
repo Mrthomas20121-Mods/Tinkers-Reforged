@@ -55,21 +55,13 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-            addTraits(qivium, HeadMaterialStats.ID, TinkersReforgedModifiers.qivium_fireplace);
-            addTraits(qivium, HandleMaterialStats.ID, TinkersReforgedModifiers.qivium_firestarter);
-            addTraits(qivium, ExtraMaterialStats.ID, TinkersReforgedModifiers.qivium_firestarter, TinkersReforgedModifiers.qivium_sunfire_blessing);
+            addDefaultTraits(qivium, TinkersReforgedModifiers.qivium_firestarter);
 
-            addTraits(lavium, HeadMaterialStats.ID, TinkersReforgedModifiers.lavium_ground_speed, TinkersReforgedModifiers.lavium_surface_curse);
-            addTraits(lavium, HandleMaterialStats.ID, TinkersReforgedModifiers.lavium_miner_blessing);
-            addTraits(lavium, ExtraMaterialStats.ID, TinkersReforgedModifiers.lavium_miner_blessing);
+            addDefaultTraits(lavium, TinkersReforgedModifiers.lavium_aridzone);
 
-            addTraits(duralumin, HeadMaterialStats.ID, TinkersReforgedModifiers.duralumin_ultra_durable);
-            addTraits(duralumin, HandleMaterialStats.ID, TinkersReforgedModifiers.duralumin_overused);
-            addTraits(duralumin, ExtraMaterialStats.ID, TinkersReforgedModifiers.duralumin_heat_transfer, TinkersReforgedModifiers.duralumin_overused);
+            addDefaultTraits(duralumin, TinkersReforgedModifiers.duralumin_ultra_durable);
 
-            addTraits(electrical_copper, HeadMaterialStats.ID, TinkersReforgedModifiers.electrical_copper_electrostatic, TinkersReforgedModifiers.electrical_copper_electric_damage);
-            addTraits(electrical_copper, HandleMaterialStats.ID, TinkersReforgedModifiers.electrical_copper_odin_blessing);
-            addTraits(electrical_copper, ExtraMaterialStats.ID, TinkersReforgedModifiers.electrical_copper_electric_damage);
+            addDefaultTraits(electrical_copper, TinkersReforgedModifiers.electrical_copper_electrostatic);
 
             addDefaultTraits(gausum, TinkersReforgedModifiers.magical_shrink);
         }

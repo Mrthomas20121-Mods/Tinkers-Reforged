@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:aluminum_block"
+                  "items": [
+                    "tinkers_reforged:aluminum_block"
+                  ]
                 }
               ]
             }

@@ -2,7 +2,7 @@
   "type": "tconstruct:material_fluid",
   "fluid": {
     "tag": "tinkers_reforged:molten_electrical_copper",
-    "amount": 144
+    "amount": 90
   },
   "temperature": 800,
   "output": "tinkers_reforged:electrical_copper"

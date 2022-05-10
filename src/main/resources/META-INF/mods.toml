@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[36,)"
+loaderVersion = "[40,)"
 license = "MIT License"
 issueTrackerURL = "https://github.com/Mrthomas20121/Tinkers-Reforged/issues"
 
@@ -7,10 +7,28 @@ issueTrackerURL = "https://github.com/Mrthomas20121/Tinkers-Reforged/issues"
 modId = "tinkers_reforged"
 version = "1.0.0"
 displayName = "Tinkers Reforged"
-displayURL = "https://www.curseforge.com/minecraft/mc-mods/tinkers_reforged"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/tinkers-reforged"
 #logoFile="tinkers_reforged_logo.png"
 credits = "Materialis and The Tinkers Devs for their help"
 authors = "Mrthomas20121"
 description = '''
 Add new materials to Tinkers Construct
 '''
+
+[[dependencies.tinkers_reforged]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[40,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+[[dependencies.tinkers_reforged]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

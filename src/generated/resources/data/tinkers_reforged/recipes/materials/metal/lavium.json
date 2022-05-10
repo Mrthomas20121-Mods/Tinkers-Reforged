@@ -7,7 +7,7 @@
   "switch_slots": true,
   "fluid": {
     "tag": "tconstruct:liquid_soul",
-    "amount": 144
+    "amount": 90
   },
   "result": "tinkers_reforged:lavium_ingot",
   "cooling_time": 46

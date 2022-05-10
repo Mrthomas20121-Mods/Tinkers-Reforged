@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:aluminum_nugget"
+                  "items": [
+                    "tinkers_reforged:aluminum_nugget"
+                  ]
                 }
               ]
             }

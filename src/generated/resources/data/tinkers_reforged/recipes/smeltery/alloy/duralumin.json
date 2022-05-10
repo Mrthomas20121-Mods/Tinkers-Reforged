@@ -3,16 +3,16 @@
   "inputs": [
     {
       "name": "tconstruct:molten_copper",
-      "amount": 144
+      "amount": 90
     },
     {
       "name": "tconstruct:molten_aluminum",
-      "amount": 1296
+      "amount": 810
     }
   ],
   "result": {
     "fluid": "tinkers_reforged:molten_duralumin",
-    "amount": 720
+    "amount": 450
   },
   "temperature": 700
 }

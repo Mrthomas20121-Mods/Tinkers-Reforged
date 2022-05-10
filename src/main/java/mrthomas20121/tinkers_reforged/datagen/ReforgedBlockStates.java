@@ -50,6 +50,6 @@ public class ReforgedBlockStates extends BlockStateProvider {
 
     public void fluid(FluidObject<ForgeFlowingFluid> fluid) {
         ResourceLocation name = fluid.getBlock().getRegistryName();
-        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath()+"_still")));
+        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath().replace("_fluid", ""), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"_still")));
     }
 }

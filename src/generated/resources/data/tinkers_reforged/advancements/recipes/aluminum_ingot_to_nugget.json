@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:aluminum_ingot"
+                  "items": [
+                    "tinkers_reforged:aluminum_ingot"
+                  ]
                 }
               ]
             }

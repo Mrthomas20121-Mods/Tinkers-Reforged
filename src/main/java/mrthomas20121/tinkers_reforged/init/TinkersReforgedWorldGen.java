@@ -27,7 +27,7 @@ public class TinkersReforgedWorldGen {
     public static final ConfiguredFeatureDeferredRegister CONFIGURED_FEATURES = new ConfiguredFeatureDeferredRegister(TinkersReforged.MOD_ID);
     public static final PlacedFeatureDeferredRegister PLACED_FEATURES = new PlacedFeatureDeferredRegister(TinkersReforged.MOD_ID);
 
-    public static RegistryObject<ConfiguredFeature<OreConfiguration,Feature<OreConfiguration>>> ALUMINUM_ORE = CONFIGURED_FEATURES.registerSupplier("aluminum_ore", () -> Feature.ORE, () -> new OreConfiguration(OreFeatures.NATURAL_STONE, Resources.aluminum_ore.get().defaultBlockState(), ReforgedConfig.COMMON.aluminumCount.get()));
+    public static RegistryObject<ConfiguredFeature<OreConfiguration,Feature<OreConfiguration>>> ALUMINUM_ORE = CONFIGURED_FEATURES.registerSupplier("aluminum_ore", () -> Feature.ORE, () -> new OreConfiguration(OreFeatures.NATURAL_STONE, TinkersReforgedBlocks.aluminum_ore.get().defaultBlockState(), ReforgedConfig.COMMON.aluminumCount.get()));
     public static RegistryObject<PlacedFeature> placedAluminumOre = PLACED_FEATURES.register("aluminum_ore", ALUMINUM_ORE, CountPlacement.of(6), InSquarePlacement.spread(), PlacementUtils.RANGE_8_8, BiomeFilter.biome());
 
     @SubscribeEvent

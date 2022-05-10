@@ -9,10 +9,6 @@ import javax.annotation.Nonnull;
 
 public class TraitMagicalShrink extends Modifier {
 
-    public TraitMagicalShrink() {
-        super(0x75BCC6);
-    }
-
     @Override
     public void addToolStats(@Nonnull ToolRebuildContext context, int level, @Nonnull ModifierStatsBuilder builder) {
         ToolStats.ATTACK_DAMAGE.multiply(builder, 0.6d/level);

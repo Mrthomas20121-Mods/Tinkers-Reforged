@@ -15,7 +15,7 @@
   "cast_consumed": true,
   "fluid": {
     "tag": "tinkers_reforged:molten_qivium",
-    "amount": 144
+    "amount": 90
   },
   "result": {
     "tag": "forge:plates/qivium"

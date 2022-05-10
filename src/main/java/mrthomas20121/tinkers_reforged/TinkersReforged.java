@@ -66,7 +66,7 @@ public class TinkersReforged {
 			AbstractMaterialSpriteProvider provider = new ReforgedMaterialSpriteProvider();
 			gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
 			gen.addProvider(new ReforgedRenderInfo(gen, provider));
-			gen.addProvider(new ReforgedLootTables(gen));
+			//gen.addProvider(new ReforgedLootTables(gen));
 		}
 	}
 }

@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:gausum_block"
+                  "items": [
+                    "tinkers_reforged:gausum_block"
+                  ]
                 }
               ]
             }

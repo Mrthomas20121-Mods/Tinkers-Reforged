@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:electrical_copper_ingot"
+                  "items": [
+                    "tinkers_reforged:electrical_copper_ingot"
+                  ]
                 }
               ]
             }

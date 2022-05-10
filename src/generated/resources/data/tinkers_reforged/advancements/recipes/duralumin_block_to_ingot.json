@@ -19,7 +19,9 @@
             "conditions": {
               "items": [
                 {
-                  "item": "tinkers_reforged:duralumin_block"
+                  "items": [
+                    "tinkers_reforged:duralumin_block"
+                  ]
                 }
               ]
             }
