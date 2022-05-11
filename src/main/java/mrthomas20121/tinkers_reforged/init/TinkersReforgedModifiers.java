@@ -10,13 +10,13 @@ public class TinkersReforgedModifiers {
 
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersReforged.MOD_ID);
 
-    public static StaticModifier<Modifier> qivium_firestarter = MODIFIERS.register("firestarter", TraitFirestarter::new);
+    public static StaticModifier<Modifier> qivium_firestarter = MODIFIERS.register("firestarter", ModifierFirestarter::new);
 
     public static StaticModifier<Modifier> lavium_aridzone = MODIFIERS.register("arid_zone", ModifierAridZone::new);
 
-    public static StaticModifier<Modifier> electrical_copper_electrostatic = MODIFIERS.register("electrostatic", ModifierElectrostatic::new);
+    public static StaticModifier<Modifier> electrical_copper_electro_web = MODIFIERS.register("electro_web", ModifierElectroWeb::new);
 
     public static StaticModifier<Modifier> duralumin_ultra_durable = MODIFIERS.register("ultra_durable", ModifierUltraDurable::new);
 
-    public static StaticModifier<Modifier> magical_shrink = MODIFIERS.register("magical_shrink", TraitMagicalShrink::new);
+    public static StaticModifier<Modifier> gausum_titanic_damage = MODIFIERS.register("titanic_damage", ModifierTitanicDamage::new);
 }

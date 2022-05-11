@@ -61,9 +61,9 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
             addDefaultTraits(duralumin, TinkersReforgedModifiers.duralumin_ultra_durable);
 
-            addDefaultTraits(electrical_copper, TinkersReforgedModifiers.electrical_copper_electrostatic);
+            addDefaultTraits(electrical_copper, TinkersReforgedModifiers.electrical_copper_electro_web);
 
-            addDefaultTraits(gausum, TinkersReforgedModifiers.magical_shrink);
+            addDefaultTraits(gausum, TinkersReforgedModifiers.gausum_titanic_damage);
         }
 
         @Nonnull

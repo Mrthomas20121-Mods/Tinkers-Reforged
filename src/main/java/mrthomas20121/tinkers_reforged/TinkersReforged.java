@@ -38,6 +38,8 @@ public class TinkersReforged {
 		TinkersReforgedItems.registerCasts();
 		TinkersReforgedFluids.FLUIDS.register(bus);
 		TinkersReforgedWorldGen.CONFIGURED_FEATURES.register(bus);
+		TinkersReforgedWorldGen.PLACED_FEATURES.register(bus);
+		TinkersReforgedPotions.MOB_EFFECTS.register(bus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 

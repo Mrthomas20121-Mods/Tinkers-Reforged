@@ -14,11 +14,11 @@ public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
 
     @Override
     protected void addMaterialRenderInfo() {
-        buildRenderInfo(ReforgedMaterials.duralumin).color(0xD1F1C1);
-        buildRenderInfo(ReforgedMaterials.electrical_copper).color(0xE0B475);
-        buildRenderInfo(ReforgedMaterials.lavium).color(0x81B366);
-        buildRenderInfo(ReforgedMaterials.qivium).color(0xFF8F84);
-        buildRenderInfo(ReforgedMaterials.gausum).color(0x75BCC6);
+        buildRenderInfo(ReforgedMaterials.duralumin).color(0xD1F1C1).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterials.electrical_copper).color(0xE0B475).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterials.lavium).color(0x81B366).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterials.qivium).color(0xFF8F84).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterials.gausum).color(0x75BCC6).fallbacks("metal");
     }
 
     @Nonnull

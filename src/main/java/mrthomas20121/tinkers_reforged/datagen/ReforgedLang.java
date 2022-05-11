@@ -21,7 +21,7 @@ public class ReforgedLang extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        addGroup("Tinkers Reforged");
+        addGroup("Tinkers Reforged Items");
         addBlock(TinkersReforgedBlocks.aluminum_block, "Aluminum Block");
         addBlock(TinkersReforgedBlocks.aluminum_ore, "Aluminum Ore");
         addItem(TinkersReforgedItems.aluminum_dust, "Aluminum Dust");
@@ -65,6 +65,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.gausum.get().getBucket(), "Molten Gausum Bucket");
         add(TinkersReforgedFluids.lapis.get().getBucket(), "Molten Lapis Bucket");
         add(TinkersReforgedFluids.blazing_copper.get().getBucket(), "Molten Blazing Copper Bucket");
+        add("effect.tinkers_reforged.electro_web", "Electro Web");
 
         for(CastType type: CastType.values()) {
             Item item = TinkersReforgedItems.casts.get(type).get();
@@ -77,10 +78,10 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
         addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
 
-        addModifier(TinkersReforgedModifiers.magical_shrink, "Magical Shrink", "it's magical!", "Low Damage but High Attack Speed");
+        addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
-        addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "Shocking isn't it?", "Breaking blocks \"Shock\" you making you take 1 dmg.");
+        addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
        addModifier(TinkersReforgedModifiers.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
     }
 

@@ -159,6 +159,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         materialRecipe(consumer, ReforgedMaterials.gausum, Ingredient.of(ReforgedItemsTags.GAUSUM_INGOT), FluidValues.INGOT, 1, materialFolder+"gausum_repair");
         materialRecipe(consumer, ReforgedMaterials.lavium, Ingredient.of(ReforgedItemsTags.LAVIUM_INGOT), FluidValues.INGOT, 1, materialFolder+"lavium_repair");
         materialRecipe(consumer, ReforgedMaterials.qivium, Ingredient.of(ReforgedItemsTags.QIVIUM_INGOT), FluidValues.INGOT, 1, materialFolder+"qivium_repair");
+
+
     }
 
     @Nonnull

@@ -5,12 +5,11 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import javax.annotation.Nonnull;
 import java.util.Objects;
 
-public class TraitFirestarter extends Modifier {
+public class ModifierFirestarter extends Modifier {
 
-    public TraitFirestarter() {
+    public ModifierFirestarter() {
         super();
     }
 

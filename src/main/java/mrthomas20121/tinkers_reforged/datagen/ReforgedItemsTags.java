@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.CastType;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -12,6 +13,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import slimeknights.tconstruct.common.TinkerTags;
 
 import javax.annotation.Nullable;
 
@@ -109,6 +111,14 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(GAUSUM_INGOT).add(TinkersReforgedItems.gausum_ingot.get());
         tag(GAUSUM_DUST).add(TinkersReforgedItems.gausum_dust.get());
         tag(GAUSUM_NUGGET).add(TinkersReforgedItems.gausum_nugget.get());
+
+        tag(TinkerTags.Items.ANVIL_METAL)
+                .add(TinkersReforgedBlocks.duralumin_block.get().asItem())
+                .add(TinkersReforgedBlocks.aluminum_block.get().asItem())
+                .add(TinkersReforgedBlocks.electrical_copper_block.get().asItem())
+                .add(TinkersReforgedBlocks.lavium_block.get().asItem())
+                .add(TinkersReforgedBlocks.qivium_block.get().asItem())
+                .add(TinkersReforgedBlocks.gausum_block.get().asItem());
 
         TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);
         for(CastType type: CastType.values()) {
