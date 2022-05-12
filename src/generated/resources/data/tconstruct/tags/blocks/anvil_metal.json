@@ -6,6 +6,9 @@
     "tinkers_reforged:electrical_copper_block",
     "tinkers_reforged:lavium_block",
     "tinkers_reforged:qivium_block",
-    "tinkers_reforged:gausum_block"
+    "tinkers_reforged:gausum_block",
+    "tinkers_reforged:felsteel_block",
+    "tinkers_reforged:kepu_block",
+    "tinkers_reforged:shulker_metal_block"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:aluminum_ore"
+    "tinkers_reforged:aluminum_ore",
+    "tinkers_reforged:kepu_ore"
   ]
 }

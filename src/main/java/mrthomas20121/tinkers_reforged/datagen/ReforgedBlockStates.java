@@ -28,6 +28,10 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.lavium_block);
         blockWithItem(TinkersReforgedBlocks.qivium_block);
         blockWithItem(TinkersReforgedBlocks.gausum_block);
+        blockWithItem(TinkersReforgedBlocks.felsteel_block);
+        blockWithItem(TinkersReforgedBlocks.kepu_ore);
+        blockWithItem(TinkersReforgedBlocks.kepu_block);
+        blockWithItem(TinkersReforgedBlocks.shulker_metal_block);
 
         fluid(TinkersReforgedFluids.duralumin);
         fluid(TinkersReforgedFluids.electrical_copper);
@@ -37,6 +41,9 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.redstone);
         fluid(TinkersReforgedFluids.gausum);
         fluid(TinkersReforgedFluids.lapis);
+        fluid(TinkersReforgedFluids.felsteel);
+        fluid(TinkersReforgedFluids.kepu);
+        fluid(TinkersReforgedFluids.shulker_metal);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {

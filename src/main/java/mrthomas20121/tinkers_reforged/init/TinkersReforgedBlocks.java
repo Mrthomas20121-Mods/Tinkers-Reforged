@@ -14,9 +14,14 @@ public class TinkersReforgedBlocks {
 
     public static RegistryObject<Block> aluminum_ore = BLOCKS.register("aluminum_ore", () -> new Block(Block.Properties.of(Material.STONE).strength(2.5F).sound(SoundType.STONE)));
     public static RegistryObject<Block> aluminum_block = BLOCKS.register("aluminum_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
-    public static RegistryObject<Block> electrical_copper_block = BLOCKS.register("electrical_copper_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
     public static RegistryObject<Block> duralumin_block = BLOCKS.register("duralumin_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
+    public static RegistryObject<Block> electrical_copper_block = BLOCKS.register("electrical_copper_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
+    public static RegistryObject<Block> felsteel_block = BLOCKS.register("felsteel_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
     public static RegistryObject<Block> gausum_block = BLOCKS.register("gausum_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
+    public static RegistryObject<Block> kepu_ore = BLOCKS.register("kepu_ore", () -> new Block(Block.Properties.of(Material.STONE).strength(2.5F).sound(SoundType.STONE)));
+    public static RegistryObject<Block> kepu_block = BLOCKS.register("kepu_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
     public static RegistryObject<Block> lavium_block = BLOCKS.register("lavium_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
     public static RegistryObject<Block> qivium_block = BLOCKS.register("qivium_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
+    public static RegistryObject<Block> shulker_metal_block = BLOCKS.register("shulker_metal_block", () -> new Block(Block.Properties.of(Material.STONE).strength(4F).sound(SoundType.METAL)));
+
 }

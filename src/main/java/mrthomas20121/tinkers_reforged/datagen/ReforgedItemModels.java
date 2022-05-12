@@ -2,7 +2,6 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.CastType;
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -44,24 +43,22 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.gausum_ingot, "item/generated");
         itemWithModel(TinkersReforgedItems.gausum_nugget, "item/generated");
 
-        itemWithModel(TinkersReforgedFluids.duralumin.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.electrical_copper.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.lavium.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.qivium.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.redstone.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.blazing_copper.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.lapis.get().getBucket(), "item/generated");
-        itemWithModel(TinkersReforgedFluids.gausum.get().getBucket(), "item/generated");
+        itemWithModel(TinkersReforgedItems.felsteel_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.felsteel_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.felsteel_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.kepu_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.kepu_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.kepu_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.shulker_metal_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.shulker_metal_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.shulker_metal_nugget, "item/generated");
+
 
         for(CastType type : CastType.values()) {
             castModel(TinkersReforgedItems.casts.get(type), type);
         }
-    }
-
-    public void itemWithModel(Item item, String model) {
-        ResourceLocation id = item.getRegistryName();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/" + id.getPath());
-        singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {

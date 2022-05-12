@@ -4,7 +4,6 @@ import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedWorldGen;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,8 +26,6 @@ public class TinkersReforged {
 
 	public static final String MOD_ID = "tinkers_reforged";
 	public static final Logger LOGGER = LogManager.getLogger();
-
-	public static ConfiguredFeature<?,?> ALUMINUM_ORE_FEATURE;
 
 	public TinkersReforged() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -68,7 +65,7 @@ public class TinkersReforged {
 			AbstractMaterialSpriteProvider provider = new ReforgedMaterialSpriteProvider();
 			gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
 			gen.addProvider(new ReforgedRenderInfo(gen, provider));
-			//gen.addProvider(new ReforgedLootTables(gen));
+			gen.addProvider(new ReforgedLootTables(gen));
 		}
 	}
 }

@@ -17,6 +17,7 @@ import javax.annotation.Nullable;
 public class ReforgedBlocksTags extends BlockTagsProvider {
 
     private static final TagKey<Block> ALUMINUM_ORE = create("forge:ores/aluminum");
+    private static final TagKey<Block> KEPU_ORE = create("forge:ores/kepu");
 
     private static final TagKey<Block> DURALUMIN = create("forge:storage_blocks/duralumin");
     private static final TagKey<Block> ALUMINUM = create("forge:storage_blocks/aluminum");
@@ -24,6 +25,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
     private static final TagKey<Block> LAVIUM = create("forge:storage_blocks/lavium");
     private static final TagKey<Block> QIVIUM = create("forge:storage_blocks/qivium");
     private static final TagKey<Block> GAUSUM = create("forge:storage_blocks/gausum");
+    private static final TagKey<Block> FELSTEEL = create("forge:storage_blocks/felsteel");
+    private static final TagKey<Block> KEPU = create("forge:storage_blocks/kepu");
+    private static final TagKey<Block> SHULKER_METAL = create("forge:storage_blocks/shulker_metal");
 
     private static TagKey<Block> create(String name) {
         return BlockTags.create(new ResourceLocation(name));
@@ -41,9 +45,13 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
         tag(LAVIUM).add(TinkersReforgedBlocks.lavium_block.get());
         tag(QIVIUM).add(TinkersReforgedBlocks.qivium_block.get());
         tag(GAUSUM).add(TinkersReforgedBlocks.gausum_block.get());
+        tag(FELSTEEL).add(TinkersReforgedBlocks.felsteel_block.get());
+        tag(KEPU).add(TinkersReforgedBlocks.kepu_block.get());
+        tag(SHULKER_METAL).add(TinkersReforgedBlocks.shulker_metal_block.get());
 
         tag(ALUMINUM_ORE).add(TinkersReforgedBlocks.aluminum_ore.get());
-        tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.aluminum_ore.get());
+        tag(KEPU_ORE).add(TinkersReforgedBlocks.kepu_ore.get());
+        tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedBlocks.kepu_ore.get());
 
         tag(Tags.Blocks.STORAGE_BLOCKS)
                 .add(TinkersReforgedBlocks.duralumin_block.get())
@@ -51,7 +59,10 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.electrical_copper_block.get())
                 .add(TinkersReforgedBlocks.lavium_block.get())
                 .add(TinkersReforgedBlocks.qivium_block.get())
-                .add(TinkersReforgedBlocks.gausum_block.get());
+                .add(TinkersReforgedBlocks.gausum_block.get())
+                .add(TinkersReforgedBlocks.felsteel_block.get())
+                .add(TinkersReforgedBlocks.kepu_block.get())
+                .add(TinkersReforgedBlocks.shulker_metal_block.get());
 
         tag(BlockTags.BEACON_BASE_BLOCKS)
                 .add(TinkersReforgedBlocks.duralumin_block.get())
@@ -59,7 +70,10 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.electrical_copper_block.get())
                 .add(TinkersReforgedBlocks.lavium_block.get())
                 .add(TinkersReforgedBlocks.qivium_block.get())
-                .add(TinkersReforgedBlocks.gausum_block.get());
+                .add(TinkersReforgedBlocks.gausum_block.get())
+                .add(TinkersReforgedBlocks.felsteel_block.get())
+                .add(TinkersReforgedBlocks.kepu_block.get())
+                .add(TinkersReforgedBlocks.shulker_metal_block.get());
 
         tag(TinkerTags.Blocks.ANVIL_METAL)
                 .add(TinkersReforgedBlocks.duralumin_block.get())
@@ -67,6 +81,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.electrical_copper_block.get())
                 .add(TinkersReforgedBlocks.lavium_block.get())
                 .add(TinkersReforgedBlocks.qivium_block.get())
-                .add(TinkersReforgedBlocks.gausum_block.get());
+                .add(TinkersReforgedBlocks.gausum_block.get())
+                .add(TinkersReforgedBlocks.felsteel_block.get())
+                .add(TinkersReforgedBlocks.kepu_block.get())
+                .add(TinkersReforgedBlocks.shulker_metal_block.get());
     }
 }

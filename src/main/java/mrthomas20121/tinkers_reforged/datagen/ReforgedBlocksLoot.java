@@ -29,5 +29,9 @@ public class ReforgedBlocksLoot extends BlockLoot {
         this.dropSelf(TinkersReforgedBlocks.lavium_block.get());
         this.dropSelf(TinkersReforgedBlocks.qivium_block.get());
         this.dropSelf(TinkersReforgedBlocks.gausum_block.get());
+        this.dropSelf(TinkersReforgedBlocks.felsteel_block.get());
+        this.dropSelf(TinkersReforgedBlocks.kepu_ore.get());
+        this.dropSelf(TinkersReforgedBlocks.kepu_block.get());
+        this.dropSelf(TinkersReforgedBlocks.shulker_metal_block.get());
     }
 }

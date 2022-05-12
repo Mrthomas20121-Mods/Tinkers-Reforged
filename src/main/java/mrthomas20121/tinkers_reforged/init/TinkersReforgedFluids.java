@@ -21,6 +21,9 @@ public class TinkersReforgedFluids {
     public static FluidObject<ForgeFlowingFluid> lavium = register("molten_lavium", 1500);
     public static FluidObject<ForgeFlowingFluid> qivium = register("molten_qivium", 1500);
     public static FluidObject<ForgeFlowingFluid> gausum = register("molten_gausum", 1500);
+    public static FluidObject<ForgeFlowingFluid> felsteel = register("molten_felsteel", 1800);
+    public static FluidObject<ForgeFlowingFluid> shulker_metal = register("molten_shulker_metal", 1500);
+    public static FluidObject<ForgeFlowingFluid> kepu = register("molten_kepu", 1600);
 
     private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {
         String still = String.format("%s:block/fluid/%s_still", TinkersReforged.MOD_ID, name);

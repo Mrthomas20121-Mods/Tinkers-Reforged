@@ -47,6 +47,14 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.gausum_dust, "Gausum Dust");
         addItem(TinkersReforgedItems.gausum_ingot, "Gausum Ingot");
         addItem(TinkersReforgedItems.gausum_nugget, "Gausum Nugget");
+        addBlock(TinkersReforgedBlocks.kepu_block, "Kepu Block");
+        addItem(TinkersReforgedItems.kepu_dust, "Kepu Dust");
+        addItem(TinkersReforgedItems.kepu_ingot, "Kepu Ingot");
+        addItem(TinkersReforgedItems.kepu_nugget, "Kepu Nugget");
+        addBlock(TinkersReforgedBlocks.shulker_metal_block, "Shulker Metal Block");
+        addItem(TinkersReforgedItems.shulker_metal_dust, "Shulker Metal Dust");
+        addItem(TinkersReforgedItems.shulker_metal_ingot, "Shulker Metal Ingot");
+        addItem(TinkersReforgedItems.shulker_metal_nugget, "Shulker Metal Nugget");
 
         addFluid(TinkersReforgedFluids.redstone, "Liquid Redstone");
         addFluid(TinkersReforgedFluids.duralumin, "Molten Duralumin");
@@ -65,6 +73,9 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.gausum.get().getBucket(), "Molten Gausum Bucket");
         add(TinkersReforgedFluids.lapis.get().getBucket(), "Molten Lapis Bucket");
         add(TinkersReforgedFluids.blazing_copper.get().getBucket(), "Molten Blazing Copper Bucket");
+        add(TinkersReforgedFluids.felsteel.get().getBucket(), "Molten Felsteel Bucket");
+        add(TinkersReforgedFluids.kepu.get().getBucket(), "Molten Kepu Bucket");
+        add(TinkersReforgedFluids.shulker_metal.get().getBucket(), "Molten Shulker Metal Bucket");
         add("effect.tinkers_reforged.electro_web", "Electro Web");
 
         for(CastType type: CastType.values()) {
@@ -82,7 +93,11 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
         addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
-       addModifier(TinkersReforgedModifiers.qivium_firestarter, "Firestarter", "More Fire!", "Attacks increases fire duration.");
+        addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Firestarter", "More Fire!", "Attacks increases fire duration.");
+        addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage to things in the nether but deal less damage to things in the end.");
+        addModifier(TinkersReforgedModifiers.shulker_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Deal more damage to things in the nether but deal less damage to things in the end.");
+
+        add("modifier.fel_debris.bonus", "%s Damage in the current dimension.");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

@@ -55,7 +55,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
         @Override
         protected void addMaterialTraits() {
-            addDefaultTraits(qivium, TinkersReforgedModifiers.qivium_firestarter);
+            addDefaultTraits(qivium, TinkersReforgedModifiers.qivium_blazing_fire);
 
             addDefaultTraits(lavium, TinkersReforgedModifiers.lavium_aridzone);
 
