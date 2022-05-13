@@ -14,8 +14,8 @@ public class ReforgedConfig {
         public ForgeConfigSpec.IntValue aluminumCount;
 
         CommonConfig(ForgeConfigSpec.Builder builder) {
-            enableAluminumOre = builder.define("Enable/Disable Aluminum Ore Generation", true);
-            aluminumCount = builder.defineInRange("Aluminum Ore Count", 5, 0, 10);
+            enableAluminumOre = builder.define("Enable/Disable Bauxite Ore Generation", true);
+            aluminumCount = builder.defineInRange("Aluminum Ore Count", 10, 1, 15);
         }
     }
 }

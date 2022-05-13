@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +23,8 @@ public class ReforgedBlocksLoot extends BlockLoot {
 
     @Override
     protected void addTables() {
-        this.dropSelf(TinkersReforgedBlocks.aluminum_ore.get());
+        this.dropOther(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedItems.raw_aluminum.get());
+        this.dropOther(TinkersReforgedBlocks.deepslate_aluminum_ore.get(), TinkersReforgedItems.raw_aluminum.get());
         this.dropSelf(TinkersReforgedBlocks.aluminum_block.get());
         this.dropSelf(TinkersReforgedBlocks.duralumin_block.get());
         this.dropSelf(TinkersReforgedBlocks.electrical_copper_block.get());
@@ -30,8 +32,10 @@ public class ReforgedBlocksLoot extends BlockLoot {
         this.dropSelf(TinkersReforgedBlocks.qivium_block.get());
         this.dropSelf(TinkersReforgedBlocks.gausum_block.get());
         this.dropSelf(TinkersReforgedBlocks.felsteel_block.get());
-        this.dropSelf(TinkersReforgedBlocks.kepu_ore.get());
+        this.dropOther(TinkersReforgedBlocks.kepu_ore.get(), TinkersReforgedItems.raw_kepu.get());
         this.dropSelf(TinkersReforgedBlocks.kepu_block.get());
-        this.dropSelf(TinkersReforgedBlocks.shulker_metal_block.get());
+        this.dropSelf(TinkersReforgedBlocks.chorus_metal_block.get());
+        this.dropSelf(TinkersReforgedBlocks.raw_aluminum_block.get());
+        this.dropSelf(TinkersReforgedBlocks.raw_kepu_block.get());
     }
 }

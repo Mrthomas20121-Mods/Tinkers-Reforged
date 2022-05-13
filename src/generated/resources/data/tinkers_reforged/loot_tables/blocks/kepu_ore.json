@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tinkers_reforged:kepu_ore"
+          "name": "tinkers_reforged:raw_kepu"
         }
       ],
       "conditions": [

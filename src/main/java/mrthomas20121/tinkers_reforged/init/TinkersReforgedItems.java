@@ -32,8 +32,11 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> aluminum_ingot = ITEMS.register("aluminum_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_dust = ITEMS.register("aluminum_dust", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_nugget = ITEMS.register("aluminum_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> raw_aluminum = ITEMS.register("raw_aluminum", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_block = ITEMS.register("aluminum_block", () -> registerItemBlock(TinkersReforgedBlocks.aluminum_block.get()));
+    public static RegistryObject<Item> raw_aluminum_block = ITEMS.register("raw_aluminum_block", () -> registerItemBlock(TinkersReforgedBlocks.raw_aluminum_block.get()));
     public static RegistryObject<Item> aluminum_ore = ITEMS.register("aluminum_ore", () -> registerItemBlock(TinkersReforgedBlocks.aluminum_ore.get()));
+    public static RegistryObject<Item> deepslate_aluminum_ore = ITEMS.register("deepslate_aluminum_ore", () -> registerItemBlock(TinkersReforgedBlocks.deepslate_aluminum_ore.get()));
 
     public static RegistryObject<Item> duralumin_ingot = ITEMS.register("duralumin_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> duralumin_dust = ITEMS.register("duralumin_dust", TinkersReforgedItems::register);
@@ -58,6 +61,8 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> kepu_ingot = ITEMS.register("kepu_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> kepu_dust = ITEMS.register("kepu_dust", TinkersReforgedItems::register);
     public static RegistryObject<Item> kepu_nugget = ITEMS.register("kepu_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> raw_kepu = ITEMS.register("raw_kepu", TinkersReforgedItems::register);
+    public static RegistryObject<Item> raw_kepu_block = ITEMS.register("raw_kepu_block", () -> registerItemBlock(TinkersReforgedBlocks.raw_kepu_block.get()));
     public static RegistryObject<Item> kepu_block = ITEMS.register("kepu_block", () -> registerItemBlock(TinkersReforgedBlocks.kepu_block.get()));
     public static RegistryObject<Item> kepu_ore = ITEMS.register("kepu_ore", () -> registerItemBlock(TinkersReforgedBlocks.kepu_ore.get()));
 
@@ -71,10 +76,10 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> qivium_nugget = ITEMS.register("qivium_nugget", TinkersReforgedItems::register);
     public static RegistryObject<Item> qivium_block = ITEMS.register("qivium_block", () -> registerItemBlock(TinkersReforgedBlocks.qivium_block.get()));
 
-    public static RegistryObject<Item> shulker_metal_ingot = ITEMS.register("shulker_metal_ingot", TinkersReforgedItems::register);
-    public static RegistryObject<Item> shulker_metal_dust = ITEMS.register("shulker_metal_dust", TinkersReforgedItems::register);
-    public static RegistryObject<Item> shulker_metal_nugget = ITEMS.register("shulker_metal_nugget", TinkersReforgedItems::register);
-    public static RegistryObject<Item> shulker_metal_block = ITEMS.register("shulker_metal_block", () -> registerItemBlock(TinkersReforgedBlocks.shulker_metal_block.get()));
+    public static RegistryObject<Item> chorus_metal_ingot = ITEMS.register("chorus_metal_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> chorus_metal_dust = ITEMS.register("chorus_metal_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> chorus_metal_nugget = ITEMS.register("chorus_metal_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> chorus_metal_block = ITEMS.register("chorus_metal_block", () -> registerItemBlock(TinkersReforgedBlocks.chorus_metal_block.get()));
 
     public static Item register() {
         return new Item(new Item.Properties().tab(group));

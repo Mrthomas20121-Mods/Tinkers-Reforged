@@ -15,6 +15,7 @@ import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 import javax.annotation.Nonnull;
 
 import static net.minecraft.world.item.Tiers.DIAMOND;
+import static net.minecraft.world.item.Tiers.NETHERITE;
 
 public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
@@ -23,6 +24,9 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId lavium = createMaterial("lavium");
     public static final MaterialId qivium = createMaterial("qivium");
     public static final MaterialId gausum = createMaterial("gausum");
+    public static final MaterialId felsteel = createMaterial("felsteel");
+    public static final MaterialId chorus_metal = createMaterial("chorus_metal");
+    public static final MaterialId kepu = createMaterial("kepu");
 
     private static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));
@@ -39,6 +43,9 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(lavium, 4, ORDER_HARVEST, false);
         addMaterial(qivium, 4, ORDER_WEAPON, false);
         addMaterial(gausum, 4, ORDER_HARVEST, false);
+        addMaterial(felsteel, 4, ORDER_HARVEST, false);
+        addMaterial(chorus_metal, 4, ORDER_HARVEST, false);
+        addMaterial(kepu, 4, ORDER_HARVEST, false);
     }
 
     @Nonnull
@@ -64,6 +71,12 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addDefaultTraits(electrical_copper, TinkersReforgedModifiers.electrical_copper_electro_web);
 
             addDefaultTraits(gausum, TinkersReforgedModifiers.gausum_titanic_damage);
+
+            addDefaultTraits(felsteel, TinkersReforgedModifiers.felsteel_fel_debris);
+
+            addDefaultTraits(chorus_metal, TinkersReforgedModifiers.chorus_metal_levitating_blob);
+
+            addDefaultTraits(kepu, TinkersReforgedModifiers.gausum_titanic_damage);
         }
 
         @Nonnull
@@ -89,18 +102,33 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialStats() {
 
             addMaterialStats(qivium,
-                    new HeadMaterialStats(800, 7.4f, DIAMOND, 3f),
+                    new HeadMaterialStats(600, 5f, DIAMOND, 5f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(lavium,
-                    new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
+                    new HeadMaterialStats(600, 7.5f, DIAMOND, 2.25f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(gausum,
-                    new HeadMaterialStats(800, 7.4f, DIAMOND, 3f),
+                    new HeadMaterialStats(1200, 7.4f, DIAMOND, 3f),
                     HandleMaterialStats.DEFAULT.withDurability(2f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(felsteel,
+                    new HeadMaterialStats(1300, 6f, NETHERITE, 4f),
+                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withMiningSpeed(1.01f).withAttackSpeed(1.2f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(chorus_metal,
+                    new HeadMaterialStats(900, 5f, NETHERITE, 5f),
+                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withMiningSpeed(1.01f).withAttackSpeed(1.2f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(kepu,
+                    new HeadMaterialStats(600, 4f, NETHERITE, 6f),
+                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withMiningSpeed(1.01f).withAttackSpeed(1.2f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(duralumin,

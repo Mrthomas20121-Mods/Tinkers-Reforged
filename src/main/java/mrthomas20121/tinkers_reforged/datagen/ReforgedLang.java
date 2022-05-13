@@ -23,7 +23,8 @@ public class ReforgedLang extends LanguageProvider {
     protected void addTranslations() {
         addGroup("Tinkers Reforged Items");
         addBlock(TinkersReforgedBlocks.aluminum_block, "Aluminum Block");
-        addBlock(TinkersReforgedBlocks.aluminum_ore, "Aluminum Ore");
+        addBlock(TinkersReforgedBlocks.aluminum_ore, "Bauxite Ore");
+        addBlock(TinkersReforgedBlocks.deepslate_aluminum_ore, "Deepslate Bauxite Ore");
         addItem(TinkersReforgedItems.aluminum_dust, "Aluminum Dust");
         addItem(TinkersReforgedItems.aluminum_ingot, "Aluminum Ingot");
         addItem(TinkersReforgedItems.aluminum_nugget, "Aluminum Nugget");
@@ -47,14 +48,22 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.gausum_dust, "Gausum Dust");
         addItem(TinkersReforgedItems.gausum_ingot, "Gausum Ingot");
         addItem(TinkersReforgedItems.gausum_nugget, "Gausum Nugget");
+        addBlock(TinkersReforgedBlocks.felsteel_block, "Felsteel Block");
+        addItem(TinkersReforgedItems.felsteel_dust, "Felsteel Dust");
+        addItem(TinkersReforgedItems.felsteel_ingot, "Felsteel Ingot");
+        addItem(TinkersReforgedItems.kepu_ore, "Kepu Ore");
         addBlock(TinkersReforgedBlocks.kepu_block, "Kepu Block");
         addItem(TinkersReforgedItems.kepu_dust, "Kepu Dust");
         addItem(TinkersReforgedItems.kepu_ingot, "Kepu Ingot");
         addItem(TinkersReforgedItems.kepu_nugget, "Kepu Nugget");
-        addBlock(TinkersReforgedBlocks.shulker_metal_block, "Shulker Metal Block");
-        addItem(TinkersReforgedItems.shulker_metal_dust, "Shulker Metal Dust");
-        addItem(TinkersReforgedItems.shulker_metal_ingot, "Shulker Metal Ingot");
-        addItem(TinkersReforgedItems.shulker_metal_nugget, "Shulker Metal Nugget");
+        addBlock(TinkersReforgedBlocks.chorus_metal_block, "Chorus Metal Block");
+        addItem(TinkersReforgedItems.chorus_metal_dust, "Chorus Metal Dust");
+        addItem(TinkersReforgedItems.chorus_metal_ingot, "Chorus Metal Ingot");
+        addItem(TinkersReforgedItems.chorus_metal_nugget, "Chorus Metal Nugget");
+        addItem(TinkersReforgedItems.raw_aluminum, "Raw Bauxite");
+        addItem(TinkersReforgedItems.raw_kepu, "Raw Kepu");
+        addBlock(TinkersReforgedBlocks.raw_aluminum_block, "Raw Bauxite Block");
+        addBlock(TinkersReforgedBlocks.raw_kepu_block, "Raw Kepu Block");
 
         addFluid(TinkersReforgedFluids.redstone, "Liquid Redstone");
         addFluid(TinkersReforgedFluids.duralumin, "Molten Duralumin");
@@ -64,6 +73,11 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.blazing_copper, "Molten Blazing Copper");
         addFluid(TinkersReforgedFluids.gausum, "Molten Gausum");
         addFluid(TinkersReforgedFluids.lapis, "Molten Lapis");
+        addFluid(TinkersReforgedFluids.felsteel, "Molten Felsteel");
+        addFluid(TinkersReforgedFluids.kepu, "Molten Kepu");
+        addFluid(TinkersReforgedFluids.chorus_metal, "Molten Chorus Metal");
+        addFluid(TinkersReforgedFluids.chorus, "Molten Chorus");
+        addFluid(TinkersReforgedFluids.shulker, "Molten Shulker");
 
         add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
         add(TinkersReforgedFluids.duralumin.get().getBucket(), "Molten Duralumin Bucket");
@@ -75,7 +89,10 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.blazing_copper.get().getBucket(), "Molten Blazing Copper Bucket");
         add(TinkersReforgedFluids.felsteel.get().getBucket(), "Molten Felsteel Bucket");
         add(TinkersReforgedFluids.kepu.get().getBucket(), "Molten Kepu Bucket");
-        add(TinkersReforgedFluids.shulker_metal.get().getBucket(), "Molten Shulker Metal Bucket");
+        add(TinkersReforgedFluids.chorus_metal.get().getBucket(), "Molten Chorus Metal Bucket");
+        add(TinkersReforgedFluids.chorus.get().getBucket(), "Molten Chorus Bucket");
+        add(TinkersReforgedFluids.shulker.get().getBucket(), "Molten Shulker Bucket");
+
         add("effect.tinkers_reforged.electro_web", "Electro Web");
 
         for(CastType type: CastType.values()) {
@@ -88,6 +105,9 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
         addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
         addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
+        addMaterial(ReforgedMaterials.felsteel, "Felsteel", "Ancient Debris Alloy", "From the depth of the nether");
+        addMaterial(ReforgedMaterials.chorus_metal, "Chorus Metal", "Chorus and Shulker alloy", "Chorus and Shulker alloy");
+        addMaterial(ReforgedMaterials.kepu, "Kepu", "Come from the depth of the end", "Infused End Ore");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
@@ -95,9 +115,12 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
         addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Firestarter", "More Fire!", "Attacks increases fire duration.");
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage to things in the nether but deal less damage to things in the end.");
-        addModifier(TinkersReforgedModifiers.shulker_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Deal more damage to things in the nether but deal less damage to things in the end.");
+        addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Deal more damage to things in the nether but deal less damage to things in the end.");
+        addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Damage Lock", "No Damage?", "Your tool can only do damage in the end.");
 
         add("modifier.fel_debris.bonus", "%s Damage in the current dimension.");
+        add("modifier.arid_zone.attack_bonus", "+%s Bonus Damage in the current biome.");
+        add("modifier.arid_zone.mining_speed_bonus", "+%s Bonus Mining Speed in the current biome.");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

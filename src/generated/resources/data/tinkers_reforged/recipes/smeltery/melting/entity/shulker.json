@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:entity_melting",
+  "entity": {
+    "type": "minecraft:shulker"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_shulker",
+    "amount": 90
+  },
+  "damage": 2
+}

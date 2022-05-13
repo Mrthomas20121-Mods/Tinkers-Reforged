@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "tinkers_reforged:raw_kepu"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_kepu",
+    "amount": 90
+  },
+  "temperature": 900,
+  "time": 50,
+  "byproducts": [
+    {
+      "fluid": "tinkers_reforged:molten_chorus",
+      "amount": 45
+    }
+  ]
+}

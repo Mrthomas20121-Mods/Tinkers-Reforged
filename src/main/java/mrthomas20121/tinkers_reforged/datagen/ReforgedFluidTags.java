@@ -25,6 +25,11 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> LAPIS = create("forge:molten_lapis");
     public static final TagKey<Fluid> GAUSUM = create("forge:molten_gausum");
     public static final TagKey<Fluid> REDSTONE = create("forge:redstone");
+    public static final TagKey<Fluid> FELSTEEL = create("forge:molten_felsteel");
+    public static final TagKey<Fluid> KEPU = create("forge:molten_kepu");
+    public static final TagKey<Fluid> CHRORUS_METAL = create("forge:molten_chorus_metal");
+    public static final TagKey<Fluid> CHORUS = create("forge:molten_chorus");
+    public static final TagKey<Fluid> SHULKER = create("forge:molten_shulker");
 
     // tinkers reforged tags
     public static final TagKey<Fluid> DURALUMIN_ = create("tinkers_reforged:molten_duralumin");
@@ -34,6 +39,11 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> BLAZING_COPPER_ = create("tinkers_reforged:molten_blazing_copper");
     public static final TagKey<Fluid> GAUSUM_ = create("tinkers_reforged:molten_gausum");
     public static final TagKey<Fluid> LAPIS_ = create("tinkers_reforged:molten_lapis");
+    public static final TagKey<Fluid> FELSTEEL_ = create("tinkers_reforged:molten_felsteel");
+    public static final TagKey<Fluid> KEPU_ = create("tinkers_reforged:molten_kepu");
+    public static final TagKey<Fluid> CHRORUS_METAL_ = create("tinkers_reforged:molten_chorus_metal");
+    public static final TagKey<Fluid> CHORUS_ = create("tinkers_reforged:molten_chorus");
+    public static final TagKey<Fluid> SHULKER_ = create("tinkers_reforged:molten_shulker");
 
     private static TagKey<Fluid> create(String name) {
         return FluidTags.create(new ResourceLocation(name));
@@ -53,6 +63,11 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(QIVIUM).add(TinkersReforgedFluids.qivium.getStill());
         tag(GAUSUM).add(TinkersReforgedFluids.gausum.getStill());
         tag(LAPIS).add(TinkersReforgedFluids.lapis.getStill());
+        tag(FELSTEEL).add(TinkersReforgedFluids.felsteel.getStill());
+        tag(KEPU).add(TinkersReforgedFluids.kepu.getStill());
+        tag(CHRORUS_METAL).add(TinkersReforgedFluids.chorus_metal.getStill());
+        tag(CHORUS).add(TinkersReforgedFluids.chorus.getStill());
+        tag(SHULKER).add(TinkersReforgedFluids.shulker.getStill());
 
         tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.getStill());
         tag(DURALUMIN_).add(TinkersReforgedFluids.duralumin.getStill());
@@ -61,5 +76,10 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(QIVIUM_).add(TinkersReforgedFluids.qivium.getStill());
         tag(GAUSUM_).add(TinkersReforgedFluids.gausum.getStill());
         tag(LAPIS_).add(TinkersReforgedFluids.lapis.getStill());
+        tag(FELSTEEL_).add(TinkersReforgedFluids.felsteel.getStill());
+        tag(KEPU_).add(TinkersReforgedFluids.kepu.getStill());
+        tag(CHRORUS_METAL_).add(TinkersReforgedFluids.chorus_metal.getStill());
+        tag(CHORUS_).add(TinkersReforgedFluids.chorus.getStill());
+        tag(SHULKER_).add(TinkersReforgedFluids.shulker.getStill());
     }
 }

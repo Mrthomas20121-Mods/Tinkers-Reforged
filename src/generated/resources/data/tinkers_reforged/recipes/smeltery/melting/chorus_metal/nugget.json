@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/chorus_metal"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_chorus_metal",
+    "amount": 10
+  },
+  "temperature": 1200,
+  "time": 24
+}

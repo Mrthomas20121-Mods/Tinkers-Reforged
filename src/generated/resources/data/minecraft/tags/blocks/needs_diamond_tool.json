@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:kepu_ore",
+    "tinkers_reforged:kepu_block",
+    "tinkers_reforged:raw_kepu_block"
+  ]
+}

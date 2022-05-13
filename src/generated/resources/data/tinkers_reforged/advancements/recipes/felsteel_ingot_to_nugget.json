@@ -1,0 +1,45 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:felsteel_nugget"
+          ]
+        },
+        "criteria": {
+          "has_ingot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "tinkers_reforged:felsteel_ingot"
+                  ]
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "tinkers_reforged:felsteel_nugget"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ingot",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

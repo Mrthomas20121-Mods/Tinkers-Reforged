@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/kepu",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/kepu"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_kepu",
+    "amount": 45
+  },
+  "temperature": 1300,
+  "time": 15
+}

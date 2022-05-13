@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/kepu",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/kepu"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_kepu",
+    "amount": 45
+  },
+  "temperature": 1300,
+  "time": 15
+}

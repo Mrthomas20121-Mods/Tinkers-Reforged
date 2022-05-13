@@ -51,9 +51,12 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.kepu_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.kepu_nugget, "item/generated");
 
-        itemWithModel(TinkersReforgedItems.shulker_metal_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.shulker_metal_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.shulker_metal_nugget, "item/generated");
+        itemWithModel(TinkersReforgedItems.chorus_metal_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.chorus_metal_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.chorus_metal_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.raw_aluminum, "item/generated");
+        itemWithModel(TinkersReforgedItems.raw_kepu, "item/generated");
 
 
         for(CastType type : CastType.values()) {

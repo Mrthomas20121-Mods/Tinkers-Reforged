@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/felsteel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/felsteel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_felsteel",
+    "amount": 360
+  },
+  "temperature": 1500,
+  "time": 160
+}

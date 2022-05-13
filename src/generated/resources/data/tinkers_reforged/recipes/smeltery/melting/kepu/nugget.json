@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/kepu"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_kepu",
+    "amount": 10
+  },
+  "temperature": 1300,
+  "time": 25
+}

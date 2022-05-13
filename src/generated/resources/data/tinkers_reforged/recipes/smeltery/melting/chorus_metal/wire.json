@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/chorus_metal",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/chorus_metal"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_chorus_metal",
+    "amount": 45
+  },
+  "temperature": 1200,
+  "time": 14
+}

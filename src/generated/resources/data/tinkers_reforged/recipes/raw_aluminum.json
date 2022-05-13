@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tinkers_reforged:raw_aluminum_block"
+    }
+  ],
+  "result": {
+    "item": "tinkers_reforged:raw_aluminum",
+    "count": 9
+  }
+}

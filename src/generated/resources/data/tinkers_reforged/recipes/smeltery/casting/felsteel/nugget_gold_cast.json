@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_felsteel",
+    "amount": 10
+  },
+  "result": "tinkers_reforged:felsteel_nugget",
+  "cooling_time": 27
+}

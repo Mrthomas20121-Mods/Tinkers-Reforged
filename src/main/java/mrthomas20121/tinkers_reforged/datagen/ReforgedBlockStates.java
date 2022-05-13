@@ -22,6 +22,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(TinkersReforgedBlocks.aluminum_ore);
+        blockWithItem(TinkersReforgedBlocks.deepslate_aluminum_ore);
         blockWithItem(TinkersReforgedBlocks.aluminum_block);
         blockWithItem(TinkersReforgedBlocks.duralumin_block);
         blockWithItem(TinkersReforgedBlocks.electrical_copper_block);
@@ -31,7 +32,9 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.felsteel_block);
         blockWithItem(TinkersReforgedBlocks.kepu_ore);
         blockWithItem(TinkersReforgedBlocks.kepu_block);
-        blockWithItem(TinkersReforgedBlocks.shulker_metal_block);
+        blockWithItem(TinkersReforgedBlocks.chorus_metal_block);
+        blockWithItem(TinkersReforgedBlocks.raw_kepu_block);
+        blockWithItem(TinkersReforgedBlocks.raw_aluminum_block);
 
         fluid(TinkersReforgedFluids.duralumin);
         fluid(TinkersReforgedFluids.electrical_copper);
@@ -43,7 +46,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.lapis);
         fluid(TinkersReforgedFluids.felsteel);
         fluid(TinkersReforgedFluids.kepu);
-        fluid(TinkersReforgedFluids.shulker_metal);
+        fluid(TinkersReforgedFluids.chorus_metal);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {

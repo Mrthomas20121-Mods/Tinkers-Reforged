@@ -53,9 +53,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     public static final TagKey<Item> FELSTEEL_DUST = create("forge:dusts/felsteel");
     public static final TagKey<Item> FELSTEEL_NUGGET = create("forge:nuggets/felsteel");
 
-    public static final TagKey<Item> SHULKER_METAL_INGOT = create("forge:ingots/shulker_metal");
-    public static final TagKey<Item> SHULKER_METAL_DUST = create("forge:dusts/shulker_metal");
-    public static final TagKey<Item> SHULKER_METAL_NUGGET = create("forge:nuggets/shulker_metal");
+    public static final TagKey<Item> CHORUS_METAL_INGOT = create("forge:ingots/chorus_metal");
+    public static final TagKey<Item> CHORUS_METAL_DUST = create("forge:dusts/chorus_metal");
+    public static final TagKey<Item> CHORUS_METAL_NUGGET = create("forge:nuggets/chorus_metal");
 
     public static final TagKey<Item> KEPU_ORE = create("forge:ores/kepu");
     public static final TagKey<Item> KEPU_INGOT = create("forge:ingots/kepu");
@@ -63,6 +63,16 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     public static final TagKey<Item> KEPU_NUGGET = create("forge:nuggets/kepu");
 
     public static final TagKey<Item> ALUMINUM_CASTS = create("tinkers_reforged:casts/aluminum");
+
+    private static final TagKey<Item> DURALUMIN = create("forge:storage_blocks/duralumin");
+    private static final TagKey<Item> ALUMINUM = create("forge:storage_blocks/aluminum");
+    private static final TagKey<Item> ELECTRICAL_COPPER = create("forge:storage_blocks/electrical_copper");
+    private static final TagKey<Item> LAVIUM = create("forge:storage_blocks/lavium");
+    private static final TagKey<Item> QIVIUM = create("forge:storage_blocks/qivium");
+    private static final TagKey<Item> GAUSUM = create("forge:storage_blocks/gausum");
+    private static final TagKey<Item> FELSTEEL = create("forge:storage_blocks/felsteel");
+    private static final TagKey<Item> KEPU = create("forge:storage_blocks/kepu");
+    private static final TagKey<Item> CHORUS_METAl = create("forge:storage_blocks/chorus_metal");
 
     private static TagKey<Item> create(String name) {
         return ItemTags.create(new ResourceLocation(name));
@@ -75,7 +85,18 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     @Override
     protected void addTags() {
 
-        tag(ORES).add(TinkersReforgedItems.aluminum_ore.get(), TinkersReforgedItems.kepu_ore.get());
+        tag(ORES).add(TinkersReforgedItems.aluminum_ore.get(), TinkersReforgedItems.kepu_ore.get(), TinkersReforgedItems.deepslate_aluminum_ore.get());
+
+        tag(DURALUMIN).add(TinkersReforgedItems.duralumin_block.get());
+        tag(ALUMINUM).add(TinkersReforgedItems.aluminum_block.get());
+        tag(ELECTRICAL_COPPER).add(TinkersReforgedItems.electrical_copper_block.get());
+        tag(LAVIUM).add(TinkersReforgedItems.lavium_block.get());
+        tag(QIVIUM).add(TinkersReforgedItems.qivium_block.get());
+        tag(GAUSUM).add(TinkersReforgedItems.gausum_block.get());
+        tag(FELSTEEL).add(TinkersReforgedItems.felsteel_block.get());
+        tag(KEPU).add(TinkersReforgedItems.kepu_block.get());
+        tag(CHORUS_METAl).add(TinkersReforgedItems.chorus_metal_block.get());
+
         tag(INGOTS)
                 .add(TinkersReforgedItems.aluminum_ingot.get())
                 .add(TinkersReforgedItems.duralumin_ingot.get())
@@ -85,7 +106,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 .add(TinkersReforgedItems.gausum_ingot.get())
                 .add(TinkersReforgedItems.felsteel_ingot.get())
                 .add(TinkersReforgedItems.kepu_ingot.get())
-                .add(TinkersReforgedItems.shulker_metal_ingot.get());
+                .add(TinkersReforgedItems.chorus_metal_ingot.get());
 
         tag(DUSTS)
                 .add(TinkersReforgedItems.aluminum_dust.get())
@@ -96,7 +117,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 .add(TinkersReforgedItems.gausum_dust.get())
                 .add(TinkersReforgedItems.felsteel_dust.get())
                 .add(TinkersReforgedItems.kepu_dust.get())
-                .add(TinkersReforgedItems.shulker_metal_dust.get());
+                .add(TinkersReforgedItems.chorus_metal_dust.get());
 
         tag(NUGGETS)
                 .add(TinkersReforgedItems.aluminum_nugget.get())
@@ -107,7 +128,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 .add(TinkersReforgedItems.gausum_nugget.get())
                 .add(TinkersReforgedItems.felsteel_nugget.get())
                 .add(TinkersReforgedItems.kepu_nugget.get())
-                .add(TinkersReforgedItems.shulker_metal_nugget.get());
+                .add(TinkersReforgedItems.chorus_metal_nugget.get());
 
         tag(DURALUMIN_INGOT).add(TinkersReforgedItems.duralumin_ingot.get());
         tag(DURALUMIN_DUST).add(TinkersReforgedItems.duralumin_dust.get());
@@ -125,7 +146,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(QIVIUM_DUST).add(TinkersReforgedItems.qivium_dust.get());
         tag(QIVIUM_NUGGET).add(TinkersReforgedItems.qivium_nugget.get());
 
-        tag(ALUMINUM_ORE).add(TinkersReforgedItems.aluminum_ore.get());
+        tag(ALUMINUM_ORE).add(TinkersReforgedItems.aluminum_ore.get(), TinkersReforgedItems.deepslate_aluminum_ore.get());
         tag(ALUMINUM_INGOT).add(TinkersReforgedItems.aluminum_ingot.get());
         tag(ALUMINUM_DUST).add(TinkersReforgedItems.aluminum_dust.get());
         tag(ALUMINUM_NUGGET).add(TinkersReforgedItems.aluminum_nugget.get());
@@ -138,9 +159,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(FELSTEEL_DUST).add(TinkersReforgedItems.felsteel_dust.get());
         tag(FELSTEEL_NUGGET).add(TinkersReforgedItems.felsteel_nugget.get());
 
-        tag(SHULKER_METAL_INGOT).add(TinkersReforgedItems.shulker_metal_ingot.get());
-        tag(SHULKER_METAL_DUST).add(TinkersReforgedItems.shulker_metal_dust.get());
-        tag(SHULKER_METAL_NUGGET).add(TinkersReforgedItems.shulker_metal_nugget.get());
+        tag(CHORUS_METAL_INGOT).add(TinkersReforgedItems.chorus_metal_ingot.get());
+        tag(CHORUS_METAL_DUST).add(TinkersReforgedItems.chorus_metal_dust.get());
+        tag(CHORUS_METAL_NUGGET).add(TinkersReforgedItems.chorus_metal_nugget.get());
 
         tag(KEPU_ORE).add(TinkersReforgedItems.kepu_ore.get());
         tag(KEPU_INGOT).add(TinkersReforgedItems.kepu_ingot.get());
@@ -156,7 +177,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 .add(TinkersReforgedBlocks.gausum_block.get().asItem())
                 .add(TinkersReforgedBlocks.felsteel_block.get().asItem())
                 .add(TinkersReforgedBlocks.kepu_block.get().asItem())
-                .add(TinkersReforgedBlocks.shulker_metal_block.get().asItem());
+                .add(TinkersReforgedBlocks.chorus_metal_block.get().asItem());
 
         TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);
         for(CastType type: CastType.values()) {

@@ -22,5 +22,7 @@ public class TinkersReforgedModifiers {
 
     public static StaticModifier<Modifier> gausum_titanic_damage = MODIFIERS.register("titanic_damage", ModifierTitanicDamage::new);
 
-    public static StaticModifier<Modifier> shulker_metal_levitating_blob = MODIFIERS.register("levitating_blob", ModifierLevitatingBlob::new);
+    public static StaticModifier<Modifier> chorus_metal_levitating_blob = MODIFIERS.register("levitating_blob", ModifierLevitatingBlob::new);
+
+    public static StaticModifier<Modifier> kepu_damage_lock = MODIFIERS.register("damage_lock", ModifierDamageLock::new);
 }

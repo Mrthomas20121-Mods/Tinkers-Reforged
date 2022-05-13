@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:felsteel",
+  "temperature": 1500,
+  "result": {
+    "fluid": "tinkers_reforged:molten_felsteel",
+    "amount": 90
+  }
+}

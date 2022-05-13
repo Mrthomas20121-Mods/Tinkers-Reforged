@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "minecraft:chorus_fruit"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_chorus",
+    "amount": 90
+  },
+  "temperature": 900,
+  "time": 63
+}
