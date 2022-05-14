@@ -40,7 +40,7 @@ public class TinkersReforged {
 
 		MinecraftForge.EVENT_BUS.register(this);
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ReforgedConfig.config);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TinkersReforgedConfig.config);
 	}
 
 	@SubscribeEvent
