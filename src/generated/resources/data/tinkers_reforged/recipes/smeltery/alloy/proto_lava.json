@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_ender",
+      "amount": 250
+    },
+    {
+      "name": "tinkers_reforged:molten_chorus",
+      "amount": 45
+    },
+    {
+      "tag": "minecraft:lava",
+      "amount": 1000
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_proto_lava",
+    "amount": 90
+  },
+  "temperature": 2200
+}
