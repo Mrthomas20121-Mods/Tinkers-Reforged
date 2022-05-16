@@ -29,6 +29,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
     private static final TagKey<Block> FELSTEEL = create("forge:storage_blocks/felsteel");
     private static final TagKey<Block> KEPU = create("forge:storage_blocks/kepu");
     private static final TagKey<Block> CHORUS_METAl = create("forge:storage_blocks/chorus_metal");
+    private static final TagKey<Block> RAW_ALUMINUM = create("forge:storage_blocks/raw_aluminum");
+    private static final TagKey<Block> RAW_KEPU = create("forge:storage_blocks/raw_kepu");
 
     private static TagKey<Block> create(String name) {
         return BlockTags.create(new ResourceLocation(name));
@@ -40,6 +42,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
+
+        tag(RAW_ALUMINUM).add(TinkersReforgedBlocks.raw_aluminum_block.get());
+        tag(RAW_KEPU).add(TinkersReforgedBlocks.raw_kepu_block.get());
 
         tag(DURALUMIN).add(TinkersReforgedBlocks.duralumin_block.get());
         tag(ALUMINUM).add(TinkersReforgedBlocks.aluminum_block.get());

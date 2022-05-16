@@ -58,10 +58,10 @@ public class TinkersReforgedConfig {
         public BauxiteOreConfig(ForgeConfigSpec.Builder builder) {
             super(builder);
             this.enabled = builder.comment("Enable/Disable Bauxite ore").define("kepuOreEnabled", true);
-            this.minY = builder.comment("Min Y level").defineInRange("minY", -20, -60, 256);
+            this.minY = builder.comment("Min Y level").defineInRange("minY", -60, -60, 256);
             this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 120, -60, 256);
-            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 10, 1, 40);
-            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 3, 1, 10);
+            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 80, 1, 100);
+            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 4, 1, 10);
         }
     }
 
@@ -72,8 +72,8 @@ public class TinkersReforgedConfig {
             this.enabled = builder.comment("Enable/Disable Kepu ore").define("kepuOreEnabled", true);
             this.minY = builder.comment("Min Y level").defineInRange("minY", -20, -60, 256);
             this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 100, -60, 256);
-            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 10, 1, 40);
-            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 5, 1, 40);
+            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 20, 1, 40);
+            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 3, 1, 40);
         }
     }
 }

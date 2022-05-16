@@ -49,6 +49,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.chorus_metal);
         fluid(TinkersReforgedFluids.chorus);
         fluid(TinkersReforgedFluids.shulker);
+        fluid(TinkersReforgedFluids.proto_lava);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {

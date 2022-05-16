@@ -31,5 +31,11 @@
     "amount": 180
   },
   "temperature": 1300,
-  "time": 187
+  "time": 187,
+  "byproducts": [
+    {
+      "fluid": "tconstruct:molten_amethyst",
+      "amount": 200
+    }
+  ]
 }

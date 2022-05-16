@@ -12,12 +12,16 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
 
 import javax.annotation.Nullable;
 
 public class ReforgedItemsTags extends ItemTagsProvider {
+
+    private static final TagKey<Item> RAW_ALUMINUM = create("forge:storage_blocks/raw_aluminum");
+    private static final TagKey<Item> RAW_KEPU = create("forge:storage_blocks/raw_kepu");
 
     public static final TagKey<Item> INGOTS = create("forge:ingots");
     public static final TagKey<Item> DUSTS = create("forge:dusts");
@@ -84,6 +88,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
+
+        tag(RAW_ALUMINUM).add(TinkersReforgedItems.raw_aluminum_block.get());
+        tag(RAW_KEPU).add(TinkersReforgedItems.raw_kepu_block.get());
 
         tag(ORES).add(TinkersReforgedItems.aluminum_ore.get(), TinkersReforgedItems.kepu_ore.get(), TinkersReforgedItems.deepslate_aluminum_ore.get());
 

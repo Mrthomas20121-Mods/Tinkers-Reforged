@@ -30,6 +30,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> CHRORUS_METAL = create("forge:molten_chorus_metal");
     public static final TagKey<Fluid> CHORUS = create("forge:molten_chorus");
     public static final TagKey<Fluid> SHULKER = create("forge:molten_shulker");
+    public static final TagKey<Fluid> PROTO_LAVA = create("forge:molten_proto_lava");
 
     // tinkers reforged tags
     public static final TagKey<Fluid> DURALUMIN_ = create("tinkers_reforged:molten_duralumin");
@@ -44,6 +45,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> CHRORUS_METAL_ = create("tinkers_reforged:molten_chorus_metal");
     public static final TagKey<Fluid> CHORUS_ = create("tinkers_reforged:molten_chorus");
     public static final TagKey<Fluid> SHULKER_ = create("tinkers_reforged:molten_shulker");
+    public static final TagKey<Fluid> PROTO_LAVA_ = create("tinkers_reforged:molten_proto_lava");
 
     private static TagKey<Fluid> create(String name) {
         return FluidTags.create(new ResourceLocation(name));
@@ -56,30 +58,32 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     @Override
     protected void addTags() {
 
-        tag(BLAZING_COPPER).add(TinkersReforgedFluids.blazing_copper.getStill());
+        tag(BLAZING_COPPER).add(TinkersReforgedFluids.blazing_copper.get());
         tag(DURALUMIN).add(TinkersReforgedFluids.duralumin.getStill());
-        tag(ELECTRICAL_COPPER).add(TinkersReforgedFluids.electrical_copper.getStill());
-        tag(LAVIUM).add(TinkersReforgedFluids.lavium.getStill());
-        tag(QIVIUM).add(TinkersReforgedFluids.qivium.getStill());
-        tag(GAUSUM).add(TinkersReforgedFluids.gausum.getStill());
-        tag(LAPIS).add(TinkersReforgedFluids.lapis.getStill());
-        tag(FELSTEEL).add(TinkersReforgedFluids.felsteel.getStill());
-        tag(KEPU).add(TinkersReforgedFluids.kepu.getStill());
-        tag(CHRORUS_METAL).add(TinkersReforgedFluids.chorus_metal.getStill());
-        tag(CHORUS).add(TinkersReforgedFluids.chorus.getStill());
-        tag(SHULKER).add(TinkersReforgedFluids.shulker.getStill());
+        tag(ELECTRICAL_COPPER).add(TinkersReforgedFluids.electrical_copper.get());
+        tag(LAVIUM).add(TinkersReforgedFluids.lavium.get());
+        tag(QIVIUM).add(TinkersReforgedFluids.qivium.get());
+        tag(GAUSUM).add(TinkersReforgedFluids.gausum.get());
+        tag(LAPIS).add(TinkersReforgedFluids.lapis.get());
+        tag(FELSTEEL).add(TinkersReforgedFluids.felsteel.get());
+        tag(KEPU).add(TinkersReforgedFluids.kepu.get());
+        tag(CHRORUS_METAL).add(TinkersReforgedFluids.chorus_metal.get());
+        tag(CHORUS).add(TinkersReforgedFluids.chorus.get());
+        tag(SHULKER).add(TinkersReforgedFluids.shulker.get());
+        tag(PROTO_LAVA).add(TinkersReforgedFluids.proto_lava.get());
 
-        tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.getStill());
-        tag(DURALUMIN_).add(TinkersReforgedFluids.duralumin.getStill());
-        tag(ELECTRICAL_COPPER_).add(TinkersReforgedFluids.electrical_copper.getStill());
-        tag(LAVIUM_).add(TinkersReforgedFluids.lavium.getStill());
-        tag(QIVIUM_).add(TinkersReforgedFluids.qivium.getStill());
-        tag(GAUSUM_).add(TinkersReforgedFluids.gausum.getStill());
-        tag(LAPIS_).add(TinkersReforgedFluids.lapis.getStill());
-        tag(FELSTEEL_).add(TinkersReforgedFluids.felsteel.getStill());
-        tag(KEPU_).add(TinkersReforgedFluids.kepu.getStill());
-        tag(CHRORUS_METAL_).add(TinkersReforgedFluids.chorus_metal.getStill());
-        tag(CHORUS_).add(TinkersReforgedFluids.chorus.getStill());
-        tag(SHULKER_).add(TinkersReforgedFluids.shulker.getStill());
+        tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.get());
+        tag(DURALUMIN_).add(TinkersReforgedFluids.duralumin.get());
+        tag(ELECTRICAL_COPPER_).add(TinkersReforgedFluids.electrical_copper.get());
+        tag(LAVIUM_).add(TinkersReforgedFluids.lavium.get());
+        tag(QIVIUM_).add(TinkersReforgedFluids.qivium.get());
+        tag(GAUSUM_).add(TinkersReforgedFluids.gausum.get());
+        tag(LAPIS_).add(TinkersReforgedFluids.lapis.get());
+        tag(FELSTEEL_).add(TinkersReforgedFluids.felsteel.get());
+        tag(KEPU_).add(TinkersReforgedFluids.kepu.get());
+        tag(CHRORUS_METAL_).add(TinkersReforgedFluids.chorus_metal.get());
+        tag(CHORUS_).add(TinkersReforgedFluids.chorus.get());
+        tag(SHULKER_).add(TinkersReforgedFluids.shulker.get());
+        tag(PROTO_LAVA_).add(TinkersReforgedFluids.proto_lava.get());
     }
 }

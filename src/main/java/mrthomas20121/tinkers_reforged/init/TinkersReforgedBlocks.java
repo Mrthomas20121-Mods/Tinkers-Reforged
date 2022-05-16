@@ -2,9 +2,11 @@ package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -16,10 +18,10 @@ public class TinkersReforgedBlocks {
     // block properties
     private static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(5F, 1200f).sound(SoundType.METAL);
     private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE);
-    private static final BlockBehaviour.Properties RAW_BLOCK = ORE.sound(SoundType.METAL);
+    private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK);
 
     public static RegistryObject<Block> aluminum_ore = BLOCKS.register("aluminum_ore", () -> new Block(ORE));
-    public static RegistryObject<Block> deepslate_aluminum_ore = BLOCKS.register("deepslate_aluminum_ore", () -> new Block(ORE.sound(SoundType.DEEPSLATE)));
+    public static RegistryObject<Block> deepslate_aluminum_ore = BLOCKS.register("deepslate_aluminum_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
     public static RegistryObject<Block> aluminum_block = BLOCKS.register("aluminum_block", () -> new Block(METAL));
     public static RegistryObject<Block> raw_aluminum_block = BLOCKS.register("raw_aluminum_block", () -> new Block(RAW_BLOCK));
     public static RegistryObject<Block> duralumin_block = BLOCKS.register("duralumin_block", () -> new Block(METAL));

@@ -22,18 +22,20 @@ import slimeknights.tconstruct.common.registration.ConfiguredFeatureDeferredRegi
 import slimeknights.tconstruct.common.registration.PlacedFeatureDeferredRegister;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = TinkersReforged.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TinkersReforgedWorldGen {
 
+    public static Supplier<List<OreConfiguration.TargetBlockState>> aluReplace = () -> List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, TinkersReforgedBlocks.aluminum_ore.get().defaultBlockState()), OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, TinkersReforgedBlocks.deepslate_aluminum_ore.get().defaultBlockState()));
+
     public static final ConfiguredFeatureDeferredRegister CONFIGURED_FEATURES = new ConfiguredFeatureDeferredRegister(TinkersReforged.MOD_ID);
     public static final PlacedFeatureDeferredRegister PLACED_FEATURES = new PlacedFeatureDeferredRegister(TinkersReforged.MOD_ID);
 
-    public static RegistryObject<ConfiguredFeature<OreConfiguration,Feature<OreConfiguration>>> ALUMINUM_ORE = CONFIGURED_FEATURES.registerSupplier("aluminum_ore", () -> Feature.ORE, () -> new OreConfiguration(List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, TinkersReforgedBlocks.aluminum_ore.get().defaultBlockState()), OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, TinkersReforgedBlocks.deepslate_aluminum_ore.get().defaultBlockState()))
-, TinkersReforgedConfig.COMMON.bauxiteOre.getSize()));
+    public static RegistryObject<ConfiguredFeature<OreConfiguration,Feature<OreConfiguration>>> ALUMINUM_ORE = CONFIGURED_FEATURES.registerSupplier("aluminum_ore", () -> Feature.ORE, () -> new OreConfiguration(aluReplace.get(), TinkersReforgedConfig.COMMON.bauxiteOre.getSize()));
     public static RegistryObject<PlacedFeature> placedAluminumOre = PLACED_FEATURES.register("aluminum_ore", ALUMINUM_ORE, CountPlacement.of(TinkersReforgedConfig.COMMON.bauxiteOre.getCount()), InSquarePlacement.spread(), BiomeFilter.biome(), HeightRangePlacement.uniform(VerticalAnchor.absolute(TinkersReforgedConfig.COMMON.bauxiteOre.getMinY()), VerticalAnchor.absolute(TinkersReforgedConfig.COMMON.bauxiteOre.getMaxY())));
 
-    public static RegistryObject<ConfiguredFeature<OreConfiguration,Feature<OreConfiguration>>> KEPU_ORE = CONFIGURED_FEATURES.registerSupplier("kepu_ore", () -> Feature.ORE, () -> new OreConfiguration(new TagMatchTest(Tags.Blocks.END_STONES), TinkersReforgedBlocks.kepu_ore.get().defaultBlockState(), 20));
+    public static RegistryObject<ConfiguredFeature<OreConfiguration,Feature<OreConfiguration>>> KEPU_ORE = CONFIGURED_FEATURES.registerSupplier("kepu_ore", () -> Feature.ORE, () -> new OreConfiguration(new TagMatchTest(Tags.Blocks.END_STONES), TinkersReforgedBlocks.kepu_ore.get().defaultBlockState(), TinkersReforgedConfig.COMMON.kepuOre.getSize()));
     public static RegistryObject<PlacedFeature> placedKepuOre = PLACED_FEATURES.register("kepu_ore", KEPU_ORE, CountPlacement.of(TinkersReforgedConfig.COMMON.kepuOre.getCount()), InSquarePlacement.spread(), BiomeFilter.biome(), HeightRangePlacement.uniform(VerticalAnchor.absolute(TinkersReforgedConfig.COMMON.kepuOre.getMinY()), VerticalAnchor.absolute(TinkersReforgedConfig.COMMON.kepuOre.getMaxY())));
 
     @SubscribeEvent

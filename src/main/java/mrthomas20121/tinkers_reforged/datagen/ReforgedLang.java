@@ -78,6 +78,7 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.chorus_metal, "Molten Chorus Metal");
         addFluid(TinkersReforgedFluids.chorus, "Molten Chorus");
         addFluid(TinkersReforgedFluids.shulker, "Molten Shulker");
+        addFluid(TinkersReforgedFluids.proto_lava, "Molten Proto Lava");
 
         add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
         add(TinkersReforgedFluids.duralumin.get().getBucket(), "Molten Duralumin Bucket");
@@ -92,6 +93,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.chorus_metal.get().getBucket(), "Molten Chorus Metal Bucket");
         add(TinkersReforgedFluids.chorus.get().getBucket(), "Molten Chorus Bucket");
         add(TinkersReforgedFluids.shulker.get().getBucket(), "Molten Shulker Bucket");
+        add(TinkersReforgedFluids.proto_lava.get().getBucket(), "Molten Proto Lava Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");
 
