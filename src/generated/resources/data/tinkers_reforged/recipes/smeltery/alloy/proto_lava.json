@@ -16,7 +16,7 @@
   ],
   "result": {
     "fluid": "tinkers_reforged:molten_proto_lava",
-    "amount": 90
+    "amount": 1000
   },
-  "temperature": 2200
+  "temperature": 1700
 }

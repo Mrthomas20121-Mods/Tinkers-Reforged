@@ -140,7 +140,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .addInput(TinkersReforgedFluids.shulker.get(), FluidValues.INGOT)
                 .save(consumer, modResource(alloyFolder+"chorus_metal"));
 
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.proto_lava.get(), FluidValues.INGOT)
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.proto_lava.get(), FluidValues.GLASS_BLOCK)
                 .addInput(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL)
                 .addInput(TinkersReforgedFluids.chorus.get(), FluidValues.INGOT/2)
                 .addInput(FluidTags.LAVA, FluidValues.GLASS_BLOCK)
