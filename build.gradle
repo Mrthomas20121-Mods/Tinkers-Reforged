@@ -124,7 +124,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "TFCTinkers",
+            "Specification-Title": "Tinkers Reforged",
             "Specification-Vendor": "Mrthomas20121",
             "Specification-Version": "1",
             "Implementation-Title": project.name,

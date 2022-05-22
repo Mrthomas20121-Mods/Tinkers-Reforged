@@ -25,4 +25,8 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<Modifier> chorus_metal_levitating_blob = MODIFIERS.register("levitating_blob", ModifierLevitatingBlob::new);
 
     public static StaticModifier<Modifier> kepu_damage_lock = MODIFIERS.register("damage_lock", ModifierDamageLock::new);
+
+    public static StaticModifier<Modifier> durasteel_adapting = MODIFIERS.register("adapting", ModifierAdaptating::new);
+
+    public static StaticModifier<Modifier> cutting_edge = MODIFIERS.register("cutting_edge", ModifierCuttingEdge::new);
 }

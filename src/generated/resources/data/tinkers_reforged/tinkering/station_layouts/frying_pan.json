@@ -1,0 +1,28 @@
+{
+  "translation_key": "item.tinkers_reforged.frying_pan",
+  "icon": {
+    "item": "tinkers_reforged:frying_pan",
+    "nbt": "{Damage:0,tic_broken:0b,tic_display:1b,tic_materials:[\"tconstruct:ui_render#head\",\"tconstruct:ui_render#handle\",\"tconstruct:ui_render#extra\",\"tconstruct:ui_render#large\",\"tconstruct:ui_render#extra_large\"]}"
+  },
+  "sortIndex": 3,
+  "input_slots": [
+    {
+      "icon": "tinkers_reforged:large_round_plate",
+      "translation_key": "item.tinkers_reforged.large_round_plate",
+      "x": 39,
+      "y": 35,
+      "filter": {
+        "item": "tinkers_reforged:large_round_plate"
+      }
+    },
+    {
+      "icon": "tconstruct:tool_handle",
+      "translation_key": "item.tconstruct.tool_handle",
+      "x": 21,
+      "y": 53,
+      "filter": {
+        "item": "tconstruct:tool_handle"
+      }
+    }
+  ]
+}

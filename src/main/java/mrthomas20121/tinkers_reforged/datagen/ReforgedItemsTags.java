@@ -4,6 +4,7 @@ import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.CastType;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
+import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -88,6 +89,16 @@ public class ReforgedItemsTags extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
+
+        tag(TinkerTags.Items.MODIFIABLE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.MELEE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.SWORD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.MELEE_PRIMARY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.HARVEST).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.ONE_HANDED).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.DURABILITY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LARGE_ROUND_PLATE.get());
 
         tag(RAW_ALUMINUM).add(TinkersReforgedItems.raw_aluminum_block.get());
         tag(RAW_KEPU).add(TinkersReforgedItems.raw_kepu_block.get());
@@ -184,14 +195,31 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 .add(TinkersReforgedBlocks.gausum_block.get().asItem())
                 .add(TinkersReforgedBlocks.felsteel_block.get().asItem())
                 .add(TinkersReforgedBlocks.kepu_block.get().asItem())
-                .add(TinkersReforgedBlocks.chorus_metal_block.get().asItem());
+                .add(TinkersReforgedBlocks.chorus_metal_block.get().asItem())
+                .add(TinkersReforgedBlocks.durasteel_block.get().asItem());
 
         TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);
         for(CastType type: CastType.values()) {
             Item cast = TinkersReforgedItems.casts.get(type).get();
             builder.add(cast);
-            TagKey<Item> castTag = create(String.format("tconstruct:casts/multi_use/%s", type.name().toLowerCase()));
+            TagKey<Item> castTag = create("tconstruct:casts/multi_use/%s".formatted(type.name().toLowerCase()));
             tag(castTag).add(cast);
         }
+    }
+
+    public void addCastTag(CastObject object) {
+        TagKey<Item> multiUseTag = object.getMultiUseTag();
+        TagKey<Item> singleUseTag = object.getSingleUseTag();
+        tag(multiUseTag).add(object.getGoldCast().get());
+        tag(singleUseTag).add(object.getSandCast().get(), object.getRedSandCast().get());
+
+        TagKey<Item> goldTag = create("tconstruct:casts/gold");
+        TagKey<Item> sandTag = create("tconstruct:casts/sand");
+        TagKey<Item> redSandTag = create("tconstruct:casts/red_sand");
+        tag(goldTag).add(object.getGoldCast().get());
+        tag(sandTag).add(object.getSandCast().get());
+        tag(redSandTag).add(object.getRedSandCast().get());
+        tag(TinkerTags.Items.MULTI_USE_CASTS).addTag(multiUseTag);
+        tag(TinkerTags.Items.SINGLE_USE_CASTS).addTag(singleUseTag);
     }
 }

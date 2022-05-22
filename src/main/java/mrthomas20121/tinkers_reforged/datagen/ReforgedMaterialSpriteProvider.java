@@ -47,5 +47,9 @@ public class ReforgedMaterialSpriteProvider extends AbstractMaterialSpriteProvid
                 .meleeHarvest()
                 .fallbacks("metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF0C2B3D).addARGB(102, 0xFF133D54).addARGB(140, 0xFF2C6F89).addARGB(178, 0xFF3D95AF).addARGB(216, 0xFF53B5CC).addARGB(255, 0xFF6ED5EA).build());
+        buildMaterial(ReforgedMaterials.durasteel)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF080614).addARGB(102, 0xFF130F30).addARGB(140, 0xFF302C70).addARGB(178, 0xFF494499).addARGB(216, 0xFF5D5BB7).addARGB(255, 0xFF7073CC).build());
     }
 }

@@ -22,6 +22,7 @@ public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
         buildRenderInfo(ReforgedMaterials.felsteel).color(0xAED104).fallbacks("metal");
         buildRenderInfo(ReforgedMaterials.chorus_metal).color(0xA884B7).fallbacks("metal");
         buildRenderInfo(ReforgedMaterials.kepu).color(0x53B5CC).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterials.durasteel).color(0x5D5BB7).fallbacks("rock");
     }
 
     @Nonnull

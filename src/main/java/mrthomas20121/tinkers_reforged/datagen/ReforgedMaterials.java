@@ -27,6 +27,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId felsteel = createMaterial("felsteel");
     public static final MaterialId chorus_metal = createMaterial("chorus_metal");
     public static final MaterialId kepu = createMaterial("kepu");
+    public static final MaterialId durasteel = createMaterial("durasteel");
 
     private static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));
@@ -46,6 +47,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(felsteel, 4, ORDER_HARVEST, false);
         addMaterial(chorus_metal, 4, ORDER_HARVEST, false);
         addMaterial(kepu, 4, ORDER_HARVEST, false);
+        addMaterial(durasteel, 4, ORDER_SPECIAL, false);
     }
 
     @Nonnull
@@ -77,6 +79,8 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addDefaultTraits(chorus_metal, TinkersReforgedModifiers.chorus_metal_levitating_blob);
 
             addDefaultTraits(kepu, TinkersReforgedModifiers.gausum_titanic_damage);
+
+            addDefaultTraits(durasteel, TinkersReforgedModifiers.durasteel_adapting);
         }
 
         @Nonnull
@@ -140,6 +144,11 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addMaterialStats(electrical_copper,
                     new HeadMaterialStats(300, 6f, DIAMOND, 2f),
                     HandleMaterialStats.DEFAULT.withDurability(1.20f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(durasteel,
+                    new HeadMaterialStats(1200, 7f, NETHERITE, 6.5f),
+                    HandleMaterialStats.DEFAULT.withAttackDamage(1.01f).withAttackSpeed(1.02f),
                     ExtraMaterialStats.DEFAULT);
         }
     }

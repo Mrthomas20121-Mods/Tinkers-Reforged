@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.*;
+import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.*;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.FluidTags;
@@ -14,29 +15,38 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fluids.FluidStack;
 import slimeknights.mantle.recipe.ingredient.EntityIngredient;
 import slimeknights.mantle.recipe.ingredient.FluidIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.*;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.casting.material.CompositeCastingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.casting.material.MaterialCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
 import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.shared.TinkerMaterials;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import javax.annotation.Nonnull;
+import java.util.Objects;
 import java.util.function.Consumer;
 
 public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder, IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
@@ -54,6 +64,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         String castingFolder = "smeltery/casting/";
         String castFolder = "smeltery/casts/";
         String alloyFolder = "smeltery/alloy/";
+        String toolFolder = "tools/building/";
+        String partFolder = "tools/parts/";
 
         blockIngotNuggetCompression(consumer, "aluminum", TinkersReforgedBlocks.aluminum_block.get().asItem(), TinkersReforgedItems.aluminum_ingot.get(), TinkersReforgedItems.aluminum_nugget.get());
         blockIngotNuggetCompression(consumer, "duralumin", TinkersReforgedBlocks.duralumin_block.get().asItem(), TinkersReforgedItems.duralumin_ingot.get(), TinkersReforgedItems.duralumin_nugget.get());
@@ -73,6 +85,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalCasting(consumer, TinkersReforgedFluids.felsteel, TinkersReforgedBlocks.felsteel_block.get(), TinkersReforgedItems.felsteel_ingot.get(), TinkersReforgedItems.felsteel_nugget.get(), castingFolder, "felsteel");
         metalCasting(consumer, TinkersReforgedFluids.kepu, TinkersReforgedBlocks.kepu_block.get(), TinkersReforgedItems.kepu_ingot.get(), TinkersReforgedItems.kepu_nugget.get(), castingFolder, "kepu");
         metalCasting(consumer, TinkersReforgedFluids.chorus_metal, TinkersReforgedBlocks.chorus_metal_block.get(), TinkersReforgedItems.chorus_metal_ingot.get(), TinkersReforgedItems.chorus_metal_nugget.get(), castingFolder, "chorus_metal");
+        metalCasting(consumer, TinkersReforgedFluids.durasteel, TinkersReforgedBlocks.durasteel_block.get(), TinkersReforgedItems.durasteel_ingot.get(), TinkersReforgedItems.durasteel_nugget.get(), castingFolder, "durasteel");
 
         materialMeltingCasting(consumer, ReforgedMaterials.duralumin, TinkersReforgedFluids.duralumin, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterials.electrical_copper, TinkersReforgedFluids.electrical_copper, materialFolder);
@@ -82,6 +95,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         materialMeltingCasting(consumer, ReforgedMaterials.felsteel, TinkersReforgedFluids.felsteel, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterials.chorus_metal, TinkersReforgedFluids.chorus_metal, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterials.kepu, TinkersReforgedFluids.kepu, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterials.durasteel, TinkersReforgedFluids.durasteel, materialFolder);
 
         metalMelting(consumer, TinkersReforgedFluids.duralumin.get(), "duralumin", false, meltingFolder, false);
         metalMelting(consumer, TinkersReforgedFluids.electrical_copper.get(), "electrical_copper", false, meltingFolder, false);
@@ -100,6 +114,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMaterialRecipe(consumer, ReforgedMaterials.felsteel, materialFolder, "felsteel", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.chorus_metal, materialFolder, "chorus_metal", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.kepu, materialFolder, "kepu", false);
+        metalMaterialRecipe(consumer, ReforgedMaterials.durasteel, materialFolder, "durasteel", false);
 
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, true, 500, materialFolder+"lavium_");
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, true, 500, materialFolder+"qivium_");
@@ -139,6 +154,12 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .addInput(TinkersReforgedFluids.chorus.get(), FluidValues.INGOT)
                 .addInput(TinkersReforgedFluids.shulker.get(), FluidValues.INGOT)
                 .save(consumer, modResource(alloyFolder+"chorus_metal"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.durasteel.get(), FluidValues.INGOT)
+                .addInput(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL)
+                .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT)
+                .addInput(FluidTags.LAVA, FluidValues.GLASS_BLOCK)
+                .save(consumer, modResource(alloyFolder+"durasteel"));
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.proto_lava.get(), FluidValues.GLASS_BLOCK)
                 .addInput(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL)
@@ -247,6 +268,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.gausum_dust.get()), TinkersReforgedItems.gausum_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.gausum_ingot.get())).save(consumer, modResource("gausum_ingot_from_smelting_gausum_dust"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.felsteel_dust.get()), TinkersReforgedItems.felsteel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.felsteel_ingot.get())).save(consumer, modResource("felsteel_ingot_from_smelting_felsteel_dust"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.electrical_copper_dust.get()), TinkersReforgedItems.electrical_copper_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.electrical_copper_ingot.get())).save(consumer, modResource("electrical_copper_ingot_from_smelting_electrical_copper_dust"));
+
+        toolBuilding(consumer, TinkersReforgedItems.FRYING_PAN, toolFolder);
+        toolBuilding(consumer, TinkersReforgedItems.GREATSWORD, toolFolder);
+        partRecipes(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.great_blade_cast, 4, partFolder, castFolder);
+        partRecipes(consumer, TinkersReforgedItems.LARGE_ROUND_PLATE.get(), TinkersReforgedItems.large_round_plate_cast, 6, partFolder, castFolder);
     }
 
     @Nonnull
@@ -333,5 +359,49 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 )
                 .generateAdvancement()
                 .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, ingot.getRegistryName().getPath() + "_to_nugget"));
+    }
+
+    private void partRecipes(Consumer<FinishedRecipe> consumer, IMaterialItem part, CastObject cast, int cost, String partFolder, String castFolder) {
+        String name = Objects.requireNonNull(part.asItem().getRegistryName()).getPath();
+
+        // Part Builder
+        PartRecipeBuilder.partRecipe(part)
+                .setPattern(modResource(name))
+                .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(cast.getGoldCast().get())))
+                .setCost(cost)
+                .save(consumer, modResource(partFolder + "builder/" + name));
+
+        // Material Casting
+        String castingFolder = partFolder + "casting/";
+        MaterialCastingRecipeBuilder.tableRecipe(part)
+                .setItemCost(cost)
+                .setCast(cast.getMultiUseTag(), false)
+                .save(consumer, modResource(castingFolder + name + "_gold_cast"));
+        MaterialCastingRecipeBuilder.tableRecipe(part)
+                .setItemCost(cost)
+                .setCast(cast.getSingleUseTag(), true)
+                .save(consumer, modResource(castingFolder + name + "_sand_cast"));
+        CompositeCastingRecipeBuilder.table(part, cost)
+                .save(consumer, modResource(castingFolder + name + "_composite"));
+
+        // Cast Casting
+        MaterialIngredient ingredient = MaterialIngredient.fromItem(part);
+        castCreation(consumer, ingredient, cast, castFolder, Objects.requireNonNull(part.asItem().getRegistryName()).getPath());
+    }
+
+    private void castCreation(Consumer<FinishedRecipe> consumer, Ingredient input, CastObject cast, String folder, String name) {
+        ItemCastingRecipeBuilder.tableRecipe(cast.getGoldCast().get())
+                .setFluidAndTime(TinkerFluids.moltenGold, true, FluidValues.INGOT)
+                .setCast(input, true)
+                .setSwitchSlots()
+                .save(consumer, modResource(folder + "gold_casts/" + name));
+        MoldingRecipeBuilder.moldingTable(cast.getSandCast().get())
+                .setMaterial(TinkerSmeltery.blankSandCast)
+                .setPattern(input, false)
+                .save(consumer, modResource(folder + "sand_casts/" + name));
+        MoldingRecipeBuilder.moldingTable(cast.getRedSandCast().get())
+                .setMaterial(TinkerSmeltery.blankRedSandCast)
+                .setPattern(input, false)
+                .save(consumer, modResource(folder + "red_sand_casts/" + name));
     }
 }

@@ -21,5 +21,7 @@ public enum CastType {
     tool_binding,
     tool_handle,
     tough_handle,
-    wire
+    wire,
+    great_blade,
+    large_round_plate
 }

@@ -57,7 +57,7 @@ public class TinkersReforgedConfig {
 
         public BauxiteOreConfig(ForgeConfigSpec.Builder builder) {
             super(builder);
-            this.enabled = builder.comment("Enable/Disable Bauxite ore").define("kepuOreEnabled", true);
+            this.enabled = builder.comment("Enable/Disable Bauxite ore").define("bauxiteOreEnabled", true);
             this.minY = builder.comment("Min Y level").defineInRange("minY", -60, -60, 256);
             this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 120, -60, 256);
             this.count = builder.comment("Ore vein count").defineInRange("veinCount", 80, 1, 100);

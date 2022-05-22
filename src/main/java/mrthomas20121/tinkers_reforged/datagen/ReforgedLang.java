@@ -22,6 +22,12 @@ public class ReforgedLang extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addGroup("Tinkers Reforged Items");
+        addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");
+        addItem(TinkersReforgedItems.LARGE_ROUND_PLATE, "Large Round Plate");
+        addItem(TinkersReforgedItems.FRYING_PAN, "Frying Pan");
+        addItem(TinkersReforgedItems.GREATSWORD, "Greatsword");
+        add("item.tinkers_reforged.frying_pan.description", "a weapon with burning and healing capabilities.");
+        add("item.tinkers_reforged.great_sword.description", "a weapon with knockback");
         addBlock(TinkersReforgedBlocks.aluminum_block, "Aluminum Block");
         addBlock(TinkersReforgedBlocks.aluminum_ore, "Bauxite Ore");
         addBlock(TinkersReforgedBlocks.deepslate_aluminum_ore, "Deepslate Bauxite Ore");
@@ -60,6 +66,10 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.chorus_metal_dust, "Chorus Metal Dust");
         addItem(TinkersReforgedItems.chorus_metal_ingot, "Chorus Metal Ingot");
         addItem(TinkersReforgedItems.chorus_metal_nugget, "Chorus Metal Nugget");
+        addBlock(TinkersReforgedBlocks.durasteel_block, "Durasteel Block");
+        addItem(TinkersReforgedItems.durasteel_dust, "Durasteel Dust");
+        addItem(TinkersReforgedItems.durasteel_ingot, "Durasteel Ingot");
+        addItem(TinkersReforgedItems.durasteel_nugget, "Durasteel Nugget");
         addItem(TinkersReforgedItems.raw_aluminum, "Raw Bauxite");
         addItem(TinkersReforgedItems.raw_kepu, "Raw Kepu");
         addBlock(TinkersReforgedBlocks.raw_aluminum_block, "Raw Bauxite Block");
@@ -78,6 +88,7 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.chorus_metal, "Molten Chorus Metal");
         addFluid(TinkersReforgedFluids.chorus, "Molten Chorus");
         addFluid(TinkersReforgedFluids.shulker, "Molten Shulker");
+        addFluid(TinkersReforgedFluids.durasteel, "Molten Durasteel");
         addFluid(TinkersReforgedFluids.proto_lava, "Molten Proto Lava");
 
         add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
@@ -93,6 +104,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.chorus_metal.get().getBucket(), "Molten Chorus Metal Bucket");
         add(TinkersReforgedFluids.chorus.get().getBucket(), "Molten Chorus Bucket");
         add(TinkersReforgedFluids.shulker.get().getBucket(), "Molten Shulker Bucket");
+        add(TinkersReforgedFluids.durasteel.get().getBucket(), "Molten Durasteel Bucket");
         add(TinkersReforgedFluids.proto_lava.get().getBucket(), "Molten Proto Lava Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");
@@ -110,6 +122,7 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.felsteel, "Felsteel", "Ancient Debris Alloy", "From the depth of the nether");
         addMaterial(ReforgedMaterials.chorus_metal, "Chorus Metal", "Chorus and Shulker alloy", "Chorus and Shulker alloy");
         addMaterial(ReforgedMaterials.kepu, "Kepu", "Come from the depth of the end", "Infused End Ore");
+        addMaterial(ReforgedMaterials.durasteel, "Durasteel", "Wait it's not an ore?", "Mix of Ender and Netherite");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
@@ -119,7 +132,10 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage to things in the nether but deal less damage to things in the end.");
         addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Deal more damage to things in the nether but deal less damage to things in the end.");
         addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Damage Lock", "No Damage?", "Your tool can only do damage in the end.");
+        addModifier(TinkersReforgedModifiers.cutting_edge, "Cutting Edge", "That's a lot of damage!", "Deal 10% more damage.");
+        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "More, I need more damage!", "Each mob killed increase damage by 0.1.");
 
+        add("modifier.adapting.bonus", "+%s Adapting Damage.");
         add("modifier.fel_debris.bonus", "%s Damage in the current dimension.");
         add("modifier.arid_zone.attack_bonus", "+%s Bonus Damage in the current biome.");
         add("modifier.arid_zone.mining_speed_bonus", "+%s Bonus Mining Speed in the current biome.");

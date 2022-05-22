@@ -58,7 +58,6 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.raw_aluminum, "item/generated");
         itemWithModel(TinkersReforgedItems.raw_kepu, "item/generated");
 
-
         for(CastType type : CastType.values()) {
             castModel(TinkersReforgedItems.casts.get(type), type);
         }

@@ -37,5 +37,6 @@ public class ReforgedBlocksLoot extends BlockLoot {
         this.dropSelf(TinkersReforgedBlocks.chorus_metal_block.get());
         this.dropSelf(TinkersReforgedBlocks.raw_aluminum_block.get());
         this.dropSelf(TinkersReforgedBlocks.raw_kepu_block.get());
+        this.dropSelf(TinkersReforgedBlocks.durasteel_block.get());
     }
 }

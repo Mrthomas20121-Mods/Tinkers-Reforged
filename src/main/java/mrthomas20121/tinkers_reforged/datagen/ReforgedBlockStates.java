@@ -35,6 +35,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.chorus_metal_block);
         blockWithItem(TinkersReforgedBlocks.raw_kepu_block);
         blockWithItem(TinkersReforgedBlocks.raw_aluminum_block);
+        blockWithItem(TinkersReforgedBlocks.durasteel_block);
 
         fluid(TinkersReforgedFluids.duralumin);
         fluid(TinkersReforgedFluids.electrical_copper);
@@ -49,6 +50,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.chorus_metal);
         fluid(TinkersReforgedFluids.chorus);
         fluid(TinkersReforgedFluids.shulker);
+        fluid(TinkersReforgedFluids.durasteel);
         fluid(TinkersReforgedFluids.proto_lava);
     }
 

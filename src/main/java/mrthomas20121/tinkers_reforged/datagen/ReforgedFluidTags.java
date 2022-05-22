@@ -30,6 +30,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> CHRORUS_METAL = create("forge:molten_chorus_metal");
     public static final TagKey<Fluid> CHORUS = create("forge:molten_chorus");
     public static final TagKey<Fluid> SHULKER = create("forge:molten_shulker");
+    public static final TagKey<Fluid> DURASTEEL = create("forge:molten_durasteel");
     public static final TagKey<Fluid> PROTO_LAVA = create("forge:molten_proto_lava");
 
     // tinkers reforged tags
@@ -45,6 +46,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     public static final TagKey<Fluid> CHRORUS_METAL_ = create("tinkers_reforged:molten_chorus_metal");
     public static final TagKey<Fluid> CHORUS_ = create("tinkers_reforged:molten_chorus");
     public static final TagKey<Fluid> SHULKER_ = create("tinkers_reforged:molten_shulker");
+    public static final TagKey<Fluid> DURASTEEL_ = create("tinkers_reforged:molten_durasteel");
     public static final TagKey<Fluid> PROTO_LAVA_ = create("tinkers_reforged:molten_proto_lava");
 
     private static TagKey<Fluid> create(String name) {
@@ -70,6 +72,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(CHRORUS_METAL).add(TinkersReforgedFluids.chorus_metal.get());
         tag(CHORUS).add(TinkersReforgedFluids.chorus.get());
         tag(SHULKER).add(TinkersReforgedFluids.shulker.get());
+        tag(DURASTEEL).add(TinkersReforgedFluids.durasteel.get());
         tag(PROTO_LAVA).add(TinkersReforgedFluids.proto_lava.get());
 
         tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.get());
@@ -84,6 +87,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(CHRORUS_METAL_).add(TinkersReforgedFluids.chorus_metal.get());
         tag(CHORUS_).add(TinkersReforgedFluids.chorus.get());
         tag(SHULKER_).add(TinkersReforgedFluids.shulker.get());
+        tag(DURASTEEL_).add(TinkersReforgedFluids.durasteel.get());
         tag(PROTO_LAVA_).add(TinkersReforgedFluids.proto_lava.get());
     }
 }

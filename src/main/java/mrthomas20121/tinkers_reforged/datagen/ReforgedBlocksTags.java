@@ -68,7 +68,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.qivium_block.get())
                 .add(TinkersReforgedBlocks.gausum_block.get())
                 .add(TinkersReforgedBlocks.felsteel_block.get())
-                .add(TinkersReforgedBlocks.chorus_metal_block.get());
+                .add(TinkersReforgedBlocks.chorus_metal_block.get())
+                .add(TinkersReforgedBlocks.durasteel_block.get());
         tag(ALUMINUM_ORE).add(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedBlocks.deepslate_aluminum_ore.get());
         tag(KEPU_ORE).add(TinkersReforgedBlocks.kepu_ore.get());
         tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedBlocks.deepslate_aluminum_ore.get(), TinkersReforgedBlocks.kepu_ore.get());
@@ -82,7 +83,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.gausum_block.get())
                 .add(TinkersReforgedBlocks.felsteel_block.get())
                 .add(TinkersReforgedBlocks.kepu_block.get())
-                .add(TinkersReforgedBlocks.chorus_metal_block.get());
+                .add(TinkersReforgedBlocks.chorus_metal_block.get())
+                .add(TinkersReforgedBlocks.durasteel_block.get());
 
         tag(BlockTags.BEACON_BASE_BLOCKS)
                 .add(TinkersReforgedBlocks.duralumin_block.get())
@@ -93,7 +95,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.gausum_block.get())
                 .add(TinkersReforgedBlocks.felsteel_block.get())
                 .add(TinkersReforgedBlocks.kepu_block.get())
-                .add(TinkersReforgedBlocks.chorus_metal_block.get());
+                .add(TinkersReforgedBlocks.chorus_metal_block.get())
+                .add(TinkersReforgedBlocks.durasteel_block.get());
 
         tag(TinkerTags.Blocks.ANVIL_METAL)
                 .add(TinkersReforgedBlocks.duralumin_block.get())
@@ -104,6 +107,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.gausum_block.get())
                 .add(TinkersReforgedBlocks.felsteel_block.get())
                 .add(TinkersReforgedBlocks.kepu_block.get())
-                .add(TinkersReforgedBlocks.chorus_metal_block.get());
+                .add(TinkersReforgedBlocks.chorus_metal_block.get())
+                .add(TinkersReforgedBlocks.durasteel_block.get());
     }
 }

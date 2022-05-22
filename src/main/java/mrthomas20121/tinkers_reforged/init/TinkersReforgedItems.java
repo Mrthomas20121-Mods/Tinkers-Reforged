@@ -1,6 +1,8 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.item.CastObject;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -9,10 +11,17 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.tconstruct.common.registration.CastItemObject;
+import slimeknights.tconstruct.library.tools.item.ModifiableItem;
+import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
+
+import static slimeknights.tconstruct.tools.TinkerToolParts.TAB_TOOL_PARTS;
+import static slimeknights.tconstruct.tools.TinkerTools.TAB_TOOLS;
 
 public class TinkersReforgedItems {
 
@@ -28,6 +37,9 @@ public class TinkersReforgedItems {
             return new ItemStack(aluminum_ingot.get());
         }
     };
+
+    private static final Item.Properties TOOL = new Item.Properties().stacksTo(1).tab(TAB_TOOLS);
+    private static final Item.Properties PARTS_PROPS = new Item.Properties().tab(TAB_TOOL_PARTS);
 
     public static RegistryObject<Item> aluminum_ingot = ITEMS.register("aluminum_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_dust = ITEMS.register("aluminum_dust", TinkersReforgedItems::register);
@@ -81,12 +93,34 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> chorus_metal_nugget = ITEMS.register("chorus_metal_nugget", TinkersReforgedItems::register);
     public static RegistryObject<Item> chorus_metal_block = ITEMS.register("chorus_metal_block", () -> registerItemBlock(TinkersReforgedBlocks.chorus_metal_block.get()));
 
+    public static RegistryObject<Item> durasteel_ingot = ITEMS.register("durasteel_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> durasteel_dust = ITEMS.register("durasteel_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> durasteel_nugget = ITEMS.register("durasteel_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> durasteel_block = ITEMS.register("durasteel_block", () -> registerItemBlock(TinkersReforgedBlocks.durasteel_block.get()));
+
+
+    public static final RegistryObject<ToolPartItem> LARGE_ROUND_PLATE = ITEMS.register("large_round_plate", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
+    public static final RegistryObject<ToolPartItem> GREAT_BLADE = ITEMS.register("great_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
+
+    public static final RegistryObject<ModifiableItem> FRYING_PAN = ITEMS.register("frying_pan", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.FRYING_PAN));
+    public static final RegistryObject<ModifiableItem> GREATSWORD = ITEMS.register("greatsword", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.GREATSWORD));
+
+    public static CastObject great_blade_cast = registerCast("great_blade");
+    public static CastObject large_round_plate_cast = registerCast("large_round_plate");
+
     public static Item register() {
         return new Item(new Item.Properties().tab(group));
     }
 
     public static BlockItem registerItemBlock(Block block) {
         return new BlockItem(block, new Item.Properties().tab(group));
+    }
+
+    public static CastObject registerCast(String name) {
+        RegistryObject<Item> gold_cast = ITEMS.register(name+"_cast_gold", TinkersReforgedItems::register);
+        RegistryObject<Item> sand_cast = ITEMS.register(name+"_cast_sand", TinkersReforgedItems::register);
+        RegistryObject<Item> red_sand_cast = ITEMS.register(name+"_cast_red_sand", TinkersReforgedItems::register);
+        return new CastObject("tconstruct:"+name, gold_cast, sand_cast, red_sand_cast);
     }
 
     public static void registerCasts() {

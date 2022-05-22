@@ -18,7 +18,7 @@ public class ModifierBlazingFire extends Modifier {
         LivingEntity target = context.getLivingTarget();
         if(target != null && target.isOnFire()) {
             int fireTicks = target.getRemainingFireTicks();
-            target.setRemainingFireTicks(fireTicks+fireTicks/2);
+            target.setRemainingFireTicks(fireTicks+(int)(fireTicks*0.2f*level));
         }
         return super.afterEntityHit(tool, level, context, damageDealt);
     }

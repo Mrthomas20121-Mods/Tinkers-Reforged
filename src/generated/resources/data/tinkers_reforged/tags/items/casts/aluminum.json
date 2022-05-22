@@ -21,6 +21,8 @@
     "tinkers_reforged:cast_tool_binding",
     "tinkers_reforged:cast_tool_handle",
     "tinkers_reforged:cast_tough_handle",
-    "tinkers_reforged:cast_wire"
+    "tinkers_reforged:cast_wire",
+    "tinkers_reforged:cast_great_blade",
+    "tinkers_reforged:cast_large_round_plate"
   ]
 }

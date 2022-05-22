@@ -26,6 +26,7 @@ public class TinkersReforgedFluids {
     public static FluidObject<ForgeFlowingFluid> kepu = register("molten_kepu", 1600);
     public static FluidObject<ForgeFlowingFluid> chorus = register("molten_chorus", 1200);
     public static FluidObject<ForgeFlowingFluid> shulker = register("molten_shulker", 1200);
+    public static FluidObject<ForgeFlowingFluid> durasteel = register("molten_durasteel", 1800);
     public static FluidObject<ForgeFlowingFluid> proto_lava = register("molten_proto_lava", 2000);
 
     private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {

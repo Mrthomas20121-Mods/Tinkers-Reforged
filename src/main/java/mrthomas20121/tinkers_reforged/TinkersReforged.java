@@ -3,7 +3,10 @@ package mrthomas20121.tinkers_reforged;
 import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedWorldGen;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.data.DataGenerator;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,7 +20,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.material.MaterialPartTextureGenerator;
+import slimeknights.tconstruct.library.client.model.tools.ToolModel;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
+import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
 
 @Mod(TinkersReforged.MOD_ID)
@@ -52,6 +57,8 @@ public class TinkersReforged {
 			gen.addProvider(materials);
 			gen.addProvider(new ReforgedMaterials.ReforgedTraits(gen, materials));
 			gen.addProvider(new ReforgedMaterials.ReforgedMaterialStats(gen, materials));
+			gen.addProvider(new ReforgedToolDefinitionDataProvider(gen));
+			gen.addProvider(new ReforgedToolSlotLayout(gen));
 			gen.addProvider(new ReforgedRecipes(gen));
 			ReforgedBlocksTags tags = new ReforgedBlocksTags(gen, fileHelper);
 			gen.addProvider(tags);
@@ -63,9 +70,23 @@ public class TinkersReforged {
 			gen.addProvider(new ReforgedBlockStates(gen, fileHelper));
 			gen.addProvider(new ReforgedLang(gen));
 			AbstractMaterialSpriteProvider provider = new ReforgedMaterialSpriteProvider();
+			AbstractMaterialSpriteProvider tinkersProvider = new TinkerMaterialSpriteProvider();
 			gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new TinkerPartSpriteProvider(), provider));
+			gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new ReforgedPartSprite(), provider));
+			gen.addProvider(new MaterialPartTextureGenerator(gen, fileHelper, new ReforgedPartSprite(), tinkersProvider));
 			gen.addProvider(new ReforgedRenderInfo(gen, provider));
 			gen.addProvider(new ReforgedLootTables(gen));
+		}
+	}
+
+	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MOD_ID, value = Dist.CLIENT)
+	public static class TinkersReforgedClient {
+		public @SubscribeEvent
+		static void itemColors(ColorHandlerEvent.Item event) {
+			final ItemColors colors = event.getItemColors();
+
+			ToolModel.registerItemColors(colors, TinkersReforgedItems.FRYING_PAN);
+			ToolModel.registerItemColors(colors, TinkersReforgedItems.GREATSWORD);
 		}
 	}
 }
