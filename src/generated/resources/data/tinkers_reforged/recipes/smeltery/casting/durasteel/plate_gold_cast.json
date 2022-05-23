@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:plates/durasteel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/plate"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_durasteel",
+    "amount": 90
+  },
+  "result": {
+    "tag": "forge:plates/durasteel"
+  },
+  "cooling_time": 80
+}

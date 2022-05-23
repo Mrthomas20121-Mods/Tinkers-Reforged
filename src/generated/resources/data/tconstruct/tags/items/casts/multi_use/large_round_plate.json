@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:cast_large_round_plate"
+    "tinkers_reforged:cast_large_round_plate",
+    "tinkers_reforged:large_round_plate_cast_gold"
   ]
 }

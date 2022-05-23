@@ -26,7 +26,7 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                 .part(TinkersReforgedItems.LARGE_ROUND_PLATE)
                 .part(toolHandle)
                 // stats
-                .stat(ToolStats.ATTACK_DAMAGE, 1.5f)
+                .stat(ToolStats.ATTACK_DAMAGE, 1f)
                 .stat(ToolStats.ATTACK_SPEED, 1.6f)
                 .multiplier(ToolStats.MINING_SPEED, 0.7f)
                 .multiplier(ToolStats.DURABILITY, 1.2f)

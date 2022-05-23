@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/durasteel"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:durasteel",
+  "leftover": {
+    "tag": "forge:ingots/durasteel"
+  }
+}

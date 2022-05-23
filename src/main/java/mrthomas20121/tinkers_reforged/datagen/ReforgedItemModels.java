@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.CastType;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
+import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -55,12 +56,25 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.chorus_metal_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.chorus_metal_nugget, "item/generated");
 
+        itemWithModel(TinkersReforgedItems.durasteel_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.durasteel_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.durasteel_nugget, "item/generated");
+
         itemWithModel(TinkersReforgedItems.raw_aluminum, "item/generated");
         itemWithModel(TinkersReforgedItems.raw_kepu, "item/generated");
 
         for(CastType type : CastType.values()) {
             castModel(TinkersReforgedItems.casts.get(type), type);
         }
+
+        castModel(TinkersReforgedItems.large_round_plate_cast);
+        castModel(TinkersReforgedItems.great_blade_cast);
+    }
+
+    public void castModel(CastObject object) {
+        itemWithModel(object.getGoldCast(), "item/generated");
+        itemWithModel(object.getSandCast(), "item/generated");
+        itemWithModel(object.getRedSandCast(), "item/generated");
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {

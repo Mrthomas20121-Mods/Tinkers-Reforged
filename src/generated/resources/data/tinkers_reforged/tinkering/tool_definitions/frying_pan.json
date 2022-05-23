@@ -9,11 +9,11 @@
   ],
   "stats": {
     "base": {
-      "tconstruct:attack_damage": 2.0,
-      "tconstruct:attack_speed": 1.4
+      "tconstruct:attack_damage": 1.0,
+      "tconstruct:attack_speed": 1.6
     },
     "multipliers": {
-      "tconstruct:mining_speed": 0.5,
+      "tconstruct:mining_speed": 0.7,
       "tconstruct:durability": 1.2
     }
   },
@@ -22,6 +22,10 @@
     "abilities": 1
   },
   "traits": [
+    {
+      "name": "tconstruct:necrotic",
+      "level": 2
+    },
     {
       "name": "tconstruct:fiery",
       "level": 2

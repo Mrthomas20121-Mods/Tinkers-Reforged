@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_ender",
+      "amount": 250
+    },
+    {
+      "name": "tconstruct:molten_debris",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_durasteel",
+    "amount": 90
+  },
+  "temperature": 1500
+}

@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/durasteel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/coin"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_durasteel",
+    "amount": 30
+  },
+  "result": {
+    "tag": "forge:coins/durasteel"
+  },
+  "cooling_time": 46
+}

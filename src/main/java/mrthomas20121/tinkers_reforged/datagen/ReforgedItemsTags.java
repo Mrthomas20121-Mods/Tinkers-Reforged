@@ -205,6 +205,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
             TagKey<Item> castTag = create("tconstruct:casts/multi_use/%s".formatted(type.name().toLowerCase()));
             tag(castTag).add(cast);
         }
+
+        addCastTag(TinkersReforgedItems.great_blade_cast);
+        addCastTag(TinkersReforgedItems.large_round_plate_cast);
     }
 
     public void addCastTag(CastObject object) {

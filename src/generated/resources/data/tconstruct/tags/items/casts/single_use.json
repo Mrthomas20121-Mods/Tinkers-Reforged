@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#tconstruct:casts/single_use/great_blade",
+    "#tconstruct:casts/single_use/large_round_plate"
+  ]
+}

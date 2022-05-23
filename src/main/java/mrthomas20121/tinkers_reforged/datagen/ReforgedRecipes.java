@@ -18,6 +18,8 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
+import net.minecraftforge.common.crafting.conditions.TagEmptyCondition;
 import net.minecraftforge.fluids.FluidStack;
 import slimeknights.mantle.recipe.ingredient.EntityIngredient;
 import slimeknights.mantle.recipe.ingredient.FluidIngredient;
@@ -158,7 +160,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.durasteel.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL)
                 .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT)
-                .addInput(FluidTags.LAVA, FluidValues.GLASS_BLOCK)
                 .save(consumer, modResource(alloyFolder+"durasteel"));
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.proto_lava.get(), FluidValues.GLASS_BLOCK)
@@ -205,8 +206,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         createCast(consumer, CastType.plate, "plates", castFolder);
         createCast(consumer, CastType.gear, "gears", castFolder);
-        createCast(consumer, CastType.coin, "coins", castFolder);
-        createCast(consumer, CastType.wire, "wires", castFolder);
+        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:coins"))), CastType.coin, "coins", castFolder);
+        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:wires"))), CastType.wire, "wires", castFolder);
 
         createCast(consumer, CastType.broad_axe_head, TinkerToolParts.broadAxeHead.get(), castFolder);
         createCast(consumer, CastType.broad_blade, TinkerToolParts.broadBlade.get(), castFolder);
@@ -219,6 +220,9 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         createCast(consumer, CastType.tool_binding, TinkerToolParts.toolBinding.get(), castFolder);
         createCast(consumer, CastType.tool_handle, TinkerToolParts.toolHandle.get(), castFolder);
         createCast(consumer, CastType.tough_handle, TinkerToolParts.toughHandle.get(), castFolder);
+
+        createCast(consumer, CastType.large_round_plate, TinkersReforgedItems.LARGE_ROUND_PLATE.get(), castFolder);
+        createCast(consumer, CastType.great_blade, TinkersReforgedItems.GREAT_BLADE.get(), castFolder);
 
         ShapedRecipeBuilder.shaped(TinkersReforgedBlocks.raw_aluminum_block.get(), 1)
                 .pattern("XXX")

@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.CastType;
 import mrthomas20121.tinkers_reforged.init.*;
+import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -75,6 +76,9 @@ public class ReforgedLang extends LanguageProvider {
         addBlock(TinkersReforgedBlocks.raw_aluminum_block, "Raw Bauxite Block");
         addBlock(TinkersReforgedBlocks.raw_kepu_block, "Raw Kepu Block");
 
+        addCast(TinkersReforgedItems.great_blade_cast);
+        addCast(TinkersReforgedItems.large_round_plate_cast);
+
         addFluid(TinkersReforgedFluids.redstone, "Liquid Redstone");
         addFluid(TinkersReforgedFluids.duralumin, "Molten Duralumin");
         addFluid(TinkersReforgedFluids.electrical_copper, "Molten Electrical Copper");
@@ -139,6 +143,12 @@ public class ReforgedLang extends LanguageProvider {
         add("modifier.fel_debris.bonus", "%s Damage in the current dimension.");
         add("modifier.arid_zone.attack_bonus", "+%s Bonus Damage in the current biome.");
         add("modifier.arid_zone.mining_speed_bonus", "+%s Bonus Mining Speed in the current biome.");
+    }
+
+    public void addCast(CastObject object) {
+        addItem(object.getGoldCast(), capitalize(object.getName().getPath()));
+        addItem(object.getSandCast(), "Sand "+capitalize(object.getName().getPath()));
+        addItem(object.getRedSandCast(), "Red Sand "+capitalize(object.getName().getPath()));
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {
