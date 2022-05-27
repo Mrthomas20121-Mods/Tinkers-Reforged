@@ -1,7 +1,7 @@
 {
   "default": [
     {
-      "name": "tinkers_reforged:titanic_damage",
+      "name": "tinkers_reforged:damage_lock",
       "level": 1
     }
   ]

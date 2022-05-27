@@ -28,6 +28,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
     private static final TagKey<Block> GAUSUM = create("forge:storage_blocks/gausum");
     private static final TagKey<Block> FELSTEEL = create("forge:storage_blocks/felsteel");
     private static final TagKey<Block> KEPU = create("forge:storage_blocks/kepu");
+    private static final TagKey<Block> DURASTEEL = create("forge:storage_blocks/durasteel");
     private static final TagKey<Block> CHORUS_METAl = create("forge:storage_blocks/chorus_metal");
     private static final TagKey<Block> RAW_ALUMINUM = create("forge:storage_blocks/raw_aluminum");
     private static final TagKey<Block> RAW_KEPU = create("forge:storage_blocks/raw_kepu");
@@ -55,6 +56,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
         tag(FELSTEEL).add(TinkersReforgedBlocks.felsteel_block.get());
         tag(KEPU).add(TinkersReforgedBlocks.kepu_block.get());
         tag(CHORUS_METAl).add(TinkersReforgedBlocks.chorus_metal_block.get());
+        tag(DURASTEEL).add(TinkersReforgedBlocks.durasteel_block.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL).add(TinkersReforgedBlocks.kepu_ore.get(), TinkersReforgedBlocks.kepu_block.get(), TinkersReforgedBlocks.raw_kepu_block.get());
         tag(BlockTags.NEEDS_IRON_TOOL)
@@ -109,5 +111,22 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 .add(TinkersReforgedBlocks.kepu_block.get())
                 .add(TinkersReforgedBlocks.chorus_metal_block.get())
                 .add(TinkersReforgedBlocks.durasteel_block.get());
+
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(TinkersReforgedBlocks.duralumin_block.get())
+                .add(TinkersReforgedBlocks.aluminum_block.get())
+                .add(TinkersReforgedBlocks.electrical_copper_block.get())
+                .add(TinkersReforgedBlocks.lavium_block.get())
+                .add(TinkersReforgedBlocks.qivium_block.get())
+                .add(TinkersReforgedBlocks.gausum_block.get())
+                .add(TinkersReforgedBlocks.felsteel_block.get())
+                .add(TinkersReforgedBlocks.kepu_block.get())
+                .add(TinkersReforgedBlocks.chorus_metal_block.get())
+                .add(TinkersReforgedBlocks.durasteel_block.get())
+                .add(TinkersReforgedBlocks.kepu_ore.get())
+                .add(TinkersReforgedBlocks.raw_kepu_block.get())
+                .add(TinkersReforgedBlocks.aluminum_ore.get())
+                .add(TinkersReforgedBlocks.deepslate_aluminum_ore.get())
+                .add(TinkersReforgedBlocks.raw_aluminum_block.get());
     }
 }

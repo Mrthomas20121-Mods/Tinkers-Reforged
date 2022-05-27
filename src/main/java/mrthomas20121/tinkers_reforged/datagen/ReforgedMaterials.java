@@ -78,7 +78,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
             addDefaultTraits(chorus_metal, TinkersReforgedModifiers.chorus_metal_levitating_blob);
 
-            addDefaultTraits(kepu, TinkersReforgedModifiers.gausum_titanic_damage);
+            addDefaultTraits(kepu, TinkersReforgedModifiers.kepu_damage_lock);
 
             addDefaultTraits(durasteel, TinkersReforgedModifiers.durasteel_adapting);
         }
