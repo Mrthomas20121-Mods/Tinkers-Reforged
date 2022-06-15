@@ -8,10 +8,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.library.utils.TooltipKey;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -35,18 +35,18 @@ public class ModifierFelDebris extends Modifier {
 
     @Override
     public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
-        String bonus = "";
+        double bonus = 0d;
         if(player != null) {
             Level world = player.level;
             if(world.dimension().equals(Level.NETHER)) {
-                bonus = "+1.5%";
+                bonus = 1.5;
             }
             else if(world.dimension().equals(Level.END)) {
-                bonus = "-0.8%";
+                bonus = -0.8;
             }
 
             // make sure bonus is not empty
-            if(!bonus.equals("") && tooltipKey == TooltipKey.SHIFT) tooltip.add(new TranslatableComponent("modifier.fel_debris.bonus", bonus).withStyle(ChatFormatting.GREEN));
+            if(bonus != 0d && tooltipKey == TooltipKey.SHIFT) addPercentTooltip(new TranslatableComponent("modifier.tinkers_reforged.fel_debris.bonus"), bonus, tooltip);
         }
     }
 }

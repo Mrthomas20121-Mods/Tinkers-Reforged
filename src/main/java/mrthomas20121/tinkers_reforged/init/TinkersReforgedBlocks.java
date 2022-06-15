@@ -35,5 +35,8 @@ public class TinkersReforgedBlocks {
     public static RegistryObject<Block> qivium_block = BLOCKS.register("qivium_block", () -> new Block(METAL));
     public static RegistryObject<Block> chorus_metal_block = BLOCKS.register("chorus_metal_block", () -> new Block(METAL));
     public static RegistryObject<Block> durasteel_block = BLOCKS.register("durasteel_block", () -> new Block(METAL));
+    public static RegistryObject<Block> crusteel_block = BLOCKS.register("crusteel_block", () -> new Block(METAL));
+    public static RegistryObject<Block> yokel_block = BLOCKS.register("yokel_block", () -> new Block(METAL));
+    public static RegistryObject<Block> wavy_block = BLOCKS.register("wavy_block", () -> new Block(METAL));
 
 }

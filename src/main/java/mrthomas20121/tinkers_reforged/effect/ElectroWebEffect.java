@@ -1,14 +1,13 @@
-package mrthomas20121.tinkers_reforged.effects;
+package mrthomas20121.tinkers_reforged.effect;
 
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.tools.modifiers.effect.NoMilkEffect;
 
 import javax.annotation.Nonnull;
@@ -27,14 +26,20 @@ public class ElectroWebEffect extends NoMilkEffect {
     @Override
     public void applyEffectTick(@Nonnull LivingEntity target, int level) {
         if(target.getHealth() > 1.0f) {
-            if(!target.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
-                target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600));
-            }
             target.hurt(DamageSource.ANVIL.setScalesWithDifficulty(), 0.9F*(level+1));
 
             if (target.level instanceof ServerLevel) {
-                ((ServerLevel)target.level).sendParticles(ParticleTypes.ELECTRIC_SPARK, target.getX(), target.getY(0.5), target.getZ(), 1, 0.1, 0, 0.1, 0.2);
+                addParticlesAroundSelf(ParticleTypes.ELECTRIC_SPARK, target);
             }
+        }
+    }
+
+    protected void addParticlesAroundSelf(ParticleOptions particle, LivingEntity target) {
+        for(int i = 0; i < 5; ++i) {
+            double d0 = target.getRandom().nextGaussian() * 0.02D;
+            double d1 = target.getRandom().nextGaussian() * 0.02D;
+            double d2 = target.getRandom().nextGaussian() * 0.02D;
+            ((ServerLevel) target.level).sendParticles(particle, target.getRandomX(1.0D), target.getRandomY(), target.getRandomZ(1.0D), 1, d0, d1, d2, 0.0D);
         }
     }
 }

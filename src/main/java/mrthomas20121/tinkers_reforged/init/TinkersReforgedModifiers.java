@@ -2,14 +2,9 @@ package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.modifier.*;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraftforge.registries.ForgeRegistries;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
-
-import java.util.List;
 
 public class TinkersReforgedModifiers {
 
@@ -17,7 +12,8 @@ public class TinkersReforgedModifiers {
 
     public static StaticModifier<Modifier> felsteel_fel_debris = MODIFIERS.register("fel_debris", ModifierFelDebris::new);
 
-    public static StaticModifier<Modifier> qivium_blazing_fire = MODIFIERS.register("blazing_fire", ModifierBlazingFire::new);
+    // changed the name but i'm keeping the modifier name the same to not make existing worlds have issues.
+    public static StaticModifier<Modifier> qivium_blazing_fire = MODIFIERS.register("blazing_fire", ModifierBurningCapacitor::new);
 
     public static StaticModifier<Modifier> lavium_aridzone = MODIFIERS.register("arid_zone", ModifierAridZone::new);
 
@@ -34,4 +30,10 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<Modifier> durasteel_adapting = MODIFIERS.register("adapting", ModifierAdaptating::new);
 
     public static StaticModifier<Modifier> cutting_edge = MODIFIERS.register("cutting_edge", ModifierCuttingEdge::new);
+
+    public static StaticModifier<Modifier> giant_cells = MODIFIERS.register("giant_cells", ModifierGiantCells::new);
+
+    public static StaticModifier<Modifier> terra = MODIFIERS.register("terra", ModifierTerra::new);
+
+    public static StaticModifier<Modifier> spore_shot = MODIFIERS.register("spore_shot", ModifierSporeShot::new);
 }

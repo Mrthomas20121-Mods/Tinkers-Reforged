@@ -98,6 +98,20 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> durasteel_nugget = ITEMS.register("durasteel_nugget", TinkersReforgedItems::register);
     public static RegistryObject<Item> durasteel_block = ITEMS.register("durasteel_block", () -> registerItemBlock(TinkersReforgedBlocks.durasteel_block.get()));
 
+    public static RegistryObject<Item> crusteel_ingot = ITEMS.register("crusteel_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> crusteel_dust = ITEMS.register("crusteel_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> crusteel_nugget = ITEMS.register("crusteel_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> crusteel_block = ITEMS.register("crusteel_block", () -> registerItemBlock(TinkersReforgedBlocks.crusteel_block.get()));
+
+    public static RegistryObject<Item> yokel_ingot = ITEMS.register("yokel_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> yokel_dust = ITEMS.register("yokel_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> yokel_nugget = ITEMS.register("yokel_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> yokel_block = ITEMS.register("yokel_block", () -> registerItemBlock(TinkersReforgedBlocks.yokel_block.get()));
+
+    public static RegistryObject<Item> wavy_ingot = ITEMS.register("wavy_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> wavy_dust = ITEMS.register("wavy_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> wavy_nugget = ITEMS.register("wavy_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> wavy_block = ITEMS.register("wavy_block", () -> registerItemBlock(TinkersReforgedBlocks.wavy_block.get()));
 
     public static final RegistryObject<ToolPartItem> LARGE_ROUND_PLATE = ITEMS.register("large_round_plate", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
     public static final RegistryObject<ToolPartItem> GREAT_BLADE = ITEMS.register("great_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));

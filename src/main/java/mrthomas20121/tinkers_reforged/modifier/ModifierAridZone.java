@@ -11,11 +11,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.library.utils.TooltipKey;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -51,9 +52,13 @@ public class ModifierAridZone extends Modifier {
                 float baseStat = tool.getDefinition().getData().getBaseStat(ToolStats.MINING_SPEED)*calc;
                 float extraDmg = calc*2;
 
-                tooltip.add(new TranslatableComponent("modifier.arid_zone.mining_speed_bonus", Math.floor(baseStat)));
-                tooltip.add(new TranslatableComponent("modifier.arid_zone.attack_bonus", Math.floor(extraDmg)));
+                addMiningSpeedToolTip(tool, (float) Math.floor(baseStat), tooltip);
+                addDamageTooltip(tool, (float)Math.floor(extraDmg), tooltip);
             }
         }
+    }
+
+    public void addMiningSpeedToolTip(IToolStackView tool, float amount, List<Component> tooltip) {
+        addStatTooltip(tool, ToolStats.MINING_SPEED, TinkerTags.Items.MELEE_OR_UNARMED, amount, tooltip);
     }
 }

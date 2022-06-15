@@ -23,6 +23,8 @@ public class ReforgedLang extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addGroup("Tinkers Reforged Items");
+        add("pattern.tinkers_reforged.great_blade", "Great Blade Pattern");
+        add("pattern.tinkers_reforged.large_round_plate", "Large Round Plate Pattern");
         addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");
         addItem(TinkersReforgedItems.LARGE_ROUND_PLATE, "Large Round Plate");
         addItem(TinkersReforgedItems.FRYING_PAN, "Frying Pan");
@@ -112,6 +114,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.proto_lava.get().getBucket(), "Molten Proto Lava Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");
+        add("effect.tinkers_reforged.fungal", "Fungal");
 
         for(CastType type: CastType.values()) {
             Item item = TinkersReforgedItems.casts.get(type).get();
@@ -130,19 +133,23 @@ public class ReforgedLang extends LanguageProvider {
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
-        addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Brought back Duritos from Tinkers 1.12", "Your tool last longer most of the time.");
+        addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Anyone need Duritos?", "Your tool last longer most of the time.");
         addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
-        addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Firestarter", "More Fire!", "Attacks increases fire duration.");
+        addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Burning Capacitor", "Science!", "Repair the tool you are holding when you are on fire.");
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage to things in the nether but deal less damage to things in the end.");
-        addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Deal more damage to things in the nether but deal less damage to things in the end.");
-        addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Damage Lock", "No Damage?", "Your tool can only do damage in the end.");
+        addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Spawn a Shulker blob on hit.");
+        addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Damage Lock", "No Damage?", "Your weapon can only do damage in the end.");
         addModifier(TinkersReforgedModifiers.cutting_edge, "Cutting Edge", "That's a lot of damage!", "Deal 10% more damage.");
-        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "More, I need more damage!", "Each mob killed increase damage by 0.1.");
+        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.1.");
+        addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health are.");
+        addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
+        addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
 
-        add("modifier.adapting.bonus", "+%s Adapting Damage.");
-        add("modifier.fel_debris.bonus", "%s Damage in the current dimension.");
-        add("modifier.arid_zone.attack_bonus", "+%s Bonus Damage in the current biome.");
-        add("modifier.arid_zone.mining_speed_bonus", "+%s Bonus Mining Speed in the current biome.");
+        add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage.");
+        add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the current dimension.");
+        add("modifier.tinkers_reforged.arid_zone.attack_damage", "Bonus damage in the current biome.");
+        add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome.");
+        add("modifier.tinkers_reforged.damage_lock.end_bonus", "Bonus Attack Damage in the end.");
     }
 
     public void addCast(CastObject object) {

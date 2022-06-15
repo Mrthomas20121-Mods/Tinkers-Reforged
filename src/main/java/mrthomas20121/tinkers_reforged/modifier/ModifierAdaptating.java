@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.modifier;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -8,14 +9,16 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
-import slimeknights.tconstruct.library.tools.context.ToolRebuildContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
+import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.library.utils.TooltipKey;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -35,6 +38,15 @@ public class ModifierAdaptating extends Modifier {
     }
 
     @Override
+    public void onBreakSpeed(@Nonnull IToolStackView tool, int level, @Nonnull PlayerEvent.BreakSpeed event, @Nonnull Direction sideHit, boolean isEffective, float miningSpeedModifier) {
+        ModDataNBT persistantData = tool.getPersistentData();
+        if(persistantData.contains(KEY, 5)) {
+            float value = persistantData.getFloat(KEY);
+            event.setNewSpeed(event.getOriginalSpeed()+value);
+        }
+    }
+
+    @Override
     public int afterEntityHit(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float damageDealt) {
         ModDataNBT persistantData = tool.getPersistentData();
         LivingEntity target = context.getLivingTarget();
@@ -46,12 +58,11 @@ public class ModifierAdaptating extends Modifier {
                 else {
                     persistantData.putFloat(KEY, 0.1f);
                 }
+                ToolStats.ATTACK_SPEED.add(ModifierStatsBuilder.builder(), 0.1f);
             }
         }
         return super.afterEntityHit(tool, level, context, damageDealt);
     }
-
-
 
     @Override
     public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
@@ -60,9 +71,24 @@ public class ModifierAdaptating extends Modifier {
                 ModDataNBT persistantData = tool.getPersistentData();
                 if(persistantData.contains(KEY, 5)) {
                     float value = persistantData.getFloat(KEY);
-                    tooltip.add(new TranslatableComponent("modifier.adapting.bonus", value));
+                    addDamageTooltip(tool, value, tooltip);
+                    addSpeedTooltip(tool, value, tooltip);
+                    addAttackSpeedTooltip(tool, value, tooltip);
+                }
+                else {
+                    addDamageTooltip(tool, 0f, tooltip);
+                    addSpeedTooltip(tool, 0f, tooltip);
+                    addAttackSpeedTooltip(tool, 0f, tooltip);
                 }
             }
         }
+    }
+
+    protected void addSpeedTooltip(IToolStackView tool, float amount, List<Component> tooltip) {
+        addStatTooltip(tool, ToolStats.MINING_SPEED, TinkerTags.Items.MELEE_OR_UNARMED, amount, tooltip);
+    }
+
+    protected void addAttackSpeedTooltip(IToolStackView tool, float amount, List<Component> tooltip) {
+        addStatTooltip(tool, ToolStats.ATTACK_SPEED, TinkerTags.Items.MELEE_OR_UNARMED, amount, tooltip);
     }
 }
