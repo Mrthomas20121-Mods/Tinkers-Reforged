@@ -18,7 +18,7 @@
     "icon": {
       "item": {
         "type": "forge:nbt",
-        "item": "tinkers_reforged:fryin_pan",
+        "item": "tinkers_reforged:frying_pan",
         "nbt": {
           "tic_broken": false,
           "tic_display": true,
