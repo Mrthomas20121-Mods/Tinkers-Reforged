@@ -25,7 +25,7 @@ public class ModifierDamageLock extends Modifier {
                 return damage*1.05f;
             }
         }
-        return 0;
+        return (baseDamage/2)*1.05f;
     }
 
     @Override
