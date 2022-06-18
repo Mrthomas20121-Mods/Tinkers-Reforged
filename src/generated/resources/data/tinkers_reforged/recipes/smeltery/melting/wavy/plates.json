@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:plates/wavy",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/wavy"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_wavy",
+    "amount": 90
+  },
+  "temperature": 1200,
+  "time": 72
+}

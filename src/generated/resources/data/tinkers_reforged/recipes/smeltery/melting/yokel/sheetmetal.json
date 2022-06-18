@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:sheetmetals/yokel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:sheetmetals/yokel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_yokel",
+    "amount": 90
+  },
+  "temperature": 1500,
+  "time": 80
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/wavy"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_wavy",
+    "amount": 90
+  },
+  "temperature": 1200,
+  "time": 72
+}

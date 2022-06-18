@@ -12,6 +12,9 @@
     "tinkers_reforged:gausum_block",
     "tinkers_reforged:felsteel_block",
     "tinkers_reforged:chorus_metal_block",
-    "tinkers_reforged:durasteel_block"
+    "tinkers_reforged:durasteel_block",
+    "tinkers_reforged:crusteel_block",
+    "tinkers_reforged:wavy_block",
+    "tinkers_reforged:yokel_block"
   ]
 }

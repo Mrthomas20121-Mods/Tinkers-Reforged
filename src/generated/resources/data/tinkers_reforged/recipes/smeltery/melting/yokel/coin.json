@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/yokel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/yokel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_yokel",
+    "amount": 30
+  },
+  "temperature": 1500,
+  "time": 53
+}

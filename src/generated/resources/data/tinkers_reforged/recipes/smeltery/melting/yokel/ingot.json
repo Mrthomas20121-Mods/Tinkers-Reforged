@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/yokel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_yokel",
+    "amount": 90
+  },
+  "temperature": 1500,
+  "time": 80
+}
