@@ -28,6 +28,10 @@ public class TinkersReforgedFluids {
     public static FluidObject<ForgeFlowingFluid> shulker = register("molten_shulker", 1200);
     public static FluidObject<ForgeFlowingFluid> durasteel = register("molten_durasteel", 1800);
     public static FluidObject<ForgeFlowingFluid> proto_lava = register("molten_proto_lava", 2000);
+    public static FluidObject<ForgeFlowingFluid> kelp = register("molten_kelp", 800);
+    public static FluidObject<ForgeFlowingFluid> crusteel = register("molten_crusteel", 1000);
+    public static FluidObject<ForgeFlowingFluid> wavy = register("molten_wavy", 1500);
+    public static FluidObject<ForgeFlowingFluid> yokel = register("molten_yokel", 1800);
 
     private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {
         String still = String.format("%s:block/fluid/%s_still", TinkersReforged.MOD_ID, name);

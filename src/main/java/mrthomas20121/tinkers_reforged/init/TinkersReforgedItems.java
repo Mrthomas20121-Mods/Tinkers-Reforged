@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.item.CastObject;
+import mrthomas20121.tinkers_reforged.item.book.TinkersReforgedBookItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -40,6 +41,8 @@ public class TinkersReforgedItems {
 
     private static final Item.Properties TOOL = new Item.Properties().stacksTo(1).tab(TAB_TOOLS);
     private static final Item.Properties PARTS_PROPS = new Item.Properties().tab(TAB_TOOL_PARTS);
+
+    public static RegistryObject<Item> book = ITEMS.register("reforging_guide", () -> new TinkersReforgedBookItem(new Item.Properties().tab(group)));
 
     public static RegistryObject<Item> aluminum_ingot = ITEMS.register("aluminum_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_dust = ITEMS.register("aluminum_dust", TinkersReforgedItems::register);

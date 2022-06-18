@@ -25,6 +25,7 @@ public class ReforgedLang extends LanguageProvider {
         addGroup("Tinkers Reforged Items");
         add("pattern.tinkers_reforged.great_blade", "Great Blade Pattern");
         add("pattern.tinkers_reforged.large_round_plate", "Large Round Plate Pattern");
+        addItem(TinkersReforgedItems.book, "Reforging Guide");
         addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");
         addItem(TinkersReforgedItems.LARGE_ROUND_PLATE, "Large Round Plate");
         addItem(TinkersReforgedItems.FRYING_PAN, "Frying Pan");
@@ -73,6 +74,18 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.durasteel_dust, "Durasteel Dust");
         addItem(TinkersReforgedItems.durasteel_ingot, "Durasteel Ingot");
         addItem(TinkersReforgedItems.durasteel_nugget, "Durasteel Nugget");
+        addBlock(TinkersReforgedBlocks.crusteel_block, "Crusteel Block");
+        addItem(TinkersReforgedItems.crusteel_dust, "Crusteel Dust");
+        addItem(TinkersReforgedItems.crusteel_ingot, "Crusteel Ingot");
+        addItem(TinkersReforgedItems.crusteel_nugget, "Crusteel Nugget");
+        addBlock(TinkersReforgedBlocks.wavy_block, "Wavy Block");
+        addItem(TinkersReforgedItems.wavy_dust, "Wavy Dust");
+        addItem(TinkersReforgedItems.wavy_ingot, "Wavy Ingot");
+        addItem(TinkersReforgedItems.wavy_nugget, "Wavy Nugget");
+        addBlock(TinkersReforgedBlocks.yokel_block, "Yokel Block");
+        addItem(TinkersReforgedItems.yokel_dust, "Yokel Dust");
+        addItem(TinkersReforgedItems.yokel_ingot, "Yokel Ingot");
+        addItem(TinkersReforgedItems.yokel_nugget, "Yokel Nugget");
         addItem(TinkersReforgedItems.raw_aluminum, "Raw Bauxite");
         addItem(TinkersReforgedItems.raw_kepu, "Raw Kepu");
         addBlock(TinkersReforgedBlocks.raw_aluminum_block, "Raw Bauxite Block");
@@ -94,7 +107,11 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.chorus_metal, "Molten Chorus Metal");
         addFluid(TinkersReforgedFluids.chorus, "Molten Chorus");
         addFluid(TinkersReforgedFluids.shulker, "Molten Shulker");
+        addFluid(TinkersReforgedFluids.kelp, "Molten Kelp");
         addFluid(TinkersReforgedFluids.durasteel, "Molten Durasteel");
+        addFluid(TinkersReforgedFluids.crusteel, "Molten Crusteel");
+        addFluid(TinkersReforgedFluids.wavy, "Molten Wavy");
+        addFluid(TinkersReforgedFluids.yokel, "Molten Yokel");
         addFluid(TinkersReforgedFluids.proto_lava, "Molten Proto Lava");
 
         add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
@@ -111,6 +128,10 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.chorus.get().getBucket(), "Molten Chorus Bucket");
         add(TinkersReforgedFluids.shulker.get().getBucket(), "Molten Shulker Bucket");
         add(TinkersReforgedFluids.durasteel.get().getBucket(), "Molten Durasteel Bucket");
+        add(TinkersReforgedFluids.kelp.get().getBucket(), "Molten Kelp Bucket");
+        add(TinkersReforgedFluids.crusteel.get().getBucket(), "Molten Crusteel Bucket");
+        add(TinkersReforgedFluids.wavy.get().getBucket(), "Molten Wavy Bucket");
+        add(TinkersReforgedFluids.yokel.get().getBucket(), "Molten Yokel Bucket");
         add(TinkersReforgedFluids.proto_lava.get().getBucket(), "Molten Proto Lava Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");
@@ -135,7 +156,7 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Anyone need Duritos?", "Your tool last longer most of the time.");
         addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
-        addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Burning Capacitor", "Science!", "Repair the tool you are holding when you are on fire.");
+        addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Burning Capacitor", "Overpowered!", "Repair the tool when you are on fire.");
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage to things in the nether but deal less damage to things in the end.");
         addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Spawn a Shulker blob on hit.");
         addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Damage Lock", "No Damage?", "Your weapon can only do damage in the end.");
@@ -145,11 +166,14 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
 
-        add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage.");
-        add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the current dimension.");
-        add("modifier.tinkers_reforged.arid_zone.attack_damage", "Bonus damage in the current biome.");
-        add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome.");
-        add("modifier.tinkers_reforged.damage_lock.end_bonus", "Bonus Attack Damage in the end.");
+        add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
+        add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");
+        add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the current dimension");
+        add("modifier.tinkers_reforged.arid_zone.attack_damage", "Bonus damage in the current biome");
+        add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome");
+        add("modifier.tinkers_reforged.damage_lock.end_bonus", "Bonus Attack Damage in the end");
+        add("modifier.tinkers_reforged.giant_cells.mining_speed", "Bonus mining speed");
+        add("modifier.tinkers_reforged.adapting.cap", "You have reach the max bonus you can get with adapting");
     }
 
     public void addCast(CastObject object) {

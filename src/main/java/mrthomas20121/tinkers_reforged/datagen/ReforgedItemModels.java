@@ -20,6 +20,8 @@ public class ReforgedItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
+        itemWithModel(TinkersReforgedItems.book, "item/generated");
+
         itemWithModel(TinkersReforgedItems.aluminum_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.aluminum_ingot, "item/generated");
         itemWithModel(TinkersReforgedItems.aluminum_nugget, "item/generated");
@@ -62,6 +64,18 @@ public class ReforgedItemModels extends ItemModelProvider {
 
         itemWithModel(TinkersReforgedItems.raw_aluminum, "item/generated");
         itemWithModel(TinkersReforgedItems.raw_kepu, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.crusteel_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.crusteel_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.crusteel_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.wavy_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.wavy_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.wavy_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.yokel_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.yokel_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.yokel_nugget, "item/generated");
 
         for(CastType type : CastType.values()) {
             castModel(TinkersReforgedItems.casts.get(type), type);

@@ -12,6 +12,7 @@ public class TinkersReforgedConfig {
 
         public OreConfig bauxiteOre;
         public OreConfig kepuOre;
+        public ForgeConfigSpec.ConfigValue<Float> adaptingModifierCap;
 
         CommonConfig(ForgeConfigSpec.Builder builder) {
             builder.comment("Bauxite Ore Worldgen").push("bauxite_ore");
@@ -19,6 +20,8 @@ public class TinkersReforgedConfig {
             builder.pop();
             builder.comment("Kepu Ore Worldgen").push("kepu_ore");
             kepuOre = new KepuOreConfig(builder);
+
+            adaptingModifierCap = builder.comment("Default Modifier Cap for adapting").define("adaptingModifierCap", 10f);
         }
     }
 

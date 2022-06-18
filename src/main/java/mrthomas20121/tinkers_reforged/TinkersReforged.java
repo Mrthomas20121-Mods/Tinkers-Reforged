@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged;
 
+import mrthomas20121.tinkers_reforged.client.TinkersReforgedBook;
 import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedWorldGen;
@@ -11,6 +12,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -33,6 +35,8 @@ public class TinkersReforged {
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public TinkersReforged() {
+		TinkersReforgedTags.init();
+
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		TinkersReforgedModifiers.MODIFIERS.register(bus);
 		TinkersReforgedBlocks.BLOCKS.register(bus);
@@ -46,6 +50,9 @@ public class TinkersReforged {
 		MinecraftForge.EVENT_BUS.register(this);
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TinkersReforgedConfig.config);
+
+		// execute this only on the client
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TinkersReforgedBook::initBook);
 	}
 
 	@SubscribeEvent

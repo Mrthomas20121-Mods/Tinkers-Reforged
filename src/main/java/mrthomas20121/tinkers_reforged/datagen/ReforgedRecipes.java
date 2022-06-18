@@ -77,6 +77,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         blockIngotNuggetCompression(consumer, "felsteel", TinkersReforgedBlocks.felsteel_block.get().asItem(), TinkersReforgedItems.felsteel_ingot.get(), TinkersReforgedItems.felsteel_nugget.get());
         blockIngotNuggetCompression(consumer, "kepu", TinkersReforgedBlocks.kepu_block.get().asItem(), TinkersReforgedItems.kepu_ingot.get(), TinkersReforgedItems.kepu_nugget.get());
         blockIngotNuggetCompression(consumer, "chorus_metal", TinkersReforgedBlocks.chorus_metal_block.get().asItem(), TinkersReforgedItems.chorus_metal_ingot.get(), TinkersReforgedItems.chorus_metal_nugget.get());
+        blockIngotNuggetCompression(consumer, "durasteel", TinkersReforgedBlocks.durasteel_block.get().asItem(), TinkersReforgedItems.durasteel_ingot.get(), TinkersReforgedItems.durasteel_nugget.get());
+        blockIngotNuggetCompression(consumer, "crusteel", TinkersReforgedBlocks.crusteel_block.get().asItem(), TinkersReforgedItems.crusteel_ingot.get(), TinkersReforgedItems.crusteel_nugget.get());
+        blockIngotNuggetCompression(consumer, "wavy", TinkersReforgedBlocks.wavy_block.get().asItem(), TinkersReforgedItems.wavy_ingot.get(), TinkersReforgedItems.wavy_nugget.get());
+        blockIngotNuggetCompression(consumer, "yokel", TinkersReforgedBlocks.yokel_block.get().asItem(), TinkersReforgedItems.yokel_ingot.get(), TinkersReforgedItems.yokel_nugget.get());
+
 
         metalCasting(consumer, TinkersReforgedFluids.duralumin, TinkersReforgedBlocks.duralumin_block.get(), TinkersReforgedItems.duralumin_ingot.get(), TinkersReforgedItems.duralumin_nugget.get(), castingFolder, "duralumin");
         metalCasting(consumer, TinkersReforgedFluids.electrical_copper, TinkersReforgedBlocks.electrical_copper_block.get(), TinkersReforgedItems.electrical_copper_ingot.get(), TinkersReforgedItems.electrical_copper_nugget.get(), castingFolder, "electrical_copper");
@@ -106,6 +111,9 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMelting(consumer, TinkersReforgedFluids.felsteel.get(), "felsteel", false, meltingFolder, false);
         metalMelting(consumer, TinkersReforgedFluids.kepu.get(), "kepu", true, meltingFolder, false, Byproduct.AMETHYST);
         metalMelting(consumer, TinkersReforgedFluids.chorus_metal.get(), "chorus_metal", false, meltingFolder, false);
+        metalMelting(consumer, TinkersReforgedFluids.crusteel.get(), "crusteel", false, meltingFolder, false);
+        metalMelting(consumer, TinkersReforgedFluids.wavy.get(), "wavy", false, meltingFolder, false);
+        metalMelting(consumer, TinkersReforgedFluids.yokel.get(), "yokel", false, meltingFolder, false);
 
         metalMaterialRecipe(consumer, ReforgedMaterials.gausum, materialFolder, "gausum", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.duralumin, materialFolder, "duralumin", false);
@@ -192,7 +200,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         gemCasting(consumer, TinkersReforgedFluids.lapis, Items.LAPIS_LAZULI, castFolder+"lapis_lazuli_gem");
 
-        MeltingRecipeBuilder.melting(Ingredient.of(ReforgedItemsTags.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
+        MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
 
         MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(TinkersReforgedFluids.blazing_copper.get(), 50)), 150, 1800).save(consumer, modResource("smeltery/fuel/blazing_copper"));
 
@@ -253,13 +261,13 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .unlockedBy("has_item", has(TinkersReforgedItems.raw_kepu.get()))
                 .save(consumer, modResource("raw_kepu"));
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ReforgedItemsTags.ALUMINUM_ORE), TinkersReforgedItems.aluminum_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_smelting_deepslate_aluminum_ore"));
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ReforgedItemsTags.ALUMINUM_ORE), TinkersReforgedItems.aluminum_ingot.get(), 0.5f, 100).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_blasting_aluminum_ore"));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_ORE), TinkersReforgedItems.aluminum_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_smelting_deepslate_aluminum_ore"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_ORE), TinkersReforgedItems.aluminum_ingot.get(), 0.5f, 100).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_blasting_aluminum_ore"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.raw_aluminum.get()), TinkersReforgedItems.aluminum_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_smelting_raw_aluminum"));
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(TinkersReforgedItems.raw_aluminum.get()), TinkersReforgedItems.aluminum_ingot.get(), 0.5f, 100).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_blasting_raw_aluminum"));
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ReforgedItemsTags.KEPU_ORE), TinkersReforgedItems.kepu_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_smelting_kepu_ore"));
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ReforgedItemsTags.KEPU_ORE), TinkersReforgedItems.kepu_ingot.get(), 0.5f, 100).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_blasting_kepu_ore"));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedTags.Items.KEPU_ORE), TinkersReforgedItems.kepu_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_smelting_kepu_ore"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(TinkersReforgedTags.Items.KEPU_ORE), TinkersReforgedItems.kepu_ingot.get(), 0.5f, 100).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_blasting_kepu_ore"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.raw_kepu.get()), TinkersReforgedItems.kepu_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_smelting_raw_kepu"));
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(TinkersReforgedItems.raw_kepu.get()), TinkersReforgedItems.kepu_ingot.get(), 0.5f, 100).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_blasting_raw_kepu"));
 
