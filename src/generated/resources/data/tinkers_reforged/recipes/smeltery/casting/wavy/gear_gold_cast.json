@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/wavy",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gear"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_durasteel",
+    "amount": 360
+  },
+  "result": {
+    "tag": "forge:gears/wavy"
+  },
+  "cooling_time": 160
+}

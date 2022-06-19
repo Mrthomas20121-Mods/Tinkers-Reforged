@@ -2,7 +2,7 @@
   "type": "tconstruct:material_fluid",
   "input": "tconstruct:cobalt",
   "fluid": {
-    "tag": "forge:liquid_soul",
+    "tag": "tconstruct:liquid_soul",
     "amount": 500
   },
   "temperature": 400,

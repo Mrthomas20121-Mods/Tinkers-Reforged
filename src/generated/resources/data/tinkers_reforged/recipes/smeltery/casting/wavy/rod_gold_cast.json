@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/wavy",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/rod"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_durasteel",
+    "amount": 45
+  },
+  "result": {
+    "tag": "forge:rods/wavy"
+  },
+  "cooling_time": 57
+}

@@ -11,7 +11,7 @@
       "durability": 1200,
       "miningSpeed": 7.4,
       "harvestTier": "minecraft:diamond",
-      "attack": 3.0
+      "attack": 4.0
     }
   }
 }

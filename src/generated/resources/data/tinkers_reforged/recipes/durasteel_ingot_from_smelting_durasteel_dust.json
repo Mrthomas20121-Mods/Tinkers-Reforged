@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tinkers_reforged:durasteel_dust"
+  },
+  "result": "tinkers_reforged:durasteel_ingot",
+  "experience": 0.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/yokel"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:yokel",
+  "leftover": {
+    "tag": "forge:ingots/yokel"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_copper",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:molten_debris",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:molten_amethyst",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_crusteel",
+    "amount": 270
+  },
+  "temperature": 700
+}
