@@ -142,7 +142,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterials.wavy, TinkerFluids.moltenObsidian, false, 500, materialFolder+"wavy_");
         metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.lavium_ingot.get(), TinkerFluids.liquidSoul, false, materialFolder, "lavium");
         metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.qivium_ingot.get(), TinkerFluids.magma, true, materialFolder, "qivium");
-        metalComposite(consumer, TinkerWorld.bloodshroom.get(), TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_bloodshroom");
+        metalComposite(consumer, TinkerWorld.bloodshroom.get(), TinkersReforgedItems.wavy_block.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_bloodshroom");
         metalComposite(consumer, Items.CRIMSON_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_crimson");
         metalComposite(consumer, Items.WARPED_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_warped");
         metalComposite(consumer, Items.REDSTONE, TinkersReforgedItems.electrical_copper_dust.get(), TinkersReforgedFluids.blazing_copper, true, materialFolder, "electrical_copper");
@@ -228,6 +228,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .save(consumer, modResource(castFolder+"lapis_block"));
 
         gemCasting(consumer, TinkersReforgedFluids.lapis, Items.LAPIS_LAZULI, castFolder+"lapis_lazuli_gem");
+
+        ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.book.get())
+                .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
+                .setCast(Items.BOOK, false)
+                .save(consumer, modResource(castFolder + "book"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
 
@@ -335,7 +340,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
     private void metalComposite(Consumer<FinishedRecipe> consumer, Block input, Item output, FluidObject<?> fluid, boolean forgeTag, String folder, String name) {
         ItemCastingRecipeBuilder.basinRecipe(output)
-                .setFluidAndTime(fluid, forgeTag, FluidValues.METAL_BLOCK)
+                .setFluidAndTime(fluid, forgeTag, FluidValues.GLASS_BLOCK)
                 .setCast(input, true)
                 .setSwitchSlots()
                 .save(consumer, modResource(folder + "/metal/" + name));

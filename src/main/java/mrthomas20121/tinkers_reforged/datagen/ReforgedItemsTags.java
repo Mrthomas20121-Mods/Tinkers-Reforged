@@ -49,6 +49,8 @@ public class ReforgedItemsTags extends ItemTagsProvider {
 
         tag(ORES).add(TinkersReforgedItems.aluminum_ore.get(), TinkersReforgedItems.kepu_ore.get(), TinkersReforgedItems.deepslate_aluminum_ore.get());
 
+        tag(ItemTags.LECTERN_BOOKS).add(TinkersReforgedItems.book.get());
+
         tag(DURALUMIN_BLOCK).add(TinkersReforgedItems.duralumin_block.get());
         tag(ALUMINUM_BLOCK).add(TinkersReforgedItems.aluminum_block.get());
         tag(ELECTRICAL_COPPER_BLOCK).add(TinkersReforgedItems.electrical_copper_block.get());
