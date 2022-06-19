@@ -28,6 +28,9 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId chorus_metal = createMaterial("chorus_metal");
     public static final MaterialId kepu = createMaterial("kepu");
     public static final MaterialId durasteel = createMaterial("durasteel");
+    public static final MaterialId crusteel = createMaterial("crusteel");
+    public static final MaterialId wavy = createMaterial("wavy");
+    public static final MaterialId yokel = createMaterial("yokel");
 
     private static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));
@@ -48,6 +51,9 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(chorus_metal, 4, ORDER_HARVEST, false);
         addMaterial(kepu, 4, ORDER_HARVEST, false);
         addMaterial(durasteel, 4, ORDER_SPECIAL, false);
+        addMaterial(crusteel, 4, ORDER_HARVEST, false);
+        addMaterial(wavy, 4, ORDER_SPECIAL, false);
+        addMaterial(yokel, 4, ORDER_WEAPON, false);
     }
 
     @Nonnull
@@ -81,6 +87,12 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addDefaultTraits(kepu, TinkersReforgedModifiers.kepu_damage_lock);
 
             addDefaultTraits(durasteel, TinkersReforgedModifiers.durasteel_adapting);
+
+            addDefaultTraits(wavy, TinkersReforgedModifiers.spore_shot);
+
+            addDefaultTraits(crusteel, TinkersReforgedModifiers.giant_cells);
+
+            addDefaultTraits(yokel, TinkersReforgedModifiers.terra);
         }
 
         @Nonnull
@@ -106,17 +118,17 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialStats() {
 
             addMaterialStats(qivium,
-                    new HeadMaterialStats(600, 5f, DIAMOND, 5f),
+                    new HeadMaterialStats(800, 5f, DIAMOND, 5f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(lavium,
-                    new HeadMaterialStats(600, 7.5f, DIAMOND, 2.25f),
+                    new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
                     HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(gausum,
-                    new HeadMaterialStats(1200, 7.4f, DIAMOND, 3f),
+                    new HeadMaterialStats(1200, 7.4f, DIAMOND, 4f),
                     HandleMaterialStats.DEFAULT.withDurability(2f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
@@ -147,8 +159,23 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(durasteel,
-                    new HeadMaterialStats(1200, 7f, NETHERITE, 6.5f),
-                    HandleMaterialStats.DEFAULT.withAttackDamage(1.01f).withAttackSpeed(1.02f),
+                    new HeadMaterialStats(1200, 6f, NETHERITE, 7f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.01f).withAttackSpeed(1.02f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(crusteel,
+                    new HeadMaterialStats(800, 6.6f, NETHERITE, 4.25f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.05f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(wavy,
+                    new HeadMaterialStats(1000, 6.9f, NETHERITE, 5.25f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.05f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(yokel,
+                    new HeadMaterialStats(1100, 5.55f, DIAMOND, 5.55f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.05f),
                     ExtraMaterialStats.DEFAULT);
         }
     }

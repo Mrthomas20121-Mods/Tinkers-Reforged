@@ -151,6 +151,9 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.chorus_metal, "Chorus Metal", "Chorus and Shulker alloy", "Chorus and Shulker alloy");
         addMaterial(ReforgedMaterials.kepu, "Kepu", "Come from the depth of the end", "Infused End Ore");
         addMaterial(ReforgedMaterials.durasteel, "Durasteel", "Wait it's not an ore?", "Mix of Ender and Netherite");
+        addMaterial(ReforgedMaterials.crusteel, "Crusteel", "Nether Crust", "Copper nether alloy");
+        addMaterial(ReforgedMaterials.wavy, "Wavy", "This smell bad", "Mushroom material");
+        addMaterial(ReforgedMaterials.yokel, "Yokel", "Finally a sea metal", "Kelp alloy");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");

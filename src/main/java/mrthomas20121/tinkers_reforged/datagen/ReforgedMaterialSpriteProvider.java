@@ -51,5 +51,17 @@ public class ReforgedMaterialSpriteProvider extends AbstractMaterialSpriteProvid
                 .meleeHarvest()
                 .fallbacks("metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF080614).addARGB(102, 0xFF130F30).addARGB(140, 0xFF302C70).addARGB(178, 0xFF494499).addARGB(216, 0xFF5D5BB7).addARGB(255, 0xFF7073CC).build());
+        buildMaterial(ReforgedMaterials.crusteel)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF161309).addARGB(102, 0xFF261E0E).addARGB(140, 0xFF6A521C).addARGB(178, 0xFF8C6920).addARGB(216, 0xFFA78527).addARGB(255, 0xFFBD9E2A).build());
+        buildMaterial(ReforgedMaterials.wavy)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF190D0D).addARGB(102, 0xFF2D1817).addARGB(140, 0xFF513430).addARGB(178, 0xFF724C47).addARGB(216, 0xFF996B61).addARGB(255, 0xFFBC897E).build());
+        buildMaterial(ReforgedMaterials.yokel)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF0E1409).addARGB(102, 0xFF233319).addARGB(140, 0xFF6B915D).addARGB(178, 0xFF8BBA7C).addARGB(216, 0xFFA6D89E).addARGB(255, 0xFFC0EFB9).build());
     }
 }

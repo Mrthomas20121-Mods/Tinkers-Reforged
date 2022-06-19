@@ -8,8 +8,6 @@ import slimeknights.mantle.client.book.repository.FileRepository;
 import slimeknights.mantle.client.book.transformer.BookTransformer;
 import slimeknights.tconstruct.library.client.book.sectiontransformer.ToolSectionTransformer;
 
-import static slimeknights.tconstruct.library.TinkerBookIDs.MATERIALS_BOOK_ID;
-
 public class TinkersReforgedBook extends BookData {
 
     public static final ResourceLocation id = new ResourceLocation(TinkersReforged.MOD_ID, "reforging_guide");

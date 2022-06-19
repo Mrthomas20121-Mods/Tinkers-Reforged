@@ -17,7 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
-import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
@@ -26,7 +26,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class ModifierAdaptating extends Modifier {
+public class ModifierAdaptating extends NoLevelsModifier {
 
     private final ResourceLocation KEY = new ResourceLocation(TinkersReforged.MOD_ID, "adapting_mod");
 
@@ -51,7 +51,7 @@ public class ModifierAdaptating extends Modifier {
 
     @Override
     public void onRemoved(IToolStackView tool) {
-        // remove adapting data when
+        // remove adapting data
         tool.getPersistentData().remove(KEY);
     }
 
