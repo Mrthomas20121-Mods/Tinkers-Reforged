@@ -7,6 +7,6 @@
   {
     "name": "greatsword",
     "type": "tconstruct:tool",
-    "data": "tools/great_sword.json"
+    "data": "tools/greatsword.json"
   }
 ]
