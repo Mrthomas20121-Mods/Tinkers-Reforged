@@ -13,6 +13,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.CompoundIngredient;
@@ -135,15 +136,15 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMaterialRecipe(consumer, ReforgedMaterials.crusteel, materialFolder, "crusteel", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.wavy, materialFolder, "wavy", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.yokel, materialFolder, "yokel", false);
-        
+
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, false, 500, materialFolder+"lavium_");
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, true, 500, materialFolder+"qivium_");
-        materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterials.wavy, TinkerFluids.moltenObsidian, true, 500, materialFolder+"wavy_");
+        materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterials.wavy, TinkerFluids.moltenObsidian, false, 500, materialFolder+"wavy_");
         metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.lavium_ingot.get(), TinkerFluids.liquidSoul, false, materialFolder, "lavium");
         metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.qivium_ingot.get(), TinkerFluids.magma, true, materialFolder, "qivium");
-        metalComposite(consumer, TinkerWorld.bloodshroom.asItem(), TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, true, materialFolder, "wavy_bloodshroom");
-        metalComposite(consumer, Items.CRIMSON_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, true, materialFolder, "wavy_crimson");
-        metalComposite(consumer, Items.WARPED_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, true, materialFolder, "wavy_warped");
+        metalComposite(consumer, TinkerWorld.bloodshroom.get(), TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_bloodshroom");
+        metalComposite(consumer, Items.CRIMSON_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_crimson");
+        metalComposite(consumer, Items.WARPED_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_warped");
         metalComposite(consumer, Items.REDSTONE, TinkersReforgedItems.electrical_copper_dust.get(), TinkersReforgedFluids.blazing_copper, true, materialFolder, "electrical_copper");
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.duralumin.get(), FluidValues.INGOT*5)
@@ -327,6 +328,14 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
     private void metalComposite(Consumer<FinishedRecipe> consumer, Item input, Item output, FluidObject<?> fluid, boolean forgeTag, String folder, String name) {
         ItemCastingRecipeBuilder.tableRecipe(output)
                 .setFluidAndTime(fluid, forgeTag, FluidValues.INGOT)
+                .setCast(input, true)
+                .setSwitchSlots()
+                .save(consumer, modResource(folder + "/metal/" + name));
+    }
+
+    private void metalComposite(Consumer<FinishedRecipe> consumer, Block input, Item output, FluidObject<?> fluid, boolean forgeTag, String folder, String name) {
+        ItemCastingRecipeBuilder.basinRecipe(output)
+                .setFluidAndTime(fluid, forgeTag, FluidValues.METAL_BLOCK)
                 .setCast(input, true)
                 .setSwitchSlots()
                 .save(consumer, modResource(folder + "/metal/" + name));
