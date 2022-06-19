@@ -135,8 +135,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMaterialRecipe(consumer, ReforgedMaterials.crusteel, materialFolder, "crusteel", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.wavy, materialFolder, "wavy", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.yokel, materialFolder, "yokel", false);
-
-
+        
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, false, 500, materialFolder+"lavium_");
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, true, 500, materialFolder+"qivium_");
         materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterials.wavy, TinkerFluids.moltenObsidian, true, 500, materialFolder+"wavy_");
@@ -201,7 +200,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .addInput(TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenAmethyst.get(), FluidValues.INGOT)
-                .save(consumer, modResource(alloyFolder+"yokel"));
+                .save(consumer, modResource(alloyFolder+"crusteel"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.KELP), new FluidStack(TinkersReforgedFluids.kelp.get(), FluidValues.SLIMEBALL), 500, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/molten_kelp"));
         MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedItems.raw_aluminum.get()), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 900, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/raw_aluminum"));
