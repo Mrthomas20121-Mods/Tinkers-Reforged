@@ -12,7 +12,7 @@ public enum CastType {
     ingot,
     large_plate,
     nugget,
-    pickaxe_head,
+    pick_head,
     plate,
     repair_kit,
     rod,

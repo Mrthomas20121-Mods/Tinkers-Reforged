@@ -254,7 +254,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         createCast(consumer, CastType.broad_blade, TinkerToolParts.broadBlade.get(), castFolder);
         createCast(consumer, CastType.hammer_head, TinkerToolParts.hammerHead.get(), castFolder);
         createCast(consumer, CastType.large_plate, TinkerToolParts.largePlate.get(), castFolder);
-        createCast(consumer, CastType.pickaxe_head, TinkerToolParts.pickHead.get(), castFolder);
+        createCast(consumer, CastType.pick_head, TinkerToolParts.pickHead.get(), castFolder);
         createCast(consumer, CastType.repair_kit, TinkerToolParts.repairKit.get(), castFolder);
         createCast(consumer, CastType.small_axe_head, TinkerToolParts.smallAxeHead.get(), castFolder);
         createCast(consumer, CastType.small_blade, TinkerToolParts.smallBlade.get(), castFolder);
