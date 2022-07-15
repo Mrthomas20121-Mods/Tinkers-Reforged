@@ -95,9 +95,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalCasting(consumer, TinkersReforgedFluids.chorus_metal, TinkersReforgedBlocks.chorus_metal_block.get(), TinkersReforgedItems.chorus_metal_ingot.get(), TinkersReforgedItems.chorus_metal_nugget.get(), castingFolder, "chorus_metal");
         metalCasting(consumer, TinkersReforgedFluids.durasteel, TinkersReforgedBlocks.durasteel_block.get(), TinkersReforgedItems.durasteel_ingot.get(), TinkersReforgedItems.durasteel_nugget.get(), castingFolder, "durasteel");
         metalCasting(consumer, TinkersReforgedFluids.crusteel, TinkersReforgedBlocks.crusteel_block.get(), TinkersReforgedItems.crusteel_ingot.get(), TinkersReforgedItems.crusteel_nugget.get(), castingFolder, "crusteel");
-        metalCasting(consumer, TinkersReforgedFluids.durasteel, TinkersReforgedBlocks.wavy_block.get(), TinkersReforgedItems.wavy_ingot.get(), TinkersReforgedItems.wavy_nugget.get(), castingFolder, "wavy");
-        metalCasting(consumer, TinkersReforgedFluids.durasteel, TinkersReforgedBlocks.yokel_block.get(), TinkersReforgedItems.yokel_ingot.get(), TinkersReforgedItems.yokel_nugget.get(), castingFolder, "yokel");
-
+        metalCasting(consumer, TinkersReforgedFluids.yokel, TinkersReforgedBlocks.wavy_block.get(), TinkersReforgedItems.wavy_ingot.get(), TinkersReforgedItems.wavy_nugget.get(), castingFolder, "wavy");
+        metalCasting(consumer, TinkersReforgedFluids.yokel, TinkersReforgedBlocks.yokel_block.get(), TinkersReforgedItems.yokel_ingot.get(), TinkersReforgedItems.yokel_nugget.get(), castingFolder, "yokel");
 
         materialMeltingCasting(consumer, ReforgedMaterials.duralumin, TinkersReforgedFluids.duralumin, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterials.electrical_copper, TinkersReforgedFluids.electrical_copper, materialFolder);

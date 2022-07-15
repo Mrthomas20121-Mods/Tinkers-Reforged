@@ -23,8 +23,8 @@ public class ReforgedBlocksLoot extends BlockLoot {
 
     @Override
     protected void addTables() {
-        this.dropOther(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedItems.raw_aluminum.get());
-        this.dropOther(TinkersReforgedBlocks.deepslate_aluminum_ore.get(), TinkersReforgedItems.raw_aluminum.get());
+        createOreDrop(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedItems.raw_aluminum.get());
+        createOreDrop(TinkersReforgedBlocks.deepslate_aluminum_ore.get(), TinkersReforgedItems.raw_aluminum.get());
         this.dropSelf(TinkersReforgedBlocks.aluminum_block.get());
         this.dropSelf(TinkersReforgedBlocks.duralumin_block.get());
         this.dropSelf(TinkersReforgedBlocks.electrical_copper_block.get());
@@ -32,7 +32,7 @@ public class ReforgedBlocksLoot extends BlockLoot {
         this.dropSelf(TinkersReforgedBlocks.qivium_block.get());
         this.dropSelf(TinkersReforgedBlocks.gausum_block.get());
         this.dropSelf(TinkersReforgedBlocks.felsteel_block.get());
-        this.dropOther(TinkersReforgedBlocks.kepu_ore.get(), TinkersReforgedItems.raw_kepu.get());
+        createOreDrop(TinkersReforgedBlocks.kepu_ore.get(), TinkersReforgedItems.raw_kepu.get());
         this.dropSelf(TinkersReforgedBlocks.kepu_block.get());
         this.dropSelf(TinkersReforgedBlocks.chorus_metal_block.get());
         this.dropSelf(TinkersReforgedBlocks.raw_aluminum_block.get());
