@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.modifier;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,7 +16,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 /**
- * Deal more damage to things in the nether and less damage in the end
+ * Deal more damage in the nether
  */
 public class ModifierFelDebris extends Modifier {
 
@@ -27,26 +26,11 @@ public class ModifierFelDebris extends Modifier {
         if(target != null && target.level.dimension().equals(Level.NETHER)) {
             return baseDamage*1.5f;
         }
-        else if(target != null && target.level.dimension().equals(Level.END)) {
-            return baseDamage*0.8f;
-        }
         return super.getEntityDamage(tool, level, context, baseDamage, damage);
     }
 
     @Override
     public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
-        double bonus = 0d;
-        if(player != null) {
-            Level world = player.level;
-            if(world.dimension().equals(Level.NETHER)) {
-                bonus = 1.5;
-            }
-            else if(world.dimension().equals(Level.END)) {
-                bonus = -0.8;
-            }
-
-            // make sure bonus is not empty
-            if(bonus != 0d && tooltipKey == TooltipKey.SHIFT) addPercentTooltip(new TranslatableComponent("modifier.tinkers_reforged.fel_debris.bonus"), bonus, tooltip);
-        }
+        addPercentTooltip(new TranslatableComponent("modifier.tinkers_reforged.fel_debris.bonus"), 1.5f, tooltip);
     }
 }

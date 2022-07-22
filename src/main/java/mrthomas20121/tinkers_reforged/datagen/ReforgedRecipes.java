@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
@@ -28,6 +29,8 @@ import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.*;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.library.materials.definition.MaterialVariantId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
@@ -38,13 +41,16 @@ import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
 import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
 import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.partbuilder.PartRecipeBuilder;
 import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.TinkerToolParts;
+import slimeknights.tconstruct.tools.TinkerTools;
 import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.world.TinkerWorld;
 
@@ -69,6 +75,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         String alloyFolder = "smeltery/alloy/";
         String toolFolder = "tools/building/";
         String partFolder = "tools/parts/";
+        String slotless = "tools/modifiers/slotless/";
 
         blockIngotNuggetCompression(consumer, "aluminum", TinkersReforgedBlocks.aluminum_block.get().asItem(), TinkersReforgedItems.aluminum_ingot.get(), TinkersReforgedItems.aluminum_nugget.get());
         blockIngotNuggetCompression(consumer, "duralumin", TinkersReforgedBlocks.duralumin_block.get().asItem(), TinkersReforgedItems.duralumin_ingot.get(), TinkersReforgedItems.duralumin_nugget.get());
@@ -135,6 +142,22 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMaterialRecipe(consumer, ReforgedMaterials.crusteel, materialFolder, "crusteel", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.wavy, materialFolder, "wavy", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.yokel, materialFolder, "yokel", false);
+
+        Ingredient plate = Ingredient.of(TinkerTools.plateArmor.values().stream().map(ItemStack::new));
+
+        // embellishment
+        plateTexture(consumer, plate, ReforgedMaterials.gausum, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.duralumin, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.electrical_copper, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.lavium, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.qivium, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.felsteel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.chorus_metal, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.kepu, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.durasteel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.crusteel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.wavy, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterials.yokel, false, slotless);
 
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, false, 500, materialFolder+"lavium_");
         materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, true, 500, materialFolder+"qivium_");
@@ -203,8 +226,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .save(consumer, modResource(alloyFolder+"crusteel"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.KELP), new FluidStack(TinkersReforgedFluids.kelp.get(), FluidValues.SLIMEBALL), 500, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/molten_kelp"));
-        MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedItems.raw_aluminum.get()), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 900, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/raw_aluminum"));
-        MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedItems.raw_kepu.get()), new FluidStack(TinkersReforgedFluids.kepu.get(), FluidValues.INGOT), 900, 50).addByproduct(new FluidStack(TinkersReforgedFluids.chorus.get(), FluidValues.INGOT/2)).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/raw_kepu"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.STORAGE_BLOCKS_LAPIS), TinkersReforgedFluids.lapis.get(), FluidValues.METAL_BLOCK).save(consumer, modResource(meltingFolder+"lapis_block"));
         MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.GEMS_LAPIS), TinkersReforgedFluids.lapis.get(), FluidValues.GEM).save(consumer, modResource(meltingFolder+"lapis_gem"));
@@ -459,5 +480,22 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .setMaterial(TinkerSmeltery.blankRedSandCast)
                 .setPattern(input, false)
                 .save(consumer, modResource(folder + "red_sand_casts/" + name));
+    }
+
+    /** Adds recipes for a plate armor texture */
+    private void plateTexture(Consumer<FinishedRecipe> consumer, Ingredient tool, MaterialId material, boolean optional, String folder) {
+        plateTexture(consumer, tool, material, "ingots/" + material.getPath(), optional, folder);
+    }
+
+    /** Adds recipes for a plate armor texture with a custom tag */
+    private void plateTexture(Consumer<FinishedRecipe> consumer, Ingredient tool, MaterialVariantId material, String tag, boolean optional, String folder) {
+        Ingredient ingot = Ingredient.of(getItemTag("forge", tag));
+        if (optional) {
+            consumer = withCondition(consumer, tagCondition(tag));
+        }
+        SwappableModifierRecipeBuilder.modifier(TinkerModifiers.embellishment, material.toString())
+                .setTools(tool)
+                .addInput(ingot).addInput(ingot).addInput(ingot)
+                .save(consumer, wrap(TinkerModifiers.embellishment.getId(), folder, "_" + material.getLocation('_').getPath()));
     }
 }

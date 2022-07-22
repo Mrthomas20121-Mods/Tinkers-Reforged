@@ -160,9 +160,9 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Anyone need Duritos?", "Your tool last longer most of the time.");
         addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
         addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Burning Capacitor", "Overpowered!", "Repair the tool when you are on fire.");
-        addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage to things in the nether but deal less damage to things in the end.");
+        addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage in the nether.");
         addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Spawn a Shulker blob on hit.");
-        addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Damage Lock", "No Damage?", "Your weapon can only do damage in the end.");
+        addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Ender Taint", "The end is the best dimension", "Your tool is stronger in the end but weaker in other dimension.");
         addModifier(TinkersReforgedModifiers.cutting_edge, "Cutting Edge", "That's a lot of damage!", "Deal 10% more damage.");
         addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.1.");
         addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health are.");
@@ -171,10 +171,11 @@ public class ReforgedLang extends LanguageProvider {
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
         add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");
-        add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the current dimension");
+        add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the nether.");
         add("modifier.tinkers_reforged.arid_zone.attack_damage", "Bonus damage in the current biome");
         add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome");
-        add("modifier.tinkers_reforged.damage_lock.end_bonus", "Bonus Attack Damage in the end");
+        add("modifier.tinkers_reforged.ender_taint.bonus", "Attack Damage/Mining Speed in the End dimension.");
+        add("modifier.tinkers_reforged.ender_taint.malus", "Attack Damage/Mining Speed in the other dimensions.");
         add("modifier.tinkers_reforged.giant_cells.mining_speed", "Bonus mining speed");
         add("modifier.tinkers_reforged.adapting.cap", "You have reach the max bonus you can get with adapting");
     }

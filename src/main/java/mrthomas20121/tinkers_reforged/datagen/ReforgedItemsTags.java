@@ -44,8 +44,11 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LARGE_ROUND_PLATE.get());
 
-        tag(RAW_ALUMINUM).add(TinkersReforgedItems.raw_aluminum_block.get());
-        tag(RAW_KEPU).add(TinkersReforgedItems.raw_kepu_block.get());
+        tag(RAW_ALUMINUM).add(TinkersReforgedItems.raw_aluminum.get());
+        tag(RAW_KEPU).add(TinkersReforgedItems.raw_kepu.get());
+
+        tag(RAW_ALUMINUM_BLOCK).add(TinkersReforgedItems.raw_aluminum_block.get());
+        tag(RAW_KEPU_BLOCK).add(TinkersReforgedItems.raw_kepu_block.get());
 
         tag(ORES).add(TinkersReforgedItems.aluminum_ore.get(), TinkersReforgedItems.kepu_ore.get(), TinkersReforgedItems.deepslate_aluminum_ore.get());
 
