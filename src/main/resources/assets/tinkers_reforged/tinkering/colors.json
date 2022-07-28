@@ -1,6 +1,5 @@
 {
     "modifier.tinkers_reforged": {
-        "__traits__": null,
         "cutting_edge": "#7CBC6F",
         "arid_zone": "#63E8CD",
         "blazing_fire": "#FF8499",
@@ -13,7 +12,8 @@
         "adapting": "#7073CC",
         "terra": "#A6D89E",
         "spore_shot": "#996B61",
-        "giant_cells": "#A78527"
+        "giant_cells": "#A78527",
+        "collapsed": "#349988"
     },
 
     "material.tinkers_reforged": {
@@ -28,6 +28,7 @@
         "lavium": "#63E8CD",
         "qivium": "#FF8499",
         "wavy": "#BC897E",
-        "yokel": "#C0EFB9"
+        "yokel": "#C0EFB9",
+        "ender_bone": "#349988"
     }
 }

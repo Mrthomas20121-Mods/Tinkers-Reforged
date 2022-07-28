@@ -21,6 +21,8 @@ public class TinkersReforgedConfig {
             builder.comment("Kepu Ore Worldgen").push("kepu_ore");
             kepuOre = new KepuOreConfig(builder);
 
+            builder.push("modifiers");
+
             adaptingModifierCap = builder.comment("Default Modifier Cap for adapting").define("adaptingModifierCap", 10f);
         }
     }

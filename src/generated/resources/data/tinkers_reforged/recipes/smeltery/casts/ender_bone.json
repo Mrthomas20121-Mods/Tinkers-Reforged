@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:bone"
+  },
+  "fluid": {
+    "tag": "forge:ender",
+    "amount": 250
+  },
+  "result": "tinkers_reforged:ender_bone",
+  "cooling_time": 82
+}

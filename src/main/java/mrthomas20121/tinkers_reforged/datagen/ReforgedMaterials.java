@@ -8,14 +8,14 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.ExtraMaterialStats;
 import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
 import javax.annotation.Nonnull;
 
-import static net.minecraft.world.item.Tiers.DIAMOND;
-import static net.minecraft.world.item.Tiers.NETHERITE;
+import static net.minecraft.world.item.Tiers.*;
 
 public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
@@ -31,6 +31,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId crusteel = createMaterial("crusteel");
     public static final MaterialId wavy = createMaterial("wavy");
     public static final MaterialId yokel = createMaterial("yokel");
+    public static final MaterialId ender_bone = createMaterial("ender_bone");
 
     private static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));
@@ -54,6 +55,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(crusteel, 4, ORDER_HARVEST, false);
         addMaterial(wavy, 4, ORDER_SPECIAL, false);
         addMaterial(yokel, 4, ORDER_WEAPON, false);
+        addMaterial(ender_bone, 2, ORDER_SPECIAL, true);
     }
 
     @Nonnull
@@ -93,6 +95,8 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addDefaultTraits(crusteel, TinkersReforgedModifiers.giant_cells);
 
             addDefaultTraits(yokel, TinkersReforgedModifiers.terra);
+
+            addDefaultTraits(ender_bone, TinkersReforgedModifiers.collapsed);
         }
 
         @Nonnull
@@ -118,64 +122,69 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         protected void addMaterialStats() {
 
             addMaterialStats(qivium,
-                    new HeadMaterialStats(800, 5f, DIAMOND, 5f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    new HeadMaterialStats(900, 5f, DIAMOND, 3.9f),
+                    HandleMaterialStats.DEFAULT.withAttackSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(lavium,
-                    new HeadMaterialStats(800, 7.5f, DIAMOND, 2.25f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    new HeadMaterialStats(900, 7.5f, DIAMOND, 2.25f),
+                    HandleMaterialStats.DEFAULT.withMiningSpeed(1.05f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(gausum,
-                    new HeadMaterialStats(1200, 7.4f, DIAMOND, 4f),
-                    HandleMaterialStats.DEFAULT.withDurability(2f).withMiningSpeed(1.05f).withAttackSpeed(1.05f),
+                    new HeadMaterialStats(1150, 7.4f, DIAMOND, 3.1f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.01f).withMiningSpeed(1.01f).withAttackSpeed(1.01f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(felsteel,
-                    new HeadMaterialStats(1300, 6f, NETHERITE, 4f),
-                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withMiningSpeed(1.01f).withAttackSpeed(1.2f),
+                    new HeadMaterialStats(1000, 6f, NETHERITE, 3.8f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.95f).withMiningSpeed(0.9f).withAttackSpeed(1.2f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(chorus_metal,
-                    new HeadMaterialStats(900, 5f, NETHERITE, 5f),
-                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withMiningSpeed(1.01f).withAttackSpeed(1.2f),
+                    new HeadMaterialStats(700, 5f, NETHERITE, 3f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.9f).withMiningSpeed(1.11f).withAttackSpeed(0.8f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(kepu,
-                    new HeadMaterialStats(600, 4f, NETHERITE, 6f),
-                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withMiningSpeed(1.01f).withAttackSpeed(1.2f),
+                    new HeadMaterialStats(690, 4f, NETHERITE, 3.5f),
+                    HandleMaterialStats.DEFAULT.withDurability(2.01f).withAttackSpeed(0.9f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(duralumin,
-                    new HeadMaterialStats(500, 7f, DIAMOND, 3f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.40f),
+                    new HeadMaterialStats(550, 7f, DIAMOND, 3f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.04f),
                     ExtraMaterialStats.DEFAULT);
 
             // electrical copper is iron with a bit more durability and have a better mining level
             addMaterialStats(electrical_copper,
-                    new HeadMaterialStats(300, 6f, DIAMOND, 2f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.20f),
+                    new HeadMaterialStats(400, 6f, DIAMOND, 2f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.9f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(durasteel,
-                    new HeadMaterialStats(1200, 6f, NETHERITE, 7f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.01f).withAttackSpeed(1.02f),
+                    new HeadMaterialStats(1400, 4f, NETHERITE, 3.7f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.99f).withAttackSpeed(1.02f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(crusteel,
-                    new HeadMaterialStats(800, 6.6f, NETHERITE, 4.25f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f),
+                    new HeadMaterialStats(850, 6.6f, NETHERITE, 3.25f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.02f).withAttackDamage(1.02f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(wavy,
-                    new HeadMaterialStats(1000, 6.9f, NETHERITE, 5.25f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f),
+                    new HeadMaterialStats(800, 6.9f, NETHERITE, 3.8f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.95f).withMiningSpeed(0.75f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(yokel,
-                    new HeadMaterialStats(1100, 5.55f, DIAMOND, 5.55f),
-                    HandleMaterialStats.DEFAULT.withDurability(1.05f),
+                    new HeadMaterialStats(900, 5.55f, DIAMOND, 3.55f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.09f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(ender_bone,
+                    new HeadMaterialStats(150, 2.5f, STONE, 1.25f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.75f).withAttackSpeed(1.1f),
                     ExtraMaterialStats.DEFAULT);
         }
     }

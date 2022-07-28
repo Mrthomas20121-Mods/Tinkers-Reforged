@@ -21,6 +21,7 @@ public class ReforgedItemModels extends ItemModelProvider {
     protected void registerModels() {
 
         itemWithModel(TinkersReforgedItems.book, "item/generated");
+        itemWithModel(TinkersReforgedItems.ender_bone, "item/generated");
 
         itemWithModel(TinkersReforgedItems.aluminum_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.aluminum_ingot, "item/generated");

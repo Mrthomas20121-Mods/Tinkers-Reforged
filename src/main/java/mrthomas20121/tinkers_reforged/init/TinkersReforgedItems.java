@@ -44,6 +44,7 @@ public class TinkersReforgedItems {
 
     public static RegistryObject<Item> book = ITEMS.register("reforging_guide", () -> new TinkersReforgedBookItem(new Item.Properties().stacksTo(1).tab(group)));
 
+    public static RegistryObject<Item> ender_bone = ITEMS.register("ender_bone", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_ingot = ITEMS.register("aluminum_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_dust = ITEMS.register("aluminum_dust", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_nugget = ITEMS.register("aluminum_nugget", TinkersReforgedItems::register);

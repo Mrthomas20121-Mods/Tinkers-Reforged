@@ -142,6 +142,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMaterialRecipe(consumer, ReforgedMaterials.crusteel, materialFolder, "crusteel", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.wavy, materialFolder, "wavy", false);
         metalMaterialRecipe(consumer, ReforgedMaterials.yokel, materialFolder, "yokel", false);
+        materialRecipe(consumer, ReforgedMaterials.ender_bone, Ingredient.of(Tags.Items.BONES), 1, 1, materialFolder + "ender_bone");
 
         Ingredient plate = Ingredient.of(TinkerTools.plateArmor.values().stream().map(ItemStack::new));
 
@@ -253,6 +254,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
                 .setCast(Items.BOOK, false)
                 .save(consumer, modResource(castFolder + "book"));
+
+        ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.ender_bone.get())
+                .setFluidAndTime(TinkerFluids.moltenEnder, true, FluidValues.SLIMEBALL)
+                .setCast(Items.BONE, false)
+                .save(consumer, modResource(castFolder + "ender_bone"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
 

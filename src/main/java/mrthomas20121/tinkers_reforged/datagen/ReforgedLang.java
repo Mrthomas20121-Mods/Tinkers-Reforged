@@ -26,6 +26,7 @@ public class ReforgedLang extends LanguageProvider {
         add("pattern.tinkers_reforged.great_blade", "Great Blade Pattern");
         add("pattern.tinkers_reforged.large_round_plate", "Large Round Plate Pattern");
         addItem(TinkersReforgedItems.book, "Reforging Guide");
+        addItem(TinkersReforgedItems.ender_bone, "Ender Bone");
         addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");
         addItem(TinkersReforgedItems.LARGE_ROUND_PLATE, "Large Round Plate");
         addItem(TinkersReforgedItems.FRYING_PAN, "Frying Pan");
@@ -142,7 +143,7 @@ public class ReforgedLang extends LanguageProvider {
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
-        addMaterial(ReforgedMaterials.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "German metal");
+        addMaterial(ReforgedMaterials.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "Aluminum Alloy");
         addMaterial(ReforgedMaterials.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
         addMaterial(ReforgedMaterials.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
         addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
@@ -154,6 +155,7 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.crusteel, "Crusteel", "Nether Crust", "Copper nether alloy");
         addMaterial(ReforgedMaterials.wavy, "Wavy", "This smell bad", "Mushroom material");
         addMaterial(ReforgedMaterials.yokel, "Yokel", "Finally a sea metal", "Kelp alloy");
+        addMaterial(ReforgedMaterials.ender_bone, "Ender Bone", "Bone mixed with ender", "\"Bone but with more durability");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
@@ -163,11 +165,12 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage in the nether.");
         addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Spawn a Shulker blob on hit.");
         addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Ender Taint", "The end is the best dimension", "Your tool is stronger in the end but weaker in other dimension.");
-        addModifier(TinkersReforgedModifiers.cutting_edge, "Cutting Edge", "That's a lot of damage!", "Deal 10% more damage.");
+        addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Mushroom", "Magic everywhere", "ALL Damage are magic.");
         addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.1.");
         addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health are.");
         addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
+        addModifier(TinkersReforgedModifiers.collapsed, "Collapsed", "More damage while damaged.", "Deal more damage while damaged.");
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
         add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");

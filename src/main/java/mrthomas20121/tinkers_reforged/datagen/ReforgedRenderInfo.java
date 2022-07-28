@@ -26,6 +26,7 @@ public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
         buildRenderInfo(ReforgedMaterials.crusteel).color(0xBD9E2A).fallbacks("metal");
         buildRenderInfo(ReforgedMaterials.wavy).color(0xBC897E).fallbacks("metal");
         buildRenderInfo(ReforgedMaterials.yokel).color(0xBC897E).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterials.ender_bone).color(0x2CCDB1).fallbacks("bone");
     }
 
     @Nonnull

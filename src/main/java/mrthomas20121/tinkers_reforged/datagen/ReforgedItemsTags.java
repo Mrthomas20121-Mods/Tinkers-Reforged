@@ -14,6 +14,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
 
@@ -43,6 +44,8 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(TinkerTags.Items.DURABILITY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LARGE_ROUND_PLATE.get());
+
+        tag(Tags.Items.BONES).add(TinkersReforgedItems.ender_bone.get());
 
         tag(RAW_ALUMINUM).add(TinkersReforgedItems.raw_aluminum.get());
         tag(RAW_KEPU).add(TinkersReforgedItems.raw_kepu.get());
