@@ -5,9 +5,9 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_yokel",
+    "tag": "tinkers_reforged:molten_wavy",
     "amount": 10
   },
   "result": "tinkers_reforged:wavy_nugget",
-  "cooling_time": 27
+  "cooling_time": 24
 }

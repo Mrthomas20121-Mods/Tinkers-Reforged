@@ -14,11 +14,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_yokel",
+    "tag": "tinkers_reforged:molten_wavy",
     "amount": 30
   },
   "result": {
     "tag": "forge:coins/wavy"
   },
-  "cooling_time": 46
+  "cooling_time": 42
 }

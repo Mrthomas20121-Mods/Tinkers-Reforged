@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "tag": "forge:bones"
+    "item": "tinkers_reforged:ender_bone"
   },
   "value": 1,
   "needed": 1,
