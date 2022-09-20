@@ -78,6 +78,20 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.yokel_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.yokel_nugget, "item/generated");
 
+        itemWithModel(TinkersReforgedItems.baolian_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.baolian_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.baolian_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.epidote_gem, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.galu_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.galu_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.galu_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.hureaulite_gem, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.red_beryl_gem, "item/generated");
+
         for(CastType type : CastType.values()) {
             castModel(TinkersReforgedItems.casts.get(type), type);
         }

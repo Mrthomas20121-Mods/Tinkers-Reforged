@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/galu"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_galu",
+    "amount": 810
+  },
+  "temperature": 900,
+  "time": 190
+}

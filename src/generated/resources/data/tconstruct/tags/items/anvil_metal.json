@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "tinkers_reforged:kepu_block",
+    "tinkers_reforged:raw_aluminum_block",
+    "tinkers_reforged:raw_kepu_block",
     "tinkers_reforged:duralumin_block",
     "tinkers_reforged:aluminum_block",
     "tinkers_reforged:electrical_copper_block",
@@ -8,11 +11,15 @@
     "tinkers_reforged:qivium_block",
     "tinkers_reforged:gausum_block",
     "tinkers_reforged:felsteel_block",
-    "tinkers_reforged:kepu_block",
     "tinkers_reforged:chorus_metal_block",
     "tinkers_reforged:durasteel_block",
     "tinkers_reforged:crusteel_block",
     "tinkers_reforged:wavy_block",
-    "tinkers_reforged:yokel_block"
+    "tinkers_reforged:yokel_block",
+    "tinkers_reforged:baolian_block",
+    "tinkers_reforged:epidote_block",
+    "tinkers_reforged:galu_block",
+    "tinkers_reforged:hureaulite_block",
+    "tinkers_reforged:red_beryl_block"
   ]
 }

@@ -30,8 +30,8 @@
   "time": 337,
   "byproducts": [
     {
-      "fluid": "tconstruct:molten_amethyst",
-      "amount": 600
+      "fluid": "tconstruct:molten_ender",
+      "amount": 540
     }
   ]
 }

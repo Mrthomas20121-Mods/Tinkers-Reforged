@@ -87,6 +87,24 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.yokel_dust, "Yokel Dust");
         addItem(TinkersReforgedItems.yokel_ingot, "Yokel Ingot");
         addItem(TinkersReforgedItems.yokel_nugget, "Yokel Nugget");
+        addBlock(TinkersReforgedBlocks.baolian_block, "Baolian Block");
+        addItem(TinkersReforgedItems.baolian_ingot, "Baolian Ingot");
+        addItem(TinkersReforgedItems.baolian_dust, "Baolian Dust");
+        addItem(TinkersReforgedItems.baolian_nugget, "Baolian Nugget");
+        addBlock(TinkersReforgedBlocks.deepslate_epidote_ore, "Deepslate epidote Ore");
+        addBlock(TinkersReforgedBlocks.epidote_block, "Epidote Block");
+        addItem(TinkersReforgedItems.epidote_gem, "Epidote Gem");
+        addBlock(TinkersReforgedBlocks.galu_block, "Galu Block");
+        addItem(TinkersReforgedItems.galu_ingot, "Galu Ingot");
+        addItem(TinkersReforgedItems.galu_dust, "Galu Dust");
+        addItem(TinkersReforgedItems.galu_nugget, "Galu Nugget");
+        addBlock(TinkersReforgedBlocks.deepslate_hureaulite_ore, "Deepslate Hureaulite Ore");
+        addBlock(TinkersReforgedBlocks.hureaulite_block, "Hureaulite Block");
+        addItem(TinkersReforgedItems.hureaulite_gem, "Hureaulite Gem");
+        addBlock(TinkersReforgedBlocks.red_beryl_ore, "Red Beryl Block");
+        addBlock(TinkersReforgedBlocks.deepslate_red_beryl_ore, "Deepslate Red Beryl Ore");
+        addBlock(TinkersReforgedBlocks.red_beryl_block, "Red Beryl Block");
+        addItem(TinkersReforgedItems.red_beryl_gem, "Red Beryl Gem");
         addItem(TinkersReforgedItems.raw_aluminum, "Raw Bauxite");
         addItem(TinkersReforgedItems.raw_kepu, "Raw Kepu");
         addBlock(TinkersReforgedBlocks.raw_aluminum_block, "Raw Bauxite Block");
@@ -114,6 +132,11 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.wavy, "Molten Wavy");
         addFluid(TinkersReforgedFluids.yokel, "Molten Yokel");
         addFluid(TinkersReforgedFluids.proto_lava, "Molten Proto Lava");
+        addFluid(TinkersReforgedFluids.baolian, "Molten Baolian");
+        addFluid(TinkersReforgedFluids.epidote, "Molten Epidote");
+        addFluid(TinkersReforgedFluids.galu, "Molten Galu");
+        addFluid(TinkersReforgedFluids.hureaulite, "Molten Hureaulite");
+        addFluid(TinkersReforgedFluids.red_beryl, "Molten Red Beryl");
 
         add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
         add(TinkersReforgedFluids.duralumin.get().getBucket(), "Molten Duralumin Bucket");
@@ -134,6 +157,11 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.wavy.get().getBucket(), "Molten Wavy Bucket");
         add(TinkersReforgedFluids.yokel.get().getBucket(), "Molten Yokel Bucket");
         add(TinkersReforgedFluids.proto_lava.get().getBucket(), "Molten Proto Lava Bucket");
+        add(TinkersReforgedFluids.baolian.get().getBucket(), "Molten Baolian Bucket");
+        add(TinkersReforgedFluids.epidote.get().getBucket(), "Molten Epidote Bucket");
+        add(TinkersReforgedFluids.galu.get().getBucket(), "Molten Galu Bucket");
+        add(TinkersReforgedFluids.hureaulite.get().getBucket(), "Molten Hureaulite Bucket");
+        add(TinkersReforgedFluids.red_beryl.get().getBucket(), "Molten Red Beryl Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");
         add("effect.tinkers_reforged.fungal", "Fungal");
@@ -155,7 +183,12 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterials.crusteel, "Crusteel", "Nether Crust", "Copper nether alloy");
         addMaterial(ReforgedMaterials.wavy, "Wavy", "This smell bad", "Mushroom material");
         addMaterial(ReforgedMaterials.yokel, "Yokel", "Finally a sea metal", "Kelp alloy");
-        addMaterial(ReforgedMaterials.ender_bone, "Ender Bone", "Bone mixed with ender", "\"Bone but with more durability");
+        addMaterial(ReforgedMaterials.baolian, "Baolian", "Hmm, a gemstone mix?", "Made from Obsidian and Hureaulite");
+        addMaterial(ReforgedMaterials.epidote, "Epidote", "The faces are often deeply striated and crystals are often twinned", "Found in the depth of earth");
+        addMaterial(ReforgedMaterials.galu, "Galu", "Hmm, a gemstone mix?", "Made from Obsidian and Epidote");
+        addMaterial(ReforgedMaterials.hureaulite, "Hureaulite", "it's an Orange!", "Found in the depth of earth");
+        addMaterial(ReforgedMaterials.red_beryl, "Red Beryl", "Beryl but Red", "Gemstone");
+        addMaterial(ReforgedMaterials.ender_bone, "Enderbone", "Bone mixed with ender", "Bone but with more durability");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
@@ -167,9 +200,14 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Ender Taint", "The end is the best dimension", "Your tool is stronger in the end but weaker in other dimension.");
         addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Mushroom", "Magic everywhere", "ALL Damage are magic.");
         addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.1.");
-        addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health are.");
+        addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health is.");
         addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
+        addModifier(TinkersReforgedModifiers.rare_earth, "Rare Earth", "Rare Earths for days!.", "Mobs drops are replaced by cobblestone(with sometimes iron/gold/diamond dropping).");
+        addModifier(TinkersReforgedModifiers.wet_lattice, "Wet Lattice", "it's raining.", "Deal 110% damage if it's raining, 130% damage instead if thundering.");
+        addModifier(TinkersReforgedModifiers.effective_boost, "Effective Boost", "Potion Effects for days.", "+0.05 damage per active effect.");
+        addModifier(TinkersReforgedModifiers.dry_lattice, "Dry Lattice", "Good sunny day.", "Mine faster if you can see the sun(not active while raining).");
+        addModifier(TinkersReforgedModifiers.crystallized_punch, "Crystallized Punch", "5 hits and you're K.O.", "Every 5 attacks, deal 1% of the target HP as bonus magic damage.");
         addModifier(TinkersReforgedModifiers.collapsed, "Collapsed", "More damage while damaged.", "Deal more damage while damaged.");
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");

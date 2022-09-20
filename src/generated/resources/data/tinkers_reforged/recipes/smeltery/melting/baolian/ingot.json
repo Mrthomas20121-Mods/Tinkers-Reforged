@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/baolian"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_baolian",
+    "amount": 90
+  },
+  "temperature": 1500,
+  "time": 80
+}

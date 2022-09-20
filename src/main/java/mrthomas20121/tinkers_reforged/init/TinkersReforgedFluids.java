@@ -32,10 +32,15 @@ public class TinkersReforgedFluids {
     public static FluidObject<ForgeFlowingFluid> crusteel = register("molten_crusteel", 1000);
     public static FluidObject<ForgeFlowingFluid> wavy = register("molten_wavy", 1500);
     public static FluidObject<ForgeFlowingFluid> yokel = register("molten_yokel", 1800);
+    public static FluidObject<ForgeFlowingFluid> baolian = register("molten_baolian", 1800);
+    public static FluidObject<ForgeFlowingFluid> epidote = register("molten_epidote", 1000);
+    public static FluidObject<ForgeFlowingFluid> galu = register("molten_galu", 1200);
+    public static FluidObject<ForgeFlowingFluid> hureaulite = register("molten_hureaulite", 1100);
+    public static FluidObject<ForgeFlowingFluid> red_beryl = register("molten_red_beryl", 900);
 
     private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {
-        String still = String.format("%s:block/fluid/%s_still", TinkersReforged.MOD_ID, name);
-        String flow = String.format("%s:block/fluid/%s_flowing", TinkersReforged.MOD_ID, name);
+        String still = String.format("%s:block/fluid/%s/still", TinkersReforged.MOD_ID, name);
+        String flow = String.format("%s:block/fluid/%s/flowing", TinkersReforged.MOD_ID, name);
         return FLUIDS.register(name, FluidAttributes.builder(new ResourceLocation(still), new ResourceLocation(flow)).density(2000).viscosity(10000).temperature(temp).sound(SoundEvents.BUCKET_FILL_LAVA, SoundEvents.BUCKET_EMPTY_LAVA), Material.LAVA, 15);
     }
 }

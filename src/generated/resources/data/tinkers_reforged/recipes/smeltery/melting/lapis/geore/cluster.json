@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_clusters/lapis",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_clusters/lapis"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_lapis",
+    "amount": 400
+  },
+  "temperature": 600,
+  "time": 134
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/red_beryl"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_red_beryl",
+    "amount": 90000
+  },
+  "temperature": 600,
+  "time": 1605
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/galu",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/galu"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_galu",
+    "amount": 360
+  },
+  "temperature": 900,
+  "time": 127
+}

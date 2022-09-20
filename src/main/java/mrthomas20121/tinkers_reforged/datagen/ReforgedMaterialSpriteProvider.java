@@ -63,9 +63,29 @@ public class ReforgedMaterialSpriteProvider extends AbstractMaterialSpriteProvid
                 .meleeHarvest()
                 .fallbacks("metal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF0E1409).addARGB(102, 0xFF233319).addARGB(140, 0xFF6B915D).addARGB(178, 0xFF8BBA7C).addARGB(216, 0xFFA6D89E).addARGB(255, 0xFFC0EFB9).build());
-        buildMaterial(ReforgedMaterials.ender_bone)
+        buildMaterial(ReforgedMaterials.baolian)
                 .meleeHarvest()
                 .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF391E2C).addARGB(102, 0xFF462D38).addARGB(140, 0xFF8D737E).addARGB(178, 0xFF967D8A).addARGB(216, 0xFFAF97A7).addARGB(255, 0xFFBBA3B5).build());
+        buildMaterial(ReforgedMaterials.galu)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF27292F).addARGB(102, 0xFF374341).addARGB(140, 0xFF5F796E).addARGB(178, 0xFF6F8F82).addARGB(216, 0xFF8FB9A9).addARGB(255, 0xFF9FCDBB).build());
+        buildMaterial(ReforgedMaterials.hureaulite)
+                .meleeHarvest()
+                .fallbacks("crystal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFFAF5F47).addARGB(102, 0xFFB66850).addARGB(140, 0xFFDE997E).addARGB(178, 0xFFE5A588).addARGB(216, 0xFFF0B695).addARGB(255, 0xFFFCC9A5).build());
+        buildMaterial(ReforgedMaterials.epidote)
+                .meleeHarvest()
+                .fallbacks("crystal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF4B3D1A).addARGB(102, 0xFF5B4819).addARGB(140, 0xFF795F19).addARGB(178, 0xFF8C7034).addARGB(216, 0xFF9B8364).addARGB(255, 0xFFA48E78).build());
+        buildMaterial(ReforgedMaterials.red_beryl)
+                .meleeHarvest()
+                .fallbacks("crystal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF77152E).addARGB(102, 0xFF911934).addARGB(140, 0xFFF0405B).addARGB(178, 0xFFF1586B).addARGB(216, 0xFFF36E7C).addARGB(255, 0xFFF6828C).build());
+        buildMaterial(ReforgedMaterials.ender_bone)
+                .meleeHarvest()
+                .fallbacks("bone")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF063931).addARGB(102, 0xFF233319).addARGB(140, 0xFF0B4D42).addARGB(178, 0xFF258474).addARGB(216, 0xFF349988).addARGB(255, 0xFF2CCDB1).build());
     }
 }

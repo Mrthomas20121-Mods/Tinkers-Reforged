@@ -30,6 +30,9 @@ public class TinkersReforgedTags {
         // ores
         public static final TagKey<Block> ALUMINUM_ORE = create("forge:ores/aluminum");
         public static final TagKey<Block> KEPU_ORE = create("forge:ores/kepu");
+        public static final TagKey<Block> EPIDOTE_ORE = create("forge:ores/epidote");
+        public static final TagKey<Block> HUREAULITE_ORE = create("forge:ores/hureaulite");
+        public static final TagKey<Block> RED_BERYL_ORE = create("forge:ores/red_beryl");
 
         // storage blocks
         public static final TagKey<Block> DURALUMIN = create("forge:storage_blocks/duralumin");
@@ -45,6 +48,11 @@ public class TinkersReforgedTags {
         public static final TagKey<Block> CRUSTEEL = create("forge:storage_blocks/crusteel");
         public static final TagKey<Block> WAVY = create("forge:storage_blocks/wavy");
         public static final TagKey<Block> YOKEL = create("forge:storage_blocks/yokel");
+        public static final TagKey<Block> BAOLIAN = create("forge:storage_blocks/baolian");
+        public static final TagKey<Block> EPIDOTE = create("forge:storage_blocks/epidote");
+        public static final TagKey<Block> GALU = create("forge:storage_blocks/galu");
+        public static final TagKey<Block> HUREAULITE = create("forge:storage_blocks/yokel");
+        public static final TagKey<Block> RED_BERYL = create("forge:storage_blocks/red_beryl");
 
         // raw blocks
         public static final TagKey<Block> RAW_ALUMINUM = create("forge:storage_blocks/raw_aluminum");
@@ -62,6 +70,9 @@ public class TinkersReforgedTags {
         // ores
         public static final TagKey<Item> ALUMINUM_ORE = create("forge:ores/aluminum");
         public static final TagKey<Item> KEPU_ORE = create("forge:ores/kepu");
+        public static final TagKey<Item> EPIDOTE_ORE = create("forge:ores/epidote");
+        public static final TagKey<Item> HUREAULITE_ORE = create("forge:ores/hureaulite");
+        public static final TagKey<Item> RED_BERYL_ORE = create("forge:ores/red_beryl");
 
         // storage blocks
         public static final TagKey<Item> DURALUMIN_BLOCK = create("forge:storage_blocks/duralumin");
@@ -77,6 +88,11 @@ public class TinkersReforgedTags {
         public static final TagKey<Item> CRUSTEEL_BLOCK = create("forge:storage_blocks/crusteel");
         public static final TagKey<Item> WAVY_BLOCK = create("forge:storage_blocks/wavy");
         public static final TagKey<Item> YOKEL_BLOCK = create("forge:storage_blocks/yokel");
+        public static final TagKey<Item> BAOLIAN_BLOCK = create("forge:storage_blocks/baolian");
+        public static final TagKey<Item> EPIDOTE_BLOCK = create("forge:storage_blocks/epidote");
+        public static final TagKey<Item> HUREAULITE_BLOCK = create("forge:storage_blocks/hureaulite");
+        public static final TagKey<Item> GALU_BLOCK = create("forge:storage_blocks/galu");
+        public static final TagKey<Item> RED_BERYL_BLOCK = create("forge:storage_blocks/red_beryl");
 
         // raw blocks
         public static final TagKey<Item> RAW_ALUMINUM_BLOCK = create("forge:storage_blocks/raw_aluminum");
@@ -84,11 +100,6 @@ public class TinkersReforgedTags {
 
         public static final TagKey<Item> RAW_ALUMINUM = create("forge:raw_materials/aluminum");
         public static final TagKey<Item> RAW_KEPU = create("forge:raw_materials/raw_kepu");
-
-        public static final TagKey<Item> INGOTS = create("forge:ingots");
-        public static final TagKey<Item> DUSTS = create("forge:dusts");
-        public static final TagKey<Item> NUGGETS = create("forge:nuggets");
-        public static final TagKey<Item> ORES = create("forge:ores");
 
         public static final TagKey<Item> DURALUMIN_INGOT = create("forge:ingots/duralumin");
         public static final TagKey<Item> DURALUMIN_DUST = create("forge:dusts/duralumin");
@@ -142,6 +153,20 @@ public class TinkersReforgedTags {
         public static final TagKey<Item> YOKEL_DUST = create("forge:dusts/yokel");
         public static final TagKey<Item> YOKEL_NUGGET = create("forge:nuggets/yokel");
 
+        public static final TagKey<Item> BAOLIAN_INGOT = create("forge:ingots/baolian");
+        public static final TagKey<Item> BAOLIAN_DUST = create("forge:dusts/baolian");
+        public static final TagKey<Item> BAOLIAN_NUGGET = create("forge:nuggets/baolian");
+
+        public static final TagKey<Item> EPIDOTE_GEM = create("forge:gems/epidote");
+
+        public static final TagKey<Item> GALU_INGOT = create("forge:ingots/galu");
+        public static final TagKey<Item> GALU_DUST = create("forge:dusts/galu");
+        public static final TagKey<Item> GALU_NUGGET = create("forge:nuggets/galu");
+
+        public static final TagKey<Item> HUREAULITE_GEM = create("forge:gems/hureaulite");
+
+        public static final TagKey<Item> RED_BERYL_GEM = create("forge:gems/red_beryl");
+
         public static final TagKey<Item> ALUMINUM_CASTS = create("tinkers_reforged:casts/aluminum");
     }
 
@@ -173,6 +198,11 @@ public class TinkersReforgedTags {
         public static final TagKey<Fluid> YOKEL = create("forge:molten_yokel");
         public static final TagKey<Fluid> KELP = create("forge:molten_kelp");
         public static final TagKey<Fluid> PROTO_LAVA = create("forge:molten_proto_lava");
+        public static final TagKey<Fluid> BAOLIAN = create("forge:molten_baolian");
+        public static final TagKey<Fluid> EPIDOTE = create("forge:molten_epidote");
+        public static final TagKey<Fluid> GALU = create("forge:molten_galu");
+        public static final TagKey<Fluid> HUREAULITE = create("forge:molten_hureaulite");
+        public static final TagKey<Fluid> RED_BERYL = create("forge:molten_red_beryl");
 
         // tinkers reforged tags
         public static final TagKey<Fluid> DURALUMIN_ = create("tinkers_reforged:molten_duralumin");
@@ -193,5 +223,10 @@ public class TinkersReforgedTags {
         public static final TagKey<Fluid> YOKEL_ = create("tinkers_reforged:molten_yokel");
         public static final TagKey<Fluid> KELP_ = create("tinkers_reforged:molten_kelp");
         public static final TagKey<Fluid> PROTO_LAVA_ = create("tinkers_reforged:molten_proto_lava");
+        public static final TagKey<Fluid> BAOLIAN_ = create("tinkers_reforged:molten_baolian");
+        public static final TagKey<Fluid> EPIDOTE_ = create("tinkers_reforged:molten_epidote");
+        public static final TagKey<Fluid> GALU_ = create("tinkers_reforged:molten_galu");
+        public static final TagKey<Fluid> HUREAULITE_ = create("tinkers_reforged:molten_hureaulite");
+        public static final TagKey<Fluid> RED_BERYL_ = create("tinkers_reforged:molten_red_beryl");
     }
 }

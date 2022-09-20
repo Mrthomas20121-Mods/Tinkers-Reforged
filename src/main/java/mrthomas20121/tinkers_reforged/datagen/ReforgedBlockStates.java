@@ -39,6 +39,15 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.crusteel_block);
         blockWithItem(TinkersReforgedBlocks.yokel_block);
         blockWithItem(TinkersReforgedBlocks.wavy_block);
+        blockWithItem(TinkersReforgedBlocks.baolian_block);
+        blockWithItem(TinkersReforgedBlocks.epidote_block);
+        blockWithItem(TinkersReforgedBlocks.deepslate_epidote_ore);
+        blockWithItem(TinkersReforgedBlocks.galu_block);
+        blockWithItem(TinkersReforgedBlocks.hureaulite_block);
+        blockWithItem(TinkersReforgedBlocks.deepslate_hureaulite_ore);
+        blockWithItem(TinkersReforgedBlocks.red_beryl_block);
+        blockWithItem(TinkersReforgedBlocks.red_beryl_ore);
+        blockWithItem(TinkersReforgedBlocks.deepslate_red_beryl_ore);
 
         fluid(TinkersReforgedFluids.duralumin);
         fluid(TinkersReforgedFluids.electrical_copper);
@@ -59,6 +68,11 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.yokel);
         fluid(TinkersReforgedFluids.wavy);
         fluid(TinkersReforgedFluids.crusteel);
+        fluid(TinkersReforgedFluids.baolian);
+        fluid(TinkersReforgedFluids.epidote);
+        fluid(TinkersReforgedFluids.galu);
+        fluid(TinkersReforgedFluids.hureaulite);
+        fluid(TinkersReforgedFluids.red_beryl);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {
@@ -72,6 +86,6 @@ public class ReforgedBlockStates extends BlockStateProvider {
 
     public void fluid(FluidObject<ForgeFlowingFluid> fluid) {
         ResourceLocation name = fluid.getBlock().getRegistryName();
-        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath().replace("_fluid", ""), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"_still")));
+        simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath().replace("_fluid", ""), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"/still")));
     }
 }

@@ -1,0 +1,45 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:epidote_block"
+          ]
+        },
+        "criteria": {
+          "has_gem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "tinkers_reforged:epidote_gem"
+                  ]
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "tinkers_reforged:epidote_block"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_gem",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

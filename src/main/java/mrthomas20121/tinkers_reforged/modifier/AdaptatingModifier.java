@@ -63,11 +63,11 @@ public class AdaptatingModifier extends NoLevelsModifier {
             if(target.getMobType().equals(MobType.UNDEAD) || target.getMobType().equals(MobType.ARTHROPOD) || target instanceof Creeper) {
                 if(persistantData.contains(KEY, 5)) {
                     if(persistantData.getFloat(KEY) <= TinkersReforgedConfig.COMMON.adaptingModifierCap.get()) {
-                        persistantData.putFloat(KEY, persistantData.getFloat(KEY)+0.1f);
+                        persistantData.putFloat(KEY, persistantData.getFloat(KEY)+0.05f);
                     }
                 }
                 else {
-                    persistantData.putFloat(KEY, 0.1f);
+                    persistantData.putFloat(KEY, 0.05f);
                 }
             }
         }

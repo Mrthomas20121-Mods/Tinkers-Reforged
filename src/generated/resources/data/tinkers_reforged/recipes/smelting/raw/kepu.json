@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:raw_materials/raw_kepu"
+  },
+  "result": "tinkers_reforged:kepu_ingot",
+  "experience": 0.0,
+  "cookingtime": 200
+}

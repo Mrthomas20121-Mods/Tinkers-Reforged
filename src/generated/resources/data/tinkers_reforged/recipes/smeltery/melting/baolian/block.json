@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/baolian"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_baolian",
+    "amount": 810
+  },
+  "temperature": 1500,
+  "time": 241
+}

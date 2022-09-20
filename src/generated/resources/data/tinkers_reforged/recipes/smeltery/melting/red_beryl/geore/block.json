@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_blocks/red_beryl",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_blocks/red_beryl"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_red_beryl",
+    "amount": 400
+  },
+  "temperature": 600,
+  "time": 107
+}

@@ -10,20 +10,30 @@ public class TinkersReforgedConfig {
 
     public static class CommonConfig {
 
+        public ForgeConfigSpec.ConfigValue<Float> adaptingModifierCap;
         public OreConfig bauxiteOre;
         public OreConfig kepuOre;
-        public ForgeConfigSpec.ConfigValue<Float> adaptingModifierCap;
+        public OreConfig epidoteOre;
+        public OreConfig hureauliteOre;
+        public OreConfig redBerylOre;
 
         CommonConfig(ForgeConfigSpec.Builder builder) {
+            adaptingModifierCap = builder.comment("Default Modifier Cap for adapting").define("adaptingModifierCap", 10f);
             builder.comment("Bauxite Ore Worldgen").push("bauxite_ore");
             bauxiteOre = new BauxiteOreConfig(builder);
             builder.pop();
             builder.comment("Kepu Ore Worldgen").push("kepu_ore");
             kepuOre = new KepuOreConfig(builder);
-
-            builder.push("modifiers");
-
-            adaptingModifierCap = builder.comment("Default Modifier Cap for adapting").define("adaptingModifierCap", 10f);
+            builder.pop();
+            builder.comment("Epidote Ore Worldgen").push("epidote_ore");
+            epidoteOre = new EpidoteOreConfig(builder);
+            builder.pop();
+            builder.comment("Hureaulite Ore Worldgen").push("hureaulite_ore");
+            hureauliteOre = new HureauliteOreConfig(builder);
+            builder.pop();
+            builder.comment("Red Beryl Ore Worldgen").push("red_beryl_ore");
+            redBerylOre = new RedBerylOreConfig(builder);
+            builder.pop();
         }
     }
 
@@ -65,7 +75,7 @@ public class TinkersReforgedConfig {
             this.enabled = builder.comment("Enable/Disable Bauxite ore").define("bauxiteOreEnabled", true);
             this.minY = builder.comment("Min Y level").defineInRange("minY", -60, -60, 256);
             this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 120, -60, 256);
-            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 80, 1, 100);
+            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 50, 1, 100);
             this.size = builder.comment("Ore vein size").defineInRange("veinSize", 4, 1, 10);
         }
     }
@@ -79,6 +89,42 @@ public class TinkersReforgedConfig {
             this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 100, -60, 256);
             this.count = builder.comment("Ore vein count").defineInRange("veinCount", 20, 1, 40);
             this.size = builder.comment("Ore vein size").defineInRange("veinSize", 3, 1, 40);
+        }
+    }
+
+    public static class EpidoteOreConfig extends OreConfig {
+
+        public EpidoteOreConfig(ForgeConfigSpec.Builder builder) {
+            super(builder);
+            this.enabled = builder.comment("Enable/Disable Epidote ore").define("epidoteOreEnabled", true);
+            this.minY = builder.comment("Min Y level").defineInRange("minY", -60, -60, 256);
+            this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 5, -60, 5);
+            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 20, 1, 40);
+            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 4, 1, 40);
+        }
+    }
+
+    public static class HureauliteOreConfig extends OreConfig {
+
+        public HureauliteOreConfig(ForgeConfigSpec.Builder builder) {
+            super(builder);
+            this.enabled = builder.comment("Enable/Disable Hureaulite ore").define("hureauliteOreEnabled", true);
+            this.minY = builder.comment("Min Y level").defineInRange("minY", -60, -80, 0);
+            this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 5, -60, 5);
+            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 20, 1, 40);
+            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 4, 1, 40);
+        }
+    }
+
+    public static class RedBerylOreConfig extends OreConfig {
+
+        public RedBerylOreConfig(ForgeConfigSpec.Builder builder) {
+            super(builder);
+            this.enabled = builder.comment("Enable/Disable Red Beryl ore").define("redBerylOreEnabled", true);
+            this.minY = builder.comment("Min Y level").defineInRange("minY", -40, -60, 256);
+            this.maxY = builder.comment("Max Y Level").defineInRange("maxY", 60, -60, 256);
+            this.count = builder.comment("Ore vein count").defineInRange("veinCount", 40, 1, 100);
+            this.size = builder.comment("Ore vein size").defineInRange("veinSize", 5, 1, 10);
         }
     }
 }

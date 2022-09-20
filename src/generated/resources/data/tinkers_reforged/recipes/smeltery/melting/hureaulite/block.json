@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/hureaulite"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_hureaulite",
+    "amount": 90000
+  },
+  "temperature": 800,
+  "time": 1804
+}

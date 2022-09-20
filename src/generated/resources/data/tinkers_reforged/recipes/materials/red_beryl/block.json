@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/red_beryl"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:red_beryl",
+  "leftover": {
+    "tag": "forge:gems/red_beryl"
+  }
+}

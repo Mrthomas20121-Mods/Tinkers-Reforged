@@ -31,6 +31,11 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
     public static final MaterialId crusteel = createMaterial("crusteel");
     public static final MaterialId wavy = createMaterial("wavy");
     public static final MaterialId yokel = createMaterial("yokel");
+    public static final MaterialId baolian = createMaterial("baolian");
+    public static final MaterialId epidote = createMaterial("epidote");
+    public static final MaterialId galu = createMaterial("galu");
+    public static final MaterialId hureaulite = createMaterial("hureaulite");
+    public static final MaterialId red_beryl = createMaterial("red_beryl");
     public static final MaterialId ender_bone = createMaterial("ender_bone");
 
     private static MaterialId createMaterial(String name) {
@@ -55,6 +60,11 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(crusteel, 4, ORDER_HARVEST, false);
         addMaterial(wavy, 4, ORDER_SPECIAL, false);
         addMaterial(yokel, 4, ORDER_WEAPON, false);
+        addMaterial(baolian, 3, ORDER_HARVEST, false);
+        addMaterial(galu, 3, ORDER_HARVEST, false);
+        addMaterial(epidote, 2, ORDER_GENERAL, true);
+        addMaterial(hureaulite, 2, ORDER_GENERAL, true);
+        addMaterial(red_beryl, 2, ORDER_GENERAL, true);
         addMaterial(ender_bone, 2, ORDER_SPECIAL, true);
     }
 
@@ -95,6 +105,16 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addDefaultTraits(crusteel, TinkersReforgedModifiers.giant_cells);
 
             addDefaultTraits(yokel, TinkersReforgedModifiers.terra);
+
+            addDefaultTraits(baolian, TinkersReforgedModifiers.rare_earth);
+
+            addDefaultTraits(epidote, TinkersReforgedModifiers.wet_lattice);
+
+            addDefaultTraits(galu, TinkersReforgedModifiers.effective_boost);
+
+            addDefaultTraits(hureaulite, TinkersReforgedModifiers.dry_lattice);
+
+            addDefaultTraits(red_beryl, TinkersReforgedModifiers.crystallized_punch);
 
             addDefaultTraits(ender_bone, TinkersReforgedModifiers.collapsed);
         }
@@ -180,6 +200,31 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
             addMaterialStats(yokel,
                     new HeadMaterialStats(900, 5.55f, DIAMOND, 3.55f),
                     HandleMaterialStats.DEFAULT.withDurability(1.09f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(baolian,
+                    new HeadMaterialStats(800, 6.5f, DIAMOND, 3f),
+                    HandleMaterialStats.DEFAULT.withDurability(1.1f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(epidote,
+                    new HeadMaterialStats(550, 5.6f, DIAMOND, 2.2f),
+                    HandleMaterialStats.DEFAULT.withAttackDamage(1.1f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(galu,
+                    new HeadMaterialStats(600, 6.8f, DIAMOND, 3.1f),
+                    HandleMaterialStats.DEFAULT.withDurability(0.8f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(hureaulite,
+                    new HeadMaterialStats(550, 5.6f, DIAMOND, 2.2f),
+                    HandleMaterialStats.DEFAULT.withMiningSpeed(1.1f),
+                    ExtraMaterialStats.DEFAULT);
+
+            addMaterialStats(red_beryl,
+                    new HeadMaterialStats(500, 5.5f, DIAMOND, 2.1f),
+                    HandleMaterialStats.DEFAULT.withAttackSpeed(1.1f),
                     ExtraMaterialStats.DEFAULT);
 
             addMaterialStats(ender_bone,

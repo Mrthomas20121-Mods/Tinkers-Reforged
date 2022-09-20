@@ -117,6 +117,29 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> wavy_nugget = ITEMS.register("wavy_nugget", TinkersReforgedItems::register);
     public static RegistryObject<Item> wavy_block = ITEMS.register("wavy_block", () -> registerItemBlock(TinkersReforgedBlocks.wavy_block.get()));
 
+    public static RegistryObject<Item> baolian_ingot = ITEMS.register("baolian_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> baolian_dust = ITEMS.register("baolian_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> baolian_nugget = ITEMS.register("baolian_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> baolian_block = ITEMS.register("baolian_block", () -> registerItemBlock(TinkersReforgedBlocks.baolian_block.get()));
+
+    public static RegistryObject<Item> epidote_gem = ITEMS.register("epidote_gem", TinkersReforgedItems::register);
+    public static RegistryObject<Item> epidote_block = ITEMS.register("epidote_block", () -> registerItemBlock(TinkersReforgedBlocks.epidote_block.get()));
+    public static RegistryObject<Item> deepslate_epidote_ore = ITEMS.register("deepslate_epidote_ore", () -> registerItemBlock(TinkersReforgedBlocks.deepslate_epidote_ore.get()));
+
+    public static RegistryObject<Item> galu_ingot = ITEMS.register("galu_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> galu_dust = ITEMS.register("galu_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> galu_nugget = ITEMS.register("galu_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> galu_block = ITEMS.register("galu_block", () -> registerItemBlock(TinkersReforgedBlocks.galu_block.get()));
+
+    public static RegistryObject<Item> hureaulite_gem = ITEMS.register("hureaulite_gem", TinkersReforgedItems::register);
+    public static RegistryObject<Item> hureaulite_block = ITEMS.register("hureaulite_block", () -> registerItemBlock(TinkersReforgedBlocks.hureaulite_block.get()));
+    public static RegistryObject<Item> deepslate_hureaulite_ore = ITEMS.register("deepslate_hureaulite_ore", () -> registerItemBlock(TinkersReforgedBlocks.deepslate_hureaulite_ore.get()));
+
+    public static RegistryObject<Item> red_beryl_gem = ITEMS.register("red_beryl_gem", TinkersReforgedItems::register);
+    public static RegistryObject<Item> red_beryl_block = ITEMS.register("red_beryl_block", () -> registerItemBlock(TinkersReforgedBlocks.red_beryl_block.get()));
+    public static RegistryObject<Item> red_beryl_ore = ITEMS.register("red_beryl_ore", () -> registerItemBlock(TinkersReforgedBlocks.red_beryl_ore.get()));
+    public static RegistryObject<Item> deepslate_red_beryl_ore = ITEMS.register("deepslate_red_beryl_ore", () -> registerItemBlock(TinkersReforgedBlocks.deepslate_red_beryl_ore.get()));
+
     public static final RegistryObject<ToolPartItem> LARGE_ROUND_PLATE = ITEMS.register("large_round_plate", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
     public static final RegistryObject<ToolPartItem> GREAT_BLADE = ITEMS.register("great_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
 

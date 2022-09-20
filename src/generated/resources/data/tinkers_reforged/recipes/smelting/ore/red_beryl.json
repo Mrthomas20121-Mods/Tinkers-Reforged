@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:ores/red_beryl"
+  },
+  "result": "tinkers_reforged:red_beryl_gem",
+  "experience": 0.0,
+  "cookingtime": 200
+}

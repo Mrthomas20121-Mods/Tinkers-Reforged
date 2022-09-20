@@ -2,7 +2,18 @@
   "replace": false,
   "values": [
     "tinkers_reforged:aluminum_ore",
+    "tinkers_reforged:kepu_ore",
     "tinkers_reforged:deepslate_aluminum_ore",
-    "tinkers_reforged:kepu_ore"
+    "tinkers_reforged:deepslate_epidote_ore",
+    "tinkers_reforged:deepslate_hureaulite_ore",
+    "tinkers_reforged:red_beryl_ore",
+    "tinkers_reforged:deepslate_red_beryl_ore",
+    "tinkers_reforged:aluminum_ore",
+    "tinkers_reforged:deepslate_aluminum_ore",
+    "tinkers_reforged:kepu_ore",
+    "tinkers_reforged:deepslate_epidote_ore",
+    "tinkers_reforged:deepslate_hureaulite_ore",
+    "tinkers_reforged:red_beryl_ore",
+    "tinkers_reforged:deepslate_red_beryl_ore"
   ]
 }

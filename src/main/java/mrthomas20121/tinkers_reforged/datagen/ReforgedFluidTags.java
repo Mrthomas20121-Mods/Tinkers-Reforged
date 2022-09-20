@@ -47,6 +47,11 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(KELP).add(TinkersReforgedFluids.kelp.get());
         tag(YOKEL).add(TinkersReforgedFluids.yokel.get());
         tag(PROTO_LAVA).add(TinkersReforgedFluids.proto_lava.get());
+        tag(BAOLIAN).add(TinkersReforgedFluids.baolian.get());
+        tag(EPIDOTE).add(TinkersReforgedFluids.epidote.get());
+        tag(GALU).add(TinkersReforgedFluids.galu.get());
+        tag(HUREAULITE).add(TinkersReforgedFluids.hureaulite.get());
+        tag(RED_BERYL).add(TinkersReforgedFluids.red_beryl.get());
 
         tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.get());
         tag(DURALUMIN_).add(TinkersReforgedFluids.duralumin.get());
@@ -66,5 +71,10 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(KELP_).add(TinkersReforgedFluids.kelp.get());
         tag(YOKEL_).add(TinkersReforgedFluids.yokel.get());
         tag(PROTO_LAVA_).add(TinkersReforgedFluids.proto_lava.get());
+        tag(BAOLIAN_).add(TinkersReforgedFluids.baolian.get());
+        tag(EPIDOTE_).add(TinkersReforgedFluids.epidote.get());
+        tag(GALU_).add(TinkersReforgedFluids.galu.get());
+        tag(HUREAULITE_).add(TinkersReforgedFluids.hureaulite.get());
+        tag(RED_BERYL_).add(TinkersReforgedFluids.red_beryl.get());
     }
 }

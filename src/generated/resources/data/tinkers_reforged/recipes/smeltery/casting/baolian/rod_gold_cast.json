@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/baolian",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/rod"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_baolian",
+    "amount": 45
+  },
+  "result": {
+    "tag": "forge:rods/baolian"
+  },
+  "cooling_time": 57
+}

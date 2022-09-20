@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:yokel_block"
+    "tinkers_reforged:yokel_block",
+    "tinkers_reforged:hureaulite_block"
   ]
 }

@@ -38,4 +38,14 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<Modifier> spore_shot = MODIFIERS.register("spore_shot", SporeShotModifier::new);
 
     public static StaticModifier<Modifier> collapsed = MODIFIERS.register("collapsed", CollapsedModifier::new);
+
+    public static StaticModifier<Modifier> crystallized_punch = MODIFIERS.register("crystallized_punch", CrystallizedPunchModifier::new);
+
+    public static StaticModifier<Modifier> rare_earth = MODIFIERS.register("rare_earth", RareEarthModifier::new);
+
+    public static StaticModifier<Modifier> effective_boost = MODIFIERS.register("effective_boost", EffectiveBoostModifier::new);
+
+    public static StaticModifier<Modifier> wet_lattice = MODIFIERS.register("wet_lattice", WetLatticeModifier::new);
+
+    public static StaticModifier<Modifier> dry_lattice = MODIFIERS.register("dry_lattice", DryLatticeModifier::new);
 }

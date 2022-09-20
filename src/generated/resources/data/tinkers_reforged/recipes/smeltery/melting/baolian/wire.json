@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/baolian",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/baolian"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_baolian",
+    "amount": 45
+  },
+  "temperature": 1500,
+  "time": 16
+}

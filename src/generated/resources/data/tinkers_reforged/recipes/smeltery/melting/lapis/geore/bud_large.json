@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_large_buds/lapis",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_large_buds/lapis"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_lapis",
+    "amount": 300
+  },
+  "temperature": 600,
+  "time": 107
+}

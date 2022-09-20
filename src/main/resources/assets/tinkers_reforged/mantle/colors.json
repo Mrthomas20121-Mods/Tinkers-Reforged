@@ -1,0 +1,44 @@
+{
+    "modifier.tinkers_reforged": {
+        "cutting_edge": "#7CBC6F",
+        "arid_zone": "#63E8CD",
+        "blazing_fire": "#FF8499",
+        "levitating_blob": "#C4A7CE",
+        "ultra_durable": "#C4FAA9",
+        "electro_web": "#DDC275",
+        "fel_debris": "#C4EE06",
+        "titanic_damage": "#62A7B2",
+        "damage_lock": "#6ED5EA",
+        "adapting": "#7073CC",
+        "terra": "#A6D89E",
+        "spore_shot": "#996B61",
+        "giant_cells": "#A78527",
+        "collapsed": "#349988",
+        "rare_earth": "#BBA3B5",
+        "wet_lattice": "#93794E",
+        "effective_boost": "#8FB9A9",
+        "dry_lattice": "#E5A588",
+        "crystallized_punch": "#F36E7C"
+    },
+
+    "material.tinkers_reforged": {
+        "chorus_metal": "#C4A7CE",
+        "crusteel": "#BD9E2A",
+        "duralumin": "#C4FAA9",
+        "durasteel": "#7073CC",
+        "electrical_copper": "#DDC275",
+        "felsteel": "#C4EE06",
+        "gausum": "#75BCC6",
+        "kepu": "#6ED5EA",
+        "lavium": "#63E8CD",
+        "qivium": "#FF8499",
+        "wavy": "#BC897E",
+        "yokel": "#C0EFB9",
+        "baolian": "#BBA3B5",
+        "epidote": "#93794E",
+        "galu": "#8FB9A9",
+        "hureaulite": "#E5A588",
+        "red_beryl": "#F36E7C",
+        "ender_bone": "#349988"
+    }
+}

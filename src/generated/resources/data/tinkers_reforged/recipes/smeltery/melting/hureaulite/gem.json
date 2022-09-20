@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:gems/hureaulite"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_hureaulite",
+    "amount": 100
+  },
+  "temperature": 800,
+  "time": 60
+}
