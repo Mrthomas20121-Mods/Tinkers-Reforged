@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.datagen;
+package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import slimeknights.tconstruct.library.client.data.material.AbstractPartSpriteProvider;

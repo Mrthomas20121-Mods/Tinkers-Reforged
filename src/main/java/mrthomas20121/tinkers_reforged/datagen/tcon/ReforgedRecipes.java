@@ -1,6 +1,7 @@
-package mrthomas20121.tinkers_reforged.datagen;
+package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.datagen.ReforgedByproduct;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.*;
@@ -41,7 +42,6 @@ import slimeknights.tconstruct.library.recipe.casting.material.MaterialCastingRe
 import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
 import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
-import slimeknights.tconstruct.library.recipe.melting.IMeltingContainer;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.SwappableModifierRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.molding.MoldingRecipeBuilder;
@@ -72,7 +72,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         String materialFolder = "materials/";
         String meltingFolder = "smeltery/melting/";
-        String gemFolder = meltingFolder+"/gem/";
         String castingFolder = "smeltery/casting/";
         String castFolder = "smeltery/casts/";
         String alloyFolder = "smeltery/alloy/";
@@ -114,24 +113,27 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalCasting(consumer, TinkersReforgedFluids.yokel, TinkersReforgedBlocks.yokel_block.get(), TinkersReforgedItems.yokel_ingot.get(), TinkersReforgedItems.yokel_nugget.get(), castingFolder, "yokel");
         metalCasting(consumer, TinkersReforgedFluids.baolian, TinkersReforgedBlocks.baolian_block.get(), TinkersReforgedItems.baolian_ingot.get(), TinkersReforgedItems.baolian_nugget.get(), castingFolder, "baolian");
         metalCasting(consumer, TinkersReforgedFluids.galu, TinkersReforgedBlocks.galu_block.get(), TinkersReforgedItems.galu_ingot.get(), TinkersReforgedItems.galu_nugget.get(), castingFolder, "galu");
+        metalCasting(consumer, TinkersReforgedFluids.blazing_copper, TinkersReforgedBlocks.galu_block.get(), TinkersReforgedItems.galu_ingot.get(), TinkersReforgedItems.galu_nugget.get(), castingFolder, "blazing_copper");
 
-        materialMeltingCasting(consumer, ReforgedMaterials.duralumin, TinkersReforgedFluids.duralumin, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.electrical_copper, TinkersReforgedFluids.electrical_copper, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.lavium, TinkersReforgedFluids.lavium, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.qivium, TinkersReforgedFluids.qivium, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.gausum, TinkersReforgedFluids.gausum, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.felsteel, TinkersReforgedFluids.felsteel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.chorus_metal, TinkersReforgedFluids.chorus_metal, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.kepu, TinkersReforgedFluids.kepu, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.durasteel, TinkersReforgedFluids.durasteel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.crusteel, TinkersReforgedFluids.crusteel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.wavy, TinkersReforgedFluids.wavy, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.yokel, TinkersReforgedFluids.yokel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.baolian, TinkersReforgedFluids.baolian, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.epidote, TinkersReforgedFluids.epidote, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.galu, TinkersReforgedFluids.galu, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.hureaulite, TinkersReforgedFluids.hureaulite, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterials.red_beryl, TinkersReforgedFluids.red_beryl, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.aluminum, TinkerFluids.moltenAluminum, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.blazing_copper, TinkersReforgedFluids.blazing_copper, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.duralumin, TinkersReforgedFluids.duralumin, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.electrical_copper, TinkersReforgedFluids.electrical_copper, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.lavium, TinkersReforgedFluids.lavium, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.qivium, TinkersReforgedFluids.qivium, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.gausum, TinkersReforgedFluids.gausum, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.felsteel, TinkersReforgedFluids.felsteel, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.chorus_metal, TinkersReforgedFluids.chorus_metal, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.kepu, TinkersReforgedFluids.kepu, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.durasteel, TinkersReforgedFluids.durasteel, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.crusteel, TinkersReforgedFluids.crusteel, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.wavy, TinkersReforgedFluids.wavy, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.yokel, TinkersReforgedFluids.yokel, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.baolian, TinkersReforgedFluids.baolian, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.epidote, TinkersReforgedFluids.epidote, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.galu, TinkersReforgedFluids.galu, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.hureaulite, TinkersReforgedFluids.hureaulite, materialFolder);
+        materialMeltingCasting(consumer, ReforgedMaterialIds.red_beryl, TinkersReforgedFluids.red_beryl, materialFolder);
 
         metalMelting(consumer, TinkersReforgedFluids.duralumin.get(), "duralumin", false, meltingFolder, false);
         metalMelting(consumer, TinkersReforgedFluids.electrical_copper.get(), "electrical_copper", false, meltingFolder, false);
@@ -146,51 +148,54 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMelting(consumer, TinkersReforgedFluids.yokel.get(), "yokel", false, meltingFolder, false);
         metalMelting(consumer, TinkersReforgedFluids.baolian.get(), "baolian", false, meltingFolder, false);
         metalMelting(consumer, TinkersReforgedFluids.galu.get(), "galu", false, meltingFolder, false);
+        metalMelting(consumer, TinkersReforgedFluids.blazing_copper.get(), "blazing_copper", false, meltingFolder, false);
 
-        metalMaterialRecipe(consumer, ReforgedMaterials.gausum, materialFolder, "gausum", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.duralumin, materialFolder, "duralumin", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.electrical_copper, materialFolder, "electrical_copper", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.lavium, materialFolder, "lavium", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.qivium, materialFolder, "qivium", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.felsteel, materialFolder, "felsteel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.chorus_metal, materialFolder, "chorus_metal", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.kepu, materialFolder, "kepu", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.durasteel, materialFolder, "durasteel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.crusteel, materialFolder, "crusteel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.wavy, materialFolder, "wavy", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.yokel, materialFolder, "yokel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.baolian, materialFolder, "baolian", false);
-        metalMaterialRecipe(consumer, ReforgedMaterials.galu, materialFolder, "galu", false);
-        gemMaterialRecipe(consumer, ReforgedMaterials.epidote, materialFolder, "epidote");
-        gemMaterialRecipe(consumer, ReforgedMaterials.hureaulite, materialFolder, "hureaulite");
-        gemMaterialRecipe(consumer, ReforgedMaterials.red_beryl, materialFolder, "red_beryl");
-        materialRecipe(consumer, ReforgedMaterials.ender_bone, Ingredient.of(TinkersReforgedItems.ender_bone.get()), 1, 1, materialFolder + "ender_bone");
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.aluminum, materialFolder, "aluminum", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.blazing_copper, materialFolder, "blazing_copper", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.gausum, materialFolder, "gausum", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.duralumin, materialFolder, "duralumin", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.electrical_copper, materialFolder, "electrical_copper", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.lavium, materialFolder, "lavium", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.qivium, materialFolder, "qivium", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.felsteel, materialFolder, "felsteel", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.chorus_metal, materialFolder, "chorus_metal", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.kepu, materialFolder, "kepu", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.durasteel, materialFolder, "durasteel", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.crusteel, materialFolder, "crusteel", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.wavy, materialFolder, "wavy", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.yokel, materialFolder, "yokel", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.baolian, materialFolder, "baolian", false);
+        metalMaterialRecipe(consumer, ReforgedMaterialIds.galu, materialFolder, "galu", false);
+        gemMaterialRecipe(consumer, ReforgedMaterialIds.epidote, materialFolder, "epidote");
+        gemMaterialRecipe(consumer, ReforgedMaterialIds.hureaulite, materialFolder, "hureaulite");
+        gemMaterialRecipe(consumer, ReforgedMaterialIds.red_beryl, materialFolder, "red_beryl");
+        materialRecipe(consumer, ReforgedMaterialIds.ender_bone, Ingredient.of(TinkersReforgedItems.ender_bone.get()), 1, 1, materialFolder + "ender_bone");
 
         Ingredient plate = Ingredient.of(TinkerTools.plateArmor.values().stream().map(ItemStack::new));
 
         // embellishment
-        plateTexture(consumer, plate, ReforgedMaterials.gausum, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.duralumin, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.electrical_copper, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.lavium, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.qivium, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.felsteel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.chorus_metal, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.kepu, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.durasteel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.crusteel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.wavy, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.yokel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.baolian, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.epidote, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.galu, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.hureaulite, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.red_beryl, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterials.ender_bone, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.gausum, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.duralumin, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.electrical_copper, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.lavium, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.qivium, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.felsteel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.chorus_metal, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.kepu, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.durasteel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.crusteel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.wavy, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.yokel, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.baolian, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.epidote, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.galu, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.hureaulite, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.red_beryl, false, slotless);
+        plateTexture(consumer, plate, ReforgedMaterialIds.ender_bone, false, slotless);
 
-        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.lavium, TinkerFluids.liquidSoul, false, 500, materialFolder+"lavium_");
-        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterials.qivium, TinkerFluids.magma, true, 500, materialFolder+"qivium_");
-        materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterials.wavy, TinkerFluids.moltenObsidian, false, 500, materialFolder+"wavy_");
+        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterialIds.lavium, TinkerFluids.liquidSoul, false, 500, materialFolder+"lavium_");
+        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterialIds.qivium, TinkerFluids.magma, true, 500, materialFolder+"qivium_");
+        materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterialIds.wavy, TinkerFluids.moltenObsidian, false, 500, materialFolder+"wavy_");
         metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.lavium_ingot.get(), TinkerFluids.liquidSoul, false, materialFolder, "lavium");
         metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.qivium_ingot.get(), TinkerFluids.magma, true, materialFolder, "qivium");
         metalComposite(consumer, TinkerWorld.bloodshroom.get(), TinkersReforgedItems.wavy_block.get(), TinkerFluids.moltenObsidian, false, materialFolder, "wavy_bloodshroom");
@@ -199,14 +204,14 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalComposite(consumer, Items.REDSTONE, TinkersReforgedItems.electrical_copper_dust.get(), TinkersReforgedFluids.blazing_copper, true, materialFolder, "electrical_copper");
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.baolian.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK)
+                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.INGOT)
                 .addInput(TinkersReforgedFluids.epidote.get(), FluidValues.INGOT)
                 .save(consumer, modResource(alloyFolder+"baolian"));
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.galu.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK)
+                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.INGOT)
                 .addInput(TinkersReforgedFluids.hureaulite.get(), FluidValues.INGOT)
                 .save(consumer, modResource(alloyFolder+"galu"));
 
