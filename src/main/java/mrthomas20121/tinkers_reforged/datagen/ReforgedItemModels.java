@@ -27,6 +27,10 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.aluminum_ingot, "item/generated");
         itemWithModel(TinkersReforgedItems.aluminum_nugget, "item/generated");
 
+        itemWithModel(TinkersReforgedItems.blazing_copper_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.blazing_copper_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.blazing_copper_nugget, "item/generated");
+
         itemWithModel(TinkersReforgedItems.duralumin_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.duralumin_ingot, "item/generated");
         itemWithModel(TinkersReforgedItems.duralumin_nugget, "item/generated");

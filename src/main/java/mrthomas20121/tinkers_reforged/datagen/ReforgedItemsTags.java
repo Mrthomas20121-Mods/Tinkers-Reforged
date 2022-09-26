@@ -86,6 +86,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                         TinkersReforgedItems.red_beryl_block.get()
                 );
 
+        tag(BLAZING_COPPER_BLOCK).add(TinkersReforgedItems.blazing_copper_block.get());
         tag(DURALUMIN_BLOCK).add(TinkersReforgedItems.duralumin_block.get());
         tag(ALUMINUM_BLOCK).add(TinkersReforgedItems.aluminum_block.get());
         tag(ELECTRICAL_COPPER_BLOCK).add(TinkersReforgedItems.electrical_copper_block.get());
@@ -134,7 +135,8 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 TinkersReforgedItems.wavy_ingot.get(),
                 TinkersReforgedItems.yokel_ingot.get(),
                 TinkersReforgedItems.baolian_ingot.get(),
-                TinkersReforgedItems.galu_ingot.get()
+                TinkersReforgedItems.galu_ingot.get(),
+                TinkersReforgedItems.blazing_copper_ingot.get()
         );
 
         tag(Tags.Items.DUSTS).add(
@@ -150,7 +152,10 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 TinkersReforgedItems.durasteel_dust.get(),
                 TinkersReforgedItems.crusteel_dust.get(),
                 TinkersReforgedItems.wavy_dust.get(),
-                TinkersReforgedItems.yokel_dust.get()
+                TinkersReforgedItems.yokel_dust.get(),
+                TinkersReforgedItems.baolian_dust.get(),
+                TinkersReforgedItems.galu_dust.get(),
+                TinkersReforgedItems.blazing_copper_dust.get()
         );
 
         tag(Tags.Items.NUGGETS).add(
@@ -168,8 +173,13 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 TinkersReforgedItems.wavy_nugget.get(),
                 TinkersReforgedItems.yokel_nugget.get(),
                 TinkersReforgedItems.baolian_ingot.get(),
-                TinkersReforgedItems.galu_nugget.get()
+                TinkersReforgedItems.galu_nugget.get(),
+                TinkersReforgedItems.blazing_copper_nugget.get()
         );
+
+        tag(BLAZING_COPPER_INGOT).add(TinkersReforgedItems.blazing_copper_ingot.get());
+        tag(BLAZING_COPPER_DUST).add(TinkersReforgedItems.blazing_copper_dust.get());
+        tag(BLAZING_COPPER_NUGGET).add(TinkersReforgedItems.blazing_copper_nugget.get());
 
         tag(DURALUMIN_INGOT).add(TinkersReforgedItems.duralumin_ingot.get());
         tag(DURALUMIN_DUST).add(TinkersReforgedItems.duralumin_dust.get());
@@ -254,7 +264,8 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                         TinkersReforgedItems.epidote_block.get(),
                         TinkersReforgedItems.galu_block.get(),
                         TinkersReforgedItems.hureaulite_block.get(),
-                        TinkersReforgedItems.red_beryl_block.get()
+                        TinkersReforgedItems.red_beryl_block.get(),
+                        TinkersReforgedItems.blazing_copper_block.get()
                 );
 
         TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);

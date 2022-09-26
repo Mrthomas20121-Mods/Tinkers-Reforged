@@ -24,6 +24,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.aluminum_ore);
         blockWithItem(TinkersReforgedBlocks.deepslate_aluminum_ore);
         blockWithItem(TinkersReforgedBlocks.aluminum_block);
+        blockWithItem(TinkersReforgedBlocks.blazing_copper_block);
         blockWithItem(TinkersReforgedBlocks.duralumin_block);
         blockWithItem(TinkersReforgedBlocks.electrical_copper_block);
         blockWithItem(TinkersReforgedBlocks.lavium_block);

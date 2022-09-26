@@ -46,6 +46,7 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                 TinkersReforgedBlocks.deepslate_red_beryl_ore.get()
         );
 
+        tag(BLAZING_COPPER).add(TinkersReforgedBlocks.blazing_copper_block.get());
         tag(DURALUMIN).add(TinkersReforgedBlocks.duralumin_block.get());
         tag(ALUMINUM).add(TinkersReforgedBlocks.aluminum_block.get());
         tag(ELECTRICAL_COPPER).add(TinkersReforgedBlocks.electrical_copper_block.get());
@@ -73,7 +74,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                         TinkersReforgedBlocks.deepslate_epidote_ore.get(),
                         TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
                         TinkersReforgedBlocks.red_beryl_ore.get(),
-                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get()
+                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get(),
+                        TinkersReforgedBlocks.blazing_copper_block.get()
                 );
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(

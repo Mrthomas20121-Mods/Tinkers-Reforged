@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.datagen.tcon.ReforgedMaterialIds;
 import mrthomas20121.tinkers_reforged.init.CastType;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;
@@ -39,6 +40,10 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.aluminum_dust, "Aluminum Dust");
         addItem(TinkersReforgedItems.aluminum_ingot, "Aluminum Ingot");
         addItem(TinkersReforgedItems.aluminum_nugget, "Aluminum Nugget");
+        addBlock(TinkersReforgedBlocks.blazing_copper_block, "Blazing Copper Block");
+        addItem(TinkersReforgedItems.blazing_copper_dust, "Blazing Copper Dust");
+        addItem(TinkersReforgedItems.blazing_copper_ingot, "Blazing Copper Ingot");
+        addItem(TinkersReforgedItems.blazing_copper_nugget, "Blazing Copper Nugget");
         addBlock(TinkersReforgedBlocks.duralumin_block, "Duralumin Block");
         addItem(TinkersReforgedItems.duralumin_dust, "Duralumin Dust");
         addItem(TinkersReforgedItems.duralumin_ingot, "Duralumin Ingot");
@@ -171,24 +176,24 @@ public class ReforgedLang extends LanguageProvider {
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
-        addMaterial(ReforgedMaterials.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "Aluminum Alloy");
-        addMaterial(ReforgedMaterials.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
-        addMaterial(ReforgedMaterials.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
-        addMaterial(ReforgedMaterials.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
-        addMaterial(ReforgedMaterials.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
-        addMaterial(ReforgedMaterials.felsteel, "Felsteel", "Ancient Debris Alloy", "From the depth of the nether");
-        addMaterial(ReforgedMaterials.chorus_metal, "Chorus Metal", "Chorus and Shulker alloy", "Chorus and Shulker alloy");
-        addMaterial(ReforgedMaterials.kepu, "Kepu", "Come from the depth of the end", "Infused End Ore");
-        addMaterial(ReforgedMaterials.durasteel, "Durasteel", "Wait it's not an ore?", "Mix of Ender and Netherite");
-        addMaterial(ReforgedMaterials.crusteel, "Crusteel", "Nether Crust", "Copper nether alloy");
-        addMaterial(ReforgedMaterials.wavy, "Wavy", "This smell bad", "Mushroom material");
-        addMaterial(ReforgedMaterials.yokel, "Yokel", "Finally a sea metal", "Kelp alloy");
-        addMaterial(ReforgedMaterials.baolian, "Baolian", "Hmm, a gemstone mix?", "Made from Obsidian and Hureaulite");
-        addMaterial(ReforgedMaterials.epidote, "Epidote", "The faces are often deeply striated and crystals are often twinned", "Found in the depth of earth");
-        addMaterial(ReforgedMaterials.galu, "Galu", "Hmm, a gemstone mix?", "Made from Obsidian and Epidote");
-        addMaterial(ReforgedMaterials.hureaulite, "Hureaulite", "it's an Orange!", "Found in the depth of earth");
-        addMaterial(ReforgedMaterials.red_beryl, "Red Beryl", "Beryl but Red", "Gemstone");
-        addMaterial(ReforgedMaterials.ender_bone, "Enderbone", "Bone mixed with ender", "Bone but with more durability");
+        addMaterial(ReforgedMaterialIds.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "Aluminum Alloy");
+        addMaterial(ReforgedMaterialIds.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
+        addMaterial(ReforgedMaterialIds.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
+        addMaterial(ReforgedMaterialIds.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
+        addMaterial(ReforgedMaterialIds.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
+        addMaterial(ReforgedMaterialIds.felsteel, "Felsteel", "Ancient Debris Alloy", "From the depth of the nether");
+        addMaterial(ReforgedMaterialIds.chorus_metal, "Chorus Metal", "Chorus and Shulker alloy", "Chorus and Shulker alloy");
+        addMaterial(ReforgedMaterialIds.kepu, "Kepu", "Come from the depth of the end", "Infused End Ore");
+        addMaterial(ReforgedMaterialIds.durasteel, "Durasteel", "Wait it's not an ore?", "Mix of Ender and Netherite");
+        addMaterial(ReforgedMaterialIds.crusteel, "Crusteel", "Nether Crust", "Copper nether alloy");
+        addMaterial(ReforgedMaterialIds.wavy, "Wavy", "This smell bad", "Mushroom material");
+        addMaterial(ReforgedMaterialIds.yokel, "Yokel", "Finally a sea metal", "Kelp alloy");
+        addMaterial(ReforgedMaterialIds.baolian, "Baolian", "Hmm, a gemstone mix?", "Made from Obsidian and Hureaulite");
+        addMaterial(ReforgedMaterialIds.epidote, "Epidote", "The faces are often deeply striated and crystals are often twinned", "Found in the depth of earth");
+        addMaterial(ReforgedMaterialIds.galu, "Galu", "Hmm, a gemstone mix?", "Made from Obsidian and Epidote");
+        addMaterial(ReforgedMaterialIds.hureaulite, "Hureaulite", "it's an Orange!", "Found in the depth of earth");
+        addMaterial(ReforgedMaterialIds.red_beryl, "Red Beryl", "Beryl but Red", "Gemstone");
+        addMaterial(ReforgedMaterialIds.ender_bone, "Enderbone", "Bone mixed with ender", "Bone but with more durability");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
@@ -205,10 +210,12 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
         addModifier(TinkersReforgedModifiers.rare_earth, "Rare Earth", "Rare Earths for days!.", "Mobs drops are replaced by cobblestone(with sometimes iron/gold/diamond dropping).");
         addModifier(TinkersReforgedModifiers.wet_lattice, "Wet Lattice", "it's raining.", "Deal 110% damage if it's raining, 130% damage instead if thundering.");
-        addModifier(TinkersReforgedModifiers.effective_boost, "Effective Boost", "Potion Effects for days.", "+0.05 damage per active effect.");
+        addModifier(TinkersReforgedModifiers.effective_boost, "Effective Boost", "Potion Effects for days.", "Get bonus damage for all active effect you have.");
         addModifier(TinkersReforgedModifiers.dry_lattice, "Dry Lattice", "Good sunny day.", "Mine faster if you can see the sun(not active while raining).");
         addModifier(TinkersReforgedModifiers.crystallized_punch, "Crystallized Punch", "5 hits and you're K.O.", "Every 5 attacks, deal 1% of the target HP as bonus magic damage.");
         addModifier(TinkersReforgedModifiers.collapsed, "Collapsed", "More damage while damaged.", "Deal more damage while damaged.");
+        addModifier(TinkersReforgedModifiers.spark, "Spark", "Better Crit damage.", "Deal more critical strike damage.");
+        addModifier(TinkersReforgedModifiers.protectiveMantle, "Protective Mantle", "Better than no protection!", "Prevent the 4th durability lose.");
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
         add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");

@@ -26,6 +26,7 @@ public class ReforgedBlocksLoot extends BlockLoot {
         this.add(TinkersReforgedBlocks.aluminum_ore.get(), (block) -> createOreDrop(block, TinkersReforgedItems.raw_aluminum.get()));
         this.add(TinkersReforgedBlocks.deepslate_aluminum_ore.get(), (block) -> createOreDrop(block, TinkersReforgedItems.raw_aluminum.get()));
         this.dropSelf(TinkersReforgedBlocks.aluminum_block.get());
+        this.dropSelf(TinkersReforgedBlocks.blazing_copper_block.get());
         this.dropSelf(TinkersReforgedBlocks.duralumin_block.get());
         this.dropSelf(TinkersReforgedBlocks.electrical_copper_block.get());
         this.dropSelf(TinkersReforgedBlocks.lavium_block.get());
