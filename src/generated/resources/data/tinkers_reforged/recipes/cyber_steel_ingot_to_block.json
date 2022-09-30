@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          "XYX",
+          "XXX"
+        ],
+        "key": {
+          "X": {
+            "tag": "forge:ingots/cyber_steel"
+          },
+          "Y": {
+            "item": "tinkers_reforged:cyber_steel_ingot"
+          }
+        },
+        "result": {
+          "item": "tinkers_reforged:cyber_steel_block"
+        }
+      }
+    }
+  ]
+}

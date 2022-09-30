@@ -63,6 +63,8 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
         tag(BAOLIAN).add(TinkersReforgedBlocks.baolian_block.get());
         tag(EPIDOTE).add(TinkersReforgedBlocks.epidote_block.get());
         tag(GALU).add(TinkersReforgedBlocks.galu_block.get());
+        tag(MAGMA_STEEL).add(TinkersReforgedBlocks.magma_steel_block.get());
+        tag(CYBER_STEEL).add(TinkersReforgedBlocks.cyber_steel_block.get());
         tag(HUREAULITE).add(TinkersReforgedBlocks.hureaulite_block.get());
         tag(RED_BERYL).add(TinkersReforgedBlocks.red_beryl_block.get());
 
@@ -75,7 +77,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                         TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
                         TinkersReforgedBlocks.red_beryl_ore.get(),
                         TinkersReforgedBlocks.deepslate_red_beryl_ore.get(),
-                        TinkersReforgedBlocks.blazing_copper_block.get()
+                        TinkersReforgedBlocks.blazing_copper_block.get(),
+                        TinkersReforgedBlocks.magma_steel_block.get(),
+                        TinkersReforgedBlocks.cyber_steel_block.get()
                 );
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(
@@ -141,7 +145,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                         TinkersReforgedBlocks.epidote_block.get(),
                         TinkersReforgedBlocks.galu_block.get(),
                         TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get()
+                        TinkersReforgedBlocks.red_beryl_block.get(),
+                        TinkersReforgedBlocks.magma_steel_block.get(),
+                        TinkersReforgedBlocks.cyber_steel_block.get()
                 );
 
         tag(BlockTags.BEACON_BASE_BLOCKS)
@@ -163,7 +169,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                         TinkersReforgedBlocks.epidote_block.get(),
                         TinkersReforgedBlocks.galu_block.get(),
                         TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get()
+                        TinkersReforgedBlocks.red_beryl_block.get(),
+                        TinkersReforgedBlocks.magma_steel_block.get(),
+                        TinkersReforgedBlocks.cyber_steel_block.get()
                 );
 
         tag(TinkerTags.Blocks.ANVIL_METAL)
@@ -185,7 +193,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                         TinkersReforgedBlocks.epidote_block.get(),
                         TinkersReforgedBlocks.galu_block.get(),
                         TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get()
+                        TinkersReforgedBlocks.red_beryl_block.get(),
+                        TinkersReforgedBlocks.magma_steel_block.get(),
+                        TinkersReforgedBlocks.cyber_steel_block.get()
                 );
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -215,7 +225,9 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
                         TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
                         TinkersReforgedBlocks.red_beryl_block.get(),
                         TinkersReforgedBlocks.red_beryl_ore.get(),
-                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get()
+                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get(),
+                        TinkersReforgedBlocks.magma_steel_block.get(),
+                        TinkersReforgedBlocks.cyber_steel_block.get()
                 );
     }
 }

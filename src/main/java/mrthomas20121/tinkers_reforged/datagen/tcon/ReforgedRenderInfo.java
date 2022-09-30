@@ -33,6 +33,8 @@ public class ReforgedRenderInfo extends AbstractMaterialRenderInfoProvider {
         buildRenderInfo(ReforgedMaterialIds.galu).color(0x8FB9A9).fallbacks("metal");
         buildRenderInfo(ReforgedMaterialIds.hureaulite).color(0xD37851).fallbacks("crystal");
         buildRenderInfo(ReforgedMaterialIds.red_beryl).color(0xEB91B9).fallbacks("crystal");
+        buildRenderInfo(ReforgedMaterialIds.magma_steel).color(0xB25D52).fallbacks("metal");
+        buildRenderInfo(ReforgedMaterialIds.cyber_steel).color(0xA1A0D4).fallbacks("metal");
         buildRenderInfo(ReforgedMaterialIds.ender_bone).color(0x2CCDB1).fallbacks("bone");
     }
 

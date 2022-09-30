@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/cyber_steel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_cyber_steel",
+    "amount": 10
+  },
+  "temperature": 600,
+  "time": 18
+}

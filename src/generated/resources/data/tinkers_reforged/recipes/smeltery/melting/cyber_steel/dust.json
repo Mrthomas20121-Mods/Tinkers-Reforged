@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:dusts/cyber_steel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/cyber_steel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_cyber_steel",
+    "amount": 90
+  },
+  "temperature": 600,
+  "time": 40
+}

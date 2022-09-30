@@ -48,4 +48,12 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<Modifier> wet_lattice = MODIFIERS.register("wet_lattice", WetLatticeModifier::new);
 
     public static StaticModifier<Modifier> dry_lattice = MODIFIERS.register("dry_lattice", DryLatticeModifier::new);
+
+    public static StaticModifier<Modifier> blazing_copper_spark = MODIFIERS.register("spark", SparkModifier::new);
+
+    public static StaticModifier<Modifier> aluminum_rotective_mantle = MODIFIERS.register("protective_mantle", ProtectiveMantleModifier::new);
+
+    public static StaticModifier<Modifier> magma_steel_unbending = MODIFIERS.register("unbending", UnbendingModifier::new);
+
+    public static StaticModifier<Modifier> cyber_steel_swift_eye = MODIFIERS.register("swift_eye", SwiftEyeModifier::new);
 }

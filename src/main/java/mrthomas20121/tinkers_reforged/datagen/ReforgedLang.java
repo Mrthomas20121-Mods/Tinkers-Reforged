@@ -103,6 +103,14 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.galu_ingot, "Galu Ingot");
         addItem(TinkersReforgedItems.galu_dust, "Galu Dust");
         addItem(TinkersReforgedItems.galu_nugget, "Galu Nugget");
+        addBlock(TinkersReforgedBlocks.magma_steel_block, "Magma Steel Block");
+        addItem(TinkersReforgedItems.magma_steel_ingot, "Magma Steel Ingot");
+        addItem(TinkersReforgedItems.magma_steel_dust, "Magma Steel Dust");
+        addItem(TinkersReforgedItems.magma_steel_nugget, "Magma Steel Nugget");
+        addBlock(TinkersReforgedBlocks.cyber_steel_block, "Cyber Steel Block");
+        addItem(TinkersReforgedItems.cyber_steel_ingot, "Cyber Steel Ingot");
+        addItem(TinkersReforgedItems.cyber_steel_dust, "Cyber Steel Dust");
+        addItem(TinkersReforgedItems.cyber_steel_nugget, "Cyber Steel Nugget");
         addBlock(TinkersReforgedBlocks.deepslate_hureaulite_ore, "Deepslate Hureaulite Ore");
         addBlock(TinkersReforgedBlocks.hureaulite_block, "Hureaulite Block");
         addItem(TinkersReforgedItems.hureaulite_gem, "Hureaulite Gem");
@@ -140,6 +148,9 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.baolian, "Molten Baolian");
         addFluid(TinkersReforgedFluids.epidote, "Molten Epidote");
         addFluid(TinkersReforgedFluids.galu, "Molten Galu");
+        addFluid(TinkersReforgedFluids.coal, "Liquid Coal");
+        addFluid(TinkersReforgedFluids.magma_steel, "Molten Magma Steel");
+        addFluid(TinkersReforgedFluids.cyber_steel, "Molten Cyber Steel");
         addFluid(TinkersReforgedFluids.hureaulite, "Molten Hureaulite");
         addFluid(TinkersReforgedFluids.red_beryl, "Molten Red Beryl");
 
@@ -165,6 +176,9 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.baolian.get().getBucket(), "Molten Baolian Bucket");
         add(TinkersReforgedFluids.epidote.get().getBucket(), "Molten Epidote Bucket");
         add(TinkersReforgedFluids.galu.get().getBucket(), "Molten Galu Bucket");
+        add(TinkersReforgedFluids.coal.get().getBucket(), "Liquid Coal Bucket");
+        add(TinkersReforgedFluids.magma_steel.get().getBucket(), "Molten Magma Steel Bucket");
+        add(TinkersReforgedFluids.cyber_steel.get().getBucket(), "Molten Cyber Steel Bucket");
         add(TinkersReforgedFluids.hureaulite.get().getBucket(), "Molten Hureaulite Bucket");
         add(TinkersReforgedFluids.red_beryl.get().getBucket(), "Molten Red Beryl Bucket");
 
@@ -176,6 +190,7 @@ public class ReforgedLang extends LanguageProvider {
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
+        addMaterial(ReforgedMaterialIds.aluminum, "Aluminum", "Strong and durable", "Aluminum Metal");
         addMaterial(ReforgedMaterialIds.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "Aluminum Alloy");
         addMaterial(ReforgedMaterialIds.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
         addMaterial(ReforgedMaterialIds.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
@@ -194,8 +209,11 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterialIds.hureaulite, "Hureaulite", "it's an Orange!", "Found in the depth of earth");
         addMaterial(ReforgedMaterialIds.red_beryl, "Red Beryl", "Beryl but Red", "Gemstone");
         addMaterial(ReforgedMaterialIds.ender_bone, "Enderbone", "Bone mixed with ender", "Bone but with more durability");
+        addMaterial(ReforgedMaterialIds.blazing_copper, "Blazing Copper", "Its Blazing Hot!", "What if Blazing blood and Copper had a baby?");
+        addMaterial(ReforgedMaterialIds.magma_steel, "Magma Steel", "A hot nether alloy", "Steel meet Magma");
+        addMaterial(ReforgedMaterialIds.cyber_steel, "Cyber Steel", "A cool end alloy", "Steel meet Chorus Metal");
 
-        addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you.");
+        addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you(Scale with your titanic dmg modifier level).");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Anyone need Duritos?", "Your tool last longer most of the time.");
         addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
@@ -214,8 +232,10 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.dry_lattice, "Dry Lattice", "Good sunny day.", "Mine faster if you can see the sun(not active while raining).");
         addModifier(TinkersReforgedModifiers.crystallized_punch, "Crystallized Punch", "5 hits and you're K.O.", "Every 5 attacks, deal 1% of the target HP as bonus magic damage.");
         addModifier(TinkersReforgedModifiers.collapsed, "Collapsed", "More damage while damaged.", "Deal more damage while damaged.");
-        addModifier(TinkersReforgedModifiers.spark, "Spark", "Better Crit damage.", "Deal more critical strike damage.");
-        addModifier(TinkersReforgedModifiers.protectiveMantle, "Protective Mantle", "Better than no protection!", "Prevent the 4th durability lose.");
+        addModifier(TinkersReforgedModifiers.blazing_copper_spark, "Spark", "Better Crit damage.", "Deal more critical strike damage.");
+        addModifier(TinkersReforgedModifiers.aluminum_rotective_mantle, "Protective Mantle", "Better than no protection!", "Prevent the 4th durability lose.");
+        addModifier(TinkersReforgedModifiers.cyber_steel_swift_eye, "Swift Eye", "Eye of the tiger", "Enderman Drop Eye of ender instead of Ender Pearl.");
+        addModifier(TinkersReforgedModifiers.magma_steel_unbending, "Unbending", "The Earth is shaking!", "Damage dealt below 6 pierce through armor.");
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
         add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");

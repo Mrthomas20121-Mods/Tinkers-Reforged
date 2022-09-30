@@ -46,6 +46,8 @@ public class ReforgedBlocksLoot extends BlockLoot {
         this.dropSelf(TinkersReforgedBlocks.epidote_block.get());
         this.add(TinkersReforgedBlocks.deepslate_epidote_ore.get(), (block) -> createOreDrop(block, TinkersReforgedItems.epidote_gem.get()));
         this.dropSelf(TinkersReforgedBlocks.galu_block.get());
+        this.dropSelf(TinkersReforgedBlocks.magma_steel_block.get());
+        this.dropSelf(TinkersReforgedBlocks.cyber_steel_block.get());
         this.dropSelf(TinkersReforgedBlocks.hureaulite_block.get());
         this.add(TinkersReforgedBlocks.deepslate_hureaulite_ore.get(), (block) -> createOreDrop(block, TinkersReforgedItems.hureaulite_gem.get()));
         this.dropSelf(TinkersReforgedBlocks.red_beryl_block.get());

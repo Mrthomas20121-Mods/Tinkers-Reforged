@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "tinkers_reforged:baolian_nugget"
+    "item": "tinkers_reforged:baolian_dust"
   },
   "result": "tinkers_reforged:baolian_ingot",
   "experience": 0.0,

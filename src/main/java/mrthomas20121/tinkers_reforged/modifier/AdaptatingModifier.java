@@ -16,6 +16,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -25,7 +26,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class AdaptatingModifier extends NoLevelsModifier {
+public class AdaptatingModifier extends Modifier {
 
     private final ResourceLocation KEY = new ResourceLocation(TinkersReforged.MOD_ID, "adapting_mod");
 
@@ -67,7 +68,7 @@ public class AdaptatingModifier extends NoLevelsModifier {
                     }
                 }
                 else {
-                    persistantData.putFloat(KEY, 0.05f);
+                    persistantData.putFloat(KEY, 0.05f*level);
                 }
             }
         }

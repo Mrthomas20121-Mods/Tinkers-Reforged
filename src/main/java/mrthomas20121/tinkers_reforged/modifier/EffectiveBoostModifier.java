@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.modifier;
 
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
@@ -14,7 +15,11 @@ public class EffectiveBoostModifier extends Modifier {
 
         LivingEntity attacker = context.getAttacker();
         if(!attacker.getActiveEffectsMap().isEmpty()) {
-            return damage+attacker.getActiveEffects().size()*0.05f;
+            float dmg = attacker.getActiveEffects().size();
+            for(MobEffectInstance instance : attacker.getActiveEffects()) {
+                dmg = dmg+0.15f*instance.getAmplifier();
+            }
+            return damage+dmg;
         }
 
         return super.getEntityDamage(tool, level, context, baseDamage, damage);

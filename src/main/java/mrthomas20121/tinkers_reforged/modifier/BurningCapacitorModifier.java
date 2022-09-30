@@ -18,7 +18,7 @@ public class BurningCapacitorModifier extends NoLevelsModifier {
     @Override
     public void onInventoryTick(@Nonnull IToolStackView tool, int level, @Nonnull Level world, @Nonnull LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if(holder.isOnFire() && isSelected) {
-            ToolDamageUtil.repair(tool, 5);
+            ToolDamageUtil.repair(tool, 5+level);
         }
     }
 }

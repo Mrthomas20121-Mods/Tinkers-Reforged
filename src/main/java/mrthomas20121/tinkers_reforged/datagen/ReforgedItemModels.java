@@ -92,6 +92,14 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.galu_dust, "item/generated");
         itemWithModel(TinkersReforgedItems.galu_nugget, "item/generated");
 
+        itemWithModel(TinkersReforgedItems.magma_steel_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.magma_steel_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.magma_steel_nugget, "item/generated");
+
+        itemWithModel(TinkersReforgedItems.cyber_steel_ingot, "item/generated");
+        itemWithModel(TinkersReforgedItems.cyber_steel_dust, "item/generated");
+        itemWithModel(TinkersReforgedItems.cyber_steel_nugget, "item/generated");
+
         itemWithModel(TinkersReforgedItems.hureaulite_gem, "item/generated");
 
         itemWithModel(TinkersReforgedItems.red_beryl_gem, "item/generated");

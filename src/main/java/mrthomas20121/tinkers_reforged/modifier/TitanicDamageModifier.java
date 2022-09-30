@@ -17,7 +17,12 @@ public class TitanicDamageModifier extends Modifier {
         if(target != null && player != null) {
             if(target.getMaxHealth() > player.getMaxHealth()) {
                 float hp = target.getMaxHealth()*(0.1f*level);
-                return damage+hp;
+
+                // this if statement make sure the damage is not too high.
+                if((level == 1 && target.getMaxHealth() - player.getMaxHealth() <= 100) || target.getMaxHealth() - player.getMaxHealth() <= 25) {
+                    return damage+hp;
+                }
+                return hp;
             }
         }
         return super.getEntityDamage(tool, level, context, baseDamage, damage);

@@ -29,6 +29,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     @Override
     protected void addTags() {
 
+        tag(REDSTONE).add(TinkersReforgedFluids.redstone.get());
         tag(BLAZING_COPPER).add(TinkersReforgedFluids.blazing_copper.get());
         tag(DURALUMIN).add(TinkersReforgedFluids.duralumin.getStill());
         tag(ELECTRICAL_COPPER).add(TinkersReforgedFluids.electrical_copper.get());
@@ -50,9 +51,12 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(BAOLIAN).add(TinkersReforgedFluids.baolian.get());
         tag(EPIDOTE).add(TinkersReforgedFluids.epidote.get());
         tag(GALU).add(TinkersReforgedFluids.galu.get());
+        tag(MAGMA_STEEL).add(TinkersReforgedFluids.magma_steel.get());
+        tag(CYBER_STEEL).add(TinkersReforgedFluids.cyber_steel.get());
         tag(HUREAULITE).add(TinkersReforgedFluids.hureaulite.get());
         tag(RED_BERYL).add(TinkersReforgedFluids.red_beryl.get());
 
+        tag(REDSTONE_).add(TinkersReforgedFluids.redstone.get());
         tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.get());
         tag(DURALUMIN_).add(TinkersReforgedFluids.duralumin.get());
         tag(ELECTRICAL_COPPER_).add(TinkersReforgedFluids.electrical_copper.get());
@@ -74,6 +78,8 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(BAOLIAN_).add(TinkersReforgedFluids.baolian.get());
         tag(EPIDOTE_).add(TinkersReforgedFluids.epidote.get());
         tag(GALU_).add(TinkersReforgedFluids.galu.get());
+        tag(MAGMA_STEEL_).add(TinkersReforgedFluids.magma_steel.get());
+        tag(CYBER_STEEL_).add(TinkersReforgedFluids.cyber_steel.get());
         tag(HUREAULITE_).add(TinkersReforgedFluids.hureaulite.get());
         tag(RED_BERYL_).add(TinkersReforgedFluids.red_beryl.get());
     }

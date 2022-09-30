@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/magma_steel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/magma_steel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_magma_steel",
+    "amount": 45
+  },
+  "temperature": 600,
+  "time": 11
+}

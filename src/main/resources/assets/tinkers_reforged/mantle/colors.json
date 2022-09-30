@@ -18,10 +18,16 @@
         "wet_lattice": "#93794E",
         "effective_boost": "#8FB9A9",
         "dry_lattice": "#E5A588",
-        "crystallized_punch": "#F36E7C"
+        "crystallized_punch": "#F36E7C",
+        "protective_mantle": "#E4D5C1",
+        "spark": "#FB8B24",
+        "unbending": "#B25D52",
+        "swift_eye": "#A1A0D4"
     },
 
     "material.tinkers_reforged": {
+        "aluminum": "#E4D5C1",
+        "blazing_copper": "#FB8B24",
         "chorus_metal": "#C4A7CE",
         "crusteel": "#BD9E2A",
         "duralumin": "#C4FAA9",
@@ -39,6 +45,8 @@
         "galu": "#8FB9A9",
         "hureaulite": "#E5A588",
         "red_beryl": "#F36E7C",
-        "ender_bone": "#349988"
+        "ender_bone": "#349988",
+        "magma_steel": "#B25D52",
+        "cyber_steel": "#A1A0D4"
     }
 }

@@ -91,6 +91,19 @@ public class ReforgedMaterialSpriteProvider extends AbstractMaterialSpriteProvid
                 .meleeHarvest()
                 .fallbacks("crystal")
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF6E1105).addARGB(102, 0xFF951A0B).addARGB(140, 0xFFB60F28).addARGB(178, 0xFFDE4476).addARGB(216, 0xFFEB91B9).addARGB(255, 0xFFF2DAE9).build());
+
+        buildMaterial(ReforgedMaterialIds.cyber_steel)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF3C3972).addARGB(102, 0xFF544399).addARGB(140, 0xFF7368C5).addARGB(178, 0xFF8C89D3).addARGB(216, 0xFFA1A0D4).addARGB(255, 0xFFA1A0D4).build());
+
+
+        buildMaterial(ReforgedMaterialIds.magma_steel)
+                .meleeHarvest()
+                .fallbacks("metal")
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF190A0D).addARGB(102, 0xFF47111B).addARGB(140, 0xFF5E1320).addARGB(178, 0xFF823130).addARGB(216, 0xFF93453F).addARGB(255, 0xFFB25D52).build());
+
+
         buildMaterial(ReforgedMaterialIds.ender_bone)
                 .meleeHarvest()
                 .fallbacks("bone")

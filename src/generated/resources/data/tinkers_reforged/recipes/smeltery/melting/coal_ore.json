@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ores/coal"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:liquid_coal",
+    "amount": 375
+  },
+  "temperature": 500,
+  "time": 50
+}

@@ -2,7 +2,7 @@
   "fallbacks": [
     "crystal"
   ],
-  "color": "93794E",
+  "color": "E9F496",
   "luminosity": 0,
   "generator": {
     "transformer": {
@@ -16,27 +16,27 @@
           },
           {
             "grey": 63,
-            "color": "FF4B3D1A"
+            "color": "FF464434"
           },
           {
             "grey": 102,
-            "color": "FF5B4819"
+            "color": "FF585832"
           },
           {
             "grey": 140,
-            "color": "FF795F19"
+            "color": "FF747936"
           },
           {
             "grey": 178,
-            "color": "FF8C7034"
+            "color": "FFA3B257"
           },
           {
             "grey": 216,
-            "color": "FF9B8364"
+            "color": "FFE9F496"
           },
           {
             "grey": 255,
-            "color": "FFA48E78"
+            "color": "FFF4FFCC"
           }
         ]
       }

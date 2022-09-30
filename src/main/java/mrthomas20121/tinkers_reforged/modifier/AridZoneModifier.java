@@ -33,7 +33,7 @@ public class AridZoneModifier extends Modifier {
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         float extraDamage = 2f * calcArid(context.getAttacker().level, context.getAttacker().blockPosition());
-        return extraDamage+super.getEntityDamage(tool, level, context, baseDamage, damage);
+        return super.getEntityDamage(tool, level, context, baseDamage, damage)+extraDamage;
     }
 
     private float calcArid(Level level, BlockPos pos) {
@@ -46,7 +46,7 @@ public class AridZoneModifier extends Modifier {
     public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
         if(player != null) {
             float calc = calcArid(player.level, player.blockPosition());
-            float baseStat = tool.getDefinition().getData().getBaseStat(ToolStats.MINING_SPEED)*calc;
+            float baseStat = tool.getStats().get(ToolStats.MINING_SPEED)*calc;
             float extraDmg = calc*2;
 
             addMiningSpeedToolTip(tool, (float) Math.floor(baseStat), tooltip);

@@ -44,6 +44,8 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.epidote_block);
         blockWithItem(TinkersReforgedBlocks.deepslate_epidote_ore);
         blockWithItem(TinkersReforgedBlocks.galu_block);
+        blockWithItem(TinkersReforgedBlocks.magma_steel_block);
+        blockWithItem(TinkersReforgedBlocks.cyber_steel_block);
         blockWithItem(TinkersReforgedBlocks.hureaulite_block);
         blockWithItem(TinkersReforgedBlocks.deepslate_hureaulite_ore);
         blockWithItem(TinkersReforgedBlocks.red_beryl_block);
@@ -72,6 +74,9 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.baolian);
         fluid(TinkersReforgedFluids.epidote);
         fluid(TinkersReforgedFluids.galu);
+        fluid(TinkersReforgedFluids.magma_steel);
+        fluid(TinkersReforgedFluids.cyber_steel);
+        fluid(TinkersReforgedFluids.coal);
         fluid(TinkersReforgedFluids.hureaulite);
         fluid(TinkersReforgedFluids.red_beryl);
     }
@@ -88,5 +93,6 @@ public class ReforgedBlockStates extends BlockStateProvider {
     public void fluid(FluidObject<ForgeFlowingFluid> fluid) {
         ResourceLocation name = fluid.getBlock().getRegistryName();
         simpleBlock(fluid.getBlock(), models().cubeAll(name.getPath().replace("_fluid", ""), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"/still")));
+        itemModels().cubeAll(name.getPath(), new ResourceLocation(name.getNamespace(), ModelProvider.BLOCK_FOLDER + "/fluid/" + name.getPath().replace("_fluid", "")+"/still"));
     }
 }

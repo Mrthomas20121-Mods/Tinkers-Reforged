@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/blazing_copper",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/coin"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_blazing_copper",
+    "amount": 30
+  },
+  "result": {
+    "tag": "forge:coins/blazing_copper"
+  },
+  "cooling_time": 45
+}

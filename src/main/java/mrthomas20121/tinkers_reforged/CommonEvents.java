@@ -19,7 +19,7 @@ public class CommonEvents {
     public static void deathEvent(LivingDeathEvent event) {
         LivingEntity livingEntity = event.getEntityLiving();
         if(livingEntity.hasEffect(TinkersReforgedPotions.Fungal.get())) {
-            List<? extends LivingEntity> entities = livingEntity.level.getNearbyEntities(livingEntity.getClass(), TargetingConditions.forNonCombat(), livingEntity, new AABB(livingEntity.blockPosition().below(), livingEntity.blockPosition().south(5).above(5).below(5).east(5).north(5).west(5)));
+            List<? extends LivingEntity> entities = livingEntity.level.getNearbyEntities(livingEntity.getClass(), TargetingConditions.DEFAULT, livingEntity, new AABB(livingEntity.blockPosition().below(), livingEntity.blockPosition().offset(5, 5, 5)));
             entities.forEach(entity -> entity.addEffect(new MobEffectInstance(TinkersReforgedPotions.Fungal.get(), 150, 0)));
         }
     }

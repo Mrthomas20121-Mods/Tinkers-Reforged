@@ -20,6 +20,7 @@ public class TinkersReforgedBlocks {
     private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE);
     private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK);
 
+    public static RegistryObject<Block> blazing_copper_block = BLOCKS.register("blazing_copper_block", () -> new Block(METAL));
     public static RegistryObject<Block> aluminum_ore = BLOCKS.register("aluminum_ore", () -> new Block(ORE));
     public static RegistryObject<Block> deepslate_aluminum_ore = BLOCKS.register("deepslate_aluminum_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
     public static RegistryObject<Block> aluminum_block = BLOCKS.register("aluminum_block", () -> new Block(METAL));
@@ -42,6 +43,8 @@ public class TinkersReforgedBlocks {
     public static RegistryObject<Block> epidote_block = BLOCKS.register("epidote_block", () -> new Block(METAL));
     public static RegistryObject<Block> deepslate_epidote_ore = BLOCKS.register("deepslate_epidote_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
     public static RegistryObject<Block> galu_block = BLOCKS.register("galu_block", () -> new Block(METAL));
+    public static RegistryObject<Block> magma_steel_block = BLOCKS.register("magma_steel_block", () -> new Block(METAL));
+    public static RegistryObject<Block> cyber_steel_block = BLOCKS.register("cyber_steel_block", () -> new Block(METAL));
     public static RegistryObject<Block> hureaulite_block = BLOCKS.register("hureaulite_block", () -> new Block(METAL));
     public static RegistryObject<Block> deepslate_hureaulite_ore = BLOCKS.register("deepslate_hureaulite_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
     public static RegistryObject<Block> red_beryl_block = BLOCKS.register("red_beryl_block", () -> new Block(METAL));

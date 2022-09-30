@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "tag": "tinkers_reforged:molten_cyber_steel",
+    "amount": 810
+  },
+  "result": "tinkers_reforged:cyber_steel_block",
+  "cooling_time": 160
+}

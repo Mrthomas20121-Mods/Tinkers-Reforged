@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.client.TinkersReforgedBook;
 import mrthomas20121.tinkers_reforged.datagen.*;
+import mrthomas20121.tinkers_reforged.datagen.tcon.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedWorldGen;
 import net.minecraft.client.color.item.ItemColors;
@@ -62,8 +63,8 @@ public class TinkersReforged {
 		if (event.includeServer()) {
 			AbstractMaterialDataProvider materials = new ReforgedMaterials(gen);
 			gen.addProvider(materials);
-			gen.addProvider(new ReforgedMaterials.ReforgedTraits(gen, materials));
-			gen.addProvider(new ReforgedMaterials.ReforgedMaterialStats(gen, materials));
+			gen.addProvider(new ReforgedTraits(gen, materials));
+			gen.addProvider(new ReforgedMaterialStats(gen, materials));
 			gen.addProvider(new ReforgedToolDefinitionDataProvider(gen));
 			gen.addProvider(new ReforgedToolSlotLayout(gen));
 			gen.addProvider(new ReforgedRecipes(gen));

@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_iron",
+      "amount": 180
+    },
+    {
+      "name": "tconstruct:magma",
+      "amount": 250
+    },
+    {
+      "name": "tinkers_reforged:liquid_coal",
+      "amount": 250
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_magma_steel",
+    "amount": 90
+  },
+  "temperature": 600
+}

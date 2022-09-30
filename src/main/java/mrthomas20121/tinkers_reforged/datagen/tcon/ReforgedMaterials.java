@@ -13,25 +13,28 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(ReforgedMaterialIds.duralumin, 3, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.electrical_copper, 3, ORDER_GENERAL, false);
-        addMaterial(ReforgedMaterialIds.lavium, 4, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.qivium, 4, ORDER_WEAPON, false);
-        addMaterial(ReforgedMaterialIds.gausum, 4, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.felsteel, 4, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.chorus_metal, 4, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.kepu, 4, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.durasteel, 4, ORDER_SPECIAL, false);
-        addMaterial(ReforgedMaterialIds.crusteel, 4, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.wavy, 4, ORDER_SPECIAL, false);
-        addMaterial(ReforgedMaterialIds.yokel, 4, ORDER_WEAPON, false);
-        addMaterial(ReforgedMaterialIds.baolian, 3, ORDER_HARVEST, false);
-        addMaterial(ReforgedMaterialIds.galu, 3, ORDER_HARVEST, false);
+        addMaterial(ReforgedMaterialIds.aluminum, 1, ORDER_GENERAL, false);
+        addMaterial(ReforgedMaterialIds.duralumin, 2, ORDER_GENERAL, false);
+        addMaterial(ReforgedMaterialIds.yokel, 2, ORDER_GENERAL, false);
         addMaterial(ReforgedMaterialIds.epidote, 2, ORDER_GENERAL, false);
         addMaterial(ReforgedMaterialIds.hureaulite, 2, ORDER_GENERAL, false);
         addMaterial(ReforgedMaterialIds.red_beryl, 2, ORDER_GENERAL, false);
-        addMaterial(ReforgedMaterialIds.ender_bone, 2, ORDER_SPECIAL, true);
-        addMaterial(ReforgedMaterialIds.blazing_copper, 2, ORDER_SPECIAL, false);
+        addMaterial(ReforgedMaterialIds.ender_bone, 2, ORDER_GENERAL, true);
+        addMaterial(ReforgedMaterialIds.blazing_copper, 2, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.electrical_copper, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.wavy, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.galu, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.baolian, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.lavium, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.qivium, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.felsteel, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.crusteel, 3, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.magma_steel, 4, ORDER_NETHER, false);
+        addMaterial(ReforgedMaterialIds.gausum, 4, ORDER_END, false);
+        addMaterial(ReforgedMaterialIds.chorus_metal, 4, ORDER_END, false);
+        addMaterial(ReforgedMaterialIds.kepu, 4, ORDER_END, false);
+        addMaterial(ReforgedMaterialIds.durasteel, 4, ORDER_END, false);
+        addMaterial(ReforgedMaterialIds.cyber_steel, 4, ORDER_END, false);
     }
 
     @Nonnull

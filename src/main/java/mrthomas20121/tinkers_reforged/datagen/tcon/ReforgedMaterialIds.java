@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 public class ReforgedMaterialIds {
+
     public static final MaterialId aluminum = createMaterial("aluminum");
     public static final MaterialId duralumin = createMaterial("duralumin");
     public static final MaterialId electrical_copper = createMaterial("electrical_copper");
@@ -25,6 +26,8 @@ public class ReforgedMaterialIds {
     public static final MaterialId red_beryl = createMaterial("red_beryl");
     public static final MaterialId ender_bone = createMaterial("ender_bone");
     public static final MaterialId blazing_copper = createMaterial("blazing_copper");
+    public static final MaterialId magma_steel = createMaterial("magma_steel");
+    public static final MaterialId cyber_steel = createMaterial("cyber_steel");
 
     public static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));
