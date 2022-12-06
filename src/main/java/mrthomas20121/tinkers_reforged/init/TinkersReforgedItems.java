@@ -3,7 +3,6 @@ package mrthomas20121.tinkers_reforged.init;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.item.CastObject;
 import mrthomas20121.tinkers_reforged.item.book.TinkersReforgedBookItem;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -12,7 +11,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
@@ -28,8 +26,6 @@ public class TinkersReforgedItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
 
-    public static Map<CastType, RegistryObject<Item>> casts = new HashMap<>();
-
     public static final CreativeModeTab group = new CreativeModeTab(TinkersReforged.MOD_ID) {
 
         @Override
@@ -38,6 +34,8 @@ public class TinkersReforgedItems {
             return new ItemStack(aluminum_ingot.get());
         }
     };
+
+    public static Map<CastType, RegistryObject<Item>> castMap = registerCasts();
 
     private static final Item.Properties TOOL = new Item.Properties().stacksTo(1).tab(TAB_TOOLS);
     private static final Item.Properties PARTS_PROPS = new Item.Properties().tab(TAB_TOOL_PARTS);
@@ -179,10 +177,15 @@ public class TinkersReforgedItems {
         return new CastObject("tconstruct:"+name, gold_cast, sand_cast, red_sand_cast);
     }
 
-    public static void registerCasts() {
+    public static Map<CastType, RegistryObject<Item>> registerCasts() {
+
+        Map<CastType, RegistryObject<Item>> casts = new HashMap<>();
+
         for(CastType type : CastType.values()) {
             RegistryObject<Item> cast = TinkersReforgedItems.ITEMS.register(String.format("cast_%s", type.name().toLowerCase()), TinkersReforgedItems::register);
             casts.put(type, cast);
         }
+
+        return casts;
     }
 }

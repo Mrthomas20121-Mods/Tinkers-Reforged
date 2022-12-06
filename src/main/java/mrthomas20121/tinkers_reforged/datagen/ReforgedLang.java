@@ -67,6 +67,7 @@ public class ReforgedLang extends LanguageProvider {
         addBlock(TinkersReforgedBlocks.felsteel_block, "Felsteel Block");
         addItem(TinkersReforgedItems.felsteel_dust, "Felsteel Dust");
         addItem(TinkersReforgedItems.felsteel_ingot, "Felsteel Ingot");
+        addItem(TinkersReforgedItems.felsteel_nugget, "Felsteel Nugget");
         addItem(TinkersReforgedItems.kepu_ore, "Kepu Ore");
         addBlock(TinkersReforgedBlocks.kepu_block, "Kepu Block");
         addItem(TinkersReforgedItems.kepu_dust, "Kepu Dust");
@@ -186,7 +187,7 @@ public class ReforgedLang extends LanguageProvider {
         add("effect.tinkers_reforged.fungal", "Fungal");
 
         for(CastType type: CastType.values()) {
-            Item item = TinkersReforgedItems.casts.get(type).get();
+            Item item = TinkersReforgedItems.castMap.get(type).get();
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
@@ -249,9 +250,9 @@ public class ReforgedLang extends LanguageProvider {
     }
 
     public void addCast(CastObject object) {
-        addItem(object.getGoldCast(), capitalize(object.getName().getPath()));
-        addItem(object.getSandCast(), "Sand "+capitalize(object.getName().getPath()));
-        addItem(object.getRedSandCast(), "Red Sand "+capitalize(object.getName().getPath()));
+        addItem(object.getGoldCast(), capitalize(object.getName().getPath())+ " Gold Cast");
+        addItem(object.getSandCast(), "Sand "+capitalize(object.getName().getPath())+ "Cast");
+        addItem(object.getRedSandCast(), "Red Sand "+capitalize(object.getName().getPath())+ "Cast");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

@@ -54,21 +54,21 @@ public class TinkersReforgedWorldGen {
         Biome.BiomeCategory category = event.getCategory();
         if(isOverworldBiome(category)) {
             if(TinkersReforgedConfig.COMMON.bauxiteOre.isEnabled()) {
-                placedAluminumOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, holder));
+                placedAluminumOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, holder));
             }
             if(TinkersReforgedConfig.COMMON.epidoteOre.isEnabled()) {
-                placedEpidoteOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, holder));
+                placedEpidoteOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, holder));
             }
             if(TinkersReforgedConfig.COMMON.hureauliteOre.isEnabled()) {
-                placedHureauliteOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, holder));
+                placedHureauliteOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, holder));
             }
             if(TinkersReforgedConfig.COMMON.redBerylOre.isEnabled()) {
-                placedRedBerylOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, holder));
+                placedRedBerylOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, holder));
             }
         }
         if(isEndBiome(category)) {
             if(TinkersReforgedConfig.COMMON.kepuOre.isEnabled()) {
-                placedKepuOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, holder));
+                placedKepuOre.getHolder().ifPresent(holder -> generation.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, holder));
             }
         }
     }

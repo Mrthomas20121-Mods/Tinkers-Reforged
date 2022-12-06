@@ -42,7 +42,6 @@ public class TinkersReforged {
 		TinkersReforgedModifiers.MODIFIERS.register(bus);
 		TinkersReforgedBlocks.BLOCKS.register(bus);
 		TinkersReforgedItems.ITEMS.register(bus);
-		TinkersReforgedItems.registerCasts();
 		TinkersReforgedFluids.FLUIDS.register(bus);
 		TinkersReforgedWorldGen.CONFIGURED_FEATURES.register(bus);
 		TinkersReforgedWorldGen.PLACED_FEATURES.register(bus);

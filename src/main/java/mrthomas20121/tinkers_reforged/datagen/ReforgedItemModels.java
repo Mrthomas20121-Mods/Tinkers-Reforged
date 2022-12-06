@@ -105,7 +105,7 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.red_beryl_gem, "item/generated");
 
         for(CastType type : CastType.values()) {
-            castModel(TinkersReforgedItems.casts.get(type), type);
+            castModel(TinkersReforgedItems.castMap.get(type), type);
         }
 
         castModel(TinkersReforgedItems.large_round_plate_cast);
