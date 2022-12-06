@@ -8,6 +8,6 @@
     "tag": "tinkers_reforged:molten_chorus",
     "amount": 90
   },
-  "result": "minecraft:chorus_fruit",
+  "result": "minecraft:popped_chorus_fruit",
   "cooling_time": 63
 }

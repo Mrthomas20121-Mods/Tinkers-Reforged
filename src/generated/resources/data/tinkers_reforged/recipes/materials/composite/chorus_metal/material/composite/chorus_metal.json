@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tconstruct:chorus",
+  "fluid": {
+    "tag": "forge:molten_kepu",
+    "amount": 90
+  },
+  "temperature": 1300,
+  "output": "tinkers_reforged:chorus_metal"
+}
