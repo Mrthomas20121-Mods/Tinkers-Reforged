@@ -9,7 +9,9 @@
   },
   "variant": {
     "normal": [
-      {}
+      {
+        "model": "tinkers_reforged:qivium_block"
+      }
     ]
   }
 }
