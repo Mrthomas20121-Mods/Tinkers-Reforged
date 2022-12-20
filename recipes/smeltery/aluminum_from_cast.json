@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "tinkers_reforged:casts/aluminum"
+  },
+  "result": {
+    "fluid": "tconstruct:molten_aluminum",
+    "amount": 90
+  },
+  "temperature": 700,
+  "time": 50
+}

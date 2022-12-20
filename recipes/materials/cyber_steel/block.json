@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/cyber_steel"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:cyber_steel",
+  "leftover": {
+    "tag": "forge:ingots/cyber_steel"
+  }
+}

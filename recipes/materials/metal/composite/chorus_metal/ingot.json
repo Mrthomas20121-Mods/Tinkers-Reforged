@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:popped_chorus_fruit"
+  },
+  "cast_consumed": true,
+  "switch_slots": true,
+  "fluid": {
+    "tag": "forge:molten_kepu",
+    "amount": 90
+  },
+  "result": "tinkers_reforged:chorus_metal_ingot",
+  "cooling_time": 75
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "forge:ores/hureaulite"
+  },
+  "result": "tinkers_reforged:hureaulite_gem",
+  "experience": 0.5,
+  "cookingtime": 100
+}

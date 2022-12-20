@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          "XYX",
+          "XXX"
+        ],
+        "key": {
+          "X": {
+            "tag": "forge:gems/red_beryl"
+          },
+          "Y": {
+            "item": "tinkers_reforged:red_beryl_gem"
+          }
+        },
+        "result": {
+          "item": "tinkers_reforged:red_beryl_block"
+        }
+      }
+    }
+  ]
+}

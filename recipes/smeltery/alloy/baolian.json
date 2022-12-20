@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_obsidian",
+      "amount": 1000
+    },
+    {
+      "name": "tinkers_reforged:molten_red_beryl",
+      "amount": 100
+    },
+    {
+      "name": "tinkers_reforged:molten_epidote",
+      "amount": 100
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_baolian",
+    "amount": 180
+  },
+  "temperature": 1500
+}

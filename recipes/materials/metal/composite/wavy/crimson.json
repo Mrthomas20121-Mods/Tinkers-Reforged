@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "item": "minecraft:crimson_fungus"
+  },
+  "cast_consumed": true,
+  "switch_slots": true,
+  "fluid": {
+    "tag": "tconstruct:molten_obsidian",
+    "amount": 90
+  },
+  "result": "tinkers_reforged:wavy_ingot",
+  "cooling_time": 66
+}

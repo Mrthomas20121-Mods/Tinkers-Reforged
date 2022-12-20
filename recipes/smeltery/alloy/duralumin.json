@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_copper",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:molten_aluminum",
+      "amount": 810
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_duralumin",
+    "amount": 450
+  },
+  "temperature": 700
+}

@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_obsidian",
+      "amount": 1000
+    },
+    {
+      "name": "tinkers_reforged:molten_red_beryl",
+      "amount": 100
+    },
+    {
+      "name": "tinkers_reforged:molten_hureaulite",
+      "amount": 100
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_galu",
+    "amount": 180
+  },
+  "temperature": 900
+}

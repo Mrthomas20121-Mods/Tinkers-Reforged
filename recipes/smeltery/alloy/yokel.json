@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tinkers_reforged:molten_kelp",
+      "amount": 250
+    },
+    {
+      "name": "tconstruct:molten_aluminum",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:molten_iron",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:molten_yokel",
+    "amount": 180
+  },
+  "temperature": 1500
+}

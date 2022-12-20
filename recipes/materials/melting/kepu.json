@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:kepu",
+  "temperature": 1300,
+  "result": {
+    "fluid": "tinkers_reforged:molten_kepu",
+    "amount": 90
+  }
+}

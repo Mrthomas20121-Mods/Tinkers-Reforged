@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tconstruct:slimewood#bloodshroom",
+  "fluid": {
+    "tag": "tconstruct:molten_obsidian",
+    "amount": 500
+  },
+  "temperature": 1000,
+  "output": "tinkers_reforged:wavy"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/magma_steel"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:magma_steel",
+  "leftover": {
+    "tag": "forge:ingots/magma_steel"
+  }
+}

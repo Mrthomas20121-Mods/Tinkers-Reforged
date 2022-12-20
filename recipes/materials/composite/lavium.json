@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "input": "tconstruct:cobalt",
+  "fluid": {
+    "tag": "tconstruct:liquid_soul",
+    "amount": 500
+  },
+  "temperature": 400,
+  "output": "tinkers_reforged:lavium"
+}

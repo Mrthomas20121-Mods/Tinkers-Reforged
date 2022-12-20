@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:lavium",
+  "temperature": 1200,
+  "result": {
+    "fluid": "tinkers_reforged:molten_lavium",
+    "amount": 90
+  }
+}
