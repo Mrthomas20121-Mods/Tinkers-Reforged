@@ -56,6 +56,8 @@ public class TinkersReforgedTags {
         public static final TagKey<Block> CYBER_STEEL = create("forge:storage_blocks/cyber_steel");
         public static final TagKey<Block> HUREAULITE = create("forge:storage_blocks/yokel");
         public static final TagKey<Block> RED_BERYL = create("forge:storage_blocks/red_beryl");
+        public static final TagKey<Block> GELOT_BLOCK = create("forge:storage_blocks/piroot");
+        public static final TagKey<Block> PIROOT_BLOCK = create("forge:storage_blocks/piroot");
 
         // raw blocks
         public static final TagKey<Block> RAW_ALUMINUM = create("forge:storage_blocks/raw_aluminum");
@@ -99,6 +101,8 @@ public class TinkersReforgedTags {
         public static final TagKey<Item> HUREAULITE_BLOCK = create("forge:storage_blocks/hureaulite");
         public static final TagKey<Item> GALU_BLOCK = create("forge:storage_blocks/galu");
         public static final TagKey<Item> RED_BERYL_BLOCK = create("forge:storage_blocks/red_beryl");
+        public static final TagKey<Item> GELOT_BLOCK = create("forge:storage_blocks/piroot");
+        public static final TagKey<Item> PIROOT_BLOCK = create("forge:storage_blocks/piroot");
 
         // raw blocks
         public static final TagKey<Item> RAW_ALUMINUM_BLOCK = create("forge:storage_blocks/raw_aluminum");
@@ -181,6 +185,14 @@ public class TinkersReforgedTags {
         public static final TagKey<Item> GALU_DUST = create("forge:dusts/galu");
         public static final TagKey<Item> GALU_NUGGET = create("forge:nuggets/galu");
 
+        public static final TagKey<Item> GELOT_INGOT = create("forge:ingots/gelot");
+        public static final TagKey<Item> GELOT_DUST = create("forge:dusts/gelot");
+        public static final TagKey<Item> GELOT_NUGGET = create("forge:nuggets/gelot");
+
+        public static final TagKey<Item> PIROOT_INGOT = create("forge:ingots/piroot");
+        public static final TagKey<Item> PIROOT_DUST = create("forge:dusts/piroot");
+        public static final TagKey<Item> PIROOT_NUGGET = create("forge:nuggets/piroot");
+
         public static final TagKey<Item> HUREAULITE_GEM = create("forge:gems/hureaulite");
 
         public static final TagKey<Item> RED_BERYL_GEM = create("forge:gems/red_beryl");
@@ -224,6 +236,8 @@ public class TinkersReforgedTags {
         public static final TagKey<Fluid> CYBER_STEEL = create("forge:molten_cyber_steel");
         public static final TagKey<Fluid> HUREAULITE = create("forge:molten_hureaulite");
         public static final TagKey<Fluid> RED_BERYL = create("forge:molten_red_beryl");
+        public static final TagKey<Fluid> GELOT = create("forge:molten_piroot");
+        public static final TagKey<Fluid> PIROOT = create("forge:molten_gelot");
 
         // tinkers reforged tags
         public static final TagKey<Fluid> DURALUMIN_ = create("tinkers_reforged:molten_duralumin");
@@ -252,5 +266,7 @@ public class TinkersReforgedTags {
         public static final TagKey<Fluid> CYBER_STEEL_ = create("tinkers_reforged:molten_cyber_steel");
         public static final TagKey<Fluid> HUREAULITE_ = create("tinkers_reforged:molten_hureaulite");
         public static final TagKey<Fluid> RED_BERYL_ = create("tinkers_reforged:molten_red_beryl");
+        public static final TagKey<Fluid> GELOT_ = create("tinkers_reforged:molten_piroot");
+        public static final TagKey<Fluid> PIROOT_ = create("tinkers_reforged:molten_gelot");
     }
 }

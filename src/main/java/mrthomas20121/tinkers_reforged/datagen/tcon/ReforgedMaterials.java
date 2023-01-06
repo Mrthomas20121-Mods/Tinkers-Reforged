@@ -35,6 +35,8 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
         addMaterial(ReforgedMaterialIds.kepu, 4, ORDER_END, false);
         addMaterial(ReforgedMaterialIds.durasteel, 4, ORDER_END, false);
         addMaterial(ReforgedMaterialIds.cyber_steel, 4, ORDER_END, false);
+        addMaterial(ReforgedMaterialIds.gelot, 4, ORDER_END, false);
+        addMaterial(ReforgedMaterialIds.piroot, 4, ORDER_END, false);
     }
 
     @Nonnull

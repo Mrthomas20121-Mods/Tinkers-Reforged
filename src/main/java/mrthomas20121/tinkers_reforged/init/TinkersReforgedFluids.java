@@ -39,6 +39,8 @@ public class TinkersReforgedFluids {
     public static FluidObject<ForgeFlowingFluid> red_beryl = register("molten_red_beryl", 900);
     public static FluidObject<ForgeFlowingFluid> magma_steel = register("molten_magma_steel", 900);
     public static FluidObject<ForgeFlowingFluid> cyber_steel = register("molten_cyber_steel", 900);
+    public static FluidObject<ForgeFlowingFluid> gelot = register("molten_gelot", 1200);
+    public static FluidObject<ForgeFlowingFluid> piroot = register("molten_piroot", 1200);
     public static FluidObject<ForgeFlowingFluid> coal = register("liquid_coal", 500);
 
     private static FluidObject<ForgeFlowingFluid> register(String name, int temp) {

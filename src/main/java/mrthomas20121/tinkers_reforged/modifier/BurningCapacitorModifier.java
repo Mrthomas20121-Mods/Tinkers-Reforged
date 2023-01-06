@@ -3,13 +3,14 @@ package mrthomas20121.tinkers_reforged.modifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.impl.NoLevelsModifier;
 import slimeknights.tconstruct.library.tools.helper.ToolDamageUtil;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import javax.annotation.Nonnull;
 
-public class BurningCapacitorModifier extends NoLevelsModifier {
+public class BurningCapacitorModifier extends Modifier {
 
     public BurningCapacitorModifier() {
         super();
@@ -18,7 +19,7 @@ public class BurningCapacitorModifier extends NoLevelsModifier {
     @Override
     public void onInventoryTick(@Nonnull IToolStackView tool, int level, @Nonnull Level world, @Nonnull LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if(holder.isOnFire() && isSelected) {
-            ToolDamageUtil.repair(tool, 5+level);
+            ToolDamageUtil.repair(tool, (int) (1.2f*level));
         }
     }
 }

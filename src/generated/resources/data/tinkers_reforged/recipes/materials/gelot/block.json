@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/gelot"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:gelot",
+  "leftover": {
+    "tag": "forge:ingots/gelot"
+  }
+}

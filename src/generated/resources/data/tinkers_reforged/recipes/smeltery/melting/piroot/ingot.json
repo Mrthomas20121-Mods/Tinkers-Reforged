@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/piroot"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_piroot",
+    "amount": 90
+  },
+  "temperature": 900,
+  "time": 63
+}

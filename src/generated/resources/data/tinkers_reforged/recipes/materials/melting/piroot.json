@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:piroot",
+  "temperature": 900,
+  "result": {
+    "fluid": "tinkers_reforged:molten_piroot",
+    "amount": 90
+  }
+}

@@ -49,6 +49,8 @@ public class ReforgedBlockStates extends BlockStateProvider {
         blockWithItem(TinkersReforgedBlocks.hureaulite_block);
         blockWithItem(TinkersReforgedBlocks.deepslate_hureaulite_ore);
         blockWithItem(TinkersReforgedBlocks.red_beryl_block);
+        blockWithItem(TinkersReforgedBlocks.gelot_block);
+        blockWithItem(TinkersReforgedBlocks.piroot_block);
         blockWithItem(TinkersReforgedBlocks.red_beryl_ore);
         blockWithItem(TinkersReforgedBlocks.deepslate_red_beryl_ore);
 
@@ -79,6 +81,8 @@ public class ReforgedBlockStates extends BlockStateProvider {
         fluid(TinkersReforgedFluids.coal);
         fluid(TinkersReforgedFluids.hureaulite);
         fluid(TinkersReforgedFluids.red_beryl);
+        fluid(TinkersReforgedFluids.gelot);
+        fluid(TinkersReforgedFluids.piroot);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {

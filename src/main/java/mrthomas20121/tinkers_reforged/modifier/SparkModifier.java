@@ -18,9 +18,11 @@ public class SparkModifier extends Modifier {
     public void critEvent(CriticalHitEvent event) {
         if(event.getEntityLiving() instanceof Player player) {
             ItemStack mainHandItem = player.getMainHandItem();
-            ToolStack stack = ToolStack.from(mainHandItem);
-            if(stack.getModifierLevel(this) < 0) {
-                event.setDamageModifier(5f);
+            if(ToolStack.isInitialized(mainHandItem)) {
+                ToolStack stack = ToolStack.from(mainHandItem);
+                if(stack.getModifierLevel(this) < 0) {
+                    event.setDamageModifier(5f);
+                }
             }
         }
     }

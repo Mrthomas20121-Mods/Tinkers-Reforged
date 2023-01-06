@@ -1,0 +1,14 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "minecraft:end_stone"
+  },
+  "cast_consumed": true,
+  "switch_slots": true,
+  "fluid": {
+    "tag": "forge:molten_diamond",
+    "amount": 1000
+  },
+  "result": "tinkers_reforged:gelot_block",
+  "cooling_time": 263
+}

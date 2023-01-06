@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/gelot",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/gelot"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_gelot",
+    "amount": 45
+  },
+  "temperature": 900,
+  "time": 13
+}

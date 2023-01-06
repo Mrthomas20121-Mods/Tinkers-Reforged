@@ -1,0 +1,45 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:gelot_block"
+          ]
+        },
+        "criteria": {
+          "has_ingot": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "tinkers_reforged:gelot_ingot"
+                  ]
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "tinkers_reforged:gelot_block"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_ingot",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

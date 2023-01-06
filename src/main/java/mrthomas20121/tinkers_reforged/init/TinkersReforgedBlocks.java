@@ -45,6 +45,8 @@ public class TinkersReforgedBlocks {
     public static RegistryObject<Block> galu_block = BLOCKS.register("galu_block", () -> new Block(METAL));
     public static RegistryObject<Block> magma_steel_block = BLOCKS.register("magma_steel_block", () -> new Block(METAL));
     public static RegistryObject<Block> cyber_steel_block = BLOCKS.register("cyber_steel_block", () -> new Block(METAL));
+    public static RegistryObject<Block> gelot_block = BLOCKS.register("gelot_block", () -> new Block(METAL));
+    public static RegistryObject<Block> piroot_block = BLOCKS.register("piroot_block", () -> new Block(METAL));
     public static RegistryObject<Block> hureaulite_block = BLOCKS.register("hureaulite_block", () -> new Block(METAL));
     public static RegistryObject<Block> deepslate_hureaulite_ore = BLOCKS.register("deepslate_hureaulite_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
     public static RegistryObject<Block> red_beryl_block = BLOCKS.register("red_beryl_block", () -> new Block(METAL));

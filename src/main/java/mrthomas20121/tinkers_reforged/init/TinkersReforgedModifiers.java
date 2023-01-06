@@ -56,4 +56,8 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<Modifier> magma_steel_unbending = MODIFIERS.register("unbending", UnbendingModifier::new);
 
     public static StaticModifier<Modifier> cyber_steel_swift_eye = MODIFIERS.register("swift_eye", SwiftEyeModifier::new);
+
+    public static StaticModifier<Modifier> tenacity = MODIFIERS.register("tenacity", TenacityModifier::new);
+
+    public static StaticModifier<Modifier> half_powered_fists = MODIFIERS.register("half_powered_fists", TenacityModifier::new);
 }

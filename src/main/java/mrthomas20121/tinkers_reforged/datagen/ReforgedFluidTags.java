@@ -55,6 +55,8 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(CYBER_STEEL).add(TinkersReforgedFluids.cyber_steel.get());
         tag(HUREAULITE).add(TinkersReforgedFluids.hureaulite.get());
         tag(RED_BERYL).add(TinkersReforgedFluids.red_beryl.get());
+        tag(GELOT).add(TinkersReforgedFluids.gelot.get());
+        tag(PIROOT).add(TinkersReforgedFluids.piroot.get());
 
         tag(REDSTONE_).add(TinkersReforgedFluids.redstone.get());
         tag(BLAZING_COPPER_).add(TinkersReforgedFluids.blazing_copper.get());
@@ -82,5 +84,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tag(CYBER_STEEL_).add(TinkersReforgedFluids.cyber_steel.get());
         tag(HUREAULITE_).add(TinkersReforgedFluids.hureaulite.get());
         tag(RED_BERYL_).add(TinkersReforgedFluids.red_beryl.get());
+        tag(GELOT_).add(TinkersReforgedFluids.gelot.get());
+        tag(PIROOT_).add(TinkersReforgedFluids.piroot.get());
     }
 }

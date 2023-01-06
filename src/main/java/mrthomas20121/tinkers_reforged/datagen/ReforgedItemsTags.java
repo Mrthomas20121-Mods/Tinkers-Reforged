@@ -84,7 +84,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                         TinkersReforgedItems.hureaulite_block.get(),
                         TinkersReforgedItems.red_beryl_block.get(),
                         TinkersReforgedItems.magma_steel_block.get(),
-                        TinkersReforgedItems.cyber_steel_block.get()
+                        TinkersReforgedItems.cyber_steel_block.get(),
+                        TinkersReforgedItems.gelot_block.get(),
+                        TinkersReforgedItems.piroot_block.get()
                 );
 
         tag(BLAZING_COPPER_BLOCK).add(TinkersReforgedItems.blazing_copper_block.get());
@@ -108,6 +110,8 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(CYBER_STEEL_BLOCK).add(TinkersReforgedItems.cyber_steel_block.get());
         tag(HUREAULITE_BLOCK).add(TinkersReforgedItems.hureaulite_block.get());
         tag(RED_BERYL_BLOCK).add(TinkersReforgedItems.red_beryl_block.get());
+        tag(GELOT_BLOCK).add(TinkersReforgedItems.gelot_block.get());
+        tag(PIROOT_BLOCK).add(TinkersReforgedItems.piroot_block.get());
 
         tag(EPIDOTE_ORE).add(TinkersReforgedItems.deepslate_epidote_ore.get());
         tag(HUREAULITE_ORE).add(TinkersReforgedItems.deepslate_hureaulite_ore.get());
@@ -162,7 +166,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 TinkersReforgedItems.galu_ingot.get(),
                 TinkersReforgedItems.blazing_copper_ingot.get(),
                 TinkersReforgedItems.magma_steel_ingot.get(),
-                TinkersReforgedItems.cyber_steel_ingot.get()
+                TinkersReforgedItems.cyber_steel_ingot.get(),
+                TinkersReforgedItems.gelot_ingot.get(),
+                TinkersReforgedItems.piroot_ingot.get()
         );
 
         tag(Tags.Items.DUSTS).add(
@@ -183,7 +189,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 TinkersReforgedItems.galu_dust.get(),
                 TinkersReforgedItems.blazing_copper_dust.get(),
                 TinkersReforgedItems.magma_steel_dust.get(),
-                TinkersReforgedItems.cyber_steel_dust.get()
+                TinkersReforgedItems.cyber_steel_dust.get(),
+                TinkersReforgedItems.gelot_dust.get(),
+                TinkersReforgedItems.piroot_dust.get()
         );
 
         tag(Tags.Items.NUGGETS).add(
@@ -204,7 +212,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                 TinkersReforgedItems.galu_nugget.get(),
                 TinkersReforgedItems.blazing_copper_nugget.get(),
                 TinkersReforgedItems.magma_steel_nugget.get(),
-                TinkersReforgedItems.cyber_steel_nugget.get()
+                TinkersReforgedItems.cyber_steel_nugget.get(),
+                TinkersReforgedItems.gelot_nugget.get(),
+                TinkersReforgedItems.piroot_ingot.get()
         );
 
         tag(BLAZING_COPPER_INGOT).add(TinkersReforgedItems.blazing_copper_ingot.get());
@@ -281,6 +291,14 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(GALU_DUST).add(TinkersReforgedItems.galu_dust.get());
         tag(GALU_NUGGET).add(TinkersReforgedItems.galu_nugget.get());
 
+        tag(GELOT_INGOT).add(TinkersReforgedItems.gelot_ingot.get());
+        tag(GELOT_DUST).add(TinkersReforgedItems.gelot_dust.get());
+        tag(GELOT_NUGGET).add(TinkersReforgedItems.gelot_nugget.get());
+
+        tag(PIROOT_INGOT).add(TinkersReforgedItems.piroot_ingot.get());
+        tag(PIROOT_DUST).add(TinkersReforgedItems.piroot_dust.get());
+        tag(PIROOT_NUGGET).add(TinkersReforgedItems.piroot_nugget.get());
+
         tag(TinkerTags.Items.ANVIL_METAL)
                 .add(
                         TinkersReforgedItems.kepu_block.get(),
@@ -305,7 +323,9 @@ public class ReforgedItemsTags extends ItemTagsProvider {
                         TinkersReforgedItems.red_beryl_block.get(),
                         TinkersReforgedItems.blazing_copper_block.get(),
                         TinkersReforgedItems.magma_steel_block.get(),
-                        TinkersReforgedItems.cyber_steel_block.get()
+                        TinkersReforgedItems.cyber_steel_block.get(),
+                        TinkersReforgedItems.gelot_block.get(),
+                        TinkersReforgedItems.piroot_block.get()
                 );
 
         TagsProvider.TagAppender<Item> builder = tag(ALUMINUM_CASTS);

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:sheetmetals/piroot",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:sheetmetals/piroot"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_piroot",
+    "amount": 90
+  },
+  "temperature": 900,
+  "time": 63
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:molten_piroot",
+    "amount": 90
+  },
+  "result": "tinkers_reforged:piroot_ingot",
+  "cooling_time": 63
+}

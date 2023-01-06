@@ -28,6 +28,8 @@ public class ReforgedMaterialIds {
     public static final MaterialId blazing_copper = createMaterial("blazing_copper");
     public static final MaterialId magma_steel = createMaterial("magma_steel");
     public static final MaterialId cyber_steel = createMaterial("cyber_steel");
+    public static final MaterialId piroot = createMaterial("piroot");
+    public static final MaterialId gelot = createMaterial("gelot");
 
     public static MaterialId createMaterial(String name) {
         return new MaterialId(new ResourceLocation(TinkersReforged.MOD_ID, name));

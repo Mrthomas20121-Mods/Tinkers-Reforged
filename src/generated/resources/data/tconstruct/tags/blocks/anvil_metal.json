@@ -20,6 +20,8 @@
     "tinkers_reforged:hureaulite_block",
     "tinkers_reforged:red_beryl_block",
     "tinkers_reforged:magma_steel_block",
-    "tinkers_reforged:cyber_steel_block"
+    "tinkers_reforged:cyber_steel_block",
+    "tinkers_reforged:gelot_block",
+    "tinkers_reforged:piroot_block"
   ]
 }

@@ -42,12 +42,13 @@ public class TinkersReforgedItems {
 
     public static RegistryObject<Item> book = ITEMS.register("reforging_guide", () -> new TinkersReforgedBookItem(new Item.Properties().stacksTo(1).tab(group)));
 
+    public static RegistryObject<Item> ender_bone = ITEMS.register("ender_bone", TinkersReforgedItems::register);
+
     public static RegistryObject<Item> blazing_copper_ingot = ITEMS.register("blazing_copper_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> blazing_copper_dust = ITEMS.register("blazing_copper_dust", TinkersReforgedItems::register);
     public static RegistryObject<Item> blazing_copper_nugget = ITEMS.register("blazing_copper_nugget", TinkersReforgedItems::register);
     public static RegistryObject<Item> blazing_copper_block = ITEMS.register("blazing_copper_block", () -> registerItemBlock(TinkersReforgedBlocks.blazing_copper_block.get()));
 
-    public static RegistryObject<Item> ender_bone = ITEMS.register("ender_bone", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_ingot = ITEMS.register("aluminum_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_dust = ITEMS.register("aluminum_dust", TinkersReforgedItems::register);
     public static RegistryObject<Item> aluminum_nugget = ITEMS.register("aluminum_nugget", TinkersReforgedItems::register);
@@ -143,6 +144,16 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> cyber_steel_dust = ITEMS.register("cyber_steel_dust", TinkersReforgedItems::register);
     public static RegistryObject<Item> cyber_steel_nugget = ITEMS.register("cyber_steel_nugget", TinkersReforgedItems::register);
     public static RegistryObject<Item> cyber_steel_block = ITEMS.register("cyber_steel_block", () -> registerItemBlock(TinkersReforgedBlocks.cyber_steel_block.get()));
+
+    public static RegistryObject<Item> gelot_ingot = ITEMS.register("gelot_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> gelot_dust = ITEMS.register("gelot_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> gelot_nugget = ITEMS.register("gelot_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> gelot_block = ITEMS.register("gelot_block", () -> registerItemBlock(TinkersReforgedBlocks.gelot_block.get()));
+
+    public static RegistryObject<Item> piroot_ingot = ITEMS.register("piroot_ingot", TinkersReforgedItems::register);
+    public static RegistryObject<Item> piroot_dust = ITEMS.register("piroot_dust", TinkersReforgedItems::register);
+    public static RegistryObject<Item> piroot_nugget = ITEMS.register("piroot_nugget", TinkersReforgedItems::register);
+    public static RegistryObject<Item> piroot_block = ITEMS.register("piroot_block", () -> registerItemBlock(TinkersReforgedBlocks.piroot_block.get()));
 
     public static RegistryObject<Item> hureaulite_gem = ITEMS.register("hureaulite_gem", TinkersReforgedItems::register);
     public static RegistryObject<Item> hureaulite_block = ITEMS.register("hureaulite_block", () -> registerItemBlock(TinkersReforgedBlocks.hureaulite_block.get()));

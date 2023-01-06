@@ -136,5 +136,15 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(1200, 7f, NETHERITE, 3f),
                 HandleMaterialStats.DEFAULT.withAttackSpeed(1.15f),
                 ExtraMaterialStats.DEFAULT);
+
+        addMaterialStats(ReforgedMaterialIds.gelot,
+                new HeadMaterialStats(1000, 6.2f, DIAMOND, 2.1f),
+                HandleMaterialStats.DEFAULT.withDurability(1.5f).withMiningSpeed(0.9f),
+                ExtraMaterialStats.DEFAULT);
+
+        addMaterialStats(ReforgedMaterialIds.piroot,
+                new HeadMaterialStats(1000, 6.5f, NETHERITE, 2.5f),
+                HandleMaterialStats.DEFAULT.withDurability(1.5f).withMiningSpeed(0.9f),
+                ExtraMaterialStats.DEFAULT);
     }
 }

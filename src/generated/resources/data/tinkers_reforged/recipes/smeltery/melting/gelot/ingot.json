@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/gelot"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:molten_gelot",
+    "amount": 90
+  },
+  "temperature": 900,
+  "time": 63
+}

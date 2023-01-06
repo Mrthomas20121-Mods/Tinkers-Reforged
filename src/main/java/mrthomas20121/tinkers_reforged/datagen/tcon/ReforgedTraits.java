@@ -59,6 +59,10 @@ public class ReforgedTraits extends AbstractMaterialTraitDataProvider {
         addDefaultTraits(ReforgedMaterialIds.cyber_steel, TinkersReforgedModifiers.cyber_steel_swift_eye);
 
         addDefaultTraits(ReforgedMaterialIds.ender_bone, TinkersReforgedModifiers.collapsed);
+
+        addDefaultTraits(ReforgedMaterialIds.gelot, TinkersReforgedModifiers.tenacity);
+
+        addDefaultTraits(ReforgedMaterialIds.piroot, TinkersReforgedModifiers.half_powered_fists);
     }
 
     @Nonnull

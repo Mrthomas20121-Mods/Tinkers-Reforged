@@ -112,6 +112,14 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.cyber_steel_ingot, "Cyber Steel Ingot");
         addItem(TinkersReforgedItems.cyber_steel_dust, "Cyber Steel Dust");
         addItem(TinkersReforgedItems.cyber_steel_nugget, "Cyber Steel Nugget");
+        addBlock(TinkersReforgedBlocks.gelot_block, "Gelot Block");
+        addItem(TinkersReforgedItems.gelot_ingot, "Gelot Ingot");
+        addItem(TinkersReforgedItems.gelot_dust, "Gelot Dust");
+        addItem(TinkersReforgedItems.gelot_nugget, "Gelot Nugget");
+        addBlock(TinkersReforgedBlocks.piroot_block, "Piroot Block");
+        addItem(TinkersReforgedItems.piroot_ingot, "Piroot Ingot");
+        addItem(TinkersReforgedItems.piroot_dust, "Piroot Dust");
+        addItem(TinkersReforgedItems.piroot_nugget, "Piroot Nugget");
         addBlock(TinkersReforgedBlocks.deepslate_hureaulite_ore, "Deepslate Hureaulite Ore");
         addBlock(TinkersReforgedBlocks.hureaulite_block, "Hureaulite Block");
         addItem(TinkersReforgedItems.hureaulite_gem, "Hureaulite Gem");
@@ -154,6 +162,8 @@ public class ReforgedLang extends LanguageProvider {
         addFluid(TinkersReforgedFluids.cyber_steel, "Molten Cyber Steel");
         addFluid(TinkersReforgedFluids.hureaulite, "Molten Hureaulite");
         addFluid(TinkersReforgedFluids.red_beryl, "Molten Red Beryl");
+        addFluid(TinkersReforgedFluids.gelot, "Molten Gelot");
+        addFluid(TinkersReforgedFluids.piroot, "Molten Piroot");
 
         add(TinkersReforgedFluids.redstone.get().getBucket(), "Liquid Redstone Bucket");
         add(TinkersReforgedFluids.duralumin.get().getBucket(), "Molten Duralumin Bucket");
@@ -182,6 +192,8 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.cyber_steel.get().getBucket(), "Molten Cyber Steel Bucket");
         add(TinkersReforgedFluids.hureaulite.get().getBucket(), "Molten Hureaulite Bucket");
         add(TinkersReforgedFluids.red_beryl.get().getBucket(), "Molten Red Beryl Bucket");
+        add(TinkersReforgedFluids.gelot.get().getBucket(), "Molten Piroot Bucket");
+        add(TinkersReforgedFluids.piroot.get().getBucket(), "Molten Piroot Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");
         add("effect.tinkers_reforged.fungal", "Fungal");
@@ -213,6 +225,8 @@ public class ReforgedLang extends LanguageProvider {
         addMaterial(ReforgedMaterialIds.blazing_copper, "Blazing Copper", "Its Blazing Hot!", "What if Blazing blood and Copper had a baby?");
         addMaterial(ReforgedMaterialIds.magma_steel, "Magma Steel", "A hot nether alloy", "Steel meet Magma");
         addMaterial(ReforgedMaterialIds.cyber_steel, "Cyber Steel", "A cool end alloy", "Steel meet Chorus Metal");
+        addMaterial(ReforgedMaterialIds.gelot, "Gelot", "Strange alloy from the end", "When endstone and diamond meet");
+        addMaterial(ReforgedMaterialIds.piroot, "Piroot", "Strange alloy from the end", "When endstone and netherite meet");
 
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you(Scale with your titanic dmg modifier level).");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
@@ -237,6 +251,8 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.aluminum_rotective_mantle, "Protective Mantle", "Better than no protection!", "Prevent the 4th durability lose.");
         addModifier(TinkersReforgedModifiers.cyber_steel_swift_eye, "Swift Eye", "Eye of the tiger", "Enderman Drop Eye of ender instead of Ender Pearl.");
         addModifier(TinkersReforgedModifiers.magma_steel_unbending, "Unbending", "The Earth is shaking!", "Damage dealt below 6 pierce through armor.");
+        addModifier(TinkersReforgedModifiers.tenacity, "Tenacity", "Brave and strong", "The higher the durability, the higher the damage.");
+        addModifier(TinkersReforgedModifiers.half_powered_fists, "Half Powered Fists", "Don't take it personal kid", "Tool deal half damage but attack twice.");
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
         add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");
@@ -247,6 +263,7 @@ public class ReforgedLang extends LanguageProvider {
         add("modifier.tinkers_reforged.ender_taint.malus", "Attack Damage/Mining Speed in the other dimensions.");
         add("modifier.tinkers_reforged.giant_cells.mining_speed", "Bonus mining speed");
         add("modifier.tinkers_reforged.adapting.cap", "You have reach the max bonus you can get with adapting");
+        add("modifier.tinkers_reforged.tenacity.attack_damage", "Tenacity damage");
     }
 
     public void addCast(CastObject object) {
