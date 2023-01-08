@@ -38,7 +38,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         tag(TinkerTags.Items.SWORD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.MELEE_PRIMARY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.HARVEST).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.ONE_HANDED).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
+        tag(TinkerTags.Items.HELD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.DURABILITY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
         tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LARGE_ROUND_PLATE.get());

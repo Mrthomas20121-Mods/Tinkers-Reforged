@@ -101,7 +101,7 @@ public class TinkersReforgedTags {
         public static final TagKey<Item> HUREAULITE_BLOCK = create("forge:storage_blocks/hureaulite");
         public static final TagKey<Item> GALU_BLOCK = create("forge:storage_blocks/galu");
         public static final TagKey<Item> RED_BERYL_BLOCK = create("forge:storage_blocks/red_beryl");
-        public static final TagKey<Item> GELOT_BLOCK = create("forge:storage_blocks/piroot");
+        public static final TagKey<Item> GELOT_BLOCK = create("forge:storage_blocks/gelot");
         public static final TagKey<Item> PIROOT_BLOCK = create("forge:storage_blocks/piroot");
 
         // raw blocks

@@ -13,7 +13,7 @@ public class ReforgedMaterials extends AbstractMaterialDataProvider {
 
     @Override
     protected void addMaterials() {
-        addMaterial(ReforgedMaterialIds.aluminum, 1, ORDER_GENERAL, false);
+        //addMaterial(ReforgedMaterialIds.aluminum, 1, ORDER_GENERAL, false);
         addMaterial(ReforgedMaterialIds.duralumin, 2, ORDER_GENERAL, false);
         addMaterial(ReforgedMaterialIds.yokel, 2, ORDER_GENERAL, false);
         addMaterial(ReforgedMaterialIds.epidote, 2, ORDER_GENERAL, false);

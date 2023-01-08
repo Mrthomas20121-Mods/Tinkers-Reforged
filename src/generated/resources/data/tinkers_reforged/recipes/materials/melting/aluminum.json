@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:aluminum",
-  "temperature": 425,
-  "result": {
-    "fluid": "tconstruct:molten_aluminum",
-    "amount": 90
-  }
-}

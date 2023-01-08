@@ -91,8 +91,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         blockIngotNuggetCompression(consumer, "gelot", TinkersReforgedBlocks.gelot_block.get().asItem(), TinkersReforgedItems.gelot_ingot.get(), TinkersReforgedItems.gelot_nugget.get());
         blockIngotNuggetCompression(consumer, "piroot", TinkersReforgedBlocks.piroot_block.get().asItem(), TinkersReforgedItems.piroot_ingot.get(), TinkersReforgedItems.piroot_nugget.get());
 
-
-
         gemBlock(consumer, "epidote", TinkersReforgedItems.epidote_block.get(), TinkersReforgedItems.epidote_gem.get());
         gemBlock(consumer, "hureaulite", TinkersReforgedItems.hureaulite_block.get(), TinkersReforgedItems.hureaulite_gem.get());
         gemBlock(consumer, "red_beryl", TinkersReforgedItems.red_beryl_block.get(), TinkersReforgedItems.red_beryl_gem.get());
@@ -217,7 +215,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalCasting(consumer, TinkersReforgedFluids.gelot, TinkersReforgedBlocks.gelot_block.get(), TinkersReforgedItems.gelot_ingot.get(), TinkersReforgedItems.gelot_nugget.get(), castingFolder, "gelot");
         metalCasting(consumer, TinkersReforgedFluids.piroot, TinkersReforgedBlocks.piroot_block.get(), TinkersReforgedItems.piroot_ingot.get(), TinkersReforgedItems.piroot_nugget.get(), castingFolder, "piroot");
 
-        materialMeltingCasting(consumer, ReforgedMaterialIds.aluminum, TinkerFluids.moltenAluminum, materialFolder);
+        //materialMeltingCasting(consumer, ReforgedMaterialIds.aluminum, TinkerFluids.moltenAluminum, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterialIds.blazing_copper, TinkersReforgedFluids.blazing_copper, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterialIds.duralumin, TinkersReforgedFluids.duralumin, materialFolder);
         materialMeltingCasting(consumer, ReforgedMaterialIds.electrical_copper, TinkersReforgedFluids.electrical_copper, materialFolder);
@@ -260,7 +258,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalMelting(consumer, TinkersReforgedFluids.gelot.get(), "gelot", false, meltingFolder, false);
         metalMelting(consumer, TinkersReforgedFluids.piroot.get(), "piroot", false, meltingFolder, false);
 
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.aluminum, materialFolder, "aluminum", false);
+        //metalMaterialRecipe(consumer, ReforgedMaterialIds.aluminum, materialFolder, "aluminum", false);
         metalMaterialRecipe(consumer, ReforgedMaterialIds.blazing_copper, materialFolder, "blazing_copper", false);
         metalMaterialRecipe(consumer, ReforgedMaterialIds.gausum, materialFolder, "gausum", false);
         metalMaterialRecipe(consumer, ReforgedMaterialIds.duralumin, materialFolder, "duralumin", false);
