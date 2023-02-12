@@ -24,7 +24,7 @@ public class TinkersReforgedConfig {
         public final OreConfig redBerylOre;
 
         CommonConfig(ForgeConfigSpec.Builder builder) {
-            adaptingModifierCap = builder.comment("Default Modifier Cap for adapting").define("adaptingModifierCap", 10f);
+            adaptingModifierCap = builder.comment("Default Modifier Cap for adapting").define("adaptingModifierCap", 15f);
             builder.comment("Bauxite Ore Worldgen").push("bauxite_ore");
             bauxiteOre = new BauxiteOreConfig(builder);
             builder.pop();

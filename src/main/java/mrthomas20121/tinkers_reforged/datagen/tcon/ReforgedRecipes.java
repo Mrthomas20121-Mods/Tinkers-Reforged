@@ -655,7 +655,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         gemBlockCasting(consumer, () -> gemBlock, fluid, castingFolder+name+"/"+gem);
         gemCasting(consumer, fluid, gem, meltingFolder+name+"/"+gem);
 
-        gemMelting(consumer, fluid.get(), name, true, FluidValues.LARGE_GEM_BLOCK, meltingFolder, false, byproduct);
+        gemMelting(consumer, fluid.get(), name, true, 9, meltingFolder, false, byproduct);
     }
 
     private void gemBlockCasting(Consumer<FinishedRecipe> consumer, Supplier<Block> block, FluidObject<ForgeFlowingFluid> fluid, String folder) {

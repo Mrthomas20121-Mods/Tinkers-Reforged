@@ -24,7 +24,7 @@ public class FelDebrisModifier extends Modifier {
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         LivingEntity target = context.getLivingTarget();
         if(target != null && target.level.dimension().equals(Level.NETHER)) {
-            return baseDamage*1.5f;
+            return damage*1.5f;
         }
         return super.getEntityDamage(tool, level, context, baseDamage, damage);
     }

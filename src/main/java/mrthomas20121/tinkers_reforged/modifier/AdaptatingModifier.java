@@ -64,11 +64,11 @@ public class AdaptatingModifier extends Modifier {
             if(target.getMobType().equals(MobType.UNDEAD) || target.getMobType().equals(MobType.ARTHROPOD) || target instanceof Creeper) {
                 if(persistantData.contains(KEY, 5)) {
                     if(persistantData.getFloat(KEY) <= TinkersReforgedConfig.COMMON.adaptingModifierCap.get()) {
-                        persistantData.putFloat(KEY, persistantData.getFloat(KEY)+0.05f);
+                        persistantData.putFloat(KEY, persistantData.getFloat(KEY)+0.25f);
                     }
                 }
                 else {
-                    persistantData.putFloat(KEY, 0.05f*level);
+                    persistantData.putFloat(KEY, 0.25f*level);
                 }
             }
         }
