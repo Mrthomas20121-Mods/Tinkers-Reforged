@@ -82,7 +82,7 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(550, 7f, DIAMOND, 3f),
                 HandleMaterialStats.DEFAULT.withDurability(1.04f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(550, 0.5f, 0.5f, 1f),
+                new LimbMaterialStats(550, 0.5f, 0.5f, 0.5f),
                 new GripMaterialStats(1.6f, 0.5f, 1.9f));
 
         // electrical copper is iron with a bit more durability and have a better mining level
@@ -90,7 +90,7 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(400, 6f, DIAMOND, 2f),
                 HandleMaterialStats.DEFAULT.withDurability(0.9f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(400, -0.01f, 0.9f, 0f),
+                new LimbMaterialStats(400, -0.01f, 0.1f, 0.09f),
                 new GripMaterialStats(0.9f, -0.05f, 2f));
 
         addMaterialStats(ReforgedMaterialIds.durasteel,
@@ -104,7 +104,7 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(850, 6.6f, NETHERITE, 3.25f),
                 HandleMaterialStats.DEFAULT.withDurability(1.02f).withAttackDamage(1.02f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(850, 1.1f, -0.05f, 1.1f),
+                new LimbMaterialStats(850, 0.09f, -0.05f, 1.1f),
                 new GripMaterialStats(1.3f, 1.1f, 1f));
 
         addMaterialStats(ReforgedMaterialIds.wavy,
@@ -139,21 +139,21 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(600, 6.8f, DIAMOND, 3.1f),
                 HandleMaterialStats.DEFAULT.withDurability(0.8f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(600, -0.05f, 2f, 0.5f),
+                new LimbMaterialStats(600, -0.05f, 0.2f, 0.5f),
                 new GripMaterialStats(1.2f, 0.5f, 1.5f));
 
         addMaterialStats(ReforgedMaterialIds.hureaulite,
                 new HeadMaterialStats(550, 5.6f, DIAMOND, 2.2f),
                 HandleMaterialStats.DEFAULT.withMiningSpeed(1.1f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(550, 0.9f, 0.9f, 0.9f),
+                new LimbMaterialStats(550, 0.9f, 0.09f, 0.9f),
                 new GripMaterialStats(0.9f, 0.9f, 0.9f));
 
         addMaterialStats(ReforgedMaterialIds.red_beryl,
                 new HeadMaterialStats(500, 5.5f, DIAMOND, 2.1f),
                 HandleMaterialStats.DEFAULT.withAttackSpeed(1.1f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(500, 1f, 1f, 1f),
+                new LimbMaterialStats(500, 0.08f, 0.1f, 0.03f),
                 new GripMaterialStats(1f, 1f, 1f));
 
         addMaterialStats(ReforgedMaterialIds.ender_bone,
@@ -167,14 +167,14 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(1200, 7f, DIAMOND, 3f),
                 HandleMaterialStats.DEFAULT.withAttackSpeed(1.15f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(1200, 0.8f, 0.8f, -0.08f),
-                new GripMaterialStats(1.6f, 0.08f, 3f));
+                new LimbMaterialStats(1200, 0.8f, 0.5f, -0.08f),
+                new GripMaterialStats(1.6f, -0.08f, 3f));
 
         addMaterialStats(ReforgedMaterialIds.cyber_steel,
                 new HeadMaterialStats(1200, 7f, NETHERITE, 3f),
                 HandleMaterialStats.DEFAULT.withAttackSpeed(1.15f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(1200, -0.8f, 0.8f, 1.8f),
+                new LimbMaterialStats(1200, -0.8f, 0.5f, 1.8f),
                 new GripMaterialStats(1.6f, 0.08f, 3f));
 
         addMaterialStats(ReforgedMaterialIds.gelot,
@@ -188,7 +188,7 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(1000, 6.5f, NETHERITE, 2.5f),
                 HandleMaterialStats.DEFAULT.withDurability(1.5f).withMiningSpeed(0.9f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(1000, 0.5f, 1f, -0.1f),
+                new LimbMaterialStats(1000, -0.1f, 0.4f, 0.01f),
                 new GripMaterialStats(0.9f, -0.1f, 5f));
     }
 }
