@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_chorus_metal"
+    "tinkers_reforged:molten_chorus_metal",
+    "tinkers_reforged:flowing_molten_chorus_metal"
   ]
 }

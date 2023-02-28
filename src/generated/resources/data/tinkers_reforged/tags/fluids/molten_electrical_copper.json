@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_electrical_copper"
+    "tinkers_reforged:molten_electrical_copper",
+    "tinkers_reforged:flowing_molten_electrical_copper"
   ]
 }

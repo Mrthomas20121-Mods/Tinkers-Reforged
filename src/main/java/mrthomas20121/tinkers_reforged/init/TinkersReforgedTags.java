@@ -14,7 +14,6 @@ public class TinkersReforgedTags {
     public static void init() {
         Blocks.init();
         Items.init();
-        Fluids.init();
     }
 
     public static class Blocks {
@@ -198,75 +197,5 @@ public class TinkersReforgedTags {
         public static final TagKey<Item> RED_BERYL_GEM = create("forge:gems/red_beryl");
 
         public static final TagKey<Item> ALUMINUM_CASTS = create("tinkers_reforged:casts/aluminum");
-    }
-
-    public static class Fluids {
-
-        public static void init() {}
-
-        private static TagKey<Fluid> create(String name) {
-            return FluidTags.create(new ResourceLocation(name));
-        }
-
-        // forge tags
-        public static final TagKey<Fluid> DURALUMIN = create("forge:molten_duralumin");
-        public static final TagKey<Fluid> ELECTRICAL_COPPER = create("forge:molten_electrical_copper");
-        public static final TagKey<Fluid> LAVIUM = create("forge:molten_lavium");
-        public static final TagKey<Fluid> QIVIUM = create("forge:molten_qivium");
-        public static final TagKey<Fluid> BLAZING_COPPER = create("forge:molten_blazing_copper");
-        public static final TagKey<Fluid> LAPIS = create("forge:molten_lapis");
-        public static final TagKey<Fluid> GAUSUM = create("forge:molten_gausum");
-        public static final TagKey<Fluid> REDSTONE = create("forge:redstone");
-        public static final TagKey<Fluid> FELSTEEL = create("forge:molten_felsteel");
-        public static final TagKey<Fluid> KEPU = create("forge:molten_kepu");
-        public static final TagKey<Fluid> CHRORUS_METAL = create("forge:molten_chorus_metal");
-        public static final TagKey<Fluid> CHORUS = create("forge:molten_chorus");
-        public static final TagKey<Fluid> SHULKER = create("forge:molten_shulker");
-        public static final TagKey<Fluid> DURASTEEL = create("forge:molten_durasteel");
-        public static final TagKey<Fluid> CRUSTEEL = create("forge:molten_crusteel");
-        public static final TagKey<Fluid> WAVY = create("forge:molten_wavy");
-        public static final TagKey<Fluid> YOKEL = create("forge:molten_yokel");
-        public static final TagKey<Fluid> KELP = create("forge:molten_kelp");
-        public static final TagKey<Fluid> PROTO_LAVA = create("forge:molten_proto_lava");
-        public static final TagKey<Fluid> BAOLIAN = create("forge:molten_baolian");
-        public static final TagKey<Fluid> EPIDOTE = create("forge:molten_epidote");
-        public static final TagKey<Fluid> GALU = create("forge:molten_galu");
-        public static final TagKey<Fluid> COAL = create("forge:coal");
-        public static final TagKey<Fluid> MAGMA_STEEL = create("forge:molten_magma_steel");
-        public static final TagKey<Fluid> CYBER_STEEL = create("forge:molten_cyber_steel");
-        public static final TagKey<Fluid> HUREAULITE = create("forge:molten_hureaulite");
-        public static final TagKey<Fluid> RED_BERYL = create("forge:molten_red_beryl");
-        public static final TagKey<Fluid> GELOT = create("forge:molten_piroot");
-        public static final TagKey<Fluid> PIROOT = create("forge:molten_gelot");
-
-        // tinkers reforged tags
-        public static final TagKey<Fluid> DURALUMIN_ = create("tinkers_reforged:molten_duralumin");
-        public static final TagKey<Fluid> ELECTRICAL_COPPER_ = create("tinkers_reforged:molten_electrical_copper");
-        public static final TagKey<Fluid> LAVIUM_ = create("tinkers_reforged:molten_lavium");
-        public static final TagKey<Fluid> QIVIUM_ = create("tinkers_reforged:molten_qivium");
-        public static final TagKey<Fluid> BLAZING_COPPER_ = create("tinkers_reforged:molten_blazing_copper");
-        public static final TagKey<Fluid> GAUSUM_ = create("tinkers_reforged:molten_gausum");
-        public static final TagKey<Fluid> REDSTONE_ = create("tinkers_reforged:redstone");
-        public static final TagKey<Fluid> LAPIS_ = create("tinkers_reforged:molten_lapis");
-        public static final TagKey<Fluid> FELSTEEL_ = create("tinkers_reforged:molten_felsteel");
-        public static final TagKey<Fluid> KEPU_ = create("tinkers_reforged:molten_kepu");
-        public static final TagKey<Fluid> CHRORUS_METAL_ = create("tinkers_reforged:molten_chorus_metal");
-        public static final TagKey<Fluid> CHORUS_ = create("tinkers_reforged:molten_chorus");
-        public static final TagKey<Fluid> SHULKER_ = create("tinkers_reforged:molten_shulker");
-        public static final TagKey<Fluid> DURASTEEL_ = create("tinkers_reforged:molten_durasteel");
-        public static final TagKey<Fluid> CRUSTEEL_ = create("tinkers_reforged:molten_crusteel");
-        public static final TagKey<Fluid> WAVY_ = create("tinkers_reforged:molten_wavy");
-        public static final TagKey<Fluid> YOKEL_ = create("tinkers_reforged:molten_yokel");
-        public static final TagKey<Fluid> KELP_ = create("tinkers_reforged:molten_kelp");
-        public static final TagKey<Fluid> PROTO_LAVA_ = create("tinkers_reforged:molten_proto_lava");
-        public static final TagKey<Fluid> BAOLIAN_ = create("tinkers_reforged:molten_baolian");
-        public static final TagKey<Fluid> EPIDOTE_ = create("tinkers_reforged:molten_epidote");
-        public static final TagKey<Fluid> GALU_ = create("tinkers_reforged:molten_galu");
-        public static final TagKey<Fluid> MAGMA_STEEL_ = create("tinkers_reforged:molten_magma_steel");
-        public static final TagKey<Fluid> CYBER_STEEL_ = create("tinkers_reforged:molten_cyber_steel");
-        public static final TagKey<Fluid> HUREAULITE_ = create("tinkers_reforged:molten_hureaulite");
-        public static final TagKey<Fluid> RED_BERYL_ = create("tinkers_reforged:molten_red_beryl");
-        public static final TagKey<Fluid> GELOT_ = create("tinkers_reforged:molten_piroot");
-        public static final TagKey<Fluid> PIROOT_ = create("tinkers_reforged:molten_gelot");
     }
 }

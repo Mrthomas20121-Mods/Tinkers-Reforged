@@ -6,7 +6,7 @@
   "cast_consumed": true,
   "switch_slots": true,
   "fluid": {
-    "tag": "forge:molten_diamond",
+    "tag": "tconstruct:molten_diamond",
     "amount": 1000
   },
   "result": "tinkers_reforged:gelot_block",

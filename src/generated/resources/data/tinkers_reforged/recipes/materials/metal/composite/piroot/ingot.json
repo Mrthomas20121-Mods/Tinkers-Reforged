@@ -6,7 +6,7 @@
   "cast_consumed": true,
   "switch_slots": true,
   "fluid": {
-    "tag": "forge:molten_netherite",
+    "tag": "tconstruct:molten_netherite",
     "amount": 1000
   },
   "result": "tinkers_reforged:piroot_block",

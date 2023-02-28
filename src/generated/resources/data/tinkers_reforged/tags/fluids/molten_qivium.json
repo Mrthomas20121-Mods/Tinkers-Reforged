@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_qivium"
+    "tinkers_reforged:molten_qivium",
+    "tinkers_reforged:flowing_molten_qivium"
   ]
 }

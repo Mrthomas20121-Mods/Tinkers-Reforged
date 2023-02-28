@@ -192,7 +192,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.cyber_steel.get().getBucket(), "Molten Cyber Steel Bucket");
         add(TinkersReforgedFluids.hureaulite.get().getBucket(), "Molten Hureaulite Bucket");
         add(TinkersReforgedFluids.red_beryl.get().getBucket(), "Molten Red Beryl Bucket");
-        add(TinkersReforgedFluids.gelot.get().getBucket(), "Molten Piroot Bucket");
+        add(TinkersReforgedFluids.gelot.get().getBucket(), "Molten Gelot Bucket");
         add(TinkersReforgedFluids.piroot.get().getBucket(), "Molten Piroot Bucket");
 
         add("effect.tinkers_reforged.electro_web", "Electro Web");

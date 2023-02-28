@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_duralumin"
+    "tinkers_reforged:molten_duralumin",
+    "tinkers_reforged:flowing_molten_duralumin"
   ]
 }

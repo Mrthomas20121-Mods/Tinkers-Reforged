@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_gausum"
+    "tinkers_reforged:molten_gausum",
+    "tinkers_reforged:flowing_molten_gausum"
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_clusters/coal",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_clusters/coal"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:liquid_coal",
+    "amount": 400
+  },
+  "temperature": 200,
+  "time": 95
+}

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_kepu"
+    "tinkers_reforged:molten_kepu",
+    "tinkers_reforged:flowing_molten_kepu"
   ]
 }

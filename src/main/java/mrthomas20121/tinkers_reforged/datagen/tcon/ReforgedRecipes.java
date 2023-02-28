@@ -177,7 +177,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.crusteel.get(), FluidValues.INGOT*3)
                 .addInput(TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
                 .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenAmethyst.get(), FluidValues.INGOT)
+                .addInput(TinkerFluids.moltenAmethyst.get(), FluidValues.GEM)
                 .save(consumer, modResource(alloyFolder+"crusteel"));
     }
 
@@ -324,8 +324,8 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         metalComposite(consumer, Items.CRIMSON_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "composite/wavy/crimson");
         metalComposite(consumer, Items.WARPED_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "composite/wavy/warped");
         metalComposite(consumer, TinkersReforgedItems.blazing_copper_ingot.get(), TinkersReforgedItems.electrical_copper_dust.get(), TinkersReforgedFluids.redstone, true, materialFolder, "electrical_copper");
-        metalComposite(consumer, Blocks.END_STONE, TinkersReforgedItems.gelot_block.get(), TinkerFluids.moltenDiamond, true, materialFolder, "composite/gelot/ingot");
-        metalComposite(consumer, Blocks.END_STONE, TinkersReforgedItems.piroot_block.get(), TinkerFluids.moltenNetherite, true, materialFolder, "composite/piroot/ingot");
+        metalComposite(consumer, Blocks.END_STONE, TinkersReforgedItems.gelot_block.get(), TinkerFluids.moltenDiamond, false, materialFolder, "composite/gelot/ingot");
+        metalComposite(consumer, Blocks.END_STONE, TinkersReforgedItems.piroot_block.get(), TinkerFluids.moltenNetherite, false, materialFolder, "composite/piroot/ingot");
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.KELP), new FluidStack(TinkersReforgedFluids.kelp.get(), FluidValues.SLIMEBALL), 500, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/kelp"));
         MeltingRecipeBuilder.melting(Ingredient.of(ItemTags.COALS), new FluidStack(TinkersReforgedFluids.coal.get(), FluidValues.SLIMEBALL), 300, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/coal"));
@@ -346,6 +346,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         MeltingRecipeBuilder.melting(Ingredient.of(Items.POPPED_CHORUS_FRUIT), TinkersReforgedFluids.chorus.get(), FluidValues.INGOT).save(consumer, modResource(meltingFolder+"popped_chorus_fruit"));
         ingotCasting(consumer, TinkersReforgedFluids.chorus, Items.POPPED_CHORUS_FRUIT, castFolder+"chorus_fruit");
 
+        gemMeltingCasting(consumer, Items.COAL, Blocks.COAL_BLOCK, TinkersReforgedFluids.coal, "smeltery/", "coal");
         gemMeltingCasting(consumer, Items.LAPIS_LAZULI, Blocks.LAPIS_BLOCK, TinkersReforgedFluids.lapis, "smeltery/", "lapis", Byproduct.DIAMOND);
         gemMeltingCasting(consumer, TinkersReforgedItems.epidote_gem, TinkersReforgedBlocks.epidote_block, TinkersReforgedFluids.epidote, "smeltery/", "epidote", Byproduct.AMETHYST);
         gemMeltingCasting(consumer, TinkersReforgedItems.hureaulite_gem, TinkersReforgedBlocks.hureaulite_block, TinkersReforgedFluids.hureaulite, "smeltery/", "hureaulite", Byproduct.AMETHYST);

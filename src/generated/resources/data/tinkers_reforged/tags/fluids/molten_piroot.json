@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_gelot"
+    "tinkers_reforged:molten_piroot",
+    "tinkers_reforged:flowing_molten_piroot"
   ]
 }
