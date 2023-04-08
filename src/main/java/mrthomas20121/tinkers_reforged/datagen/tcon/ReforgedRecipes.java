@@ -346,7 +346,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         MeltingRecipeBuilder.melting(Ingredient.of(Items.POPPED_CHORUS_FRUIT), TinkersReforgedFluids.chorus.get(), FluidValues.INGOT).save(consumer, modResource(meltingFolder+"popped_chorus_fruit"));
         ingotCasting(consumer, TinkersReforgedFluids.chorus, Items.POPPED_CHORUS_FRUIT, castFolder+"chorus_fruit");
 
-        gemMeltingCasting(consumer, Items.COAL, Blocks.COAL_BLOCK, TinkersReforgedFluids.coal, "smeltery/", "coal");
+        gemMeltingCasting(consumer, Items.CHARCOAL, Blocks.COAL_BLOCK, TinkersReforgedFluids.coal, "smeltery/", "coal");
         gemMeltingCasting(consumer, Items.LAPIS_LAZULI, Blocks.LAPIS_BLOCK, TinkersReforgedFluids.lapis, "smeltery/", "lapis", Byproduct.DIAMOND);
         gemMeltingCasting(consumer, TinkersReforgedItems.epidote_gem, TinkersReforgedBlocks.epidote_block, TinkersReforgedFluids.epidote, "smeltery/", "epidote", Byproduct.AMETHYST);
         gemMeltingCasting(consumer, TinkersReforgedItems.hureaulite_gem, TinkersReforgedBlocks.hureaulite_block, TinkersReforgedFluids.hureaulite, "smeltery/", "hureaulite", Byproduct.AMETHYST);
