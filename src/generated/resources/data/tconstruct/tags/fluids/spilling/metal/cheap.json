@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:liquid_coal",
+    "tinkers_reforged:molten_redstone",
+    "tinkers_reforged:molten_lapis"
+  ]
+}

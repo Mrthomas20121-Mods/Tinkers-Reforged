@@ -1,0 +1,14 @@
+{
+    "title": "Piroot",
+    "item": "tinkers_reforged:piroot_ingot",
+    "text": [
+        {
+            "text": "Piroot is an composite material made from endstone.",
+            "paragraph": true
+        },
+        {
+            "text": "Piroot is obtained by pouring Netherite on End Stone.",
+            "paragraph": true
+        }
+    ]
+}

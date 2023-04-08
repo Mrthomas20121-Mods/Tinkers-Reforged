@@ -1,0 +1,10 @@
+{
+    "title": "Hureaulite",
+    "item": "tinkers_reforged:deepslate_hureaulite_ore",
+    "text": [
+        {
+            "text": "Hureaulite is a gem material found underground in deepslate.",
+            "paragraph": true
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "title": "Electrical Copper",
+    "item": "tinkers_reforged:electrical_copper_ingot",
+    "text": [
+        {
+            "text": "Electrical Copper is an alloy made of Blazing Copper and Redstone.",
+            "paragraph": true
+        },
+        {
+            "text": "Electrical Copper is obtained by mixing 2 Blazing Copper ingots and 1 block of redstone in the smeltery/alloyer or by pouring redstone on blazing copper parts.",
+            "paragraph": true
+        }
+    ]
+}

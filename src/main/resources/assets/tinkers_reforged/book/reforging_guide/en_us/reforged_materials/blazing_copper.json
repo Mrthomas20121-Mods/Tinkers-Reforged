@@ -1,0 +1,14 @@
+{
+    "title": "Blazing Copper",
+    "item": "tinkers_reforged:blazing_copper_ingot",
+    "text": [
+        {
+            "text": "Blazing Copper is an alloy made of Copper and Blazing Blood.",
+            "paragraph": true
+        },
+        {
+            "text": "Blazing Copper is obtained by mixing 1 Block of copper and 1 Bucket of Blazing Blood in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

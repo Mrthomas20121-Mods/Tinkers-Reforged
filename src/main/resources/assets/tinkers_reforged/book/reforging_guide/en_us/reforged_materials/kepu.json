@@ -1,0 +1,10 @@
+{
+    "title": "Kepu",
+    "item": "tinkers_reforged:kepu_ore",
+    "text": [
+        {
+            "text": "Kepu is a material found in the end.",
+            "paragraph": true
+        }
+    ]
+}

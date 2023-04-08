@@ -1,0 +1,14 @@
+{
+    "title": "Galu",
+    "item": "tinkers_reforged:galu_ingot",
+    "text": [
+        {
+            "text": "Galu is an alloy made of Obsidian, Red Beryl and Hureaulite.",
+            "paragraph": true
+        },
+        {
+            "text": "Galu is obtained by mixing 1 Obsidian Block, 1 Red Beryl gem and 1 Hureaulite gem in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

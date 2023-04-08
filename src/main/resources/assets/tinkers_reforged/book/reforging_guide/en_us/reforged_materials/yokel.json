@@ -1,0 +1,14 @@
+{
+    "title": "Yokel",
+    "item": "tinkers_reforged:yokel_ingot",
+    "text": [
+        {
+            "text": "Yokel is an alloy made of Kelp, Iron and Aluminum.",
+            "paragraph": true
+        },
+        {
+            "text": "Yokel is obtained by mixing 250mb of Kelp(1 Kelp melted) with 1 Aluminum and Iron ingot in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "title": "Wavy",
+    "item": "tinkers_reforged:wavy_ingot",
+    "text": [
+        {
+            "text": "Wavy is an composite material made from bloodshroom.",
+            "paragraph": true
+        },
+        {
+            "text": "Wavy is obtained by pouring Osidian on Bloodshroom parts.",
+            "paragraph": true
+        }
+    ]
+}

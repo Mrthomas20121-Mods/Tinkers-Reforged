@@ -1,0 +1,10 @@
+{
+    "title": "Ender Bone",
+    "item": "tinkers_reforged:ender_bone",
+    "text": [
+        {
+            "text": "Ender bone is a bone material made by pouring molten ender on bone.",
+            "paragraph": true
+        }
+    ]
+}

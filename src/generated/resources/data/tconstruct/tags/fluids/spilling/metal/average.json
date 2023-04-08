@@ -1,4 +1,11 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "tinkers_reforged:molten_lavium",
+    "tinkers_reforged:molten_qivium",
+    "tinkers_reforged:molten_gausum",
+    "tinkers_reforged:molten_duralumin",
+    "tinkers_reforged:molten_blazing_copper",
+    "tinkers_reforged:molten_red_beryl"
+  ]
 }

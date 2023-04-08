@@ -1,0 +1,14 @@
+{
+    "title": "Felsteel",
+    "item": "tinkers_reforged:felsteel_ingot",
+    "text": [
+        {
+            "text": "Felsteel is an alloy made of Blazing Copper, Ancient Debris and Duralumin.",
+            "paragraph": true
+        },
+        {
+            "text": "Crusteel is obtained by mixing 2 Blazing Copper ingots, 2 Netherite Scrap and 2 Duralumin ingots in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

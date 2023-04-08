@@ -3,7 +3,14 @@
     "name": "intro",
     "data": "sections/introduction.json",
     "icon": {
-      "item": "tconstruct:pattern"
+      "item": "tinkers_reforged:red_beryl_gem"
+    }
+  },
+  {
+    "name": "reforged_materials",
+    "data": "sections/reforged_materials.json",
+    "icon": {
+      "item": "tinkers_reforged:kepu_block"
     }
   },
   {

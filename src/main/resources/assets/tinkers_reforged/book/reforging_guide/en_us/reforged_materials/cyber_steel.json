@@ -1,0 +1,14 @@
+{
+    "title": "Cyber Steel",
+    "item": "tinkers_reforged:cyber_steel_ingot",
+    "text": [
+        {
+            "text": "Cyber Steel is an alloy made of Chorus Metal, Magma and Coal.",
+            "paragraph": true
+        },
+        {
+            "text": "Cyber Steel is obtained by mixing 2 Chorus Metal ingots, 1 magma cream and 1 coal in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

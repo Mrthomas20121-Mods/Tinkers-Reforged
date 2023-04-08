@@ -1,0 +1,14 @@
+{
+    "title": "Lavium",
+    "item": "tinkers_reforged:lavium_ingot",
+    "text": [
+        {
+            "text": "Lavium is an composite material made from cobalt.",
+            "paragraph": true
+        },
+        {
+            "text": "Lavium is obtained by pouring Liquid Souls on Cobalt.",
+            "paragraph": true
+        }
+    ]
+}

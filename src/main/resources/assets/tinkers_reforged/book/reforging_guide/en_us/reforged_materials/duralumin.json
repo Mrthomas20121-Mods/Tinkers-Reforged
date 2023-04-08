@@ -1,0 +1,14 @@
+{
+    "title": "Duralumin",
+    "item": "tinkers_reforged:duralumin_ingot",
+    "text": [
+        {
+            "text": "Duralumin is an alloy made of copper and aluminum.",
+            "paragraph": true
+        },
+        {
+            "text": "Duralumin is obtained by mixing 1 Copper ingot and 1 Aluminum block in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

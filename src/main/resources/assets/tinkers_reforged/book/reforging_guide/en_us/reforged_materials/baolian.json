@@ -1,0 +1,14 @@
+{
+    "title": "Baolian",
+    "item": "tinkers_reforged:baolian_ingot",
+    "text": [
+        {
+            "text": "Baolian is an alloy made of Obsidian, Red Beryl and Epidote.",
+            "paragraph": true
+        },
+        {
+            "text": "Baolian is obtained by mixing 1 block of Obsidian, 1 Red Beryl gem and 1 Epidote gem in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

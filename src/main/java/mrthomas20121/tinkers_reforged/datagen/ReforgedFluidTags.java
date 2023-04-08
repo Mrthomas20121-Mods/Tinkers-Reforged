@@ -29,8 +29,29 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     @Override
     protected void addTags() {
 
-        tag(TinkerTags.Fluids.AVERAGE_METAL_SPILLING);
+        tag(TinkerTags.Fluids.CHEAP_METAL_SPILLING).add(
+                TinkersReforgedFluids.coal.get(),
+                TinkersReforgedFluids.redstone.get(),
+                TinkersReforgedFluids.lapis.get()
+        );
 
+        tag(TinkerTags.Fluids.AVERAGE_METAL_SPILLING).add(
+                TinkersReforgedFluids.lavium.get(),
+                TinkersReforgedFluids.qivium.get(),
+                TinkersReforgedFluids.gausum.get(),
+                TinkersReforgedFluids.duralumin.get(),
+                TinkersReforgedFluids.blazing_copper.get(),
+                TinkersReforgedFluids.red_beryl.get()
+        );
+
+        tag(TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING).add(
+                TinkersReforgedFluids.magma_steel.get(),
+                TinkersReforgedFluids.cyber_steel.get(),
+                TinkersReforgedFluids.durasteel.get(),
+                TinkersReforgedFluids.kepu.get()
+        );
+
+        tagAll(TinkersReforgedFluids.coal);
         tagAll(TinkersReforgedFluids.redstone);
         tagAll(TinkersReforgedFluids.lapis);
         tagAll(TinkersReforgedFluids.blazing_copper);
@@ -46,6 +67,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
         tagAll(TinkersReforgedFluids.durasteel);
         tagAll(TinkersReforgedFluids.crusteel);
         tagAll(TinkersReforgedFluids.wavy);
+        tagAll(TinkersReforgedFluids.yokel);
         tagAll(TinkersReforgedFluids.proto_lava);
         tagAll(TinkersReforgedFluids.baolian);
         tagAll(TinkersReforgedFluids.epidote);

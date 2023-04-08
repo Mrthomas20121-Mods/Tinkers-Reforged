@@ -1,0 +1,10 @@
+{
+    "title": "Epidote",
+    "item": "tinkers_reforged:deepslate_epidote_ore",
+    "text": [
+        {
+            "text": "Epidote is a gem material found underground in deepslate.",
+            "paragraph": true
+        }
+    ]
+}

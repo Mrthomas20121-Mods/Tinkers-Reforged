@@ -1,0 +1,14 @@
+{
+    "title": "Magma Steel",
+    "item": "tinkers_reforged:magma_steel_ingot",
+    "text": [
+        {
+            "text": "Magma Steel is an alloy made of Iron, Magma and Coal.",
+            "paragraph": true
+        },
+        {
+            "text": "Magma Steel is obtained by mixing 2 Iron ingots, 1 magma cream and 1 coal in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "title": "Qivium",
+    "item": "tinkers_reforged:qivium_ingot",
+    "text": [
+        {
+            "text": "Qivium is an composite material made from cobalt.",
+            "paragraph": true
+        },
+        {
+            "text": "Qivium is obtained by pouring Magma on Cobalt.",
+            "paragraph": true
+        }
+    ]
+}

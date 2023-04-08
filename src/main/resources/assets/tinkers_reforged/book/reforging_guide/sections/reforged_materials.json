@@ -1,0 +1,123 @@
+[
+    {
+        "name": "index",
+        "type": "mantle:index",
+        "data": "reforged_materials/index.json"
+    },
+    {
+        "name": "enderbone",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/ender_bone.json"
+    },
+    {
+        "name": "duralumin",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/duralumin.json"
+    },
+    {
+        "name": "epidote",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/epidote.json"
+    },
+    {
+        "name": "hureaulite",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/hureaulite.json"
+    },
+    {
+        "name": "red_beryl",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/red_beryl.json"
+    },
+    {
+        "name": "yokel",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/yokel.json"
+    },
+    {
+        "name": "blazing_copper",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/blazing_copper.json"
+    },
+    {
+        "name": "baolian",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/baolian.json"
+    },
+    {
+        "name": "crusteel",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/crusteel.json"
+    },
+    {
+        "name": "electrical_copper",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/electrical_copper.json"
+    },
+    {
+        "name": "felsteel",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/felsteel.json"
+    },
+    {
+        "name": "galu",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/galu.json"
+    },
+    {
+        "name": "lavium",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/lavium.json"
+    },
+    {
+        "name": "qivium",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/qivium.json"
+    },
+    {
+        "name": "wavy",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/wavy.json"
+    },
+    {
+        "name": "magma_steel",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/magma_steel.json"
+    },
+    {
+        "name": "chorus_metal",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/chorus_metal.json"
+    },
+    {
+        "name": "cyber_steel",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/cyber_steel.json"
+    },
+    {
+        "name": "durasteel",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/durasteel.json"
+    },
+    {
+        "name": "gausum",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/gausum.json"
+    },
+    {
+        "name": "gelot",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/gelot.json"
+    }
+,
+    {
+        "name": "kepu",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/kepu.json"
+    },
+    {
+        "name": "duralumin",
+        "type": "mantle:showcase",
+        "data": "reforged_materials/piroot.json"
+    }
+]

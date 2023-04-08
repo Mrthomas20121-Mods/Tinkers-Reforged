@@ -1,0 +1,14 @@
+{
+    "title": "Durasteel",
+    "item": "tinkers_reforged:durasteel_ingot",
+    "text": [
+        {
+            "text": "Durasteel is an alloy made of Ender, Aluminum and Debris.",
+            "paragraph": true
+        },
+        {
+            "text": "Durasteel is obtained by mixing 1 Ender Pearl, 1 Aluminum ingot and 1 Netherite scrap in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

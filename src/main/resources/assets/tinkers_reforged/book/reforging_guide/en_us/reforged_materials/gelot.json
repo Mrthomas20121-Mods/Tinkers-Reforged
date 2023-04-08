@@ -1,0 +1,14 @@
+{
+    "title": "Gelot",
+    "item": "tinkers_reforged:gelot_ingot",
+    "text": [
+        {
+            "text": "Gelot is an composite material made from endstone.",
+            "paragraph": true
+        },
+        {
+            "text": "Gelot is obtained by pouring Diamond on End Stone.",
+            "paragraph": true
+        }
+    ]
+}

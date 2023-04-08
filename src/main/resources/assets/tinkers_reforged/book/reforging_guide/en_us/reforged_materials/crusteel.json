@@ -1,0 +1,14 @@
+{
+    "title": "Crusteel",
+    "item": "tinkers_reforged:crusteel_ingot",
+    "text": [
+        {
+            "text": "Crusteel is an alloy made of Copper, Ancient Debris and Amethyst.",
+            "paragraph": true
+        },
+        {
+            "text": "Crusteel is obtained by mixing 1 Copper ingot, 1 Netherite Scrap and 1 Amethyst gem in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}

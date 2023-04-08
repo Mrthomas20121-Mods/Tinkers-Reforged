@@ -1,0 +1,14 @@
+{
+    "title": "Chorus Metal",
+    "item": "tinkers_reforged:chorus_metal_ingot",
+    "text": [
+        {
+            "text": "Chorus Metal is an composite material made from chorus.",
+            "paragraph": true
+        },
+        {
+            "text": "Chorus Metal is obtained by pouring Kepu on a Popped Chorus Fruit.",
+            "paragraph": true
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Red Beryl",
+    "item": "tinkers_reforged:red_beryl_ore",
+    "text": [
+        {
+            "text": "Red beryl is a gem material found underground.",
+            "paragraph": true
+        }
+    ]
+}

@@ -113,14 +113,14 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.baolian.get(), FluidValues.INGOT*2)
                 .addInput(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK)
-                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.INGOT)
-                .addInput(TinkersReforgedFluids.epidote.get(), FluidValues.INGOT)
+                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.GEM)
+                .addInput(TinkersReforgedFluids.epidote.get(), FluidValues.GEM)
                 .save(consumer, modResource(alloyFolder+"baolian"));
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.galu.get(), FluidValues.INGOT*2)
                 .addInput(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK)
-                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.INGOT)
-                .addInput(TinkersReforgedFluids.hureaulite.get(), FluidValues.INGOT)
+                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.GEM)
+                .addInput(TinkersReforgedFluids.hureaulite.get(), FluidValues.GEM)
                 .save(consumer, modResource(alloyFolder+"galu"));
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.duralumin.get(), FluidValues.INGOT*5)

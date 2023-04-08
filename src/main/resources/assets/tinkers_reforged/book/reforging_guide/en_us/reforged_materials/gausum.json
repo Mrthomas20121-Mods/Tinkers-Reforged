@@ -1,0 +1,14 @@
+{
+    "title": "Gausum",
+    "item": "tinkers_reforged:gausum_ingot",
+    "text": [
+        {
+            "text": "Gausum is an alloy made of Blazing Copper, Lapis and Debris.",
+            "paragraph": true
+        },
+        {
+            "text": "Gausum is obtained by mixing 2 Blazing Copper ingots, 2 Netherite scrap and 1 block of Lapis in the smeltery/alloyer.",
+            "paragraph": true
+        }
+    ]
+}
