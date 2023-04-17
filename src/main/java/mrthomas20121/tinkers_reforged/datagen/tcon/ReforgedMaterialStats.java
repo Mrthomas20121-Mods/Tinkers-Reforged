@@ -82,7 +82,7 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new HeadMaterialStats(550, 7f, DIAMOND, 3f),
                 HandleMaterialStats.DEFAULT.withDurability(1.04f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(550, 0.5f, 0.5f, 0.5f),
+                new LimbMaterialStats(550, 0.5f, -0.5f, 0.5f),
                 new GripMaterialStats(1.6f, 0.5f, 1.9f));
 
         // electrical copper is iron with a bit more durability and have a better mining level
@@ -178,10 +178,10 @@ public class ReforgedMaterialStats extends AbstractMaterialStatsDataProvider {
                 new GripMaterialStats(1.6f, 0.08f, 3f));
 
         addMaterialStats(ReforgedMaterialIds.gelot,
-                new HeadMaterialStats(1000, 6.2f, DIAMOND, 2.1f),
-                HandleMaterialStats.DEFAULT.withDurability(1.5f).withMiningSpeed(0.9f),
+                new HeadMaterialStats(300, 6.2f, DIAMOND, 2.1f),
+                HandleMaterialStats.DEFAULT.withDurability(0.9f).withMiningSpeed(0.9f),
                 ExtraMaterialStats.DEFAULT,
-                new LimbMaterialStats(1000, 0.5f, 0.3f, -0.01f),
+                new LimbMaterialStats(300, 0.5f, 0.3f, -0.01f),
                 new GripMaterialStats(0.6f, 0.5f, 5f));
 
         addMaterialStats(ReforgedMaterialIds.piroot,

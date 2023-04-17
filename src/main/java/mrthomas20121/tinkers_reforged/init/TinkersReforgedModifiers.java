@@ -59,5 +59,5 @@ public class TinkersReforgedModifiers {
 
     public static StaticModifier<Modifier> tenacity = MODIFIERS.register("tenacity", TenacityModifier::new);
 
-    public static StaticModifier<Modifier> half_powered_fists = MODIFIERS.register("half_powered_fists", TenacityModifier::new);
+    public static StaticModifier<Modifier> half_powered_fists = MODIFIERS.register("half_powered_fists", HalfPoweredFistsModifier::new);
 }

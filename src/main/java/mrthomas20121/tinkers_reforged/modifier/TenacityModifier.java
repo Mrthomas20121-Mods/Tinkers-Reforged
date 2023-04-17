@@ -19,11 +19,11 @@ public class TenacityModifier extends Modifier {
     @Override
     public float getEntityDamage(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float baseDamage, float damage) {
         int currentDurability = tool.getCurrentDurability();
-        return baseDamage+currentDurability*0.01f;
+        return damage+currentDurability*0.005f*level;
     }
 
     @Override
     public void addInformation(@Nonnull IToolStackView tool, int level, @Nullable Player player, @Nonnull List<Component> tooltip, @Nonnull TooltipKey tooltipKey, @Nonnull TooltipFlag tooltipFlag) {
-        addDamageTooltip(tool, tool.getCurrentDurability()*0.01f, tooltip);
+        addDamageTooltip(tool, tool.getCurrentDurability()*0.005f*level, tooltip);
     }
 }

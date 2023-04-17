@@ -237,7 +237,7 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Spawn a Shulker blob on hit.");
         addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Ender Taint", "The end is the best dimension", "Your tool is stronger in the end but weaker in other dimension.");
         addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Mushroom", "Magic everywhere", "ALL Damage are magic.");
-        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.1.");
+        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.025 * modifier level. Cap at 15 by default.");
         addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health is.");
         addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
