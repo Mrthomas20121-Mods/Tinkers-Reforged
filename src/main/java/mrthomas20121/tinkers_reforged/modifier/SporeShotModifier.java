@@ -16,12 +16,12 @@ public class SporeShotModifier extends Modifier {
     public int afterEntityHit(@Nonnull IToolStackView tool, int level, @Nonnull ToolAttackContext context, float damageDealt) {
         if(context.getLivingTarget() != null) {
             LivingEntity target = context.getLivingTarget();
-            if(target.hasEffect(TinkersReforgedPotions.Fungal.get())) {
+            if(target.hasEffect(TinkersReforgedPotions.FUNGAL.get())) {
                 target.hurt(DamageSource.CACTUS, target.getHealth()*0.02f);
-                target.removeEffect(TinkersReforgedPotions.Fungal.get());
+                target.removeEffect(TinkersReforgedPotions.FUNGAL.get());
             }
             else {
-                target.addEffect(new MobEffectInstance(TinkersReforgedPotions.Fungal.get(), 150, level));
+                target.addEffect(new MobEffectInstance(TinkersReforgedPotions.FUNGAL.get(), 150, level));
             }
         }
         return super.afterEntityHit(tool, level, context, damageDealt);

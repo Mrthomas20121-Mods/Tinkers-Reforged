@@ -20,21 +20,21 @@ public class ReforgedTraits extends AbstractMaterialTraitDataProvider {
 
         addDefaultTraits(ReforgedMaterialIds.blazing_copper, TinkersReforgedModifiers.blazing_copper_spark);
 
-        addDefaultTraits(ReforgedMaterialIds.qivium, TinkersReforgedModifiers.qivium_blazing_fire);
+        addDefaultTraits(ReforgedMaterialIds.qivium, TinkersReforgedModifiers.qivium_anti_armor);
 
         addDefaultTraits(ReforgedMaterialIds.lavium, TinkersReforgedModifiers.lavium_aridzone);
 
         addDefaultTraits(ReforgedMaterialIds.duralumin, TinkersReforgedModifiers.duralumin_ultra_durable);
 
-        addDefaultTraits(ReforgedMaterialIds.electrical_copper, TinkersReforgedModifiers.electrical_copper_electro_web);
+        addDefaultTraits(ReforgedMaterialIds.electrical_copper, TinkersReforgedModifiers.electrical_copper_electrostatic);
 
         addDefaultTraits(ReforgedMaterialIds.gausum, TinkersReforgedModifiers.gausum_titanic_damage);
 
         addDefaultTraits(ReforgedMaterialIds.felsteel, TinkersReforgedModifiers.felsteel_fel_debris);
 
-        addDefaultTraits(ReforgedMaterialIds.chorus_metal, TinkersReforgedModifiers.chorus_metal_levitating_blob);
+        addDefaultTraits(ReforgedMaterialIds.chorus_metal, TinkersReforgedModifiers.chorus_metal_requiem);
 
-        addDefaultTraits(ReforgedMaterialIds.kepu, TinkersReforgedModifiers.kepu_damage_lock);
+        addDefaultTraits(ReforgedMaterialIds.kepu, TinkersReforgedModifiers.ender_upgrade);
 
         addDefaultTraits(ReforgedMaterialIds.durasteel, TinkersReforgedModifiers.durasteel_adapting);
 
@@ -46,11 +46,11 @@ public class ReforgedTraits extends AbstractMaterialTraitDataProvider {
 
         addDefaultTraits(ReforgedMaterialIds.baolian, TinkersReforgedModifiers.rare_earth);
 
-        addDefaultTraits(ReforgedMaterialIds.epidote, TinkersReforgedModifiers.wet_lattice);
+        addDefaultTraits(ReforgedMaterialIds.epidote, TinkersReforgedModifiers.water_power);
 
         addDefaultTraits(ReforgedMaterialIds.galu, TinkersReforgedModifiers.effective_boost);
 
-        addDefaultTraits(ReforgedMaterialIds.hureaulite, TinkersReforgedModifiers.dry_lattice);
+        addDefaultTraits(ReforgedMaterialIds.hureaulite, TinkersReforgedModifiers.wet_soil);
 
         addDefaultTraits(ReforgedMaterialIds.red_beryl, TinkersReforgedModifiers.crystallized_punch);
 

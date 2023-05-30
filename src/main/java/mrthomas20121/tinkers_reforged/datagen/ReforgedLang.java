@@ -195,8 +195,8 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.gelot.get().getBucket(), "Molten Gelot Bucket");
         add(TinkersReforgedFluids.piroot.get().getBucket(), "Molten Piroot Bucket");
 
-        add("effect.tinkers_reforged.electro_web", "Electro Web");
-        add("effect.tinkers_reforged.fungal", "Fungal");
+        addEffect(TinkersReforgedPotions.FUNGAL, "Fungal");
+        addEffect(TinkersReforgedPotions.REQUIEM, "Requiem");
 
         for(CastType type: CastType.values()) {
             Item item = TinkersReforgedItems.castMap.get(type).get();
@@ -231,20 +231,20 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you(Scale with your titanic dmg modifier level).");
         addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
         addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Anyone need Duritos?", "Your tool last longer most of the time.");
-        addModifier(TinkersReforgedModifiers.electrical_copper_electro_web, "Electro Web", "Shocking isn't it?", "Apply Electro Web to an entity after hit.");
-        addModifier(TinkersReforgedModifiers.qivium_blazing_fire, "Burning Capacitor", "Overpowered!", "Repair the tool when you are on fire.");
+        addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "I wouldn't touch it!", "Target is paralyzed for 3 second.");
+        addModifier(TinkersReforgedModifiers.qivium_anti_armor, "Anti Armor", "Armor, what's that?", "Deal more damage to Armored Targets.");
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage in the nether.");
-        addModifier(TinkersReforgedModifiers.chorus_metal_levitating_blob, "Levitating Blob", "It's yours my friend!", "Spawn a Shulker blob on hit.");
-        addModifier(TinkersReforgedModifiers.kepu_damage_lock, "Ender Taint", "The end is the best dimension", "Your tool is stronger in the end but weaker in other dimension.");
-        addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Mushroom", "Magic everywhere", "ALL Damage are magic.");
-        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "1up", "Each mob killed increase your stats by 0.025 * modifier level. Cap at 15 by default.");
+        addModifier(TinkersReforgedModifiers.chorus_metal_requiem, "Requiem", "A melody is floating in the air", "Player is unaffected by levitation. Deal more damage to Shulker.");
+        addModifier(TinkersReforgedModifiers.ender_upgrade, "Ender Upgrade", "The end is night", "Deal more damage to the ender dragon.");
+        addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Power", "Magic everywhere", "ALL Damage dealt are magic.");
+        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "Power Up", "Each mob killed increase your stats by 0.025 * modifier level. Cap at 15 by default.");
         addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health is.");
         addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
-        addModifier(TinkersReforgedModifiers.rare_earth, "Rare Earth", "Rare Earths for days!.", "Mobs drops are replaced by cobblestone(with sometimes iron/gold/diamond dropping).");
-        addModifier(TinkersReforgedModifiers.wet_lattice, "Wet Lattice", "it's raining.", "Deal 110% damage if it's raining, 130% damage instead if thundering.");
-        addModifier(TinkersReforgedModifiers.effective_boost, "Effective Boost", "Potion Effects for days.", "Get bonus damage for all active effect you have.");
-        addModifier(TinkersReforgedModifiers.dry_lattice, "Dry Lattice", "Good sunny day.", "Mine faster if you can see the sun(not active while raining).");
+        addModifier(TinkersReforgedModifiers.rare_earth, "Rare Earth", "Rare Earths for days!.", "Mobs drops are replaced by cobblestone/iron/gold/diamond.");
+        addModifier(TinkersReforgedModifiers.water_power, "Water Power", "The ocean calls for you.", "Remove the mining penalty underwater.");
+        addModifier(TinkersReforgedModifiers.effective_boost, "Effective Boost", "Potion Effects for days.", "Deal more damage for each active potion effect you have.");
+        addModifier(TinkersReforgedModifiers.wet_soil, "Wet Soil", "Rain is good.", "Mine faster when it's raining(wherever the player is).");
         addModifier(TinkersReforgedModifiers.crystallized_punch, "Crystallized Punch", "5 hits and you're K.O.", "Every 5 attacks, deal 1% of the target HP as bonus magic damage.");
         addModifier(TinkersReforgedModifiers.collapsed, "Collapsed", "More damage while damaged.", "Deal more damage while damaged.");
         addModifier(TinkersReforgedModifiers.blazing_copper_spark, "Spark", "Better Crit damage.", "Deal more critical strike damage.");
@@ -259,8 +259,6 @@ public class ReforgedLang extends LanguageProvider {
         add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the nether.");
         add("modifier.tinkers_reforged.arid_zone.attack_damage", "Bonus damage in the current biome");
         add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome");
-        add("modifier.tinkers_reforged.ender_taint.bonus", "Attack Damage/Mining Speed in the End dimension.");
-        add("modifier.tinkers_reforged.ender_taint.malus", "Attack Damage/Mining Speed in the other dimensions.");
         add("modifier.tinkers_reforged.giant_cells.mining_speed", "Bonus mining speed");
         add("modifier.tinkers_reforged.adapting.cap", "You have reach the max bonus you can get with adapting");
         add("modifier.tinkers_reforged.tenacity.attack_damage", "Tenacity damage");
@@ -268,8 +266,8 @@ public class ReforgedLang extends LanguageProvider {
 
     public void addCast(CastObject object) {
         addItem(object.getGoldCast(), capitalize(object.getName().getPath())+ " Gold Cast");
-        addItem(object.getSandCast(), "Sand "+capitalize(object.getName().getPath())+ "Cast");
-        addItem(object.getRedSandCast(), "Red Sand "+capitalize(object.getName().getPath())+ "Cast");
+        addItem(object.getSandCast(), capitalize(object.getName().getPath())+ " Sand Cast");
+        addItem(object.getRedSandCast(), capitalize(object.getName().getPath())+ " Red Sand Cast");
     }
 
     public void addMaterial(MaterialId material, String name, String flavour, String desc) {

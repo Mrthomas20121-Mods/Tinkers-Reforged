@@ -6,26 +6,26 @@ import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
+// Some modifier class name are not the same as the modifier name to keep compat with worlds running older version of tinkers reforged
 public class TinkersReforgedModifiers {
 
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TinkersReforged.MOD_ID);
 
     public static StaticModifier<Modifier> felsteel_fel_debris = MODIFIERS.register("fel_debris", FelDebrisModifier::new);
 
-    // changed the name but i'm keeping the modifier name the same to not make existing worlds have issues.
-    public static StaticModifier<Modifier> qivium_blazing_fire = MODIFIERS.register("blazing_fire", BurningCapacitorModifier::new);
+    public static StaticModifier<Modifier> qivium_anti_armor = MODIFIERS.register("blazing_fire", AntiArmorModifier::new);
 
     public static StaticModifier<Modifier> lavium_aridzone = MODIFIERS.register("arid_zone", AridZoneModifier::new);
 
-    public static StaticModifier<Modifier> electrical_copper_electro_web = MODIFIERS.register("electro_web", ElectroWebModifier::new);
+    public static StaticModifier<Modifier> electrical_copper_electrostatic = MODIFIERS.register("electro_web", ElectrostaticModifier::new);
 
     public static StaticModifier<Modifier> duralumin_ultra_durable = MODIFIERS.register("ultra_durable", UltraDurableModifier::new);
 
     public static StaticModifier<Modifier> gausum_titanic_damage = MODIFIERS.register("titanic_damage", TitanicDamageModifier::new);
 
-    public static StaticModifier<Modifier> chorus_metal_levitating_blob = MODIFIERS.register("levitating_blob", LevitatingBlobModifier::new);
+    public static StaticModifier<Modifier> chorus_metal_requiem = MODIFIERS.register("levitating_blob", RequiemModifier::new);
 
-    public static StaticModifier<Modifier> kepu_damage_lock = MODIFIERS.register("damage_lock", EnderTaintModifier::new);
+    public static StaticModifier<Modifier> ender_upgrade = MODIFIERS.register("damage_lock", EnderUpgradeModifier::new);
 
     public static StaticModifier<Modifier> durasteel_adapting = MODIFIERS.register("adapting", AdaptatingModifier::new);
 
@@ -45,9 +45,9 @@ public class TinkersReforgedModifiers {
 
     public static StaticModifier<Modifier> effective_boost = MODIFIERS.register("effective_boost", EffectiveBoostModifier::new);
 
-    public static StaticModifier<Modifier> wet_lattice = MODIFIERS.register("wet_lattice", WetLatticeModifier::new);
+    public static StaticModifier<Modifier> water_power = MODIFIERS.register("wet_lattice", WaterPowerModifier::new);
 
-    public static StaticModifier<Modifier> dry_lattice = MODIFIERS.register("dry_lattice", DryLatticeModifier::new);
+    public static StaticModifier<Modifier> wet_soil = MODIFIERS.register("dry_lattice", WetSoilModifier::new);
 
     public static StaticModifier<Modifier> blazing_copper_spark = MODIFIERS.register("spark", SparkModifier::new);
 
