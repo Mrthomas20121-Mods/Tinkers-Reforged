@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:table_casting_material",
-  "cast": {
-    "tag": "tconstruct:casts/single_use/large_round_plate"
-  },
-  "cast_consumed": true,
-  "item_cost": 6,
-  "result": "tinkers_reforged:large_round_plate"
-}

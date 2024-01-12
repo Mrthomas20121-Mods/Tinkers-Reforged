@@ -1,28 +1,95 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedPotions;
+import mrthomas20121.tinkers_reforged.modifier.AdvancedModifier;
+import mrthomas20121.tinkers_reforged.util.TinkersReforgedHooks;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.phys.AABB;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.tools.item.IModifiable;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
-import java.util.List;
+import java.util.Collection;
 
 @Mod.EventBusSubscriber(modid = TinkersReforged.MOD_ID)
 public class CommonEvents {
 
+    public static void lootEvent(LivingDropsEvent event) {
+        Collection<ItemEntity> drops = event.getDrops();
+        int looting = event.getLootingLevel();
+        DamageSource source = event.getSource();
+        LivingEntity entity = event.getEntityLiving();
+        boolean isRecentlyHit = event.isRecentlyHit();
+
+        if(source.getDirectEntity() instanceof LivingEntity attacker) {
+            ItemStack stack = attacker.getMainHandItem();
+            if(!stack.isEmpty() && stack.getItem() instanceof IModifiable) {
+                IToolStackView toolstack = ToolStack.from(stack);
+                toolstack.getDefinitionData().getModule(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onLootDrop(toolstack, attacker, drops, looting, source, entity, isRecentlyHit, event);
+            }
+        }
+    }
+
+    public static void expDropEvent(LivingExperienceDropEvent event) {
+        Player player = event.getAttackingPlayer();
+        if(player != null) {
+            ItemStack stack = player.getMainHandItem();
+            if(!stack.isEmpty() && stack.getItem() instanceof IModifiable) {
+                IToolStackView toolstack = ToolStack.from(stack);
+                toolstack.getDefinitionData().getModule(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onExperienceDrop(toolstack, player, event);
+            }
+        }
+    }
+
     @SubscribeEvent
     public static void deathEvent(LivingDeathEvent event) {
         LivingEntity livingEntity = event.getEntityLiving();
-        if(livingEntity.hasEffect(TinkersReforgedPotions.FUNGAL.get())) {
-            int amplifier = livingEntity.getEffect(TinkersReforgedPotions.FUNGAL.get()).getAmplifier();
-            List<? extends LivingEntity> entities = livingEntity.level.getNearbyEntities(livingEntity.getClass(), TargetingConditions.forCombat().range(10+0.1f*amplifier).ignoreLineOfSight(), livingEntity, new AABB(livingEntity.blockPosition(), livingEntity.blockPosition().offset(5, 5, 5)));
-            entities.forEach(entity -> entity.hurt(DamageSource.indirectMobAttack(livingEntity, null), 10+0.1f*amplifier));
+        Entity attacker = event.getSource().getDirectEntity();
+        if(attacker instanceof Player player) {
+            ItemStack stack = player.getMainHandItem();
+            if(stack != ItemStack.EMPTY) {
+                ToolStack tool = ToolStack.from(stack);
+
+                for(ModifierEntry mod : tool.getModifiers().getModifiers()) {
+                    Modifier modifier = mod.getLazyModifier().get();
+
+                    if(modifier instanceof AdvancedModifier advMod) {
+                        advMod.onEntityDeath(tool, livingEntity, player, event.getSource());
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerAttack(LivingAttackEvent event) {
+        Entity p = event.getSource().getDirectEntity();
+        LivingEntity target = event.getEntityLiving();
+
+        if(p instanceof Player player) {
+            ItemStack stack = player.getMainHandItem();
+            if(stack != ItemStack.EMPTY) {
+                ToolStack tool = ToolStack.from(stack);
+
+                for(ModifierEntry mod : tool.getModifiers().getModifiers()) {
+                    Modifier modifier = mod.getLazyModifier().get();
+
+                    if(modifier instanceof AdvancedModifier advMod) {
+                        advMod.onPlayerAttack(tool, target, player, event.getSource());
+                    }
+                }
+            }
         }
     }
 }

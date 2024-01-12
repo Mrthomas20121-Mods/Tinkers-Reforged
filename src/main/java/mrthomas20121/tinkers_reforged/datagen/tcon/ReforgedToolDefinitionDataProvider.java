@@ -5,9 +5,12 @@ import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedModifiers;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedToolDefinitions;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.level.block.Blocks;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractToolDefinitionDataProvider;
+import slimeknights.tconstruct.library.tools.definition.harvest.IHarvestLogic;
+import slimeknights.tconstruct.library.tools.definition.harvest.ModifiedHarvestLogic;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import javax.annotation.Nonnull;
 
@@ -21,19 +24,12 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
 
     @Override
     protected void addToolDefinitions() {
-        define(TinkersReforgedToolDefinitions.FRYING_PAN)
-                // parts
-                .part(TinkersReforgedItems.LARGE_ROUND_PLATE)
-                .part(toolHandle)
-                // stats
-                .stat(ToolStats.ATTACK_DAMAGE, 1f)
-                .stat(ToolStats.ATTACK_SPEED, 1.6f)
-                .multiplier(ToolStats.MINING_SPEED, 0.7f)
-                .multiplier(ToolStats.DURABILITY, 1.2f)
-                .largeToolStartingSlots()
-                // traits
-                .trait(TinkerModifiers.necrotic, 2)
-                .trait(TinkerModifiers.fiery, 2);
+
+        IHarvestLogic swordLogic = ModifiedHarvestLogic
+                .builder(TinkerTags.Blocks.MINABLE_WITH_SWORD)
+                .blockModifier(7.5f, Blocks.COBWEB)
+                .blockModifier(100f, Blocks.BAMBOO, Blocks.BAMBOO_SAPLING)
+                .build();
 
         define(TinkersReforgedToolDefinitions.GREATSWORD)
                 // parts
@@ -46,8 +42,24 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                 .multiplier(ToolStats.MINING_SPEED, 0.5f)
                 .multiplier(ToolStats.DURABILITY, 1.1f)
                 .largeToolStartingSlots()
+                .harvestLogic(swordLogic)
                 // traits
-                .trait(TinkersReforgedModifiers.cutting_edge);
+                .trait(TinkersReforgedModifiers.resistor);
+
+        define(TinkersReforgedToolDefinitions.LONGSWORD)
+                // parts
+                .part(TinkersReforgedItems.LONG_BLADE)
+                .part(toolHandle)
+                .part(toolHandle)
+                // stats
+                .stat(ToolStats.ATTACK_DAMAGE, 3f)
+                .stat(ToolStats.ATTACK_SPEED, 1.6f)
+                .multiplier(ToolStats.MINING_SPEED, 0.5f)
+                .multiplier(ToolStats.DURABILITY, 1.1f)
+                .largeToolStartingSlots()
+                .harvestLogic(swordLogic)
+                // traits
+                .trait(TinkersReforgedModifiers.long_range);
     }
 
     @Nonnull

@@ -32,11 +32,11 @@ public class ReforgedTraits extends AbstractMaterialTraitDataProvider {
 
         addDefaultTraits(ReforgedMaterialIds.felsteel, TinkersReforgedModifiers.felsteel_fel_debris);
 
-        addDefaultTraits(ReforgedMaterialIds.chorus_metal, TinkersReforgedModifiers.chorus_metal_requiem);
+        addDefaultTraits(ReforgedMaterialIds.chorus_metal, TinkersReforgedModifiers.burdensome);
 
         addDefaultTraits(ReforgedMaterialIds.kepu, TinkersReforgedModifiers.ender_upgrade);
 
-        addDefaultTraits(ReforgedMaterialIds.durasteel, TinkersReforgedModifiers.durasteel_adapting);
+        addDefaultTraits(ReforgedMaterialIds.durasteel, TinkersReforgedModifiers.durasteel_adaptability);
 
         addDefaultTraits(ReforgedMaterialIds.wavy, TinkersReforgedModifiers.spore_shot);
 

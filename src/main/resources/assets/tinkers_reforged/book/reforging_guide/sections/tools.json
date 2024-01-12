@@ -1,12 +1,12 @@
 [
   {
-    "name": "frying_pan",
+    "name": "greatsword",
     "type": "tconstruct:tool",
-    "data": "tools/frying_pan.json"
+    "data": "tools/greatsword.json"
   },
   {
     "name": "greatsword",
     "type": "tconstruct:tool",
-    "data": "tools/greatsword.json"
+    "data": "tools/longsword.json"
   }
 ]

@@ -1,19 +1,43 @@
 package mrthomas20121.tinkers_reforged.init;
 
+import mrthomas20121.tinkers_reforged.util.Helpers;
+import mrthomas20121.tinkers_reforged.util.ReforgedGem;
+import mrthomas20121.tinkers_reforged.util.ReforgedMetal;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
+import net.minecraft.tags.*;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
+
+import java.util.Map;
 
 public class TinkersReforgedTags {
 
     public static void init() {
         Blocks.init();
         Items.init();
+        Entities.init();
+        Fluids.init();
+    }
+
+    public static class Fluids {
+        public static void init() {}
+
+        private static TagKey<Fluid> create(String p_203849_) {
+            return TagKey.create(Registry.FLUID_REGISTRY, new ResourceLocation(p_203849_));
+        }
+    }
+
+    public static class Entities {
+        public static void init() {}
+
+        public static TagKey<EntityType<?>> NETHER_MOBS = create("tinkers_reforged:nether_mobs");
+
+        private static TagKey<EntityType<?>> create(String p_203849_) {
+            return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(p_203849_));
+        }
     }
 
     public static class Blocks {
@@ -70,6 +94,15 @@ public class TinkersReforgedTags {
         private static TagKey<Item> create(String name) {
             return ItemTags.create(new ResourceLocation(name));
         }
+
+        public static final Map<ReforgedGem, TagKey<Item>> GEM_ORES = Helpers.mapOfKeys(ReforgedGem.class, (gem) ->
+                create("forge:ores/" + gem.getName()));
+
+        public static final Map<ReforgedMetal, Map<ReforgedMetal.BlockType, TagKey<Item>>> METAL_ORES = Helpers.mapOfKeys(ReforgedMetal.class, ReforgedMetal::isThisOre, (metal) ->
+                Helpers.mapOfKeys(ReforgedMetal.BlockType.class, (itemType) -> create("forge:ores/" + metal.getName())));
+
+        public static final Map<ReforgedMetal, Map<ReforgedMetal.ItemType, TagKey<Item>>> METALS = Helpers.mapOfKeys(ReforgedMetal.class, (metal) ->
+                Helpers.mapOfKeys(ReforgedMetal.ItemType.class, (itemType) -> create("forge:"+itemType.getName() + "s/" + metal.getName())));
 
         // ores
         public static final TagKey<Item> ALUMINUM_ORE = create("forge:ores/aluminum");

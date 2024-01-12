@@ -390,7 +390,6 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         createCast(consumer, CastType.tool_handle, TinkerToolParts.toolHandle.get(), castFolder);
         createCast(consumer, CastType.tough_handle, TinkerToolParts.toughHandle.get(), castFolder);
 
-        createCast(consumer, CastType.large_round_plate, TinkersReforgedItems.LARGE_ROUND_PLATE.get(), castFolder);
         createCast(consumer, CastType.great_blade, TinkersReforgedItems.GREAT_BLADE.get(), castFolder);
 
         ShapedRecipeBuilder.shaped(TinkersReforgedBlocks.raw_aluminum_block.get(), 1)
@@ -453,10 +452,10 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.gelot_dust.get()), TinkersReforgedItems.gelot_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.gelot_ingot.get())).save(consumer, modResource("gelot_ingot_from_smelting_gelot_dust"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.piroot_dust.get()), TinkersReforgedItems.piroot_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.piroot_ingot.get())).save(consumer, modResource("piroot_ingot_from_smelting_piroot_dust"));
 
-        toolBuilding(consumer, TinkersReforgedItems.FRYING_PAN, toolFolder);
+        toolBuilding(consumer, TinkersReforgedItems.LONGSWORD, toolFolder);
         toolBuilding(consumer, TinkersReforgedItems.GREATSWORD, toolFolder);
         partRecipes(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.great_blade_cast, 4, partFolder, castFolder);
-        partRecipes(consumer, TinkersReforgedItems.LARGE_ROUND_PLATE.get(), TinkersReforgedItems.large_round_plate_cast, 6, partFolder, castFolder);
+        partRecipes(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkersReforgedItems.long_blade_cast, 3, partFolder, castFolder);
     }
 
     @Nonnull

@@ -35,8 +35,6 @@ public class TinkersReforgedItems {
         }
     };
 
-    public static Map<CastType, RegistryObject<Item>> castMap = registerCasts();
-
     private static final Item.Properties TOOL = new Item.Properties().stacksTo(1).tab(TAB_TOOLS);
     private static final Item.Properties PARTS_PROPS = new Item.Properties().tab(TAB_TOOL_PARTS);
 
@@ -167,11 +165,17 @@ public class TinkersReforgedItems {
     public static final RegistryObject<ToolPartItem> LARGE_ROUND_PLATE = ITEMS.register("large_round_plate", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
     public static final RegistryObject<ToolPartItem> GREAT_BLADE = ITEMS.register("great_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
 
-    public static final RegistryObject<ModifiableItem> FRYING_PAN = ITEMS.register("frying_pan", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.FRYING_PAN));
+    public static final RegistryObject<ToolPartItem> LONG_BLADE = ITEMS.register("long_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
+
+    public static final RegistryObject<ModifiableItem> LONGSWORD = ITEMS.register("longsword", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.LONGSWORD));
+
     public static final RegistryObject<ModifiableItem> GREATSWORD = ITEMS.register("greatsword", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.GREATSWORD));
 
     public static CastObject great_blade_cast = registerCast("great_blade");
-    public static CastObject large_round_plate_cast = registerCast("large_round_plate");
+
+    public static CastObject long_blade_cast = registerCast("long_blade");
+
+    public static Map<CastType, RegistryObject<Item>> castMap = registerCasts();
 
     public static Item register() {
         return new Item(new Item.Properties().tab(group));

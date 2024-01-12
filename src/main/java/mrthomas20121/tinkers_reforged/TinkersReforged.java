@@ -5,11 +5,15 @@ import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.datagen.tcon.*;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedWorldGen;
+import mrthomas20121.tinkers_reforged.util.ReforgedTiers;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,6 +21,7 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
@@ -27,6 +32,8 @@ import slimeknights.tconstruct.library.client.model.tools.ToolModel;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerMaterialSpriteProvider;
 import slimeknights.tconstruct.tools.data.sprite.TinkerPartSpriteProvider;
+
+import java.util.List;
 
 @Mod(TinkersReforged.MOD_ID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -46,6 +53,8 @@ public class TinkersReforged {
 		TinkersReforgedWorldGen.CONFIGURED_FEATURES.register(bus);
 		TinkersReforgedWorldGen.PLACED_FEATURES.register(bus);
 		TinkersReforgedPotions.MOB_EFFECTS.register(bus);
+		TinkersReforgedPotions.POTIONS.register(bus);
+		bus.addListener(this::commonEvent);
 
 		MinecraftForge.EVENT_BUS.register(this);
 
@@ -53,6 +62,12 @@ public class TinkersReforged {
 
 		// execute this only on the client
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TinkersReforgedBook::initBook);
+	}
+
+	public void commonEvent(FMLCommonSetupEvent event) {
+		event.enqueueWork(() -> {
+			TierSortingRegistry.registerTier(ReforgedTiers.KEPU, new ResourceLocation(MOD_ID, "kepu"), List.of(), List.of(Tiers.NETHERITE));
+		});
 	}
 
 	@SubscribeEvent
@@ -71,6 +86,7 @@ public class TinkersReforged {
 			gen.addProvider(tags);
 			gen.addProvider(new ReforgedFluidTags(gen, fileHelper));
 			gen.addProvider(new ReforgedItemsTags(gen, tags, fileHelper));
+			gen.addProvider(new ReforgedEntityTags(gen, fileHelper));
 		}
 		if(event.includeClient()) {
 			gen.addProvider(new ReforgedItemModels(gen, fileHelper));
@@ -92,7 +108,7 @@ public class TinkersReforged {
 		static void itemColors(ColorHandlerEvent.Item event) {
 			final ItemColors colors = event.getItemColors();
 
-			ToolModel.registerItemColors(colors, TinkersReforgedItems.FRYING_PAN);
+			ToolModel.registerItemColors(colors, TinkersReforgedItems.LONGSWORD);
 			ToolModel.registerItemColors(colors, TinkersReforgedItems.GREATSWORD);
 		}
 	}

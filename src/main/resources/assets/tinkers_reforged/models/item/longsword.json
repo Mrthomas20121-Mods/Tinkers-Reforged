@@ -1,0 +1,26 @@
+{
+  "loader": "tconstruct:tool",
+  "parent": "forge:item/default-tool",
+  "textures": {
+    "head":          "tinkers_reforged:item/tool/longsword/blade",
+    "broken_head":   "tinkers_reforged:item/tool/longsword/broken_blade",
+    "handle":        "tinkers_reforged:item/tool/longsword/handle",
+    "guard":         "tinkers_reforged:item/tool/longsword/guard",
+
+    "large_head":          "tinkers_reforged:item/tool/longsword/large/blade",
+    "large_broken_head":   "tinkers_reforged:item/tool/longsword/large/broken_blade",
+    "large_handle":        "tinkers_reforged:item/tool/longsword/large/handle",
+    "large_guard":         "tinkers_reforged:item/tool/longsword/large/guard"
+  },
+  "modifier_roots": {
+    "small": [ "tinkers_reforged:item/tool/longsword/modifiers/" ],
+    "large": [ "tinkers_reforged:item/tool/longsword/large/modifiers/" ]
+  },
+  "large": true,
+  "large_offset": [-2, 2],
+  "parts": [
+    { "name": "handle", "index": 1 },
+    { "name": "head",   "index": 0, "broken": "broken_head" },
+    { "name": "guard",  "index": 2 }
+  ]
+}

@@ -26,8 +26,35 @@
   },
   "traits": [
     {
-      "name": "tinkers_reforged:cutting_edge",
+      "name": "tinkers_reforged:short_range",
       "level": 1
     }
-  ]
+  ],
+  "harvest": {
+    "logic": {
+      "type": "tconstruct:modified_tag",
+      "effective": "forge:mineable/sword",
+      "modifiers": [
+        {
+          "modifier": 7.5,
+          "predicate": {
+            "type": "tconstruct:set",
+            "blocks": [
+              "minecraft:cobweb"
+            ]
+          }
+        },
+        {
+          "modifier": 100.0,
+          "predicate": {
+            "type": "tconstruct:set",
+            "blocks": [
+              "minecraft:bamboo",
+              "minecraft:bamboo_sapling"
+            ]
+          }
+        }
+      ]
+    }
+  }
 }

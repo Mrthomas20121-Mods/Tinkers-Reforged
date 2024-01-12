@@ -1,0 +1,60 @@
+{
+  "parts": [
+    {
+      "item": "tinkers_reforged:long_blade"
+    },
+    {
+      "item": "tconstruct:tool_handle"
+    },
+    {
+      "item": "tconstruct:tool_handle"
+    }
+  ],
+  "stats": {
+    "base": {
+      "tconstruct:attack_damage": 3.0,
+      "tconstruct:attack_speed": 1.6
+    },
+    "multipliers": {
+      "tconstruct:mining_speed": 0.5,
+      "tconstruct:durability": 1.1
+    }
+  },
+  "slots": {
+    "upgrades": 2,
+    "abilities": 1
+  },
+  "traits": [
+    {
+      "name": "tinkers_reforged:long_range",
+      "level": 1
+    }
+  ],
+  "harvest": {
+    "logic": {
+      "type": "tconstruct:modified_tag",
+      "effective": "forge:mineable/sword",
+      "modifiers": [
+        {
+          "modifier": 7.5,
+          "predicate": {
+            "type": "tconstruct:set",
+            "blocks": [
+              "minecraft:cobweb"
+            ]
+          }
+        },
+        {
+          "modifier": 100.0,
+          "predicate": {
+            "type": "tconstruct:set",
+            "blocks": [
+              "minecraft:bamboo",
+              "minecraft:bamboo_sapling"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

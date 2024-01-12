@@ -30,10 +30,10 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.ender_bone, "Ender Bone");
         addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");
         addItem(TinkersReforgedItems.LARGE_ROUND_PLATE, "Large Round Plate");
-        addItem(TinkersReforgedItems.FRYING_PAN, "Frying Pan");
         addItem(TinkersReforgedItems.GREATSWORD, "Greatsword");
-        add("item.tinkers_reforged.frying_pan.description", "a weapon with burning and healing capabilities.");
-        add("item.tinkers_reforged.great_sword.description", "a weapon with knockback");
+        addItem(TinkersReforgedItems.LONG_BLADE, "Long blade");
+        addItem(TinkersReforgedItems.LONGSWORD, "Longsword");
+        add("item.tinkers_reforged.great_sword.description", "A Giant Sword with knockback.");
         addBlock(TinkersReforgedBlocks.aluminum_block, "Aluminum Block");
         addBlock(TinkersReforgedBlocks.aluminum_ore, "Bauxite Ore");
         addBlock(TinkersReforgedBlocks.deepslate_aluminum_ore, "Deepslate Bauxite Ore");
@@ -133,7 +133,7 @@ public class ReforgedLang extends LanguageProvider {
         addBlock(TinkersReforgedBlocks.raw_kepu_block, "Raw Kepu Block");
 
         addCast(TinkersReforgedItems.great_blade_cast);
-        addCast(TinkersReforgedItems.large_round_plate_cast);
+        addCast(TinkersReforgedItems.long_blade_cast);
 
         addFluid(TinkersReforgedFluids.redstone, "Liquid Redstone");
         addFluid(TinkersReforgedFluids.duralumin, "Molten Duralumin");
@@ -195,8 +195,7 @@ public class ReforgedLang extends LanguageProvider {
         add(TinkersReforgedFluids.gelot.get().getBucket(), "Molten Gelot Bucket");
         add(TinkersReforgedFluids.piroot.get().getBucket(), "Molten Piroot Bucket");
 
-        addEffect(TinkersReforgedPotions.FUNGAL, "Fungal");
-        addEffect(TinkersReforgedPotions.REQUIEM, "Requiem");
+        addEffect(TinkersReforgedPotions.FREEZE, "Freeze");
 
         for(CastType type: CastType.values()) {
             Item item = TinkersReforgedItems.castMap.get(type).get();
@@ -234,10 +233,10 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "I wouldn't touch it!", "Target is paralyzed for 3 second.");
         addModifier(TinkersReforgedModifiers.qivium_anti_armor, "Anti Armor", "Armor, what's that?", "Deal more damage to Armored Targets.");
         addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage in the nether.");
-        addModifier(TinkersReforgedModifiers.chorus_metal_requiem, "Requiem", "A melody is floating in the air", "Player is unaffected by levitation. Deal more damage to Shulker.");
+
         addModifier(TinkersReforgedModifiers.ender_upgrade, "Ender Upgrade", "The end is night", "Deal more damage to the ender dragon.");
         addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Power", "Magic everywhere", "ALL Damage dealt are magic.");
-        addModifier(TinkersReforgedModifiers.durasteel_adapting, "Adapting", "Power Up", "Each mob killed increase your stats by 0.025 * modifier level. Cap at 15 by default.");
+        addModifier(TinkersReforgedModifiers.durasteel_adaptability, "Adapting", "Power Up", "Each undead mob killed increase your attack damage and mining speed by. Cap at 15 by default.");
         addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health is.");
         addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
         addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
@@ -251,7 +250,7 @@ public class ReforgedLang extends LanguageProvider {
         addModifier(TinkersReforgedModifiers.aluminum_rotective_mantle, "Protective Mantle", "Better than no protection!", "Prevent the 4th durability lose.");
         addModifier(TinkersReforgedModifiers.cyber_steel_swift_eye, "Swift Eye", "Eye of the tiger", "Enderman Drop Eye of ender instead of Ender Pearl.");
         addModifier(TinkersReforgedModifiers.magma_steel_unbending, "Unbending", "The Earth is shaking!", "Damage dealt below 6 pierce through armor.");
-        addModifier(TinkersReforgedModifiers.tenacity, "Tenacity", "Brave and strong", "The higher the durability, the higher the damage.");
+        addModifier(TinkersReforgedModifiers.tenacity, "Lust", "You have a bloodlust for hunger", "After killing an entity, restore some hunger.");
         addModifier(TinkersReforgedModifiers.half_powered_fists, "Half Powered Fists", "Don't take it personal kid", "Tool deal half damage but attack twice.");
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
@@ -261,7 +260,9 @@ public class ReforgedLang extends LanguageProvider {
         add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome");
         add("modifier.tinkers_reforged.giant_cells.mining_speed", "Bonus mining speed");
         add("modifier.tinkers_reforged.adapting.cap", "You have reach the max bonus you can get with adapting");
-        add("modifier.tinkers_reforged.tenacity.attack_damage", "Tenacity damage");
+
+        add("tinkers_reforged.modifier.excavation.value", "%s/100 excavated block.");
+        add("tinkers_reforged.modifier.excavation.level", "%s Excavating Level.");
     }
 
     public void addCast(CastObject object) {

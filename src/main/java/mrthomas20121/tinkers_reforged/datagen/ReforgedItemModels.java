@@ -116,7 +116,7 @@ public class ReforgedItemModels extends ItemModelProvider {
             castModel(TinkersReforgedItems.castMap.get(type), type);
         }
 
-        castModel(TinkersReforgedItems.large_round_plate_cast);
+        castModel(TinkersReforgedItems.long_blade_cast);
         castModel(TinkersReforgedItems.great_blade_cast);
     }
 

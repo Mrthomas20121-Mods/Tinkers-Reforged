@@ -23,6 +23,6 @@ public enum CastType {
     tough_handle,
     wire,
     great_blade,
-    round_plate,
-    large_round_plate
+    long_blade,
+    round_plate
 }

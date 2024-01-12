@@ -33,15 +33,15 @@ public class ReforgedItemsTags extends ItemTagsProvider {
     @Override
     protected void addTags() {
 
-        tag(TinkerTags.Items.MODIFIABLE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.MELEE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.SWORD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.MELEE_PRIMARY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.HARVEST).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.HELD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.DURABILITY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.FRYING_PAN.get());
-        tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LARGE_ROUND_PLATE.get());
+        tag(TinkerTags.Items.MODIFIABLE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.MELEE).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.SWORD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.MELEE_PRIMARY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.HARVEST).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.HELD).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.DURABILITY).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.MULTIPART_TOOL).add(TinkersReforgedItems.GREATSWORD.get(), TinkersReforgedItems.LONGSWORD.get());
+        tag(TinkerTags.Items.TOOL_PARTS).add(TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.LARGE_ROUND_PLATE.get(), TinkersReforgedItems.LONG_BLADE.get());
 
         tag(RAW_ALUMINUM).add(TinkersReforgedItems.raw_aluminum.get());
         tag(RAW_KEPU).add(TinkersReforgedItems.raw_kepu.get());
@@ -344,7 +344,7 @@ public class ReforgedItemsTags extends ItemTagsProvider {
         TagsProvider.TagAppender<Item> single_use_casts = tag(TinkerTags.Items.SINGLE_USE_CASTS);
 
         addCastTag(TinkersReforgedItems.great_blade_cast, gold_casts, sand_casts, red_sand_casts, multi_use_casts, single_use_casts);
-        addCastTag(TinkersReforgedItems.large_round_plate_cast, gold_casts, sand_casts, red_sand_casts, multi_use_casts, single_use_casts);
+        addCastTag(TinkersReforgedItems.long_blade_cast, gold_casts, sand_casts, red_sand_casts, multi_use_casts, single_use_casts);
     }
 
     public void addCastTag(CastObject object, TagsProvider.TagAppender<Item> gold, TagsProvider.TagAppender<Item> sand, TagsProvider.TagAppender<Item> red_sand, TagsProvider.TagAppender<Item> multi_use, TagsProvider.TagAppender<Item> single_use) {

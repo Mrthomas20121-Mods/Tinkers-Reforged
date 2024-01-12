@@ -1,0 +1,15 @@
+{
+  "tool": "tinkers_reforged:longsword",
+  "text": [
+    {
+      "text": "The Longsword is a long range weapon. It has average damage and an increased range compare to the sword, all while keeping your other hand free."
+    },
+    {
+      "text": "\n"
+    }
+  ],
+  "properties": [
+    "Medium Damage",
+    "Increased Range"
+  ]
+}

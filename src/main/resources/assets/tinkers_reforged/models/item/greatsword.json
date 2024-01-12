@@ -2,15 +2,25 @@
   "loader": "tconstruct:tool",
   "parent": "forge:item/default-tool",
   "textures": {
-    "head":        "tinkers_reforged:item/tool/greatsword/blade",
-    "broken_head": "tinkers_reforged:item/tool/greatsword/broken_blade",
-    "handle":      "tinkers_reforged:item/tool/greatsword/handle",
-    "guard":       "tinkers_reforged:item/tool/greatsword/guard"
+    "head":          "tinkers_reforged:item/tool/greatsword/blade",
+    "broken_head":   "tinkers_reforged:item/tool/greatsword/broken_blade",
+    "handle":        "tinkers_reforged:item/tool/greatsword/handle",
+    "guard":         "tinkers_reforged:item/tool/greatsword/guard",
+
+    "large_head":          "tinkers_reforged:item/tool/greatsword/large/blade",
+    "large_broken_head":   "tinkers_reforged:item/tool/greatsword/large/broken_blade",
+    "large_handle":        "tinkers_reforged:item/tool/greatsword/large/handle",
+    "large_guard":         "tinkers_reforged:item/tool/greatsword/large/guard"
   },
-  "modifier_roots": [ "tconstruct:item/tool/greatsword/modifiers/" ],
+  "modifier_roots": {
+    "small": [ "tinkers_reforged:item/tool/greatsword/modifiers/" ],
+    "large": [ "tinkers_reforged:item/tool/greatsword/large/modifiers/" ]
+  },
+  "large": true,
+  "large_offset": [-2, 2],
   "parts": [
-    { "name": "handle",  "index": 1 },
-    { "name": "head",    "index": 0, "broken": "broken_head" },
-    { "name": "guard", "index": 2 }
+    { "name": "handle", "index": 1 },
+    { "name": "head",   "index": 0, "broken": "broken_head" },
+    { "name": "guard",  "index": 2 }
   ]
 }

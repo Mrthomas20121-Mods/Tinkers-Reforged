@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:molding_table",
+  "material": {
+    "item": "tconstruct:blank_red_sand_cast"
+  },
+  "pattern": {
+    "item": "tinkers_reforged:long_blade",
+    "type": "tconstruct:material"
+  },
+  "result": "tinkers_reforged:long_blade_cast_red_sand"
+}
