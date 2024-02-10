@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.datagen.ReforgedByproduct;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;

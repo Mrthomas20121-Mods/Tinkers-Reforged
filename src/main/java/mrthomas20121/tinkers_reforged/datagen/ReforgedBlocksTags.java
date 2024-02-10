@@ -1,8 +1,12 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.tag.MetalTags;
+import mrthomas20121.tinkers_reforged.api.tag.RTags;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
+import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -36,210 +40,46 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
         tag(RAW_ALUMINUM).add(TinkersReforgedBlocks.raw_aluminum_block.get());
         tag(RAW_KEPU).add(TinkersReforgedBlocks.raw_kepu_block.get());
 
-        tag(Tags.Blocks.ORES).add(
-                TinkersReforgedBlocks.aluminum_ore.get(),
-                TinkersReforgedBlocks.kepu_ore.get(),
-                TinkersReforgedBlocks.deepslate_aluminum_ore.get(),
-                TinkersReforgedBlocks.deepslate_epidote_ore.get(),
-                TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
-                TinkersReforgedBlocks.red_beryl_ore.get(),
-                TinkersReforgedBlocks.deepslate_red_beryl_ore.get()
-        );
+        for(EnumGem gem: EnumGem.values()) {
+            TagKey<Block> ORE = TinkersReforgedTags.Blocks.create("forge:ores/%s".formatted(gem.getName()));
+            tag(ORE).add(TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get(), TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get());
+            tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get(), TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get());
 
-        tag(BLAZING_COPPER).add(TinkersReforgedBlocks.blazing_copper_block.get());
-        tag(DURALUMIN).add(TinkersReforgedBlocks.duralumin_block.get());
-        tag(ALUMINUM).add(TinkersReforgedBlocks.aluminum_block.get());
-        tag(ELECTRICAL_COPPER).add(TinkersReforgedBlocks.electrical_copper_block.get());
-        tag(LAVIUM).add(TinkersReforgedBlocks.lavium_block.get());
-        tag(QIVIUM).add(TinkersReforgedBlocks.qivium_block.get());
-        tag(GAUSUM).add(TinkersReforgedBlocks.gausum_block.get());
-        tag(FELSTEEL).add(TinkersReforgedBlocks.felsteel_block.get());
-        tag(KEPU).add(TinkersReforgedBlocks.kepu_block.get());
-        tag(CHORUS_METAl).add(TinkersReforgedBlocks.chorus_metal_block.get());
-        tag(DURASTEEL).add(TinkersReforgedBlocks.durasteel_block.get());
-        tag(CRUSTEEL).add(TinkersReforgedBlocks.crusteel_block.get());
-        tag(WAVY).add(TinkersReforgedBlocks.wavy_block.get());
-        tag(YOKEL).add(TinkersReforgedBlocks.yokel_block.get());
-        tag(BAOLIAN).add(TinkersReforgedBlocks.baolian_block.get());
-        tag(EPIDOTE).add(TinkersReforgedBlocks.epidote_block.get());
-        tag(GALU).add(TinkersReforgedBlocks.galu_block.get());
-        tag(MAGMA_STEEL).add(TinkersReforgedBlocks.magma_steel_block.get());
-        tag(CYBER_STEEL).add(TinkersReforgedBlocks.cyber_steel_block.get());
-        tag(HUREAULITE).add(TinkersReforgedBlocks.hureaulite_block.get());
-        tag(RED_BERYL).add(TinkersReforgedBlocks.red_beryl_block.get());
-        tag(GELOT_BLOCK).add(TinkersReforgedBlocks.gelot_block.get());
-        tag(PIROOT_BLOCK).add(TinkersReforgedBlocks.piroot_block.get());
+            TagKey<Block> BLOCK = TinkersReforgedTags.Blocks.create("forge:storage_blocks/%s".formatted(gem.getName()));
+            tag(BLOCK).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
+            tag(gem.getBlockTag()).add(
+                    TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get(),
+                    TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get(),
+                    TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get()
+            );
+            tag(TinkerTags.Blocks.ANVIL_METAL).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
+            tag(Tags.Blocks.STORAGE_BLOCKS).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
+            tag(BlockTags.BEACON_BASE_BLOCKS).add(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get());
+        }
 
-        tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(
-                        TinkersReforgedBlocks.kepu_ore.get(),
-                        TinkersReforgedBlocks.kepu_block.get(),
-                        TinkersReforgedBlocks.raw_kepu_block.get(),
-                        TinkersReforgedBlocks.deepslate_epidote_ore.get(),
-                        TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
-                        TinkersReforgedBlocks.red_beryl_ore.get(),
-                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get(),
-                        TinkersReforgedBlocks.blazing_copper_block.get(),
-                        TinkersReforgedBlocks.magma_steel_block.get(),
-                        TinkersReforgedBlocks.cyber_steel_block.get(),
-                        TinkersReforgedBlocks.gelot_block.get(),
-                        TinkersReforgedBlocks.piroot_block.get()
-                );
-        tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(
-                        TinkersReforgedBlocks.aluminum_ore.get(),
-                        TinkersReforgedBlocks.raw_aluminum_block.get(),
-                        TinkersReforgedBlocks.deepslate_aluminum_ore.get(),
-                        TinkersReforgedBlocks.kepu_block.get(),
-                        TinkersReforgedBlocks.raw_aluminum_block.get(),
-                        TinkersReforgedBlocks.raw_kepu_block.get(),
-                        TinkersReforgedBlocks.duralumin_block.get(),
-                        TinkersReforgedBlocks.aluminum_block.get(),
-                        TinkersReforgedBlocks.electrical_copper_block.get(),
-                        TinkersReforgedBlocks.lavium_block.get(),
-                        TinkersReforgedBlocks.qivium_block.get(),
-                        TinkersReforgedBlocks.gausum_block.get(),
-                        TinkersReforgedBlocks.felsteel_block.get(),
-                        TinkersReforgedBlocks.chorus_metal_block.get(),
-                        TinkersReforgedBlocks.durasteel_block.get(),
-                        TinkersReforgedBlocks.crusteel_block.get(),
-                        TinkersReforgedBlocks.wavy_block.get(),
-                        TinkersReforgedBlocks.yokel_block.get(),
-                        TinkersReforgedBlocks.baolian_block.get(),
-                        TinkersReforgedBlocks.epidote_block.get(),
-                        TinkersReforgedBlocks.galu_block.get(),
-                        TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get()
-                );
+        for(EnumMetal metal: EnumMetal.values()) {
+            MetalTags tags = RTags.getTagsForMetal(metal);
+            if(metal.isThisOre()) {
+                tag(tags.rawBlock).add(TinkersReforgedBlocks.RAW_ORES.get(metal).get());
+                tag(tags.oreBlock).add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get());
+                // need x tool tag
+                tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get());
+                tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get());
+            }
 
-        tag(ALUMINUM_ORE).add(TinkersReforgedBlocks.aluminum_ore.get(), TinkersReforgedBlocks.deepslate_aluminum_ore.get());
-        tag(KEPU_ORE).add(TinkersReforgedBlocks.kepu_ore.get());
-        tag(EPIDOTE_ORE).add(TinkersReforgedBlocks.deepslate_epidote_ore.get());
-        tag(HUREAULITE_ORE).add(TinkersReforgedBlocks.deepslate_hureaulite_ore.get());
-        tag(RED_BERYL_ORE).add(TinkersReforgedBlocks.red_beryl_ore.get(), TinkersReforgedBlocks.deepslate_red_beryl_ore.get());
-        tag(Tags.Blocks.ORES)
-                .add(
-                        TinkersReforgedBlocks.aluminum_ore.get(),
-                        TinkersReforgedBlocks.deepslate_aluminum_ore.get(),
-                        TinkersReforgedBlocks.kepu_ore.get(),
-                        TinkersReforgedBlocks.deepslate_epidote_ore.get(),
-                        TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
-                        TinkersReforgedBlocks.red_beryl_ore.get(),
-                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get()
-                );
+            tag(tags.storage).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get());
+            tag(Tags.Blocks.STORAGE_BLOCKS).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get());
+            tag(BlockTags.BEACON_BASE_BLOCKS).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get());
 
-        tag(Tags.Blocks.STORAGE_BLOCKS)
-                .add(
-                        TinkersReforgedBlocks.kepu_block.get(),
-                        TinkersReforgedBlocks.raw_aluminum_block.get(),
-                        TinkersReforgedBlocks.raw_kepu_block.get(),
-                        TinkersReforgedBlocks.duralumin_block.get(),
-                        TinkersReforgedBlocks.aluminum_block.get(),
-                        TinkersReforgedBlocks.electrical_copper_block.get(),
-                        TinkersReforgedBlocks.lavium_block.get(),
-                        TinkersReforgedBlocks.qivium_block.get(),
-                        TinkersReforgedBlocks.gausum_block.get(),
-                        TinkersReforgedBlocks.felsteel_block.get(),
-                        TinkersReforgedBlocks.chorus_metal_block.get(),
-                        TinkersReforgedBlocks.durasteel_block.get(),
-                        TinkersReforgedBlocks.crusteel_block.get(),
-                        TinkersReforgedBlocks.wavy_block.get(),
-                        TinkersReforgedBlocks.yokel_block.get(),
-                        TinkersReforgedBlocks.baolian_block.get(),
-                        TinkersReforgedBlocks.epidote_block.get(),
-                        TinkersReforgedBlocks.galu_block.get(),
-                        TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get(),
-                        TinkersReforgedBlocks.magma_steel_block.get(),
-                        TinkersReforgedBlocks.cyber_steel_block.get(),
-                        TinkersReforgedBlocks.gelot_block.get(),
-                        TinkersReforgedBlocks.piroot_block.get()
-                );
+            // need x tool tag
+            tag(metal.getBlockTag()).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get(),
+                    TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.PLATFORM).get());
 
-        tag(BlockTags.BEACON_BASE_BLOCKS)
-                .add(
-                        TinkersReforgedBlocks.kepu_block.get(),
-                        TinkersReforgedBlocks.duralumin_block.get(),
-                        TinkersReforgedBlocks.aluminum_block.get(),
-                        TinkersReforgedBlocks.electrical_copper_block.get(),
-                        TinkersReforgedBlocks.lavium_block.get(),
-                        TinkersReforgedBlocks.qivium_block.get(),
-                        TinkersReforgedBlocks.gausum_block.get(),
-                        TinkersReforgedBlocks.felsteel_block.get(),
-                        TinkersReforgedBlocks.chorus_metal_block.get(),
-                        TinkersReforgedBlocks.durasteel_block.get(),
-                        TinkersReforgedBlocks.crusteel_block.get(),
-                        TinkersReforgedBlocks.wavy_block.get(),
-                        TinkersReforgedBlocks.yokel_block.get(),
-                        TinkersReforgedBlocks.baolian_block.get(),
-                        TinkersReforgedBlocks.epidote_block.get(),
-                        TinkersReforgedBlocks.galu_block.get(),
-                        TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get(),
-                        TinkersReforgedBlocks.magma_steel_block.get(),
-                        TinkersReforgedBlocks.cyber_steel_block.get(),
-                        TinkersReforgedBlocks.gelot_block.get(),
-                        TinkersReforgedBlocks.piroot_block.get()
-                );
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get(),
+                    TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.PLATFORM).get());
 
-        tag(TinkerTags.Blocks.ANVIL_METAL)
-                .add(
-                        TinkersReforgedBlocks.kepu_block.get(),
-                        TinkersReforgedBlocks.duralumin_block.get(),
-                        TinkersReforgedBlocks.aluminum_block.get(),
-                        TinkersReforgedBlocks.electrical_copper_block.get(),
-                        TinkersReforgedBlocks.lavium_block.get(),
-                        TinkersReforgedBlocks.qivium_block.get(),
-                        TinkersReforgedBlocks.gausum_block.get(),
-                        TinkersReforgedBlocks.felsteel_block.get(),
-                        TinkersReforgedBlocks.chorus_metal_block.get(),
-                        TinkersReforgedBlocks.durasteel_block.get(),
-                        TinkersReforgedBlocks.crusteel_block.get(),
-                        TinkersReforgedBlocks.wavy_block.get(),
-                        TinkersReforgedBlocks.yokel_block.get(),
-                        TinkersReforgedBlocks.baolian_block.get(),
-                        TinkersReforgedBlocks.epidote_block.get(),
-                        TinkersReforgedBlocks.galu_block.get(),
-                        TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get(),
-                        TinkersReforgedBlocks.magma_steel_block.get(),
-                        TinkersReforgedBlocks.cyber_steel_block.get(),
-                        TinkersReforgedBlocks.gelot_block.get(),
-                        TinkersReforgedBlocks.piroot_block.get()
-                );
-
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(
-                        TinkersReforgedBlocks.aluminum_ore.get(),
-                        TinkersReforgedBlocks.deepslate_aluminum_ore.get(),
-                        TinkersReforgedBlocks.raw_aluminum_block.get(),
-                        TinkersReforgedBlocks.raw_kepu_block.get(),
-                        TinkersReforgedBlocks.kepu_block.get(),
-                        TinkersReforgedBlocks.duralumin_block.get(),
-                        TinkersReforgedBlocks.aluminum_block.get(),
-                        TinkersReforgedBlocks.electrical_copper_block.get(),
-                        TinkersReforgedBlocks.lavium_block.get(),
-                        TinkersReforgedBlocks.qivium_block.get(),
-                        TinkersReforgedBlocks.gausum_block.get(),
-                        TinkersReforgedBlocks.felsteel_block.get(),
-                        TinkersReforgedBlocks.chorus_metal_block.get(),
-                        TinkersReforgedBlocks.durasteel_block.get(),
-                        TinkersReforgedBlocks.crusteel_block.get(),
-                        TinkersReforgedBlocks.wavy_block.get(),
-                        TinkersReforgedBlocks.yokel_block.get(),
-                        TinkersReforgedBlocks.baolian_block.get(),
-                        TinkersReforgedBlocks.epidote_block.get(),
-                        TinkersReforgedBlocks.deepslate_epidote_ore.get(),
-                        TinkersReforgedBlocks.galu_block.get(),
-                        TinkersReforgedBlocks.hureaulite_block.get(),
-                        TinkersReforgedBlocks.deepslate_hureaulite_ore.get(),
-                        TinkersReforgedBlocks.red_beryl_block.get(),
-                        TinkersReforgedBlocks.red_beryl_ore.get(),
-                        TinkersReforgedBlocks.deepslate_red_beryl_ore.get(),
-                        TinkersReforgedBlocks.magma_steel_block.get(),
-                        TinkersReforgedBlocks.cyber_steel_block.get(),
-                        TinkersReforgedBlocks.gelot_block.get(),
-                        TinkersReforgedBlocks.piroot_block.get()
-                );
+            tag(TinkerTags.Blocks.ANVIL_METAL).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get());
+        }
     }
 }

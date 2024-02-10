@@ -2,7 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.datagen.tcon.ReforgedMaterialIds;
-import mrthomas20121.tinkers_reforged.init.CastType;
+import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;
 import net.minecraft.data.DataGenerator;
@@ -29,7 +29,6 @@ public class ReforgedLang extends LanguageProvider {
         addItem(TinkersReforgedItems.book, "Reforging Guide");
         addItem(TinkersReforgedItems.ender_bone, "Ender Bone");
         addItem(TinkersReforgedItems.GREAT_BLADE, "Great Blade");
-        addItem(TinkersReforgedItems.LARGE_ROUND_PLATE, "Large Round Plate");
         addItem(TinkersReforgedItems.GREATSWORD, "Greatsword");
         addItem(TinkersReforgedItems.LONG_BLADE, "Long blade");
         addItem(TinkersReforgedItems.LONGSWORD, "Longsword");

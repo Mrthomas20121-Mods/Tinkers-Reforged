@@ -1,8 +1,13 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.cast.CastType;
+import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.item.CastObject;
 import mrthomas20121.tinkers_reforged.item.book.TinkersReforgedBookItem;
+import mrthomas20121.tinkers_reforged.util.Helpers;
+import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -11,36 +16,59 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.util.SupplierCreativeTab;
+import slimeknights.tconstruct.TConstruct;
+import slimeknights.tconstruct.library.materials.MaterialRegistry;
+import slimeknights.tconstruct.library.materials.definition.IMaterial;
 import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
 
-import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
-import static slimeknights.tconstruct.tools.TinkerToolParts.TAB_TOOL_PARTS;
-import static slimeknights.tconstruct.tools.TinkerTools.TAB_TOOLS;
 
 public class TinkersReforgedItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TinkersReforged.MOD_ID);
 
-    public static final CreativeModeTab group = new CreativeModeTab(TinkersReforged.MOD_ID) {
+    public static final CreativeModeTab resourceTab = new SupplierCreativeTab(TinkersReforged.MOD_ID, "resources",
+            () -> new ItemStack(TinkersReforgedItems.METALS.get(EnumMetal.ALUMINUM).get(EnumMetal.ItemType.INGOT).get()));
 
-        @Override
-        @Nonnull
-        public ItemStack makeIcon() {
-            return new ItemStack(aluminum_ingot.get());
+    public static final CreativeModeTab castTab = new SupplierCreativeTab(TinkersReforged.MOD_ID, "casts",
+            () -> new ItemStack(TinkersReforgedItems.ALU_CASTS.get(CastType.gear).get()));
+
+    public static final CreativeModeTab TAB_TOOL_PARTS = new SupplierCreativeTab(TinkersReforged.MOD_ID, "tool_parts", () -> {
+        List<IMaterial> materials = new ArrayList<>(MaterialRegistry.getInstance().getVisibleMaterials());
+        if (materials.isEmpty()) {
+            return new ItemStack(TinkersReforgedItems.LONG_BLADE.get());
         }
-    };
+        return TinkersReforgedItems.LONG_BLADE.get().withMaterial(materials.get(TConstruct.RANDOM.nextInt(materials.size())).getIdentifier());
+    });
+
+    public static final CreativeModeTab TAB_TOOLS = new SupplierCreativeTab(TinkersReforged.MOD_ID, "tools", () -> TinkersReforgedItems.LONGSWORD.get().getRenderTool());
 
     private static final Item.Properties TOOL = new Item.Properties().stacksTo(1).tab(TAB_TOOLS);
     private static final Item.Properties PARTS_PROPS = new Item.Properties().tab(TAB_TOOL_PARTS);
 
-    public static RegistryObject<Item> book = ITEMS.register("reforging_guide", () -> new TinkersReforgedBookItem(new Item.Properties().stacksTo(1).tab(group)));
+    public static RegistryObject<Item> book = ITEMS.register("reforging_guide", () -> new TinkersReforgedBookItem(new Item.Properties().stacksTo(1).tab(resourceTab)));
 
     public static RegistryObject<Item> ender_bone = ITEMS.register("ender_bone", TinkersReforgedItems::register);
+
+    public static Map<EnumMetal, RegistryObject<Item>> RAW_ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal ->
+            ITEMS.register("raw_%s".formatted(metal.getName()), () -> new Item(new Item.Properties().tab(resourceTab))));
+
+    public static Map<EnumMetal, Map<EnumMetal.ItemType, RegistryObject<Item>>> METALS = Helpers.mapOfKeys(EnumMetal.class, metal ->
+            Helpers.mapOfKeys(EnumMetal.ItemType.class, itemType -> ITEMS.register("%s_%s".formatted(metal.getName(), itemType.getName()), () -> new Item(new Item.Properties().tab(resourceTab)))));
+
+    public static Map<EnumGem, Map<EnumGem.ItemType, RegistryObject<Item>>> GEMS = Helpers.mapOfKeys(EnumGem.class, gem ->
+            Helpers.mapOfKeys(EnumGem.ItemType.class, itemType -> ITEMS.register("%s_%s".formatted(gem.getName(), itemType.getName()), () -> new Item(new Item.Properties().tab(resourceTab)))));
+
+    public static Map<TinkerCastType, Map<TinkerCastType.Type, RegistryObject<Item>>> CASTS = Helpers.mapOfKeys(TinkerCastType.class, cast ->
+            Helpers.mapOfKeys(TinkerCastType.Type.class, type -> ITEMS.register("%s_%s_cast".formatted(type.getName(), cast.getName()), () -> new Item(new Item.Properties().tab(castTab)))));
+
+    public static Map<CastType, RegistryObject<Item>> ALU_CASTS = Helpers.mapOfKeys(CastType.class, cast -> ITEMS.register("aluminum_%s_cast".formatted(cast.getName()), () -> new Item(new Item.Properties().tab(castTab))));
 
     public static RegistryObject<Item> blazing_copper_ingot = ITEMS.register("blazing_copper_ingot", TinkersReforgedItems::register);
     public static RegistryObject<Item> blazing_copper_dust = ITEMS.register("blazing_copper_dust", TinkersReforgedItems::register);
@@ -162,7 +190,6 @@ public class TinkersReforgedItems {
     public static RegistryObject<Item> red_beryl_ore = ITEMS.register("red_beryl_ore", () -> registerItemBlock(TinkersReforgedBlocks.red_beryl_ore.get()));
     public static RegistryObject<Item> deepslate_red_beryl_ore = ITEMS.register("deepslate_red_beryl_ore", () -> registerItemBlock(TinkersReforgedBlocks.deepslate_red_beryl_ore.get()));
 
-    public static final RegistryObject<ToolPartItem> LARGE_ROUND_PLATE = ITEMS.register("large_round_plate", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
     public static final RegistryObject<ToolPartItem> GREAT_BLADE = ITEMS.register("great_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
 
     public static final RegistryObject<ToolPartItem> LONG_BLADE = ITEMS.register("long_blade", () -> new ToolPartItem(PARTS_PROPS, HeadMaterialStats.ID));
@@ -171,36 +198,21 @@ public class TinkersReforgedItems {
 
     public static final RegistryObject<ModifiableItem> GREATSWORD = ITEMS.register("greatsword", () -> new ModifiableItem(TOOL, TinkersReforgedToolDefinitions.GREATSWORD));
 
-    public static CastObject great_blade_cast = registerCast("great_blade");
+    public static CastObject great_blade_cast = new CastObject("great_blade");
 
-    public static CastObject long_blade_cast = registerCast("long_blade");
+    public static CastObject long_blade_cast = new CastObject("long_blade");
 
-    public static Map<CastType, RegistryObject<Item>> castMap = registerCasts();
+    public static Map<CastType, RegistryObject<Item>> castMap = new HashMap<>();
 
     public static Item register() {
-        return new Item(new Item.Properties().tab(group));
+        return new Item(new Item.Properties().tab(resourceTab));
+    }
+
+    public static Item registerCast() {
+        return new Item(new Item.Properties().tab(castTab));
     }
 
     public static BlockItem registerItemBlock(Block block) {
-        return new BlockItem(block, new Item.Properties().tab(group));
-    }
-
-    public static CastObject registerCast(String name) {
-        RegistryObject<Item> gold_cast = ITEMS.register(name+"_cast_gold", TinkersReforgedItems::register);
-        RegistryObject<Item> sand_cast = ITEMS.register(name+"_cast_sand", TinkersReforgedItems::register);
-        RegistryObject<Item> red_sand_cast = ITEMS.register(name+"_cast_red_sand", TinkersReforgedItems::register);
-        return new CastObject("tconstruct:"+name, gold_cast, sand_cast, red_sand_cast);
-    }
-
-    public static Map<CastType, RegistryObject<Item>> registerCasts() {
-
-        Map<CastType, RegistryObject<Item>> casts = new HashMap<>();
-
-        for(CastType type : CastType.values()) {
-            RegistryObject<Item> cast = TinkersReforgedItems.ITEMS.register(String.format("cast_%s", type.name().toLowerCase()), TinkersReforgedItems::register);
-            casts.put(type, cast);
-        }
-
-        return casts;
+        return new BlockItem(block, new Item.Properties().tab(resourceTab));
     }
 }

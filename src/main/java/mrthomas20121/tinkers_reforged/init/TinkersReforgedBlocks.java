@@ -1,15 +1,26 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.block.OreBlock;
+import mrthomas20121.tinkers_reforged.util.Helpers;
+import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Map;
+import java.util.function.Supplier;
+
+import static mrthomas20121.tinkers_reforged.init.TinkersReforgedItems.ITEMS;
+import static mrthomas20121.tinkers_reforged.init.TinkersReforgedItems.resourceTab;
 
 public class TinkersReforgedBlocks {
 
@@ -18,7 +29,23 @@ public class TinkersReforgedBlocks {
     // block properties
     private static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(5F, 1200f).sound(SoundType.METAL);
     private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE);
+    private static final BlockBehaviour.Properties DEEPSLATE_ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.DEEPSLATE);
     private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK);
+
+    public static Map<EnumMetal, OreBlock> ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal ->
+            new OreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("%s_deepslate_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab))));
+
+    public static Map<EnumGem, OreBlock> GEM_ORES = Helpers.mapOfKeys(EnumGem.class, metal ->
+            new OreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("%s_deepslate_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab))));
+
+    public static Map<EnumMetal, RegistryObject<Block>> RAW_ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal ->
+            register("raw_%s_block".formatted(metal.getName()), () -> new Block(RAW_BLOCK), new Item.Properties().tab(resourceTab)));
+
+    public static Map<EnumMetal, Map<EnumMetal.BlockType, RegistryObject<Block>>> METAL_BLOCKS = Helpers.mapOfKeys(EnumMetal.class, metal ->
+            Helpers.mapOfKeys(EnumMetal.BlockType.class, type -> register("%s_%s".formatted(metal.getName(), type.getName()), type.getBlock(), new Item.Properties().tab(resourceTab))));
+
+    public static Map<EnumGem, RegistryObject<Block>> GEMS_BLOCKS = Helpers.mapOfKeys(EnumGem.class, gem ->
+            register("%s_block".formatted(gem.getName()), () -> new Block(METAL), new Item.Properties().tab(resourceTab)));
 
     public static RegistryObject<Block> blazing_copper_block = BLOCKS.register("blazing_copper_block", () -> new Block(METAL));
     public static RegistryObject<Block> aluminum_ore = BLOCKS.register("aluminum_ore", () -> new Block(ORE));
@@ -53,4 +80,11 @@ public class TinkersReforgedBlocks {
     public static RegistryObject<Block> red_beryl_ore = BLOCKS.register("red_beryl_ore", () -> new Block(ORE));
     public static RegistryObject<Block> deepslate_red_beryl_ore = BLOCKS.register("deepslate_red_beryl_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
 
+    private static RegistryObject<Block> register(String name, Supplier<Block> block, Item.Properties properties) {
+        RegistryObject<Block> b = BLOCKS.register(name, block);
+
+        ITEMS.register(name, () -> new BlockItem(b.get(), properties));
+
+        return b;
+    }
 }

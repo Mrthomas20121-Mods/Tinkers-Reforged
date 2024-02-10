@@ -1,8 +1,8 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.util.Helpers;
-import mrthomas20121.tinkers_reforged.util.ReforgedGem;
-import mrthomas20121.tinkers_reforged.util.ReforgedMetal;
+import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.*;
@@ -35,7 +35,7 @@ public class TinkersReforgedTags {
 
         public static TagKey<EntityType<?>> NETHER_MOBS = create("tinkers_reforged:nether_mobs");
 
-        private static TagKey<EntityType<?>> create(String p_203849_) {
+        public static TagKey<EntityType<?>> create(String p_203849_) {
             return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(p_203849_));
         }
     }
@@ -44,12 +44,14 @@ public class TinkersReforgedTags {
 
         public static void init() {}
 
-        private static TagKey<Block> create(String name) {
+        public static TagKey<Block> create(String name) {
             return BlockTags.create(new ResourceLocation(name));
         }
 
         // terra modifier tag
         public static final TagKey<Block> ROCK_TYPE_BLOCKS = create("tinkers_reforged:rock_type_blocks");
+
+        public static final TagKey<Block> NEED_KEPU_TOOLS = create("tinkers_reforged:need_kepu_tools");
         // ores
         public static final TagKey<Block> ALUMINUM_ORE = create("forge:ores/aluminum");
         public static final TagKey<Block> KEPU_ORE = create("forge:ores/kepu");
@@ -91,18 +93,18 @@ public class TinkersReforgedTags {
 
         public static void init() {}
 
-        private static TagKey<Item> create(String name) {
+        public static TagKey<Item> create(String name) {
             return ItemTags.create(new ResourceLocation(name));
         }
 
-        public static final Map<ReforgedGem, TagKey<Item>> GEM_ORES = Helpers.mapOfKeys(ReforgedGem.class, (gem) ->
+        public static final Map<EnumGem, TagKey<Item>> GEM_ORES = Helpers.mapOfKeys(EnumGem.class, (gem) ->
                 create("forge:ores/" + gem.getName()));
 
-        public static final Map<ReforgedMetal, Map<ReforgedMetal.BlockType, TagKey<Item>>> METAL_ORES = Helpers.mapOfKeys(ReforgedMetal.class, ReforgedMetal::isThisOre, (metal) ->
-                Helpers.mapOfKeys(ReforgedMetal.BlockType.class, (itemType) -> create("forge:ores/" + metal.getName())));
+        public static final Map<EnumMetal, Map<EnumMetal.BlockType, TagKey<Item>>> METAL_ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, (metal) ->
+                Helpers.mapOfKeys(EnumMetal.BlockType.class, (itemType) -> create("forge:ores/" + metal.getName())));
 
-        public static final Map<ReforgedMetal, Map<ReforgedMetal.ItemType, TagKey<Item>>> METALS = Helpers.mapOfKeys(ReforgedMetal.class, (metal) ->
-                Helpers.mapOfKeys(ReforgedMetal.ItemType.class, (itemType) -> create("forge:"+itemType.getName() + "s/" + metal.getName())));
+        public static final Map<EnumMetal, Map<EnumMetal.ItemType, TagKey<Item>>> METALS = Helpers.mapOfKeys(EnumMetal.class, (metal) ->
+                Helpers.mapOfKeys(EnumMetal.ItemType.class, (itemType) -> create("forge:"+itemType.getName() + "s/" + metal.getName())));
 
         // ores
         public static final TagKey<Item> ALUMINUM_ORE = create("forge:ores/aluminum");

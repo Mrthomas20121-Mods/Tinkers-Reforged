@@ -1,9 +1,11 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.init.CastType;
+import mrthomas20121.tinkers_reforged.api.cast.CastType;
+import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
-import mrthomas20121.tinkers_reforged.item.CastObject;
+import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -23,107 +25,36 @@ public class ReforgedItemModels extends ItemModelProvider {
         itemWithModel(TinkersReforgedItems.book, "item/generated");
         itemWithModel(TinkersReforgedItems.ender_bone, "item/generated");
 
-        itemWithModel(TinkersReforgedItems.aluminum_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.aluminum_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.aluminum_nugget, "item/generated");
+        for(EnumMetal metal: EnumMetal.values()) {
 
-        itemWithModel(TinkersReforgedItems.blazing_copper_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.blazing_copper_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.blazing_copper_nugget, "item/generated");
+            if(metal.isThisOre()) {
+                itemWithModel(TinkersReforgedItems.RAW_ORES.get(metal), "item/generated");
+            }
 
-        itemWithModel(TinkersReforgedItems.duralumin_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.duralumin_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.duralumin_nugget, "item/generated");
+            for(EnumMetal.ItemType itemType: EnumMetal.ItemType.values()) {
+                itemWithModel(TinkersReforgedItems.METALS.get(metal).get(itemType), "item/generated");
+            }
+        }
 
-        itemWithModel(TinkersReforgedItems.electrical_copper_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.electrical_copper_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.electrical_copper_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.lavium_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.lavium_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.lavium_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.qivium_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.qivium_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.qivium_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.gausum_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.gausum_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.gausum_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.felsteel_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.felsteel_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.felsteel_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.kepu_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.kepu_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.kepu_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.chorus_metal_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.chorus_metal_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.chorus_metal_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.durasteel_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.durasteel_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.durasteel_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.raw_aluminum, "item/generated");
-        itemWithModel(TinkersReforgedItems.raw_kepu, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.crusteel_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.crusteel_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.crusteel_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.wavy_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.wavy_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.wavy_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.yokel_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.yokel_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.yokel_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.baolian_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.baolian_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.baolian_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.epidote_gem, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.galu_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.galu_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.galu_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.magma_steel_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.magma_steel_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.magma_steel_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.cyber_steel_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.cyber_steel_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.cyber_steel_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.gelot_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.gelot_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.gelot_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.piroot_dust, "item/generated");
-        itemWithModel(TinkersReforgedItems.piroot_ingot, "item/generated");
-        itemWithModel(TinkersReforgedItems.piroot_nugget, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.hureaulite_gem, "item/generated");
-
-        itemWithModel(TinkersReforgedItems.red_beryl_gem, "item/generated");
+        for(EnumGem gem: EnumGem.values()) {
+            for(EnumGem.ItemType itemType: EnumGem.ItemType.values()) {
+                itemWithModel(TinkersReforgedItems.GEMS.get(gem).get(itemType), "item/generated");
+            }
+        }
 
         for(CastType type : CastType.values()) {
             castModel(TinkersReforgedItems.castMap.get(type), type);
         }
 
-        castModel(TinkersReforgedItems.long_blade_cast);
-        castModel(TinkersReforgedItems.great_blade_cast);
-    }
+        for(TinkerCastType castType: TinkerCastType.values()) {
+            for(TinkerCastType.Type type: TinkerCastType.Type.values()) {
+                castModel(TinkersReforgedItems.CASTS.get(castType).get(type), castType, type);
+            }
+        }
 
-    public void castModel(CastObject object) {
-        itemWithModel(object.getGoldCast(), "item/generated");
-        itemWithModel(object.getSandCast(), "item/generated");
-        itemWithModel(object.getRedSandCast(), "item/generated");
+        for(CastType castType: CastType.values()) {
+            castModel(TinkersReforgedItems.ALU_CASTS.get(castType), castType);
+        }
     }
 
     public void itemWithModel(RegistryObject<? extends Item> registryObject, String model) {
@@ -132,9 +63,15 @@ public class ReforgedItemModels extends ItemModelProvider {
         singleTexture(id.getPath(), new ResourceLocation(model), "layer0", textureLocation);
     }
 
-    public void castModel(RegistryObject<? extends Item> registryObject, CastType type) {
+    public void castModel(RegistryObject<? extends Item> registryObject, TinkerCastType castType, TinkerCastType.Type type) {
         ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/" + type.name().toLowerCase());
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted(castType.getName(), type.getName()));
+        singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
+    }
+
+    public void castModel(RegistryObject<? extends Item> registryObject, CastType castType) {
+        ResourceLocation id = registryObject.getId();
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted(castType.getName(), "aluminum"));
         singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 }

@@ -1,6 +1,8 @@
 package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.util.Helpers;
+import mrthomas20121.tinkers_reforged.api.material.ReforgedFluid;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.Material;
@@ -9,9 +11,14 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
 import slimeknights.mantle.registration.object.FluidObject;
 
+import java.util.Map;
+
 public class TinkersReforgedFluids {
 
     public static final FluidDeferredRegister FLUIDS = new FluidDeferredRegister(TinkersReforged.MOD_ID);
+
+    public static Map<ReforgedFluid, FluidObject<ForgeFlowingFluid>> ALL_FLUIDS = Helpers.mapOfKeys(ReforgedFluid.class,
+            fluid -> register(fluid.getName(), fluid.getTemp()));
 
     public static FluidObject<ForgeFlowingFluid> lapis = register("molten_lapis", 900);
     public static FluidObject<ForgeFlowingFluid> redstone = register("molten_redstone", 800);

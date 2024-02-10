@@ -1,8 +1,11 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.block.OreBlock;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -21,68 +24,29 @@ public class ReforgedBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(TinkersReforgedBlocks.aluminum_ore);
-        blockWithItem(TinkersReforgedBlocks.deepslate_aluminum_ore);
-        blockWithItem(TinkersReforgedBlocks.aluminum_block);
-        blockWithItem(TinkersReforgedBlocks.blazing_copper_block);
-        blockWithItem(TinkersReforgedBlocks.duralumin_block);
-        blockWithItem(TinkersReforgedBlocks.electrical_copper_block);
-        blockWithItem(TinkersReforgedBlocks.lavium_block);
-        blockWithItem(TinkersReforgedBlocks.qivium_block);
-        blockWithItem(TinkersReforgedBlocks.gausum_block);
-        blockWithItem(TinkersReforgedBlocks.felsteel_block);
-        blockWithItem(TinkersReforgedBlocks.kepu_ore);
-        blockWithItem(TinkersReforgedBlocks.kepu_block);
-        blockWithItem(TinkersReforgedBlocks.chorus_metal_block);
-        blockWithItem(TinkersReforgedBlocks.raw_kepu_block);
-        blockWithItem(TinkersReforgedBlocks.raw_aluminum_block);
-        blockWithItem(TinkersReforgedBlocks.durasteel_block);
-        blockWithItem(TinkersReforgedBlocks.crusteel_block);
-        blockWithItem(TinkersReforgedBlocks.yokel_block);
-        blockWithItem(TinkersReforgedBlocks.wavy_block);
-        blockWithItem(TinkersReforgedBlocks.baolian_block);
-        blockWithItem(TinkersReforgedBlocks.epidote_block);
-        blockWithItem(TinkersReforgedBlocks.deepslate_epidote_ore);
-        blockWithItem(TinkersReforgedBlocks.galu_block);
-        blockWithItem(TinkersReforgedBlocks.magma_steel_block);
-        blockWithItem(TinkersReforgedBlocks.cyber_steel_block);
-        blockWithItem(TinkersReforgedBlocks.hureaulite_block);
-        blockWithItem(TinkersReforgedBlocks.deepslate_hureaulite_ore);
-        blockWithItem(TinkersReforgedBlocks.red_beryl_block);
-        blockWithItem(TinkersReforgedBlocks.gelot_block);
-        blockWithItem(TinkersReforgedBlocks.piroot_block);
-        blockWithItem(TinkersReforgedBlocks.red_beryl_ore);
-        blockWithItem(TinkersReforgedBlocks.deepslate_red_beryl_ore);
+        for(EnumMetal metal: EnumMetal.values()) {
 
-        fluid(TinkersReforgedFluids.duralumin);
-        fluid(TinkersReforgedFluids.electrical_copper);
-        fluid(TinkersReforgedFluids.lavium);
-        fluid(TinkersReforgedFluids.qivium);
-        fluid(TinkersReforgedFluids.blazing_copper);
-        fluid(TinkersReforgedFluids.redstone);
-        fluid(TinkersReforgedFluids.gausum);
-        fluid(TinkersReforgedFluids.lapis);
-        fluid(TinkersReforgedFluids.felsteel);
-        fluid(TinkersReforgedFluids.kepu);
-        fluid(TinkersReforgedFluids.chorus_metal);
-        fluid(TinkersReforgedFluids.chorus);
-        fluid(TinkersReforgedFluids.shulker);
-        fluid(TinkersReforgedFluids.durasteel);
-        fluid(TinkersReforgedFluids.proto_lava);
-        fluid(TinkersReforgedFluids.kelp);
-        fluid(TinkersReforgedFluids.yokel);
-        fluid(TinkersReforgedFluids.wavy);
-        fluid(TinkersReforgedFluids.crusteel);
-        fluid(TinkersReforgedFluids.baolian);
-        fluid(TinkersReforgedFluids.epidote);
-        fluid(TinkersReforgedFluids.galu);
-        fluid(TinkersReforgedFluids.magma_steel);
-        fluid(TinkersReforgedFluids.cyber_steel);
-        fluid(TinkersReforgedFluids.coal);
-        fluid(TinkersReforgedFluids.hureaulite);
-        fluid(TinkersReforgedFluids.red_beryl);
-        fluid(TinkersReforgedFluids.gelot);
-        fluid(TinkersReforgedFluids.piroot);
+            if(metal.isThisOre()) {
+                blockWithItem(TinkersReforgedBlocks.RAW_ORES.get(metal));
+                OreBlock oreBlock = TinkersReforgedBlocks.ORES.get(metal);
+                blockWithItem(oreBlock.ore());
+                blockWithItem(oreBlock.deepslateOre());
+            }
+
+            for(EnumMetal.BlockType blockType: EnumMetal.BlockType.values()) {
+                blockWithItem(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(blockType));
+            }
+        }
+
+        for(EnumGem gem: EnumGem.values()) {
+            OreBlock oreBlock = TinkersReforgedBlocks.GEM_ORES.get(gem);
+            blockWithItem(oreBlock.ore());
+            blockWithItem(oreBlock.deepslateOre());
+
+            blockWithItem(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem));
+        }
+
+        TinkersReforgedFluids.ALL_FLUIDS.values().forEach(this::fluid);
     }
 
     public void blockWithItem(RegistryObject<Block> registryObject) {

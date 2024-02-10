@@ -9,17 +9,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class CastObject {
 
     private final ResourceLocation name;
-    private final RegistryObject<Item> gold_cast;
-    private final RegistryObject<Item> sand_cast;
-    private final RegistryObject<Item> red_sand_cast;
     private final TagKey<Item> singleUseTag;
     private final TagKey<Item> multiUseTag;
 
-    public CastObject(String name, RegistryObject<Item> gold_cast, RegistryObject<Item> sand_cast, RegistryObject<Item> red_sand_cast) {
+    public CastObject(String name) {
         this.name = new ResourceLocation(name);
-        this.gold_cast = gold_cast;
-        this.sand_cast = sand_cast;
-        this.red_sand_cast = red_sand_cast;
         this.singleUseTag = makeTag("single_use");
         this.multiUseTag = makeTag("multi_use");
     }
@@ -38,17 +32,5 @@ public class CastObject {
 
     public TagKey<Item> getSingleUseTag() {
         return singleUseTag;
-    }
-
-    public RegistryObject<Item> getGoldCast() {
-        return gold_cast;
-    }
-
-    public RegistryObject<Item> getSandCast() {
-        return sand_cast;
-    }
-
-    public RegistryObject<Item> getRedSandCast() {
-        return red_sand_cast;
     }
 }

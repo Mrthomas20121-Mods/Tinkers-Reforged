@@ -1,6 +1,9 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
+import mrthomas20121.tinkers_reforged.api.material.ReforgedFluid;
 import net.minecraft.world.level.material.Fluid;
+import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
 import slimeknights.tconstruct.library.recipe.FluidValues;
@@ -10,7 +13,9 @@ import java.util.function.Supplier;
 
 public enum ReforgedByproduct implements IByproduct {
     BLAZING_BLOOD(true, TinkerFluids.blazingBlood),
-    ENDER(true, TinkerFluids.moltenEnder);
+    ENDER(true, TinkerFluids.moltenEnder),
+    ALUMINUM(true, TinkerFluids.moltenAluminum),
+    GALLIUM(true, TinkersReforgedFluids.ALL_FLUIDS.get(ReforgedFluid.GALLIUM));
 
     private final String name;
     private final boolean alwaysPresent;
@@ -25,7 +30,7 @@ public enum ReforgedByproduct implements IByproduct {
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return this.name;
     }
 
@@ -35,7 +40,7 @@ public enum ReforgedByproduct implements IByproduct {
     }
 
     @Override
-    public Fluid getFluid() {
+    public @NotNull Fluid getFluid() {
         return fluidSupplier.get();
     }
 
