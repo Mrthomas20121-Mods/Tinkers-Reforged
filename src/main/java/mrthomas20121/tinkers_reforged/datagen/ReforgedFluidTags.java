@@ -2,7 +2,7 @@ package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
-import mrthomas20121.tinkers_reforged.api.material.ReforgedFluid;
+import mrthomas20121.tinkers_reforged.api.material.EnumFluid;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -27,7 +27,7 @@ public class ReforgedFluidTags extends FluidTagsProvider {
     @Override
     protected void addTags() {
 
-        for(ReforgedFluid fluid: ReforgedFluid.values()) {
+        for(EnumFluid fluid: EnumFluid.values()) {
             for(TagKey<Fluid> t: fluid.getFluid()) {
                 tag(t).add(
                         TinkersReforgedFluids.ALL_FLUIDS.get(fluid).getStill(),

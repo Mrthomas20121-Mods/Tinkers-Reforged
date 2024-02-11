@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
-import mrthomas20121.tinkers_reforged.api.material.ReforgedFluid;
+import mrthomas20121.tinkers_reforged.api.material.EnumFluid;
 import net.minecraft.world.level.material.Fluid;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.tconstruct.fluids.TinkerFluids;
@@ -15,7 +15,7 @@ public enum ReforgedByproduct implements IByproduct {
     BLAZING_BLOOD(true, TinkerFluids.blazingBlood),
     ENDER(true, TinkerFluids.moltenEnder),
     ALUMINUM(true, TinkerFluids.moltenAluminum),
-    GALLIUM(true, TinkersReforgedFluids.ALL_FLUIDS.get(ReforgedFluid.GALLIUM));
+    GALLIUM(true, TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.GALLIUM));
 
     private final String name;
     private final boolean alwaysPresent;

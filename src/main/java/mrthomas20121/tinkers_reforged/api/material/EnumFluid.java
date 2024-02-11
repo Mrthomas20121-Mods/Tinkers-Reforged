@@ -5,7 +5,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 import slimeknights.tconstruct.common.TinkerTags;
 
-public enum ReforgedFluid implements EnumData {
+public enum EnumFluid implements EnumData {
 
     LIQUID_COAL(500, TinkerTags.Fluids.CHEAP_METAL_SPILLING),
     LAPIS(900, TinkerTags.Fluids.CHEAP_METAL_SPILLING),
@@ -34,12 +34,12 @@ public enum ReforgedFluid implements EnumData {
     private final TagKey<Fluid>[] fluids;
 
     @SafeVarargs
-    ReforgedFluid(int temp, TagKey<Fluid> ...fluids) {
+    EnumFluid(int temp, TagKey<Fluid> ...fluids) {
         this.temp = temp;
         this.fluids = fluids;
     }
 
-    ReforgedFluid(int temp) {
+    EnumFluid(int temp) {
         this(temp, TinkerTags.Fluids.AVERAGE_METAL_SPILLING);
     }
 

@@ -20,10 +20,10 @@ public class ReforgedPartSprite extends AbstractPartSpriteProvider {
     @Override
     protected void addAllSpites() {
 
-        addHead("large_round_plate");
+        addHead("long_blade");
         addHead("great_blade");
 
-        buildTool("frying_pan").addBreakableHead("head").addHandle("handle");
+        buildTool("longsword").addBreakableHead("blade").addHandle("guard").addHandle("handle");
         buildTool("greatsword").addBreakableHead("blade").addHandle("guard").addHandle("handle");
     }
 }
