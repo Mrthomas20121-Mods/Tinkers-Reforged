@@ -37,7 +37,7 @@ public class TinkersReforgedItems {
             () -> new ItemStack(TinkersReforgedItems.METALS.get(EnumMetal.ALUMINUM).get(EnumMetal.ItemType.INGOT).get()));
 
     public static final CreativeModeTab castTab = new SupplierCreativeTab(TinkersReforged.MOD_ID, "casts",
-            () -> new ItemStack(TinkersReforgedItems.ALU_CASTS.get(CastType.gear).get()));
+            () -> new ItemStack(TinkersReforgedItems.ALU_CASTS.get(CastType.GEAR).get()));
 
     public static final CreativeModeTab TAB_TOOL_PARTS = new SupplierCreativeTab(TinkersReforged.MOD_ID, "tool_parts", () -> {
         List<IMaterial> materials = new ArrayList<>(MaterialRegistry.getInstance().getVisibleMaterials());

@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
 import mrthomas20121.tinkers_reforged.datagen.ReforgedBlocksLoot;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
 import mrthomas20121.tinkers_reforged.util.EnumData;
 import net.minecraft.tags.BlockTags;
@@ -9,42 +10,56 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.shared.block.PlatformBlock;
 
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
 public enum EnumMetal implements EnumData {
-    ALUMINUM(true, BlockTags.NEEDS_STONE_TOOL, BlockTags.NEEDS_IRON_TOOL),
-    BLAZIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    BOMIN(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    DURALUMIN(BlockTags.NEEDS_DIAMOND_TOOL),
-    DURASTEEL(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    ELECTRIC_COPPER(BlockTags.NEEDS_DIAMOND_TOOL),
-    ETRYX(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    FEROBOLT(BlockTags.NEEDS_DIAMOND_TOOL),
-    GALLIUM(true, BlockTags.NEEDS_DIAMOND_TOOL, Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    HOSIUM(BlockTags.NEEDS_DIAMOND_TOOL),
-    KEPU(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS),
-    LAVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    MOSITE(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    QIVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL),
-    TIBERIUM(TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS),
-    TITANIUM(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS);
+    ALUMINUM(true, BlockTags.NEEDS_STONE_TOOL, BlockTags.NEEDS_IRON_TOOL, TinkerFluids.moltenAluminum),
+    BLAZIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.BLAZIUM),
+    BOMIN(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.BOMIN),
+    DURALUMIN(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.DURALUMIN),
+    DURASTEEL(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.DURASTEEL),
+    ELECTRIC_COPPER(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.ELECTRICAL_COPPER),
+    ETRYX(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.ETRYX),
+    FEROBOLT(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.FEROBOLT),
+    GALLIUM(true, BlockTags.NEEDS_DIAMOND_TOOL, Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.GALLIUM),
+    HORNIUM(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.HORNIUM),
+    KEPU(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.KEPU),
+    LAVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.LAVIUM),
+    MOSITE(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.MOSITE),
+    QIVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.QIVIUM),
+    TIBERIUM(TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TIBERIUM),
+    TITANIUM(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TITANIUM);
 
     private final boolean isOre;
 
     private final TagKey<Block> blockTag;
     private final TagKey<Block> oreMiningTag;
 
-    EnumMetal(boolean isOre, TagKey<Block> blockTag, TagKey<Block> oreMiningTag) {
+    public final FluidObject<ForgeFlowingFluid> fluid;
+
+    EnumMetal(boolean isOre, TagKey<Block> blockTag, TagKey<Block> oreMiningTag, EnumFluid enumFluid) {
+        this(isOre, blockTag, oreMiningTag, TinkersReforgedFluids.ALL_FLUIDS.get(enumFluid));
+    }
+
+    EnumMetal(boolean isOre, TagKey<Block> blockTag, TagKey<Block> oreMiningTag, FluidObject<ForgeFlowingFluid> fluid) {
         this.isOre = isOre;
         this.blockTag = blockTag;
         this.oreMiningTag = oreMiningTag;
+        this.fluid = fluid;
     }
 
-    EnumMetal(TagKey<Block> blockTag) {
-        this(true, blockTag, blockTag);
+    EnumMetal(TagKey<Block> blockTag, EnumFluid fluid) {
+        this(true, blockTag, blockTag, fluid);
+    }
+
+    EnumMetal(TagKey<Block> blockTag, FluidObject<ForgeFlowingFluid> fluid) {
+        this(true, blockTag, blockTag, fluid);
     }
 
     public boolean isThisOre() {

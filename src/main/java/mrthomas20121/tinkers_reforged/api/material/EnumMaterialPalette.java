@@ -3,8 +3,6 @@ package mrthomas20121.tinkers_reforged.api.material;
 import mrthomas20121.tinkers_reforged.util.EnumData;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 
-import static slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider.ORDER_NETHER;
-
 public enum EnumMaterialPalette implements EnumData {
 
     BLAZIUM(0xffb0383a, 0xffc85441, 0xffe8714b, 0xffed8a4e, 0xfff5a952, 0xffffc756, 0xed8a4e),

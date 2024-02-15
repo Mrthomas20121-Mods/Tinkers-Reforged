@@ -38,6 +38,8 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<SorceryModifier> sorcery = MODIFIERS.register("sorcery", SorceryModifier::new);
     public static StaticModifier<StillModifier> still = MODIFIERS.register("still", StillModifier::new);
 
+    public static StaticModifier<DarkPoisonModifier> dark_poison = MODIFIERS.register("dark_poison", DarkPoisonModifier::new);
+
     public static StaticModifier<Modifier> felsteel_fel_debris = MODIFIERS.register("fel_debris", FelDebrisModifier::new);
 
     public static StaticModifier<Modifier> qivium_anti_armor = MODIFIERS.register("blazing_fire", AntiArmorModifier::new);

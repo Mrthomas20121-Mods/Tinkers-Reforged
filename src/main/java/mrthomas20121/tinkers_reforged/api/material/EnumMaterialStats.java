@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
+import mrthomas20121.tinkers_reforged.util.ReforgedTiers;
 import slimeknights.tconstruct.library.materials.stats.IMaterialStats;
 import slimeknights.tconstruct.tools.stats.*;
 
@@ -81,7 +82,7 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.1f)
     ),
     KEPU(
-            new HeadMaterialStats(333, 5.3f, NETHERITE, 2f),
+            new HeadMaterialStats(333, 5.3f, ReforgedTiers.KEPU, 2f),
             HandleMaterialStats.DEFAULT.withAttackSpeed(1.1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(333, -0.15f, 0.2f, 0.2f),

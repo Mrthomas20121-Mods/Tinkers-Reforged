@@ -2,6 +2,8 @@ package mrthomas20121.tinkers_reforged.datagen.tcon;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
+import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
+import mrthomas20121.tinkers_reforged.api.material.*;
 import mrthomas20121.tinkers_reforged.datagen.ReforgedByproduct;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;
@@ -72,114 +74,36 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
     public void craftingRecipes(Consumer<FinishedRecipe> consumer) {
 
-        blockIngotNuggetCompression(consumer, "aluminum", TinkersReforgedBlocks.aluminum_block.get().asItem(), TinkersReforgedItems.aluminum_ingot.get(), TinkersReforgedItems.aluminum_nugget.get());
-        blockIngotNuggetCompression(consumer, "duralumin", TinkersReforgedBlocks.duralumin_block.get().asItem(), TinkersReforgedItems.duralumin_ingot.get(), TinkersReforgedItems.duralumin_nugget.get());
-        blockIngotNuggetCompression(consumer, "electrical_copper", TinkersReforgedBlocks.electrical_copper_block.get().asItem(), TinkersReforgedItems.electrical_copper_ingot.get(), TinkersReforgedItems.electrical_copper_nugget.get());
-        blockIngotNuggetCompression(consumer, "lavium", TinkersReforgedBlocks.lavium_block.get().asItem(), TinkersReforgedItems.lavium_ingot.get(), TinkersReforgedItems.lavium_nugget.get());
-        blockIngotNuggetCompression(consumer, "qivium", TinkersReforgedBlocks.qivium_block.get().asItem(), TinkersReforgedItems.qivium_ingot.get(), TinkersReforgedItems.qivium_nugget.get());
-        blockIngotNuggetCompression(consumer, "gausum", TinkersReforgedBlocks.gausum_block.get().asItem(), TinkersReforgedItems.gausum_ingot.get(), TinkersReforgedItems.gausum_nugget.get());
-        blockIngotNuggetCompression(consumer, "felsteel", TinkersReforgedBlocks.felsteel_block.get().asItem(), TinkersReforgedItems.felsteel_ingot.get(), TinkersReforgedItems.felsteel_nugget.get());
-        blockIngotNuggetCompression(consumer, "kepu", TinkersReforgedBlocks.kepu_block.get().asItem(), TinkersReforgedItems.kepu_ingot.get(), TinkersReforgedItems.kepu_nugget.get());
-        blockIngotNuggetCompression(consumer, "chorus_metal", TinkersReforgedBlocks.chorus_metal_block.get().asItem(), TinkersReforgedItems.chorus_metal_ingot.get(), TinkersReforgedItems.chorus_metal_nugget.get());
-        blockIngotNuggetCompression(consumer, "durasteel", TinkersReforgedBlocks.durasteel_block.get().asItem(), TinkersReforgedItems.durasteel_ingot.get(), TinkersReforgedItems.durasteel_nugget.get());
-        blockIngotNuggetCompression(consumer, "crusteel", TinkersReforgedBlocks.crusteel_block.get().asItem(), TinkersReforgedItems.crusteel_ingot.get(), TinkersReforgedItems.crusteel_nugget.get());
-        blockIngotNuggetCompression(consumer, "wavy", TinkersReforgedBlocks.wavy_block.get().asItem(), TinkersReforgedItems.wavy_ingot.get(), TinkersReforgedItems.wavy_nugget.get());
-        blockIngotNuggetCompression(consumer, "yokel", TinkersReforgedBlocks.yokel_block.get().asItem(), TinkersReforgedItems.yokel_ingot.get(), TinkersReforgedItems.yokel_nugget.get());
-        blockIngotNuggetCompression(consumer, "baolian", TinkersReforgedBlocks.baolian_block.get().asItem(), TinkersReforgedItems.baolian_ingot.get(), TinkersReforgedItems.baolian_nugget.get());
-        blockIngotNuggetCompression(consumer, "galu", TinkersReforgedBlocks.galu_block.get().asItem(), TinkersReforgedItems.galu_ingot.get(), TinkersReforgedItems.galu_nugget.get());
-        blockIngotNuggetCompression(consumer, "magma_steel", TinkersReforgedBlocks.magma_steel_block.get().asItem(), TinkersReforgedItems.magma_steel_ingot.get(), TinkersReforgedItems.magma_steel_nugget.get());
-        blockIngotNuggetCompression(consumer, "cyber_steel", TinkersReforgedBlocks.cyber_steel_block.get().asItem(), TinkersReforgedItems.cyber_steel_ingot.get(), TinkersReforgedItems.cyber_steel_nugget.get());
-        blockIngotNuggetCompression(consumer, "gelot", TinkersReforgedBlocks.gelot_block.get().asItem(), TinkersReforgedItems.gelot_ingot.get(), TinkersReforgedItems.gelot_nugget.get());
-        blockIngotNuggetCompression(consumer, "piroot", TinkersReforgedBlocks.piroot_block.get().asItem(), TinkersReforgedItems.piroot_ingot.get(), TinkersReforgedItems.piroot_nugget.get());
+        for(EnumMetal metal: EnumMetal.values()) {
+            blockIngotNuggetCompression(
+                    consumer,
+                    metal.getName(),
+                    TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get().asItem(),
+                    TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get(),
+                    TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get()
+            );
+        }
 
-        gemBlock(consumer, "epidote", TinkersReforgedItems.epidote_block.get(), TinkersReforgedItems.epidote_gem.get());
-        gemBlock(consumer, "hureaulite", TinkersReforgedItems.hureaulite_block.get(), TinkersReforgedItems.hureaulite_gem.get());
-        gemBlock(consumer, "red_beryl", TinkersReforgedItems.red_beryl_block.get(), TinkersReforgedItems.red_beryl_gem.get());
+        for(EnumGem gem: EnumGem.values()) {
+            gemBlock(
+                    consumer,
+                    gem.getName(),
+                    TinkersReforgedBlocks.GEMS_BLOCKS.get(gem).get().asItem(),
+                    TinkersReforgedItems.GEMS.get(gem).get(EnumGem.ItemType.GEM).get()
+            );
+        }
     }
 
     public void alloyRecipes(Consumer<FinishedRecipe> consumer) {
         String alloyFolder = "smeltery/alloy/";
 
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.magma_steel.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenIron.get(), FluidValues.INGOT*2)
-                .addInput(TinkerFluids.magma.get(), FluidValues.SLIMEBALL)
-                .addInput(TinkersReforgedFluids.coal.get(), FluidValues.SLIMEBALL)
-                .save(consumer, modResource(alloyFolder+"magma_steel"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.cyber_steel.get(), FluidValues.INGOT)
-                .addInput(TinkersReforgedFluids.chorus_metal.get(), FluidValues.INGOT*2)
-                .addInput(TinkerFluids.magma.get(), FluidValues.SLIMEBALL)
-                .addInput(TinkersReforgedFluids.coal.get(), FluidValues.SLIMEBALL)
-                .save(consumer, modResource(alloyFolder+"cyber_steel"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.baolian.get(), FluidValues.INGOT*2)
-                .addInput(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK)
-                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.GEM)
-                .addInput(TinkersReforgedFluids.epidote.get(), FluidValues.GEM)
-                .save(consumer, modResource(alloyFolder+"baolian"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.galu.get(), FluidValues.INGOT*2)
-                .addInput(TinkerFluids.moltenObsidian.get(), FluidValues.GLASS_BLOCK)
-                .addInput(TinkersReforgedFluids.red_beryl.get(), FluidValues.GEM)
-                .addInput(TinkersReforgedFluids.hureaulite.get(), FluidValues.GEM)
-                .save(consumer, modResource(alloyFolder+"galu"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.duralumin.get(), FluidValues.INGOT*5)
-                .addInput(TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenAluminum.get(), FluidValues.METAL_BLOCK)
-                .save(consumer, modResource(alloyFolder+"duralumin"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.blazing_copper.get(), FluidValues.METAL_BLOCK)
-                .addInput(TinkerFluids.moltenCopper.get(), FluidValues.METAL_BLOCK)
-                .addInput(TinkerFluids.blazingBlood.get(), FluidValues.GLASS_BLOCK)
-                .save(consumer, modResource(alloyFolder+"blazing_copper"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.electrical_copper.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.blazing_copper.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.redstone.get(), FluidValues.GLASS_BLOCK)
-                .save(consumer, modResource(alloyFolder+"electrical_copper"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.gausum.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.blazing_copper.get(), FluidValues.INGOT*2)
-                .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.lapis.get(), FluidValues.METAL_BLOCK)
-                .save(consumer, modResource(alloyFolder+"gausum"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.felsteel.get(), FluidValues.INGOT*3)
-                .addInput(TinkersReforgedFluids.blazing_copper.get(), FluidValues.INGOT*2)
-                .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.duralumin.get(), FluidValues.INGOT*2)
-                .save(consumer, modResource(alloyFolder+"felsteel"));
-
-        //AlloyRecipeBuilder.alloy(TinkersReforgedFluids.chorus_metal.get(), FluidValues.INGOT*2)
-        //        .addInput(TinkersReforgedFluids.kepu.get(), FluidValues.INGOT)
-        //        .addInput(TinkersReforgedFluids.chorus.get(), FluidValues.INGOT)
-        //        .addInput(TinkersReforgedFluids.shulker.get(), FluidValues.INGOT)
-        //        .save(consumer, modResource(alloyFolder+"chorus_metal"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.durasteel.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL)
-                .addInput(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT)
-                .save(consumer, modResource(alloyFolder+"durasteel"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.proto_lava.get(), FluidValues.GLASS_BLOCK)
-                .addInput(TinkerFluids.moltenEnder.get(), FluidValues.SLIMEBALL)
-                .addInput(TinkersReforgedFluids.chorus.get(), FluidValues.INGOT)
-                .addInput(FluidTags.LAVA, FluidValues.GLASS_BLOCK)
-                .save(consumer, modResource(alloyFolder+"proto_lava"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.yokel.get(), FluidValues.INGOT*2)
-                .addInput(TinkersReforgedFluids.kelp.get(), FluidValues.SLIMEBALL)
-                .addInput(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenIron.get(), FluidValues.INGOT)
-                .save(consumer, modResource(alloyFolder+"yokel"));
-
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.crusteel.get(), FluidValues.INGOT*3)
-                .addInput(TinkerFluids.moltenCopper.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenDebris.get(), FluidValues.INGOT)
-                .addInput(TinkerFluids.moltenAmethyst.get(), FluidValues.GEM)
-                .save(consumer, modResource(alloyFolder+"crusteel"));
+        for(EnumFluidAlloy alloy: EnumFluidAlloy.values()) {
+            AlloyRecipeBuilder builder = AlloyRecipeBuilder.alloy(alloy.output.get(), alloy.temp);
+            for(Supplier<FluidStack> s: alloy.inputs) {
+                builder.addInput(s.get());
+            }
+            builder.save(consumer, modResource(alloyFolder+"magma_steel"));
+        }
     }
 
     @Override
@@ -196,162 +120,25 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         this.alloyRecipes(consumer);
         this.craftingRecipes(consumer);
 
-        metalCasting(consumer, TinkersReforgedFluids.duralumin, TinkersReforgedBlocks.duralumin_block.get(), TinkersReforgedItems.duralumin_ingot.get(), TinkersReforgedItems.duralumin_nugget.get(), castingFolder, "duralumin");
-        metalCasting(consumer, TinkersReforgedFluids.electrical_copper, TinkersReforgedBlocks.electrical_copper_block.get(), TinkersReforgedItems.electrical_copper_ingot.get(), TinkersReforgedItems.electrical_copper_nugget.get(), castingFolder, "electrical_copper");
-        metalCasting(consumer, TinkersReforgedFluids.lavium, TinkersReforgedBlocks.lavium_block.get(), TinkersReforgedItems.lavium_ingot.get(), TinkersReforgedItems.lavium_nugget.get(), castingFolder, "lavium");
-        metalCasting(consumer, TinkersReforgedFluids.qivium, TinkersReforgedBlocks.qivium_block.get(), TinkersReforgedItems.qivium_ingot.get(), TinkersReforgedItems.qivium_nugget.get(), castingFolder, "qivium");
-        metalCasting(consumer, TinkersReforgedFluids.gausum, TinkersReforgedBlocks.gausum_block.get(), TinkersReforgedItems.gausum_ingot.get(), TinkersReforgedItems.gausum_nugget.get(), castingFolder, "gausum");
-        metalCasting(consumer, TinkersReforgedFluids.felsteel, TinkersReforgedBlocks.felsteel_block.get(), TinkersReforgedItems.felsteel_ingot.get(), TinkersReforgedItems.felsteel_nugget.get(), castingFolder, "felsteel");
-        metalCasting(consumer, TinkersReforgedFluids.kepu, TinkersReforgedBlocks.kepu_block.get(), TinkersReforgedItems.kepu_ingot.get(), TinkersReforgedItems.kepu_nugget.get(), castingFolder, "kepu");
-        metalCasting(consumer, TinkersReforgedFluids.chorus_metal, TinkersReforgedBlocks.chorus_metal_block.get(), TinkersReforgedItems.chorus_metal_ingot.get(), TinkersReforgedItems.chorus_metal_nugget.get(), castingFolder, "chorus_metal");
-        metalCasting(consumer, TinkersReforgedFluids.durasteel, TinkersReforgedBlocks.durasteel_block.get(), TinkersReforgedItems.durasteel_ingot.get(), TinkersReforgedItems.durasteel_nugget.get(), castingFolder, "durasteel");
-        metalCasting(consumer, TinkersReforgedFluids.crusteel, TinkersReforgedBlocks.crusteel_block.get(), TinkersReforgedItems.crusteel_ingot.get(), TinkersReforgedItems.crusteel_nugget.get(), castingFolder, "crusteel");
-        metalCasting(consumer, TinkersReforgedFluids.wavy, TinkersReforgedBlocks.wavy_block.get(), TinkersReforgedItems.wavy_ingot.get(), TinkersReforgedItems.wavy_nugget.get(), castingFolder, "wavy");
-        metalCasting(consumer, TinkersReforgedFluids.yokel, TinkersReforgedBlocks.yokel_block.get(), TinkersReforgedItems.yokel_ingot.get(), TinkersReforgedItems.yokel_nugget.get(), castingFolder, "yokel");
-        metalCasting(consumer, TinkersReforgedFluids.baolian, TinkersReforgedBlocks.baolian_block.get(), TinkersReforgedItems.baolian_ingot.get(), TinkersReforgedItems.baolian_nugget.get(), castingFolder, "baolian");
-        metalCasting(consumer, TinkersReforgedFluids.galu, TinkersReforgedBlocks.galu_block.get(), TinkersReforgedItems.galu_ingot.get(), TinkersReforgedItems.galu_nugget.get(), castingFolder, "galu");
-        metalCasting(consumer, TinkersReforgedFluids.blazing_copper, TinkersReforgedBlocks.blazing_copper_block.get(), TinkersReforgedItems.blazing_copper_ingot.get(), TinkersReforgedItems.blazing_copper_nugget.get(), castingFolder, "blazing_copper");
-        metalCasting(consumer, TinkersReforgedFluids.magma_steel, TinkersReforgedBlocks.magma_steel_block.get(), TinkersReforgedItems.magma_steel_ingot.get(), TinkersReforgedItems.magma_steel_nugget.get(), castingFolder, "magma_steel");
-        metalCasting(consumer, TinkersReforgedFluids.cyber_steel, TinkersReforgedBlocks.cyber_steel_block.get(), TinkersReforgedItems.cyber_steel_ingot.get(), TinkersReforgedItems.cyber_steel_nugget.get(), castingFolder, "cyber_steel");
-        metalCasting(consumer, TinkersReforgedFluids.gelot, TinkersReforgedBlocks.gelot_block.get(), TinkersReforgedItems.gelot_ingot.get(), TinkersReforgedItems.gelot_nugget.get(), castingFolder, "gelot");
-        metalCasting(consumer, TinkersReforgedFluids.piroot, TinkersReforgedBlocks.piroot_block.get(), TinkersReforgedItems.piroot_ingot.get(), TinkersReforgedItems.piroot_nugget.get(), castingFolder, "piroot");
-
-        //materialMeltingCasting(consumer, ReforgedMaterialIds.aluminum, TinkerFluids.moltenAluminum, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.blazing_copper, TinkersReforgedFluids.blazing_copper, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.duralumin, TinkersReforgedFluids.duralumin, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.electrical_copper, TinkersReforgedFluids.electrical_copper, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.lavium, TinkersReforgedFluids.lavium, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.qivium, TinkersReforgedFluids.qivium, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.gausum, TinkersReforgedFluids.gausum, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.felsteel, TinkersReforgedFluids.felsteel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.chorus_metal, TinkersReforgedFluids.chorus_metal, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.kepu, TinkersReforgedFluids.kepu, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.magma_steel, TinkersReforgedFluids.magma_steel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.cyber_steel, TinkersReforgedFluids.cyber_steel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.durasteel, TinkersReforgedFluids.durasteel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.crusteel, TinkersReforgedFluids.crusteel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.wavy, TinkersReforgedFluids.wavy, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.yokel, TinkersReforgedFluids.yokel, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.baolian, TinkersReforgedFluids.baolian, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.epidote, TinkersReforgedFluids.epidote, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.galu, TinkersReforgedFluids.galu, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.hureaulite, TinkersReforgedFluids.hureaulite, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.red_beryl, TinkersReforgedFluids.red_beryl, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.gelot, TinkersReforgedFluids.gelot, materialFolder);
-        materialMeltingCasting(consumer, ReforgedMaterialIds.piroot, TinkersReforgedFluids.piroot, materialFolder);
-
-        metalMelting(consumer, TinkersReforgedFluids.duralumin.get(), "duralumin", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.electrical_copper.get(), "electrical_copper", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.lavium.get(), "lavium", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.qivium.get(), "qivium", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.gausum.get(), "gausum", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.felsteel.get(), "felsteel", false, meltingFolder, false, ReforgedByproduct.BLAZING_BLOOD);
-        metalMelting(consumer, TinkersReforgedFluids.kepu.get(), "kepu", true, meltingFolder, false, ReforgedByproduct.ENDER);
-        metalMelting(consumer, TinkersReforgedFluids.chorus_metal.get(), "chorus_metal", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.crusteel.get(), "crusteel", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.wavy.get(), "wavy", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.yokel.get(), "yokel", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.baolian.get(), "baolian", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.galu.get(), "galu", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.blazing_copper.get(), "blazing_copper", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.magma_steel.get(), "magma_steel", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.cyber_steel.get(), "cyber_steel", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.gelot.get(), "gelot", false, meltingFolder, false);
-        metalMelting(consumer, TinkersReforgedFluids.piroot.get(), "piroot", false, meltingFolder, false);
-
-        //metalMaterialRecipe(consumer, ReforgedMaterialIds.aluminum, materialFolder, "aluminum", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.blazing_copper, materialFolder, "blazing_copper", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.gausum, materialFolder, "gausum", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.duralumin, materialFolder, "duralumin", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.electrical_copper, materialFolder, "electrical_copper", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.lavium, materialFolder, "lavium", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.qivium, materialFolder, "qivium", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.felsteel, materialFolder, "felsteel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.chorus_metal, materialFolder, "chorus_metal", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.kepu, materialFolder, "kepu", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.magma_steel, materialFolder, "magma_steel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.cyber_steel, materialFolder, "cyber_steel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.durasteel, materialFolder, "durasteel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.crusteel, materialFolder, "crusteel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.wavy, materialFolder, "wavy", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.yokel, materialFolder, "yokel", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.baolian, materialFolder, "baolian", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.galu, materialFolder, "galu", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.gelot, materialFolder, "gelot", false);
-        metalMaterialRecipe(consumer, ReforgedMaterialIds.piroot, materialFolder, "piroot", false);
-        gemMaterialRecipe(consumer, ReforgedMaterialIds.epidote, materialFolder, "epidote");
-        gemMaterialRecipe(consumer, ReforgedMaterialIds.hureaulite, materialFolder, "hureaulite");
-        gemMaterialRecipe(consumer, ReforgedMaterialIds.red_beryl, materialFolder, "red_beryl");
         materialRecipe(consumer, ReforgedMaterialIds.ender_bone, Ingredient.of(TinkersReforgedItems.ender_bone.get()), 1, 1, materialFolder + "ender_bone");
 
         Ingredient plate = Ingredient.of(TinkerTools.plateArmor.values().stream().map(ItemStack::new));
 
-        // embellishment
-        plateTexture(consumer, plate, ReforgedMaterialIds.gausum, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.duralumin, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.electrical_copper, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.lavium, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.qivium, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.felsteel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.chorus_metal, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.kepu, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.blazing_copper, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.aluminum, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.magma_steel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.cyber_steel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.durasteel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.crusteel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.wavy, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.yokel, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.baolian, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.epidote, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.galu, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.hureaulite, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.red_beryl, false, slotless);
-        plateTexture(consumer, plate, ReforgedMaterialIds.ender_bone, false, slotless);
+        // embellishment and material recipe
+        for(EnumMaterial material: EnumMaterial.values()) {
+            plateTexture(consumer, plate, material.id, false, slotless);
 
-        materialComposite(consumer, MaterialIds.chorus, ReforgedMaterialIds.chorus_metal, TinkersReforgedFluids.kepu, true, FluidValues.INGOT, materialFolder, "chorus_metal");
-        materialComposite(consumer, ReforgedMaterialIds.blazing_copper, ReforgedMaterialIds.electrical_copper, TinkersReforgedFluids.redstone, true, FluidValues.INGOT, materialFolder, "electrical_copper");
-        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterialIds.lavium, TinkerFluids.liquidSoul, false, 500, materialFolder, "lavium");
-        materialComposite(consumer, MaterialIds.cobalt, ReforgedMaterialIds.qivium, TinkerFluids.magma, true, 500, materialFolder, "qivium");
-        materialComposite(consumer, MaterialIds.bloodshroom, ReforgedMaterialIds.wavy, TinkerFluids.moltenObsidian, false, 500, materialFolder, "wavy");
-        metalComposite(consumer, Items.POPPED_CHORUS_FRUIT, TinkersReforgedItems.chorus_metal_ingot.get(), TinkersReforgedFluids.kepu, true, materialFolder, "composite/chorus_metal/ingot");
-        metalComposite(consumer, Blocks.CHORUS_FLOWER, TinkersReforgedItems.chorus_metal_block.get(), TinkersReforgedFluids.kepu, true, materialFolder, "composite/chorus_metal/block");
-        metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.lavium_ingot.get(), TinkerFluids.liquidSoul, false, materialFolder, "composite/lavium/ingot");
-        metalComposite(consumer, TinkerMaterials.cobalt.get(), TinkersReforgedItems.lavium_block.get(), TinkerFluids.liquidSoul, false, materialFolder, "composite/lavium/block");
-        metalComposite(consumer, TinkerMaterials.cobalt.getIngot(), TinkersReforgedItems.qivium_ingot.get(), TinkerFluids.magma, true, materialFolder, "composite/qivium/ingot");
-        metalComposite(consumer, TinkerMaterials.cobalt.get(), TinkersReforgedItems.qivium_block.get(), TinkerFluids.magma, true, materialFolder, "composite/qivium/block");
-        metalComposite(consumer, TinkerWorld.bloodshroom.get(), TinkersReforgedItems.wavy_block.get(), TinkerFluids.moltenObsidian, false, materialFolder, "composite/wavy/bloodshroom");
-        metalComposite(consumer, Items.CRIMSON_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "composite/wavy/crimson");
-        metalComposite(consumer, Items.WARPED_FUNGUS, TinkersReforgedItems.wavy_ingot.get(), TinkerFluids.moltenObsidian, false, materialFolder, "composite/wavy/warped");
-        metalComposite(consumer, TinkersReforgedItems.blazing_copper_ingot.get(), TinkersReforgedItems.electrical_copper_dust.get(), TinkersReforgedFluids.redstone, true, materialFolder, "electrical_copper");
-        metalComposite(consumer, Blocks.END_STONE, TinkersReforgedItems.gelot_block.get(), TinkerFluids.moltenDiamond, false, materialFolder, "composite/gelot/ingot");
-        metalComposite(consumer, Blocks.END_STONE, TinkersReforgedItems.piroot_block.get(), TinkerFluids.moltenNetherite, false, materialFolder, "composite/piroot/ingot");
+            if(material.equals(EnumMaterial.EPIDOTE) || material.equals(EnumMaterial.HUREAULITE) || material.equals(EnumMaterial.RED_BERYL)) {
+                gemMaterialRecipe(consumer, material.id, materialFolder, material.getName());
+            }
+            else if(!material.equals(EnumMaterial.ENDER_BONE)) {
+                materialMeltingCasting(consumer, material.id, TinkersReforgedFluids.ALL_FLUIDS.get(material.fluid), materialFolder);
+                //metalMelting(consumer, TinkersReforgedFluids.ALL_FLUIDS.get(material.fluid).get(), "", false, meltingFolder, false);
+                metalMaterialRecipe(consumer, material.id, materialFolder, material.getName(), false);
+            }
+        }
 
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.KELP), new FluidStack(TinkersReforgedFluids.kelp.get(), FluidValues.SLIMEBALL), 500, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/kelp"));
-        MeltingRecipeBuilder.melting(Ingredient.of(ItemTags.COALS), new FluidStack(TinkersReforgedFluids.coal.get(), FluidValues.SLIMEBALL), 300, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/coal"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.STORAGE_BLOCKS_COAL), new FluidStack(TinkersReforgedFluids.coal.get(), FluidValues.SLIME_BLOCK), 300, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/coal_block"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.ORES_COAL), new FluidStack(TinkersReforgedFluids.coal.get(), (int)(FluidValues.SLIMEBALL*1.5f)), 500, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/coal_ore"));
-
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.REDSTONE), new FluidStack(TinkersReforgedFluids.redstone.get(), 100), 300, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/redstone"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.STORAGE_BLOCKS_REDSTONE), new FluidStack(TinkersReforgedFluids.redstone.get(), 900), 300, 30).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/redstone_block"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.ORES_REDSTONE), new FluidStack(TinkersReforgedFluids.redstone.get(), 150), 500, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/melting/redstone_ore"));
-
-        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.STORAGE_BLOCKS_LAPIS), TinkersReforgedFluids.lapis.get(), FluidValues.METAL_BLOCK).save(consumer, modResource(meltingFolder+"lapis_block"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Tags.Items.GEMS_LAPIS), TinkersReforgedFluids.lapis.get(), FluidValues.GEM).save(consumer, modResource(meltingFolder+"lapis_gem"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.SHULKER_SHELL), TinkersReforgedFluids.shulker.get(), FluidValues.INGOT/2).save(consumer, modResource(meltingFolder+"shulker_shell"));
-        EntityMeltingRecipeBuilder.melting(EntityIngredient.of(EntityType.SHULKER), new FluidStack(TinkersReforgedFluids.shulker.get(), FluidValues.INGOT)).save(consumer, modResource(meltingFolder+"/entity/shulker"));
-
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.CHORUS_FLOWER), TinkersReforgedFluids.chorus.get(), FluidValues.METAL_BLOCK).save(consumer, modResource(meltingFolder+"chorus_flower"));
-        //MeltingRecipeBuilder.melting(Ingredient.of(Items.CHORUS_FRUIT), TinkersReforgedFluids.chorus.get(), FluidValues.INGOT).save(consumer, modResource(meltingFolder+"chorus_fruit"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Items.POPPED_CHORUS_FRUIT), TinkersReforgedFluids.chorus.get(), FluidValues.INGOT).save(consumer, modResource(meltingFolder+"popped_chorus_fruit"));
-        ingotCasting(consumer, TinkersReforgedFluids.chorus, Items.POPPED_CHORUS_FRUIT, castFolder+"chorus_fruit");
-
-        gemMeltingCasting(consumer, Items.CHARCOAL, Blocks.COAL_BLOCK, TinkersReforgedFluids.coal, "smeltery/", "coal");
-        gemMeltingCasting(consumer, Items.LAPIS_LAZULI, Blocks.LAPIS_BLOCK, TinkersReforgedFluids.lapis, "smeltery/", "lapis", Byproduct.DIAMOND);
-        gemMeltingCasting(consumer, TinkersReforgedItems.epidote_gem, TinkersReforgedBlocks.epidote_block, TinkersReforgedFluids.epidote, "smeltery/", "epidote", Byproduct.AMETHYST);
-        gemMeltingCasting(consumer, TinkersReforgedItems.hureaulite_gem, TinkersReforgedBlocks.hureaulite_block, TinkersReforgedFluids.hureaulite, "smeltery/", "hureaulite", Byproduct.AMETHYST);
-        gemMeltingCasting(consumer, TinkersReforgedItems.red_beryl_gem, TinkersReforgedBlocks.red_beryl_block, TinkersReforgedFluids.red_beryl, "smeltery/", "red_beryl", Byproduct.AMETHYST);
+        EntityMeltingRecipeBuilder.melting(EntityIngredient.of(EntityType.SHULKER), new FluidStack(TinkerFluids.moltenEnder.get(), FluidValues.INGOT)).save(consumer, modResource(meltingFolder+"/entity/shulker"));
 
         ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.book.get())
                 .setFluidAndTime(TinkerFluids.moltenAluminum, true, FluidValues.INGOT)
@@ -365,98 +152,75 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
 
         MeltingRecipeBuilder.melting(Ingredient.of(TinkersReforgedTags.Items.ALUMINUM_CASTS), new FluidStack(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT), 700, 50).save(consumer, new ResourceLocation(TinkersReforged.MOD_ID, "smeltery/aluminum_from_cast"));
 
-        MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(TinkersReforgedFluids.blazing_copper.get(), 50)), 150, 1800).save(consumer, modResource("smeltery/fuel/blazing_copper"));
+        MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.BLAZIUM).get(), 50)), 150, 1800).save(consumer, modResource("smeltery/fuel/blazium"));
 
-        MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(TinkersReforgedFluids.proto_lava.get(), 50)), 100, 2500).save(consumer, modResource("smeltery/fuel/proto_lava"));
+        MeltingFuelBuilder.fuel(FluidIngredient.of(new FluidStack(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.PROTO_LAVA).get(), 50)), 100, 2500).save(consumer, modResource("smeltery/fuel/proto_lava"));
 
-        createCast(consumer, CastType.ingot, Tags.Items.INGOTS, castFolder);
-        createCast(consumer, CastType.nugget, Tags.Items.NUGGETS, castFolder);
-        createCast(consumer, CastType.gem, Tags.Items.GEMS, castFolder);
-        createCast(consumer, CastType.rod, Tags.Items.RODS, castFolder);
+        createCast(consumer, CastType.INGOT, Tags.Items.INGOTS, castFolder);
+        createCast(consumer, CastType.NUGGET, Tags.Items.NUGGETS, castFolder);
+        createCast(consumer, CastType.GEM, Tags.Items.GEMS, castFolder);
+        createCast(consumer, CastType.ROD, Tags.Items.RODS, castFolder);
 
-        createCast(consumer, CastType.plate, "plates", castFolder);
-        createCast(consumer, CastType.gear, "gears", castFolder);
-        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:coins"))), CastType.coin, "coins", castFolder);
-        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:wires"))), CastType.wire, "wires", castFolder);
+        createCast(consumer, CastType.PLATE, "plates", castFolder);
+        createCast(consumer, CastType.GEAR, "gears", castFolder);
+        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:coins"))), CastType.COIN, "coins", castFolder);
+        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:wires"))), CastType.WIRE, "wires", castFolder);
 
-        createCast(consumer, CastType.broad_axe_head, TinkerToolParts.broadAxeHead.get(), castFolder);
-        createCast(consumer, CastType.broad_blade, TinkerToolParts.broadBlade.get(), castFolder);
-        createCast(consumer, CastType.hammer_head, TinkerToolParts.hammerHead.get(), castFolder);
-        createCast(consumer, CastType.large_plate, TinkerToolParts.largePlate.get(), castFolder);
-        createCast(consumer, CastType.pick_head, TinkerToolParts.pickHead.get(), castFolder);
-        createCast(consumer, CastType.repair_kit, TinkerToolParts.repairKit.get(), castFolder);
-        createCast(consumer, CastType.small_axe_head, TinkerToolParts.smallAxeHead.get(), castFolder);
-        createCast(consumer, CastType.small_blade, TinkerToolParts.smallBlade.get(), castFolder);
-        createCast(consumer, CastType.tool_binding, TinkerToolParts.toolBinding.get(), castFolder);
-        createCast(consumer, CastType.tool_handle, TinkerToolParts.toolHandle.get(), castFolder);
-        createCast(consumer, CastType.tough_handle, TinkerToolParts.toughHandle.get(), castFolder);
+        createCast(consumer, CastType.BROAD_AXE_HEAD, TinkerToolParts.broadAxeHead.get(), castFolder);
+        createCast(consumer, CastType.BROAD_BLADE, TinkerToolParts.broadBlade.get(), castFolder);
+        createCast(consumer, CastType.HAMMER_HEAD, TinkerToolParts.hammerHead.get(), castFolder);
+        createCast(consumer, CastType.ROUND_PLATE, TinkerToolParts.roundPlate.get(), castFolder);
+        createCast(consumer, CastType.LARGE_PLATE, TinkerToolParts.largePlate.get(), castFolder);
+        createCast(consumer, CastType.PICK_HEAD, TinkerToolParts.pickHead.get(), castFolder);
+        createCast(consumer, CastType.REPAIR_KIT, TinkerToolParts.repairKit.get(), castFolder);
+        createCast(consumer, CastType.SMALL_AXE_HEAD, TinkerToolParts.smallAxeHead.get(), castFolder);
+        createCast(consumer, CastType.SMALL_BLADE, TinkerToolParts.smallBlade.get(), castFolder);
+        createCast(consumer, CastType.TOOL_BINDING, TinkerToolParts.toolBinding.get(), castFolder);
+        createCast(consumer, CastType.TOOL_HANDLE, TinkerToolParts.toolHandle.get(), castFolder);
+        createCast(consumer, CastType.TOUGH_HANDLE, TinkerToolParts.toughHandle.get(), castFolder);
 
-        createCast(consumer, CastType.great_blade, TinkersReforgedItems.GREAT_BLADE.get(), castFolder);
+        createCast(consumer, CastType.GREAT_BLADE, TinkersReforgedItems.GREAT_BLADE.get(), castFolder);
+        createCast(consumer, CastType.LONG_BLADE, TinkersReforgedItems.LONG_BLADE.get(), castFolder);
 
-        ShapedRecipeBuilder.shaped(TinkersReforgedBlocks.raw_aluminum_block.get(), 1)
-                .pattern("XXX")
-                .pattern("XXX")
-                .pattern("XXX")
-                .define('X', TinkersReforgedItems.raw_aluminum.get())
-                .group("")
-                .unlockedBy("has_item", has(TinkersReforgedItems.raw_aluminum.get()))
-                .save(consumer, modResource("raw_aluminum_block"));
+        for(EnumMetal metal: EnumMetal.values()) {
 
-        ShapedRecipeBuilder.shaped(TinkersReforgedBlocks.raw_kepu_block.get(), 1)
-                .pattern("XXX")
-                .pattern("XXX")
-                .pattern("XXX")
-                .define('X', TinkersReforgedItems.raw_kepu.get())
-                .group("")
-                .unlockedBy("has_item", has(TinkersReforgedItems.raw_kepu.get()))
-                .save(consumer, modResource("raw_kepu_block"));
+            if(metal.isThisOre()) {
+                Supplier<Item> ingot = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT);
+                oreFurnace(consumer, TinkersReforgedTags.Items.METAL_ORES.get(metal), ingot, metal.getName(), false);
+                oreFurnace(consumer, TinkersReforgedTags.Items.METAL_RAW_ORES.get(metal), ingot, metal.getName(), true);
 
-        ShapelessRecipeBuilder.shapeless(TinkersReforgedItems.raw_aluminum.get(), 9)
-                .requires(TinkersReforgedBlocks.raw_aluminum_block.get())
-                .group("")
-                .unlockedBy("has_item", has(TinkersReforgedItems.raw_aluminum.get()))
-                .save(consumer, modResource("raw_aluminum"));
+                ShapelessRecipeBuilder.shapeless(TinkersReforgedItems.RAW_ORES.get(metal).get(), 9)
+                        .requires(TinkersReforgedBlocks.RAW_ORES.get(metal).get())
+                        .group("building")
+                        .unlockedBy("has_item", has(TinkersReforgedItems.raw_kepu.get()))
+                        .save(consumer, modResource("crafting/raw_"+metal.getName()));
+            }
 
-        ShapelessRecipeBuilder.shapeless(TinkersReforgedItems.raw_kepu.get(), 9)
-                .requires(TinkersReforgedBlocks.raw_kepu_block.get())
-                .group("")
-                .unlockedBy("has_item", has(TinkersReforgedItems.raw_kepu.get()))
-                .save(consumer, modResource("raw_kepu"));
+            metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false);
+            metalCasting(consumer, metal.fluid, TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get(), TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get(), TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get(), castingFolder, metal.getName());
 
-        oreFurnace(consumer, TinkersReforgedTags.Items.ALUMINUM_ORE, TinkersReforgedItems.aluminum_ingot, "aluminum", false);
-        oreFurnace(consumer, TinkersReforgedTags.Items.RAW_ALUMINUM, TinkersReforgedItems.aluminum_ingot, "aluminum", true);
+            Item ingot = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get();
+            Item dust = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.DUST).get();
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), ingot, 0, 200).unlockedBy("has_item", has(ingot)).save(consumer, modResource("tinkers_reforged:crafting/%s_ingot_from_smelting_%s_dust".formatted(metal.getName(), metal.getName())));
+        }
 
-        oreFurnace(consumer, TinkersReforgedTags.Items.KEPU_ORE, TinkersReforgedItems.kepu_ingot, "kepu", false);
-        oreFurnace(consumer, TinkersReforgedTags.Items.RAW_KEPU, TinkersReforgedItems.kepu_ingot, "kepu", true);
+        for(EnumGem gem: EnumGem.values()) {
+            FluidObject<ForgeFlowingFluid> fluid = TinkersReforgedFluids.ALL_FLUIDS.get(gem.fluid);
 
-        oreFurnace(consumer, TinkersReforgedTags.Items.EPIDOTE_ORE, TinkersReforgedItems.epidote_gem, "epidote", false);
-        oreFurnace(consumer, TinkersReforgedTags.Items.HUREAULITE_ORE, TinkersReforgedItems.hureaulite_gem, "hureaulite", false);
-        oreFurnace(consumer, TinkersReforgedTags.Items.RED_BERYL_ORE, TinkersReforgedItems.red_beryl_gem, "red_beryl", false);
+            Supplier<Item> gemItem = TinkersReforgedItems.GEMS.get(gem).get(EnumGem.ItemType.GEM);
+            oreFurnace(consumer, TinkersReforgedTags.Items.GEM_ORES.get(gem), gemItem, gem.getName(), false);
+            oreFurnace(consumer, TinkersReforgedTags.Items.GEM_ORES.get(gem), gemItem, gem.getName(), true);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.kepu_dust.get()), TinkersReforgedItems.kepu_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.kepu_ingot.get())).save(consumer, modResource("kepu_ingot_from_smelting_kepu_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.aluminum_dust.get()), TinkersReforgedItems.aluminum_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.aluminum_ingot.get())).save(consumer, modResource("aluminum_ingot_from_smelting_aluminum_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.duralumin_dust.get()), TinkersReforgedItems.duralumin_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.duralumin_ingot.get())).save(consumer, modResource("duralumin_ingot_from_smelting_duralumin_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.lavium_dust.get()), TinkersReforgedItems.lavium_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.lavium_ingot.get())).save(consumer, modResource("lavium_ingot_from_smelting_lavium_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.qivium_dust.get()), TinkersReforgedItems.qivium_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.qivium_ingot.get())).save(consumer, modResource("qivium_ingot_from_smelting_qivium_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.gausum_dust.get()), TinkersReforgedItems.gausum_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.gausum_ingot.get())).save(consumer, modResource("gausum_ingot_from_smelting_gausum_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.felsteel_dust.get()), TinkersReforgedItems.felsteel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.felsteel_ingot.get())).save(consumer, modResource("felsteel_ingot_from_smelting_felsteel_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.electrical_copper_dust.get()), TinkersReforgedItems.electrical_copper_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.electrical_copper_ingot.get())).save(consumer, modResource("electrical_copper_ingot_from_smelting_electrical_copper_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.durasteel_dust.get()), TinkersReforgedItems.durasteel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.durasteel_ingot.get())).save(consumer, modResource("durasteel_ingot_from_smelting_durasteel_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.crusteel_dust.get()), TinkersReforgedItems.crusteel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.crusteel_ingot.get())).save(consumer, modResource("crusteel_ingot_from_smelting_crusteel_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.wavy_dust.get()), TinkersReforgedItems.wavy_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.wavy_ingot.get())).save(consumer, modResource("wavy_ingot_from_smelting_wavy_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.yokel_dust.get()), TinkersReforgedItems.yokel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.yokel_ingot.get())).save(consumer, modResource("yokel_ingot_from_smelting_yokel_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.baolian_dust.get()), TinkersReforgedItems.baolian_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.baolian_ingot.get())).save(consumer, modResource("baolian_ingot_from_smelting_baolian_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.galu_dust.get()), TinkersReforgedItems.galu_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.galu_ingot.get())).save(consumer, modResource("galu_ingot_from_smelting_galu_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.magma_steel_dust.get()), TinkersReforgedItems.magma_steel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.magma_steel_ingot.get())).save(consumer, modResource("magma_steel_ingot_from_smelting_magma_steel_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.cyber_steel_dust.get()), TinkersReforgedItems.cyber_steel_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.cyber_steel_ingot.get())).save(consumer, modResource("cyber_steel_ingot_from_smelting_cyber_steel_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.blazing_copper_dust.get()), TinkersReforgedItems.blazing_copper_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.blazing_copper_ingot.get())).save(consumer, modResource("blazing_copper_ingot_from_smelting_blazing_copper_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.gelot_dust.get()), TinkersReforgedItems.gelot_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.gelot_ingot.get())).save(consumer, modResource("gelot_ingot_from_smelting_gelot_dust"));
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TinkersReforgedItems.piroot_dust.get()), TinkersReforgedItems.piroot_ingot.get(), 0, 200).unlockedBy("has_item", has(TinkersReforgedItems.piroot_ingot.get())).save(consumer, modResource("piroot_ingot_from_smelting_piroot_dust"));
+            gemMeltingCasting(consumer, TinkersReforgedItems.GEMS.get(gem).get(EnumGem.ItemType.GEM), TinkersReforgedBlocks.GEMS_BLOCKS.get(gem), fluid, "smeltery", gem.getName(), ReforgedByproduct.ALUMINUM);
+
+            Item dust = TinkersReforgedItems.GEMS.get(gem).get(EnumGem.ItemType.DUST).get();
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), gemItem.get(), 0, 200).unlockedBy("has_item", has(gemItem.get())).save(consumer, modResource("tinkers_reforged:crafting/%s_gem_from_smelting_%s_dust".formatted(gem.getName(), gem.getName())));
+        }
 
         toolBuilding(consumer, TinkersReforgedItems.LONGSWORD, toolFolder);
         toolBuilding(consumer, TinkersReforgedItems.GREATSWORD, toolFolder);
-        partRecipes(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkersReforgedItems.great_blade_cast, 4, partFolder, castFolder);
-        partRecipes(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkersReforgedItems.long_blade_cast, 3, partFolder, castFolder);
+        partRecipes(consumer, TinkersReforgedItems.GREAT_BLADE.get(), TinkerCastType.Type.GREAT_BLADE, 4, partFolder, castFolder);
+        partRecipes(consumer, TinkersReforgedItems.LONG_BLADE.get(), TinkerCastType.Type.LONG_BLADE, 3, partFolder, castFolder);
     }
 
     @Nonnull
@@ -575,13 +339,14 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 .build(consumer, new ResourceLocation(TinkersReforged.MOD_ID, ingot.getRegistryName().getPath() + "_to_nugget"));
     }
 
-    private void partRecipes(Consumer<FinishedRecipe> consumer, IMaterialItem part, CastObject cast, int cost, String partFolder, String castFolder) {
+    private void partRecipes(Consumer<FinishedRecipe> consumer, IMaterialItem part, TinkerCastType.Type cast, int cost, String partFolder, String castFolder) {
         String name = Objects.requireNonNull(part.asItem().getRegistryName()).getPath();
+        CastObject object = new CastObject(cast.getName());
 
         // Part Builder
         PartRecipeBuilder.partRecipe(part)
                 .setPattern(modResource(name))
-                .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(cast.getGoldCast().get())))
+                .setPatternItem(CompoundIngredient.of(Ingredient.of(TinkerTags.Items.DEFAULT_PATTERNS), Ingredient.of(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(cast).get())))
                 .setCost(cost)
                 .save(consumer, modResource(partFolder + "builder/" + name));
 
@@ -589,11 +354,11 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         String castingFolder = partFolder + "casting/";
         MaterialCastingRecipeBuilder.tableRecipe(part)
                 .setItemCost(cost)
-                .setCast(cast.getMultiUseTag(), false)
+                .setCast(object.getMultiUseTag(), false)
                 .save(consumer, modResource(castingFolder + name + "_gold_cast"));
         MaterialCastingRecipeBuilder.tableRecipe(part)
                 .setItemCost(cost)
-                .setCast(cast.getSingleUseTag(), true)
+                .setCast(object.getSingleUseTag(), true)
                 .save(consumer, modResource(castingFolder + name + "_sand_cast"));
         CompositeCastingRecipeBuilder.table(part, cost)
                 .save(consumer, modResource(castingFolder + name + "_composite"));
@@ -603,17 +368,17 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         castCreation(consumer, ingredient, cast, castFolder, Objects.requireNonNull(part.asItem().getRegistryName()).getPath());
     }
 
-    private void castCreation(Consumer<FinishedRecipe> consumer, Ingredient input, CastObject cast, String folder, String name) {
-        ItemCastingRecipeBuilder.tableRecipe(cast.getGoldCast().get())
+    private void castCreation(Consumer<FinishedRecipe> consumer, Ingredient input, TinkerCastType.Type cast, String folder, String name) {
+        ItemCastingRecipeBuilder.tableRecipe(TinkersReforgedItems.CASTS.get(TinkerCastType.GOLD).get(cast).get())
                 .setFluidAndTime(TinkerFluids.moltenGold, true, FluidValues.INGOT)
                 .setCast(input, true)
                 .setSwitchSlots()
                 .save(consumer, modResource(folder + "gold_casts/" + name));
-        MoldingRecipeBuilder.moldingTable(cast.getSandCast().get())
+        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.SAND).get(cast).get())
                 .setMaterial(TinkerSmeltery.blankSandCast)
                 .setPattern(input, false)
                 .save(consumer, modResource(folder + "sand_casts/" + name));
-        MoldingRecipeBuilder.moldingTable(cast.getRedSandCast().get())
+        MoldingRecipeBuilder.moldingTable(TinkersReforgedItems.CASTS.get(TinkerCastType.RED_SAND).get(cast).get())
                 .setMaterial(TinkerSmeltery.blankRedSandCast)
                 .setPattern(input, false)
                 .save(consumer, modResource(folder + "red_sand_casts/" + name));

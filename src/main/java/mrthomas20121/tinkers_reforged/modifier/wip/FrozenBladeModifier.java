@@ -14,7 +14,7 @@ public class FrozenBladeModifier extends Modifier {
 
         LivingEntity target = context.getLivingTarget();
         if(target != null) {
-            target.addEffect(new MobEffectInstance(TinkersReforgedPotions.FREEZE.get()));
+            target.addEffect(new MobEffectInstance(TinkersReforgedPotions.FROZEN.get()));
         }
 
         return super.afterEntityHit(tool, level, context, damageDealt);

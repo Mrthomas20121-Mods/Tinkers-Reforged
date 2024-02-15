@@ -5,11 +5,9 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 import slimeknights.tconstruct.common.TinkerTags;
 
-public enum EnumFluid implements EnumData {
+import java.util.Arrays;
 
-    LIQUID_COAL(500, TinkerTags.Fluids.CHEAP_METAL_SPILLING),
-    LAPIS(900, TinkerTags.Fluids.CHEAP_METAL_SPILLING),
-    REDSTONE(800, TinkerTags.Fluids.CHEAP_METAL_SPILLING),
+public enum EnumFluid implements EnumData {
     PROTO_LAVA(2000, TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING),
     BLAZIUM(1700, TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING),
     BOMIN(1500, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
@@ -20,7 +18,7 @@ public enum EnumFluid implements EnumData {
     ETRYX(1300, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     FEROBOLT(1300, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     GALLIUM(1500, TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
-    HOSIUM(1800, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
+    HORNIUM(1800, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     HUREAULITE(1100),
     KEPU(1800, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     LAVIUM(1400, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
@@ -41,6 +39,14 @@ public enum EnumFluid implements EnumData {
 
     EnumFluid(int temp) {
         this(temp, TinkerTags.Fluids.AVERAGE_METAL_SPILLING);
+    }
+
+    public boolean hasAlloy() {
+        return Arrays.stream(EnumFluidAlloy.values()).anyMatch(e -> e.getName().equals(this.getName()));
+    }
+
+    public EnumFluidAlloy getAlloy() {
+        return EnumFluidAlloy.valueOf(getName());
     }
 
     public TagKey<Fluid>[] getFluid() {

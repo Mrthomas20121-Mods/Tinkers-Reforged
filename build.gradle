@@ -16,10 +16,12 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'io.freefair.gradle:lombok-plugin:6.3.0'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
+apply plugin: 'io.freefair.lombok'
 
 version = mod_version
 group = 'mrthomas20121.tinkers_reforged'
