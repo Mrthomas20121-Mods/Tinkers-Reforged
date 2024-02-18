@@ -192,7 +192,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                 ShapelessRecipeBuilder.shapeless(TinkersReforgedItems.RAW_ORES.get(metal).get(), 9)
                         .requires(TinkersReforgedBlocks.RAW_ORES.get(metal).get())
                         .group("building")
-                        .unlockedBy("has_item", has(TinkersReforgedItems.raw_kepu.get()))
+                        .unlockedBy("has_item", has(TinkersReforgedItems.RAW_ORES.get(metal).get()))
                         .save(consumer, modResource("crafting/raw_"+metal.getName()));
             }
 

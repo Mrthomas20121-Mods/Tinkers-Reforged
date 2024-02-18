@@ -29,11 +29,14 @@ public class TinkersReforgedBlocks {
     // block properties
     private static final BlockBehaviour.Properties METAL = Block.Properties.of(Material.METAL).strength(5F, 1200f).sound(SoundType.METAL);
     private static final BlockBehaviour.Properties ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.STONE);
+    private static final BlockBehaviour.Properties END_ORE = Block.Properties.of(Material.STONE).strength(3F, 5.5f).sound(SoundType.STONE);
     private static final BlockBehaviour.Properties DEEPSLATE_ORE = Block.Properties.of(Material.STONE).strength(2.5F, 5f).sound(SoundType.DEEPSLATE);
     private static final BlockBehaviour.Properties RAW_BLOCK = BlockBehaviour.Properties.copy(Blocks.RAW_COPPER_BLOCK);
 
-    public static Map<EnumMetal, OreBlock> ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal ->
+    public static Map<EnumMetal, OreBlock> ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOverworldOre, metal ->
             new OreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("%s_deepslate_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab))));
+    public static Map<EnumMetal, RegistryObject<Block>> END_ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOtherOre, metal ->
+            register("%s_ore".formatted(metal.getName()), () -> new Block(END_ORE), new Item.Properties().tab(resourceTab)));
 
     public static Map<EnumGem, OreBlock> GEM_ORES = Helpers.mapOfKeys(EnumGem.class, metal ->
             new OreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("%s_deepslate_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab))));

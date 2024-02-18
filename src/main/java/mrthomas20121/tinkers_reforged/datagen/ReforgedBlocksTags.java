@@ -35,11 +35,6 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
     @Override
     protected void addTags() {
 
-        tag(ROCK_TYPE_BLOCKS).addTags(Tags.Blocks.STONE, Tags.Blocks.END_STONES, Tags.Blocks.NETHERRACK);
-
-        tag(RAW_ALUMINUM).add(TinkersReforgedBlocks.raw_aluminum_block.get());
-        tag(RAW_KEPU).add(TinkersReforgedBlocks.raw_kepu_block.get());
-
         for(EnumGem gem: EnumGem.values()) {
             TagKey<Block> ORE = TinkersReforgedTags.Blocks.create("forge:ores/%s".formatted(gem.getName()));
             tag(ORE).add(TinkersReforgedBlocks.GEM_ORES.get(gem).ore().get(), TinkersReforgedBlocks.GEM_ORES.get(gem).deepslateOre().get());

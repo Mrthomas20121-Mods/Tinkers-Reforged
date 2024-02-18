@@ -82,8 +82,6 @@ public class ReforgedLang extends LanguageProvider {
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
-
-
         addMaterial(ReforgedMaterialIds.aluminum, "Aluminum", "Strong and durable", "Aluminum Metal");
         addMaterial(ReforgedMaterialIds.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "Aluminum Alloy");
         addMaterial(ReforgedMaterialIds.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");

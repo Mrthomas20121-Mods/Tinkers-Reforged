@@ -66,6 +66,14 @@ public enum EnumMetal implements EnumData {
         return isOre;
     }
 
+    public boolean isThisOverworldOre() {
+        return this.isThisOre() && !this.equals(EnumMetal.TITANIUM) && !this.equals(EnumMetal.KEPU);
+    }
+
+    public boolean isThisOtherOre() {
+        return this.isThisOre() && (this.equals(EnumMetal.TITANIUM) || this.equals(EnumMetal.KEPU));
+    }
+
     public TagKey<Block> getBlockTag() {
         return this.blockTag;
     }
