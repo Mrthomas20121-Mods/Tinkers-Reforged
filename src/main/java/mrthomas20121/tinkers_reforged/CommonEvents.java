@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged;
 
-import mrthomas20121.tinkers_reforged.modifier.AdvancedModifier;
 import mrthomas20121.tinkers_reforged.util.TinkersReforgedHooks;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -25,6 +24,7 @@ import java.util.Collection;
 @Mod.EventBusSubscriber(modid = TinkersReforged.MOD_ID)
 public class CommonEvents {
 
+    @SubscribeEvent
     public static void lootEvent(LivingDropsEvent event) {
         Collection<ItemEntity> drops = event.getDrops();
         int looting = event.getLootingLevel();
@@ -41,6 +41,7 @@ public class CommonEvents {
         }
     }
 
+    @SubscribeEvent
     public static void expDropEvent(LivingExperienceDropEvent event) {
         Player player = event.getAttackingPlayer();
         if(player != null) {
@@ -48,47 +49,6 @@ public class CommonEvents {
             if(!stack.isEmpty() && stack.getItem() instanceof IModifiable) {
                 IToolStackView toolstack = ToolStack.from(stack);
                 toolstack.getDefinitionData().getModule(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onExperienceDrop(toolstack, player, event);
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void deathEvent(LivingDeathEvent event) {
-        LivingEntity livingEntity = event.getEntityLiving();
-        Entity attacker = event.getSource().getDirectEntity();
-        if(attacker instanceof Player player) {
-            ItemStack stack = player.getMainHandItem();
-            if(stack != ItemStack.EMPTY) {
-                ToolStack tool = ToolStack.from(stack);
-
-                for(ModifierEntry mod : tool.getModifiers().getModifiers()) {
-                    Modifier modifier = mod.getLazyModifier().get();
-
-                    if(modifier instanceof AdvancedModifier advMod) {
-                        advMod.onEntityDeath(tool, livingEntity, player, event.getSource());
-                    }
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void onPlayerAttack(LivingAttackEvent event) {
-        Entity p = event.getSource().getDirectEntity();
-        LivingEntity target = event.getEntityLiving();
-
-        if(p instanceof Player player) {
-            ItemStack stack = player.getMainHandItem();
-            if(stack != ItemStack.EMPTY) {
-                ToolStack tool = ToolStack.from(stack);
-
-                for(ModifierEntry mod : tool.getModifiers().getModifiers()) {
-                    Modifier modifier = mod.getLazyModifier().get();
-
-                    if(modifier instanceof AdvancedModifier advMod) {
-                        advMod.onPlayerAttack(tool, target, player, event.getSource());
-                    }
-                }
             }
         }
     }

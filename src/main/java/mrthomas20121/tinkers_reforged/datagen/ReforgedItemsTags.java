@@ -5,6 +5,7 @@ import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.api.cast.TinkerCastType;
 import mrthomas20121.tinkers_reforged.api.tag.MetalTags;
 import mrthomas20121.tinkers_reforged.api.tag.RTags;
+import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.init.*;
 import mrthomas20121.tinkers_reforged.item.CastObject;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
@@ -17,6 +18,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slimeknights.tconstruct.common.TinkerTags;
 
@@ -79,8 +82,14 @@ public class ReforgedItemsTags extends ItemTagsProvider {
             if(metal.isThisOre()) {
                 tag(tags.raw_ore).add(TinkersReforgedItems.RAW_ORES.get(metal).get());
                 tag(tags.rawBlockItem).add(TinkersReforgedBlocks.RAW_ORES.get(metal).get().asItem());
-                tag(tags.oreBlockItem).add(TinkersReforgedBlocks.ORES.get(metal).ore().get().asItem(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get().asItem());
-                tag(ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get().asItem(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get().asItem());
+
+                TagsProvider.TagAppender<Item> oreTag = tag(tags.oreBlockItem).add(TinkersReforgedBlocks.ORES.get(metal).ore().get().asItem());
+                TagsProvider.TagAppender<Item> oresTag = tag(Tags.Items.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get().asItem());
+                if(metal.isThisOverworldOre()) {
+                    Block overworldBlock = ((OverworldOreBlock)TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get();
+                    oreTag.add(overworldBlock.asItem());
+                    oresTag.add(overworldBlock.asItem());
+                }
             }
 
             TagKey<Item> PLATES = TinkersReforgedTags.Items.create("forge:plates");

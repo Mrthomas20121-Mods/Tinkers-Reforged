@@ -1,6 +1,8 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.block.EndOreBlock;
+import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
@@ -32,7 +34,9 @@ public class ReforgedBlocksLoot extends BlockLoot {
             }
             if(metal.isThisOre()) {
                 this.add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), (block) -> createOreDrop(block, TinkersReforgedItems.RAW_ORES.get(metal).get()));
-                this.add(TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get(), (block) -> createOreDrop(block, TinkersReforgedItems.RAW_ORES.get(metal).get()));
+                if(metal.isThisOverworldOre()) {
+                    this.add(((OverworldOreBlock) TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get(), (block) -> createOreDrop(block, TinkersReforgedItems.RAW_ORES.get(metal).get()));
+                }
             }
         }
 

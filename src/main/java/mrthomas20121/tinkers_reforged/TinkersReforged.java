@@ -4,7 +4,6 @@ import mrthomas20121.tinkers_reforged.client.TinkersReforgedBook;
 import mrthomas20121.tinkers_reforged.datagen.*;
 import mrthomas20121.tinkers_reforged.datagen.tcon.*;
 import mrthomas20121.tinkers_reforged.init.*;
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedWorldGen;
 import mrthomas20121.tinkers_reforged.util.ReforgedTiers;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.data.DataGenerator;
@@ -18,9 +17,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
@@ -54,20 +51,11 @@ public class TinkersReforged {
 		TinkersReforgedWorldGen.PLACED_FEATURES.register(bus);
 		TinkersReforgedPotions.MOB_EFFECTS.register(bus);
 		TinkersReforgedPotions.POTIONS.register(bus);
-		bus.addListener(this::commonEvent);
 
 		MinecraftForge.EVENT_BUS.register(this);
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TinkersReforgedConfig.config);
-
 		// execute this only on the client
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TinkersReforgedBook::initBook);
-	}
-
-	public void commonEvent(FMLCommonSetupEvent event) {
-		event.enqueueWork(() -> {
-			TierSortingRegistry.registerTier(ReforgedTiers.KEPU, new ResourceLocation(MOD_ID, "kepu"), List.of(), List.of(Tiers.NETHERITE));
-		});
 	}
 
 	@SubscribeEvent

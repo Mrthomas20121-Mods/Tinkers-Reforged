@@ -1,7 +1,8 @@
 package mrthomas20121.tinkers_reforged.datagen;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.block.OreBlock;
+import mrthomas20121.tinkers_reforged.block.IOreBlock;
+import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
@@ -28,9 +29,15 @@ public class ReforgedBlockStates extends BlockStateProvider {
 
             if(metal.isThisOre()) {
                 blockWithItem(TinkersReforgedBlocks.RAW_ORES.get(metal));
-                OreBlock oreBlock = TinkersReforgedBlocks.ORES.get(metal);
-                blockWithItem(oreBlock.ore());
-                blockWithItem(oreBlock.deepslateOre());
+                if(metal.isThisOverworldOre()) {
+                    OverworldOreBlock oreBlock = (OverworldOreBlock) TinkersReforgedBlocks.ORES.get(metal);
+                    blockWithItem(oreBlock.ore());
+                    blockWithItem(oreBlock.deepslateOre());
+                }
+                else {
+                    IOreBlock oreBlock = TinkersReforgedBlocks.ORES.get(metal);
+                    blockWithItem(oreBlock.ore());
+                }
             }
 
             for(EnumMetal.BlockType blockType: EnumMetal.BlockType.values()) {
@@ -39,7 +46,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
         }
 
         for(EnumGem gem: EnumGem.values()) {
-            OreBlock oreBlock = TinkersReforgedBlocks.GEM_ORES.get(gem);
+            OverworldOreBlock oreBlock = TinkersReforgedBlocks.GEM_ORES.get(gem);
             blockWithItem(oreBlock.ore());
             blockWithItem(oreBlock.deepslateOre());
 

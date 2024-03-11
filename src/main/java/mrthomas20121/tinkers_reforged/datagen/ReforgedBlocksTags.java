@@ -3,12 +3,14 @@ package mrthomas20121.tinkers_reforged.datagen;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.tag.MetalTags;
 import mrthomas20121.tinkers_reforged.api.tag.RTags;
+import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -57,10 +59,17 @@ public class ReforgedBlocksTags extends BlockTagsProvider {
             MetalTags tags = RTags.getTagsForMetal(metal);
             if(metal.isThisOre()) {
                 tag(tags.rawBlock).add(TinkersReforgedBlocks.RAW_ORES.get(metal).get());
-                tag(tags.oreBlock).add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get());
-                // need x tool tag
-                tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get());
-                tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), TinkersReforgedBlocks.ORES.get(metal).deepslateOre().get());
+                tag(tags.oreBlock).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
+                TagsProvider.TagAppender<Block> oreTag = tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
+                TagsProvider.TagAppender<Block> miningTag = tag(metal.getOreMiningTag()).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
+                TagsProvider.TagAppender<Block> oresTag = tag(Tags.Blocks.ORES).add(TinkersReforgedBlocks.ORES.get(metal).ore().get());
+                if(metal.isThisOverworldOre()) {
+                    Block overworldBlock = ((OverworldOreBlock)TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get();
+                    oreTag.add(overworldBlock);
+                    oresTag.add(overworldBlock);
+                    miningTag.add(overworldBlock);
+
+                }
             }
 
             tag(tags.storage).add(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get());

@@ -3,8 +3,10 @@ package mrthomas20121.tinkers_reforged.datagen;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.material.EnumFluid;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
+import mrthomas20121.tinkers_reforged.api.material.EnumMaterial;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
-import mrthomas20121.tinkers_reforged.block.OreBlock;
+import mrthomas20121.tinkers_reforged.block.IOreBlock;
+import mrthomas20121.tinkers_reforged.block.OverworldOreBlock;
 import mrthomas20121.tinkers_reforged.datagen.tcon.ReforgedMaterialIds;
 import mrthomas20121.tinkers_reforged.api.cast.CastType;
 import mrthomas20121.tinkers_reforged.init.*;
@@ -17,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.Modifier;
+import slimeknights.tconstruct.library.modifiers.util.LazyModifier;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
 public class ReforgedLang extends LanguageProvider {
@@ -41,9 +44,11 @@ public class ReforgedLang extends LanguageProvider {
 
         for(EnumMetal metal: EnumMetal.values()) {
             if(metal.isThisOre()) {
-                OreBlock block = TinkersReforgedBlocks.ORES.get(metal);
+                IOreBlock block = TinkersReforgedBlocks.ORES.get(metal);
                 addBlock(block.ore(), StringUtils.capitalize("%s_ore".formatted(metal.getName())));
-                addBlock(block.deepslateOre(), StringUtils.capitalize("deepslate_%s_ore".formatted(metal.getName())));
+                if(metal.isThisOverworldOre()) {
+                    addBlock(((OverworldOreBlock) block).deepslateOre(), StringUtils.capitalize("deepslate_%s_ore".formatted(metal.getName())));
+                }
                 addBlock(TinkersReforgedBlocks.RAW_ORES.get(metal), StringUtils.capitalize("%s_ore".formatted(metal.getName())));
             }
             for(EnumMetal.BlockType blockType: EnumMetal.BlockType.values()) {
@@ -62,7 +67,7 @@ public class ReforgedLang extends LanguageProvider {
         }
 
         for(EnumGem gem: EnumGem.values()) {
-            OreBlock block = TinkersReforgedBlocks.GEM_ORES.get(gem);
+            OverworldOreBlock block = TinkersReforgedBlocks.GEM_ORES.get(gem);
             addBlock(block.ore(), StringUtils.capitalize("%s_ore".formatted(gem.getName())));
             addBlock(block.deepslateOre(), StringUtils.capitalize("deepslate_%s_ore".formatted(gem.getName())));
             addBlock(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem), StringUtils.capitalize("%s_block".formatted(gem.getName())));
@@ -82,56 +87,10 @@ public class ReforgedLang extends LanguageProvider {
             add(item, String.format("%s Aluminum Cast", capitalize(type.name().toLowerCase())));
         }
 
-        addMaterial(ReforgedMaterialIds.aluminum, "Aluminum", "Strong and durable", "Aluminum Metal");
-        addMaterial(ReforgedMaterialIds.duralumin, "Duralumin", "One of the earliest types of age-hardenable aluminum alloys", "Aluminum Alloy");
-        addMaterial(ReforgedMaterialIds.electrical_copper, "Electrical Copper", "It's not as electric as people think", "Copper that was Electrified");
-        addMaterial(ReforgedMaterialIds.lavium, "Lavium", "Cobalt Alloy", "Strong Cobalt Alloy");
-        addMaterial(ReforgedMaterialIds.qivium, "Qivium", "Cobalt Alloy", "Strong Cobalt Alloy");
-        addMaterial(ReforgedMaterialIds.gausum, "Gausum", "Ancient Debris Alloy", "Strong Ancient Debris Alloy");
-        addMaterial(ReforgedMaterialIds.felsteel, "Felsteel", "Ancient Debris Alloy", "From the depth of the nether");
-        addMaterial(ReforgedMaterialIds.chorus_metal, "Chorus Metal", "Chorus and Shulker alloy", "Chorus and Shulker alloy");
-        addMaterial(ReforgedMaterialIds.kepu, "Kepu", "Come from the depth of the end", "Infused End Ore");
-        addMaterial(ReforgedMaterialIds.durasteel, "Durasteel", "Wait it's not an ore?", "Mix of Ender and Netherite");
-        addMaterial(ReforgedMaterialIds.crusteel, "Crusteel", "Nether Crust", "Copper nether alloy");
-        addMaterial(ReforgedMaterialIds.wavy, "Wavy", "This smell bad", "Mushroom material");
-        addMaterial(ReforgedMaterialIds.yokel, "Yokel", "Finally a sea metal", "Kelp alloy");
-        addMaterial(ReforgedMaterialIds.baolian, "Baolian", "Hmm, a gemstone mix?", "Made from Obsidian and Hureaulite");
-        addMaterial(ReforgedMaterialIds.epidote, "Epidote", "The faces are often deeply striated and crystals are often twinned", "Found in the depth of earth");
-        addMaterial(ReforgedMaterialIds.galu, "Galu", "Hmm, a gemstone mix?", "Made from Obsidian and Epidote");
-        addMaterial(ReforgedMaterialIds.hureaulite, "Hureaulite", "it's an Orange!", "Found in the depth of earth");
-        addMaterial(ReforgedMaterialIds.red_beryl, "Red Beryl", "Beryl but Red", "Gemstone");
-        addMaterial(ReforgedMaterialIds.ender_bone, "Enderbone", "Bone mixed with ender", "Bone but with more durability");
-        addMaterial(ReforgedMaterialIds.blazing_copper, "Blazing Copper", "Its Blazing Hot!", "What if Blazing blood and Copper had a baby?");
-        addMaterial(ReforgedMaterialIds.magma_steel, "Magma Steel", "A hot nether alloy", "Steel meet Magma");
-        addMaterial(ReforgedMaterialIds.cyber_steel, "Cyber Steel", "A cool end alloy", "Steel meet Chorus Metal");
-        addMaterial(ReforgedMaterialIds.gelot, "Gelot", "Strange alloy from the end", "When endstone and diamond meet");
-        addMaterial(ReforgedMaterialIds.piroot, "Piroot", "Strange alloy from the end", "When endstone and netherite meet");
-
-        addModifier(TinkersReforgedModifiers.gausum_titanic_damage, "Titanic Damage", "that's a lot of damage!", "Deal more damage to enemy with more HP than you(Scale with your titanic dmg modifier level).");
-        addModifier(TinkersReforgedModifiers.lavium_aridzone, "Arid Zone", "That's quite hot!", "Increase mining speed and damage in hot/arid area");
-        addModifier(TinkersReforgedModifiers.duralumin_ultra_durable, "Ultra Durable", "Anyone need Duritos?", "Your tool last longer most of the time.");
-        addModifier(TinkersReforgedModifiers.electrical_copper_electrostatic, "Electrostatic", "I wouldn't touch it!", "Target is paralyzed for 3 second.");
-        addModifier(TinkersReforgedModifiers.qivium_anti_armor, "Anti Armor", "Armor, what's that?", "Deal more damage to Armored Targets.");
-        addModifier(TinkersReforgedModifiers.felsteel_fel_debris, "Fel Debris", "Watch out!", "Deal more damage in the nether.");
-
-        addModifier(TinkersReforgedModifiers.ender_upgrade, "Ender Upgrade", "The end is night", "Deal more damage to the ender dragon.");
-        addModifier(TinkersReforgedModifiers.cutting_edge, "Magic Power", "Magic everywhere", "ALL Damage dealt are magic.");
-        addModifier(TinkersReforgedModifiers.durasteel_adaptability, "Adapting", "Power Up", "Each undead mob killed increase your attack damage and mining speed by. Cap at 15 by default.");
-        addModifier(TinkersReforgedModifiers.giant_cells, "Giant Cells", "Micro Friends", "Mine Faster the lower your Health is.");
-        addModifier(TinkersReforgedModifiers.terra, "Terra", "Caught between a rock and a hard place.", "Mine stone blocks faster(controlled by a tag)");
-        addModifier(TinkersReforgedModifiers.spore_shot, "Spore Shot", "MMM Mushrooms.", "Apply Fungal on it. Entity with fungal take 2% of their health as damage when hit.");
-        addModifier(TinkersReforgedModifiers.rare_earth, "Rare Earth", "Rare Earths for days!.", "Mobs drops are replaced by cobblestone/iron/gold/diamond.");
-        addModifier(TinkersReforgedModifiers.water_power, "Water Power", "The ocean calls for you.", "Remove the mining penalty underwater.");
-        addModifier(TinkersReforgedModifiers.effective_boost, "Effective Boost", "Potion Effects for days.", "Deal more damage for each active potion effect you have.");
-        addModifier(TinkersReforgedModifiers.wet_soil, "Wet Soil", "Rain is good.", "Mine faster when it's raining(wherever the player is).");
-        addModifier(TinkersReforgedModifiers.crystallized_punch, "Crystallized Punch", "5 hits and you're K.O.", "Every 5 attacks, deal 1% of the target HP as bonus magic damage.");
-        addModifier(TinkersReforgedModifiers.collapsed, "Collapsed", "More damage while damaged.", "Deal more damage while damaged.");
-        addModifier(TinkersReforgedModifiers.blazing_copper_spark, "Spark", "Better Crit damage.", "Deal more critical strike damage.");
-        addModifier(TinkersReforgedModifiers.aluminum_rotective_mantle, "Protective Mantle", "Better than no protection!", "Prevent the 4th durability lose.");
-        addModifier(TinkersReforgedModifiers.cyber_steel_swift_eye, "Swift Eye", "Eye of the tiger", "Enderman Drop Eye of ender instead of Ender Pearl.");
-        addModifier(TinkersReforgedModifiers.magma_steel_unbending, "Unbending", "The Earth is shaking!", "Damage dealt below 6 pierce through armor.");
-        addModifier(TinkersReforgedModifiers.tenacity, "Lust", "You have a bloodlust for hunger", "After killing an entity, restore some hunger.");
-        addModifier(TinkersReforgedModifiers.half_powered_fists, "Half Powered Fists", "Don't take it personal kid", "Tool deal half damage but attack twice.");
+        for(EnumMaterial material: EnumMaterial.values()) {
+            addMaterial(material.id, capitalize(material.getName()), material.materialDesc, material.materialDesc);
+            addModifier(material.mod, capitalize(material.mod.getId().getPath()), material.modifierDesc, material.modifierDesc);
+        }
 
         add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
         add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");
@@ -160,7 +119,7 @@ public class ReforgedLang extends LanguageProvider {
             add("material.tinkers_reforged." + id + ".encyclopedia", desc);
     }
 
-    public void addModifier(StaticModifier<Modifier> modifier, String name, String flavour, String desc) {
+    public void addModifier(LazyModifier modifier, String name, String flavour, String desc) {
         String id = modifier.getId().getPath();
         add("modifier.tinkers_reforged." + id, name);
         add("modifier.tinkers_reforged." + id + ".flavor", flavour);

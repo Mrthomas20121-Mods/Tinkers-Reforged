@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
+import mrthomas20121.tinkers_reforged.api.OreData;
 import mrthomas20121.tinkers_reforged.util.EnumData;
 
 import java.util.HashMap;
@@ -7,7 +8,8 @@ import java.util.Map;
 
 public class ReforgedData {
 
-    public static Map<EnumData, EnumMaterial> enumMaterialMap = new HashMap<>();
+    public static final Map<EnumData, EnumMaterial> enumMaterialMap = new HashMap<>();
+    public static final Map<EnumData, OreData> oreData = new HashMap<>();
 
     static {
         // metals
@@ -30,5 +32,14 @@ public class ReforgedData {
         enumMaterialMap.put(EnumGem.EPIDOTE, EnumMaterial.EPIDOTE);
         enumMaterialMap.put(EnumGem.HUREAULITE, EnumMaterial.HUREAULITE);
         enumMaterialMap.put(EnumGem.RED_BERYL, EnumMaterial.RED_BERYL);
+
+        // ore data
+        oreData.put(EnumMetal.ALUMINUM, new OreData(50, 4, -60, 120));
+        oreData.put(EnumMetal.GALLIUM, new OreData(40, 6, -60, 120));
+        oreData.put(EnumMetal.KEPU, new OreData(20, 3, -20, 100));
+        oreData.put(EnumMetal.TITANIUM, new OreData(18, 4, -20, 100));
+        oreData.put(EnumGem.EPIDOTE, new OreData(30, 4, -60, 5));
+        oreData.put(EnumGem.HUREAULITE, new OreData(30, 4, -60, 5));
+        oreData.put(EnumGem.RED_BERYL, new OreData(40, 4, -60, 60));
     }
 }
