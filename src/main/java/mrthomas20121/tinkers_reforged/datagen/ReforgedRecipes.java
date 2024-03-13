@@ -162,11 +162,14 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
         createCast(consumer, CastType.GEM, Tags.Items.GEMS, castFolder);
         createCast(consumer, CastType.ROD, Tags.Items.RODS, castFolder);
 
-        createCast(consumer, CastType.PLATE, "plates", castFolder);
-        createCast(consumer, CastType.GEAR, "gears", castFolder);
+        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:plates"))), CastType.PLATE, "plates", castFolder);
+        createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:gears"))), CastType.GEAR, "gears", castFolder);
         createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:coins"))), CastType.COIN, "coins", castFolder);
         createCast(withCondition(consumer, new NotCondition(new TagEmptyCondition("forge:wires"))), CastType.WIRE, "wires", castFolder);
 
+        createCast(consumer, CastType.BOW_LIMB, TinkerToolParts.bowLimb.get(), castFolder);
+        createCast(consumer, CastType.BOW_GRIP, TinkerToolParts.bowGrip.get(), castFolder);
+        createCast(consumer, CastType.BOWSTRING, TinkerToolParts.bowstring.get(), castFolder);
         createCast(consumer, CastType.BROAD_AXE_HEAD, TinkerToolParts.broadAxeHead.get(), castFolder);
         createCast(consumer, CastType.BROAD_BLADE, TinkerToolParts.broadBlade.get(), castFolder);
         createCast(consumer, CastType.HAMMER_HEAD, TinkerToolParts.hammerHead.get(), castFolder);

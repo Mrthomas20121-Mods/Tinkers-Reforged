@@ -62,7 +62,7 @@ public class ReforgedLang extends LanguageProvider {
 
         for(EnumFluid enumFluid: EnumFluid.values()) {
             FluidObject<ForgeFlowingFluid> fluid = TinkersReforgedFluids.ALL_FLUIDS.get(enumFluid);
-            addFluid(fluid, "Molten" + capitalize(enumFluid.getName()));
+            addFluid(fluid, "Molten " + capitalize(enumFluid.getName()));
             add(fluid.get().getBucket(), "Molten %s Bucket".formatted(capitalize(enumFluid.getName())));
         }
 
