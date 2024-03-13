@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:cast_great_blade",
-    "tinkers_reforged:great_blade_cast_gold"
+    "tinkers_reforged:aluminum_great_blade_cast"
   ]
 }

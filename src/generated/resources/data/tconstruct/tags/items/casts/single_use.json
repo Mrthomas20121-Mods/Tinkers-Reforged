@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#tconstruct:casts/single_use/great_blade",
-    "#tconstruct:casts/single_use/long_blade"
+    "#minecraft:casts/single_use/great_blade",
+    "#minecraft:casts/single_use/long_blade"
   ]
 }

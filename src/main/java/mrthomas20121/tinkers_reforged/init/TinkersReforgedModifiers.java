@@ -13,7 +13,7 @@ public class TinkersReforgedModifiers {
 
     // tools modifiers
     public static StaticModifier<LongRangeModifier> long_range = MODIFIERS.register("long_range", LongRangeModifier::new);
-    public static StaticModifier<ResistorModifier> resistor = MODIFIERS.register("resistor", ResistorModifier::new);
+    public static StaticModifier<ReturningModifier> returning = MODIFIERS.register("returning", ReturningModifier::new);
 
     // traits
     public static StaticModifier<AdaptabilityModifier> adaptability = MODIFIERS.register("adaptability", AdaptabilityModifier::new);

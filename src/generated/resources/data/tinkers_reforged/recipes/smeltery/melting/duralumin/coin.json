@@ -13,7 +13,7 @@
     "tag": "forge:coins/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_duralumin",
+    "fluid": "tinkers_reforged:duralumin",
     "amount": 30
   },
   "temperature": 700,

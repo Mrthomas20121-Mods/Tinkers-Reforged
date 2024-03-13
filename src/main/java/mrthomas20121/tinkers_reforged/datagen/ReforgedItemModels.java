@@ -42,10 +42,6 @@ public class ReforgedItemModels extends ItemModelProvider {
             }
         }
 
-        for(CastType type : CastType.values()) {
-            castModel(TinkersReforgedItems.castMap.get(type), type);
-        }
-
         for(TinkerCastType castType: TinkerCastType.values()) {
             for(TinkerCastType.Type type: TinkerCastType.Type.values()) {
                 castModel(TinkersReforgedItems.CASTS.get(castType).get(type), castType, type);
@@ -71,7 +67,7 @@ public class ReforgedItemModels extends ItemModelProvider {
 
     public void castModel(RegistryObject<? extends Item> registryObject, CastType castType) {
         ResourceLocation id = registryObject.getId();
-        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted(castType.getName(), "aluminum"));
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "item/cast/%s/%s".formatted("aluminum", castType.getName()));
         singleTexture(id.getPath(), new ResourceLocation("item/generated"), "layer0", textureLocation);
     }
 }

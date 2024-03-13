@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_copper",
+      "amount": 270
+    },
+    {
+      "name": "tconstruct:molten_clay",
+      "amount": 250
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:electric_copper",
+    "amount": 180
+  },
+  "temperature": 800
+}

@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:great_blade_cast_gold",
-    "tinkers_reforged:long_blade_cast_gold"
+    "tinkers_reforged:great_blade_gold_cast",
+    "tinkers_reforged:long_blade_gold_cast"
   ]
 }

@@ -27,7 +27,7 @@ public enum EnumFluidAlloy implements EnumData {
             () -> fs(TinkerFluids.moltenCopper.get(), FluidValues.INGOT),
             () -> fs(TinkerFluids.moltenAluminum.get(), FluidValues.INGOT*3)
     ),
-    ELECTRIC_COPPER(800, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.ELECTRICAL_COPPER).get(), FluidValues.INGOT*2),
+    ELECTRIC_COPPER(800, () -> fs(TinkersReforgedFluids.ALL_FLUIDS.get(EnumFluid.ELECTRIC_COPPER).get(), FluidValues.INGOT*2),
             () -> fs(TinkerFluids.moltenCopper.get(), FluidValues.INGOT*3),
             () -> fs(TinkerFluids.moltenClay.get(), FluidValues.BRICK)
     ),

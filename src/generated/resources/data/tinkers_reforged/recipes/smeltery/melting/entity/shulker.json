@@ -4,7 +4,7 @@
     "type": "minecraft:shulker"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_shulker",
+    "fluid": "tconstruct:molten_ender",
     "amount": 90
   },
   "damage": 2

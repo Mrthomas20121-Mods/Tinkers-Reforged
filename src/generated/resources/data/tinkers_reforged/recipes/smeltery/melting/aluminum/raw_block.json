@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:ore_melting",
+  "rate": "metal",
+  "ingredient": {
+    "tag": "forge:storage_blocks/raw_aluminum"
+  },
+  "result": {
+    "fluid": "tconstruct:molten_aluminum",
+    "amount": 810
+  },
+  "temperature": 425,
+  "time": 283,
+  "byproducts": [
+    {
+      "fluid": "tinkers_reforged:gallium",
+      "amount": 810
+    }
+  ]
+}

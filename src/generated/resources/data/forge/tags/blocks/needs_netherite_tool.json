@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:blazium_block",
+    "tinkers_reforged:blazium_platform",
+    "tinkers_reforged:bomin_block",
+    "tinkers_reforged:bomin_platform",
+    "tinkers_reforged:durasteel_block",
+    "tinkers_reforged:durasteel_platform",
+    "tinkers_reforged:etryx_block",
+    "tinkers_reforged:etryx_platform",
+    "tinkers_reforged:gallium_block",
+    "tinkers_reforged:gallium_platform",
+    "tinkers_reforged:kepu_block",
+    "tinkers_reforged:kepu_platform",
+    "tinkers_reforged:lavium_block",
+    "tinkers_reforged:lavium_platform",
+    "tinkers_reforged:mosite_block",
+    "tinkers_reforged:mosite_platform",
+    "tinkers_reforged:qivium_block",
+    "tinkers_reforged:qivium_platform",
+    "tinkers_reforged:titanium_block",
+    "tinkers_reforged:titanium_platform"
+  ]
+}

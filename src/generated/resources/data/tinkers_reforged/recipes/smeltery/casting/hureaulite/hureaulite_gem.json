@@ -2,7 +2,7 @@
   "type": "tconstruct:casting_basin",
   "switch_slots": true,
   "fluid": {
-    "tag": "forge:molten_hureaulite",
+    "tag": "forge:hureaulite",
     "amount": 900
   },
   "result": "tinkers_reforged:hureaulite_block",

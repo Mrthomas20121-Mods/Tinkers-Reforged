@@ -4,9 +4,9 @@
     "tag": "forge:nuggets/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 10
   },
-  "temperature": 1300,
-  "time": 25
+  "temperature": 1500,
+  "time": 27
 }

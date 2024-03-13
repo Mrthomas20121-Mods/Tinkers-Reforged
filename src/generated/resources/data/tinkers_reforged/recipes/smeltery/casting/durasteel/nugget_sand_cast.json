@@ -5,7 +5,7 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_durasteel",
+    "tag": "tinkers_reforged:durasteel",
     "amount": 10
   },
   "result": "tinkers_reforged:durasteel_nugget",

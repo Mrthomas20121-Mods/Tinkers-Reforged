@@ -1,9 +1,15 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:molten_magma_steel",
-    "tinkers_reforged:molten_cyber_steel",
-    "tinkers_reforged:molten_durasteel",
-    "tinkers_reforged:molten_kepu"
+    "tinkers_reforged:proto_lava",
+    "tinkers_reforged:flowing_proto_lava",
+    "tinkers_reforged:blazium",
+    "tinkers_reforged:flowing_blazium",
+    "tinkers_reforged:gallium",
+    "tinkers_reforged:flowing_gallium",
+    "tinkers_reforged:tiberium",
+    "tinkers_reforged:flowing_tiberium",
+    "tinkers_reforged:titanium",
+    "tinkers_reforged:flowing_titanium"
   ]
 }

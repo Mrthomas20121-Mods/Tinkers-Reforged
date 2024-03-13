@@ -4,7 +4,7 @@
     "tag": "forge:storage_blocks/hureaulite"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_hureaulite",
+    "fluid": "tinkers_reforged:hureaulite",
     "amount": 900
   },
   "temperature": 800,

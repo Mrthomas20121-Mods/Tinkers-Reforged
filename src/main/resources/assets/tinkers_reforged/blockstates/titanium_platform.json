@@ -1,0 +1,75 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/both"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/top"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/bottom"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/neither"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/side"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/titanium/side",
+        "y": 90
+      }
+    }
+  ]
+}

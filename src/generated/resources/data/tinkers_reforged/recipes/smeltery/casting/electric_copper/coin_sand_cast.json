@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/electric_copper",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/single_use/coin"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "tinkers_reforged:electric_copper",
+    "amount": 30
+  },
+  "result": {
+    "tag": "forge:coins/electric_copper"
+  },
+  "cooling_time": 35
+}

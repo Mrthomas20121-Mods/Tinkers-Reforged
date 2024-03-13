@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/tiberium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:tiberium",
+    "amount": 90
+  },
+  "temperature": 1500,
+  "time": 80
+}

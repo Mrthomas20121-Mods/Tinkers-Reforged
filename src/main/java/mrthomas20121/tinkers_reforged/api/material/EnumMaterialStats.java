@@ -57,7 +57,7 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.1f)
     ),
     ETRYX(
-            new HeadMaterialStats(555, 4.9f, NETHERITE, 4f),
+            new HeadMaterialStats(555, 4.9f, NETHERITE, 3.4f),
             HandleMaterialStats.DEFAULT.withAttackSpeed(1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(555, -0.15f, 0.15f, -0.1f),

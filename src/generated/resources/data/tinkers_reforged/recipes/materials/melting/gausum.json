@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:gausum",
-  "temperature": 1200,
-  "result": {
-    "fluid": "tinkers_reforged:molten_gausum",
-    "amount": 90
-  }
-}

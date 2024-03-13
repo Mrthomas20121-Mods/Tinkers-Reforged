@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:sheetmetals/blazium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:sheetmetals/blazium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:blazium",
+    "amount": 90
+  },
+  "temperature": 1400,
+  "time": 78
+}

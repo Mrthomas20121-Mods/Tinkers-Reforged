@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:blazing_copper",
-  "temperature": 1400,
-  "result": {
-    "fluid": "tinkers_reforged:molten_blazing_copper",
-    "amount": 90
-  }
-}

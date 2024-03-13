@@ -13,9 +13,9 @@
     "tag": "forge:rods/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_lavium",
+    "fluid": "tinkers_reforged:lavium",
     "amount": 45
   },
-  "temperature": 1200,
+  "temperature": 1100,
   "time": 14
 }

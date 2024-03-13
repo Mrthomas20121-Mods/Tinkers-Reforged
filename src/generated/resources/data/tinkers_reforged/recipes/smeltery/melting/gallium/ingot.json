@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/gallium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:gallium",
+    "amount": 90
+  },
+  "temperature": 1200,
+  "time": 72
+}

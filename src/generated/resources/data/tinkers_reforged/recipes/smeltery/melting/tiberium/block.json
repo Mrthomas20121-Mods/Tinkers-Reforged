@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/tiberium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:tiberium",
+    "amount": 810
+  },
+  "temperature": 1500,
+  "time": 241
+}

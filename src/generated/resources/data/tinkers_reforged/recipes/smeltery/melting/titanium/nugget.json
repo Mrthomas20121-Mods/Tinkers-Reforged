@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/titanium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:titanium",
+    "amount": 10
+  },
+  "temperature": 1300,
+  "time": 25
+}

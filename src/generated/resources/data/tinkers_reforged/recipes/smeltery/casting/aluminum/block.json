@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "tag": "tconstruct:molten_aluminum",
+    "amount": 810
+  },
+  "result": "tinkers_reforged:aluminum_block",
+  "cooling_time": 141
+}

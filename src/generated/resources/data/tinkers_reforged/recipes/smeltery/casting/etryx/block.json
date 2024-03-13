@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "tag": "tinkers_reforged:etryx",
+    "amount": 810
+  },
+  "result": "tinkers_reforged:etryx_block",
+  "cooling_time": 199
+}

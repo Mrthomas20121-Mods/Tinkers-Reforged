@@ -44,7 +44,7 @@ public class ReforgedToolDefinitionDataProvider extends AbstractToolDefinitionDa
                 .largeToolStartingSlots()
                 .harvestLogic(swordLogic)
                 // traits
-                .trait(TinkersReforgedModifiers.resistor);
+                .trait(TinkersReforgedModifiers.returning);
 
         define(TinkersReforgedToolDefinitions.LONGSWORD)
                 // parts

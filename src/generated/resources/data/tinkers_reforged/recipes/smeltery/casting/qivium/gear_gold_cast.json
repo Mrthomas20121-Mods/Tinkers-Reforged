@@ -13,11 +13,11 @@
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "tinkers_reforged:molten_qivium",
+    "tag": "tinkers_reforged:qivium",
     "amount": 360
   },
   "result": {
     "tag": "forge:gears/qivium"
   },
-  "cooling_time": 144
+  "cooling_time": 139
 }

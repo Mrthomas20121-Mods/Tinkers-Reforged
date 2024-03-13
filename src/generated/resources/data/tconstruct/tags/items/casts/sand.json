@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:great_blade_cast_sand",
-    "tinkers_reforged:long_blade_cast_sand"
+    "tinkers_reforged:great_blade_sand_cast",
+    "tinkers_reforged:long_blade_sand_cast"
   ]
 }

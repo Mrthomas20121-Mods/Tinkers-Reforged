@@ -14,11 +14,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_kepu",
+    "tag": "tinkers_reforged:kepu",
     "amount": 45
   },
   "result": {
     "tag": "forge:wires/kepu"
   },
-  "cooling_time": 53
+  "cooling_time": 57
 }

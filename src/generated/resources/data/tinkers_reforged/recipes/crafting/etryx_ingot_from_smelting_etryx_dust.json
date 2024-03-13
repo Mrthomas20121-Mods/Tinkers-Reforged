@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tinkers_reforged:etryx_dust"
+  },
+  "result": "tinkers_reforged:etryx_ingot",
+  "experience": 0.0,
+  "cookingtime": 200
+}

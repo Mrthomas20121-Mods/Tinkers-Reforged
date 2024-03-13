@@ -24,10 +24,10 @@ public enum EnumMetal implements EnumData {
     BOMIN(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.BOMIN),
     DURALUMIN(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.DURALUMIN),
     DURASTEEL(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.DURASTEEL),
-    ELECTRIC_COPPER(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.ELECTRICAL_COPPER),
+    ELECTRIC_COPPER(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.ELECTRIC_COPPER),
     ETRYX(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.ETRYX),
     FEROBOLT(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.FEROBOLT),
-    GALLIUM(true, BlockTags.NEEDS_DIAMOND_TOOL, Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.GALLIUM),
+    GALLIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.GALLIUM),
     HORNIUM(BlockTags.NEEDS_DIAMOND_TOOL, EnumFluid.HORNIUM),
     KEPU(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.KEPU),
     LAVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.LAVIUM),
@@ -55,11 +55,7 @@ public enum EnumMetal implements EnumData {
     }
 
     EnumMetal(TagKey<Block> blockTag, EnumFluid fluid) {
-        this(true, blockTag, blockTag, fluid);
-    }
-
-    EnumMetal(TagKey<Block> blockTag, FluidObject<ForgeFlowingFluid> fluid) {
-        this(true, blockTag, blockTag, fluid);
+        this(false, blockTag, blockTag, fluid);
     }
 
     public boolean isThisOre() {

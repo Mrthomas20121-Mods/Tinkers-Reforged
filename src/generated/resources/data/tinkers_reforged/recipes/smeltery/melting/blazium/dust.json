@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:dusts/blazium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/blazium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:blazium",
+    "amount": 90
+  },
+  "temperature": 1400,
+  "time": 58
+}

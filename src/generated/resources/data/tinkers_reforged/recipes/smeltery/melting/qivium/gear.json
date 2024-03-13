@@ -13,9 +13,9 @@
     "tag": "forge:gears/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_qivium",
+    "fluid": "tinkers_reforged:qivium",
     "amount": 360
   },
-  "temperature": 1200,
-  "time": 144
+  "temperature": 1100,
+  "time": 139
 }

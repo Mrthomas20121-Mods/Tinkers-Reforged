@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:bomin",
+  "temperature": 1200,
+  "result": {
+    "fluid": "tinkers_reforged:bomin",
+    "amount": 90
+  }
+}

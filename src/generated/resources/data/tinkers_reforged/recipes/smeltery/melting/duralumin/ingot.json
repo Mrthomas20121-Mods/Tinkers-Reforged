@@ -4,7 +4,7 @@
     "tag": "forge:ingots/duralumin"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_duralumin",
+    "fluid": "tinkers_reforged:duralumin",
     "amount": 90
   },
   "temperature": 700,

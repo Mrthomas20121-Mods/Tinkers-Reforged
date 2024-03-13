@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "tag": "tinkers_reforged:molten_felsteel",
-    "amount": 90
-  },
-  "temperature": 1500,
-  "output": "tinkers_reforged:felsteel"
-}

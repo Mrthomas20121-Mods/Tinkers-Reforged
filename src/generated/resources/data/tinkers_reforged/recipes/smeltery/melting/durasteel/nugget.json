@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/durasteel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:durasteel",
+    "amount": 10
+  },
+  "temperature": 1500,
+  "time": 27
+}

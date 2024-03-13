@@ -14,11 +14,11 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_lavium",
+    "tag": "tinkers_reforged:lavium",
     "amount": 45
   },
   "result": {
     "tag": "forge:wires/lavium"
   },
-  "cooling_time": 51
+  "cooling_time": 49
 }

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/electric_copper"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:electric_copper",
+  "leftover": {
+    "tag": "forge:ingots/electric_copper"
+  }
+}

@@ -4,9 +4,9 @@
     "tag": "forge:ingots/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 90
   },
-  "temperature": 1300,
-  "time": 75
+  "temperature": 1500,
+  "time": 80
 }

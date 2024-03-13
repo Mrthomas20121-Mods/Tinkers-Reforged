@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/hornium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:hornium",
+    "amount": 10
+  },
+  "temperature": 1500,
+  "time": 27
+}

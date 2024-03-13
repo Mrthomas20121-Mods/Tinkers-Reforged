@@ -1,8 +1,8 @@
 {
   "fallbacks": [
-    "bone"
+    "metal"
   ],
-  "color": "2CCDB1",
+  "color": "349988",
   "luminosity": 0,
   "generator": {
     "transformer": {
@@ -20,11 +20,11 @@
           },
           {
             "grey": 102,
-            "color": "FF233319"
+            "color": "FF0B4D42"
           },
           {
             "grey": 140,
-            "color": "FF0B4D42"
+            "color": "FF105E51"
           },
           {
             "grey": 178,
@@ -42,10 +42,12 @@
       }
     },
     "supportedStats": [
+      "tconstruct:limb",
+      "tconstruct:grip",
+      "tconstruct:repair_kit",
       "tconstruct:head",
       "tconstruct:handle",
-      "tconstruct:extra",
-      "tconstruct:repair_kit"
+      "tconstruct:extra"
     ],
     "ignoreMaterialStats": false
   }

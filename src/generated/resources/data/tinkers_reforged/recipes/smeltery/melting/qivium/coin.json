@@ -13,9 +13,9 @@
     "tag": "forge:coins/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_qivium",
+    "fluid": "tinkers_reforged:qivium",
     "amount": 30
   },
-  "temperature": 1200,
-  "time": 48
+  "temperature": 1100,
+  "time": 46
 }

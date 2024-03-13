@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/gallium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:gallium",
+    "amount": 10
+  },
+  "temperature": 1200,
+  "time": 24
+}

@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:geore_small_buds/titanium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:geore_small_buds/titanium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:titanium",
+    "amount": 90
+  },
+  "temperature": 1300,
+  "time": 75
+}

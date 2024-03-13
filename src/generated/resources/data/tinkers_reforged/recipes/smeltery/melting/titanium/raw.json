@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:ore_melting",
+  "rate": "metal",
+  "ingredient": {
+    "tag": "forge:raw_materials/titanium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:titanium",
+    "amount": 90
+  },
+  "temperature": 1300,
+  "time": 112
+}

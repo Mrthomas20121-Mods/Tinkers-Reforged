@@ -5,9 +5,9 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_epidote",
+    "tag": "tinkers_reforged:epidote",
     "amount": 100
   },
   "result": "tinkers_reforged:epidote_gem",
-  "cooling_time": 60
+  "cooling_time": 63
 }

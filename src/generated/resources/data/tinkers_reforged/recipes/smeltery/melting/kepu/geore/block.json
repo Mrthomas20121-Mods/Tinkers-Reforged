@@ -13,9 +13,9 @@
     "tag": "forge:geore_blocks/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 360
   },
-  "temperature": 1300,
-  "time": 150
+  "temperature": 1500,
+  "time": 160
 }

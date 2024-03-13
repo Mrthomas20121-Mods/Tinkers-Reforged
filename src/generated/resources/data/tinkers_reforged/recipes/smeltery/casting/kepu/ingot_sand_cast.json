@@ -5,9 +5,9 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_kepu",
+    "tag": "tinkers_reforged:kepu",
     "amount": 90
   },
   "result": "tinkers_reforged:kepu_ingot",
-  "cooling_time": 75
+  "cooling_time": 80
 }

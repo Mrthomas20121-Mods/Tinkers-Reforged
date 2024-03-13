@@ -1,0 +1,75 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/both"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/top"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/bottom"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/neither"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/side"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/electric_copper/side",
+        "y": 90
+      }
+    }
+  ]
+}

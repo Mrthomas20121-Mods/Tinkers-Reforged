@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:epidote_plate",
+    "tinkers_reforged:hureaulite_plate",
+    "tinkers_reforged:red_beryl_plate",
+    "tinkers_reforged:aluminum_plate",
+    "tinkers_reforged:blazium_plate",
+    "tinkers_reforged:bomin_plate",
+    "tinkers_reforged:duralumin_plate",
+    "tinkers_reforged:durasteel_plate",
+    "tinkers_reforged:electric_copper_plate",
+    "tinkers_reforged:etryx_plate",
+    "tinkers_reforged:ferobolt_plate",
+    "tinkers_reforged:gallium_plate",
+    "tinkers_reforged:hornium_plate",
+    "tinkers_reforged:kepu_plate",
+    "tinkers_reforged:lavium_plate",
+    "tinkers_reforged:mosite_plate",
+    "tinkers_reforged:qivium_plate",
+    "tinkers_reforged:tiberium_plate",
+    "tinkers_reforged:titanium_plate"
+  ]
+}

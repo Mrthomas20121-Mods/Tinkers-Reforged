@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/etryx"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:etryx",
+  "leftover": {
+    "tag": "forge:ingots/etryx"
+  }
+}

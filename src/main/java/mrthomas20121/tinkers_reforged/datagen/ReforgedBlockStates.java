@@ -7,10 +7,12 @@ import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.api.material.EnumGem;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
+import mrthomas20121.tinkers_reforged.util.EnumData;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -40,9 +42,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
                 }
             }
 
-            for(EnumMetal.BlockType blockType: EnumMetal.BlockType.values()) {
-                blockWithItem(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(blockType));
-            }
+            metalBlock(metal, TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK));
         }
 
         for(EnumGem gem: EnumGem.values()) {
@@ -50,7 +50,7 @@ public class ReforgedBlockStates extends BlockStateProvider {
             blockWithItem(oreBlock.ore());
             blockWithItem(oreBlock.deepslateOre());
 
-            blockWithItem(TinkersReforgedBlocks.GEMS_BLOCKS.get(gem));
+            metalBlock(gem, TinkersReforgedBlocks.GEMS_BLOCKS.get(gem));
         }
 
         TinkersReforgedFluids.ALL_FLUIDS.values().forEach(this::fluid);
@@ -63,6 +63,24 @@ public class ReforgedBlockStates extends BlockStateProvider {
         ResourceLocation id = registryObject.getId();
         ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "block/" + id.getPath());
         itemModels().cubeAll(id.getPath(), textureLocation);
+    }
+
+    public void metalBlock(EnumData data, RegistryObject<Block> registryObject) {
+        //block model
+        simpleBlock(registryObject.get(), cubeAll(registryObject, data));
+        //itemblock model
+        ResourceLocation id = registryObject.getId();
+        ResourceLocation textureLocation = new ResourceLocation(id.getNamespace(), "block/metal/"+data.getName());
+        itemModels().cubeAll(id.getPath(), textureLocation);
+    }
+
+    public ModelFile cubeAll(RegistryObject<Block> block, EnumData data) {
+        ResourceLocation id = block.getId();
+        return models().cubeAll(name(block.get()), new ResourceLocation(id.getNamespace(), "block/metal/"+data.getName()));
+    }
+
+    private String name(Block block) {
+        return block.getRegistryName().getPath();
     }
 
     public void fluid(FluidObject<ForgeFlowingFluid> fluid) {

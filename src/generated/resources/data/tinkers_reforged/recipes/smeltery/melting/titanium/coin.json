@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/titanium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/titanium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:titanium",
+    "amount": 30
+  },
+  "temperature": 1300,
+  "time": 50
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/blazium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:blazium",
+    "amount": 90
+  },
+  "temperature": 1400,
+  "time": 78
+}

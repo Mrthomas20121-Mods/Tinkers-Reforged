@@ -13,9 +13,9 @@
     "tag": "forge:geore_clusters/red_beryl"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_red_beryl",
+    "fluid": "tinkers_reforged:red_beryl",
     "amount": 400
   },
-  "temperature": 600,
-  "time": 134
+  "temperature": 800,
+  "time": 150
 }

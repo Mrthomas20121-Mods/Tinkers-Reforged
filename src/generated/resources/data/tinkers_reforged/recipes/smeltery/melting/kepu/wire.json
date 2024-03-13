@@ -13,9 +13,9 @@
     "tag": "forge:wires/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 45
   },
-  "temperature": 1300,
-  "time": 15
+  "temperature": 1500,
+  "time": 16
 }

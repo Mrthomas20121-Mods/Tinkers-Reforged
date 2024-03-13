@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/mosite"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:mosite",
+    "amount": 10
+  },
+  "temperature": 1100,
+  "time": 23
+}

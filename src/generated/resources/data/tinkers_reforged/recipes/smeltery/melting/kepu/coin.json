@@ -13,9 +13,9 @@
     "tag": "forge:coins/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 30
   },
-  "temperature": 1300,
-  "time": 50
+  "temperature": 1500,
+  "time": 53
 }

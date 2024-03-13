@@ -82,17 +82,8 @@ public class TinkersReforgedItems {
 
     public static CastObject long_blade_cast = new CastObject("long_blade");
 
-    public static Map<CastType, RegistryObject<Item>> castMap = new HashMap<>();
-
     public static Item register() {
         return new Item(new Item.Properties().tab(resourceTab));
     }
 
-    public static Item registerCast() {
-        return new Item(new Item.Properties().tab(castTab));
-    }
-
-    public static BlockItem registerItemBlock(Block block) {
-        return new BlockItem(block, new Item.Properties().tab(resourceTab));
-    }
 }

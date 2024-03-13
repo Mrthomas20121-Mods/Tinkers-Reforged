@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:gelot",
-  "temperature": 900,
-  "result": {
-    "fluid": "tinkers_reforged:molten_gelot",
-    "amount": 90
-  }
-}

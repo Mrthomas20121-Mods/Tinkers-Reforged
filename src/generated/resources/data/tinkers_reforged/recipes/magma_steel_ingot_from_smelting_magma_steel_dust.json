@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "tinkers_reforged:magma_steel_dust"
-  },
-  "result": "tinkers_reforged:magma_steel_ingot",
-  "experience": 0.0,
-  "cookingtime": 200
-}

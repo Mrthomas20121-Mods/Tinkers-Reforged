@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/mosite",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/mosite"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:mosite",
+    "amount": 360
+  },
+  "temperature": 1100,
+  "time": 139
+}

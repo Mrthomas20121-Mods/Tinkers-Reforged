@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "tconstruct:extra": {},
+    "tconstruct:handle": {
+      "durability": 1.0,
+      "miningSpeed": 1.0,
+      "attackSpeed": 1.1,
+      "attackDamage": 1.0
+    },
+    "tconstruct:head": {
+      "durability": 260,
+      "miningSpeed": 5.5,
+      "harvestTier": "minecraft:diamond",
+      "attack": 1.0
+    },
+    "tconstruct:limb": {
+      "durability": 260,
+      "drawSpeed": 0.2,
+      "velocity": -0.01,
+      "accuracy": 0.3
+    },
+    "tconstruct:grip": {
+      "durability": 1.1,
+      "accuracy": 0.3,
+      "meleeAttack": 0.01
+    }
+  }
+}

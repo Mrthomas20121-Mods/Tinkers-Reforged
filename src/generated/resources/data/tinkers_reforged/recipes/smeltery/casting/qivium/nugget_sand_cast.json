@@ -5,9 +5,9 @@
   },
   "cast_consumed": true,
   "fluid": {
-    "tag": "tinkers_reforged:molten_qivium",
+    "tag": "tinkers_reforged:qivium",
     "amount": 10
   },
   "result": "tinkers_reforged:qivium_nugget",
-  "cooling_time": 24
+  "cooling_time": 23
 }

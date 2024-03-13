@@ -13,7 +13,7 @@
     "tag": "tconstruct:casts/multi_use/plate"
   },
   "fluid": {
-    "tag": "tinkers_reforged:molten_duralumin",
+    "tag": "tinkers_reforged:duralumin",
     "amount": 90
   },
   "result": {

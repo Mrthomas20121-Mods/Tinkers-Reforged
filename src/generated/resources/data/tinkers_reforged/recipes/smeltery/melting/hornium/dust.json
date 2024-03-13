@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:dusts/hornium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/hornium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:hornium",
+    "amount": 90
+  },
+  "temperature": 1500,
+  "time": 60
+}

@@ -13,9 +13,9 @@
     "tag": "forge:geore_medium_buds/red_beryl"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_red_beryl",
+    "fluid": "tinkers_reforged:red_beryl",
     "amount": 200
   },
-  "temperature": 600,
-  "time": 80
+  "temperature": 800,
+  "time": 90
 }

@@ -13,7 +13,7 @@
     "tag": "forge:geore_small_buds/hureaulite"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_hureaulite",
+    "fluid": "tinkers_reforged:hureaulite",
     "amount": 100
   },
   "temperature": 800,

@@ -13,9 +13,9 @@
     "tag": "forge:wires/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_qivium",
+    "fluid": "tinkers_reforged:qivium",
     "amount": 45
   },
-  "temperature": 1200,
+  "temperature": 1100,
   "time": 14
 }

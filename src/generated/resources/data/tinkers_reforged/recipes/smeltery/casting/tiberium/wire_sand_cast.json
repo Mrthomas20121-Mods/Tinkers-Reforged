@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/tiberium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/single_use/wire"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "tag": "tinkers_reforged:tiberium",
+    "amount": 45
+  },
+  "result": {
+    "tag": "forge:wires/tiberium"
+  },
+  "cooling_time": 57
+}

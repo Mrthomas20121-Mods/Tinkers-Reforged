@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "tag": "tinkers_reforged:mosite",
+    "amount": 810
+  },
+  "result": "tinkers_reforged:mosite_block",
+  "cooling_time": 208
+}

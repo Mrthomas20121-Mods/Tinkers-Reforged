@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:ores/epidote"
+  },
+  "result": "tinkers_reforged:epidote_gem",
+  "experience": 0.0,
+  "cookingtime": 200
+}

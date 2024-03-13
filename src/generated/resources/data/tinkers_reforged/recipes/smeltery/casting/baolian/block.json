@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:casting_basin",
-  "fluid": {
-    "tag": "tinkers_reforged:molten_baolian",
-    "amount": 810
-  },
-  "result": "tinkers_reforged:baolian_block",
-  "cooling_time": 241
-}

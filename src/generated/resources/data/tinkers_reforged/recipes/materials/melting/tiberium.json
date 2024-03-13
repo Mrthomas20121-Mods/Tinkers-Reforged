@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:tiberium",
+  "temperature": 1500,
+  "result": {
+    "fluid": "tinkers_reforged:tiberium",
+    "amount": 90
+  }
+}

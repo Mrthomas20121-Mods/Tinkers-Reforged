@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/blazium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/blazium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:blazium",
+    "amount": 45
+  },
+  "temperature": 1400,
+  "time": 16
+}

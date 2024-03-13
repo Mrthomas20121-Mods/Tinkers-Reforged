@@ -3,7 +3,7 @@
   "input": "tinkers_reforged:durasteel",
   "temperature": 1500,
   "result": {
-    "fluid": "tinkers_reforged:molten_durasteel",
+    "fluid": "tinkers_reforged:durasteel",
     "amount": 90
   }
 }

@@ -13,9 +13,9 @@
     "tag": "forge:geore_medium_buds/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 180
   },
-  "temperature": 1300,
-  "time": 112
+  "temperature": 1500,
+  "time": 120
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tinkers_reforged:epidote_ore",
     "tinkers_reforged:deepslate_epidote_ore"
   ]
 }

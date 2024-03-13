@@ -37,7 +37,7 @@ public class TinkersReforgedBlocks {
 
     public static Map<EnumMetal, IOreBlock> ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal -> {
             if(metal.isThisOverworldOre()) {
-                return new OverworldOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("%s_deepslate_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab)));
+                return new OverworldOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("deepslate_%s_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab)));
             }
             else {
                 return new EndOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)));
@@ -45,7 +45,7 @@ public class TinkersReforgedBlocks {
     });
 
     public static Map<EnumGem, OverworldOreBlock> GEM_ORES = Helpers.mapOfKeys(EnumGem.class, metal ->
-            new OverworldOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("%s_deepslate_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab))));
+            new OverworldOreBlock(register("%s_ore".formatted(metal.getName()), () -> new Block(ORE), new Item.Properties().tab(resourceTab)), register("deepslate_%s_ore".formatted(metal.getName()), () -> new Block(DEEPSLATE_ORE), new Item.Properties().tab(resourceTab))));
 
     public static Map<EnumMetal, RegistryObject<Block>> RAW_ORES = Helpers.mapOfKeys(EnumMetal.class, EnumMetal::isThisOre, metal ->
             register("raw_%s_block".formatted(metal.getName()), () -> new Block(RAW_BLOCK), new Item.Properties().tab(resourceTab)));

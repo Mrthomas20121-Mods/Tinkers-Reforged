@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:cyber_steel",
-  "temperature": 600,
-  "result": {
-    "fluid": "tinkers_reforged:molten_cyber_steel",
-    "amount": 90
-  }
-}

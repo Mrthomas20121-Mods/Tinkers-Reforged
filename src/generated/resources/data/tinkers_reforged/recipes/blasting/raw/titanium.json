@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "forge:raw_materials/titanium"
+  },
+  "result": "tinkers_reforged:titanium_ingot",
+  "experience": 0.5,
+  "cookingtime": 100
+}

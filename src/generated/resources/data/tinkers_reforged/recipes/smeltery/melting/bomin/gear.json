@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/bomin",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/bomin"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:bomin",
+    "amount": 360
+  },
+  "temperature": 1200,
+  "time": 144
+}

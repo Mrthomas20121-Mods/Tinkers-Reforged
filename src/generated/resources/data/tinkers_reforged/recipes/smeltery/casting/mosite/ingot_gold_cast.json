@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/ingot"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:mosite",
+    "amount": 90
+  },
+  "result": "tinkers_reforged:mosite_ingot",
+  "cooling_time": 69
+}

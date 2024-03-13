@@ -5,15 +5,9 @@
     "tag": "forge:raw_materials/kepu"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 90
   },
-  "temperature": 1300,
-  "time": 112,
-  "byproducts": [
-    {
-      "fluid": "tconstruct:molten_ender",
-      "amount": 90
-    }
-  ]
+  "temperature": 1500,
+  "time": 120
 }

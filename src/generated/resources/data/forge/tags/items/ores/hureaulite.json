@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tinkers_reforged:hureaulite_ore",
     "tinkers_reforged:deepslate_hureaulite_ore"
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "tinkers_reforged:bomin",
+    "tinkers_reforged:flowing_bomin",
+    "tinkers_reforged:duralumin",
+    "tinkers_reforged:flowing_duralumin",
+    "tinkers_reforged:durasteel",
+    "tinkers_reforged:flowing_durasteel",
+    "tinkers_reforged:electric_copper",
+    "tinkers_reforged:flowing_electric_copper",
+    "tinkers_reforged:etryx",
+    "tinkers_reforged:flowing_etryx",
+    "tinkers_reforged:ferobolt",
+    "tinkers_reforged:flowing_ferobolt",
+    "tinkers_reforged:gallium",
+    "tinkers_reforged:flowing_gallium",
+    "tinkers_reforged:hornium",
+    "tinkers_reforged:flowing_hornium",
+    "tinkers_reforged:kepu",
+    "tinkers_reforged:flowing_kepu",
+    "tinkers_reforged:lavium",
+    "tinkers_reforged:flowing_lavium",
+    "tinkers_reforged:mosite",
+    "tinkers_reforged:flowing_mosite",
+    "tinkers_reforged:qivium",
+    "tinkers_reforged:flowing_qivium",
+    "tinkers_reforged:red_beryl",
+    "tinkers_reforged:flowing_red_beryl"
+  ]
+}

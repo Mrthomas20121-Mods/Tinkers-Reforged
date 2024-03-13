@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/bomin"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:bomin",
+    "amount": 10
+  },
+  "temperature": 1200,
+  "time": 24
+}

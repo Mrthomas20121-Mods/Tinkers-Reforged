@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:casting_basin",
-  "fluid": {
-    "tag": "tinkers_reforged:molten_gausum",
-    "amount": 810
-  },
-  "result": "tinkers_reforged:gausum_block",
-  "cooling_time": 216
-}

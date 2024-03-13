@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/bomin"
+  },
+  "value": 9,
+  "needed": 1,
+  "material": "tinkers_reforged:bomin",
+  "leftover": {
+    "tag": "forge:ingots/bomin"
+  }
+}

@@ -27,15 +27,9 @@
     ]
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_kepu",
+    "fluid": "tinkers_reforged:kepu",
     "amount": 180
   },
-  "temperature": 1300,
-  "time": 187,
-  "byproducts": [
-    {
-      "fluid": "tconstruct:molten_ender",
-      "amount": 180
-    }
-  ]
+  "temperature": 1500,
+  "time": 201
 }

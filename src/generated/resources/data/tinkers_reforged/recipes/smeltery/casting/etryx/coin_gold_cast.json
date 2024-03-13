@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/etryx",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/coin"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:etryx",
+    "amount": 30
+  },
+  "result": {
+    "tag": "forge:coins/etryx"
+  },
+  "cooling_time": 38
+}

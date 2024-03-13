@@ -1,0 +1,7 @@
+{
+  "parent": "tconstruct:block/platform/both",
+  "textures": {
+    "side": "tinkers_reforged:block/platform/tiberium_side",
+    "top": "tinkers_reforged:block/platform/tiberium_top"
+  }
+}

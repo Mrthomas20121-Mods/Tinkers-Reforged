@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/hornium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/hornium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:hornium",
+    "amount": 360
+  },
+  "temperature": 1500,
+  "time": 160
+}

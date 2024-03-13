@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/electric_copper",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gear"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:electric_copper",
+    "amount": 360
+  },
+  "result": {
+    "tag": "forge:gears/electric_copper"
+  },
+  "cooling_time": 120
+}

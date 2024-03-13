@@ -13,11 +13,11 @@
     "tag": "tconstruct:casts/multi_use/plate"
   },
   "fluid": {
-    "tag": "tinkers_reforged:molten_kepu",
+    "tag": "tinkers_reforged:kepu",
     "amount": 90
   },
   "result": {
     "tag": "forge:plates/kepu"
   },
-  "cooling_time": 75
+  "cooling_time": 80
 }

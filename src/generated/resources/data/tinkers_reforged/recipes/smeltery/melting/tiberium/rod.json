@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/tiberium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/tiberium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:tiberium",
+    "amount": 45
+  },
+  "temperature": 1500,
+  "time": 16
+}

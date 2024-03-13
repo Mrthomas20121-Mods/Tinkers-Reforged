@@ -1,0 +1,75 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/both"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/top"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/bottom"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/neither"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/side"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/durasteel/side",
+        "y": 90
+      }
+    }
+  ]
+}

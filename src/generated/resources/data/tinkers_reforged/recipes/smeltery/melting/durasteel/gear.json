@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:gears/durasteel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/durasteel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:durasteel",
+    "amount": 360
+  },
+  "temperature": 1500,
+  "time": 160
+}

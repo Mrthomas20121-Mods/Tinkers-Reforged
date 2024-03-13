@@ -13,11 +13,11 @@
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "tinkers_reforged:molten_qivium",
+    "tag": "tinkers_reforged:qivium",
     "amount": 30
   },
   "result": {
     "tag": "forge:coins/qivium"
   },
-  "cooling_time": 42
+  "cooling_time": 40
 }

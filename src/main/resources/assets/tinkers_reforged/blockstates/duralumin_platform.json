@@ -1,0 +1,75 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/both"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/top"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "false"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/bottom"
+      }
+    },
+    {
+      "when": {
+        "up": "true",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/neither"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/side",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/side"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "tinkers_reforged:block/platform/duralumin/side",
+        "y": 90
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "tinkers_reforged:block/kepu_block"
+    "all": "tinkers_reforged:block/metal/kepu"
   }
 }

@@ -13,9 +13,9 @@
     "tag": "forge:gears/lavium"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_lavium",
+    "fluid": "tinkers_reforged:lavium",
     "amount": 360
   },
-  "temperature": 1200,
-  "time": 144
+  "temperature": 1100,
+  "time": 139
 }

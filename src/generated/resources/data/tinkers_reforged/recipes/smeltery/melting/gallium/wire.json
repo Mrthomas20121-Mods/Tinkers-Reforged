@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/gallium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/gallium"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:gallium",
+    "amount": 45
+  },
+  "temperature": 1200,
+  "time": 14
+}

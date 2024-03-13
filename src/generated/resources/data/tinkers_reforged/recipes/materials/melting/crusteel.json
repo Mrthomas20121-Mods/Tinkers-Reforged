@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:crusteel",
-  "temperature": 700,
-  "result": {
-    "fluid": "tinkers_reforged:molten_crusteel",
-    "amount": 90
-  }
-}

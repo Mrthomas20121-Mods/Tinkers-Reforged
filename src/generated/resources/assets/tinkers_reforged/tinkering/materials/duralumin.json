@@ -2,7 +2,7 @@
   "fallbacks": [
     "metal"
   ],
-  "color": "A2DC8F",
+  "color": "9BB879",
   "luminosity": 0,
   "generator": {
     "transformer": {
@@ -16,36 +16,38 @@
           },
           {
             "grey": 63,
-            "color": "FF063A04"
+            "color": "FF466030"
           },
           {
             "grey": 102,
-            "color": "FF1F571B"
+            "color": "FF6A7A44"
           },
           {
             "grey": 140,
-            "color": "FF74B267"
+            "color": "FF89A166"
           },
           {
             "grey": 178,
-            "color": "FF8CC97D"
+            "color": "FF9BB879"
           },
           {
             "grey": 216,
-            "color": "FFA2DC8F"
+            "color": "FFCDDBAC"
           },
           {
             "grey": 255,
-            "color": "FFC4FAA9"
+            "color": "FFEBF1C8"
           }
         ]
       }
     },
     "supportedStats": [
+      "tconstruct:limb",
+      "tconstruct:grip",
+      "tconstruct:repair_kit",
       "tconstruct:head",
       "tconstruct:handle",
-      "tconstruct:extra",
-      "tconstruct:repair_kit"
+      "tconstruct:extra"
     ],
     "ignoreMaterialStats": false
   }

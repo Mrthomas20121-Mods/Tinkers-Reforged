@@ -35,7 +35,7 @@ public class ReforgedData {
 
         // ore data
         oreData.put(EnumMetal.ALUMINUM, new OreData(50, 4, -60, 120));
-        oreData.put(EnumMetal.GALLIUM, new OreData(40, 6, -60, 120));
+        //oreData.put(EnumMetal.GALLIUM, new OreData(40, 6, -60, 120));
         oreData.put(EnumMetal.KEPU, new OreData(20, 3, -20, 100));
         oreData.put(EnumMetal.TITANIUM, new OreData(18, 4, -20, 100));
         oreData.put(EnumGem.EPIDOTE, new OreData(30, 4, -60, 5));

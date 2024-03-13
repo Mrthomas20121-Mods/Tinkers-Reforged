@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/etryx"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:etryx",
+    "amount": 90
+  },
+  "temperature": 1000,
+  "time": 66
+}

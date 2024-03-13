@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:casting_table",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/gallium",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/wire"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:gallium",
+    "amount": 45
+  },
+  "result": {
+    "tag": "forge:wires/gallium"
+  },
+  "cooling_time": 51
+}

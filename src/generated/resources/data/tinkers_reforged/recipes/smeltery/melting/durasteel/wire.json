@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:wires/durasteel",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:wires/durasteel"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:durasteel",
+    "amount": 45
+  },
+  "temperature": 1500,
+  "time": 16
+}

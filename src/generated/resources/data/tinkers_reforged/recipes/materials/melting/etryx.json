@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:etryx",
+  "temperature": 1000,
+  "result": {
+    "fluid": "tinkers_reforged:etryx",
+    "amount": 90
+  }
+}

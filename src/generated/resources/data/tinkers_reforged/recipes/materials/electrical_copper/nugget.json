@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/electrical_copper"
-  },
-  "value": 1,
-  "needed": 9,
-  "material": "tinkers_reforged:electrical_copper"
-}

@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:melting_fuel",
   "fluid": {
-    "name": "tinkers_reforged:molten_proto_lava",
+    "name": "tinkers_reforged:proto_lava",
     "amount": 50
   },
   "duration": 100,

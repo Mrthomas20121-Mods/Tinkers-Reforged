@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "forge:raw_materials/titanium"
+  },
+  "result": "tinkers_reforged:titanium_ingot",
+  "experience": 0.0,
+  "cookingtime": 200
+}

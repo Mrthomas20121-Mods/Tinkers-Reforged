@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "building",
+  "ingredients": [
+    {
+      "item": "tinkers_reforged:raw_kepu_block"
+    }
+  ],
+  "result": {
+    "item": "tinkers_reforged:raw_kepu",
+    "count": 9
+  }
+}

@@ -13,9 +13,9 @@
     "tag": "forge:dusts/qivium"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_qivium",
+    "fluid": "tinkers_reforged:qivium",
     "amount": 90
   },
-  "temperature": 1200,
-  "time": 54
+  "temperature": 1100,
+  "time": 52
 }

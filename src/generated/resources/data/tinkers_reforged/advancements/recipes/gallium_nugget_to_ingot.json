@@ -1,0 +1,45 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "rewards": {
+          "recipes": [
+            "tinkers_reforged:gallium_ingot"
+          ]
+        },
+        "criteria": {
+          "has_nugget": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "tinkers_reforged:gallium_nugget"
+                  ]
+                }
+              ]
+            }
+          },
+          "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+              "recipe": "tinkers_reforged:gallium_ingot"
+            }
+          }
+        },
+        "requirements": [
+          [
+            "has_nugget",
+            "has_the_recipe"
+          ]
+        ]
+      }
+    }
+  ]
+}

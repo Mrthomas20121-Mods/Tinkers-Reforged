@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:ingots/gelot"
-  },
-  "value": 1,
-  "needed": 1,
-  "material": "tinkers_reforged:gelot"
-}

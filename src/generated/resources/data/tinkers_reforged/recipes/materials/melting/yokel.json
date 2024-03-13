@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:yokel",
-  "temperature": 1500,
-  "result": {
-    "fluid": "tinkers_reforged:molten_yokel",
-    "amount": 90
-  }
-}

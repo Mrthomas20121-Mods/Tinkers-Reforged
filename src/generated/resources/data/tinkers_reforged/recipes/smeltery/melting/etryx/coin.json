@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:coins/etryx",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/etryx"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:etryx",
+    "amount": 30
+  },
+  "temperature": 1000,
+  "time": 44
+}

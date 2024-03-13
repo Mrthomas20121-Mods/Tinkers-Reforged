@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:blazing_blood",
+      "amount": 500
+    },
+    {
+      "name": "tconstruct:molten_amethyst",
+      "amount": 100
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:blazium",
+    "amount": 90
+  },
+  "temperature": 1500
+}

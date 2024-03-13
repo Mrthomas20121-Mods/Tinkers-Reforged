@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:melting_fuel",
-  "fluid": {
-    "name": "tinkers_reforged:molten_blazing_copper",
-    "amount": 50
-  },
-  "duration": 150,
-  "temperature": 1800
-}

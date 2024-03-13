@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_cobalt",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:blazing_blood",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:liquid_soul",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:lavium",
+    "amount": 90
+  },
+  "temperature": 1100
+}

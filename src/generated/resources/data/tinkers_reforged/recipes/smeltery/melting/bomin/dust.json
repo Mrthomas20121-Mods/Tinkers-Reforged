@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:dusts/bomin",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/bomin"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:bomin",
+    "amount": 90
+  },
+  "temperature": 1200,
+  "time": 54
+}

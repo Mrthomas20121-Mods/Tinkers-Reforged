@@ -7,12 +7,12 @@
     },
     {
       "name": "tconstruct:molten_aluminum",
-      "amount": 810
+      "amount": 270
     }
   ],
   "result": {
-    "fluid": "tinkers_reforged:molten_duralumin",
-    "amount": 450
+    "fluid": "tinkers_reforged:duralumin",
+    "amount": 180
   },
-  "temperature": 700
+  "temperature": 800
 }

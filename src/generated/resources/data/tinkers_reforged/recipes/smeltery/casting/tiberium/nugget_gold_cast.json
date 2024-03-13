@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:tiberium",
+    "amount": 10
+  },
+  "result": "tinkers_reforged:tiberium_nugget",
+  "cooling_time": 27
+}

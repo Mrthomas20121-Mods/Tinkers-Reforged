@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:sheetmetals/electric_copper",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:sheetmetals/electric_copper"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:electric_copper",
+    "amount": 90
+  },
+  "temperature": 800,
+  "time": 60
+}

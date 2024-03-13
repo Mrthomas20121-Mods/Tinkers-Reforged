@@ -4,7 +4,7 @@
     "tag": "forge:gems/hureaulite"
   },
   "result": {
-    "fluid": "tinkers_reforged:molten_hureaulite",
+    "fluid": "tinkers_reforged:hureaulite",
     "amount": 100
   },
   "temperature": 800,

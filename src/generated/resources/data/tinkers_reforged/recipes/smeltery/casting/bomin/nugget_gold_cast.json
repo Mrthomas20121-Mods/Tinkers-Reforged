@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/nugget"
+  },
+  "fluid": {
+    "tag": "tinkers_reforged:bomin",
+    "amount": 10
+  },
+  "result": "tinkers_reforged:bomin_nugget",
+  "cooling_time": 24
+}

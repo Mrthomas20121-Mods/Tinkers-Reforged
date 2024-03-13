@@ -1,17 +1,22 @@
 {
   "replace": false,
   "values": [
-    "tinkers_reforged:kepu_ore",
-    "tinkers_reforged:kepu_block",
-    "tinkers_reforged:raw_kepu_block",
+    "tinkers_reforged:epidote_block",
+    "tinkers_reforged:epidote_ore",
     "tinkers_reforged:deepslate_epidote_ore",
+    "tinkers_reforged:hureaulite_block",
+    "tinkers_reforged:hureaulite_ore",
     "tinkers_reforged:deepslate_hureaulite_ore",
+    "tinkers_reforged:red_beryl_block",
     "tinkers_reforged:red_beryl_ore",
     "tinkers_reforged:deepslate_red_beryl_ore",
-    "tinkers_reforged:blazing_copper_block",
-    "tinkers_reforged:magma_steel_block",
-    "tinkers_reforged:cyber_steel_block",
-    "tinkers_reforged:gelot_block",
-    "tinkers_reforged:piroot_block"
+    "tinkers_reforged:duralumin_block",
+    "tinkers_reforged:duralumin_platform",
+    "tinkers_reforged:electric_copper_block",
+    "tinkers_reforged:electric_copper_platform",
+    "tinkers_reforged:ferobolt_block",
+    "tinkers_reforged:ferobolt_platform",
+    "tinkers_reforged:hornium_block",
+    "tinkers_reforged:hornium_platform"
   ]
 }

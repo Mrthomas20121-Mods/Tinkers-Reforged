@@ -13,11 +13,11 @@
     "tag": "tconstruct:casts/multi_use/coin"
   },
   "fluid": {
-    "tag": "tinkers_reforged:molten_kepu",
+    "tag": "tinkers_reforged:kepu",
     "amount": 30
   },
   "result": {
     "tag": "forge:coins/kepu"
   },
-  "cooling_time": 43
+  "cooling_time": 46
 }

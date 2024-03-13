@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:epidote",
-  "temperature": 700,
-  "result": {
-    "fluid": "tinkers_reforged:molten_epidote",
-    "amount": 90
-  }
-}

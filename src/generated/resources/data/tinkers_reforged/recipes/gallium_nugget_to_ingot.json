@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XXX",
+          "XYX",
+          "XXX"
+        ],
+        "key": {
+          "X": {
+            "tag": "forge:nuggets/gallium"
+          },
+          "Y": {
+            "item": "tinkers_reforged:gallium_nugget"
+          }
+        },
+        "result": {
+          "item": "tinkers_reforged:gallium_ingot"
+        }
+      }
+    }
+  ]
+}

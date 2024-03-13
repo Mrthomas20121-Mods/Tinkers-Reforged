@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "value": {
+        "tag": "forge:rods/ferobolt",
+        "type": "forge:tag_empty"
+      },
+      "type": "forge:not"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:rods/ferobolt"
+  },
+  "result": {
+    "fluid": "tinkers_reforged:ferobolt",
+    "amount": 45
+  },
+  "temperature": 1000,
+  "time": 13
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_amethyst",
+      "amount": 100
+    },
+    {
+      "name": "tinkers_reforged:kepu",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:etryx",
+    "amount": 90
+  },
+  "temperature": 1500
+}

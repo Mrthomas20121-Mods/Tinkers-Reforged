@@ -21,8 +21,7 @@ public class ReforgedBlocksLoot extends BlockLoot {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ForgeRegistries.BLOCKS.getValues().stream()
-                .filter((block) -> TinkersReforged.MOD_ID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace()))
-                .collect(Collectors.toList());
+                .filter((block) -> TinkersReforged.MOD_ID.equals(Objects.requireNonNull(block.getRegistryName()).getNamespace())).toList();
     }
 
     @Override
@@ -33,6 +32,7 @@ public class ReforgedBlocksLoot extends BlockLoot {
                 blockType.getLoot().apply(this, TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(blockType).get());
             }
             if(metal.isThisOre()) {
+                this.dropSelf(TinkersReforgedBlocks.RAW_ORES.get(metal).get());
                 this.add(TinkersReforgedBlocks.ORES.get(metal).ore().get(), (block) -> createOreDrop(block, TinkersReforgedItems.RAW_ORES.get(metal).get()));
                 if(metal.isThisOverworldOre()) {
                     this.add(((OverworldOreBlock) TinkersReforgedBlocks.ORES.get(metal)).deepslateOre().get(), (block) -> createOreDrop(block, TinkersReforgedItems.RAW_ORES.get(metal).get()));

@@ -13,11 +13,11 @@
     "tag": "tconstruct:casts/multi_use/gear"
   },
   "fluid": {
-    "tag": "tinkers_reforged:molten_kepu",
+    "tag": "tinkers_reforged:kepu",
     "amount": 360
   },
   "result": {
     "tag": "forge:gears/kepu"
   },
-  "cooling_time": 150
+  "cooling_time": 160
 }
