@@ -1,0 +1,27 @@
+{
+  "title": "Electric Copper",
+  "item": [
+    {
+      "item": "tinkers_reforged:electric_copper_ingot"
+    },
+    {
+      "item": "tinkers_reforged:electric_copper_dust"
+    },
+    {
+      "item": "tinkers_reforged:electric_copper_nugget"
+    },
+    {
+      "item": "tinkers_reforged:electric_copper_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Electric Copper is an alloy made from mixing copper and red beryl.",
+      "paragraph": true
+    },
+    {
+      "text": "Electric Copper is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

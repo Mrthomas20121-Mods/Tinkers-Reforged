@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.client;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.material.EnumMetal;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;

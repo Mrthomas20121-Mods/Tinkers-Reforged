@@ -117,14 +117,14 @@ public enum EnumMaterialStats {
             new GripMaterialStats(0.9f, -0.13f, 0.1f)
     ),
     TIBERIUM(
-            new HeadMaterialStats(555, 6.7f, NETHERITE, 3f),
+            new HeadMaterialStats(555, 6.7f, ReforgedTiers.KEPU, 3f),
             HandleMaterialStats.DEFAULT.withAttackSpeed(1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(555, 0.15f, 0.15f, -0.2f),
             new GripMaterialStats(0.9f, -0.2f, 0.1f)
     ),
     TITANIUM(
-            new HeadMaterialStats(500, 5.9f, NETHERITE, 2.5f),
+            new HeadMaterialStats(500, 5.9f, ReforgedTiers.KEPU, 2.5f),
             HandleMaterialStats.DEFAULT.withAttackSpeed(1f),
             ExtraMaterialStats.DEFAULT
     );

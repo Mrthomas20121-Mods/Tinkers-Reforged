@@ -1,0 +1,10 @@
+{
+  "title": "Kepu Ore",
+  "item": "tinkers_reforged:kepu_ore",
+  "text": [
+    {
+      "text": "Kepu is an ore you can find in the end. It spawn between y level 100 and -20",
+      "paragraph": true
+    }
+  ]
+}

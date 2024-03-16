@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tinkers_reforged:kepu",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:molten_aluminum",
+      "amount": 270
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:durasteel",
+    "amount": 180
+  },
+  "temperature": 2000
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Gallium",
+  "item": [
+    {
+      "item": "tinkers_reforged:gallium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:gallium_dust"
+    },
+    {
+      "item": "tinkers_reforged:gallium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:gallium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Gallium is an metal obtained by smelting aluminum in a foundry.",
+      "paragraph": true
+    },
+    {
+      "text": "Gallium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

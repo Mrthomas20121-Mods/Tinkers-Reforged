@@ -13,6 +13,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.item.IModifiable;
@@ -34,7 +35,7 @@ public class CommonEvents {
 
         if(source.getDirectEntity() instanceof LivingEntity attacker) {
             ItemStack stack = attacker.getMainHandItem();
-            if(!stack.isEmpty() && stack.getItem() instanceof IModifiable) {
+            if (stack.is(TinkerTags.Items.MODIFIABLE)) {
                 IToolStackView toolstack = ToolStack.from(stack);
                 toolstack.getDefinitionData().getModule(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onLootDrop(toolstack, attacker, drops, looting, source, entity, isRecentlyHit, event);
             }
@@ -46,7 +47,7 @@ public class CommonEvents {
         Player player = event.getAttackingPlayer();
         if(player != null) {
             ItemStack stack = player.getMainHandItem();
-            if(!stack.isEmpty() && stack.getItem() instanceof IModifiable) {
+            if (stack.is(TinkerTags.Items.MODIFIABLE)) {
                 IToolStackView toolstack = ToolStack.from(stack);
                 toolstack.getDefinitionData().getModule(TinkersReforgedHooks.ENTITY_LOOT_MODIFIER).onExperienceDrop(toolstack, player, event);
             }

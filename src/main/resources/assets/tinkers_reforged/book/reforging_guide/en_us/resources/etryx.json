@@ -1,0 +1,27 @@
+{
+  "title": "Etryx",
+  "item": [
+    {
+      "item": "tinkers_reforged:etryx_ingot"
+    },
+    {
+      "item": "tinkers_reforged:etryx_dust"
+    },
+    {
+      "item": "tinkers_reforged:etryx_nugget"
+    },
+    {
+      "item": "tinkers_reforged:etryx_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Etryx is an alloy made from mixing kepu and amethyst.",
+      "paragraph": true
+    },
+    {
+      "text": "Etryx is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

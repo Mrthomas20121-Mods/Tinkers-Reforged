@@ -1,0 +1,10 @@
+{
+  "title": "Titanium Ore",
+  "item": "tinkers_reforged:titanium_ore",
+  "text": [
+    {
+      "text": "Titanium is an ore you can find in the end. It spawn between y level 100 and -20",
+      "paragraph": true
+    }
+  ]
+}

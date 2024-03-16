@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tinkers_reforged:titanium",
+      "amount": 90
+    },
+    {
+      "name": "tconstruct:molten_ender",
+      "amount": 1500
+    },
+    {
+      "name": "tconstruct:blazing_blood",
+      "amount": 1000
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:proto_lava",
+    "amount": 2000
+  },
+  "temperature": 1700
+}

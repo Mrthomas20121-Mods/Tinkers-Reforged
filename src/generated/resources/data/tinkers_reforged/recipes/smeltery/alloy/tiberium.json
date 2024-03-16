@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_ender",
+      "amount": 250
+    },
+    {
+      "name": "tinkers_reforged:titanium",
+      "amount": 90
+    },
+    {
+      "name": "tinkers_reforged:kepu",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:tiberium",
+    "amount": 90
+  },
+  "temperature": 2000
+}

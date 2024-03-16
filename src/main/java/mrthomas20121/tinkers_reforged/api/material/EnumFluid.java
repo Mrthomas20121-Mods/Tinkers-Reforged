@@ -20,7 +20,7 @@ public enum EnumFluid implements EnumData {
     GALLIUM(1500, TinkerTags.Fluids.EXPENSIVE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     HORNIUM(1800, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     HUREAULITE(1100),
-    KEPU(1800, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
+    KEPU(1600, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     LAVIUM(1400, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     MOSITE(1400, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),
     QIVIUM(1400, TinkerTags.Fluids.AVERAGE_METAL_SPILLING, TinkerTags.Fluids.METAL_TOOLTIPS),

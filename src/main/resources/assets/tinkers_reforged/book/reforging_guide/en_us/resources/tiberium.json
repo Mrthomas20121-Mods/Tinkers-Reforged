@@ -1,0 +1,27 @@
+{
+  "title": "Tiberium",
+  "item": [
+    {
+      "item": "tinkers_reforged:tiberium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:tiberium_dust"
+    },
+    {
+      "item": "tinkers_reforged:tiberium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:tiberium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Tiberium is an alloy made from mixing molten ender, titanium and aluminum.",
+      "paragraph": true
+    },
+    {
+      "text": "Tiberium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

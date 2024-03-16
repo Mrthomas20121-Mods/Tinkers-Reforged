@@ -1,16 +1,16 @@
 [
   {
-    "name": "intro",
-    "data": "sections/introduction.json",
+    "name": "ores",
+    "data": "sections/ores.json",
     "icon": {
-      "item": "tinkers_reforged:red_beryl_gem"
+      "item": "tinkers_reforged:aluminum_ore"
     }
   },
   {
-    "name": "reforged_materials",
-    "data": "sections/reforged_materials.json",
+    "name": "resources",
+    "data": "sections/resources.json",
     "icon": {
-      "item": "tinkers_reforged:kepu_block"
+      "item": "tinkers_reforged:red_beryl_gem"
     }
   },
   {
@@ -25,7 +25,7 @@
     "icon": {
       "item": {
         "type": "forge:nbt",
-        "item": "tinkers_reforged:frying_pan",
+        "item": "tinkers_reforged:longsword",
         "nbt": {
           "tic_broken": false,
           "tic_display": true,

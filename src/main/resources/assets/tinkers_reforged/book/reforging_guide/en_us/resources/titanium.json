@@ -1,0 +1,27 @@
+{
+  "title": "Titanium",
+  "item": [
+    {
+      "item": "tinkers_reforged:titanium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:titanium_dust"
+    },
+    {
+      "item": "tinkers_reforged:titanium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:titanium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Titanium is a metal found in the end.",
+      "paragraph": true
+    },
+    {
+      "text": "Titanium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

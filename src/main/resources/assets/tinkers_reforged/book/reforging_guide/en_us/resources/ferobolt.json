@@ -1,0 +1,27 @@
+{
+  "title": "Ferobolt",
+  "item": [
+    {
+      "item": "tinkers_reforged:ferobolt_ingot"
+    },
+    {
+      "item": "tinkers_reforged:ferobolt_dust"
+    },
+    {
+      "item": "tinkers_reforged:ferobolt_nugget"
+    },
+    {
+      "item": "tinkers_reforged:ferobolt_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Ferobolt is an alloy made from mixing epidote, hureaulite and red beryl.",
+      "paragraph": true
+    },
+    {
+      "text": "Ferobolt is a bow only material.",
+      "paragraph": true
+    }
+  ]
+}

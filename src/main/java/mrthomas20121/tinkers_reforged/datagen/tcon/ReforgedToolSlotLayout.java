@@ -25,7 +25,7 @@ public class ReforgedToolSlotLayout extends AbstractStationSlotLayoutProvider {
 
         defineModifiable(TinkersReforgedItems.LONGSWORD)
                 .sortIndex(SORT_WEAPON)
-                .addInputItem(TinkersReforgedItems.LONGSWORD.get(), 48, 26)
+                .addInputItem(TinkersReforgedItems.GREAT_BLADE.get(), 48, 26)
                 .addInputItem(TinkerToolParts.toolHandle, 12, 62)
                 .addInputItem(TinkerToolParts.toolHandle, 30, 44)
                 .build();

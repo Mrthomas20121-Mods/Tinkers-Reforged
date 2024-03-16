@@ -14,6 +14,7 @@ public class TinkersReforgedBook extends BookData {
     public static final BookData REFORGING_GUIDE = BookLoader.registerBook(id,    false, false);
 
     public static void initBook() {
+
         REFORGING_GUIDE.addTransformer(ToolSectionTransformer.INSTANCE);
         REFORGING_GUIDE.addTransformer(new TinkersReforgedMaterialSection());
         addStandardData(REFORGING_GUIDE, id);

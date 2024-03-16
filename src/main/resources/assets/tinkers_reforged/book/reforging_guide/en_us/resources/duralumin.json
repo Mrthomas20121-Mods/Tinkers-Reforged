@@ -1,0 +1,27 @@
+{
+  "title": "Duralumin",
+  "item": [
+    {
+      "item": "tinkers_reforged:duralumin_ingot"
+    },
+    {
+      "item": "tinkers_reforged:duralumin_dust"
+    },
+    {
+      "item": "tinkers_reforged:duralumin_nugget"
+    },
+    {
+      "item": "tinkers_reforged:duralumin_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Duralumin is an alloy made from mixing aluminum and copper.",
+      "paragraph": true
+    },
+    {
+      "text": "Duralumin is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

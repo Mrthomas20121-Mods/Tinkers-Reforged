@@ -1,0 +1,31 @@
+{
+  "title": "Blazium",
+  "item": [
+    {
+      "item": "tinkers_reforged:blazium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:blazium_dust"
+    },
+    {
+      "item": "tinkers_reforged:blazium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:blazium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Blazium is an alloy made from mixing blazing blood and amethyst.",
+      "paragraph": true
+    },
+    {
+      "text": "Blazium has a higher temperature than Blazing Blood and can be used as a smeltery fuel.",
+      "paragraph": true
+    },
+    {
+      "text": "Blazium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

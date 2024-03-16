@@ -1,0 +1,102 @@
+[
+    {
+        "name": "index",
+        "type": "mantle:index",
+        "data": "resources/index.json"
+    },
+    {
+        "name": "aluminum",
+        "type": "mantle:showcase",
+        "data": "resources/aluminum.json"
+    },
+    {
+        "name": "blazium",
+        "type": "mantle:showcase",
+        "data": "resources/blazium.json"
+    },
+    {
+        "name": "bomin",
+        "type": "mantle:showcase",
+        "data": "resources/bomin.json"
+    },
+    {
+        "name": "duralumin",
+        "type": "mantle:showcase",
+        "data": "resources/duralumin.json"
+    },
+    {
+        "name": "electric_copper",
+        "type": "mantle:showcase",
+        "data": "resources/electric_copper.json"
+    },
+    {
+        "name": "epidote",
+        "type": "mantle:showcase",
+        "data": "resources/epidote.json"
+    },
+    {
+        "name": "etryx",
+        "type": "mantle:showcase",
+        "data": "resources/etryx.json"
+    },
+    {
+        "name": "ferobolt",
+        "type": "mantle:showcase",
+        "data": "resources/ferobolt.json"
+    },
+    {
+        "name": "gallium",
+        "type": "mantle:showcase",
+        "data": "resources/gallium.json"
+    },
+    {
+        "name": "hornium",
+        "type": "mantle:showcase",
+        "data": "resources/hornium.json"
+    },
+    {
+        "name": "hureaulite",
+        "type": "mantle:showcase",
+        "data": "resources/hureaulite.json"
+    },
+    {
+        "name": "kepu",
+        "type": "mantle:showcase",
+        "data": "resources/kepu.json"
+    },
+    {
+        "name": "lavium",
+        "type": "mantle:showcase",
+        "data": "resources/lavium.json"
+    },
+    {
+        "name": "mosite",
+        "type": "mantle:showcase",
+        "data": "resources/mosite.json"
+    },
+    {
+        "name": "proto_lava",
+        "type": "mantle:showcase",
+        "data": "resources/proto_lava.json"
+    },
+    {
+        "name": "qivium",
+        "type": "mantle:showcase",
+        "data": "resources/qivium.json"
+    },
+    {
+        "name": "red_beryl",
+        "type": "mantle:showcase",
+        "data": "resources/red_beryl.json"
+    },
+    {
+        "name": "tiberium",
+        "type": "mantle:showcase",
+        "data": "resources/tiberium.json"
+    },
+    {
+        "name": "titanium",
+        "type": "mantle:showcase",
+        "data": "resources/titanium.json"
+    }
+]

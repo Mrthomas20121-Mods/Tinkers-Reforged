@@ -1,0 +1,14 @@
+{
+  "title": "Proto Lava",
+  "item": "tinkers_reforged:proto_lava_bucket",
+  "text": [
+    {
+      "text": "Proto Lava is a fluid with high temperature, it can be used as a smeltery fluid fuel.",
+      "paragraph": true
+    },
+    {
+      "text": "Lavium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

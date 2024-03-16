@@ -17,7 +17,7 @@
         "debris": "#ec5541",
         "headshot": "#da3a6d",
         "gigantic": "#839a26",
-        "slow_force": "#a7b4bd"
+        "force_cannon": "#a7b4bd"
     },
     "material.tinkers_reforged": {
         "blazium": "#ed8a4e",

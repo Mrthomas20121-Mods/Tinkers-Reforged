@@ -74,8 +74,8 @@ public class ExcavationModifier extends Modifier implements BreakSpeedModifierHo
             int l = tool.getPersistentData().getInt(LEVEL);
             int value = tool.getPersistentData().getInt(VALUE);
 
-            tooltip.add(new TranslatableComponent("tinkers_reforged.modifier.excavation.value", value).withStyle(ChatFormatting.AQUA));
-            tooltip.add(new TranslatableComponent("tinkers_reforged.modifier.excavation.level", value).withStyle(ChatFormatting.AQUA));
+            tooltip.add(new TranslatableComponent("modifier.tinkers_reforged.excavation.value", value).withStyle(ChatFormatting.AQUA));
+            tooltip.add(new TranslatableComponent("modifier.tinkers_reforged.excavation.level", value).withStyle(ChatFormatting.AQUA));
         }
     }
 }

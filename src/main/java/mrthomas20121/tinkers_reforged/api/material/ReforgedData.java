@@ -40,6 +40,6 @@ public class ReforgedData {
         oreData.put(EnumMetal.TITANIUM, new OreData(18, 4, -20, 100));
         oreData.put(EnumGem.EPIDOTE, new OreData(30, 4, -60, 5));
         oreData.put(EnumGem.HUREAULITE, new OreData(30, 4, -60, 5));
-        oreData.put(EnumGem.RED_BERYL, new OreData(40, 4, -60, 60));
+        oreData.put(EnumGem.RED_BERYL, new OreData(40, 4, -60, 50));
     }
 }

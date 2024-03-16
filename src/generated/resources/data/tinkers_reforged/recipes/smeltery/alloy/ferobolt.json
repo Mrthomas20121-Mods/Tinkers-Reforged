@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tinkers_reforged:epidote",
+      "amount": 100
+    },
+    {
+      "name": "tinkers_reforged:hureaulite",
+      "amount": 100
+    },
+    {
+      "name": "tinkers_reforged:red_beryl",
+      "amount": 100
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:ferobolt",
+    "amount": 90
+  },
+  "temperature": 900
+}

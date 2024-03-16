@@ -1,0 +1,24 @@
+{
+  "title": "Hureaulite",
+  "item": [
+    {
+      "item": "tinkers_reforged:hureaulite_gem"
+    },
+    {
+      "item": "tinkers_reforged:hureaulite_dust"
+    },
+    {
+      "item": "tinkers_reforged:hureaulite_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Hureaulite is a gem found in the overworld.",
+      "paragraph": true
+    },
+    {
+      "text": "Hureaulite is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

@@ -20,51 +20,41 @@ import slimeknights.tconstruct.library.tools.nbt.ModDataNBT;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
-public class SlotMachineModifier extends Modifier implements ModifierRemovalHook, VolatileDataModifierHook, ToolStatsModifierHook {
+public class SlotMachineModifier extends Modifier implements ModifierRemovalHook, VolatileDataModifierHook {
 
-    private final ResourceLocation KEY = new ResourceLocation(TinkersReforged.MOD_ID, "ref_octal");
-    private final ResourceLocation MOD = new ResourceLocation(TinkersReforged.MOD_ID, "ref_mod");
+    private final ResourceLocation KEY = new ResourceLocation(TinkersReforged.MOD_ID, "slot_machine");
 
     public SlotMachineModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.REMOVE).addHook(this, TinkerHooks.VOLATILE_DATA));
+        this.registerHooks(new ModifierHookMap.Builder()
+                .addHook(this, TinkerHooks.REMOVE)
+                .addHook(this, TinkerHooks.VOLATILE_DATA)
+        );
     }
 
     @Override
     public Component onRemoved(IToolStackView tool, Modifier modifier) {
         ModDataNBT persistentData = tool.getPersistentData();
-        int mod = persistentData.getInt(MOD);
         int level = tool.getModifierLevel(this);
-        int finalLevel = mod-level;
-        persistentData.remove(KEY);
-        int slotsUpgrade = persistentData.getSlots(SlotType.UPGRADE);
-        int slotsAbility = persistentData.getSlots(SlotType.ABILITY);
-
-        if(finalLevel > 0) {
-            persistentData.addSlots(SlotType.UPGRADE, slotsUpgrade-finalLevel);
-            persistentData.addSlots(SlotType.ABILITY, slotsAbility-finalLevel);
+        if(persistentData.contains(KEY, Tag.TAG_INT)) {
+            persistentData.remove(KEY);
+            if(level > 0) {
+                persistentData.addSlots(SlotType.ABILITY, tool.getFreeSlots(SlotType.ABILITY)-level);
+                persistentData.addSlots(SlotType.UPGRADE, tool.getFreeSlots(SlotType.UPGRADE)-level);
+            }
         }
         return null;
-    }
-
-    @Override
-    public void addToolStats(ToolRebuildContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
-        ToolStats.ATTACK_DAMAGE.add(builder, -1);
-        ToolStats.MINING_SPEED.add(builder, -1);
     }
 
     @Override
     public void addVolatileData(ToolRebuildContext context, ModifierEntry modifier, ModDataNBT volatileData) {
         int level = modifier.getLevel();
         IModDataView persistentData = context.getPersistentData();
-        if (persistentData.contains(KEY, Tag.TAG_COMPOUND)) {
-            int slotsUpgrade = volatileData.getSlots(SlotType.UPGRADE);
-            int slotsAbility = volatileData.getSlots(SlotType.ABILITY);
-            volatileData.addSlots(SlotType.UPGRADE, slotsUpgrade+level);
-            volatileData.addSlots(SlotType.ABILITY, slotsAbility+level);
-            volatileData.putInt(MOD, level);
-        }
-        else {
-            volatileData.put(KEY, new CompoundTag());
+        if (!persistentData.contains(KEY, Tag.TAG_INT)) {
+            volatileData.putInt(KEY, 1);
+            if(level > 0) {
+                volatileData.addSlots(SlotType.ABILITY, level);
+                volatileData.addSlots(SlotType.UPGRADE, level);
+            }
         }
     }
 }

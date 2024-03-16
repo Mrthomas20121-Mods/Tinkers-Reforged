@@ -1,0 +1,27 @@
+{
+  "title": "Aluminum",
+  "item": [
+    {
+      "item": "tinkers_reforged:aluminum_ingot"
+    },
+    {
+      "item": "tinkers_reforged:aluminum_dust"
+    },
+    {
+      "item": "tinkers_reforged:aluminum_nugget"
+    },
+    {
+      "item": "tinkers_reforged:aluminum_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Aluminum is a metal found in the overworld that can be used to make aluminum casts and alloys like duralumin.",
+      "paragraph": true
+    },
+    {
+      "text": "Aluminum ore in the foundry produces gallium with the aluminum.",
+      "paragraph": true
+    }
+  ]
+}

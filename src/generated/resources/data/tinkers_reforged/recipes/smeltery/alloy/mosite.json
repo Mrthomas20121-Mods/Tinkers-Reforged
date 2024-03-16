@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:molten_netherite",
+      "amount": 90
+    },
+    {
+      "name": "tinkers_reforged:gallium",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:mosite",
+    "amount": 180
+  },
+  "temperature": 800
+}

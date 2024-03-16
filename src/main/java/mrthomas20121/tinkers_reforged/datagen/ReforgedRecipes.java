@@ -130,6 +130,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
             plateTexture(consumer, plate, material.id, false, slotless);
 
             if(material.equals(EnumMaterial.EPIDOTE) || material.equals(EnumMaterial.HUREAULITE) || material.equals(EnumMaterial.RED_BERYL)) {
+                materialMeltingCasting(consumer, material.id, TinkersReforgedFluids.ALL_FLUIDS.get(material.fluid), materialFolder);
                 gemMaterialRecipe(consumer, material.id, materialFolder, material.getName());
             }
             else if(!material.equals(EnumMaterial.ENDER_BONE)) {
@@ -226,7 +227,7 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
             SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), gemItem.get(), 0, 200).unlockedBy("has_item", has(gemItem.get())).save(consumer, modResource("crafting/%s_gem_from_smelting_%s_dust".formatted(gem.getName(), gem.getName())));
         }
 
-        metalMelting(consumer, TinkerFluids.moltenCobalt.get(), "cobalt", true, "smeltery/melting/metal", false, ReforgedByproduct.GALLIUM);
+        //metalMelting(consumer, TinkerFluids.moltenCobalt.get(), "cobalt", true, "smeltery/melting/metal", false, ReforgedByproduct.GALLIUM);
 
         toolBuilding(consumer, TinkersReforgedItems.LONGSWORD, toolFolder);
         toolBuilding(consumer, TinkersReforgedItems.GREATSWORD, toolFolder);

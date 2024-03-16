@@ -18,8 +18,6 @@
     "tinkers_reforged:mosite_block",
     "tinkers_reforged:mosite_platform",
     "tinkers_reforged:qivium_block",
-    "tinkers_reforged:qivium_platform",
-    "tinkers_reforged:titanium_block",
-    "tinkers_reforged:titanium_platform"
+    "tinkers_reforged:qivium_platform"
   ]
 }

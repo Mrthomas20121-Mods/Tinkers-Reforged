@@ -1,0 +1,12 @@
+{
+  "title": "Hureaulite Ore",
+  "item": {
+    "tag": "forge:ores/hureaulite"
+  },
+  "text": [
+    {
+      "text": "Hureaulite is an ore you can find in the overworld. It spawn between y level 5 and -60",
+      "paragraph": true
+    }
+  ]
+}

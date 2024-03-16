@@ -30,7 +30,7 @@ public class TinkersReforgedModifiers {
     public static StaticModifier<OverheatedModifier> overheated = MODIFIERS.register("overheated", OverheatedModifier::new);
     public static StaticModifier<RockSolidModifier> rock_solid = MODIFIERS.register("rock_solid", RockSolidModifier::new);
     public static StaticModifier<SeasonedModifier> seasoned = MODIFIERS.register("seasoned", SeasonedModifier::new);
-    public static StaticModifier<SlowForceModifier> slow_force = MODIFIERS.register("slow_force", SlowForceModifier::new);
+    public static StaticModifier<ForceCannonModifier> force_cannon = MODIFIERS.register("force_cannon", ForceCannonModifier::new);
     public static StaticModifier<SupernaturalModifier> supernatural = MODIFIERS.register("supernatural", SupernaturalModifier::new);
     public static StaticModifier<MushModifier> mush = MODIFIERS.register("mush", MushModifier::new);
     public static StaticModifier<DarkPoisonModifier> dark_poison = MODIFIERS.register("dark_poison", DarkPoisonModifier::new);

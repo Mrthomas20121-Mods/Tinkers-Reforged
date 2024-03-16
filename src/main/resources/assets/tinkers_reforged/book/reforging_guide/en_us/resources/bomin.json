@@ -1,0 +1,27 @@
+{
+  "title": "Bomin",
+  "item": [
+    {
+      "item": "tinkers_reforged:bomin_ingot"
+    },
+    {
+      "item": "tinkers_reforged:bomin_dust"
+    },
+    {
+      "item": "tinkers_reforged:bomin_nugget"
+    },
+    {
+      "item": "tinkers_reforged:bomin_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Bomin is an alloy made from mixing aluminum and magma.",
+      "paragraph": true
+    },
+    {
+      "text": "Bomin is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

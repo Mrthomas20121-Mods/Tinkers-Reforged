@@ -49,7 +49,8 @@ public class ReforgedLang extends LanguageProvider {
                 if(metal.isThisOverworldOre()) {
                     addBlock(((OverworldOreBlock) block).deepslateOre(), capitalize("deepslate_%s_ore".formatted(metal.getName())));
                 }
-                addBlock(TinkersReforgedBlocks.RAW_ORES.get(metal), capitalize("%s_ore".formatted(metal.getName())));
+                addBlock(TinkersReforgedBlocks.RAW_ORES.get(metal), capitalize("raw_%s_ore".formatted(metal.getName())));
+                addItem(TinkersReforgedItems.RAW_ORES.get(metal), capitalize("raw_%s".formatted(metal.getName())));
             }
             for(EnumMetal.BlockType blockType: EnumMetal.BlockType.values()) {
                 addBlock(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(blockType), capitalize("%s_%s".formatted(metal.getName(), blockType.getName())));
@@ -88,23 +89,25 @@ public class ReforgedLang extends LanguageProvider {
         }
 
         for(EnumMaterial material: EnumMaterial.values()) {
-            addMaterial(material.id, capitalize(material.getName()), material.materialDesc, material.materialDesc);
-            addModifier(material.mod, capitalize(material.mod.getId().getPath()), material.modifierDesc, material.modifierDesc);
+            addMaterial(material.id, capitalize(material.getName()), "", material.materialDesc);
+            addModifier(material.mod, capitalize(material.mod.getId().getPath()),capitalize(material.mod.getId().getPath()), material.modifierDesc);
         }
 
         addModifier(TinkersReforgedModifiers.returning, "Returning", "Increases Attack Knockback.", "Increases Attack Knockback.");
         addModifier(TinkersReforgedModifiers.long_range, "Long Range", "Increases Attack and Entity Range.", "Increases Attack and Entity Range.");
 
-        add("modifier.tinkers_reforged.adapting.attack_damage", "Adapting damage");
-        add("modifier.tinkers_reforged.adapting.mining_speed", "Adapting mining speed");
-        add("modifier.tinkers_reforged.fel_debris.bonus", "Damage in the nether.");
-        add("modifier.tinkers_reforged.arid_zone.attack_damage", "Bonus damage in the current biome");
-        add("modifier.tinkers_reforged.arid_zone.mining_speed", "Bonus mining speed in the current biome");
-        add("modifier.tinkers_reforged.giant_cells.mining_speed", "Bonus mining speed");
-        add("modifier.tinkers_reforged.adapting.cap", "You have reach the max bonus you can get with adapting");
+        // kepu harvest tier
+        add("stat.tconstruct.harvest_tier.tinkers_reforged.kepu", "Kepu");
+        // modifier bonus texts
+        add("modifier.tinkers_reforged.biome_effect.attack_damage", "Bonus damage in the current biome");
+        add("modifier.tinkers_reforged.biome_effect.mining_speed", "Bonus mining speed in the current biome");
+        add("modifier.tinkers_reforged.excavation.value", "%s/100 excavated block.");
+        add("modifier.tinkers_reforged.excavation.level", "%s Excavating Level.");
 
-        add("tinkers_reforged.modifier.excavation.value", "%s/100 excavated block.");
-        add("tinkers_reforged.modifier.excavation.level", "%s Excavating Level.");
+        // potion stuff
+        add("item.minecraft.potion.effect.frozen", "Frozen Potion");
+        add("item.minecraft.splash_potion.effect.frozen", "Frozen Splash Potion");
+        add("item.minecraft.lingering_potion.effect.frozen", "Frozen Lingering Potion");
     }
 
     public void addCast(CastObject object) {

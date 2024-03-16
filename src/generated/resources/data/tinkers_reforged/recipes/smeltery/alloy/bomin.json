@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "name": "tconstruct:magma",
+      "amount": 1000
+    },
+    {
+      "name": "tconstruct:molten_aluminum",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "fluid": "tinkers_reforged:bomin",
+    "amount": 90
+  },
+  "temperature": 1000
+}

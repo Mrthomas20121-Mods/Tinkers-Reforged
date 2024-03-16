@@ -1,0 +1,24 @@
+{
+  "title": "Epidote",
+  "item": [
+    {
+      "item": "tinkers_reforged:epidote_gem"
+    },
+    {
+      "item": "tinkers_reforged:epidote_dust"
+    },
+    {
+      "item": "tinkers_reforged:epidote_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Epidote is a gem found in the overworld.",
+      "paragraph": true
+    },
+    {
+      "text": "Epidote is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

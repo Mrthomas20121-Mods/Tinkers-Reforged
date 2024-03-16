@@ -17,8 +17,8 @@ public class SupernaturalModifier extends Modifier implements MeleeHitModifierHo
 
     @Override
     public void afterMeleeHit(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float damageDealt) {
-        if(context.getLivingTarget() != null && damageDealt > 0) {
-            context.getLivingTarget().hurt(DamageSource.indirectMagic(context.getLivingTarget(), context.getAttacker()), 2+modifier.getLevel());
+        if(context.getLivingTarget() != null && damageDealt > 0 && tool.getModifierLevel(modifier.getModifier()) > 0) {
+            context.getLivingTarget().hurt(DamageSource.indirectMagic(context.getLivingTarget(), context.getAttacker()), 2f+modifier.getLevel());
         }
     }
 }

@@ -1,0 +1,24 @@
+{
+  "title": "Red Beryl",
+  "item": [
+    {
+      "item": "tinkers_reforged:red_beryl_gem"
+    },
+    {
+      "item": "tinkers_reforged:red_beryl_dust"
+    },
+    {
+      "item": "tinkers_reforged:red_beryl_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Red Beryl is a gem found in the overworld.",
+      "paragraph": true
+    },
+    {
+      "text": "Red Beryl is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

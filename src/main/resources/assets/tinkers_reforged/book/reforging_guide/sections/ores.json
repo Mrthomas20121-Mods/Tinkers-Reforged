@@ -1,0 +1,37 @@
+[
+  {
+    "name": "index",
+    "type": "mantle:index",
+    "data": "ores/index.json"
+  },
+  {
+    "name": "aluminum",
+    "type": "mantle:showcase",
+    "data": "ores/aluminum.json"
+  },
+  {
+    "name": "epidote",
+    "type": "mantle:showcase",
+    "data": "ores/epidote.json"
+  },
+  {
+    "name": "hureaulite",
+    "type": "mantle:showcase",
+    "data": "ores/hureaulite.json"
+  },
+  {
+    "name": "kepu",
+    "type": "mantle:showcase",
+    "data": "ores/kepu.json"
+  },
+  {
+    "name": "red_beryl",
+    "type": "mantle:showcase",
+    "data": "ores/red_beryl.json"
+  },
+  {
+    "name": "titanium",
+    "type": "mantle:showcase",
+    "data": "ores/titanium.json"
+  }
+]

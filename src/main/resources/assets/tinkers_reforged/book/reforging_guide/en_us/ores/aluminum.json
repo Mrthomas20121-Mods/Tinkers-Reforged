@@ -1,0 +1,16 @@
+{
+  "title": "Aluminum Ore",
+  "item": {
+    "tag": "forge:ores/aluminum"
+  },
+  "text": [
+    {
+      "text": "Aluminum is an ore you can find in the overworld. It spawn between y level 120 and -60",
+      "paragraph": true
+    },
+    {
+      "text": "Aluminum can be used to make casts like gold or alloys like duralumin.",
+      "paragraph": true
+    }
+  ]
+}

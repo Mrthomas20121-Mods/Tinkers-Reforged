@@ -1,0 +1,27 @@
+{
+  "title": "Qivium",
+  "item": [
+    {
+      "item": "tinkers_reforged:qivium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:qivium_dust"
+    },
+    {
+      "item": "tinkers_reforged:qivium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:qivium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Qivium is an alloy made from mixing cobalt, blazing blood and magma.",
+      "paragraph": true
+    },
+    {
+      "text": "Qivium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Lavium",
+  "item": [
+    {
+      "item": "tinkers_reforged:lavium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:lavium_dust"
+    },
+    {
+      "item": "tinkers_reforged:lavium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:lavium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Lavium is an alloy made from mixing cobalt, blazing blood and liquid souls.",
+      "paragraph": true
+    },
+    {
+      "text": "Lavium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

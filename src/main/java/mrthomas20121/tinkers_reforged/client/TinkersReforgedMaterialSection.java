@@ -18,7 +18,7 @@ public class TinkersReforgedMaterialSection extends AbstractMaterialSectionTrans
 
     private static final Set<MaterialStatsId> VISIBLE_STATS = ImmutableSet.of(HeadMaterialStats.ID, HandleMaterialStats.ID, ExtraMaterialStats.ID);
 
-    TinkersReforgedMaterialSection() {
+    public TinkersReforgedMaterialSection() {
         super("tinkers_reforged_materials", false);
     }
 

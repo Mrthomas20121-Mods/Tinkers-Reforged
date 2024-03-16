@@ -1,0 +1,27 @@
+{
+  "title": "Hornium",
+  "item": [
+    {
+      "item": "tinkers_reforged:hornium_ingot"
+    },
+    {
+      "item": "tinkers_reforged:hornium_dust"
+    },
+    {
+      "item": "tinkers_reforged:hornium_nugget"
+    },
+    {
+      "item": "tinkers_reforged:hornium_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Hornium is an alloy made from mixing aluminum and gallium.",
+      "paragraph": true
+    },
+    {
+      "text": "Hornium is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

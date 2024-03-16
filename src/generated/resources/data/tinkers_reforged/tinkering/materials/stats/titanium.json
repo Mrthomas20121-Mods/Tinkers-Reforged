@@ -10,7 +10,7 @@
     "tconstruct:head": {
       "durability": 500,
       "miningSpeed": 5.9,
-      "harvestTier": "minecraft:netherite",
+      "harvestTier": "tinkers_reforged:kepu",
       "attack": 2.5
     }
   }

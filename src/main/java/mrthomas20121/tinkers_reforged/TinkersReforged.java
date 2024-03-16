@@ -68,6 +68,7 @@ public class TinkersReforged {
 			gen.addProvider(new ReforgedFluidTags(gen, fileHelper));
 			gen.addProvider(new ReforgedItemsTags(gen, tags, fileHelper));
 			gen.addProvider(new ReforgedEntityTags(gen, fileHelper));
+			//gen.addProvider(new ReforgedModifiers(gen));
 		}
 		if(event.includeClient()) {
 			gen.addProvider(new ReforgedItemModels(gen, fileHelper));

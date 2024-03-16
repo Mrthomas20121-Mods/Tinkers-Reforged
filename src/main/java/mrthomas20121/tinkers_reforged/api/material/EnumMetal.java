@@ -34,7 +34,7 @@ public enum EnumMetal implements EnumData {
     MOSITE(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.MOSITE),
     QIVIUM(Tags.Blocks.NEEDS_NETHERITE_TOOL, EnumFluid.QIVIUM),
     TIBERIUM(TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TIBERIUM),
-    TITANIUM(true, Tags.Blocks.NEEDS_NETHERITE_TOOL, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TITANIUM);
+    TITANIUM(true, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, TinkersReforgedTags.Blocks.NEED_KEPU_TOOLS, EnumFluid.TITANIUM);
 
     private final boolean isOre;
 

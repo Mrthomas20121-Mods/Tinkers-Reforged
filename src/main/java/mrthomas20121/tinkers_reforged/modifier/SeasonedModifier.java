@@ -18,7 +18,7 @@ import java.util.Collection;
 
 public class SeasonedModifier extends Modifier implements EntityLootModifierHook {
 
-    private static ResourceLocation loc = new ResourceLocation("minecraft:nether_star");
+    private static final ResourceLocation netherStar = new ResourceLocation("minecraft:nether_star");
 
     public SeasonedModifier() {
         registerHooks(new ModifierHookMap.Builder().addHook(this, TinkersReforgedHooks.ENTITY_LOOT_MODIFIER));
@@ -28,10 +28,8 @@ public class SeasonedModifier extends Modifier implements EntityLootModifierHook
     public void onLootDrop(IToolStackView tool, LivingEntity attacker, Collection<ItemEntity> items, int looting, DamageSource source, LivingEntity entity, boolean isRecentlyHit, LivingDropsEvent event) {
         items.forEach(itemEntity -> {
             ResourceLocation location = ForgeRegistries.ITEMS.getKey(itemEntity.getItem().getItem());
-            if(location != null) {
-                if(location.equals(loc)) {
-                    return;
-                }
+            if(location != null && location.equals(netherStar)) {
+                return;
             }
             event.getDrops().add(itemEntity);
         });

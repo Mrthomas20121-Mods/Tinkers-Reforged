@@ -1,0 +1,27 @@
+{
+  "title": "Mosite",
+  "item": [
+    {
+      "item": "tinkers_reforged:mosite_ingot"
+    },
+    {
+      "item": "tinkers_reforged:mosite_dust"
+    },
+    {
+      "item": "tinkers_reforged:mosite_nugget"
+    },
+    {
+      "item": "tinkers_reforged:mosite_plate"
+    }
+  ],
+  "text": [
+    {
+      "text": "Mosite is an alloy made from mixing netherite and gallium.",
+      "paragraph": true
+    },
+    {
+      "text": "Mosite is a tool and bow material.",
+      "paragraph": true
+    }
+  ]
+}

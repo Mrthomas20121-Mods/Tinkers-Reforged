@@ -1,0 +1,12 @@
+{
+  "title": "Red Beryl Ore",
+  "item": {
+    "tag": "forge:ores/red_beryl"
+  },
+  "text": [
+    {
+      "text": "Red Beryl is an ore you can find in the overworld. It spawn between y level 50 and -60",
+      "paragraph": true
+    }
+  ]
+}

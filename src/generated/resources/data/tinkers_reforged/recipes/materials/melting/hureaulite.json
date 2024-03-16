@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:hureaulite",
+  "temperature": 800,
+  "result": {
+    "fluid": "tinkers_reforged:hureaulite",
+    "amount": 90
+  }
+}
