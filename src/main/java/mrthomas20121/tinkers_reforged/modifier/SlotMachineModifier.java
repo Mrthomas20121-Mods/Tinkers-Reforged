@@ -41,10 +41,10 @@ public class SlotMachineModifier extends Modifier implements ModifierRemovalHook
     public void addVolatileData(ToolRebuildContext context, ModifierEntry modifier, ModDataNBT volatileData) {
         int level = modifier.getLevel();
         IModDataView persistentData = context.getPersistentData();
-        if (!persistentData.contains(slotMachineLoc, Tag.TAG_BYTE)) {
-            volatileData.putBoolean(slotMachineLoc, true);
-            volatileData.addSlots(SlotType.ABILITY, level);
-            volatileData.addSlots(SlotType.UPGRADE, level);
+        if (!persistentData.contains(slotMachineLoc, Tag.TAG_BYTE) && persistentData instanceof ModDataNBT data) {
+            data.putBoolean(slotMachineLoc, true);
+            data.addSlots(SlotType.ABILITY, level);
+            data.addSlots(SlotType.UPGRADE, level);
         }
     }
 }
