@@ -30,7 +30,7 @@ archivesBaseName = 'Tinkers Reforged 1.18.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'official', version: '1.18.2'
+    mappings channel: 'official', version: mc_version
 
     runs {
         client {
@@ -114,13 +114,13 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     compileOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.1.255:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.7.1.255")
 	
-	implementation fg.deobf("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tcon_version}")
-    implementation fg.deobf("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_version}")
+	implementation fg.deobf("slimeknights.tconstruct:TConstruct:${mc_version}-${tcon_version}")
+    implementation fg.deobf("slimeknights.mantle:Mantle:${mc_version}-${mantle_version}")
 }
 
 jar {
