@@ -10,7 +10,7 @@ import static net.minecraft.world.item.Tiers.NETHERITE;
 public enum EnumMaterialStats {
 
     BLAZIUM(
-            new HeadMaterialStats(240, 5.5f, NETHERITE, 0.8f),
+            new HeadMaterialStats(240, 5.5f, DIAMOND, 0.8f),
             HandleMaterialStats.DEFAULT.withDurability(0.80f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(240, 0.1f, -0.1f, 0.5f),
@@ -44,21 +44,21 @@ public enum EnumMaterialStats {
     ),
     ENDER_BONE(
             new HeadMaterialStats(180, 3.3f, DIAMOND, 2.4f),
-            HandleMaterialStats.DEFAULT.withAttackDamage(1f),
+            HandleMaterialStats.DEFAULT.withAttackDamage(1.1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(180, 0.15f, -0.15f, 0.05f),
             new GripMaterialStats(0.9f, -0.1f, 2.25f)
     ),
     EPIDOTE(
             new HeadMaterialStats(300, 5.7f, DIAMOND, 1.3f),
-            HandleMaterialStats.DEFAULT.withDurability(1f),
+            HandleMaterialStats.DEFAULT.withDurability(1.1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(300, 0.15f, -0.15f, 0.3f),
             new GripMaterialStats(0.9f, -0.13f, 0.1f)
     ),
     ETRYX(
             new HeadMaterialStats(555, 4.9f, NETHERITE, 3.4f),
-            HandleMaterialStats.DEFAULT.withAttackSpeed(1f),
+            HandleMaterialStats.DEFAULT.withAttackSpeed(1.1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(555, -0.15f, 0.15f, -0.1f),
             new GripMaterialStats(0.9f, -0.1f, -0.11f)
@@ -69,14 +69,14 @@ public enum EnumMaterialStats {
     ),
     HORNIUM(
             new HeadMaterialStats(555, 4.9f, NETHERITE, 3.6f),
-            HandleMaterialStats.DEFAULT.withAttackSpeed(1f),
+            HandleMaterialStats.DEFAULT.withAttackSpeed(1.1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(555, -0.15f, 0.15f, -0.1f),
             new GripMaterialStats(0.9f, -0.1f, -0.11f)
     ),
     HUREAULITE(
             new HeadMaterialStats(300, 5.7f, DIAMOND, 1.3f),
-            HandleMaterialStats.DEFAULT.withDurability(1f),
+            HandleMaterialStats.DEFAULT.withDurability(1.1f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(300, 0.15f, -0.15f, 0.3f),
             new GripMaterialStats(0.9f, -0.13f, 0.1f)
@@ -97,7 +97,7 @@ public enum EnumMaterialStats {
     ),
     MOSITE(
             new HeadMaterialStats(600, 5f, NETHERITE, 3.5f),
-            HandleMaterialStats.DEFAULT.withDurability(1.01f).withMiningSpeed(1.01f).withAttackSpeed(1.01f),
+            HandleMaterialStats.DEFAULT.withDurability(1.01f).withAttackSpeed(1.01f),
             ExtraMaterialStats.DEFAULT,
             new LimbMaterialStats(600, 0.03f, 0.03f, 0.03f),
             new GripMaterialStats(1.05f, 0.03f, 2.3f)

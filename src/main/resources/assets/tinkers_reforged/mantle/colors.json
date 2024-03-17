@@ -8,16 +8,18 @@
         "mush": "#349988",
         "seasoned": "#a3b157",
         "frozen_blade": "#6a4b99",
-        "dark_poison": "#c5a58f",
-        "slot_machine": "#fdc4af",
+        "wither_arrow": "#c5a58f",
+        "extinguish": "#fdc4af",
         "supernatural": "#cf7b4b",
-        "extinguish": "#16749b",
+        "wither_virus": "#16749b",
         "hellfire": "#6db156",
         "biome_effect": "#9aa49a",
-        "debris": "#ec5541",
+        "mythical_push": "#ec5541",
         "headshot": "#da3a6d",
         "gigantic": "#839a26",
-        "force_cannon": "#a7b4bd"
+        "force_cannon": "#a7b4bd",
+        "long_range": "#ffaa00",
+        "returning": "#ffaa00"
     },
     "material.tinkers_reforged": {
         "blazium": "#ed8a4e",

@@ -7,12 +7,12 @@
   "sortIndex": 3,
   "input_slots": [
     {
-      "icon": "tinkers_reforged:longsword",
-      "translation_key": "item.tinkers_reforged.longsword",
+      "icon": "tinkers_reforged:great_blade",
+      "translation_key": "item.tinkers_reforged.great_blade",
       "x": 48,
       "y": 26,
       "filter": {
-        "item": "tinkers_reforged:longsword"
+        "item": "tinkers_reforged:great_blade"
       }
     },
     {

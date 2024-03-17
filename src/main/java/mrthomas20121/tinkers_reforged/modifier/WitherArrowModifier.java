@@ -14,9 +14,9 @@ import slimeknights.tconstruct.library.modifiers.util.ModifierHookMap;
 import slimeknights.tconstruct.library.tools.nbt.ModifierNBT;
 import slimeknights.tconstruct.library.tools.nbt.NamespacedNBT;
 
-public class DarkPoisonModifier extends Modifier implements ProjectileHitModifierHook {
+public class WitherArrowModifier extends Modifier implements ProjectileHitModifierHook {
 
-    public DarkPoisonModifier() {
+    public WitherArrowModifier() {
         this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.PROJECTILE_HIT));
     }
 

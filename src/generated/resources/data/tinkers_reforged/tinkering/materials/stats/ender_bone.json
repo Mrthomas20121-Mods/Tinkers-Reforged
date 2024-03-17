@@ -5,7 +5,7 @@
       "durability": 1.0,
       "miningSpeed": 1.0,
       "attackSpeed": 1.0,
-      "attackDamage": 1.0
+      "attackDamage": 1.1
     },
     "tconstruct:head": {
       "durability": 180,
