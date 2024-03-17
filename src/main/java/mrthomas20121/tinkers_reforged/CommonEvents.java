@@ -30,7 +30,7 @@ public class CommonEvents {
         Collection<ItemEntity> drops = event.getDrops();
         int looting = event.getLootingLevel();
         DamageSource source = event.getSource();
-        LivingEntity entity = event.getEntityLiving();
+        LivingEntity entity = event.getEntity();
         boolean isRecentlyHit = event.isRecentlyHit();
 
         if(source.getDirectEntity() instanceof LivingEntity attacker) {

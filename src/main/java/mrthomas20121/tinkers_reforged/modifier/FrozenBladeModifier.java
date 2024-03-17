@@ -14,7 +14,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class FrozenBladeModifier extends Modifier implements MeleeHitModifierHook {
 
     public FrozenBladeModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.MELEE_HIT));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.MELEE_HIT));
     }
 
     @Override

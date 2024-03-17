@@ -3,5 +3,6 @@
   "textures": {
     "side": "tinkers_reforged:block/platform/aluminum_side",
     "top": "tinkers_reforged:block/platform/aluminum_top"
-  }
+  },
+  "render_type": "cutout"
 }

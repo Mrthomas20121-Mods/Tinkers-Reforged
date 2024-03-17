@@ -10,7 +10,6 @@ import slimeknights.tconstruct.library.modifiers.TinkerHooks;
 import slimeknights.tconstruct.library.modifiers.hook.behavior.AttributesModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
-import slimeknights.tconstruct.library.modifiers.util.ModifierAttribute;
 import slimeknights.tconstruct.library.modifiers.util.ModifierHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolRebuildContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
@@ -26,7 +25,7 @@ public class LongRangeModifier extends Modifier implements ToolStatsModifierHook
     private static final UUID reach = AttributeModule.getUUID("tinkers_reforged.reach_distance_buff", EquipmentSlot.MAINHAND);
 
     public LongRangeModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.ATTRIBUTES));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.TOOL_STATS).addHook(this, TinkerHooks.ATTRIBUTES));
     }
 
     @Override

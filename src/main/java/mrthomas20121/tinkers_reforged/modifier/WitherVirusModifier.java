@@ -15,7 +15,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class WitherVirusModifier extends Modifier implements MeleeDamageModifierHook {
 
     public WitherVirusModifier() {
-        this.registerHooks(new ModifierHookMap.Builder()
+        this.registerHooks(ModifierHookMap.builder()
                 .addHook(this, TinkerHooks.MELEE_DAMAGE)
         );
     }

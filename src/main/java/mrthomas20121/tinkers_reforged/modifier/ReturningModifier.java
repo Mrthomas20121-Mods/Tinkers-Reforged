@@ -20,7 +20,7 @@ public class ReturningModifier extends Modifier implements AttributesModifierHoo
     private static final UUID knockback = AttributeModule.getUUID("tinkers_reforged.knockback", EquipmentSlot.MAINHAND);
 
     public ReturningModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.ATTRIBUTES));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.ATTRIBUTES));
     }
 
     @Override

@@ -16,7 +16,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class HellFireModifier extends Modifier implements MeleeDamageModifierHook {
 
     public HellFireModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.MELEE_DAMAGE));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.MELEE_DAMAGE));
     }
 
     @Override
@@ -25,7 +25,7 @@ public class HellFireModifier extends Modifier implements MeleeDamageModifierHoo
 
         if(context.getLivingTarget() != null) {
             LivingEntity target = context.getLivingTarget();
-            ITagManager<EntityType<?>> tags = ForgeRegistries.ENTITIES.tags();
+            ITagManager<EntityType<?>> tags = ForgeRegistries.ENTITY_TYPES.tags();
             if(tags != null && tags.getTag(TinkersReforgedTags.Entities.NETHER_MOBS).contains(target.getType())) {
                 bonusDamage+=1.1f*modifier.getLevel();
             }

@@ -18,11 +18,5 @@ public class ClientEvents {
     @SubscribeEvent
     static void clientSetup(final FMLClientSetupEvent event) {
         TinkersReforgedBook.REFORGING_GUIDE.fontRenderer = CommonsClientEvents.unicodeFontRender();
-
-        event.enqueueWork(() -> {
-            for(EnumMetal metal: EnumMetal.values()) {
-                ItemBlockRenderTypes.setRenderLayer(TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.PLATFORM).get(), RenderType.cutout());
-            }
-        });
     }
 }

@@ -5,7 +5,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.TooltipFlag;
@@ -28,7 +27,7 @@ public class ExcavationModifier extends Modifier implements BreakSpeedModifierHo
     private static final ResourceLocation LEVEL = new ResourceLocation(TinkersReforged.MOD_ID, "level");
 
     public ExcavationModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.BREAK_SPEED).addHook(this, TinkerHooks.TOOLTIP));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.BREAK_SPEED).addHook(this, TinkerHooks.TOOLTIP));
     }
 
     @Override
@@ -74,8 +73,8 @@ public class ExcavationModifier extends Modifier implements BreakSpeedModifierHo
             int l = tool.getPersistentData().getInt(LEVEL);
             int value = tool.getPersistentData().getInt(VALUE);
 
-            tooltip.add(new TranslatableComponent("modifier.tinkers_reforged.excavation.value", value).withStyle(ChatFormatting.AQUA));
-            tooltip.add(new TranslatableComponent("modifier.tinkers_reforged.excavation.level", value).withStyle(ChatFormatting.AQUA));
+            tooltip.add(Component.translatable("modifier.tinkers_reforged.excavation.value", value).withStyle(ChatFormatting.AQUA));
+            tooltip.add(Component.translatable("modifier.tinkers_reforged.excavation.level", value).withStyle(ChatFormatting.AQUA));
         }
     }
 }

@@ -13,7 +13,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class OverheatedModifier extends Modifier implements MeleeDamageModifierHook {
 
     public OverheatedModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.MELEE_DAMAGE));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.MELEE_DAMAGE));
     }
 
     @Override

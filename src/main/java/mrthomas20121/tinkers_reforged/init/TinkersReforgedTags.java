@@ -48,45 +48,7 @@ public class TinkersReforgedTags {
             return BlockTags.create(new ResourceLocation(name));
         }
 
-        // terra modifier tag
-        public static final TagKey<Block> ROCK_TYPE_BLOCKS = create("tinkers_reforged:rock_type_blocks");
-
         public static final TagKey<Block> NEED_KEPU_TOOLS = create("tinkers_reforged:need_kepu_tools");
-        // ores
-        public static final TagKey<Block> ALUMINUM_ORE = create("forge:ores/aluminum");
-        public static final TagKey<Block> KEPU_ORE = create("forge:ores/kepu");
-        public static final TagKey<Block> EPIDOTE_ORE = create("forge:ores/epidote");
-        public static final TagKey<Block> HUREAULITE_ORE = create("forge:ores/hureaulite");
-        public static final TagKey<Block> RED_BERYL_ORE = create("forge:ores/red_beryl");
-
-        // storage blocks
-        public static final TagKey<Block> BLAZING_COPPER = create("forge:storage_blocks/blazing_copper");
-        public static final TagKey<Block> DURALUMIN = create("forge:storage_blocks/duralumin");
-        public static final TagKey<Block> ALUMINUM = create("forge:storage_blocks/aluminum");
-        public static final TagKey<Block> ELECTRICAL_COPPER = create("forge:storage_blocks/electrical_copper");
-        public static final TagKey<Block> LAVIUM = create("forge:storage_blocks/lavium");
-        public static final TagKey<Block> QIVIUM = create("forge:storage_blocks/qivium");
-        public static final TagKey<Block> GAUSUM = create("forge:storage_blocks/gausum");
-        public static final TagKey<Block> FELSTEEL = create("forge:storage_blocks/felsteel");
-        public static final TagKey<Block> KEPU = create("forge:storage_blocks/kepu");
-        public static final TagKey<Block> DURASTEEL = create("forge:storage_blocks/durasteel");
-        public static final TagKey<Block> CHORUS_METAl = create("forge:storage_blocks/chorus_metal");
-        public static final TagKey<Block> CRUSTEEL = create("forge:storage_blocks/crusteel");
-        public static final TagKey<Block> WAVY = create("forge:storage_blocks/wavy");
-        public static final TagKey<Block> YOKEL = create("forge:storage_blocks/yokel");
-        public static final TagKey<Block> BAOLIAN = create("forge:storage_blocks/baolian");
-        public static final TagKey<Block> EPIDOTE = create("forge:storage_blocks/epidote");
-        public static final TagKey<Block> GALU = create("forge:storage_blocks/galu");
-        public static final TagKey<Block> MAGMA_STEEL = create("forge:storage_blocks/magma_steel");
-        public static final TagKey<Block> CYBER_STEEL = create("forge:storage_blocks/cyber_steel");
-        public static final TagKey<Block> HUREAULITE = create("forge:storage_blocks/yokel");
-        public static final TagKey<Block> RED_BERYL = create("forge:storage_blocks/red_beryl");
-        public static final TagKey<Block> GELOT_BLOCK = create("forge:storage_blocks/piroot");
-        public static final TagKey<Block> PIROOT_BLOCK = create("forge:storage_blocks/piroot");
-
-        // raw blocks
-        public static final TagKey<Block> RAW_ALUMINUM = create("forge:storage_blocks/raw_aluminum");
-        public static final TagKey<Block> RAW_KEPU = create("forge:storage_blocks/raw_kepu");
     }
 
     public static class Items {

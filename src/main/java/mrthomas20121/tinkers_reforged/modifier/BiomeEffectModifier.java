@@ -32,7 +32,7 @@ import java.util.List;
 public class BiomeEffectModifier extends Modifier implements BreakSpeedModifierHook, MeleeDamageModifierHook, TooltipModifierHook {
 
     public BiomeEffectModifier() {
-        this.registerHooks(new ModifierHookMap.Builder()
+        this.registerHooks(ModifierHookMap.builder()
                 .addHook(this, TinkerHooks.TOOLTIP)
                 .addHook(this, TinkerHooks.BREAK_SPEED)
                 .addHook(TinkerHooks.MELEE_DAMAGE)
@@ -41,8 +41,8 @@ public class BiomeEffectModifier extends Modifier implements BreakSpeedModifierH
 
     @Override
     public void onBreakSpeed(IToolStackView tool, ModifierEntry modifier, PlayerEvent.BreakSpeed event, Direction sideHit, boolean isEffective, float miningSpeedModifier) {
-        Level world = event.getEntityLiving().level;
-        float coeff = calcArid(world, event.getPos());
+        Level world = event.getEntity().getLevel();
+        float coeff = calcArid(world, event.getPosition().get());
         event.setNewSpeed(event.getNewSpeed()+event.getOriginalSpeed()*coeff);
     }
 
@@ -73,6 +73,6 @@ public class BiomeEffectModifier extends Modifier implements BreakSpeedModifierH
     }
 
     public void addMiningSpeedToolTip(IToolStackView tool, float amount, List<Component> tooltip) {
-        TooltipModifierHook.addStatBoost(tool, this, ToolStats.MINING_SPEED, TinkerTags.Items.MELEE_OR_UNARMED, amount, tooltip);
+        TooltipModifierHook.addStatBoost(tool, this, ToolStats.MINING_SPEED, TinkerTags.Items.MELEE, amount, tooltip);
     }
 }

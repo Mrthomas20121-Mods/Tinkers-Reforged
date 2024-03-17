@@ -12,7 +12,7 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 public class HellishRepairModifier extends Modifier implements MeleeHitModifierHook {
 
     public HellishRepairModifier() {
-        this.registerHooks(new ModifierHookMap.Builder().addHook(this, TinkerHooks.MELEE_HIT));
+        this.registerHooks(ModifierHookMap.builder().addHook(this, TinkerHooks.MELEE_HIT));
     }
 
     @Override
