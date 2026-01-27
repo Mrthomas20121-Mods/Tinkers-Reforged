@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:titanium",
-  "result": {
-    "amount": 90,
-    "fluid": "tinkers_reforged:titanium"
-  },
-  "temperature": 1300
-}

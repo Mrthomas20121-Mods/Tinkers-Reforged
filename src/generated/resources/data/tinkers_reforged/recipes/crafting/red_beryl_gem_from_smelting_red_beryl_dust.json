@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.0,
-  "ingredient": {
-    "item": "tinkers_reforged:red_beryl_dust"
-  },
-  "result": "tinkers_reforged:red_beryl_gem"
-}

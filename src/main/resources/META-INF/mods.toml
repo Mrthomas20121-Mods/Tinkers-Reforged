@@ -5,7 +5,7 @@ issueTrackerURL = "https://github.com/Mrthomas20121/Tinkers-Reforged/issues"
 
 [[mods]]
 modId = "tinkers_reforged"
-version = "2.1.9"
+version = "2.20.0.1"
 displayName = "Tinkers Reforged"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/tinkers-reforged"
 #logoFile="tinkers_reforged_logo.png"
@@ -15,26 +15,21 @@ description = '''
 Add new materials to Tinkers Construct
 '''
 
-[[dependencies.tinkers_reforged]] #optional
-    # the modid of the dependency
-    modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
-    mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[40,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+[[dependencies.tinkers_reforged]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
     ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 [[dependencies.tinkers_reforged]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2,)"
+    versionRange="[1.20.1,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.tinkers_reforged]]
     modId="tconstruct"
     mandatory=true
-    versionRange="[3.8.2.32,)"
+    versionRange="[3.11.2.166,)"
     ordering="NONE"
     side="BOTH"

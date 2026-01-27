@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:ingots/durasteel"
-  },
-  "material": "tinkers_reforged:durasteel",
-  "needed": 1,
-  "value": 1
-}

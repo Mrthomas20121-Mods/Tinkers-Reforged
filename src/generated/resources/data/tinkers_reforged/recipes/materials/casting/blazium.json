@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:blazium"
-  },
-  "output": "tinkers_reforged:blazium",
-  "temperature": 1400
-}

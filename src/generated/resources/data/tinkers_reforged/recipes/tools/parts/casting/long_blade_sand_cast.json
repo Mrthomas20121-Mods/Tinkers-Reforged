@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:table_casting_material",
-  "cast": {
-    "tag": "tinkers_reforged:casts/single_use/long_blade"
-  },
-  "cast_consumed": true,
-  "item_cost": 3,
-  "result": "tinkers_reforged:long_blade"
-}

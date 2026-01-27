@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_end",
-  "features": "tinkers_reforged:titanium_ore_placement",
-  "step": "underground_decoration"
-}

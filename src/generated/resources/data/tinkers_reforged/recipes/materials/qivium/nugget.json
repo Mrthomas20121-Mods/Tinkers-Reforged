@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/qivium"
-  },
-  "material": "tinkers_reforged:qivium",
-  "needed": 9,
-  "value": 1
-}

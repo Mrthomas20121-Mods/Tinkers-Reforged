@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:tiberium"
-  },
-  "output": "tinkers_reforged:tiberium",
-  "temperature": 1500
-}

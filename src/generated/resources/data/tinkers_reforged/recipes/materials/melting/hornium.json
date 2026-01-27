@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:hornium",
-  "result": {
-    "amount": 90,
-    "fluid": "tinkers_reforged:hornium"
-  },
-  "temperature": 1500
-}

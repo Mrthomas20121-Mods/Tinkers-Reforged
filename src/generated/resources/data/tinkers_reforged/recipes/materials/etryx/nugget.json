@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/etryx"
-  },
-  "material": "tinkers_reforged:etryx",
-  "needed": 9,
-  "value": 1
-}

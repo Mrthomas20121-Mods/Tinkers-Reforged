@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/lavium"
-  },
-  "material": "tinkers_reforged:lavium",
-  "needed": 9,
-  "value": 1
-}

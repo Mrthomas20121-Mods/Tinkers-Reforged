@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:mosite",
-  "result": {
-    "amount": 90,
-    "fluid": "tinkers_reforged:mosite"
-  },
-  "temperature": 1100
-}

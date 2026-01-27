@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.0,
-  "ingredient": {
-    "item": "tinkers_reforged:lavium_dust"
-  },
-  "result": "tinkers_reforged:lavium_ingot"
-}

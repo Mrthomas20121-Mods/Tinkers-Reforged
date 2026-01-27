@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:gems/red_beryl"
-  },
-  "material": "tinkers_reforged:red_beryl",
-  "needed": 1,
-  "value": 1
-}

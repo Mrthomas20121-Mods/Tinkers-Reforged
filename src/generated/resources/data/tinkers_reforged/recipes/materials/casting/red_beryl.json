@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:red_beryl"
-  },
-  "output": "tinkers_reforged:red_beryl",
-  "temperature": 800
-}

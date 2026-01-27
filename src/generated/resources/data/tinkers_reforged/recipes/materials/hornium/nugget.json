@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/hornium"
-  },
-  "material": "tinkers_reforged:hornium",
-  "needed": 9,
-  "value": 1
-}

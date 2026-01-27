@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:lavium"
-  },
-  "output": "tinkers_reforged:lavium",
-  "temperature": 1100
-}

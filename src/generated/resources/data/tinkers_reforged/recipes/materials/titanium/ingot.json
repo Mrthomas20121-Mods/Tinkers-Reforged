@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:ingots/titanium"
-  },
-  "material": "tinkers_reforged:titanium",
-  "needed": 1,
-  "value": 1
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:blazium",
-  "result": {
-    "amount": 90,
-    "fluid": "tinkers_reforged:blazium"
-  },
-  "temperature": 1400
-}

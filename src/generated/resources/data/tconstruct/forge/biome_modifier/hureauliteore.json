@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": "tinkers_reforged:hureaulite_ore_placement",
-  "step": "underground_decoration"
-}

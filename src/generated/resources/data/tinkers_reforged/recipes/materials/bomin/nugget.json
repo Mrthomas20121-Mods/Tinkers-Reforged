@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/bomin"
-  },
-  "material": "tinkers_reforged:bomin",
-  "needed": 9,
-  "value": 1
-}

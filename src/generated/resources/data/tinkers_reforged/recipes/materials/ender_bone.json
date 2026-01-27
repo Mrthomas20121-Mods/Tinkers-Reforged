@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "tinkers_reforged:ender_bone"
-  },
-  "material": "tinkers_reforged:ender_bone",
-  "needed": 1,
-  "value": 1
-}

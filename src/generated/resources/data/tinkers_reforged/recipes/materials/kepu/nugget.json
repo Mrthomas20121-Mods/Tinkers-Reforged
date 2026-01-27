@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/kepu"
-  },
-  "material": "tinkers_reforged:kepu",
-  "needed": 9,
-  "value": 1
-}

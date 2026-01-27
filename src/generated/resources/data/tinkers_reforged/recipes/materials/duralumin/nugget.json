@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/duralumin"
-  },
-  "material": "tinkers_reforged:duralumin",
-  "needed": 9,
-  "value": 1
-}

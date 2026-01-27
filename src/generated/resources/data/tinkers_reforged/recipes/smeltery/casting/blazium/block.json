@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:casting_basin",
-  "cooling_time": 233,
-  "fluid": {
-    "amount": 810,
-    "tag": "tinkers_reforged:blazium"
-  },
-  "result": "tinkers_reforged:blazium_block"
-}

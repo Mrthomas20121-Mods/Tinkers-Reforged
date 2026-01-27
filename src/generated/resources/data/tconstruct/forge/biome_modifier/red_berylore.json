@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": "tinkers_reforged:red_beryl_ore_placement",
-  "step": "underground_decoration"
-}

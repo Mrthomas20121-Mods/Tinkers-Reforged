@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:ingots/ferobolt"
-  },
-  "material": "tinkers_reforged:ferobolt",
-  "needed": 1,
-  "value": 1
-}

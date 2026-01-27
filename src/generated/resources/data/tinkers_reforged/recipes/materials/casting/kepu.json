@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:kepu"
-  },
-  "output": "tinkers_reforged:kepu",
-  "temperature": 1300
-}

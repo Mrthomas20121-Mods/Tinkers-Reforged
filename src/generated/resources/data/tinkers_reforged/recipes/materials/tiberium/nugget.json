@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:nuggets/tiberium"
-  },
-  "material": "tinkers_reforged:tiberium",
-  "needed": 9,
-  "value": 1
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:epidote"
-  },
-  "output": "tinkers_reforged:epidote",
-  "temperature": 800
-}

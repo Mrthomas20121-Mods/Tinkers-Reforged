@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:melting_fuel",
-  "duration": 100,
-  "fluid": {
-    "amount": 50,
-    "fluid": "tinkers_reforged:proto_lava"
-  },
-  "temperature": 2500
-}

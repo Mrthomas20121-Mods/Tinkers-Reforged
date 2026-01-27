@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "tag": "forge:ingots/blazium"
-  },
-  "material": "tinkers_reforged:blazium",
-  "needed": 1,
-  "value": 1
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:hureaulite"
-  },
-  "output": "tinkers_reforged:hureaulite",
-  "temperature": 800
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:ferobolt"
-  },
-  "output": "tinkers_reforged:ferobolt",
-  "temperature": 1000
-}

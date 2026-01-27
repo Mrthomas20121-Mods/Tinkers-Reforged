@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "tinkers_reforged:etryx"
-  },
-  "output": "tinkers_reforged:etryx",
-  "temperature": 1000
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "tinkers_reforged:ferobolt",
-  "result": {
-    "amount": 90,
-    "fluid": "tinkers_reforged:ferobolt"
-  },
-  "temperature": 1000
-}
