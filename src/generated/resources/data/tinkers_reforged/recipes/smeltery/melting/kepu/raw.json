@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "fluid": "tinkers_reforged:gallium"
+    }
+  ],
   "ingredient": {
     "tag": "forge:raw_materials/kepu"
   },

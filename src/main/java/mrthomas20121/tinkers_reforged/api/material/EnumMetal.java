@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.api.material;
 
 import mrthomas20121.tinkers_reforged.datagen.ReforgedBlocksLoot;
+import mrthomas20121.tinkers_reforged.datagen.ReforgedByproduct;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedTags;
@@ -45,6 +46,8 @@ public enum EnumMetal implements EnumData {
     private final TagKey<Block> oreMiningTag;
 
     public final FluidObject<ForgeFlowingFluid> fluid;
+    private boolean hasByProduct = false;
+    private final ReforgedByproduct byproduct;
 
     EnumMetal(boolean isOre, TagKey<Block> blockTag, TagKey<Block> oreMiningTag, EnumFluid enumFluid) {
         this(isOre, blockTag, oreMiningTag, TinkersReforgedFluids.ALL_FLUIDS.get(enumFluid));
@@ -55,10 +58,23 @@ public enum EnumMetal implements EnumData {
         this.blockTag = blockTag;
         this.oreMiningTag = oreMiningTag;
         this.fluid = fluid;
+        this.byproduct = ReforgedByproduct.GALLIUM;
+
+        if(this.name().equalsIgnoreCase("kepu")) {
+            this.hasByProduct = true;
+        }
     }
 
     EnumMetal(TagKey<Block> blockTag, EnumFluid fluid) {
         this(false, blockTag, blockTag, fluid);
+    }
+
+    public ReforgedByproduct getByproduct() {
+        return byproduct;
+    }
+
+    public boolean hasByproduct() {
+        return hasByProduct;
     }
 
     public boolean isThisOre() {

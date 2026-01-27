@@ -1,5 +1,11 @@
 {
   "type": "tconstruct:ore_melting",
+  "byproducts": [
+    {
+      "amount": 90,
+      "fluid": "tinkers_reforged:gallium"
+    }
+  ],
   "conditions": [
     {
       "type": "tconstruct:tag_intersection_present",

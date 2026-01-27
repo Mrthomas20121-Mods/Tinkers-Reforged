@@ -213,17 +213,24 @@ public class ReforgedRecipes extends RecipeProvider implements IConditionBuilder
                         .save(consumer, modResource("crafting/raw_"+metal.getName()));
             }
 
+            Item ingot = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get();
+            Item dust = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.DUST).get();
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), ingot, 0, 200).unlockedBy("has_item", has(ingot)).save(consumer, modResource("crafting/%s_ingot_from_smelting_%s_dust".formatted(metal.getName(), metal.getName())));
+
             if(metal.equals(EnumMetal.ALUMINUM)) {
                 // do nothing for aluminum because tinkers already add melting/casting recipes for it
                 continue;
             }
-            metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false);
+
+
+            if(metal.hasByproduct()) {
+                metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false, metal.getByproduct());
+            }
+            else {
+                metalMelting(consumer, metal.fluid.get(), metal.getName(), metal.isThisOre(), meltingFolder, false);
+            }
 
             metalCasting(consumer, metal.fluid, TinkersReforgedBlocks.METAL_BLOCKS.get(metal).get(EnumMetal.BlockType.BLOCK).get(), TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get(), TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.NUGGET).get(), castingFolder, metal.getName());
-
-            Item ingot = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.INGOT).get();
-            Item dust = TinkersReforgedItems.METALS.get(metal).get(EnumMetal.ItemType.DUST).get();
-            SimpleCookingRecipeBuilder.smelting(Ingredient.of(dust), ingot, 0, 200).unlockedBy("has_item", has(ingot)).save(consumer, modResource("crafting/%s_ingot_from_smelting_%s_dust".formatted(metal.getName(), metal.getName())));
         }
 
         for(EnumGem gem: EnumGem.values()) {
