@@ -20,7 +20,6 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
 apply plugin: 'io.freefair.lombok'
 
 version = mod_version
@@ -132,7 +131,7 @@ jar {
         attributes([
             "Specification-Title": "Tinkers Reforged",
             "Specification-Vendor": "Mrthomas20121",
-            "Specification-Version": "1",
+            "Specification-Version": "2.20.0.1",
             "Implementation-Title": project.name,
             "Implementation-Version": project.version,
             "Implementation-Vendor" :"tinkers_reforged",
