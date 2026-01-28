@@ -1,14 +1,9 @@
 package mrthomas20121.tinkers_reforged;
 
-import net.minecraft.client.color.item.ItemColors;
-import net.minecraft.core.Registry;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,8 +14,6 @@ public class TinkersReforged {
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public TinkersReforged() {
-		TinkersReforgedTags.init();
-
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		//MinecraftForge.EVENT_BUS.register(this);
