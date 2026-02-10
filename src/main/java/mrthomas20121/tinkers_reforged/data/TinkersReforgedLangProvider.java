@@ -2,7 +2,9 @@ package mrthomas20121.tinkers_reforged.data;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
-import mrthomas20121.tinkers_reforged.api.item.ItemMetalObject;
+import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
+import mrthomas20121.tinkers_reforged.api.holder.ItemMetalObject;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -27,6 +29,25 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
             add(itemMetalObject.getDust(), name + " Dust");
             add(itemMetalObject.getPlate(), name + " Plate");
             add(itemMetalObject.getGear(), name + " Gear");
+        }
+
+        for(Metal metal: Metal.values) {
+            String name = capitalize(metal.getSerializedName());
+            BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
+
+            add(blockMetalObject.get(), name+" Block");
+            add(blockMetalObject.getPlatform(), name+" Platform");
+
+            if(metal.equals(Metal.YTTRIUM)) {
+                add(TinkersReforgedBlocks.YTTRIUM_ORE.get(), name + " Ore");
+                add(TinkersReforgedBlocks.YTTRIUM_ORE.getDeepslateOre(), "Deepslate " +name + " Ore");
+            }
+            else if(metal.equals(Metal.BARIUM)) {
+                add(TinkersReforgedBlocks.BARIUM_ORE.get(), name + " Ore");
+            }
+            else if(metal.equals(Metal.THALLIUM)) {
+                add(TinkersReforgedBlocks.THALLIUM_ORE.get(), name + " Ore");
+            }
         }
     }
 

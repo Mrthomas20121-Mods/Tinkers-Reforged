@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.api.block;
+package mrthomas20121.tinkers_reforged.api.holder;
 
 import net.minecraft.world.level.block.Block;
 import slimeknights.mantle.registration.object.ItemObject;

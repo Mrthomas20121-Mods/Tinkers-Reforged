@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.api.item;
+package mrthomas20121.tinkers_reforged.api.holder;
 
 import mrthomas20121.tinkers_reforged.api.tags.GemTagData;
 import net.minecraft.resources.ResourceLocation;
@@ -47,27 +47,7 @@ public class ItemGemObject extends ItemObject<Item> {
         return Objects.requireNonNull(gear.get(), "ItemMetalObject is missing gear item");
     }
 
-    public TagKey<Item> getGemTag() {
-        return this.tags.getGemTag();
-    }
-
-    public TagKey<Item> getNuggetTag() {
-        return this.tags.getNuggetTag();
-    }
-
-    public TagKey<Item> getDustTag() {
-        return this.tags.getDustTag();
-    }
-
-    public TagKey<Item> getPlateTag() {
-        return this.tags.getPlateTag();
-    }
-
-    public TagKey<Item> getGearTag() {
-        return this.tags.getGearTag();
-    }
-
-    public TagKey<Block> getBlockTag() {
-        return this.tags.getBlockTag();
+    public GemTagData getTags() {
+        return tags;
     }
 }

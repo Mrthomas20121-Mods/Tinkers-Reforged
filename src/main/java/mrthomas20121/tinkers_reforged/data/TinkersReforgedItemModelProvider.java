@@ -2,7 +2,7 @@ package mrthomas20121.tinkers_reforged.data;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
-import mrthomas20121.tinkers_reforged.api.item.ItemMetalObject;
+import mrthomas20121.tinkers_reforged.api.holder.ItemMetalObject;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

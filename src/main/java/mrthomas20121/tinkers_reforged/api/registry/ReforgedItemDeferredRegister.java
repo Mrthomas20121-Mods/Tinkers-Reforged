@@ -1,7 +1,7 @@
 package mrthomas20121.tinkers_reforged.api.registry;
 
-import mrthomas20121.tinkers_reforged.api.item.ItemGemObject;
-import mrthomas20121.tinkers_reforged.api.item.ItemMetalObject;
+import mrthomas20121.tinkers_reforged.api.holder.ItemGemObject;
+import mrthomas20121.tinkers_reforged.api.holder.ItemMetalObject;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import slimeknights.mantle.registration.object.ItemObject;

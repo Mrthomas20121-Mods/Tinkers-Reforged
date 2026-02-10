@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.data.TinkersReforgedDatagen;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,12 +19,11 @@ public class TinkersReforged {
 	public TinkersReforged() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		//MinecraftForge.EVENT_BUS.register(this);
-
 		// execute this only on the client
 		//DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> TinkersReforgedBook::initBook);
 		//bus.addListener(EventPriority.NORMAL, false, RegisterEvent.class, this::register);
 
+		TinkersReforgedBlocks.BLOCKS.register(bus);
 		TinkersReforgedItems.register(bus);
 		bus.addListener(TinkersReforgedDatagen::init);
 	}

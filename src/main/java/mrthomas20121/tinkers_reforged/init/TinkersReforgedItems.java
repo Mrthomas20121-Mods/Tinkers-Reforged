@@ -2,7 +2,8 @@ package mrthomas20121.tinkers_reforged.init;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
-import mrthomas20121.tinkers_reforged.api.item.ItemMetalObject;
+import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
+import mrthomas20121.tinkers_reforged.api.holder.ItemMetalObject;
 import mrthomas20121.tinkers_reforged.api.registry.ReforgedItemDeferredRegister;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -35,8 +36,11 @@ public class TinkersReforgedItems {
     private static void displayMetals(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output tab) {
         for(Metal metal: Metal.values) {
             String name = metal.getSerializedName();
+            BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);
 
+            tab.accept(blockMetalObject.get());
+            tab.accept(blockMetalObject.getPlatform());
             tab.accept(itemMetalObject.getIngot());
             tab.accept(itemMetalObject.getNugget());
             tab.accept(itemMetalObject.getDust());

@@ -1,4 +1,4 @@
-package mrthomas20121.tinkers_reforged.api.item;
+package mrthomas20121.tinkers_reforged.api.holder;
 
 import mrthomas20121.tinkers_reforged.api.tags.MetalTagData;
 import net.minecraft.resources.ResourceLocation;
@@ -12,7 +12,6 @@ import java.util.function.Supplier;
 
 public class ItemMetalObject extends ItemObject<Item> {
 
-    private final MetalTagData metalTags;
     private final Supplier<? extends Item> nugget;
     private final Supplier<? extends Item> dust;
     private final Supplier<? extends Item> plate;
@@ -20,7 +19,6 @@ public class ItemMetalObject extends ItemObject<Item> {
 
     public ItemMetalObject(ResourceLocation name, ItemObject<Item> ingot, ItemObject<Item> nugget, ItemObject<Item> dust, ItemObject<Item> plate, ItemObject<Item> gear) {
         super(ingot);
-        this.metalTags = new MetalTagData(name);
         this.nugget = nugget;
         this.dust = dust;
         this.plate = plate;
@@ -45,29 +43,5 @@ public class ItemMetalObject extends ItemObject<Item> {
 
     public Item getGear() {
         return Objects.requireNonNull(gear.get(), "ItemMetalObject is missing gear item");
-    }
-
-    public TagKey<Item> getIngotTag() {
-        return this.metalTags.getIngotTag();
-    }
-
-    public TagKey<Item> getNuggetTag() {
-        return this.metalTags.getNuggetTag();
-    }
-
-    public TagKey<Item> getDustTag() {
-        return this.metalTags.getDustTag();
-    }
-
-    public TagKey<Item> getPlateTag() {
-        return this.metalTags.getPlateTag();
-    }
-
-    public TagKey<Item> getGearTag() {
-        return this.metalTags.getGearTag();
-    }
-
-    public TagKey<Block> getBlockTag() {
-        return this.metalTags.getBlockTag();
     }
 }
