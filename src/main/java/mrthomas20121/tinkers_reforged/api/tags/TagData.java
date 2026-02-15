@@ -26,6 +26,14 @@ public abstract class TagData {
         return TagKey.create(Registries.BLOCK, new ResourceLocation("forge", type + "/" + name.getPath()));
     }
 
+    protected TagKey<Block> makeExtraBlockTag(String type) {
+        return TagKey.create(Registries.BLOCK, new ResourceLocation("forge", type + name.getPath()));
+    }
+
+    protected TagKey<Item> makeExtraItemTag(String type) {
+        return TagKey.create(Registries.ITEM, new ResourceLocation("forge", type + name.getPath()));
+    }
+
     protected TagKey<Item> makeNamespaceItemTag(String type) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(name.getNamespace(), type + "/" + name.getPath()));
     }

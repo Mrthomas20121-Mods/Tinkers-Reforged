@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged.api.registry;
 
 import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
 import mrthomas20121.tinkers_reforged.api.holder.BlockOreObject;
+import mrthomas20121.tinkers_reforged.api.holder.BlockOverworldOreObject;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -30,14 +31,19 @@ public class ReforgedBlockDeferredRegister extends BlockDeferredRegisterExtensio
         return new BlockMetalObject(block, platform);
     }
 
-    public ItemObject<DropExperienceBlock> registerOre(String name) {
-        return register(name + "_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)), (b) -> new BlockItem(b, new Item.Properties()));
-    }
-
-    public BlockOreObject registerOverworldOre(String name) {
+    public BlockOverworldOreObject registerOverworldOre(String name) {
         ItemObject<DropExperienceBlock> ore = register(name + "_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)), (b) -> new BlockItem(b, new Item.Properties()));
         ItemObject<DropExperienceBlock> deepslate_ore = register("deepslate_"+ name + "_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)), (b) -> new BlockItem(b, new Item.Properties()));
-        return new BlockOreObject(ore, deepslate_ore);
+        ItemObject<Block> rawOreBlock = register(name + "_raw_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)), (b) -> new BlockItem(b, new Item.Properties()));
+        ItemObject<Item> raw_ore_item = new ItemObject<>(this.itemRegister.register("raw_" + name, () -> new Item(new Item.Properties())));
+        return new BlockOverworldOreObject(ore, deepslate_ore, rawOreBlock, raw_ore_item);
+    }
+
+    public BlockOreObject registerOre(String name) {
+        ItemObject<DropExperienceBlock> ore = register(name + "_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)), (b) -> new BlockItem(b, new Item.Properties()));
+        ItemObject<Block> rawOreBlock = register(name + "_raw_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)), (b) -> new BlockItem(b, new Item.Properties()));
+        ItemObject<Item> raw_ore_item = new ItemObject<>(this.itemRegister.register("raw_" + name, () -> new Item(new Item.Properties())));
+        return new BlockOreObject(ore, rawOreBlock, raw_ore_item);
     }
 
     public <E extends Enum<E>> EnumMap<E, BlockMetalObject> registerEnumMetal(Class<E> e) {

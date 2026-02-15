@@ -1,0 +1,75 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/both"
+      },
+      "when": {
+        "down": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/top"
+      },
+      "when": {
+        "down": "true",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/bottom"
+      },
+      "when": {
+        "down": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/neither"
+      },
+      "when": {
+        "down": "true",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/side",
+        "y": 180
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/side",
+        "y": 270
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/side"
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/germanium/side",
+        "y": 90
+      },
+      "when": {
+        "west": "true"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "tconstruct:block/platform/side",
+  "textures": {
+    "particle": "tinkers_reforged:block/platform/graphite_top",
+    "side": "tinkers_reforged:block/platform/graphite_side"
+  }
+}

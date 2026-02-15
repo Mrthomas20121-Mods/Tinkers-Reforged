@@ -8,6 +8,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Locale;
 
@@ -30,7 +31,7 @@ public enum Metal implements StringRepresentable {
     private final boolean isOre;
 
     Metal(boolean isOre) {
-        this.metalTags = new MetalTagData(new ResourceLocation(TinkersReforged.MOD_ID, this.serializedName));
+        this.metalTags = new MetalTagData(new ResourceLocation(TinkersReforged.MOD_ID, this.serializedName), isOre);
         this.isOre = isOre;
     }
 
@@ -68,6 +69,35 @@ public enum Metal implements StringRepresentable {
 
     public TagKey<Block> getBlockTag() {
         return this.metalTags.getBlockTag();
+    }
+
+    public TagKey<Item> getBlockItemTag() {
+        return this.metalTags.getBlockItemTag();
+    }
+
+    @Nullable
+    public TagKey<Item> getRawItemTag() {
+        return this.metalTags.getRawItemTag();
+    }
+
+    @Nullable
+    public TagKey<Item> getRawBlockItemTag() {
+        return this.metalTags.getRawBlockItemTag();
+    }
+
+    @Nullable
+    public TagKey<Block> getRawBlockTag() {
+        return this.metalTags.getRawBlockTag();
+    }
+
+    @Nullable
+    public TagKey<Block> getOreBlock() {
+        return this.metalTags.getOreBlock();
+    }
+
+    @Nullable
+    public TagKey<Item> getOreBlockItem() {
+        return this.metalTags.getOreBlockItem();
     }
 
     @Override

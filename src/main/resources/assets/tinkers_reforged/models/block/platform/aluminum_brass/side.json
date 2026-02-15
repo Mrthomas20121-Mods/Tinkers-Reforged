@@ -1,8 +1,0 @@
-{
-  "parent": "tconstruct:block/platform/side",
-  "textures": {
-    "side": "tinkers_reforged:block/platform/aluminum_brass_side",
-    "top": "tinkers_reforged:block/platform/aluminum_brass_top"
-  },
-  "render_type": "cutout"
-}

@@ -1,0 +1,7 @@
+{
+  "parent": "tconstruct:block/platform/both",
+  "textures": {
+    "side": "tinkers_reforged:block/platform/germanium_side",
+    "top": "tinkers_reforged:block/platform/germanium_top"
+  }
+}

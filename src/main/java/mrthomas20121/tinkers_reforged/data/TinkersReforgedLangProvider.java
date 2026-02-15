@@ -29,6 +29,16 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
             add(itemMetalObject.getDust(), name + " Dust");
             add(itemMetalObject.getPlate(), name + " Plate");
             add(itemMetalObject.getGear(), name + " Gear");
+
+            if(metal.equals(Metal.YTTRIUM)) {
+                add(TinkersReforgedBlocks.YTTRIUM_ORE.getRawItem(), "Raw " +name);
+            }
+            else if(metal.equals(Metal.BARIUM)) {
+                add(TinkersReforgedBlocks.BARIUM_ORE.getRawItem(), "Raw " +name);
+            }
+            else if(metal.equals(Metal.THALLIUM)) {
+                add(TinkersReforgedBlocks.THALLIUM_ORE.getRawItem(), "Raw " +name);
+            }
         }
 
         for(Metal metal: Metal.values) {
@@ -41,12 +51,15 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
             if(metal.equals(Metal.YTTRIUM)) {
                 add(TinkersReforgedBlocks.YTTRIUM_ORE.get(), name + " Ore");
                 add(TinkersReforgedBlocks.YTTRIUM_ORE.getDeepslateOre(), "Deepslate " +name + " Ore");
+                add(TinkersReforgedBlocks.YTTRIUM_ORE.getRawOreBlock(), "Block of Raw " +name);
             }
             else if(metal.equals(Metal.BARIUM)) {
                 add(TinkersReforgedBlocks.BARIUM_ORE.get(), name + " Ore");
+                add(TinkersReforgedBlocks.BARIUM_ORE.getRawOreBlock(), "Block of Raw " +name);
             }
             else if(metal.equals(Metal.THALLIUM)) {
                 add(TinkersReforgedBlocks.THALLIUM_ORE.get(), name + " Ore");
+                add(TinkersReforgedBlocks.THALLIUM_ORE.getRawOreBlock(), "Block of Raw " +name);
             }
         }
     }

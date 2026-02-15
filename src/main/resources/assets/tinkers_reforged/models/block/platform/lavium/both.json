@@ -1,7 +1,0 @@
-{
-  "parent": "tconstruct:block/platform/both",
-  "textures": {
-    "side": "tinkers_reforged:block/platform/lavium_side",
-    "top": "tinkers_reforged:block/platform/lavium_top"
-  }
-}

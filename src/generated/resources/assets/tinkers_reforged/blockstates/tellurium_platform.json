@@ -1,0 +1,75 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/both"
+      },
+      "when": {
+        "down": "false",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/top"
+      },
+      "when": {
+        "down": "true",
+        "up": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/bottom"
+      },
+      "when": {
+        "down": "false",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/neither"
+      },
+      "when": {
+        "down": "true",
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/side",
+        "y": 180
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/side",
+        "y": 270
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/side"
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "tinkers_reforged:block/platform/tellurium/side",
+        "y": 90
+      },
+      "when": {
+        "west": "true"
+      }
+    }
+  ]
+}

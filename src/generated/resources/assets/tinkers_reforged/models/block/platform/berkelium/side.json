@@ -1,0 +1,7 @@
+{
+  "parent": "tconstruct:block/platform/side",
+  "textures": {
+    "particle": "tinkers_reforged:block/platform/berkelium_top",
+    "side": "tinkers_reforged:block/platform/berkelium_side"
+  }
+}

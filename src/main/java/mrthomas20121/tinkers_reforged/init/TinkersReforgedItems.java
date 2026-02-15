@@ -39,6 +39,23 @@ public class TinkersReforgedItems {
             BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);
 
+            if(metal.equals(Metal.YTTRIUM)) {
+                tab.accept(TinkersReforgedBlocks.YTTRIUM_ORE.get());
+                tab.accept(TinkersReforgedBlocks.YTTRIUM_ORE.getDeepslateOre());
+                tab.accept(TinkersReforgedBlocks.YTTRIUM_ORE.getRawOreBlock());
+                tab.accept(TinkersReforgedBlocks.YTTRIUM_ORE.getRawItem());
+            }
+            else if(metal.equals(Metal.BARIUM)) {
+                tab.accept(TinkersReforgedBlocks.BARIUM_ORE.get());
+                tab.accept(TinkersReforgedBlocks.BARIUM_ORE.getRawOreBlock());
+                tab.accept(TinkersReforgedBlocks.BARIUM_ORE.getRawItem());
+            }
+            else if(metal.equals(Metal.THALLIUM)) {
+                tab.accept(TinkersReforgedBlocks.THALLIUM_ORE.get());
+                tab.accept(TinkersReforgedBlocks.THALLIUM_ORE.getRawOreBlock());
+                tab.accept(TinkersReforgedBlocks.THALLIUM_ORE.getRawItem());
+            }
+
             tab.accept(blockMetalObject.get());
             tab.accept(blockMetalObject.getPlatform());
             tab.accept(itemMetalObject.getIngot());

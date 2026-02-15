@@ -1,7 +1,0 @@
-{
-  "parent": "tconstruct:block/platform/neither",
-  "textures": {
-    "side": "tinkers_reforged:block/platform/durasteel_side",
-    "top": "tinkers_reforged:block/platform/durasteel_top"
-  }
-}
