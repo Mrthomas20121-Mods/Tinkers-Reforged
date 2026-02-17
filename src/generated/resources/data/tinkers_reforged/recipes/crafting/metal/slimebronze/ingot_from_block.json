@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "metal",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/slimebronze"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_reforged:slimebronze_ingot"
+  }
+}

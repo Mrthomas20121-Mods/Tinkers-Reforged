@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Locale;
 
 public enum Metal implements StringRepresentable {
+    SLIMEBRONZE(750, MapColor.TERRACOTTA_GREEN),
     GRAPHITE(500, MapColor.COLOR_BLACK),
     YTTRIUM(true, 855, MapColor.COLOR_RED),
     BARIUM(true, 1450, MapColor.TERRACOTTA_PURPLE),

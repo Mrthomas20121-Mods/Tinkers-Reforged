@@ -1,5 +1,6 @@
 package mrthomas20121.tinkers_reforged.api.registry;
 
+import mrthomas20121.tinkers_reforged.api.data.Metal;
 import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
 import mrthomas20121.tinkers_reforged.api.holder.BlockOreObject;
 import mrthomas20121.tinkers_reforged.api.holder.BlockOverworldOreObject;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.material.MapColor;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.BlockDeferredRegisterExtension;
 import slimeknights.tconstruct.shared.block.PlatformBlock;
+import slimeknights.tconstruct.shared.block.SlimesteelBlock;
 
 import java.util.EnumMap;
 import java.util.Locale;
@@ -27,6 +29,12 @@ public class ReforgedBlockDeferredRegister extends BlockDeferredRegisterExtensio
 
     public BlockMetalObject registerMetal(String name) {
         ItemObject<Block> block = register(name + "_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0f)), (b) -> new BlockItem(b, new Item.Properties()));
+        ItemObject<PlatformBlock> platform = register(name + "_platform", () -> new PlatformBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(3.0F, 6.0F).noOcclusion()), (b) -> new BlockItem(b, new Item.Properties()));
+        return new BlockMetalObject(block, platform);
+    }
+
+    public BlockMetalObject registerSlimeMetal(String name) {
+        ItemObject<Block> block = register(name + "_block", () -> new SlimesteelBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0f)), (b) -> new BlockItem(b, new Item.Properties()));
         ItemObject<PlatformBlock> platform = register(name + "_platform", () -> new PlatformBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(3.0F, 6.0F).noOcclusion()), (b) -> new BlockItem(b, new Item.Properties()));
         return new BlockMetalObject(block, platform);
     }
@@ -46,11 +54,16 @@ public class ReforgedBlockDeferredRegister extends BlockDeferredRegisterExtensio
         return new BlockOreObject(ore, rawOreBlock, raw_ore_item);
     }
 
-    public <E extends Enum<E>> EnumMap<E, BlockMetalObject> registerEnumMetal(Class<E> e) {
-        final EnumMap<E, BlockMetalObject> map = new EnumMap<>(e);
-        E[] values = e.getEnumConstants();
-        for(E value: values) {
-            map.put(value, registerMetal(value.name().toLowerCase(Locale.ROOT)));
+    public EnumMap<Metal, BlockMetalObject> registerEnumMetal(Class<Metal> e) {
+        final EnumMap<Metal, BlockMetalObject> map = new EnumMap<>(e);
+        Metal[] values = Metal.values;
+        for(Metal value: values) {
+            if(value.getSerializedName().contains("slime")) {
+                map.put(value, registerSlimeMetal(value.name().toLowerCase(Locale.ROOT)));
+            }
+            else {
+                map.put(value, registerMetal(value.name().toLowerCase(Locale.ROOT)));
+            }
         }
 
         return map;

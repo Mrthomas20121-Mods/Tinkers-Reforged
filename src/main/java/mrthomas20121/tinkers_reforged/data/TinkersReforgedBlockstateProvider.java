@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.data;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
 import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
+import mrthomas20121.tinkers_reforged.data.model.TinkersReforgedCompositeModelBuilder;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -15,8 +16,11 @@ import slimeknights.tconstruct.shared.block.PlatformBlock;
 
 public class TinkersReforgedBlockstateProvider extends BlockStateProvider {
 
+    private final ExistingFileHelper exFileHelper;
+
     public TinkersReforgedBlockstateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, TinkersReforged.MOD_ID, exFileHelper);
+        this.exFileHelper = exFileHelper;
     }
 
     @Override
@@ -26,7 +30,12 @@ public class TinkersReforgedBlockstateProvider extends BlockStateProvider {
 
             BlockMetalObject metalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
 
-            block(metalObject.get());
+            if(metal.equals(Metal.SLIMEBRONZE)) {
+                slimebronzeBlock(metalObject.get());
+            }
+            else {
+                block(metalObject.get());
+            }
             platform(name, metalObject.getPlatform());
 
             if(metal.equals(Metal.BARIUM)) {
@@ -43,6 +52,21 @@ public class TinkersReforgedBlockstateProvider extends BlockStateProvider {
                 block(TinkersReforgedBlocks.YTTRIUM_ORE.getRawOreBlock());
             }
         }
+    }
+
+    private void slimebronzeBlock(Block block) {
+        BlockModelBuilder metalBuilder = models().withExistingParent(blockKey(block).getPath()+"_metal",
+                        new ResourceLocation("tconstruct:block/template/cube_all_14"))
+                .texture("texture", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_block"));
+
+        BlockModelBuilder slimeBuilder = models().withExistingParent(blockKey(block).getPath()+"_slime", new ResourceLocation("minecraft:block/cube_all"))
+                .texture("texture", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_slime")).renderType("minecraft:translucent");
+
+        BlockModelBuilder builder = models().withExistingParent(blockKey(block).getPath(), new ResourceLocation("minecraft:block/block"))
+                .texture("particle", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_block"))
+                .customLoader(TinkersReforgedCompositeModelBuilder::new)
+                .child("metal", metalBuilder).child("slime", slimeBuilder).end();
+        this.simpleBlock(block, builder);
     }
 
     private ResourceLocation blockKey(Block block) {

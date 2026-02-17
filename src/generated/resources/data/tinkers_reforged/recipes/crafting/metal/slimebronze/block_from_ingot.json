@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/slimebronze"
+    },
+    "X": {
+      "item": "tinkers_reforged:slimebronze_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "IXI",
+    "III"
+  ],
+  "result": {
+    "item": "tinkers_reforged:slimebronze_block"
+  },
+  "show_notification": true
+}
