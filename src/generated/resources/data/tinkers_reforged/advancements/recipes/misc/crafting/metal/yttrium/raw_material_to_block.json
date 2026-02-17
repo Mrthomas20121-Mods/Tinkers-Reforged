@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_yttrium": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:raw_materials/yttrium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:crafting/metal/yttrium/raw_material_to_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_yttrium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:crafting/metal/yttrium/raw_material_to_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:crafting/metal/yttrium/ingot_from_nugget"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yttrium_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:nuggets/yttrium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yttrium_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:crafting/metal/yttrium/ingot_from_nugget"
+    ]
+  },
+  "sends_telemetry_event": false
+}

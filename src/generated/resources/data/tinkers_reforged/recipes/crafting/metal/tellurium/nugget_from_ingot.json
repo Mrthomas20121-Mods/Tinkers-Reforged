@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "metal",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/tellurium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_reforged:tellurium_nugget"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "metal",
+  "ingredient": {
+    "tag": "forge:raw_materials/yttrium"
+  },
+  "result": "tinkers_reforged:yttrium_ingot"
+}

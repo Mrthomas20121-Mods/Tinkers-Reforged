@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "metal",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/barium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_reforged:barium_nugget"
+  }
+}

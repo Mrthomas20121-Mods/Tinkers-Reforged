@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/berkelium"
+    },
+    "X": {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "pattern": [
+    " I ",
+    "IXI",
+    " I "
+  ],
+  "result": {
+    "item": "tinkers_reforged:berkelium_gear"
+  },
+  "show_notification": true
+}

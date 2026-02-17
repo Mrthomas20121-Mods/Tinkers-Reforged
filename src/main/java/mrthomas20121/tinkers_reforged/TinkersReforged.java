@@ -2,6 +2,7 @@ package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.data.TinkersReforgedDatagen;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,10 +26,16 @@ public class TinkersReforged {
 
 		TinkersReforgedBlocks.BLOCKS.register(bus);
 		TinkersReforgedItems.register(bus);
+		TinkersReforgedFluids.FLUIDS.register(bus);
 		bus.addListener(TinkersReforgedDatagen::init);
 	}
 
-	private ResourceLocation getResource(String resource) {
+	public static ResourceLocation getResource(String resource) {
 		return new ResourceLocation(MOD_ID, resource);
+	}
+
+	/** Makes a Tinkers Reforged description ID */
+	public static String makeDescriptionId(String type, String name) {
+		return type + "." + MOD_ID + "." + name;
 	}
 }

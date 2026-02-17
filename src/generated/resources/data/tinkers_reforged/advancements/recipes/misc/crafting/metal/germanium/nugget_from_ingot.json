@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_germanium_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/germanium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:crafting/metal/germanium/nugget_from_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_germanium_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:crafting/metal/germanium/nugget_from_ingot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

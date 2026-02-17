@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "metal",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/graphite"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_reforged:graphite_nugget"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/berkelium"
+    },
+    "X": {
+      "item": "tinkers_reforged:berkelium_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "IXI",
+    "III"
+  ],
+  "result": {
+    "item": "tinkers_reforged:berkelium_block"
+  },
+  "show_notification": true
+}

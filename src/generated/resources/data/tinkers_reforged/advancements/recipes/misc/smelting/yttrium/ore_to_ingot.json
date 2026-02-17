@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:smelting/yttrium/ore_to_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yttrium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ores/yttrium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yttrium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:smelting/yttrium/ore_to_ingot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

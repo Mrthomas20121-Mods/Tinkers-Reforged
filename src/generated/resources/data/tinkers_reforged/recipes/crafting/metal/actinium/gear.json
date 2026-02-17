@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/actinium"
+    },
+    "X": {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "pattern": [
+    " I ",
+    "IXI",
+    " I "
+  ],
+  "result": {
+    "item": "tinkers_reforged:actinium_gear"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "N": {
+      "tag": "forge:nuggets/thallium"
+    },
+    "X": {
+      "item": "tinkers_reforged:thallium_nugget"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NXN",
+    "NNN"
+  ],
+  "result": {
+    "item": "tinkers_reforged:thallium_ingot"
+  },
+  "show_notification": true
+}

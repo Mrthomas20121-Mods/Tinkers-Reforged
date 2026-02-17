@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "N": {
+      "tag": "forge:nuggets/actinium"
+    },
+    "X": {
+      "item": "tinkers_reforged:actinium_nugget"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NXN",
+    "NNN"
+  ],
+  "result": {
+    "item": "tinkers_reforged:actinium_ingot"
+  },
+  "show_notification": true
+}

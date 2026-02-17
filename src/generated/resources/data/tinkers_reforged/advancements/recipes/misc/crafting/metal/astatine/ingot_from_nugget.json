@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_astatine_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:nuggets/astatine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:crafting/metal/astatine/ingot_from_nugget"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_astatine_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:crafting/metal/astatine/ingot_from_nugget"
+    ]
+  },
+  "sends_telemetry_event": false
+}

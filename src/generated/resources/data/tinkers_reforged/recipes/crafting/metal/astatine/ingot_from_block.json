@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "metal",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/astatine"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tinkers_reforged:astatine_ingot"
+  }
+}

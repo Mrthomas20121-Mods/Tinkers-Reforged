@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_barium_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ingots/barium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:crafting/metal/barium/raw_block_to_material"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_barium_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:crafting/metal/barium/raw_block_to_material"
+    ]
+  },
+  "sends_telemetry_event": false
+}

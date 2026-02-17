@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/tellurium"
+    },
+    "X": {
+      "item": "tinkers_reforged:tellurium_ingot"
+    }
+  },
+  "pattern": [
+    "III",
+    "IXI",
+    "III"
+  ],
+  "result": {
+    "item": "tinkers_reforged:tellurium_block"
+  },
+  "show_notification": true
+}

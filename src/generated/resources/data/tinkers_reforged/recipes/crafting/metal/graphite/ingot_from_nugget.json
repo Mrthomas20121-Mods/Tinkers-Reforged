@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "N": {
+      "tag": "forge:nuggets/graphite"
+    },
+    "X": {
+      "item": "tinkers_reforged:graphite_nugget"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NXN",
+    "NNN"
+  ],
+  "result": {
+    "item": "tinkers_reforged:graphite_ingot"
+  },
+  "show_notification": true
+}

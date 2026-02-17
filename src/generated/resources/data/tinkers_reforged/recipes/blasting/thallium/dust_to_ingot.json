@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.4,
+  "group": "metal",
+  "ingredient": {
+    "tag": "forge:dusts/thallium"
+  },
+  "result": "tinkers_reforged:thallium_ingot"
+}

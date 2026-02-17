@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_thallium_dust": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:dusts/thallium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tinkers_reforged:smelting/thallium/dust_to_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_thallium_dust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tinkers_reforged:smelting/thallium/dust_to_ingot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -63,6 +63,7 @@ public class TinkersReforgedItems {
             tab.accept(itemMetalObject.getDust());
             tab.accept(itemMetalObject.getPlate());
             tab.accept(itemMetalObject.getGear());
+            tab.accept(TinkersReforgedFluids.METALS.get(metal).getBucket());
         }
     }
 }

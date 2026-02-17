@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "metal",
+  "key": {
+    "X": {
+      "tag": "forge:raw_materials/thallium"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "result": {
+    "item": "tinkers_reforged:thallium_raw_block"
+  },
+  "show_notification": true
+}

@@ -5,6 +5,7 @@ import mrthomas20121.tinkers_reforged.api.data.Metal;
 import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
 import mrthomas20121.tinkers_reforged.api.holder.ItemMetalObject;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -19,6 +20,11 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
     protected void addTranslations() {
 
         add("itemGroup.tinkers_reforged.metal", "Tinkers Reforged Metals");
+
+        for(Metal metal: Metal.values) {
+            String serializedName = metal.getSerializedName();
+            add(TinkersReforged.makeDescriptionId("fluid", "molten_" + serializedName), "Molten " + capitalize(serializedName));
+        }
 
         for(Metal metal: Metal.values) {
             String name = capitalize(metal.getSerializedName());
@@ -39,6 +45,8 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
             else if(metal.equals(Metal.THALLIUM)) {
                 add(TinkersReforgedBlocks.THALLIUM_ORE.getRawItem(), "Raw " +name);
             }
+
+            add(TinkersReforgedFluids.METALS.get(metal).getBucket(), "Molten " + name + " Bucket");
         }
 
         for(Metal metal: Metal.values) {
