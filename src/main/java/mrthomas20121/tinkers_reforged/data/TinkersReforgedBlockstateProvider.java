@@ -55,17 +55,13 @@ public class TinkersReforgedBlockstateProvider extends BlockStateProvider {
     }
 
     private void slimebronzeBlock(Block block) {
-        BlockModelBuilder metalBuilder = models().withExistingParent(blockKey(block).getPath()+"_metal",
-                        new ResourceLocation("tconstruct:block/template/cube_all_14"))
-                .texture("texture", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_block"));
-
-        BlockModelBuilder slimeBuilder = models().withExistingParent(blockKey(block).getPath()+"_slime", new ResourceLocation("minecraft:block/cube_all"))
-                .texture("texture", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_slime")).renderType("minecraft:translucent");
-
         BlockModelBuilder builder = models().withExistingParent(blockKey(block).getPath(), new ResourceLocation("minecraft:block/block"))
                 .texture("particle", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_block"))
                 .customLoader(TinkersReforgedCompositeModelBuilder::new)
-                .child("metal", metalBuilder).child("slime", slimeBuilder).end();
+                .child("metal", models().withExistingParent(blockKey(block).getPath()+"_metal",
+                                new ResourceLocation("tconstruct:block/template/cube_all_14"))
+                        .texture("all", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_block"))).child("slime", models().withExistingParent(blockKey(block).getPath()+"_slime", new ResourceLocation("minecraft:block/cube_all"))
+                        .texture("all", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_slime")).renderType("minecraft:translucent")).end();
         this.simpleBlock(block, builder);
     }
 

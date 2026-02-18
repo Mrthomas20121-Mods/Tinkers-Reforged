@@ -1,6 +1,6 @@
 {
   "parent": "tconstruct:block/template/cube_all_14",
   "textures": {
-    "texture": "tinkers_reforged:block/material/slimebronze_block"
+    "all": "tinkers_reforged:block/material/slimebronze_block"
   }
 }

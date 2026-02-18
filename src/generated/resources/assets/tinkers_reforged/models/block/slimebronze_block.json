@@ -4,14 +4,14 @@
     "metal": {
       "parent": "tconstruct:block/template/cube_all_14",
       "textures": {
-        "texture": "tinkers_reforged:block/material/slimebronze_block"
+        "all": "tinkers_reforged:block/material/slimebronze_block"
       }
     },
     "slime": {
       "parent": "minecraft:block/cube_all",
       "render_type": "minecraft:translucent",
       "textures": {
-        "texture": "tinkers_reforged:block/material/slimebronze_slime"
+        "all": "tinkers_reforged:block/material/slimebronze_slime"
       }
     }
   },
