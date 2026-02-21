@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/thallium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/thallium"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_thallium"
+  },
+  "temperature": 2700,
+  "time": 216
+}

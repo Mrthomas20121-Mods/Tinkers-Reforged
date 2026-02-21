@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/actinium"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_actinium"
+  },
+  "temperature": 1700,
+  "time": 256
+}

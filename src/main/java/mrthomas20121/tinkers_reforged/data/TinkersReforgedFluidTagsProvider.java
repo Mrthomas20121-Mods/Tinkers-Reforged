@@ -24,6 +24,10 @@ public class TinkersReforgedFluidTagsProvider extends FluidTagsProvider {
         for(Metal metal: Metal.values) {
             fluidTag(TinkersReforgedFluids.METALS.get(metal));
         }
+
+        fluidTag(TinkersReforgedFluids.CHARRED_PRISMARINE);
+        fluidTag(TinkersReforgedFluids.MOLTEN_URANOPHANE);
+        fluidTag(TinkersReforgedFluids.MOLTEN_SERANDITE);
     }
 
     private void fluidTag(FluidObject<?> fluid) {

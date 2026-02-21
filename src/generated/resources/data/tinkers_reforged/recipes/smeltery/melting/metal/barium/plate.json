@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/barium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/barium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_barium"
+  },
+  "temperature": 1150,
+  "time": 71
+}

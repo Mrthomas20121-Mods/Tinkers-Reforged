@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/berkelium"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_berkelium"
+  },
+  "temperature": 1200,
+  "time": 216
+}

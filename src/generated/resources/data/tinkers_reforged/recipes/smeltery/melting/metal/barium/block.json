@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/barium"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_barium"
+  },
+  "temperature": 1150,
+  "time": 212
+}

@@ -26,6 +26,14 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
             add(TinkersReforged.makeDescriptionId("fluid", "molten_" + serializedName), "Molten " + capitalize(serializedName));
         }
 
+        add(TinkersReforged.makeDescriptionId("fluid", "charred_prismarine"), "Charred Prismarine");
+        add(TinkersReforged.makeDescriptionId("fluid", "molten_serandite"), "Molten Serandite");
+        add(TinkersReforged.makeDescriptionId("fluid", "molten_uranophane"), "Molten Uranophane");
+
+        add(TinkersReforgedFluids.CHARRED_PRISMARINE.getBucket(), "Charred Prismarine Bucket");
+        add(TinkersReforgedFluids.MOLTEN_SERANDITE.getBucket(), "Molten Serandite Bucket");
+        add(TinkersReforgedFluids.MOLTEN_URANOPHANE.getBucket(), "Molten Uranophane Bucket");
+
         for(Metal metal: Metal.values) {
             String name = capitalize(metal.getSerializedName());
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);

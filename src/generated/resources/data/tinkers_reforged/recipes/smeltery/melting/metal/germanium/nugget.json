@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/germanium"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_germanium"
+  },
+  "temperature": 2700,
+  "time": 36
+}

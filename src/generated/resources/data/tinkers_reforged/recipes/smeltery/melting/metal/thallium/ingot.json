@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/thallium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_thallium"
+  },
+  "temperature": 2700,
+  "time": 108
+}

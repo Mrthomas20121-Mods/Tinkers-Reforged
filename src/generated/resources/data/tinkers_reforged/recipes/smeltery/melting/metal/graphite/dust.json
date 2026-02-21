@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:dusts/graphite"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/graphite"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_graphite"
+  },
+  "temperature": 200,
+  "time": 28
+}

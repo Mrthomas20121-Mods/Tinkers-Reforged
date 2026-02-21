@@ -65,6 +65,7 @@ public class TinkersReforgedBlockstateProvider extends BlockStateProvider {
 
         BlockModelBuilder builder = models().withExistingParent(blockKey(block).getPath(), new ResourceLocation("minecraft:block/block"))
                 .texture("particle", new ResourceLocation(TinkersReforged.MOD_ID, "block/material/slimebronze_block"))
+                .renderType("minecraft:translucent")
                 .customLoader(TinkersReforgedCompositeModelBuilder::new)
                 .child("metal", metalBuilder).child("slime", slimeBuilder).end();
         this.simpleBlock(block, builder);

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/graphite"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/graphite"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_graphite"
+  },
+  "temperature": 200,
+  "time": 76
+}

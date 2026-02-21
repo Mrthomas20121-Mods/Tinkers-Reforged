@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/germanium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/germanium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_germanium"
+  },
+  "temperature": 2700,
+  "time": 108
+}

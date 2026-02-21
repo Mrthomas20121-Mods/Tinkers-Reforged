@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/plate"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/tellurium"
+    }
+  ],
+  "cooling_time": 85,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_tellurium"
+  },
+  "result": {
+    "tag": "forge:plates/tellurium"
+  }
+}

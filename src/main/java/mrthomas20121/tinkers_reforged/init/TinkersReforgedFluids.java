@@ -3,6 +3,7 @@ package mrthomas20121.tinkers_reforged.init;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
@@ -17,6 +18,27 @@ import static slimeknights.mantle.block.fluid.BurningLiquidBlock.createBurning;
 public class TinkersReforgedFluids {
 
     public static FluidDeferredRegisterExtension FLUIDS = new FluidDeferredRegisterExtension(TinkersReforged.MOD_ID);
+
+    public static FlowingFluidObject<ForgeFlowingFluid> CHARRED_PRISMARINE = FLUIDS.registerStone("charred_prismarine")
+            .type(hot("charred_prismarine").temperature(500))
+            .block(createBurning(MapColor.COLOR_LIGHT_BLUE, 12, 10, 2f))
+            .bucket()
+            .commonTag()
+            .flowing();
+
+    public static FlowingFluidObject<ForgeFlowingFluid> MOLTEN_URANOPHANE = FLUIDS.registerMetal("molten_uranophane")
+            .type(hot("molten_uranophane").temperature(500))
+            .block(createBurning(MapColor.COLOR_BLUE, 12, 10, 4f))
+            .bucket()
+            .commonTag()
+            .flowing();
+
+    public static FlowingFluidObject<ForgeFlowingFluid> MOLTEN_SERANDITE = FLUIDS.registerMetal("molten_serandite")
+            .type(hot("molten_serandite").temperature(500))
+            .block(createBurning(MapColor.COLOR_RED, 12, 10, 4f))
+            .bucket()
+            .commonTag()
+            .flowing();
 
     public static EnumMap<Metal, FlowingFluidObject<ForgeFlowingFluid>> METALS = registerEnumMetal();
 

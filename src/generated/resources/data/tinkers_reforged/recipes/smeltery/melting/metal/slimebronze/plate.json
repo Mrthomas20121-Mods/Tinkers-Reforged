@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/slimebronze"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/slimebronze"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_slimebronze"
+  },
+  "temperature": 450,
+  "time": 48
+}

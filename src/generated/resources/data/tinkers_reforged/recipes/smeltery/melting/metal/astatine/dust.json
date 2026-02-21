@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:dusts/astatine"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/astatine"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_astatine"
+  },
+  "temperature": 635,
+  "time": 41
+}

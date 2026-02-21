@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/yttrium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/yttrium"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_yttrium"
+  },
+  "temperature": 555,
+  "time": 104
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/tellurium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_tellurium"
+  },
+  "temperature": 1700,
+  "time": 85
+}

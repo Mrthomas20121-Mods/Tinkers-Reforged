@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:dusts/thallium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/thallium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_thallium"
+  },
+  "temperature": 2700,
+  "time": 81
+}

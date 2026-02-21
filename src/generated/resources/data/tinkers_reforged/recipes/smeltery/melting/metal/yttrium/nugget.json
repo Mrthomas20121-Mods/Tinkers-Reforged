@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/yttrium"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_yttrium"
+  },
+  "temperature": 555,
+  "time": 17
+}

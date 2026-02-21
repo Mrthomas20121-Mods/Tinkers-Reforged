@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:dusts/tellurium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/tellurium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_tellurium"
+  },
+  "temperature": 1700,
+  "time": 64
+}

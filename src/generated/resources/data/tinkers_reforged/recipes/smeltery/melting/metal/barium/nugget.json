@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:nuggets/barium"
+  },
+  "result": {
+    "amount": 10,
+    "tag": "forge:molten_barium"
+  },
+  "temperature": 1150,
+  "time": 24
+}

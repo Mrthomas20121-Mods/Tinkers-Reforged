@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "minecraft:prismarine_stairs"
+    },
+    {
+      "item": "minecraft:prismarine_brick_stairs"
+    },
+    {
+      "item": "minecraft:dark_prismarine_stairs"
+    }
+  ],
+  "result": {
+    "amount": 750,
+    "tag": "forge:charred_prismarine"
+  },
+  "temperature": 200,
+  "time": 109
+}

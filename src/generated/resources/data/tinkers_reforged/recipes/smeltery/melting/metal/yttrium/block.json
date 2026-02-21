@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/yttrium"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_yttrium"
+  },
+  "temperature": 555,
+  "time": 156
+}

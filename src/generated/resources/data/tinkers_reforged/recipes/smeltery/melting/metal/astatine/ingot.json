@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/astatine"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_astatine"
+  },
+  "temperature": 635,
+  "time": 55
+}

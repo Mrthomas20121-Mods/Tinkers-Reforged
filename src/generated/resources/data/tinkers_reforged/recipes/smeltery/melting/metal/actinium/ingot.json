@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/actinium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_actinium"
+  },
+  "temperature": 1700,
+  "time": 85
+}

@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/germanium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/germanium"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_germanium"
+  },
+  "temperature": 2700,
+  "time": 216
+}

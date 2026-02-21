@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/plate"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/graphite"
+    }
+  ],
+  "cooling_time": 38,
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_graphite"
+  },
+  "result": {
+    "tag": "forge:plates/graphite"
+  }
+}

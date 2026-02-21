@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/berkelium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/berkelium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_berkelium"
+  },
+  "temperature": 1200,
+  "time": 72
+}

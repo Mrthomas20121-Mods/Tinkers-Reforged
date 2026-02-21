@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cooling_time": 164,
+  "fluid": {
+    "amount": 810,
+    "tag": "forge:molten_astatine"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/astatine"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/slimebronze"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_slimebronze"
+  },
+  "temperature": 450,
+  "time": 48
+}

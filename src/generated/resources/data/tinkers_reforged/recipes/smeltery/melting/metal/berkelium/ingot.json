@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:ingots/berkelium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_berkelium"
+  },
+  "temperature": 1200,
+  "time": 72
+}

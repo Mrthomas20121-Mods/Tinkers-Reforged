@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/actinium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/actinium"
+  },
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_actinium"
+  },
+  "temperature": 1700,
+  "time": 171
+}

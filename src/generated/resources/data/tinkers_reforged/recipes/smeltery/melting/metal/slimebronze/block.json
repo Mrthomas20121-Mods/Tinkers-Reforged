@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "tag": "forge:storage_blocks/slimebronze"
+  },
+  "result": {
+    "amount": 810,
+    "tag": "forge:molten_slimebronze"
+  },
+  "temperature": 450,
+  "time": 144
+}

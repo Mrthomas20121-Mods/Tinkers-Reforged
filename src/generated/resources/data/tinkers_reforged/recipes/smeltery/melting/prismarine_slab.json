@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": [
+    {
+      "item": "minecraft:prismarine_slab"
+    },
+    {
+      "item": "minecraft:prismarine_brick_slab"
+    },
+    {
+      "item": "minecraft:dark_prismarine_slab"
+    }
+  ],
+  "result": {
+    "amount": 500,
+    "tag": "forge:charred_prismarine"
+  },
+  "temperature": 200,
+  "time": 89
+}

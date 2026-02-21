@@ -35,7 +35,6 @@ public class TinkersReforgedItems {
 
     private static void displayMetals(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output tab) {
         for(Metal metal: Metal.values) {
-            String name = metal.getSerializedName();
             BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);
 
@@ -63,6 +62,12 @@ public class TinkersReforgedItems {
             tab.accept(itemMetalObject.getDust());
             tab.accept(itemMetalObject.getPlate());
             tab.accept(itemMetalObject.getGear());
+        }
+
+        tab.accept(TinkersReforgedFluids.CHARRED_PRISMARINE.getBucket());
+        tab.accept(TinkersReforgedFluids.MOLTEN_SERANDITE.getBucket());
+        tab.accept(TinkersReforgedFluids.MOLTEN_URANOPHANE.getBucket());
+        for(Metal metal: Metal.values) {
             tab.accept(TinkersReforgedFluids.METALS.get(metal).getBucket());
         }
     }

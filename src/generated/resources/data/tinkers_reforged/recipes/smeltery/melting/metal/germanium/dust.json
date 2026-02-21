@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:dusts/germanium"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/germanium"
+  },
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_germanium"
+  },
+  "temperature": 2700,
+  "time": 81
+}

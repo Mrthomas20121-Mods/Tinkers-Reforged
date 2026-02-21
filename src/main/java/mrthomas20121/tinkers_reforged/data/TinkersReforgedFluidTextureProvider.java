@@ -29,6 +29,10 @@ public class TinkersReforgedFluidTextureProvider extends AbstractFluidTexturePro
                 alloy(fluidObject);
             }
         }
+
+        moltenSpecialFolder(TinkersReforgedFluids.CHARRED_PRISMARINE, "stone");
+        alloy(TinkersReforgedFluids.MOLTEN_SERANDITE);
+        alloy(TinkersReforgedFluids.MOLTEN_URANOPHANE);
     }
 
     @Override
@@ -55,6 +59,11 @@ public class TinkersReforgedFluidTextureProvider extends AbstractFluidTexturePro
     /** Creates a texture in given subfolder of molten, stripping molten from the name */
     private FluidTexture.Builder moltenFolder(FluidObject<?> fluid, String folder) {
         return named(fluid, "molten/" + folder + "/" + withoutMolten(fluid));
+    }
+
+    /** Creates a texture in given subfolder of molten */
+    private FluidTexture.Builder moltenSpecialFolder(FluidObject<?> fluid, String folder) {
+        return named(fluid, "molten/" + folder + "/" + fluid.getId().getPath());
     }
 
     /** Creates a texture in the alloy folder using the given name */
