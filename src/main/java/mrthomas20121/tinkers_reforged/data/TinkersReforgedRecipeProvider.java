@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.data;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.TinkersReforgedByproduct;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
 import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
 import mrthomas20121.tinkers_reforged.api.holder.BlockOreObject;
@@ -11,6 +12,7 @@ import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -21,11 +23,15 @@ import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.data.IRecipeHelper;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
+import slimeknights.tconstruct.library.data.recipe.IByproduct;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
+import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+import slimeknights.tconstruct.smeltery.data.Byproduct;
 
 import java.util.function.Consumer;
 
@@ -47,22 +53,49 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
 
             LOGGER.info(fluid.getId().toString());
 
-            if(metal.isOre()) {
-                metal(consumer, fluid).ore().metal().dust().gear().plate();
+            if(metal.equals(Metal.BARIUM)) {
+                metal(consumer, fluid).ore(Byproduct.DEBRIS).metal().dust().gear().plate();
+            }
+            else if(metal.equals(Metal.YTTRIUM)) {
+                metal(consumer, fluid).ore(TinkersReforgedByproduct.GRAPHITE).metal().dust().gear().plate();
+            }
+            else if(metal.equals(Metal.THALLIUM)) {
+                metal(consumer, fluid).ore(Byproduct.IRON).metal().dust().gear().plate();
             }
             else {
                 metal(consumer, fluid).metal().dust().gear().plate();
             }
         }
 
-        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE, Blocks.PRISMARINE_BRICKS, Blocks.DARK_PRISMARINE), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK).save(consumer, location("smeltery/melting/prismarine"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_SLAB, Blocks.PRISMARINE_BRICK_SLAB, Blocks.DARK_PRISMARINE_SLAB), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK/2).save(consumer, location("smeltery/melting/prismarine_slab"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_STAIRS, Blocks.PRISMARINE_BRICK_STAIRS, Blocks.DARK_PRISMARINE_STAIRS), TinkersReforgedFluids.CHARRED_PRISMARINE, 750).save(consumer, location("smeltery/melting/prismarine_stairs"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Items.PRISMARINE_SHARD, Items.PRISMARINE_CRYSTALS), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK).save(consumer, location("smeltery/melting/prismarine_shard"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE, Blocks.DARK_PRISMARINE), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK).save(consumer, location("smeltery/melting/prismarine"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_SLAB, Blocks.DARK_PRISMARINE_SLAB), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK/2).save(consumer, location("smeltery/melting/prismarine_slab"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_STAIRS, Blocks.DARK_PRISMARINE_STAIRS), TinkersReforgedFluids.CHARRED_PRISMARINE, 750).save(consumer, location("smeltery/melting/prismarine_stairs"));
+
+        // special cases for prismarine brick because for some reason vanilla craft it from 9 shard
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_BRICKS), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK*9).save(consumer, location("smeltery/melting/prismarine_brick"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_BRICK_SLAB), TinkersReforgedFluids.CHARRED_PRISMARINE, (FluidValues.BRICK*9)/2).save(consumer, location("smeltery/melting/prismarine_brick_slab"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_BRICK_STAIRS), TinkersReforgedFluids.CHARRED_PRISMARINE, (FluidValues.BRICK*9)/3).save(consumer, location("smeltery/melting/prismarine_brick_stairs"));
+
+        ItemCastingRecipeBuilder.basinRecipe(Blocks.PRISMARINE)
+                .setFluidAndTime(TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK)
+                .save(consumer, location("smeltery/casting/prismarine"));
+
+        ItemCastingRecipeBuilder.tableRecipe(Items.PRISMARINE_SHARD)
+                .setCast(TinkerSmeltery.gemCast.getMultiUseTag(), false)
+                .setFluidAndTime(TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK)
+                .save(consumer, location("smeltery/casting/prismarine_shard_gold"));
+
+        ItemCastingRecipeBuilder.tableRecipe(Items.PRISMARINE_SHARD)
+                .setCast(TinkerSmeltery.gemCast.getSingleUseTag(), true)
+                .setFluidAndTime(TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK)
+                .save(consumer, location("smeltery/casting/prismarine_shard_sand"));
 
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.SLIMEBRONZE), FluidValues.INGOT*2)
                 .addInput(TinkersReforgedFluids.CHARRED_PRISMARINE.getCommonTag(), FluidValues.BRICK_BLOCK)
                 .addInput(TinkerFluids.moltenCopper.getCommonTag(), FluidValues.INGOT*2)
-                .addInput(new FluidStack(TinkerFluids.earthSlime.get(), FluidValues.SLIMEBALL*2));
+                .addInput(new FluidStack(TinkerFluids.earthSlime.get(), FluidValues.SLIMEBALL*2))
+                .save(consumer, location("smeltery/melting/alloy/slimebronze"));
     }
 
     private void metalCraftingRecipes(Metal metal, String metalName, ItemMetalObject itemMetalObject, BlockMetalObject blockMetalObject, Consumer<FinishedRecipe> consumer) {

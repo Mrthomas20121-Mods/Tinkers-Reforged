@@ -25,6 +25,7 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(event.includeServer(), new TinkersReforgedItemTagsProvider(packOutput, lookupProvider, provider.contentsGetter(), existingFileHelper));
         dataGenerator.addProvider(event.includeServer(), new TinkersReforgedFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
         dataGenerator.addProvider(event.includeServer(), new TinkersReforgedRecipeProvider(packOutput));
+        dataGenerator.addProvider(event.includeServer(), new TinkersReforgedModifierProvider(packOutput));
 
         // client
         dataGenerator.addProvider(event.includeClient(), new TinkersReforgedLangProvider(packOutput));

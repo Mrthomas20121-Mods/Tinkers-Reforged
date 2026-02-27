@@ -9,6 +9,7 @@ import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.common.TinkerTags;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -23,6 +24,7 @@ public class TinkersReforgedFluidTagsProvider extends FluidTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         for(Metal metal: Metal.values) {
             fluidTag(TinkersReforgedFluids.METALS.get(metal));
+            tag(TinkerTags.Fluids.METAL_TOOLTIPS).add(TinkersReforgedFluids.METALS.get(metal).get());
         }
 
         fluidTag(TinkersReforgedFluids.CHARRED_PRISMARINE);

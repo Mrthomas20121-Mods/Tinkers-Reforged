@@ -1,20 +1,24 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.data.TinkersReforgedDatagen;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedAttributes;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
-import mrthomas20121.tinkers_reforged.module.MiningFrenzyModule;
-import mrthomas20121.tinkers_reforged.module.OverfractureModule;
-import mrthomas20121.tinkers_reforged.module.AttackFrenzyModule;
+import mrthomas20121.tinkers_reforged.module.*;
+import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedLivingEntityPredicates;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 
 @Mod(TinkersReforged.MOD_ID)
@@ -35,6 +39,7 @@ public class TinkersReforged {
 		TinkersReforgedFluids.FLUIDS.register(bus);
 		bus.addListener(TinkersReforgedDatagen::init);
 		bus.addListener(this::registerSerializers);
+		TinkersReforgedEvents.init();
 	}
 
 	public static ResourceLocation getResource(String resource) {
@@ -51,6 +56,11 @@ public class TinkersReforged {
 			ModifierModule.LOADER.register(getResource("overfracture"), OverfractureModule.LOADER);
 			ModifierModule.LOADER.register(getResource("attack_frenzy"), AttackFrenzyModule.LOADER);
 			ModifierModule.LOADER.register(getResource("mining_frenzy"), MiningFrenzyModule.LOADER);
+			ModifierModule.LOADER.register(getResource("triad"), TriadModule.LOADER);
+			ModifierModule.LOADER.register(getResource("roaring"), RoaringModule.LOADER);
+			ModifierModule.LOADER.register(getResource("fiery_favor"), FieryFavorModule.LOADER);
+
+			LivingEntityPredicate.LOADER.register(getResource("living_entity_above_sea_level"), TinkersReforgedLivingEntityPredicates.LivingEntityAboveSeaLevelPredicate.getLoader());
 		}
 	}
 }

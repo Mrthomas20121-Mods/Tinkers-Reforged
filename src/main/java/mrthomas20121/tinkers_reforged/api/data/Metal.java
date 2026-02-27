@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 import java.util.Locale;
 
@@ -33,16 +34,22 @@ public enum Metal implements StringRepresentable {
     private final boolean isOre;
     private final int temperature;
     private final MapColor mapColor;
+    private final MaterialId id;
 
     Metal(boolean isOre, int temp, MapColor mapColor) {
         this.metalTags = new MetalTagData(new ResourceLocation(TinkersReforged.MOD_ID, this.serializedName), isOre);
         this.isOre = isOre;
         this.temperature = temp;
         this.mapColor = mapColor;
+        this.id = new MaterialId(TinkersReforged.MOD_ID, this.serializedName);
     }
 
     Metal(int temperature, MapColor mapColor) {
         this(false, temperature, mapColor);
+    }
+
+    public MaterialId asMaterial() {
+        return this.id;
     }
 
     public boolean isOre() {
