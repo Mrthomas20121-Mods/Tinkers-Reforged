@@ -79,13 +79,33 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
         buildModifier(TinkersReforgedModifierIds.FIERY_FAVOR)
                 .addModule(new FieryFavorModule(LevelingInt.eachLevel(1)));
 
+        buildModifier(TinkersReforgedModifierIds.SUBAQUATIC)
+                .addModule(new SubAquaticModule(LevelingInt.eachLevel(3)));
+
         // armor
 
         buildModifier(TinkersReforgedModifierIds.LANDING_PAD)
-                .addModule(MaxArmorAttributeModule.builder(TinkersReforgedAttributes.ENDER_PEARL_REDUCTION, AttributeModifier.Operation.ADDITION).eachLevel(0.1f));
+                .addModule(AttributeModule.builder(TinkersReforgedAttributes.ENDER_PEARL_REDUCTION, AttributeModifier.Operation.ADDITION).eachLevel(0.1f));
 
         buildModifier(TinkersReforgedModifierIds.SAFEGUARD)
                 .addModule(AttributeModule.builder(Attributes.ARMOR, AttributeModifier.Operation.ADDITION)
+                        .tooltipStyle(AttributeModule.TooltipStyle.PERCENT)
+                        .formula()
+                        // square root of the lost durability, though stat multiplier reduces the effectiveness
+                        .customVariable("lost", ToolVariable.CURRENT_DAMAGE)
+                        .customVariable("max", new StatMultiplierVariable(ToolStats.DURABILITY))
+                        .divide().sqrt()
+                        // multiply effect by level of trait
+                        .variable(LEVEL).multiply()
+                        // we get a percent per value remaining
+                        .constant(0.01f).multiply()
+                        .constant(1).add()
+                        // multiply into the final value
+                        .variable(VALUE).multiply().build()
+                );
+
+        buildModifier(TinkersReforgedModifierIds.PATHFINDING)
+                .addModule(AttributeModule.builder(ForgeMod.SWIM_SPEED.get(), AttributeModifier.Operation.ADDITION)
                         .tooltipStyle(AttributeModule.TooltipStyle.PERCENT)
                         .formula()
                         // square root of the lost durability, though stat multiplier reduces the effectiveness
