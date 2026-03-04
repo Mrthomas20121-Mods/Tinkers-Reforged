@@ -26,6 +26,7 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(event.includeServer(), new TinkersReforgedFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
         dataGenerator.addProvider(event.includeServer(), new TinkersReforgedRecipeProvider(packOutput));
         dataGenerator.addProvider(event.includeServer(), new TinkersReforgedModifierProvider(packOutput));
+        dataGenerator.addProvider(event.includeServer(), new TinkersReforgedRegistrySets(packOutput, lookupProvider));
 
         // client
         dataGenerator.addProvider(event.includeClient(), new TinkersReforgedLangProvider(packOutput));
@@ -34,5 +35,6 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(event.includeClient(), new TinkersReforgedFluidTextureProvider(packOutput));
         dataGenerator.addProvider(event.includeClient(), new FluidBucketModelProvider(packOutput, TinkersReforged.MOD_ID));
         dataGenerator.addProvider(event.includeClient(), new FluidBlockstateModelProvider(packOutput, TinkersReforged.MOD_ID));
+        dataGenerator.addProvider(event.includeClient(), new TinkersReforgedColorGenerator(packOutput));
     }
 }
