@@ -1,7 +1,6 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.data.TinkersReforgedDatagen;
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedAttributes;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
@@ -9,9 +8,6 @@ import mrthomas20121.tinkers_reforged.module.*;
 import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedLivingEntityPredicates;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -54,13 +50,14 @@ public class TinkersReforged {
 	public void registerSerializers(RegisterEvent event) {
 		if (event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
 			ModifierModule.LOADER.register(getResource("overfracture"), OverfractureModule.LOADER);
-			ModifierModule.LOADER.register(getResource("attack_frenzy"), AttackFrenzyModule.LOADER);
-			ModifierModule.LOADER.register(getResource("mining_frenzy"), MiningFrenzyModule.LOADER);
+			ModifierModule.LOADER.register(getResource("tunneling"), TunnelingModule.LOADER);
 			ModifierModule.LOADER.register(getResource("triad"), TriadModule.LOADER);
-			ModifierModule.LOADER.register(getResource("roaring"), RoaringModule.LOADER);
-			ModifierModule.LOADER.register(getResource("fiery_favor"), FieryFavorModule.LOADER);
+			ModifierModule.LOADER.register(getResource("roast"), RoastModule.LOADER);
+			ModifierModule.LOADER.register(getResource("flaming"), FlamingModule.LOADER);
+			ModifierModule.LOADER.register(getResource("pitching"), PitchingModule.LOADER);
 
-			LivingEntityPredicate.LOADER.register(getResource("living_entity_above_sea_level"), TinkersReforgedLivingEntityPredicates.LivingEntityAboveSeaLevelPredicate.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("above_sea_level"), TinkersReforgedLivingEntityPredicates.ABOVE_SEA_LEVEL.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("baby"), TinkersReforgedLivingEntityPredicates.BABY.getLoader());
 		}
 	}
 }
