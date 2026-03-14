@@ -27,14 +27,14 @@ public class TinkersReforgedFluids {
             .flowing();
 
     public static FlowingFluidObject<ForgeFlowingFluid> MOLTEN_URANOPHANE = FLUIDS.registerMetal("molten_uranophane")
-            .type(hot("molten_uranophane").temperature(500))
+            .type(hot("molten_uranophane").temperature(2300))
             .block(createBurning(MapColor.COLOR_BLUE, 12, 10, 4f))
             .bucket()
             .commonTag()
             .flowing();
 
     public static FlowingFluidObject<ForgeFlowingFluid> MOLTEN_SERANDITE = FLUIDS.registerMetal("molten_serandite")
-            .type(hot("molten_serandite").temperature(500))
+            .type(hot("molten_serandite").temperature(3300))
             .block(createBurning(MapColor.COLOR_RED, 12, 10, 4f))
             .bucket()
             .commonTag()
