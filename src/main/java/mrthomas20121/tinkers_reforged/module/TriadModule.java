@@ -33,11 +33,13 @@ public record TriadModule(LevelingInt consumed) implements ModifierModule, Melee
     public float getMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
 
         if(context.getLivingTarget() != null) {
+            // get extra damage from modifiers
+            float bonusDamage = damage-baseDamage;
             LivingEntity entity = context.getLivingTarget();
             float level = modifier.getEffectiveLevel();
             int target = this.consumed.compute(level);
-            float dmg = target+entity.getMaxHealth()+entity.getArmorValue();
-            return 0.2f*dmg;
+            float dmg = target+entity.getMaxHealth();
+            return (0.2f*dmg)+bonusDamage;
         }
 
         return damage;

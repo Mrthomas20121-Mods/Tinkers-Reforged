@@ -11,24 +11,20 @@ import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
-import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.build.ModifierTraitHook;
 import slimeknights.tconstruct.library.modifiers.modules.ModifierModule;
 import slimeknights.tconstruct.library.module.HookProvider;
 import slimeknights.tconstruct.library.module.ModuleHook;
-import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
-import slimeknights.tconstruct.tools.TinkerModifiers;
 
 import java.util.List;
 
 import static slimeknights.tconstruct.library.tools.capability.fluid.ToolTankHelper.TANK_HELPER;
 
-public record EnderThrowModule(LevelingInt consumed) implements ModifierModule, RightClickModifierHook {
+public record PitchingModule(LevelingInt consumed) implements ModifierModule, RightClickModifierHook {
 
-    public static final RecordLoadable<EnderThrowModule> LOADER = RecordLoadable.create(
-            LevelingInt.LOADABLE.requiredField("consumed", EnderThrowModule::consumed),
-            EnderThrowModule::new);
+    public static final RecordLoadable<PitchingModule> LOADER = RecordLoadable.create(
+            LevelingInt.LOADABLE.requiredField("consumed", PitchingModule::consumed),
+            PitchingModule::new);
 
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.defaultHooks(TinkersReforgedModifierHooks.RIGHT_CLICK);
 

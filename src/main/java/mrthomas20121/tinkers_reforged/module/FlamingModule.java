@@ -15,11 +15,11 @@ import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 import java.util.List;
 
-public record FieryFavorModule(LevelingInt consumed) implements ModifierModule, ToolDamageModifierHook {
+public record FlamingModule(LevelingInt consumed) implements ModifierModule, ToolDamageModifierHook {
 
-    public static final RecordLoadable<FieryFavorModule> LOADER = RecordLoadable.create(
-            LevelingInt.LOADABLE.requiredField("consumed", FieryFavorModule::consumed),
-            FieryFavorModule::new);
+    public static final RecordLoadable<FlamingModule> LOADER = RecordLoadable.create(
+            LevelingInt.LOADABLE.requiredField("consumed", FlamingModule::consumed),
+            FlamingModule::new);
 
     private static final List<ModuleHook<?>> DEFAULT_HOOKS = HookProvider.defaultHooks(ModifierHooks.TOOL_DAMAGE);
 

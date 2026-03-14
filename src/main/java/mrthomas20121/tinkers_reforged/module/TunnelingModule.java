@@ -14,7 +14,6 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
-import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeDamageModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedContext;
@@ -31,11 +30,11 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public record MiningFrenzyModule(LevelingInt consumed) implements ModifierModule, ToolStatsHook, BreakSpeedModifierHook, MeleeHitModifierHook, TooltipModifierHook {
+public record TunnelingModule(LevelingInt consumed) implements ModifierModule, ToolStatsHook, BreakSpeedModifierHook, MeleeHitModifierHook, TooltipModifierHook {
 
-    public static final RecordLoadable<MiningFrenzyModule> LOADER = RecordLoadable.create(
-            LevelingInt.LOADABLE.requiredField("consumed", MiningFrenzyModule::consumed),
-            MiningFrenzyModule::new);
+    public static final RecordLoadable<TunnelingModule> LOADER = RecordLoadable.create(
+            LevelingInt.LOADABLE.requiredField("consumed", TunnelingModule::consumed),
+            TunnelingModule::new);
 
     public static ResourceLocation KEY = TinkersReforged.getResource("extra_mining_speed");
 
