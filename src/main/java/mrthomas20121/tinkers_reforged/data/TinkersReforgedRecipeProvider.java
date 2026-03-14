@@ -24,24 +24,30 @@ import slimeknights.mantle.recipe.data.IRecipeHelper;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
+import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
 import slimeknights.tconstruct.library.data.recipe.SmelteryRecipeBuilder;
+import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.alloying.AlloyRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
+import slimeknights.tconstruct.library.recipe.fuel.MeltingFuelBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.smeltery.data.Byproduct;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import java.util.function.Consumer;
 
-public class TinkersReforgedRecipeProvider extends RecipeProvider implements IConditionBuilder, IRecipeHelper, ISmelteryRecipeHelper {
+public class TinkersReforgedRecipeProvider extends RecipeProvider implements IConditionBuilder, IRecipeHelper, ISmelteryRecipeHelper, IMaterialRecipeHelper {
     public TinkersReforgedRecipeProvider(PackOutput generator) {
         super(generator);
     }
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        String materialFolder = "tools/materials/";
+
         for(Metal metal: Metal.values) {
             String metalName = metal.getSerializedName();
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);
@@ -65,6 +71,10 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
             else {
                 metal(consumer, fluid).metal().dust().gear().plate();
             }
+
+            MaterialId material = metal.asMaterial();
+            metalMaterialRecipe(consumer, material, materialFolder, metalName, false);
+            materialMeltingCasting(consumer, material, TinkersReforgedFluids.METALS.get(metal), "smeltery/");
         }
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.PRISMARINE_SHARD, Items.PRISMARINE_CRYSTALS), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK).save(consumer, location("smeltery/melting/prismarine_shard"));
@@ -91,11 +101,21 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
                 .setFluidAndTime(TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK)
                 .save(consumer, location("smeltery/casting/prismarine_shard_sand"));
 
+        materialMeltingCasting(consumer, MaterialIds.prismarine, TinkersReforgedFluids.CHARRED_PRISMARINE, "smeltery/");
+
         AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.SLIMEBRONZE), FluidValues.INGOT*2)
                 .addInput(TinkersReforgedFluids.CHARRED_PRISMARINE.getCommonTag(), FluidValues.BRICK_BLOCK)
                 .addInput(TinkerFluids.moltenCopper.getCommonTag(), FluidValues.INGOT*2)
                 .addInput(new FluidStack(TinkerFluids.earthSlime.get(), FluidValues.SLIMEBALL*2))
                 .save(consumer, location("smeltery/melting/alloy/slimebronze"));
+
+        MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_URANOPHANE.get(), 50), 175)
+                .save(consumer, location("smeltery/melting/fuel/molten_serandite"));
+
+        MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_SERANDITE.get(), 50), 200)
+                .save(consumer, location("smeltery/melting/fuel/molten_serandite"));
+
+
     }
 
     private void metalCraftingRecipes(Metal metal, String metalName, ItemMetalObject itemMetalObject, BlockMetalObject blockMetalObject, Consumer<FinishedRecipe> consumer) {

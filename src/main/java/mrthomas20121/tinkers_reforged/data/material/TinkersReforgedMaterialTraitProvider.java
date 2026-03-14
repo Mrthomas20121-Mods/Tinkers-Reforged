@@ -1,16 +1,14 @@
 package mrthomas20121.tinkers_reforged.data.material;
 
-import mrthomas20121.tinkers_reforged.api.TinkersReforgedModifierIds;
+import mrthomas20121.tinkers_reforged.data.TinkersReforgedModifierIds;
 import mrthomas20121.tinkers_reforged.api.data.Metal;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
-import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 
-import static slimeknights.tconstruct.library.materials.MaterialRegistry.AMMO;
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.ARMOR;
 import static slimeknights.tconstruct.library.materials.MaterialRegistry.MELEE_HARVEST;
-import static slimeknights.tconstruct.library.materials.MaterialRegistry.RANGED;
 
 public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitDataProvider {
 
@@ -20,8 +18,34 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
 
     @Override
     protected void addMaterialTraits() {
-        material(Metal.YTTRIUM.asMaterial()).addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.MINING_FRENZY);
-        material(Metal.THALLIUM.asMaterial()).addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.IONIZE);
+        material(Metal.SLIMEBRONZE.asMaterial())
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.OVERFRACTURE, TinkerModifiers.overslime.getId());
+        material(Metal.GRAPHITE.asMaterial())
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SURFACE_RESOURCES)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.LAND_PROTECTION);
+        material(Metal.YTTRIUM.asMaterial())
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.TUNNELING)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.SAFEGUARD);
+        material(Metal.ASTATINE.asMaterial())
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SUBAQUATIC)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.SPEED_ORBIT);
+        material(Metal.BARIUM.asMaterial())
+                .addDefaultTraits(TinkersReforgedModifierIds.FRAIL);
+        material(Metal.TELLURIUM.asMaterial())
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.TRIAD)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.AIR_RESISTANCE);
+        material(Metal.ACTINIUM.asMaterial())
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.FLAMING)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.ROAST);
+        material(Metal.THALLIUM.asMaterial())
+                .addDefaultTraits(TinkersReforgedModifierIds.IONIZE)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.LUNGFUL);
+        material(Metal.BERKELIUM.asMaterial())
+                .addDefaultTraits(TinkersReforgedModifierIds.CLOSE_COMBAT)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.SMALL_PROTECTION);
+        material(Metal.GERMANIUM.asMaterial())
+                .addDefaultTraits(TinkersReforgedModifierIds.PITCHING)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.LANDING_PAD);
     }
 
     @Override
