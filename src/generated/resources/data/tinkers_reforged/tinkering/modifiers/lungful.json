@@ -1,0 +1,14 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:protection",
+      "damage_source": {
+        "type": "mantle:damage_type",
+        "name": "minecraft:dragon_breath"
+      },
+      "each_level": 6.0
+    }
+  ],
+  "tooltip_display": "always"
+}

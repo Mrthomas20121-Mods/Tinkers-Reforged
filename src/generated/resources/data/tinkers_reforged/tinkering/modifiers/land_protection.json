@@ -1,0 +1,12 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:protection",
+      "damage_source": "mantle:can_protect",
+      "each_level": 2.0,
+      "wearing_entity": "tinkers_reforged:above_sea_level"
+    }
+  ],
+  "tooltip_display": "always"
+}

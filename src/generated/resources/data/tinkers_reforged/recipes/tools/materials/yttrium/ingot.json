@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:ingots/yttrium"
+  },
+  "material": "tinkers_reforged:yttrium",
+  "needed": 1,
+  "value": 1
+}

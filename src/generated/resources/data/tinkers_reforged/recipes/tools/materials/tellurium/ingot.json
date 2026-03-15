@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:ingots/tellurium"
+  },
+  "material": "tinkers_reforged:tellurium",
+  "needed": 1,
+  "value": 1
+}

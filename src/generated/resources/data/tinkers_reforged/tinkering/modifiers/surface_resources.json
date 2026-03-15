@@ -1,0 +1,20 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:main_hand_harvest_enchantment",
+      "condition_flag": "tinkers_reforged:fortune_surface_resources",
+      "holder": "tinkers_reforged:above_sea_level",
+      "level": 1,
+      "modifier_level": {
+        "max": 3
+      },
+      "name": "minecraft:fortune",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

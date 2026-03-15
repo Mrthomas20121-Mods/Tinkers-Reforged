@@ -1,0 +1,15 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:protection",
+      "attacker": {
+        "type": "mantle:inverted",
+        "inverted_type": "mantle:on_ground"
+      },
+      "damage_source": "mantle:can_protect",
+      "each_level": 2.0
+    }
+  ],
+  "tooltip_display": "always"
+}

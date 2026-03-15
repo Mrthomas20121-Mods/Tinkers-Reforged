@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_coniferous",
+  "features": "tinkers_reforged:yttrium_ore_coniferous",
+  "step": "underground_ores"
+}

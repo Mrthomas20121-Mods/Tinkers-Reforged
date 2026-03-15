@@ -1,0 +1,12 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_reforged:overfracture",
+      "consumed": {
+        "each_level": 4
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

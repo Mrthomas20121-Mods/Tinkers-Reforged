@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/barium"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/barium"
+  },
+  "material": "tinkers_reforged:barium",
+  "needed": 1,
+  "value": 9
+}

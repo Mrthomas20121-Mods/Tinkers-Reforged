@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_reforged:roast"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_reforged:flaming"
+      }
+    ]
+  }
+}

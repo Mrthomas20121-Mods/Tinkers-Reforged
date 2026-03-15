@@ -1,0 +1,17 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:mob_effect",
+      "effect": "minecraft:weakness",
+      "level": {
+        "per_level": 0.5
+      },
+      "time": {
+        "flat": 20.0,
+        "per_level": 20.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

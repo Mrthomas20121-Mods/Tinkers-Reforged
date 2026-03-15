@@ -1,9 +1,9 @@
 {
-  "type": "tconstruct:casting_basin",
-  "cooling_time": 126,
+  "type": "tconstruct:material_fluid",
   "fluid": {
-    "amount": 1000,
+    "amount": 90,
     "tag": "forge:charred_prismarine"
   },
-  "result": "minecraft:prismarine"
+  "output": "tconstruct:prismarine",
+  "temperature": 200
 }

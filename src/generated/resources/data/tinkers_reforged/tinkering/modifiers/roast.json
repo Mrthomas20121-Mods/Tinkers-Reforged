@@ -1,0 +1,13 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tinkers_reforged:roast",
+      "consumed": {
+        "each_level": 1
+      },
+      "predicate": "mantle:on_fire"
+    }
+  ],
+  "tooltip_display": "always"
+}

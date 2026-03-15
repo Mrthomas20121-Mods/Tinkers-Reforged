@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 270,
+      "tag": "forge:molten_thallium"
+    },
+    {
+      "amount": 90,
+      "tag": "forge:molten_netherite"
+    }
+  ],
+  "result": {
+    "amount": 360,
+    "tag": "forge:molten_berkelium"
+  },
+  "temperature": 1200
+}

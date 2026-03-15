@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_thallium",
+  "description": {
+    "color": "#28373C",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.thallium"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:thallium_ingot",
+  "item_model_index": 1.0
+}

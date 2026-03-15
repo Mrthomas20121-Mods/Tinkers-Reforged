@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#forge:storage_blocks/slimebronze",
+    "#forge:storage_blocks/graphite",
+    "#forge:storage_blocks/yttrium",
+    "#forge:storage_blocks/barium",
+    "#forge:storage_blocks/astatine",
+    "#forge:storage_blocks/tellurium",
+    "#forge:storage_blocks/germanium",
+    "#forge:storage_blocks/berkelium",
+    "#forge:storage_blocks/actinium",
+    "#forge:storage_blocks/thallium"
+  ]
+}

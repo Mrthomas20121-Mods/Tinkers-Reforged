@@ -1,0 +1,23 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:armor_harvest_enchantment",
+      "holder": "mantle:on_fire",
+      "level": 1,
+      "modifier_level": {
+        "max": 3
+      },
+      "name": "minecraft:fortune",
+      "slots": [
+        "head",
+        "feet"
+      ],
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

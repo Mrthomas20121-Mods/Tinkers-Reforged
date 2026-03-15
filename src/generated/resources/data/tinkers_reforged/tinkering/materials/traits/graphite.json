@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_reforged:land_protection"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_reforged:surface_resources"
+      }
+    ]
+  }
+}

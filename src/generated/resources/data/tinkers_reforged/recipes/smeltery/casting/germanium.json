@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_germanium"
+  },
+  "output": "tinkers_reforged:germanium",
+  "temperature": 2700
+}

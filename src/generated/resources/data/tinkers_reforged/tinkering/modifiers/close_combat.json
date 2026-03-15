@@ -1,0 +1,26 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:stat_boost",
+      "each_level": 4.0,
+      "operation": "add",
+      "stat": "tconstruct:attack_damage"
+    },
+    {
+      "type": "tconstruct:attribute",
+      "attribute": "forge:entity_reach",
+      "each_level": -0.5,
+      "operation": "addition",
+      "slots": [
+        "mainhand",
+        "offhand",
+        "feet",
+        "legs",
+        "chest",
+        "head"
+      ]
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:graphite",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_graphite"
+  },
+  "temperature": 200
+}

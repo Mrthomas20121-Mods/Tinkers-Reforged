@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_graphite",
+  "description": {
+    "color": "#1C1C20",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.graphite"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:graphite_ingot",
+  "item_model_index": 0.3
+}

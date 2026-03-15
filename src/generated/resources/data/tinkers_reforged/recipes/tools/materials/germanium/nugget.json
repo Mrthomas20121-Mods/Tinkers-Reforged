@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:nuggets/germanium"
+  },
+  "material": "tinkers_reforged:germanium",
+  "needed": 9,
+  "value": 1
+}

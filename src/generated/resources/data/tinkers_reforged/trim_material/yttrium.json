@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_yttrium",
+  "description": {
+    "color": "#451318",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.yttrium"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:yttrium_ingot",
+  "item_model_index": 0.4
+}

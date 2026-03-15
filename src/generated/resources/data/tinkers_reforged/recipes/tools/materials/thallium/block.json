@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/thallium"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/thallium"
+  },
+  "material": "tinkers_reforged:thallium",
+  "needed": 1,
+  "value": 9
+}

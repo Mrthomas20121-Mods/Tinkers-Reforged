@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_astatine",
+  "description": {
+    "color": "#E99475",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.astatine"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:astatine_ingot",
+  "item_model_index": 0.2
+}

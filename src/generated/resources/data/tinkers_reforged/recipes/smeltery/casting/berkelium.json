@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_berkelium"
+  },
+  "output": "tinkers_reforged:berkelium",
+  "temperature": 1200
+}

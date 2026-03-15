@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/yttrium"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/yttrium"
+  },
+  "material": "tinkers_reforged:yttrium",
+  "needed": 1,
+  "value": 9
+}

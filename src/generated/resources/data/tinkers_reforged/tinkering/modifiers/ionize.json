@@ -1,0 +1,24 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "each_level": 3.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "forge:bosses"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_power",
+      "each_level": 3.0,
+      "percent": false,
+      "target": {
+        "type": "mantle:tag",
+        "tag": "forge:bosses"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

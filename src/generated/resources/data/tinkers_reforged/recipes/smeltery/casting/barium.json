@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 90,
+    "tag": "forge:molten_barium"
+  },
+  "output": "tinkers_reforged:barium",
+  "temperature": 1150
+}

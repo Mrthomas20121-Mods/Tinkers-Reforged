@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 90,
+      "tag": "forge:molten_barium"
+    },
+    {
+      "amount": 500,
+      "tag": "forge:magma"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_tellurium"
+  },
+  "temperature": 1700
+}

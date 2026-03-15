@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "tag": "forge:storage_blocks/germanium"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/germanium"
+  },
+  "material": "tinkers_reforged:germanium",
+  "needed": 1,
+  "value": 9
+}

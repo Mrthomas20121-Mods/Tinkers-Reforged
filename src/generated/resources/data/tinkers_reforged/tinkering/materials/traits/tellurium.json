@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tinkers_reforged:air_resistance"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tinkers_reforged:triad"
+      }
+    ]
+  }
+}

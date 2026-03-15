@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_actinium",
+  "description": {
+    "color": "#403E2F",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.actinium"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:actinium_ingot",
+  "item_model_index": 0.9
+}

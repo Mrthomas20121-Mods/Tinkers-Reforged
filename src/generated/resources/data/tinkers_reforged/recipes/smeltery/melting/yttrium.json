@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:yttrium",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_yttrium"
+  },
+  "temperature": 555
+}

@@ -1,0 +1,14 @@
+{
+  "pairs": {
+    "tinkers_reforged:trims/color_palettes/actinium": "tinkers_reforged_actinium",
+    "tinkers_reforged:trims/color_palettes/astatine": "tinkers_reforged_astatine",
+    "tinkers_reforged:trims/color_palettes/barium": "tinkers_reforged_barium",
+    "tinkers_reforged:trims/color_palettes/berkelium": "tinkers_reforged_berkelium",
+    "tinkers_reforged:trims/color_palettes/germanium": "tinkers_reforged_germanium",
+    "tinkers_reforged:trims/color_palettes/graphite": "tinkers_reforged_graphite",
+    "tinkers_reforged:trims/color_palettes/slimebronze": "tinkers_reforged_slimebronze",
+    "tinkers_reforged:trims/color_palettes/tellurium": "tinkers_reforged_tellurium",
+    "tinkers_reforged:trims/color_palettes/thallium": "tinkers_reforged_thallium",
+    "tinkers_reforged:trims/color_palettes/yttrium": "tinkers_reforged_yttrium"
+  }
+}

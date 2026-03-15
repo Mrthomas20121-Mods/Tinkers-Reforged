@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 15,
+    "targets": [
+      {
+        "state": {
+          "Name": "tinkers_reforged:yttrium_ore"
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "tinkers_reforged:deepslate_yttrium_ore"
+        },
+        "target": {
+          "block": "minecraft:deepslate",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_germanium",
+  "description": {
+    "color": "#4C183C",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.germanium"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:germanium_ingot",
+  "item_model_index": 0.7
+}

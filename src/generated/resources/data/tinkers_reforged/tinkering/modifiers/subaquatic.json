@@ -1,0 +1,16 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": "mantle:underwater",
+      "each_level": 5.0,
+      "percent": false,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/held"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

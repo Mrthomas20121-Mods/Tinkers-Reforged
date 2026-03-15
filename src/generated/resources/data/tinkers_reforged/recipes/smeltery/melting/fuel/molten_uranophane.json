@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting_fuel",
+  "duration": 175,
+  "fluid": {
+    "amount": 50,
+    "fluid": "tinkers_reforged:molten_uranophane"
+  },
+  "rate": 20,
+  "temperature": 2000
+}

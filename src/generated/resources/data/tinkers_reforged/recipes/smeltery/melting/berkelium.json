@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material_melting",
+  "input": "tinkers_reforged:berkelium",
+  "result": {
+    "amount": 90,
+    "tag": "forge:molten_berkelium"
+  },
+  "temperature": 1200
+}

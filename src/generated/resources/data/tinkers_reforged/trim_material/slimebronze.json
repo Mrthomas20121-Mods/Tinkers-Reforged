@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_slimebronze",
+  "description": {
+    "color": "#94A47B",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.slimebronze"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:slimebronze_ingot",
+  "item_model_index": 0.3
+}

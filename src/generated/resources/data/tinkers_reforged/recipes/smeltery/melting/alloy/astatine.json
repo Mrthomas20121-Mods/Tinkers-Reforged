@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:alloy",
+  "inputs": [
+    {
+      "amount": 1000,
+      "tag": "forge:charred_prismarine"
+    },
+    {
+      "amount": 90,
+      "tag": "forge:molten_yttrium"
+    }
+  ],
+  "result": {
+    "amount": 180,
+    "tag": "forge:molten_astatine"
+  },
+  "temperature": 635
+}

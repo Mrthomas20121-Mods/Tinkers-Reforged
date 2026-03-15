@@ -1,20 +1,9 @@
 {
-  "type": "tconstruct:melting",
-  "ingredient": [
-    {
-      "item": "minecraft:prismarine"
-    },
-    {
-      "item": "minecraft:prismarine_bricks"
-    },
-    {
-      "item": "minecraft:dark_prismarine"
-    }
-  ],
+  "type": "tconstruct:material_melting",
+  "input": "tconstruct:prismarine",
   "result": {
-    "amount": 1000,
+    "amount": 90,
     "tag": "forge:charred_prismarine"
   },
-  "temperature": 200,
-  "time": 126
+  "temperature": 200
 }

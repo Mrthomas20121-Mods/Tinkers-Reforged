@@ -1,0 +1,14 @@
+{
+  "asset_name": "tinkers_reforged_barium",
+  "description": {
+    "color": "#2A1D5B",
+    "translate": "trim_material.tconstruct.format",
+    "with": [
+      {
+        "translate": "material.tinkers_reforged.barium"
+      }
+    ]
+  },
+  "ingredient": "tinkers_reforged:barium_ingot",
+  "item_model_index": 0.5
+}
