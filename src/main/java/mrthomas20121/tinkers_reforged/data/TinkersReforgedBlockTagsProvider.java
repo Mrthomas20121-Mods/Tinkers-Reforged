@@ -12,6 +12,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.tconstruct.common.TinkerTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,6 +25,8 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         for(Metal metal: Metal.values) {
+
+            tag(TinkerTags.Blocks.ANVIL_METAL).addTag(metal.getBlockTag());
 
             BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
 

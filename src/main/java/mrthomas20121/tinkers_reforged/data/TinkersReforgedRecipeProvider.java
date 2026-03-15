@@ -78,7 +78,7 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
         }
 
         MeltingRecipeBuilder.melting(Ingredient.of(Items.PRISMARINE_SHARD, Items.PRISMARINE_CRYSTALS), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK).save(consumer, location("smeltery/melting/prismarine_shard"));
-        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE, Blocks.DARK_PRISMARINE), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK).save(consumer, location("smeltery/melting/prismarine"));
+        MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE, Blocks.DARK_PRISMARINE), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK).save(consumer, location("smeltery/melting/prismarine_block"));
         MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_SLAB, Blocks.DARK_PRISMARINE_SLAB), TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK/2).save(consumer, location("smeltery/melting/prismarine_slab"));
         MeltingRecipeBuilder.melting(Ingredient.of(Blocks.PRISMARINE_STAIRS, Blocks.DARK_PRISMARINE_STAIRS), TinkersReforgedFluids.CHARRED_PRISMARINE, 750).save(consumer, location("smeltery/melting/prismarine_stairs"));
 
@@ -89,7 +89,7 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
 
         ItemCastingRecipeBuilder.basinRecipe(Blocks.PRISMARINE)
                 .setFluidAndTime(TinkersReforgedFluids.CHARRED_PRISMARINE, FluidValues.BRICK_BLOCK)
-                .save(consumer, location("smeltery/casting/prismarine"));
+                .save(consumer, location("smeltery/casting/prismarine_block"));
 
         ItemCastingRecipeBuilder.tableRecipe(Items.PRISMARINE_SHARD)
                 .setCast(TinkerSmeltery.gemCast.getMultiUseTag(), false)
@@ -109,8 +109,33 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
                 .addInput(new FluidStack(TinkerFluids.earthSlime.get(), FluidValues.SLIMEBALL*2))
                 .save(consumer, location("smeltery/melting/alloy/slimebronze"));
 
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.ASTATINE), FluidValues.INGOT*2)
+                .addInput(TinkersReforgedFluids.CHARRED_PRISMARINE.getCommonTag(), FluidValues.BRICK_BLOCK)
+                .addInput(TinkersReforgedFluids.METALS.get(Metal.YTTRIUM).getCommonTag(), FluidValues.INGOT)
+                .save(consumer, location("smeltery/melting/alloy/astatine"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.TELLURIUM), FluidValues.INGOT*2)
+                .addInput(TinkersReforgedFluids.METALS.get(Metal.BARIUM).getCommonTag(), FluidValues.INGOT)
+                .addInput(TinkerFluids.magma.getCommonTag(), FluidValues.SLIMEBALL*2)
+                .save(consumer, location("smeltery/melting/alloy/tellurium"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.ACTINIUM), FluidValues.INGOT*2)
+                .addInput(TinkersReforgedFluids.METALS.get(Metal.BARIUM).getCommonTag(), FluidValues.INGOT)
+                .addInput(TinkerFluids.moltenCobalt.getCommonTag(), FluidValues.INGOT)
+                .save(consumer, location("smeltery/melting/alloy/actinium"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.BERKELIUM), FluidValues.INGOT*4)
+                .addInput(TinkersReforgedFluids.METALS.get(Metal.THALLIUM).getCommonTag(), FluidValues.INGOT*3)
+                .addInput(TinkerFluids.moltenNetherite.getCommonTag(), FluidValues.INGOT)
+                .save(consumer, location("smeltery/melting/alloy/berkelium"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.METALS.get(Metal.GERMANIUM), FluidValues.INGOT*4)
+                .addInput(TinkersReforgedFluids.METALS.get(Metal.THALLIUM).getCommonTag(), FluidValues.INGOT*3)
+                .addInput(TinkerFluids.moltenRoseGold.getCommonTag(), FluidValues.INGOT)
+                .save(consumer, location("smeltery/melting/alloy/germanium"));
+
         MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_URANOPHANE.get(), 50), 175)
-                .save(consumer, location("smeltery/melting/fuel/molten_serandite"));
+                .save(consumer, location("smeltery/melting/fuel/molten_uranophane"));
 
         MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_SERANDITE.get(), 50), 200)
                 .save(consumer, location("smeltery/melting/fuel/molten_serandite"));

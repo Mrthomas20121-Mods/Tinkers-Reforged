@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public enum Metal implements StringRepresentable {
@@ -27,6 +28,8 @@ public enum Metal implements StringRepresentable {
     THALLIUM(true, 3000, MapColor.TERRACOTTA_CYAN);
 
     public static final Metal[] values = Metal.values();
+
+    public static final MaterialId[] TRIM_MATERIALS = Arrays.stream(values).map(Metal::asMaterial).toList().toArray(new MaterialId[] {});
 
     private final MetalTagData metalTags;
 

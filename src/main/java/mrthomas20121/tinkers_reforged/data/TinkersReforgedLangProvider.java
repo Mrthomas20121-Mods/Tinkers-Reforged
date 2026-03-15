@@ -98,7 +98,7 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.OVERFRACTURE, "Who Fractured the slime?", "Mine non-effective blocks faster at the cost of overslime");
         modifier(TinkersReforgedModifierIds.TUNNELING, "Mine all days", "Gain +1 mining speed, after breaking 1000 blocks, gain more.");
         modifier(TinkersReforgedModifierIds.SAFEGUARD, "Give cactus a hug", "Immunity to Cactus Damage.");
-        modifier(TinkersReforgedModifierIds.SPEED_ORBIT, "Space is cool", "Gain more Swim Speed and Entity Gravity.");
+        modifier(TinkersReforgedModifierIds.AGILITY, "Space is cool", "Gain more Swim Speed and Entity Gravity.");
         modifier(TinkersReforgedModifierIds.AIR_RESISTANCE, "You better stay airborne", "Extra Protection while in the air");
         modifier(TinkersReforgedModifierIds.LAND_PROTECTION, "Stay on land if you want to survive", "Protect you above the sea level");
         modifier(TinkersReforgedModifierIds.FRAIL, "Aren't you skinny?", "Attackers may get weaker");
@@ -163,7 +163,7 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
     private void modifier(ModifierId id, String flavor, String description) {
         String modifier = id.getPath();
 
-        String key = TinkersReforged.makeDescriptionId("material", modifier);
+        String key = TinkersReforged.makeDescriptionId("modifier", modifier);
 
         add(key, capitalize(modifier));
 

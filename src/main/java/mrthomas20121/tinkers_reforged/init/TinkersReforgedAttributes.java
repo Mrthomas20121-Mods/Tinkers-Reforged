@@ -10,7 +10,7 @@ import slimeknights.tconstruct.TConstruct;
 
 public class TinkersReforgedAttributes {
 
-    private static final AttributeDeferredRegister ATTRIBUTES = new AttributeDeferredRegister(TinkersReforged.MOD_ID);
+    public static final AttributeDeferredRegister ATTRIBUTES = new AttributeDeferredRegister(TinkersReforged.MOD_ID);
 
     public TinkersReforgedAttributes() {
         ATTRIBUTES.register(FMLJavaModLoadingContext.get().getModEventBus());

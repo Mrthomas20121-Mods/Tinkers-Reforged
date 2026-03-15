@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged.data;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
+import mrthomas20121.tinkers_reforged.api.data.Metal;
 import mrthomas20121.tinkers_reforged.data.material.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -47,7 +48,7 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(client, new TinkersReforgedMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));
         dataGenerator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSprites, materialSpriteProvider));
         dataGenerator.addProvider(client, new MaterialPaletteDebugGenerator(packOutput, TinkersReforged.MOD_ID, materialSpriteProvider));
-        dataGenerator.addProvider(client, new TrimMaterialPaletteGenerator(packOutput, TinkersReforged.MOD_ID, existingFileHelper, materialSpriteProvider, MaterialIds.TRIM_MATERIALS));
+        dataGenerator.addProvider(client, new TrimMaterialPaletteGenerator(packOutput, TinkersReforged.MOD_ID, existingFileHelper, materialSpriteProvider, Metal.TRIM_MATERIALS));
 
         dataGenerator.addProvider(client, new TinkersReforgedLangProvider(packOutput));
         dataGenerator.addProvider(client, new TinkersReforgedBlockstateProvider(packOutput, existingFileHelper));

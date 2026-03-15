@@ -14,6 +14,7 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.combat.MeleeHitModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.display.TooltipModifierHook;
 import slimeknights.tconstruct.library.modifiers.hook.mining.BreakSpeedContext;
@@ -30,7 +31,7 @@ import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import java.util.List;
 
-public record TunnelingModule(LevelingInt consumed) implements ModifierModule, ToolStatsHook, BreakSpeedModifierHook, MeleeHitModifierHook, TooltipModifierHook {
+public record TunnelingModule(LevelingInt consumed) implements ModifierModule, ToolStatsModifierHook, BreakSpeedModifierHook, MeleeHitModifierHook, TooltipModifierHook {
 
     public static final RecordLoadable<TunnelingModule> LOADER = RecordLoadable.create(
             LevelingInt.LOADABLE.requiredField("consumed", TunnelingModule::consumed),
@@ -43,11 +44,6 @@ public record TunnelingModule(LevelingInt consumed) implements ModifierModule, T
     @Override
     public RecordLoadable<? extends ModifierModule> getLoader() {
         return LOADER;
-    }
-
-    @Override
-    public void addToolStats(IToolContext context, ModifierStatsBuilder builder) {
-        ToolStats.MINING_SPEED.add(builder, 1f);
     }
 
     @Override
@@ -112,5 +108,10 @@ public record TunnelingModule(LevelingInt consumed) implements ModifierModule, T
                 }
             }
         }
+    }
+
+    @Override
+    public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
+        ToolStats.MINING_SPEED.add(builder, 1f);
     }
 }

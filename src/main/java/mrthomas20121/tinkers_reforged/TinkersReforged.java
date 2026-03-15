@@ -1,6 +1,7 @@
 package mrthomas20121.tinkers_reforged;
 
 import mrthomas20121.tinkers_reforged.data.TinkersReforgedDatagen;
+import mrthomas20121.tinkers_reforged.init.TinkersReforgedAttributes;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedFluids;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
@@ -33,6 +34,7 @@ public class TinkersReforged {
 		TinkersReforgedBlocks.BLOCKS.register(bus);
 		TinkersReforgedItems.register(bus);
 		TinkersReforgedFluids.FLUIDS.register(bus);
+		TinkersReforgedAttributes.ATTRIBUTES.register(bus);
 		bus.addListener(TinkersReforgedDatagen::init);
 		bus.addListener(this::registerSerializers);
 		TinkersReforgedEvents.init();

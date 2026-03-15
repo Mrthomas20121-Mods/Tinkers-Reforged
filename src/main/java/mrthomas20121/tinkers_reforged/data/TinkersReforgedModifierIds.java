@@ -21,7 +21,7 @@ public class TinkersReforgedModifierIds {
     // armor
     public static ModifierId LANDING_PAD = create("landing_pad");
     public static ModifierId SAFEGUARD = create("safeguard");
-    public static ModifierId SPEED_ORBIT = create("speed_orbit");
+    public static ModifierId AGILITY = create("agility");
     public static ModifierId LAND_PROTECTION = create("land_protection");
     public static ModifierId SMALL_PROTECTION = create("small_protection");
     public static ModifierId AIR_RESISTANCE = create("air_resistance");

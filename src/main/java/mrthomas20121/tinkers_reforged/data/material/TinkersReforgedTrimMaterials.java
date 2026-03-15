@@ -20,6 +20,7 @@ public class TinkersReforgedTrimMaterials {
     private static final String TRIM_FORMAT = TConstruct.makeDescriptionId("trim_material", "format");
 
     public static void bootstrap(BootstapContext<TrimMaterial> context) {
+        material(context, Metal.SLIMEBRONZE, 0x94A47B, 0.3f);
         material(context, Metal.GRAPHITE, 0x1c1c20, 0.3f);
         material(context, Metal.YTTRIUM, 0x451318, 0.4f);
         material(context, Metal.BARIUM, 0x2a1d5b, 0.5f);

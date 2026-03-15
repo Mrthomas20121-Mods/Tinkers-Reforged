@@ -111,7 +111,7 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                 .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
                 .addModule(BlockDamageSourceModule.source(new DamageTypePredicate(DamageTypes.CACTUS)).build());
 
-        buildModifier(TinkersReforgedModifierIds.SPEED_ORBIT)
+        buildModifier(TinkersReforgedModifierIds.AGILITY)
                 .addModule(AttributeModule.builder(ForgeMod.SWIM_SPEED.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f))
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f));
 

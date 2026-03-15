@@ -11,10 +11,12 @@ import mrthomas20121.tinkers_reforged.init.TinkersReforgedItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
+import slimeknights.tconstruct.common.TinkerTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -27,6 +29,9 @@ public class TinkersReforgedItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         for(Metal metal: Metal.values) {
+
+            tag(ItemTags.TRIM_MATERIALS).addTag(metal.getIngotTag());
+            tag(TinkerTags.Items.ANVIL_METAL).addTag(metal.getBlockItemTag());
 
             BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);

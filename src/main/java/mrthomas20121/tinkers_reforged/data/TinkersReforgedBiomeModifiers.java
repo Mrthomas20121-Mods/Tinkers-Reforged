@@ -32,7 +32,7 @@ public class TinkersReforgedBiomeModifiers {
 
         register(context, YTTRIUM_ORE_CONIFEROUS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomeLookup.getOrThrow(Tags.Biomes.IS_CONIFEROUS),
-                HolderSet.direct(placedFeatureLookup.getOrThrow(TinkersReforgedPlacedFeatures.YTTRIUM_ORE)),
+                HolderSet.direct(placedFeatureLookup.getOrThrow(TinkersReforgedPlacedFeatures.YTTRIUM_ORE_CONIFEROUS)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         register(context, YTTRIUM_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

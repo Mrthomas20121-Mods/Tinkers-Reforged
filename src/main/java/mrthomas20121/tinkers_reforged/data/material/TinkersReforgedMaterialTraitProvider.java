@@ -28,7 +28,7 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
                 .addTraits(ARMOR, TinkersReforgedModifierIds.SAFEGUARD);
         material(Metal.ASTATINE.asMaterial())
                 .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SUBAQUATIC)
-                .addTraits(ARMOR, TinkersReforgedModifierIds.SPEED_ORBIT);
+                .addTraits(ARMOR, TinkersReforgedModifierIds.AGILITY);
         material(Metal.BARIUM.asMaterial())
                 .addDefaultTraits(TinkersReforgedModifierIds.FRAIL);
         material(Metal.TELLURIUM.asMaterial())
