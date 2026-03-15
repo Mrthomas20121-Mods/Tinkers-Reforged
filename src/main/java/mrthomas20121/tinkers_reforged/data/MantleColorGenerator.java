@@ -28,7 +28,7 @@ public abstract class MantleColorGenerator extends GenericDataProvider {
         this.modid = modid;
     }
 
-    abstract void addColors();
+    public abstract void addColors();
 
     protected void addModifier(ModifierId id, int color) {
         this.addModifier(id, "#"+ ColorLoadable.NO_ALPHA.getString(color));

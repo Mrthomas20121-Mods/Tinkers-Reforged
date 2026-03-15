@@ -7,6 +7,7 @@ import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedLivingEntityPredi
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -84,12 +85,11 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                                 .toolItem(harvest)
                                 .levelRange(1, 3)
                                 .holder(LivingEntityPredicate.ON_FIRE)
-                                .mainHandHarvest(TinkersReforged.getResource("fortune_flaming"))
+                                .armorHarvest(EquipmentSlot.HEAD, EquipmentSlot.FEET)
                 );
 
         buildModifier(TinkersReforgedModifierIds.SUBAQUATIC)
-                .addModule(ConditionalMeleeDamageModule.builder().attacker(LivingEntityPredicate.UNDERWATER).toolTag(TinkerTags.Items.HELD).eachLevel(3f))
-                .addModule(ConditionalPowerModule.builder().holder(LivingEntityPredicate.UNDERWATER).toolTag(TinkerTags.Items.HELD).eachLevel(3f));
+                .addModule(ConditionalMeleeDamageModule.builder().attacker(LivingEntityPredicate.UNDERWATER).toolTag(TinkerTags.Items.HELD).eachLevel(5f));
 
         buildModifier(TinkersReforgedModifierIds.FRAIL)
                 .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).level(RandomLevelingValue.perLevel(0, 0.5f)).time(RandomLevelingValue.perLevel(20f, 20f)).build());

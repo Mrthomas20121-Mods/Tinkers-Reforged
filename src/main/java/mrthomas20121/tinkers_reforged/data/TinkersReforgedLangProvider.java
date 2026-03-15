@@ -87,7 +87,7 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         material(Metal.ASTATINE, "100% waterproof", "Gain more damage underwater", "Gain more damage underwater", "Gain +0.1 Swim Speed and Entity Gravity per level");
         material(Metal.BARIUM, "Don't be so soft", "Attackers get weaker as you attack them or they attack you", "", "");
         material(Metal.TELLURIUM, "Not be confused with the Pokemon move", "Your attack deal 2% of the target max health instead of flat damage. \nModifiers that boost damage still works with this.", "", "Grants 2% protection while in the air");
-        material(Metal.ACTINIUM, "Boil 'em, mash 'em, stick 'em in a stew", "Increases fortune level while on fire", "", "");
+        material(Metal.ACTINIUM, "Boil 'em, mash 'em, stick 'em in a stew", "Increases fortune level while on fire", "", "Increases looting level while on fire(helmet/boots only)");
         material(Metal.THALLIUM, "I heard it's great at deflecting bullets in the wild west", "Deals +3 damage per level against bosses", "Deals +3 damage per level against bosses", "Grants 5% dragonbreath protection");
         material(Metal.GERMANIUM, "Like the germ in Germany, I am sick on this mic", "Launch ender pearl at the cost of 250-50 per level molten ender", "", "Reduce damage taken from ender pearl by 1% per level");
         material(Metal.BERKELIUM, "Berserker has nothing on this","Deal +4 damage per level but lose 0.1 entity range per level", "", "Grants 3% baby mobs protection");
@@ -99,7 +99,8 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.TUNNELING, "Mine all days", "Gain +1 mining speed, after breaking 1000 blocks, gain more.");
         modifier(TinkersReforgedModifierIds.SAFEGUARD, "Give cactus a hug", "Immunity to Cactus Damage.");
         modifier(TinkersReforgedModifierIds.SPEED_ORBIT, "Space is cool", "Gain more Swim Speed and Entity Gravity.");
-        modifier(TinkersReforgedModifierIds.SMALL_PROTECTION, "Children aren't as dangerous as they seems", "Extra Protection against baby mobs");
+        modifier(TinkersReforgedModifierIds.AIR_RESISTANCE, "You better stay airborne", "Extra Protection while in the air");
+        modifier(TinkersReforgedModifierIds.LAND_PROTECTION, "Stay on land if you want to survive", "Protect you above the sea level");
         modifier(TinkersReforgedModifierIds.FRAIL, "Aren't you skinny?", "Attackers may get weaker");
         modifier(TinkersReforgedModifierIds.CLOSE_COMBAT, "Aren't you a bit too short for this?", "Deal more damage at the cost of losing entity range.");
         modifier(TinkersReforgedModifierIds.PITCHING, "Down Down in the void", "Launch an ender pearl at the cost of molten ender");
@@ -107,6 +108,8 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.SMALL_PROTECTION, "You need all the protection you can get where you're going", "Extra protection against baby mobs");
         modifier(TinkersReforgedModifierIds.ROAST, "You got Roasted!", "Increases looting level while on fire");
         modifier(TinkersReforgedModifierIds.FLAMING, "Flaming Hot!", "Increases fortune level while on fire");
+        modifier(TinkersReforgedModifierIds.SUBAQUATIC, "Now I know how Aquaman feels like", "Deal more damage underwater");
+        modifier(TinkersReforgedModifierIds.SURFACE_RESOURCES, "It's everywhere!", "Increase fortune above sea level");
     }
 
     /**

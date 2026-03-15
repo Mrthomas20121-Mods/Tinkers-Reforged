@@ -55,6 +55,6 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(client, new TinkersReforgedFluidTextureProvider(packOutput));
         dataGenerator.addProvider(client, new FluidBucketModelProvider(packOutput, TinkersReforged.MOD_ID));
         dataGenerator.addProvider(client, new FluidBlockstateModelProvider(packOutput, TinkersReforged.MOD_ID));
-        dataGenerator.addProvider(client, new TinkersReforgedColorGenerator(packOutput));
+        dataGenerator.addProvider(client, new TinkersReforgedColorProvider(packOutput));
     }
 }
