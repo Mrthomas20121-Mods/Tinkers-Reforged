@@ -15,14 +15,15 @@ public class TinkersReforgedMaterialRenderInfoProvider extends MaterialRenderInf
     @Override
     protected void addMaterialRenderInfo() {
 
+        buildRenderInfo(Metal.SLIMEBRONZE.asMaterial()).color(0x94A47B).fallbacks("metal");
         buildRenderInfo(Metal.GRAPHITE.asMaterial()).color(0x1c1c20).fallbacks("metal");
         buildRenderInfo(Metal.YTTRIUM.asMaterial()).color(0x451318).fallbacks("metal");
-        buildRenderInfo(Metal.BARIUM.asMaterial()).color(0x2a1d5b).fallbacks("metal");
         buildRenderInfo(Metal.ASTATINE.asMaterial()).color(0xe99475).fallbacks("metal");
+        buildRenderInfo(Metal.BARIUM.asMaterial()).color(0x2a1d5b).fallbacks("metal");
         buildRenderInfo(Metal.TELLURIUM.asMaterial()).color(0x522728).fallbacks("metal");
-        buildRenderInfo(Metal.GERMANIUM.asMaterial()).color(0x4c183c).fallbacks("metal");
-        buildRenderInfo(Metal.BERKELIUM.asMaterial()).color(0x40541e).fallbacks("metal");
         buildRenderInfo(Metal.ACTINIUM.asMaterial()).color(0x403e2f).fallbacks("metal");
         buildRenderInfo(Metal.THALLIUM.asMaterial()).color(0x28373c).fallbacks("metal");
+        buildRenderInfo(Metal.GERMANIUM.asMaterial()).color(0x4c183c).fallbacks("metal");
+        buildRenderInfo(Metal.BERKELIUM.asMaterial()).color(0x40541e).fallbacks("metal");
     }
 }
