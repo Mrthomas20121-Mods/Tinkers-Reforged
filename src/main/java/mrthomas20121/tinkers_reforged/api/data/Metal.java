@@ -19,13 +19,13 @@ public enum Metal implements StringRepresentable {
     SLIMEBRONZE(750, MapColor.TERRACOTTA_GREEN),
     GRAPHITE(500, MapColor.COLOR_BLACK),
     YTTRIUM(true, 855, MapColor.COLOR_RED),
-    BARIUM(true, 1450, MapColor.TERRACOTTA_PURPLE),
     ASTATINE(935, MapColor.TERRACOTTA_ORANGE),
+    BARIUM(true, 1450, MapColor.TERRACOTTA_PURPLE),
     TELLURIUM(2000, MapColor.TERRACOTTA_RED),
-    GERMANIUM(3000, MapColor.TERRACOTTA_PINK),
-    BERKELIUM(1500, MapColor.COLOR_LIGHT_GREEN),
     ACTINIUM(2000, MapColor.TERRACOTTA_GRAY),
-    THALLIUM(true, 3000, MapColor.TERRACOTTA_CYAN);
+    THALLIUM(true, 2500, MapColor.TERRACOTTA_CYAN),
+    GERMANIUM(3000, MapColor.TERRACOTTA_PINK),
+    BERKELIUM(2500, MapColor.COLOR_LIGHT_GREEN);
 
     public static final Metal[] values = Metal.values();
 

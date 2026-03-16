@@ -9,7 +9,7 @@
       "tag": "forge:gears/thallium"
     }
   ],
-  "cooling_time": 216,
+  "cooling_time": 194,
   "fluid": {
     "amount": 360,
     "tag": "forge:molten_thallium"

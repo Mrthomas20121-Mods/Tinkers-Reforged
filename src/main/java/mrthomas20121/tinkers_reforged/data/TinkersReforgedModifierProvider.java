@@ -3,7 +3,7 @@ package mrthomas20121.tinkers_reforged.data;
 import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedAttributes;
 import mrthomas20121.tinkers_reforged.module.*;
-import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedLivingEntityPredicates;
+import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedPredicates;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffects;
@@ -26,6 +26,7 @@ import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.modifiers.modules.armor.BlockDamageSourceModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.RepairModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
@@ -48,8 +49,13 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
 
         buildModifier(TinkersReforgedModifierIds.OVERFRACTURE)
                 .addModule(new OverfractureModule(LevelingInt.eachLevel(4)));
-        buildModifier(TinkersReforgedModifierIds.TUNNELING)
-                .addModule(new TunnelingModule(LevelingInt.eachLevel(3)));
+
+        buildModifier(TinkersReforgedModifierIds.GROWTH)
+                .addModule(StatBoostModule.multiplyAll(ToolStats.MINING_SPEED).eachLevel(1.2f))
+                .addModule(StatBoostModule.multiplyAll(ToolStats.ATTACK_DAMAGE).eachLevel(1.2f))
+                .addModule(StatBoostModule.multiplyAll(ToolStats.PROJECTILE_DAMAGE).eachLevel(1.2f))
+                .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(0.9f))
+                .addModule(RepairModule.builder().flat(2f));
 
         buildModifier(TinkersReforgedModifierIds.TRIAD).addModule(new TriadModule(LevelingInt.eachLevel(2)));
 
@@ -74,7 +80,7 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                                 .builder(Enchantments.BLOCK_FORTUNE)
                                 .toolItem(harvest)
                                 .levelRange(1, 3)
-                                .holder(TinkersReforgedLivingEntityPredicates.ABOVE_SEA_LEVEL)
+                                .holder(TinkersReforgedPredicates.ABOVE_SEA_LEVEL)
                                 .mainHandHarvest(TinkersReforged.getResource("fortune_surface_resources"))
                 );
 
@@ -102,10 +108,10 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                 .addModule(AttributeModule.builder(TinkersReforgedAttributes.ENDER_PEARL_REDUCTION, AttributeModifier.Operation.ADDITION).eachLevel(0.1f));
 
         buildModifier(TinkersReforgedModifierIds.LAND_PROTECTION)
-                .addModule(ProtectionModule.builder().source(DamageSourcePredicate.CAN_PROTECT).entity(TinkersReforgedLivingEntityPredicates.ABOVE_SEA_LEVEL).eachLevel(2f));
+                .addModule(ProtectionModule.builder().source(DamageSourcePredicate.CAN_PROTECT).entity(TinkersReforgedPredicates.ABOVE_SEA_LEVEL).eachLevel(2f));
 
         buildModifier(TinkersReforgedModifierIds.SMALL_PROTECTION)
-                .addModule(ProtectionModule.builder().attacker(TinkersReforgedLivingEntityPredicates.BABY).eachLevel(3f));
+                .addModule(ProtectionModule.builder().attacker(TinkersReforgedPredicates.BABY).eachLevel(3f));
 
         buildModifier(TinkersReforgedModifierIds.SAFEGUARD)
                 .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)

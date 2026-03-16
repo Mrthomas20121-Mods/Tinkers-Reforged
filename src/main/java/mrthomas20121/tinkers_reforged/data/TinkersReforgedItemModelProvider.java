@@ -26,6 +26,8 @@ public class TinkersReforgedItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        basicItem(TinkersReforgedItems.BOOK.asItem());
+
         for(Metal metal: Metal.values) {
             String name = metal.getSerializedName();
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);

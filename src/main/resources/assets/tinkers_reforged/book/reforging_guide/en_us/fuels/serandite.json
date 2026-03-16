@@ -1,0 +1,14 @@
+{
+  "title": "Serandite",
+  "item": "tinkers_reforged:molten_uranophane_bucket",
+  "text": [
+    {
+      "text": "Serandite is a fluid with a temperature of 3000 degree, it can be used as a smeltery fuel.",
+      "paragraph": true
+    },
+    {
+      "text": "Serandite is made by alloying ender slime with Blazing Blood.",
+      "paragraph": true
+    }
+  ]
+}

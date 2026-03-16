@@ -24,7 +24,7 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
                 .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SURFACE_RESOURCES)
                 .addTraits(ARMOR, TinkersReforgedModifierIds.LAND_PROTECTION);
         material(Metal.YTTRIUM.asMaterial())
-                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.TUNNELING)
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.GROWTH)
                 .addTraits(ARMOR, TinkersReforgedModifierIds.SAFEGUARD);
         material(Metal.ASTATINE.asMaterial())
                 .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SUBAQUATIC)

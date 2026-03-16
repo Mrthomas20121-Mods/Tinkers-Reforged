@@ -33,6 +33,7 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(server, provider);
         dataGenerator.addProvider(server, new TinkersReforgedItemTagsProvider(packOutput, lookupProvider, provider.contentsGetter(), existingFileHelper));
         dataGenerator.addProvider(server, new TinkersReforgedFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
+        dataGenerator.addProvider(server, new TinkersReforgedMaterialTagsProvider(packOutput, existingFileHelper));
         dataGenerator.addProvider(server, new TinkersReforgedRecipeProvider(packOutput));
         dataGenerator.addProvider(server, new TinkersReforgedModifierProvider(packOutput));
         dataGenerator.addProvider(server, new TinkersReforgedRegistrySets(packOutput, lookupProvider));

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "introduction",
+    "type": "mantle:text",
+    "data": "intro/welcome.json"
+  },
+  {
+    "name": "tinkers_reforged",
+    "type": "mantle:text",
+    "data": "intro/tinkers_reforged.json"
+  },
+  {
+    "name": "tools",
+    "type": "mantle:text",
+    "data": "intro/tools.json"
+  }
+]

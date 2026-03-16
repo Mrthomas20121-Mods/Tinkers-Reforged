@@ -5,33 +5,18 @@
     "data": "ores/index.json"
   },
   {
-    "name": "aluminum",
+    "name": "yttrium",
     "type": "mantle:showcase",
-    "data": "ores/aluminum.json"
+    "data": "ores/yttrium.json"
   },
   {
-    "name": "epidote",
+    "name": "barium",
     "type": "mantle:showcase",
-    "data": "ores/epidote.json"
+    "data": "ores/barium.json"
   },
   {
-    "name": "hureaulite",
+    "name": "thallium",
     "type": "mantle:showcase",
-    "data": "ores/hureaulite.json"
-  },
-  {
-    "name": "kepu",
-    "type": "mantle:showcase",
-    "data": "ores/kepu.json"
-  },
-  {
-    "name": "red_beryl",
-    "type": "mantle:showcase",
-    "data": "ores/red_beryl.json"
-  },
-  {
-    "name": "titanium",
-    "type": "mantle:showcase",
-    "data": "ores/titanium.json"
+    "data": "ores/thallium.json"
   }
 ]

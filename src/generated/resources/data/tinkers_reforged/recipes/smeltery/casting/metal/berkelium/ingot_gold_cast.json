@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/ingot"
   },
-  "cooling_time": 72,
+  "cooling_time": 97,
   "fluid": {
     "amount": 90,
     "tag": "forge:molten_berkelium"

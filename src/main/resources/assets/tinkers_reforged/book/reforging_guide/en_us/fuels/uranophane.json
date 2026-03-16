@@ -1,0 +1,14 @@
+{
+  "title": "Uranophane",
+  "item": "tinkers_reforged:molten_uranophane_bucket",
+  "text": [
+    {
+      "text": "Uranophane is a fluid with a temperature of 2000 degree, it can be used as a smeltery fuel.",
+      "paragraph": true
+    },
+    {
+      "text": "Uranophane is made by alloying ichor with blazing blood.",
+      "paragraph": true
+    }
+  ]
+}

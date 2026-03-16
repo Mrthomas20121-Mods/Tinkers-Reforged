@@ -9,7 +9,7 @@
       "tag": "forge:gears/berkelium"
     }
   ],
-  "cooling_time": 144,
+  "cooling_time": 194,
   "fluid": {
     "amount": 360,
     "tag": "forge:molten_berkelium"

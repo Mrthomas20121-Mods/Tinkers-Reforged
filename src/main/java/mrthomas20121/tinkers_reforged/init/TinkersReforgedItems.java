@@ -5,6 +5,7 @@ import mrthomas20121.tinkers_reforged.api.data.Metal;
 import mrthomas20121.tinkers_reforged.api.holder.BlockMetalObject;
 import mrthomas20121.tinkers_reforged.api.holder.ItemMetalObject;
 import mrthomas20121.tinkers_reforged.api.registry.ReforgedItemDeferredRegister;
+import mrthomas20121.tinkers_reforged.item.ReforgingGuideBookItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import slimeknights.mantle.registration.object.ItemObject;
 
 import java.util.EnumMap;
 
@@ -26,14 +28,17 @@ public class TinkersReforgedItems {
         TABS.register(bus);
     }
 
+    public static ItemObject<ReforgingGuideBookItem> BOOK = ITEMS.register("reforging_guide", ReforgingGuideBookItem::new);
+
     public static EnumMap<Metal, ItemMetalObject> METALS = ITEMS.registerEnumMetal(Metal.class);
 
-    public static RegistryObject<CreativeModeTab> METAL_TAB = TABS.register("metal_tabs", () -> CreativeModeTab.builder()
+    public static RegistryObject<CreativeModeTab> TAB = TABS.register("tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(METALS.get(Metal.GRAPHITE).get()))
-            .title(Component.translatable("itemGroup.tinkers_reforged.metal"))
-            .displayItems(TinkersReforgedItems::displayMetals).build());
+            .title(Component.translatable("itemGroup.tinkers_reforged.tab"))
+            .displayItems(TinkersReforgedItems::displayTab).build());
 
-    private static void displayMetals(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output tab) {
+    private static void displayTab(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output tab) {
+        tab.accept(BOOK);
         for(Metal metal: Metal.values) {
             BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
             ItemMetalObject itemMetalObject = TinkersReforgedItems.METALS.get(metal);

@@ -15,6 +15,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.fluids.FluidStack;
@@ -22,6 +23,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.jetbrains.annotations.NotNull;
 import slimeknights.mantle.recipe.data.IRecipeHelper;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IByproduct;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
@@ -47,6 +49,13 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         String materialFolder = "tools/materials/";
+
+        // reforging guide recipe
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TinkersReforgedItems.BOOK.asItem())
+                .requires(Items.BOOK)
+                .requires(Metal.YTTRIUM.getIngotTag())
+                .unlockedBy(getHasName(Items.BOOK), has(Items.BOOK))
+                .save(consumer, location("crafting/reforging_guide"));
 
         for(Metal metal: Metal.values) {
             String metalName = metal.getSerializedName();
@@ -133,6 +142,16 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
                 .addInput(TinkersReforgedFluids.METALS.get(Metal.THALLIUM).getCommonTag(), FluidValues.INGOT*3)
                 .addInput(TinkerFluids.moltenRoseGold.getCommonTag(), FluidValues.INGOT)
                 .save(consumer, location("smeltery/melting/alloy/germanium"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.MOLTEN_URANOPHANE, FluidValues.BRICK*2)
+                .addInput(TinkerFluids.ichor.ingredient(FluidValues.SLIMEBALL*2))
+                .addInput(TinkerFluids.blazingBlood.ingredient(FluidValues.BRICK))
+                .save(consumer, location("smeltery/melting/alloy/uranophane"));
+
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.MOLTEN_SERANDITE, FluidValues.BRICK*2)
+                .addInput(TinkerFluids.enderSlime.ingredient(FluidValues.SLIMEBALL*2))
+                .addInput(TinkerFluids.blazingBlood.ingredient(FluidValues.BRICK))
+                .save(consumer, location("smeltery/melting/alloy/serandite"));
 
         MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_URANOPHANE.get(), 50), 175)
                 .save(consumer, location("smeltery/melting/fuel/molten_uranophane"));

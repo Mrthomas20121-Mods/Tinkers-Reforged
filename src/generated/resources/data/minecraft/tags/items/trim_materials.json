@@ -3,12 +3,12 @@
     "#forge:ingots/slimebronze",
     "#forge:ingots/graphite",
     "#forge:ingots/yttrium",
-    "#forge:ingots/barium",
     "#forge:ingots/astatine",
+    "#forge:ingots/barium",
     "#forge:ingots/tellurium",
-    "#forge:ingots/germanium",
-    "#forge:ingots/berkelium",
     "#forge:ingots/actinium",
-    "#forge:ingots/thallium"
+    "#forge:ingots/thallium",
+    "#forge:ingots/germanium",
+    "#forge:ingots/berkelium"
   ]
 }

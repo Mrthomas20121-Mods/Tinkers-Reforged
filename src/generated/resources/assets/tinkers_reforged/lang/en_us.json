@@ -85,6 +85,7 @@
   "item.tinkers_reforged.raw_barium": "Raw Barium",
   "item.tinkers_reforged.raw_thallium": "Raw Thallium",
   "item.tinkers_reforged.raw_yttrium": "Raw Yttrium",
+  "item.tinkers_reforged.reforging_guide": "Reforging Guide",
   "item.tinkers_reforged.slimebronze_dust": "Slimebronze Dust",
   "item.tinkers_reforged.slimebronze_gear": "Slimebronze Gear",
   "item.tinkers_reforged.slimebronze_ingot": "Slimebronze Ingot",
@@ -105,7 +106,7 @@
   "item.tinkers_reforged.yttrium_ingot": "Yttrium Ingot",
   "item.tinkers_reforged.yttrium_nugget": "Yttrium Nugget",
   "item.tinkers_reforged.yttrium_plate": "Yttrium Plate",
-  "itemGroup.tinkers_reforged.metal": "Tinkers Reforged Metals",
+  "itemGroup.tinkers_reforged.tab": "Tinkers Reforged Resources",
   "material.tinkers_reforged.actinium": "Actinium",
   "material.tinkers_reforged.actinium.flavor": "Boil 'em, mash 'em, stick 'em in a stew",
   "material.tinkers_reforged.astatine": "Astatine",
@@ -141,6 +142,9 @@
   "modifier.tinkers_reforged.frail": "Frail",
   "modifier.tinkers_reforged.frail.description": "Attackers may get weaker",
   "modifier.tinkers_reforged.frail.flavor": "Aren't you skinny?",
+  "modifier.tinkers_reforged.growth": "Growth",
+  "modifier.tinkers_reforged.growth.description": "Gain more mining speed, attack damage and projectile damage at the cost repair cost.",
+  "modifier.tinkers_reforged.growth.flavor": "Mom, Look how tall I am!",
   "modifier.tinkers_reforged.ionize": "Ionize",
   "modifier.tinkers_reforged.ionize.description": "Deal more damage against bosses",
   "modifier.tinkers_reforged.ionize.flavor": "Boss won't like this",
@@ -176,8 +180,5 @@
   "modifier.tinkers_reforged.surface_resources.flavor": "It's everywhere!",
   "modifier.tinkers_reforged.triad": "Triad",
   "modifier.tinkers_reforged.triad.description": "Your attack deal a percentage of the target max health instead of flat damage.",
-  "modifier.tinkers_reforged.triad.flavor": "Tinkers Construct: Triad edition",
-  "modifier.tinkers_reforged.tunneling": "Tunneling",
-  "modifier.tinkers_reforged.tunneling.description": "Gain +1 mining speed, after breaking 1000 blocks, gain more.",
-  "modifier.tinkers_reforged.tunneling.flavor": "Mine all days"
+  "modifier.tinkers_reforged.triad.flavor": "Tinkers Construct: Triad edition"
 }

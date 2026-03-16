@@ -1,0 +1,16 @@
+{
+  "title": "Barium Ore",
+  "item": {
+    "tag": "forge:ores/barium"
+  },
+  "text": [
+    {
+      "text": "Barium is an ore you find in the nether. It spawn between Y 40 and -127",
+      "paragraph": true
+    },
+    {
+      "text": "The ore can be melted into Barium.",
+      "paragraph": true
+    }
+  ]
+}

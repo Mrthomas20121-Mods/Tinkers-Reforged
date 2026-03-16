@@ -8,6 +8,7 @@ import mrthomas20121.tinkers_reforged.api.holder.BlockOverworldOreObject;
 import mrthomas20121.tinkers_reforged.init.TinkersReforgedBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -37,12 +38,14 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
 
                 tag(metal.getRawBlockTag()).add(oreObject.getRawOreBlock());
 
+                tag(BlockTags.NEEDS_IRON_TOOL).add(oreObject.get(), oreObject.getDeepslateOre());
                 tag(metal.getOreBlock()).add(oreObject.get(), oreObject.getDeepslateOre());
                 tag(Tags.Blocks.ORES).add(oreObject.get(), oreObject.getDeepslateOre());
             }
             else if(metal.equals(Metal.BARIUM)) {
                 BlockOreObject oreObject = TinkersReforgedBlocks.BARIUM_ORE;
 
+                tag(BlockTags.NEEDS_DIAMOND_TOOL).add(oreObject.get());
                 tag(metal.getRawBlockTag()).add(oreObject.getRawOreBlock());
 
                 tag(metal.getOreBlock()).add(oreObject.get());
@@ -53,6 +56,7 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
 
                 tag(metal.getRawBlockTag()).add(oreObject.getRawOreBlock());
 
+                tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(oreObject.get());
                 tag(metal.getOreBlock()).add(oreObject.get());
                 tag(Tags.Blocks.ORES).add(oreObject.get());
             }

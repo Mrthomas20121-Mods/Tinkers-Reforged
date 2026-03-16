@@ -3,7 +3,7 @@
   "cast": {
     "tag": "tconstruct:casts/multi_use/nugget"
   },
-  "cooling_time": 36,
+  "cooling_time": 32,
   "fluid": {
     "amount": 10,
     "tag": "forge:molten_thallium"

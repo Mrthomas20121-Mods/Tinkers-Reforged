@@ -1,0 +1,17 @@
+[
+  {
+    "name": "fuels",
+    "type": "mantle:text",
+    "data": "fuels/welcome.json"
+  },
+  {
+    "name": "uranophane",
+    "type": "mantle:text",
+    "data": "fuels/uranophane.json"
+  },
+  {
+    "name": "serandite",
+    "type": "mantle:text",
+    "data": "fuels/serandite.json"
+  }
+]

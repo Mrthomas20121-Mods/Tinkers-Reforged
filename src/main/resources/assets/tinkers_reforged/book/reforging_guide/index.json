@@ -3,39 +3,117 @@
     "name": "ores",
     "data": "sections/ores.json",
     "icon": {
-      "item": "tinkers_reforged:aluminum_ore"
+      "item": "tinkers_reforged:yttrium_ore"
     }
   },
   {
-    "name": "resources",
-    "data": "sections/resources.json",
+    "name": "fuels",
+    "data": "sections/fuels.json",
     "icon": {
-      "item": "tinkers_reforged:red_beryl_gem"
+      "item": "tinkers_reforged:molten_uranophane_bucket"
     }
   },
   {
-    "name": "tinkers_reforged_materials",
-    "icon": {
-      "item": "tinkers_reforged:aluminum_ingot"
-    }
-  },
-  {
-    "name": "tools",
-    "data": "sections/tools.json",
+    "name": "tinkers_reforged_melee_materials",
+    "data": "no-load",
+    "extraData": { 
+      "tconstruct:material_tier": { 
+        "type": "tconstruct:melee_harvest", 
+        "tier": { 
+          "min": 0, 
+          "max": 5 
+        }, 
+        "predicate": {
+            "type": "tconstruct:id", 
+            "id": [
+              "tinkers_reforged:slimebronze",
+              "tinkers_reforged:graphite",
+              "tinkers_reforged:yttrium",
+              "tinkers_reforged:astatine",
+              "tinkers_reforged:barium",
+              "tinkers_reforged:tellurium",
+              "tinkers_reforged:actinium",
+              "tinkers_reforged:thallium",
+              "tinkers_reforged:germanium",
+              "tinkers_reforged:berkelium"
+            ]
+          }
+        }
+      },
     "icon": {
       "item": {
         "type": "forge:nbt",
-        "item": "tinkers_reforged:longsword",
+        "item": "tconstruct:tool_binding",
+        "nbt": { "Material": "tinkers_reforged:graphite" }
+      }
+    }
+  },
+  {
+    "name": "tinkers_reforged_armor_materials",
+    "data": "no-load",
+    "extraData": { 
+      "tconstruct:material_tier": { 
+        "type": "tconstruct:armor", 
+        "tier": { 
+          "min": 0, 
+          "max": 5 
+        },
+        "predicate": {
+            "type": "tconstruct:id", 
+            "id": [
+              "tinkers_reforged:slimebronze",
+              "tinkers_reforged:graphite",
+              "tinkers_reforged:yttrium",
+              "tinkers_reforged:astatine",
+              "tinkers_reforged:barium",
+              "tinkers_reforged:tellurium",
+              "tinkers_reforged:actinium",
+              "tinkers_reforged:thallium",
+              "tinkers_reforged:germanium",
+              "tinkers_reforged:berkelium"
+            ]
+          }
+        }
+      },
+    "icon": {
+      "item": {
+        "type": "forge:nbt",
+        "item": "tconstruct:plate_chestplate",
         "nbt": {
           "tic_broken": false,
           "tic_display": true,
           "Damage": 0,
           "tic_materials": [
-            "tconstruct:ui_render#head",
-            "tconstruct:ui_render#handle",
-            "tconstruct:ui_render#extra"
+            "tinkers_reforged:slimebronze",
+            "tinkers_reforged:thallium"
           ]
         }
+      }
+    }
+  },
+  {
+    "name": "tinkers_reforged_ranged_materials",
+    "data": "no-load",
+    "extraData": { 
+      "tconstruct:material_tier": { 
+        "type": "tconstruct:ranged", 
+        "tier": { 
+          "min": 0, 
+          "max": 5 
+        }, 
+        "predicate": {
+            "type": "tconstruct:id", 
+            "id": [
+              "tinkers_reforged:yttrium"
+            ]
+          }
+        }
+      },
+    "icon": {
+      "item": {
+        "type": "forge:nbt",
+        "item": "tconstruct:bow_limb",
+        "nbt": { "Material": "tinkers_reforged:yttrium" }
       }
     }
   }

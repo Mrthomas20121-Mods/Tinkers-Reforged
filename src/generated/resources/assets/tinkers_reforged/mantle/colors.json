@@ -17,6 +17,7 @@
     "close_combat": "#40541E",
     "flaming": "#403E2F",
     "frail": "#2A1D5B",
+    "growth": "#451318",
     "ionize": "#28373C",
     "land_protection": "#1C1C20",
     "landing_pad": "#4C183C",
@@ -28,7 +29,6 @@
     "small_protection": "#40541E",
     "subaquatic": "#E99475",
     "surface_resources": "#1C1C20",
-    "triad": "#522728",
-    "tunneling": "#451318"
+    "triad": "#522728"
   }
 }

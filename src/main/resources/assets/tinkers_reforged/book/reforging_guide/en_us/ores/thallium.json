@@ -1,0 +1,16 @@
+{
+  "title": "Thallium Ore",
+  "item": {
+    "tag": "forge:ores/thallium"
+  },
+  "text": [
+    {
+      "text": "Thallium is an ore you find in the nether. It spawn between Y 40 and -127",
+      "paragraph": true
+    },
+    {
+      "text": "The ore can be melted into Thallium.",
+      "paragraph": true
+    }
+  ]
+}

@@ -4,10 +4,7 @@ import mrthomas20121.tinkers_reforged.api.data.Metal;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
-import slimeknights.tconstruct.tools.stats.HandleMaterialStats;
-import slimeknights.tconstruct.tools.stats.HeadMaterialStats;
-import slimeknights.tconstruct.tools.stats.PlatingMaterialStats;
-import slimeknights.tconstruct.tools.stats.StatlessMaterialStats;
+import slimeknights.tconstruct.tools.stats.*;
 
 import static net.minecraft.world.item.Tiers.*;
 
@@ -22,6 +19,13 @@ public class TinkersReforgedMaterialStatsDataProvider extends AbstractMaterialSt
 
         addMeleeHarvest();
         addArmor();
+        addRanged();
+    }
+
+    private void addRanged() {
+        addMaterialStats(Metal.YTTRIUM.asMaterial(),
+                new LimbMaterialStats(400, 0.10f, -0.05f, 0.1f),
+                new GripMaterialStats(-0.1f, 0.1f, 0.6f));
     }
 
     private void addArmor() {

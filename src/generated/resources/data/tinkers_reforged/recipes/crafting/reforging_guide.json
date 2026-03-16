@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:books"
+    },
+    {
+      "tag": "forge:ingots/yttrium"
+    }
+  ],
+  "result": {
+    "item": "tinkers_reforged:reforging_guide"
+  }
+}

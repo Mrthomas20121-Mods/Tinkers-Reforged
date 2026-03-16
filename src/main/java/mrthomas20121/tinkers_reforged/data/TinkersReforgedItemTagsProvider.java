@@ -28,6 +28,11 @@ public class TinkersReforgedItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+        tag(ItemTags.BOOKSHELF_BOOKS).add(TinkersReforgedItems.BOOK.asItem());
+        tag(ItemTags.LECTERN_BOOKS).add(TinkersReforgedItems.BOOK.asItem());
+        tag(TinkerTags.Items.GUIDEBOOKS).add(TinkersReforgedItems.BOOK.asItem());
+
         for(Metal metal: Metal.values) {
 
             tag(ItemTags.TRIM_MATERIALS).addTag(metal.getIngotTag());

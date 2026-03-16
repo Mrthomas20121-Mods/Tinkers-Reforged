@@ -7,6 +7,6 @@
     "amount": 10,
     "tag": "forge:molten_berkelium"
   },
-  "temperature": 1200,
-  "time": 24
+  "temperature": 2200,
+  "time": 32
 }

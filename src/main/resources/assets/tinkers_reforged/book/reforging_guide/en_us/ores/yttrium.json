@@ -1,0 +1,16 @@
+{
+  "title": "Yttrium Ore",
+  "item": {
+    "tag": "forge:ores/yttrium"
+  },
+  "text": [
+    {
+      "text": "Yttrium is an ore you find in the overworld. It spawn between Y 20 and -64",
+      "paragraph": true
+    },
+    {
+      "text": "The ore can be melted into Yttrium.",
+      "paragraph": true
+    }
+  ]
+}
