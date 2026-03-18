@@ -33,7 +33,7 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
                 .addDefaultTraits(TinkersReforgedModifierIds.FRAIL);
         material(Metal.TELLURIUM.asMaterial())
                 .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.TRIAD)
-                .addTraits(ARMOR, TinkersReforgedModifierIds.AIR_RESISTANCE);
+                .addTraits(ARMOR, TinkersReforgedModifierIds.FRICTION);
         material(Metal.ACTINIUM.asMaterial())
                 .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.FLAMING)
                 .addTraits(ARMOR, TinkersReforgedModifierIds.ROAST);
@@ -42,10 +42,10 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
                 .addTraits(ARMOR, TinkersReforgedModifierIds.LUNGFUL);
         material(Metal.BERKELIUM.asMaterial())
                 .addDefaultTraits(TinkersReforgedModifierIds.CLOSE_COMBAT)
-                .addTraits(ARMOR, TinkersReforgedModifierIds.SMALL_PROTECTION);
+                .addTraits(ARMOR, TinkersReforgedModifierIds.HEALTH_UP);
         material(Metal.GERMANIUM.asMaterial())
-                .addDefaultTraits(TinkersReforgedModifierIds.PITCHING)
-                .addTraits(ARMOR, TinkersReforgedModifierIds.LANDING_PAD);
+                .addDefaultTraits(TinkersReforgedModifierIds.GEOGRAPHICAL)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.DECAY_IMMUNITY);
     }
 
     @Override

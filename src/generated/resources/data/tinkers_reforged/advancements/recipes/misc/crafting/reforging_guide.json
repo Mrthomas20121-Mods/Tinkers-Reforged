@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:books"
+            "items": [
+              "minecraft:book"
+            ]
           }
         ]
       },

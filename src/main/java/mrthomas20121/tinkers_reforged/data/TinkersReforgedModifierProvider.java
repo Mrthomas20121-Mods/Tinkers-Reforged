@@ -1,7 +1,6 @@
 package mrthomas20121.tinkers_reforged.data;
 
 import mrthomas20121.tinkers_reforged.TinkersReforged;
-import mrthomas20121.tinkers_reforged.init.TinkersReforgedAttributes;
 import mrthomas20121.tinkers_reforged.module.*;
 import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedPredicates;
 import net.minecraft.data.PackOutput;
@@ -9,11 +8,11 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.fluids.FluidType;
 import slimeknights.mantle.data.predicate.IJsonPredicate;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.damage.DamageTypePredicate;
@@ -24,6 +23,7 @@ import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.modifiers.modules.armor.BlockDamageSourceModule;
+import slimeknights.tconstruct.library.modifiers.modules.armor.EffectImmunityModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.RepairModule;
@@ -32,8 +32,8 @@ import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalPowerModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
+import slimeknights.tconstruct.library.modifiers.modules.mining.ConditionalMiningSpeedModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
-import slimeknights.tconstruct.library.tools.capability.fluid.ToolTankHelper;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 
 import static slimeknights.tconstruct.common.TinkerTags.Items.HARVEST;
@@ -59,18 +59,13 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
 
         buildModifier(TinkersReforgedModifierIds.TRIAD).addModule(new TriadModule(LevelingInt.eachLevel(2)));
 
-        buildModifier(TinkersReforgedModifierIds.PITCHING)
-                .addModule(StatBoostModule.add(ToolTankHelper.CAPACITY_STAT).eachLevel(FluidType.BUCKET_VOLUME))
-                .addModule(ToolTankHelper.TANK_HANDLER)
-                // 50 is how much less it will consume for each modifier level
-                .addModule(new PitchingModule(LevelingInt.eachLevel(50)));
-
         buildModifier(TinkersReforgedModifierIds.CLOSE_COMBAT)
                 .addModules(StatBoostModule.add(ToolStats.ATTACK_DAMAGE).eachLevel(4),
                         AttributeModule.builder(ForgeMod.ENTITY_REACH.get(), AttributeModifier.Operation.ADDITION).eachLevel(-0.5f));
 
         buildModifier(TinkersReforgedModifierIds.IONIZE)
-                .addModules(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(Tags.EntityTypes.BOSSES)).eachLevel(3), ConditionalPowerModule.builder().target(LivingEntityPredicate.tag(Tags.EntityTypes.BOSSES)).eachLevel(3));
+                .addModules(ConditionalMeleeDamageModule.builder().target(LivingEntityPredicate.tag(Tags.EntityTypes.BOSSES)).eachLevel(3),
+                        ConditionalPowerModule.builder().target(LivingEntityPredicate.tag(Tags.EntityTypes.BOSSES)).eachLevel(3));
 
         IJsonPredicate<Item> harvest = ItemPredicate.tag(HARVEST);
 
@@ -94,6 +89,11 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                                 .armorHarvest(EquipmentSlot.HEAD, EquipmentSlot.FEET)
                 );
 
+        buildModifier(TinkersReforgedModifierIds.GEOGRAPHICAL)
+                .addModule(ConditionalMiningSpeedModule.builder().toolTag(HARVEST).holder(TinkersReforgedPredicates.IS_NOT_IN_THE_OVERWORLD).amount(2, 4))
+                .addModule(ConditionalMeleeDamageModule.builder().attacker(TinkersReforgedPredicates.IS_NOT_IN_THE_OVERWORLD).amount(2, 4))
+                .addModule(ConditionalPowerModule.builder().holder(TinkersReforgedPredicates.IS_NOT_IN_THE_OVERWORLD).amount(2, 3));
+
         buildModifier(TinkersReforgedModifierIds.SUBAQUATIC)
                 .addModule(ConditionalMeleeDamageModule.builder().attacker(LivingEntityPredicate.UNDERWATER).toolTag(TinkerTags.Items.HELD).eachLevel(5f));
 
@@ -104,28 +104,33 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
         buildModifier(TinkersReforgedModifierIds.ROAST)
                 .addModule(new RoastModule(LevelingInt.eachLevel(1), LivingEntityPredicate.ON_FIRE));
 
-        buildModifier(TinkersReforgedModifierIds.LANDING_PAD)
-                .addModule(AttributeModule.builder(TinkersReforgedAttributes.ENDER_PEARL_REDUCTION, AttributeModifier.Operation.ADDITION).eachLevel(0.1f));
+        buildModifier(TinkersReforgedModifierIds.DECAY_IMMUNITY)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
+                .addModule(new EffectImmunityModule(MobEffects.WITHER));
 
         buildModifier(TinkersReforgedModifierIds.LAND_PROTECTION)
                 .addModule(ProtectionModule.builder().source(DamageSourcePredicate.CAN_PROTECT).entity(TinkersReforgedPredicates.ABOVE_SEA_LEVEL).eachLevel(2f));
 
-        buildModifier(TinkersReforgedModifierIds.SMALL_PROTECTION)
-                .addModule(ProtectionModule.builder().attacker(TinkersReforgedPredicates.BABY).eachLevel(3f));
+        buildModifier(TinkersReforgedModifierIds.HEALTH_UP)
+                .addModule(AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.ADDITION).eachLevel(-0.2f))
+                .addModule(AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.ADDITION).eachLevel(1f));
 
         buildModifier(TinkersReforgedModifierIds.SAFEGUARD)
-                .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
+                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(BlockDamageSourceModule.source(new DamageTypePredicate(DamageTypes.CACTUS)).build());
 
         buildModifier(TinkersReforgedModifierIds.AGILITY)
                 .addModule(AttributeModule.builder(ForgeMod.SWIM_SPEED.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f))
                 .addModule(AttributeModule.builder(ForgeMod.ENTITY_GRAVITY.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f));
 
-        buildModifier(TinkersReforgedModifierIds.AIR_RESISTANCE)
+        buildModifier(TinkersReforgedModifierIds.FRICTION)
                 .addModule(ProtectionModule.builder().attacker(LivingEntityPredicate.ON_GROUND.inverted()).eachLevel(2f));
 
         buildModifier(TinkersReforgedModifierIds.LUNGFUL)
                 .addModule(ProtectionModule.builder().source(new DamageTypePredicate(DamageTypes.DRAGON_BREATH)).eachLevel(6f));
+
+        buildModifier(TinkersReforgedModifierIds.SPACIAL)
+                .addModule(ProtectionModule.builder().attacker(TinkersReforgedPredicates.IS_NOT_IN_THE_OVERWORLD).source(DamageSourcePredicate.CAN_PROTECT).eachLevel(3f));
     }
 
     @Override

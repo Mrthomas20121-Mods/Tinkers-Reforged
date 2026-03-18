@@ -9,7 +9,7 @@
     "tconstruct:armor": [
       {
         "level": 1,
-        "name": "tinkers_reforged:small_protection"
+        "name": "tinkers_reforged:health_up"
       }
     ]
   }

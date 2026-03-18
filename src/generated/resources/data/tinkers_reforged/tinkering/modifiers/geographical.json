@@ -1,0 +1,32 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "each_level": 4.0,
+      "entity": "tinkers_reforged:not_in_overworld",
+      "flat": 2.0,
+      "percent": false,
+      "require_effective": true,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": "tinkers_reforged:not_in_overworld",
+      "each_level": 4.0,
+      "flat": 2.0,
+      "percent": false
+    },
+    {
+      "type": "tconstruct:conditional_power",
+      "each_level": 3.0,
+      "flat": 2.0,
+      "holder": "tinkers_reforged:not_in_overworld",
+      "percent": false
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -2,14 +2,14 @@
   "default": [
     {
       "level": 1,
-      "name": "tinkers_reforged:pitching"
+      "name": "tinkers_reforged:geographical"
     }
   ],
   "perStat": {
     "tconstruct:armor": [
       {
         "level": 1,
-        "name": "tinkers_reforged:landing_pad"
+        "name": "tinkers_reforged:decay_immunity"
       }
     ]
   }

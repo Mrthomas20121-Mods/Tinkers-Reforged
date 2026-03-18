@@ -3,7 +3,7 @@
     "tconstruct:armor": [
       {
         "level": 1,
-        "name": "tinkers_reforged:air_resistance"
+        "name": "tinkers_reforged:friction"
       }
     ],
     "tconstruct:melee_harvest": [

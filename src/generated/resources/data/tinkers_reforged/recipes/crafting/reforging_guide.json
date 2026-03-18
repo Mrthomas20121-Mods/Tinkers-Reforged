@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:books"
+      "item": "minecraft:book"
     },
     {
       "tag": "forge:ingots/yttrium"

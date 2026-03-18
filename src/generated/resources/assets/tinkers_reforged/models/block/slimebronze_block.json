@@ -21,7 +21,6 @@
     "slime"
   ],
   "loader": "forge:composite",
-  "render_type": "minecraft:translucent",
   "textures": {
     "particle": "tinkers_reforged:block/material/slimebronze_block"
   }

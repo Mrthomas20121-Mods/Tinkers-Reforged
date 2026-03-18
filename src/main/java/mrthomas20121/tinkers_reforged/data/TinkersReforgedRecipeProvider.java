@@ -158,8 +158,7 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
 
         MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_SERANDITE.get(), 50), 200)
                 .save(consumer, location("smeltery/melting/fuel/molten_serandite"));
-
-
+        
     }
 
     private void metalCraftingRecipes(Metal metal, String metalName, ItemMetalObject itemMetalObject, BlockMetalObject blockMetalObject, Consumer<FinishedRecipe> consumer) {

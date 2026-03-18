@@ -19,11 +19,11 @@ public class TinkersReforgedColorProvider extends MantleColorGenerator {
         materialAndModifier(0x451318, Metal.YTTRIUM, TinkersReforgedModifierIds.GROWTH, TinkersReforgedModifierIds.SAFEGUARD);
         materialAndModifier(0xe99475, Metal.ASTATINE, TinkersReforgedModifierIds.SUBAQUATIC, TinkersReforgedModifierIds.AGILITY);
         materialAndModifier(0x2a1d5b, Metal.BARIUM, TinkersReforgedModifierIds.FRAIL);
-        materialAndModifier(0x522728, Metal.TELLURIUM, TinkersReforgedModifierIds.TRIAD, TinkersReforgedModifierIds.AIR_RESISTANCE);
+        materialAndModifier(0x522728, Metal.TELLURIUM, TinkersReforgedModifierIds.TRIAD, TinkersReforgedModifierIds.FRICTION);
         materialAndModifier(0x403e2f, Metal.ACTINIUM, TinkersReforgedModifierIds.FLAMING, TinkersReforgedModifierIds.ROAST);
         materialAndModifier(0x28373c, Metal.THALLIUM, TinkersReforgedModifierIds.IONIZE, TinkersReforgedModifierIds.LUNGFUL);
-        materialAndModifier(0x4c183c, Metal.GERMANIUM, TinkersReforgedModifierIds.PITCHING, TinkersReforgedModifierIds.LANDING_PAD);
-        materialAndModifier(0x40541e, Metal.BERKELIUM, TinkersReforgedModifierIds.CLOSE_COMBAT, TinkersReforgedModifierIds.SMALL_PROTECTION);
+        materialAndModifier(0x4c183c, Metal.GERMANIUM, TinkersReforgedModifierIds.GEOGRAPHICAL, TinkersReforgedModifierIds.DECAY_IMMUNITY);
+        materialAndModifier(0x40541e, Metal.BERKELIUM, TinkersReforgedModifierIds.CLOSE_COMBAT, TinkersReforgedModifierIds.HEALTH_UP);
     }
 
     private void materialAndModifier(int color, Metal metal, ModifierId... modifiers) {

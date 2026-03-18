@@ -22,6 +22,7 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
     protected void addTranslations() {
 
         add("itemGroup.tinkers_reforged.tab", "Tinkers Reforged Resources");
+        add("attribute.name.tinkers_reforged.player.ender_pearl_reduction", "Ender Pearl Reduction");
 
         for(Metal metal: Metal.values) {
             String serializedName = metal.getSerializedName();
@@ -93,8 +94,8 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         material(Metal.TELLURIUM, "Not be confused with the Pokemon move", "Your attack deal 2% of the target max health instead of flat damage. \nModifiers that boost damage still works with this.", "", "Grants 2% protection while in the air");
         material(Metal.ACTINIUM, "Boil 'em, mash 'em, stick 'em in a stew", "Increases fortune level while on fire", "", "Increases looting level while on fire(helmet/boots only)");
         material(Metal.THALLIUM, "I heard it's great at deflecting bullets in the wild west", "Deals +3 damage per level against bosses", "Deals +3 damage per level against bosses", "Grants 5% dragonbreath protection");
-        material(Metal.GERMANIUM, "Like the germ in Germany, I am sick on this mic", "Launch ender pearl at the cost of 250-50 per level molten ender", "", "Reduce damage taken from ender pearl by 1% per level");
-        material(Metal.BERKELIUM, "Berserker has nothing on this","Deal +4 damage per level but lose 0.1 entity range per level", "", "Grants 3% baby mobs protection");
+        material(Metal.GERMANIUM, "Like the germ in Germany, I am sick on this mic", "Gain Damage, Mining Speed and Power by 3 per level if you're not in the overworld.", "", "Immune to wither mob effect.");
+        material(Metal.BERKELIUM, "Berserker has nothing on this","Deal +4 damage per level but lose 0.1 entity range per level", "", "2 Extra Max HP per level at the cost of 0.2 attack speed per level");
 
         modifier(TinkersReforgedModifierIds.IONIZE, "Boss won't like this", "Deal more damage against bosses");
         modifier(TinkersReforgedModifierIds.LUNGFUL, "Don't smoke dragonbreath, it's bad for your lungs", "Extra protection against dragonbreath damage");
@@ -102,18 +103,18 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.OVERFRACTURE, "Who Fractured the slime?", "Mine non-effective blocks faster at the cost of overslime");
         modifier(TinkersReforgedModifierIds.GROWTH, "Mom, Look how tall I am!", "Gain more mining speed, attack damage and projectile damage at the cost repair cost.");
         modifier(TinkersReforgedModifierIds.SAFEGUARD, "Give cactus a hug", "Immunity to Cactus Damage.");
-        modifier(TinkersReforgedModifierIds.AGILITY, "Space is cool", "Gain more Swim Speed and Entity Gravity.");
-        modifier(TinkersReforgedModifierIds.AIR_RESISTANCE, "You better stay airborne", "Extra Protection while in the air");
+        modifier(TinkersReforgedModifierIds.AGILITY, "I'm just as fast as dolphins now", "Gain more Swim Speed and Entity Gravity.");
+        modifier(TinkersReforgedModifierIds.FRICTION, "You better stay airborne", "Extra Protection while in the air");
         modifier(TinkersReforgedModifierIds.LAND_PROTECTION, "Stay on land if you want to survive", "Protect you above the sea level");
         modifier(TinkersReforgedModifierIds.FRAIL, "Aren't you skinny?", "Attackers may get weaker");
         modifier(TinkersReforgedModifierIds.CLOSE_COMBAT, "Aren't you a bit too short for this?", "Deal more damage at the cost of losing entity range.");
-        modifier(TinkersReforgedModifierIds.PITCHING, "Down Down in the void", "Launch an ender pearl at the cost of molten ender");
-        modifier(TinkersReforgedModifierIds.LANDING_PAD, "Finally, airbags are useful!", "Reduce damage taken from ender pearl");
-        modifier(TinkersReforgedModifierIds.SMALL_PROTECTION, "You need all the protection you can get where you're going", "Extra protection against baby mobs");
+        modifier(TinkersReforgedModifierIds.DECAY_IMMUNITY, "Not this time, wither!", "Immunity to wither mob effect.");
+        modifier(TinkersReforgedModifierIds.HEALTH_UP, "Stay Healthy", "Extra Max HP at the cost of attack speed");
         modifier(TinkersReforgedModifierIds.ROAST, "You got Roasted!", "Increases looting level while on fire");
         modifier(TinkersReforgedModifierIds.FLAMING, "Flaming Hot!", "Increases fortune level while on fire");
         modifier(TinkersReforgedModifierIds.SUBAQUATIC, "Now I know how Aquaman feels like", "Deal more damage underwater");
         modifier(TinkersReforgedModifierIds.SURFACE_RESOURCES, "It's everywhere!", "Increase fortune above sea level");
+        modifier(TinkersReforgedModifierIds.GEOGRAPHICAL, "The Overworld is overrated", "Gain Damage, Mining Speed and Power if you're not in the overworld.");
     }
 
     /**
