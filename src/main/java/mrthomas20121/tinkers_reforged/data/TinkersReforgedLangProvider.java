@@ -115,6 +115,10 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.SUBAQUATIC, "Now I know how Aquaman feels like", "Deal more damage underwater");
         modifier(TinkersReforgedModifierIds.SURFACE_RESOURCES, "It's everywhere!", "Increase fortune above sea level");
         modifier(TinkersReforgedModifierIds.GEOGRAPHICAL, "The Overworld is overrated", "Gain Damage, Mining Speed and Power if you're not in the overworld.");
+
+        add("modifier.tinkers_reforged.ionize.ionize_attack_damage", "Ionize Damage");
+        add("modifier.tinkers_reforged.geographical.mining_speed", "Geographical Mining Speed");
+        add("modifier.tinkers_reforged.geographical.attack_damage", "Geographical Attack Damage");
     }
 
     /**
