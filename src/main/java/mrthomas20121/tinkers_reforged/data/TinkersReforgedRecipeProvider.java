@@ -143,20 +143,20 @@ public class TinkersReforgedRecipeProvider extends RecipeProvider implements ICo
                 .addInput(TinkerFluids.moltenRoseGold.getCommonTag(), FluidValues.INGOT)
                 .save(consumer, location("smeltery/melting/alloy/germanium"));
 
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.MOLTEN_URANOPHANE, FluidValues.BRICK*2)
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.MOLTEN_URANOPHANE.result(FluidValues.BRICK*2), 1500)
                 .addInput(TinkerFluids.ichor.ingredient(FluidValues.SLIMEBALL*2))
                 .addInput(TinkerFluids.blazingBlood.ingredient(FluidValues.BRICK))
                 .save(consumer, location("smeltery/melting/alloy/uranophane"));
 
-        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.MOLTEN_SERANDITE, FluidValues.BRICK*2)
+        AlloyRecipeBuilder.alloy(TinkersReforgedFluids.MOLTEN_SERANDITE.result(FluidValues.BRICK*2), 1500)
                 .addInput(TinkerFluids.enderSlime.ingredient(FluidValues.SLIMEBALL*2))
                 .addInput(TinkerFluids.blazingBlood.ingredient(FluidValues.BRICK))
                 .save(consumer, location("smeltery/melting/alloy/serandite"));
 
-        MeltingFuelBuilder.fuel(TinkersReforgedFluids.MOLTEN_URANOPHANE.ingredient(50), 175, 1500)
+        MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_URANOPHANE.get(), 50), 175)
                 .save(consumer, location("smeltery/melting/fuel/molten_uranophane"));
 
-        MeltingFuelBuilder.fuel(TinkersReforgedFluids.MOLTEN_SERANDITE.ingredient(50), 200, 2000)
+        MeltingFuelBuilder.fuel(new FluidStack(TinkersReforgedFluids.MOLTEN_SERANDITE.get(), 50), 200)
                 .save(consumer, location("smeltery/melting/fuel/molten_serandite"));
         
     }

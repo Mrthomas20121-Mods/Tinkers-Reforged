@@ -3,8 +3,8 @@
   "duration": 200,
   "fluid": {
     "amount": 50,
-    "tag": "forge:molten_serandite"
+    "fluid": "tinkers_reforged:molten_serandite"
   },
-  "rate": 20,
-  "temperature": 2000
+  "rate": 30,
+  "temperature": 3000
 }
