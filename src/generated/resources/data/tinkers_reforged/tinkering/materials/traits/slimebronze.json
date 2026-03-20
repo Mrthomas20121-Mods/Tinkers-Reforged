@@ -1,14 +1,12 @@
 {
-  "perStat": {
-    "tconstruct:melee_harvest": [
-      {
-        "level": 1,
-        "name": "tinkers_reforged:overfracture"
-      },
-      {
-        "level": 1,
-        "name": "tconstruct:overslime"
-      }
-    ]
-  }
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_reforged:overfracture"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:overslime"
+    }
+  ]
 }

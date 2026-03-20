@@ -19,7 +19,7 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
     @Override
     protected void addMaterialTraits() {
         material(Metal.SLIMEBRONZE.asMaterial())
-                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.OVERFRACTURE, TinkerModifiers.overslime.getId());
+                .addDefaultTraits(TinkersReforgedModifierIds.OVERFRACTURE, TinkerModifiers.overslime.getId());
         material(Metal.GRAPHITE.asMaterial())
                 .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SURFACE_RESOURCES)
                 .addTraits(ARMOR, TinkersReforgedModifierIds.LAND_PROTECTION);
