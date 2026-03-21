@@ -51,11 +51,11 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                 .addModule(new OverfractureModule(LevelingInt.eachLevel(4)));
 
         buildModifier(TinkersReforgedModifierIds.GROWTH)
-                .addModule(StatBoostModule.multiplyAll(ToolStats.MINING_SPEED).eachLevel(1.2f))
-                .addModule(StatBoostModule.multiplyAll(ToolStats.ATTACK_DAMAGE).eachLevel(1.2f))
-                .addModule(StatBoostModule.multiplyAll(ToolStats.PROJECTILE_DAMAGE).eachLevel(1.2f))
-                .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(0.9f))
-                .addModule(RepairModule.builder().flat(2f));
+                .addModule(StatBoostModule.add(ToolStats.MINING_SPEED).eachLevel(3f))
+                .addModule(StatBoostModule.add(ToolStats.ATTACK_DAMAGE).eachLevel(3f))
+                .addModule(StatBoostModule.add(ToolStats.PROJECTILE_DAMAGE).eachLevel(3f))
+                .addModule(StatBoostModule.multiplyAll(ToolStats.DURABILITY).eachLevel(0.8f))
+                .addModule(RepairModule.builder().eachLevel(1f));
 
         buildModifier(TinkersReforgedModifierIds.TRIAD).addModule(new TriadModule(LevelingInt.eachLevel(2)));
 

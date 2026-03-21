@@ -88,7 +88,7 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
 
         material(Metal.SLIMEBRONZE, "This is what happens when a slime fuse with another", "Mine non-effective blocks 4 per level faster at the cost of 4 overslime per level", "", "");
         material(Metal.GRAPHITE, "I could write a novel with this", "Increases fortune level above sea level", "", "Grants 3% protection above the sea level");
-        material(Metal.YTTRIUM, "Don't stop me now", "Gain +1.5 mining speed, attack damage and projectile damage per level but your repair cost is doubled", "", "Immunity to Cactus Damage, you can hug them now");
+        material(Metal.YTTRIUM, "Don't stop me now", "Gain +3 mining speed, attack damage and projectile damage per level but your repair cost is increased", "", "Immunity to Cactus Damage, you can hug them now");
         material(Metal.ASTATINE, "100% waterproof", "Gain more damage underwater", "Gain more damage underwater", "Gain +0.1 Swim Speed and Entity Gravity per level");
         material(Metal.BARIUM, "Don't be so soft", "Attackers get weaker as you attack them or they attack you", "", "");
         material(Metal.TELLURIUM, "Not be confused with the Pokemon move", "Your attack deal 2% of the target max health instead of flat damage. \nModifiers that boost damage still works with this.", "", "Grants 2% protection while in the air");
@@ -101,7 +101,7 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.LUNGFUL, "Don't smoke dragonbreath, it's bad for your lungs", "Extra protection against dragonbreath damage");
         modifier(TinkersReforgedModifierIds.TRIAD, "Tinkers Construct: Triad edition", "Your attack deal a percentage of the target max health instead of flat damage.");
         modifier(TinkersReforgedModifierIds.OVERFRACTURE, "Who Fractured the slime?", "Mine non-effective blocks faster at the cost of overslime");
-        modifier(TinkersReforgedModifierIds.GROWTH, "Mom, Look how tall I am!", "Gain more mining speed, attack damage and projectile damage at the cost repair cost.");
+        modifier(TinkersReforgedModifierIds.GROWTH, "Mom, Look how tall I am!", "Gain more mining speed, attack damage and projectile damage at the cost of repair cost increasing.");
         modifier(TinkersReforgedModifierIds.SAFEGUARD, "Give cactus a hug", "Immunity to Cactus Damage.");
         modifier(TinkersReforgedModifierIds.AGILITY, "I'm just as fast as dolphins now", "Gain more Swim Speed and Entity Gravity.");
         modifier(TinkersReforgedModifierIds.FRICTION, "You better stay airborne", "Extra Protection while in the air");
