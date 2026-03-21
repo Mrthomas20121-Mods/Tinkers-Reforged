@@ -1,0 +1,31 @@
+{
+  "values": [
+    "tinkers_reforged:slimebronze_block",
+    "tinkers_reforged:slimebronze_platform",
+    "tinkers_reforged:graphite_block",
+    "tinkers_reforged:graphite_platform",
+    "tinkers_reforged:yttrium_block",
+    "tinkers_reforged:yttrium_platform",
+    "tinkers_reforged:yttrium_raw_block",
+    "tinkers_reforged:deepslate_yttrium_ore",
+    "tinkers_reforged:yttrium_ore",
+    "tinkers_reforged:astatine_block",
+    "tinkers_reforged:astatine_platform",
+    "tinkers_reforged:barium_block",
+    "tinkers_reforged:barium_platform",
+    "tinkers_reforged:barium_raw_block",
+    "tinkers_reforged:barium_ore",
+    "tinkers_reforged:tellurium_block",
+    "tinkers_reforged:tellurium_platform",
+    "tinkers_reforged:actinium_block",
+    "tinkers_reforged:actinium_platform",
+    "tinkers_reforged:thallium_block",
+    "tinkers_reforged:thallium_platform",
+    "tinkers_reforged:thallium_raw_block",
+    "tinkers_reforged:thallium_ore",
+    "tinkers_reforged:germanium_block",
+    "tinkers_reforged:germanium_platform",
+    "tinkers_reforged:berkelium_block",
+    "tinkers_reforged:berkelium_platform"
+  ]
+}

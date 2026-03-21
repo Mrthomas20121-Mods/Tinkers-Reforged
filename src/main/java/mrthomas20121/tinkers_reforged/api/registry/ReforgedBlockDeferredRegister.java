@@ -28,13 +28,13 @@ public class ReforgedBlockDeferredRegister extends BlockDeferredRegisterExtensio
     }
 
     public BlockMetalObject registerMetal(String name) {
-        ItemObject<Block> block = register(name + "_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0f)), (b) -> new BlockItem(b, new Item.Properties()));
+        ItemObject<Block> block = register(name + "_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(4.0f, 4.0f)), (b) -> new BlockItem(b, new Item.Properties()));
         ItemObject<PlatformBlock> platform = register(name + "_platform", () -> new PlatformBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(3.0F, 6.0F).noOcclusion()), (b) -> new BlockItem(b, new Item.Properties()));
         return new BlockMetalObject(block, platform);
     }
 
     public BlockMetalObject registerSlimeMetal(String name) {
-        ItemObject<Block> block = register(name + "_block", () -> new SlimesteelBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).instrument(NoteBlockInstrument.IRON_XYLOPHONE).noOcclusion().requiresCorrectToolForDrops().strength(5.0f)), (b) -> new BlockItem(b, new Item.Properties()));
+        ItemObject<Block> block = register(name + "_block", () -> new SlimesteelBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).instrument(NoteBlockInstrument.IRON_XYLOPHONE).noOcclusion().requiresCorrectToolForDrops().strength(4.0f, 4.0f)), (b) -> new BlockItem(b, new Item.Properties()));
         ItemObject<PlatformBlock> platform = register(name + "_platform", () -> new PlatformBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops().strength(3.0F, 6.0F).noOcclusion()), (b) -> new BlockItem(b, new Item.Properties()));
         return new BlockMetalObject(block, platform);
     }

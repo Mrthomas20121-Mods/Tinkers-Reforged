@@ -44,6 +44,7 @@ public class TinkersReforgedDatagen {
         dataGenerator.addProvider(server, materialDataProvider);
         dataGenerator.addProvider(server, new TinkersReforgedMaterialTraitProvider(packOutput, materialDataProvider));
         dataGenerator.addProvider(server, new TinkersReforgedMaterialStatsDataProvider(packOutput, materialDataProvider));
+        dataGenerator.addProvider(server, TinkersReforgedBlockLoot.create(packOutput));
 
         // client
         dataGenerator.addProvider(client, new TinkersReforgedMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));

@@ -32,6 +32,7 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
             BlockMetalObject blockMetalObject = TinkersReforgedBlocks.METAl_BLOCKS.get(metal);
 
             tag(metal.getBlockTag()).add(blockMetalObject.get());
+            tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockMetalObject.get(), blockMetalObject.getPlatform());
 
             if(metal.equals(Metal.YTTRIUM)) {
                 BlockOverworldOreObject oreObject = TinkersReforgedBlocks.YTTRIUM_ORE;
@@ -41,6 +42,7 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
                 tag(BlockTags.NEEDS_IRON_TOOL).add(oreObject.get(), oreObject.getDeepslateOre());
                 tag(metal.getOreBlock()).add(oreObject.get(), oreObject.getDeepslateOre());
                 tag(Tags.Blocks.ORES).add(oreObject.get(), oreObject.getDeepslateOre());
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(oreObject.getRawOreBlock(), oreObject.getDeepslateOre(), oreObject.get());
             }
             else if(metal.equals(Metal.BARIUM)) {
                 BlockOreObject oreObject = TinkersReforgedBlocks.BARIUM_ORE;
@@ -50,6 +52,7 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
 
                 tag(metal.getOreBlock()).add(oreObject.get());
                 tag(Tags.Blocks.ORES).add(oreObject.get());
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(oreObject.getRawOreBlock(), oreObject.get());
             }
             else if(metal.equals(Metal.THALLIUM)) {
                 BlockOreObject oreObject = TinkersReforgedBlocks.THALLIUM_ORE;
@@ -59,6 +62,7 @@ public class TinkersReforgedBlockTagsProvider extends BlockTagsProvider {
                 tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(oreObject.get());
                 tag(metal.getOreBlock()).add(oreObject.get());
                 tag(Tags.Blocks.ORES).add(oreObject.get());
+                tag(BlockTags.MINEABLE_WITH_PICKAXE).add(oreObject.getRawOreBlock(), oreObject.get());
             }
         }
     }
