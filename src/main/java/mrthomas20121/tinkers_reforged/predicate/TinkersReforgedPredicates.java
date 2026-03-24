@@ -13,6 +13,11 @@ public interface TinkersReforgedPredicates {
     LivingEntityPredicate ABOVE_SEA_LEVEL = LivingEntityPredicate.simple(entity -> entity.getY() > entity.level().getSeaLevel());
 
     /**
+     * Predicate that match entity above the sea level
+     */
+    LivingEntityPredicate BELOW_ZERO = LivingEntityPredicate.simple(entity -> entity.getY() < 0f);
+
+    /**
      * Predicate that match entity not in the overworld
      */
     LivingEntityPredicate IS_NOT_IN_THE_OVERWORLD = LivingEntityPredicate.simple(livingEntity -> {

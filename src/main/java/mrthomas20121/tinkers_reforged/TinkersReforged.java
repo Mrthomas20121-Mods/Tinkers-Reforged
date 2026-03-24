@@ -55,6 +55,7 @@ public class TinkersReforged {
 			ModifierModule.LOADER.register(getResource("flaming"), FlamingModule.LOADER);
 
 			LivingEntityPredicate.LOADER.register(getResource("above_sea_level"), TinkersReforgedPredicates.ABOVE_SEA_LEVEL.getLoader());
+			LivingEntityPredicate.LOADER.register(getResource("below_zero"), TinkersReforgedPredicates.BELOW_ZERO.getLoader());
 			LivingEntityPredicate.LOADER.register(getResource("not_in_overworld"), TinkersReforgedPredicates.IS_NOT_IN_THE_OVERWORLD.getLoader());
 		}
 	}

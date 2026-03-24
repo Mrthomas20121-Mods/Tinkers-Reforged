@@ -8,7 +8,7 @@ public class TinkersReforgedModifierIds {
     // tool materials
     public static ModifierId OVERFRACTURE = create("overfracture");
     public static ModifierId IONIZE = create("ionize");
-    public static ModifierId GROWTH = create("growth");
+    public static ModifierId CHASM = create("chasm");
 
     public static ModifierId TRIAD = create("triad");
     public static ModifierId CLOSE_COMBAT = create("close_combat");

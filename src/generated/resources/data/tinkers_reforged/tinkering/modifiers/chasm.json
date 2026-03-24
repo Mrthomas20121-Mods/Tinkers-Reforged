@@ -1,0 +1,39 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "each_level": 3.0,
+      "entity": "tinkers_reforged:below_zero",
+      "percent": false,
+      "require_effective": true,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "each_level": 0.2,
+      "entity": "tinkers_reforged:below_zero",
+      "percent": false,
+      "stat": "tconstruct:draw_speed",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/ranged"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "each_level": 2.0,
+      "entity": "tinkers_reforged:below_zero",
+      "percent": false,
+      "stat": "tconstruct:armor",
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/armor"
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -17,7 +17,7 @@ public class TinkersReforgedMaterialRenderInfoProvider extends MaterialRenderInf
 
         buildRenderInfo(Metal.SLIMEBRONZE.asMaterial()).color(0x94A47B).fallbacks("metal");
         buildRenderInfo(Metal.GRAPHITE.asMaterial()).color(0x1c1c20).fallbacks("metal");
-        buildRenderInfo(Metal.YTTRIUM.asMaterial()).color(0x451318).fallbacks("metal");
+        buildRenderInfo(Metal.YTTRIUM.asMaterial()).color(0xAC2C32).fallbacks("metal");
         buildRenderInfo(Metal.ASTATINE.asMaterial()).color(0xe99475).fallbacks("metal");
         buildRenderInfo(Metal.BARIUM.asMaterial()).color(0x2a1d5b).fallbacks("metal");
         buildRenderInfo(Metal.TELLURIUM.asMaterial()).color(0x522728).fallbacks("metal");

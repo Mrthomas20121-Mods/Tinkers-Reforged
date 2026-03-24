@@ -16,7 +16,7 @@ public class TinkersReforgedColorProvider extends MantleColorGenerator {
     public void addColors() {
         materialAndModifier(0x94A47B, Metal.SLIMEBRONZE, TinkersReforgedModifierIds.OVERFRACTURE);
         materialAndModifier(0x1c1c20, Metal.GRAPHITE, TinkersReforgedModifierIds.SURFACE_RESOURCES, TinkersReforgedModifierIds.LAND_PROTECTION);
-        materialAndModifier(0x451318, Metal.YTTRIUM, TinkersReforgedModifierIds.GROWTH, TinkersReforgedModifierIds.SAFEGUARD);
+        materialAndModifier(0xAC2C32, Metal.YTTRIUM, TinkersReforgedModifierIds.CHASM);
         materialAndModifier(0xe99475, Metal.ASTATINE, TinkersReforgedModifierIds.SUBAQUATIC, TinkersReforgedModifierIds.AGILITY);
         materialAndModifier(0x2a1d5b, Metal.BARIUM, TinkersReforgedModifierIds.FRAIL);
         materialAndModifier(0x522728, Metal.TELLURIUM, TinkersReforgedModifierIds.TRIAD, TinkersReforgedModifierIds.FRICTION);

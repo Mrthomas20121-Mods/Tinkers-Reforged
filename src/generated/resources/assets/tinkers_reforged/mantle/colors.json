@@ -9,24 +9,23 @@
     "slimebronze": "#94a47b",
     "tellurium": "#522728",
     "thallium": "#28373c",
-    "yttrium": "#451318"
+    "yttrium": "#ac2c32"
   },
   "modifier.tinkers_reforged": {
     "agility": "#E99475",
+    "chasm": "#AC2C32",
     "close_combat": "#40541E",
     "decay_immunity": "#4C183C",
     "flaming": "#403E2F",
     "frail": "#2A1D5B",
     "friction": "#522728",
     "geographical": "#4C183C",
-    "growth": "#451318",
     "health_up": "#40541E",
     "ionize": "#28373C",
     "land_protection": "#1C1C20",
     "lungful": "#28373C",
     "overfracture": "#94A47B",
     "roast": "#403E2F",
-    "safeguard": "#451318",
     "subaquatic": "#E99475",
     "surface_resources": "#1C1C20",
     "triad": "#522728"

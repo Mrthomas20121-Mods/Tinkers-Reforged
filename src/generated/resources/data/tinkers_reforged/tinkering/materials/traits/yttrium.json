@@ -1,16 +1,8 @@
 {
-  "perStat": {
-    "tconstruct:armor": [
-      {
-        "level": 1,
-        "name": "tinkers_reforged:safeguard"
-      }
-    ],
-    "tconstruct:melee_harvest": [
-      {
-        "level": 1,
-        "name": "tinkers_reforged:growth"
-      }
-    ]
-  }
+  "default": [
+    {
+      "level": 1,
+      "name": "tinkers_reforged:chasm"
+    }
+  ]
 }

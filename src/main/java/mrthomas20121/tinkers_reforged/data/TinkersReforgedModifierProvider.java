@@ -26,7 +26,7 @@ import slimeknights.tconstruct.library.modifiers.modules.armor.BlockDamageSource
 import slimeknights.tconstruct.library.modifiers.modules.armor.EffectImmunityModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
-import slimeknights.tconstruct.library.modifiers.modules.behavior.RepairModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.EnchantmentModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
@@ -50,12 +50,10 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
         buildModifier(TinkersReforgedModifierIds.OVERFRACTURE)
                 .addModule(new OverfractureModule(LevelingInt.eachLevel(4)));
 
-        buildModifier(TinkersReforgedModifierIds.GROWTH)
-                .addModule(StatBoostModule.add(ToolStats.MINING_SPEED).eachLevel(3f))
-                .addModule(StatBoostModule.add(ToolStats.ATTACK_DAMAGE).eachLevel(3f))
-                .addModule(StatBoostModule.add(ToolStats.PROJECTILE_DAMAGE).eachLevel(3f))
-                .addModule(StatBoostModule.multiplyAll(ToolStats.DURABILITY).eachLevel(0.8f))
-                .addModule(RepairModule.builder().eachLevel(1f));
+        buildModifier(TinkersReforgedModifierIds.CHASM)
+                .addModule(ConditionalMiningSpeedModule.builder().toolTag(HARVEST).holder(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(3f))
+                .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).toolTag(TinkerTags.Items.RANGED).holder(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(0.2f))
+                .addModule(ConditionalStatModule.stat(ToolStats.ARMOR).toolTag(TinkerTags.Items.ARMOR).holder(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(2f));
 
         buildModifier(TinkersReforgedModifierIds.TRIAD).addModule(new TriadModule(LevelingInt.eachLevel(2)));
 
@@ -114,10 +112,6 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
         buildModifier(TinkersReforgedModifierIds.HEALTH_UP)
                 .addModule(AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.ADDITION).eachLevel(-0.2f))
                 .addModule(AttributeModule.builder(Attributes.MAX_HEALTH, AttributeModifier.Operation.ADDITION).eachLevel(1f));
-
-        buildModifier(TinkersReforgedModifierIds.SAFEGUARD)
-                .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
-                .addModule(BlockDamageSourceModule.source(new DamageTypePredicate(DamageTypes.CACTUS)).build());
 
         buildModifier(TinkersReforgedModifierIds.AGILITY)
                 .addModule(AttributeModule.builder(ForgeMod.SWIM_SPEED.get(), AttributeModifier.Operation.ADDITION).eachLevel(0.1f))
