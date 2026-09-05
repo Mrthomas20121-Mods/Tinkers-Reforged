@@ -5,7 +5,7 @@ issueTrackerURL = "https://github.com/Mrthomas20121/Tinkers-Reforged/issues"
 
 [[mods]]
 modId = "tinkers_reforged"
-version = "2.20.0.6"
+version = "2.20.0.7"
 displayName = "Tinkers Reforged"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/tinkers-reforged"
 #logoFile="tinkers_reforged_logo.png"
@@ -30,6 +30,12 @@ Add new materials to Tinkers Construct
 [[dependencies.tinkers_reforged]]
     modId="tconstruct"
     mandatory=true
-    versionRange="[3.11.2.166,)"
+    versionRange="[3.12.0.220,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.tinkers_reforged]]
+    modId="jei"
+    mandatory=true
+    versionRange="[15.56.0.204,)"
     ordering="NONE"
     side="BOTH"
