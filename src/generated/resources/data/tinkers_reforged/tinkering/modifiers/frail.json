@@ -2,7 +2,7 @@
   "level_display": "tconstruct:default",
   "modules": [
     {
-      "type": "tconstruct:mob_effect",
+      "type": "tconstruct:counter_mob_effect",
       "effect": "minecraft:weakness",
       "level": {
         "per_level": 0.5

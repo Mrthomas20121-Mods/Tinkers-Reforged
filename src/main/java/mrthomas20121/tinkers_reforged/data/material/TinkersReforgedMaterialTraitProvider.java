@@ -21,8 +21,8 @@ public class TinkersReforgedMaterialTraitProvider extends AbstractMaterialTraitD
         material(Metal.SLIMEBRONZE.asMaterial())
                 .addDefaultTraits(TinkersReforgedModifierIds.OVERFRACTURE, TinkerModifiers.overslime.getId());
         material(Metal.GRAPHITE.asMaterial())
-                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.SURFACE_RESOURCES)
-                .addTraits(ARMOR, TinkersReforgedModifierIds.LAND_PROTECTION);
+                .addTraits(MELEE_HARVEST, TinkersReforgedModifierIds.CLEAVAGE)
+                .addTraits(ARMOR, TinkersReforgedModifierIds.HEAT_PROOF);
         material(Metal.YTTRIUM.asMaterial())
                 .addDefaultTraits(TinkersReforgedModifierIds.CHASM);
         material(Metal.ASTATINE.asMaterial())

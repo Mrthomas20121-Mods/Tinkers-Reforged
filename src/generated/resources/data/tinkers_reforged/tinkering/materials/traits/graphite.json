@@ -3,13 +3,13 @@
     "tconstruct:armor": [
       {
         "level": 1,
-        "name": "tinkers_reforged:land_protection"
+        "name": "tinkers_reforged:heat_proof"
       }
     ],
     "tconstruct:melee_harvest": [
       {
         "level": 1,
-        "name": "tinkers_reforged:surface_resources"
+        "name": "tinkers_reforged:cleavage"
       }
     ]
   }

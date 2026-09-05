@@ -1,0 +1,23 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_mining_speed",
+      "each_level": 3.0,
+      "entity": "tinkers_reforged:not_max_health",
+      "percent": false,
+      "require_effective": true,
+      "tool": {
+        "type": "mantle:tag",
+        "tag": "tconstruct:modifiable/harvest"
+      }
+    },
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": "tinkers_reforged:not_max_health",
+      "each_level": 3.0,
+      "percent": false
+    }
+  ],
+  "tooltip_display": "always"
+}

@@ -104,15 +104,15 @@ public class TinkersReforgedLangProvider extends LanguageProvider {
         modifier(TinkersReforgedModifierIds.CHASM, "Wow, that's a deep cave", "Gain more stats below y level 0.");
         modifier(TinkersReforgedModifierIds.AGILITY, "I'm just as fast as dolphins now", "Gain more Swim Speed and Entity Gravity.");
         modifier(TinkersReforgedModifierIds.FRICTION, "You better stay airborne", "Extra Protection while in the air");
-        modifier(TinkersReforgedModifierIds.LAND_PROTECTION, "Stay on land if you want to survive", "Protect you above the sea level");
-        modifier(TinkersReforgedModifierIds.FRAIL, "Aren't you skinny?", "Attackers may get weaker");
+        modifier(TinkersReforgedModifierIds.HEAT_PROOF, "The heat of the nether is your ally now", "Increase protection in nether biomes.");
+        modifier(TinkersReforgedModifierIds.FRAIL, "Weak and Pitiful!", "Attackers may get weaker");
         modifier(TinkersReforgedModifierIds.CLOSE_COMBAT, "Aren't you a bit too short for this?", "Deal more damage at the cost of losing entity range.");
         modifier(TinkersReforgedModifierIds.DECAY_IMMUNITY, "Not this time, wither!", "Immunity to wither mob effect.");
         modifier(TinkersReforgedModifierIds.HEALTH_UP, "Stay Healthy", "Extra Max HP at the cost of attack speed");
         modifier(TinkersReforgedModifierIds.ROAST, "You got Roasted!", "Increases looting level while on fire");
         modifier(TinkersReforgedModifierIds.FLAMING, "Flaming Hot!", "Increases fortune level while on fire");
-        modifier(TinkersReforgedModifierIds.SUBAQUATIC, "Now I know how Aquaman feels like", "Deal more damage underwater");
-        modifier(TinkersReforgedModifierIds.SURFACE_RESOURCES, "It's everywhere!", "Increase fortune above sea level");
+        modifier(TinkersReforgedModifierIds.SUBAQUATIC, "I'm Aquaman y'all", "Deal more damage underwater");
+        modifier(TinkersReforgedModifierIds.CLEAVAGE, "I'm on a frenzy!", "Increase mining speed and attack damage if the player is damaged");
         modifier(TinkersReforgedModifierIds.GEOGRAPHICAL, "The Overworld is overrated", "Gain Damage, Mining Speed and Power if you're not in the overworld.");
 
         add("modifier.tinkers_reforged.chasm.mining_speed", "Chasm Mining Speed");

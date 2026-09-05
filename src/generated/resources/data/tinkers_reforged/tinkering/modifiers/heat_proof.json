@@ -4,8 +4,8 @@
     {
       "type": "tconstruct:protection",
       "damage_source": "mantle:can_protect",
-      "each_level": 2.0,
-      "wearing_entity": "tinkers_reforged:above_sea_level"
+      "each_level": 1.5,
+      "wearing_entity": "tinkers_reforged:is_nether_biome"
     }
   ],
   "tooltip_display": "always"

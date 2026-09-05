@@ -16,8 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class TinkersReforgedBlockLoot extends BlockLootSubProvider {
     protected TinkersReforgedBlockLoot() {

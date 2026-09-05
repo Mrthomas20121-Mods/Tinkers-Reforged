@@ -13,7 +13,7 @@ public class TinkersReforgedModifierIds {
     public static ModifierId TRIAD = create("triad");
     public static ModifierId CLOSE_COMBAT = create("close_combat");
     public static ModifierId FLAMING = create("flaming");
-    public static ModifierId SURFACE_RESOURCES = create("surface_resources");
+    public static ModifierId CLEAVAGE = create("cleavage");
     public static ModifierId SUBAQUATIC = create("subaquatic");
     public static ModifierId FRAIL = create("frail");
     public static ModifierId GEOGRAPHICAL = create("geographical");
@@ -22,7 +22,7 @@ public class TinkersReforgedModifierIds {
     public static ModifierId DECAY_IMMUNITY = create("decay_immunity");
     public static ModifierId SAFEGUARD = create("safeguard");
     public static ModifierId AGILITY = create("agility");
-    public static ModifierId LAND_PROTECTION = create("land_protection");
+    public static ModifierId HEAT_PROOF = create("heat_proof");
     public static ModifierId HEALTH_UP = create("health_up");
     public static ModifierId FRICTION = create("friction");
     public static ModifierId LUNGFUL = create("lungful");

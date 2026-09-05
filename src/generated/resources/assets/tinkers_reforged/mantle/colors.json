@@ -14,6 +14,7 @@
   "modifier.tinkers_reforged": {
     "agility": "#E99475",
     "chasm": "#AC2C32",
+    "cleavage": "#1C1C20",
     "close_combat": "#40541E",
     "decay_immunity": "#4C183C",
     "flaming": "#403E2F",
@@ -21,13 +22,12 @@
     "friction": "#522728",
     "geographical": "#4C183C",
     "health_up": "#40541E",
+    "heat_proof": "#1C1C20",
     "ionize": "#28373C",
-    "land_protection": "#1C1C20",
     "lungful": "#28373C",
     "overfracture": "#94A47B",
     "roast": "#403E2F",
     "subaquatic": "#E99475",
-    "surface_resources": "#1C1C20",
     "triad": "#522728"
   }
 }

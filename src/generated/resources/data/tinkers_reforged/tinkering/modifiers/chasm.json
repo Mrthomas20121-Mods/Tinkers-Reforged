@@ -24,15 +24,14 @@
       }
     },
     {
-      "type": "tconstruct:conditional_stat",
+      "type": "tconstruct:protection",
+      "damage_source": "mantle:can_protect",
       "each_level": 2.0,
-      "entity": "tinkers_reforged:below_zero",
-      "percent": false,
-      "stat": "tconstruct:armor",
       "tool": {
         "type": "mantle:tag",
         "tag": "tconstruct:modifiable/armor"
-      }
+      },
+      "wearing_entity": "tinkers_reforged:below_zero"
     }
   ],
   "tooltip_display": "always"

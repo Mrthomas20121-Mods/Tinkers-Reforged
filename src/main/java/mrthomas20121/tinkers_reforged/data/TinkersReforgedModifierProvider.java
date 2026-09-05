@@ -1,6 +1,5 @@
 package mrthomas20121.tinkers_reforged.data;
 
-import mrthomas20121.tinkers_reforged.TinkersReforged;
 import mrthomas20121.tinkers_reforged.module.*;
 import mrthomas20121.tinkers_reforged.predicate.TinkersReforgedPredicates;
 import net.minecraft.data.PackOutput;
@@ -22,7 +21,6 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.LevelingInt;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
-import slimeknights.tconstruct.library.modifiers.modules.armor.BlockDamageSourceModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.EffectImmunityModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
@@ -53,7 +51,7 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
         buildModifier(TinkersReforgedModifierIds.CHASM)
                 .addModule(ConditionalMiningSpeedModule.builder().toolTag(HARVEST).holder(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(3f))
                 .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).toolTag(TinkerTags.Items.RANGED).holder(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(0.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.ARMOR).toolTag(TinkerTags.Items.ARMOR).holder(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(2f));
+                .addModule(ProtectionModule.builder().toolTag(TinkerTags.Items.ARMOR).entity(TinkersReforgedPredicates.BELOW_ZERO).eachLevel(2f));
 
         buildModifier(TinkersReforgedModifierIds.TRIAD).addModule(new TriadModule(LevelingInt.eachLevel(2)));
 
@@ -67,14 +65,10 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
 
         IJsonPredicate<Item> harvest = ItemPredicate.tag(HARVEST);
 
-        buildModifier(TinkersReforgedModifierIds.SURFACE_RESOURCES)
-                .addModule(
-                        EnchantmentModule
-                                .builder(Enchantments.BLOCK_FORTUNE)
-                                .toolItem(harvest)
-                                .levelRange(1, 3)
-                                .holder(TinkersReforgedPredicates.ABOVE_SEA_LEVEL)
-                                .mainHandHarvest(TinkersReforged.getResource("fortune_surface_resources"))
+        buildModifier(TinkersReforgedModifierIds.CLEAVAGE)
+                .addModules(
+                        ConditionalMiningSpeedModule.builder().toolTag(HARVEST).holder(TinkersReforgedPredicates.NOT_MAX_HEALTH).eachLevel(3),
+                        ConditionalMeleeDamageModule.builder().attacker(TinkersReforgedPredicates.NOT_MAX_HEALTH).eachLevel(3)
                 );
 
         buildModifier(TinkersReforgedModifierIds.FLAMING)
@@ -96,7 +90,7 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                 .addModule(ConditionalMeleeDamageModule.builder().attacker(LivingEntityPredicate.UNDERWATER).toolTag(TinkerTags.Items.HELD).eachLevel(5f));
 
         buildModifier(TinkersReforgedModifierIds.FRAIL)
-                .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).level(RandomLevelingValue.perLevel(0, 0.5f)).time(RandomLevelingValue.perLevel(20f, 20f)).build());
+                .addModule(MobEffectModule.builder(MobEffects.WEAKNESS).level(RandomLevelingValue.perLevel(0, 0.5f)).time(RandomLevelingValue.perLevel(20f, 20f)).buildCounter());
 
         // armor
         buildModifier(TinkersReforgedModifierIds.ROAST)
@@ -106,8 +100,8 @@ public class TinkersReforgedModifierProvider extends AbstractModifierProvider {
                 .levelDisplay(ModifierLevelDisplay.NO_LEVELS)
                 .addModule(new EffectImmunityModule(MobEffects.WITHER));
 
-        buildModifier(TinkersReforgedModifierIds.LAND_PROTECTION)
-                .addModule(ProtectionModule.builder().source(DamageSourcePredicate.CAN_PROTECT).entity(TinkersReforgedPredicates.ABOVE_SEA_LEVEL).eachLevel(2f));
+        buildModifier(TinkersReforgedModifierIds.HEAT_PROOF)
+                .addModule(ProtectionModule.builder().entity(TinkersReforgedPredicates.IS_NETHER_BIOME).eachLevel(1.5f));
 
         buildModifier(TinkersReforgedModifierIds.HEALTH_UP)
                 .addModule(AttributeModule.builder(Attributes.ATTACK_SPEED, AttributeModifier.Operation.ADDITION).eachLevel(-0.2f))
